@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grant_ApprovalPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGrantApprovalMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterView1Iterator"/>
+    <searchRegion Binds="TblGrantApprovalMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalMasterView1Query"/>
+    <iterator Binds="TblGrantApprovalDetailView4" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailView4Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailView4Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalMasterView" Name="TblGrantApprovalMasterView10">
+        <AttrNames>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="Dated"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailView4Iterator" id="TblGrantApprovalDetailView4">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailView" Name="TblGrantApprovalDetailView40">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="GrantAppMasterId"/>
+          <Item Value="Acre"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGrantApprovalDetailView4Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantApprovalDetailView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantApprovalDetailView4Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblGrantApprovalMasterView1Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantApprovalMasterView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantApprovalMasterView1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

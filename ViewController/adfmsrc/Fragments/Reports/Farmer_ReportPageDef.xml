@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Farmer_ReportPageDef"
+                Package="Fragments.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Cluster_No_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Cluster_No_LOV1Iterator"/>
+    <iterator Binds="Farmer_No_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Farmer_No_LOV1Iterator"/>
+    <iterator Binds="City_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="City_Name_LOV1Iterator"/>
+    <iterator Binds="Crops_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Crops_Name_LOV1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="Cluster_No_LOV1Iterator" ListOperMode="navigation" ListIter="Cluster_No_LOV1Iterator"
+          id="Cluster_No_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="Farmer_No_LOV1Iterator" ListOperMode="navigation" ListIter="Farmer_No_LOV1Iterator"
+          id="Farmer_No_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="FarmerNo"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="City_Name_LOV1Iterator" ListOperMode="navigation" ListIter="City_Name_LOV1Iterator"
+          id="City_Name_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="Crops_Name_LOV1Iterator" ListOperMode="navigation" ListIter="Crops_Name_LOV1Iterator"
+          id="Crops_Name_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

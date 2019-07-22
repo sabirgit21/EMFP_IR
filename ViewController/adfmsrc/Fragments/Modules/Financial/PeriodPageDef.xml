@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="PeriodPageDef"
+                Package="Fragments.Modules.Financial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblPeriodView1" RangeSize="25" DataControl="AppModuleDataControl" id="TblPeriodView1Iterator"/>
+    <searchRegion Binds="TblPeriodView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPeriodView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblPeriodView1Iterator" id="TblPeriodView1">
+      <nodeDefinition DefName="model.VO.TblPeriodView" Name="TblPeriodView10">
+        <AttrNames>
+          <Item Value="PeriodId"/>
+          <Item Value="PeriodFdate"/>
+          <Item Value="PeriodTdate"/>
+          <Item Value="PeriodAst"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblPeriodView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPeriodView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPeriodView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

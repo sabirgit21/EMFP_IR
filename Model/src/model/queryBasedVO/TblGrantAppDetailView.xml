@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantAppDetailView"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblGrantAppDetail.GRANT_APP_DETAIL_ID,
+       TblGrantAppDetail.GRANT_APP_MASTER_ID,
+       TblGrantAppDetail.SUPPLIER_ID,
+       TblGrantAppDetail.ITEM_L4_ID
+FROM TBL_GRANT_APP_DETAIL TblGrantAppDetail]]></SQLQuery>
+  <ViewAttribute
+    Name="GrantAppDetailId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_APP_DETAIL_ID"
+    Expression="GRANT_APP_DETAIL_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="GrantAppMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_APP_MASTER_ID"
+    Expression="GRANT_APP_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="SupplierId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SUPPLIER_ID"
+    Expression="SUPPLIER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ITEM_L4_ID"
+    Expression="ITEM_L4_ID"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantAppDetailId"/>
+  </AttrArray>
+</ViewObject>

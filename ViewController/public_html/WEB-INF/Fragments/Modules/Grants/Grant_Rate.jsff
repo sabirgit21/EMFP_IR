@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" inlineStyle="height:445px; width:1050px;">
+    <af:showDetailItem id="pane1" text="Grant Rate">
+      <af:panelGridLayout id="pgl1">
+      <af:gridRow marginTop="5px" height="auto" id="gr4" >
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
+                        
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" inlineStyle="width:892px;">
+              <af:showDetailItem id="tab1"  text="Grant Rate">
+                <af:table value="#{bindings.TblGrantRateView1.collectionModel}" var="row"
+                          rows="#{bindings.TblGrantRateView1.rangeSize}"
+                          emptyText="#{bindings.TblGrantRateView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblGrantRateView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGrantRateView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblGrantRateView1.rangeSize}"
+                          filterModel="#{bindings.TblGrantRateView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGrantRateView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b1 ::b2 ::b3 ::b5" width="881"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.GrantRateId.name}" 
+                             filterable="true" sortable="true" 
+                             headerText="Grant Rate ID" 
+                             id="c1" align="center" width="60">
+                              <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.GrantRateId}" id="id4"
+                                                          placeholder="Search ID">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:inputText value="#{row.bindings.GrantRateId.inputValue}"
+                                  label="#{bindings.TblGrantRateView1.hints.GrantRateId.label}"
+                                  required="#{bindings.TblGrantRateView1.hints.GrantRateId.mandatory}"
+                                  columns="#{bindings.TblGrantRateView1.hints.GrantRateId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantRateView1.hints.GrantRateId.precision}"
+                                  shortDesc="#{bindings.TblGrantRateView1.hints.GrantRateId.tooltip}" 
+                                  id="it1"  readOnly="true" contentStyle='text-align:center'>
+                      <f:validator binding="#{row.bindings.GrantRateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantRateView1.hints.GrantRateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.PhaseId.name}" 
+                             filterable="true" sortable="true" 
+                             headerText="Phase" id="c2" width="150">
+                              <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.PhaseId}" id="it2"
+                                                          placeholder="Search Phase">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
+                                        required="#{bindings.TblGrantRateView1.hints.PhaseId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantRateView1.hints.PhaseId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.CropId.name}" 
+                             filterable="true" sortable="true" 
+                             headerText="Crop" id="c3" width="150">
+                             <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CropId}" id="it3"
+                                                          placeholder="Search Crop">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CropId.inputValue}" label="#{row.bindings.CropId.label}"
+                                        required="#{bindings.TblGrantRateView1.hints.CropId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantRateView1.hints.CropId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.CropId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.CropId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Acre.name}" filterable="true"
+                             sortable="true" headerText="Acre" id="c4" width="150">
+                             <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Acre}" id="it7"
+                                                          placeholder="Search Acre">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:inputText value="#{row.bindings.Acre.inputValue}"
+                                  label="#{bindings.TblGrantRateView1.hints.Acre.label}"
+                                  required="#{bindings.TblGrantRateView1.hints.Acre.mandatory}"
+                                  columns="#{bindings.TblGrantRateView1.hints.Acre.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantRateView1.hints.Acre.precision}"
+                                  shortDesc="#{bindings.TblGrantRateView1.hints.Acre.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.Acre.validator}"/>
+                      <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGrantRateView1.hints.Acre.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="Dated" id="c5" width="100">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblGrantRateView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblGrantRateView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblGrantRateView1.hints.Dated.label}"
+                                  required="#{bindings.TblGrantRateView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblGrantRateView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblGrantRateView1.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblGrantRateView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Status.name}" filterable="true"
+                             sortable="true" headerText="Status" id="c6" width="80">
+                             <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Status}" id="it8"
+                                                          placeholder="Search Status">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:inputText value="#{row.bindings.Status.inputValue}"
+                                  label="#{bindings.TblGrantRateView1.hints.Status.label}"
+                                  required="#{bindings.TblGrantRateView1.hints.Status.mandatory}"
+                                  columns="#{bindings.TblGrantRateView1.hints.Status.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantRateView1.hints.Status.precision}"
+                                  shortDesc="#{bindings.TblGrantRateView1.hints.Status.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.Status.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantRateView1.hints.Status.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Amount.name}" filterable="true"
+                             sortable="true" headerText="Amount" id="c7" width="150">
+                             <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Amount}" id="it9"
+                                                          placeholder="Search Amount">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                  label="#{bindings.TblGrantRateView1.hints.Amount.label}"
+                                  required="#{bindings.TblGrantRateView1.hints.Amount.mandatory}"
+                                  columns="#{bindings.TblGrantRateView1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantRateView1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.TblGrantRateView1.hints.Amount.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantRateView1.hints.Amount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                           disabled="#{!bindings.Execute.enabled}" id="b5" icon="#{resource['images:refresh.png']}"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            <af:panelGroupLayout id="pgl2">
+            <af:spacer width="340" height="10" id="s4"/>
+              <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                         disabled="#{!bindings.CreateInsert.enabled}" id="b4" icon="#{resource['images:add.png']}"/>
+              <af:spacer width="5" height="10" id="s2"/>
+              <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                         disabled="#{!bindings.Execute.enabled}" id="b2" icon="#{resource['images:edit.png']}"/>
+              <af:spacer width="5" height="10" id="s3"/>
+              <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                         disabled="#{!bindings.Delete.enabled}" id="b3" icon="#{resource['images:delete.png']}"
+                         immediate="true" action="Grant_Rate.jsf"/>
+              
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

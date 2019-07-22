@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Team Formation">
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                   </af:gridCell>
+                                           </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Team Formation">
+                                                            <af:table value="#{bindings.TblTeamFormationView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblTeamFormationView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblTeamFormationView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblTeamFormationView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblTeamFormationView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblTeamFormationView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblTeamFormationView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblTeamFormationView1Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      partialTriggers="::b7 ::b8 ::b9 ::b13"
+                                                                      scrollPolicy="page" autoHeightRows="0"
+                                                                      width="988">
+                                                                <af:column sortProperty="#{bindings.TblTeamFormationView1.hints.TeamFormationId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Team Formation ID"
+                                                                           id="c1" align="center" width="80">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText 
+                                                                       value="#{vs.filterCriteria.TeamFormationId}"
+                                                                        id="it22" placeholder="Search ID ">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.TeamFormationId.inputValue}"
+                                                                                  label="#{bindings.TblTeamFormationView1.hints.TeamFormationId.label}"
+                                                                                  required="#{bindings.TblTeamFormationView1.hints.TeamFormationId.mandatory}"
+                                                                                  columns="#{bindings.TblTeamFormationView1.hints.TeamFormationId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblTeamFormationView1.hints.TeamFormationId.precision}"
+                                                                                  shortDesc="#{bindings.TblTeamFormationView1.hints.TeamFormationId.tooltip}"
+                                                                                  id="it1" readOnly="true"
+                                                                                  contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.TeamFormationId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column  sortProperty="#{bindings.TblTeamFormationView1.hints.TeamId.name}"
+                                                                            filterable="true" sortable="true"
+                                                                            headerText="Team"
+                                                                           id="c2" width="251">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText 
+                                                                       value="#{vs.filterCriteria.TeamId}"
+                                                                        id="it2" placeholder="Search Team ">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.TeamId.inputValue}"
+                                                                                        label="#{row.bindings.TeamId.label}"
+                                                                                        required="#{bindings.TblTeamFormationView1.hints.TeamId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblTeamFormationView1.hints.TeamId.tooltip}"
+                                                                                        id="soc1">
+                                                                        <f:selectItems value="#{row.bindings.TeamId.items}"
+                                                                                       id="si1"/>
+                                                                        <f:validator binding="#{row.bindings.TeamId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column  sortProperty="#{bindings.TblTeamFormationView1.hints.TrainerId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                            headerText="Trainer"
+                                                                           id="c3" width="245">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText 
+                                                                       value="#{vs.filterCriteria.TrainerId}"
+                                                                        id="it3" placeholder="Search Trainer ">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.TrainerId.inputValue}"
+                                                                                        label="#{row.bindings.TrainerId.label}"
+                                                                                        required="#{bindings.TblTeamFormationView1.hints.TrainerId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblTeamFormationView1.hints.TrainerId.tooltip}"
+                                                                                        id="soc2">
+                                                                        <f:selectItems value="#{row.bindings.TrainerId.items}"
+                                                                                       id="si2"/>
+                                                                        <f:validator binding="#{row.bindings.TrainerId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                
+                                    <af:column sortProperty="#{bindings.TblTeamFormationView1.hints.TrainerType.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Social Mobilizer"
+                                               id="c5" width="245">
+                                               <f:facet name="filter">
+                                                                       <af:inputText 
+                                                                       value="#{vs.filterCriteria.TrainerType}"
+                                                                        id="it5" placeholder="Search Social Mobilizer ">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.TrainerType.inputValue}"
+                                                            label="#{row.bindings.TrainerType.label}"
+                                                            required="#{bindings.TblTeamFormationView1.hints.TrainerType.mandatory}"
+                                                            shortDesc="#{bindings.TblTeamFormationView1.hints.TrainerType.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.TrainerType.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.TrainerType.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column  sortProperty="#{bindings.TblTeamFormationView1.hints.Ast.name}"
+                                                                           filterable="true" sortable="true"
+                                                                            headerText="Active"
+                                                                           id="c4" width="104">
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText 
+                                                                       value="#{vs.filterCriteria.Ast}"
+                                                                        id="it4" placeholder="Search Status ">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblTeamFormationView1.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblTeamFormationView1.hints.Ast.tooltip}"
+                                                                                        id="soc3">
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si3"/>
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       icon="#{resource['images:refresh.png']}"
+                                                                       disabled="#{!bindings.Execute.enabled}"
+                                                                       id="b13"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    
+                                                    <af:panelGroupLayout id="pg1">
+                                                    <af:spacer width="295" height="20" id="s12"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                   text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                   id="b7"/>
+                                                                    <af:spacer width="5" height="10" id="s2"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                                   text="Edit"
+                                                                   icon="#{resource['images:edit.png']}"
+                                                                   disabled="#{!bindings.Execute.enabled}" id="b8"/>
+                                                                    <af:spacer width="5" height="10" id="s10"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                                   text="Delete"
+                                                                   icon="#{resource['images:delete.png']}"
+                                                                   disabled="#{!bindings.Delete.enabled}" id="b9"
+                                                                   immediate="true" action="Team_Formation.jsf"/>
+                        </af:panelGroupLayout>
+                                                    
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

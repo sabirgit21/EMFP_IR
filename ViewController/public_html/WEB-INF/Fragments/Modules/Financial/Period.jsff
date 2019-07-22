@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Period">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" halign="end" valign="middle">
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Period">
+                                <af:table value="#{bindings.TblPeriodView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblPeriodView1.rangeSize}"
+                                          emptyText="#{bindings.TblPeriodView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblPeriodView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblPeriodView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblPeriodView1.rangeSize}"
+                                          filterModel="#{bindings.TblPeriodView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblPeriodView1Query.processQuery}" varStatus="vs"
+                                          id="t1" partialTriggers="::b1 ::b2 ::b3" width="458">
+                                    <af:column sortProperty="#{bindings.TblPeriodView1.hints.PeriodId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblPeriodView1.hints.PeriodId.label}" id="c1">
+                                        <af:inputText value="#{row.bindings.PeriodId.inputValue}"
+                                                      label="#{bindings.TblPeriodView1.hints.PeriodId.label}"
+                                                      required="#{bindings.TblPeriodView1.hints.PeriodId.mandatory}"
+                                                      columns="#{bindings.TblPeriodView1.hints.PeriodId.displayWidth}"
+                                                      maximumLength="#{bindings.TblPeriodView1.hints.PeriodId.precision}"
+                                                      shortDesc="#{bindings.TblPeriodView1.hints.PeriodId.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.PeriodId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblPeriodView1.hints.PeriodId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblPeriodView1.hints.PeriodFdate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblPeriodView1.hints.PeriodFdate.label}" id="c2">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblPeriodView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.PeriodFdate.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.TblPeriodView1.hints.PeriodFdate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.PeriodFdate.inputValue}"
+                                                      label="#{bindings.TblPeriodView1.hints.PeriodFdate.label}"
+                                                      required="#{bindings.TblPeriodView1.hints.PeriodFdate.mandatory}"
+                                                      columns="#{bindings.TblPeriodView1.hints.PeriodFdate.displayWidth}"
+                                                      shortDesc="#{bindings.TblPeriodView1.hints.PeriodFdate.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.PeriodFdate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblPeriodView1.hints.PeriodFdate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblPeriodView1.hints.PeriodTdate.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblPeriodView1.hints.PeriodTdate.label}" id="c3">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblPeriodView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.PeriodTdate.value}"
+                                                          id="id3">
+                                                <af:convertDateTime pattern="#{bindings.TblPeriodView1.hints.PeriodTdate.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.PeriodTdate.inputValue}"
+                                                      label="#{bindings.TblPeriodView1.hints.PeriodTdate.label}"
+                                                      required="#{bindings.TblPeriodView1.hints.PeriodTdate.mandatory}"
+                                                      columns="#{bindings.TblPeriodView1.hints.PeriodTdate.displayWidth}"
+                                                      shortDesc="#{bindings.TblPeriodView1.hints.PeriodTdate.tooltip}"
+                                                      id="id4">
+                                            <f:validator binding="#{row.bindings.PeriodTdate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblPeriodView1.hints.PeriodTdate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblPeriodView1.hints.PeriodAst.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblPeriodView1.hints.PeriodAst.label}" id="c4">
+                                        <af:inputText value="#{row.bindings.PeriodAst.inputValue}"
+                                                      label="#{bindings.TblPeriodView1.hints.PeriodAst.label}"
+                                                      required="#{bindings.TblPeriodView1.hints.PeriodAst.mandatory}"
+                                                      columns="#{bindings.TblPeriodView1.hints.PeriodAst.displayWidth}"
+                                                      maximumLength="#{bindings.TblPeriodView1.hints.PeriodAst.precision}"
+                                                      shortDesc="#{bindings.TblPeriodView1.hints.PeriodAst.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.PeriodAst.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="100" height="10" id="s4"/>
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                       icon="#{resource['images:add.png']}" disabled="#{!bindings.CreateInsert.enabled}"
+                                       id="b4"/>
+                            <af:spacer width="5" height="10" id="s2"/>
+                            <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                                       icon="#{resource['images:edit.png']}" disabled="#{!bindings.Execute.enabled}"
+                                       id="b2"/>
+                            <af:spacer width="5" height="10" id="s3"/>
+                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                       icon="#{resource['images:delete.png']}" disabled="#{!bindings.Delete.enabled}"
+                                       id="b3"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

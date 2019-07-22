@@ -1,0 +1,12 @@
+//Groovy Scripts for model.VO.USERS_ROLES.CLUSTER_PAGES
+
+package model.VO.USERS_ROLES
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="CROLEMASTERID")
+def CROLEMASTERID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessUID')
+}
+

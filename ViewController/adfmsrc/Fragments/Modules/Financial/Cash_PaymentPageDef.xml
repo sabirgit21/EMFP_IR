@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cash_PaymentPageDef"
+                Package="Fragments.Modules.Financial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblCPVVoucherMView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblCPVVoucherMView1Iterator"/>
+    <searchRegion Binds="TblCPVVoucherMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCPVVoucherMView1Query"/>
+    <iterator Binds="TblCPVVoucherDView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblCPVVoucherDView3Iterator"/>
+    <searchRegion Binds="TblCPVVoucherDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCPVVoucherDView3Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblCPVVoucherMView1Iterator" id="TblCPVVoucherMView1">
+      <nodeDefinition DefName="model.VO.TblCPVVoucherMView" Name="TblCPVVoucherMView10">
+        <AttrNames>
+          <Item Value="VoucherMId"/>
+          <Item Value="VoucherMVno"/>
+          <Item Value="VoucherMVtp"/>
+          <Item Value="VoucherMDated"/>
+          <Item Value="VoucherMPDate"/>
+          <Item Value="VoucherMChqNo"/>
+          <Item Value="VoucherMChqDate"/>
+          <Item Value="VoucherMCDate"/>
+          <Item Value="VoucherMNarration"/>
+          <Item Value="VoucherMUserName"/>
+          <Item Value="VoucherMApp"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCPVVoucherMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCPVVoucherMView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCPVVoucherMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblCPVVoucherDView3Iterator" id="TblCPVVoucherDView3">
+      <nodeDefinition DefName="model.VO.TblCPVVoucherDView" Name="TblCPVVoucherDView30">
+        <AttrNames>
+          <Item Value="VoucherDId"/>
+          <Item Value="VoucherDVno"/>
+          <Item Value="VoucherDSrNo"/>
+          <Item Value="VoucherDGlL4Id"/>
+          <Item Value="VoucherDDescription"/>
+          <Item Value="VoucherDDr"/>
+          <Item Value="VoucherDCr"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCPVVoucherDView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCPVVoucherDView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCPVVoucherDView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

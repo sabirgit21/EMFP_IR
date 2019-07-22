@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk2TblGrantRateFkLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.Fk2TblGrantRateFkAssoc">
+  <ViewLinkDefEnd
+    Name="TblCropView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblCropView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblCropView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCropView.CropId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblGrantRateView"
+    Cardinality="-1"
+    Owner="model.VO.TblGrantRateView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblGrantRateView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantRateView.CropId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

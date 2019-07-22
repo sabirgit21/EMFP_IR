@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Project_CompPageDef"
+                Package="Fragments.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblProjCompView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblProjCompView1Iterator"/>
+    <searchRegion Binds="TblProjCompView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProjCompView1Query"/>
+    <iterator Binds="TblBeneficiaryView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblBeneficiaryView1Iterator"/>
+    <searchRegion Binds="TblBeneficiaryView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblBeneficiaryView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblProjCompView1Iterator" id="TblProjCompView1">
+      <nodeDefinition DefName="model.VO.TblProjCompView" Name="TblProjCompView10">
+        <AttrNames>
+          <Item Value="ProjCompId"/>
+          <Item Value="ProjId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="Io"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblProjCompView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblProjCompView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblProjCompView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblBeneficiaryView1Iterator" id="TblBeneficiaryView1">
+      <nodeDefinition DefName="model.VO.TblBeneficiaryView" Name="TblBeneficiaryView10">
+        <AttrNames>
+          <Item Value="BeneficiaryId"/>
+          <Item Value="Name"/>
+          <Item Value="Vtp"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblBeneficiaryView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblBeneficiaryView1Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblBeneficiaryView1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

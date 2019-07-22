@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Supplier_Name_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblSupplier.SUPPLIER_ID, 
+       TblSupplier.NAME, 
+       TblSupplier.AST"
+  FromList="TBL_SUPPLIER TblSupplier"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Supplier_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblSupplier"
+    Entity="model.EO.TblSupplier"/>
+  <ViewAttribute
+    Name="SupplierId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupplierId"
+    EntityUsage="TblSupplier"
+    AliasName="SUPPLIER_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblSupplier"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblSupplier"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

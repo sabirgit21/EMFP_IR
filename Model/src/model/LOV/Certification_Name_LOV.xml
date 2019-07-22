@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Certification_Name_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblCertification.AST, 
+       TblCertification.CERTIFICATION_ID, 
+       TblCertification.NAME"
+  FromList="TBL_CERTIFICATION TblCertification"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Certification_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblCertification"
+    Entity="model.EO.TblCertification"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblCertification"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="CertificationId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CertificationId"
+    EntityUsage="TblCertification"
+    AliasName="CERTIFICATION_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblCertification"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

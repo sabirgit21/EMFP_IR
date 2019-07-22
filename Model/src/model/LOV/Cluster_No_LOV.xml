@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Cluster_No_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID"
+  FromList="TBL_CLUSTER TblCluster"
+  Where="AST = 'Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Cluster_No_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

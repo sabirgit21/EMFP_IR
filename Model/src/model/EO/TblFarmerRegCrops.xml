@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFarmerRegCrops"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FARMER_REG_CROPS"
+  AliasName="TblFarmerRegCrops"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FarmerRegCropsId"
+    ColumnName="FARMER_REG_CROPS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="FarmerRegId"
+    IsNotNull="true"
+    ColumnName="FARMER_REG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"/>
+  <Attribute
+    Name="CropId"
+    IsNotNull="true"
+    ColumnName="CROP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"/>
+  <Attribute
+    Name="AnnualProd"
+    ColumnName="ANNUAL_PROD"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"/>
+  <Attribute
+    Name="YearlySales"
+    ColumnName="YEARLY_SALES"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"/>
+  <Attribute
+    Name="MainBuyer"
+    Precision="150"
+    ColumnName="MAIN_BUYER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_CROPS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MainBuyerAddr"
+    Precision="250"
+    ColumnName="MAIN_BUYER_ADDR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_CROPS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MainBuyerCity"
+    Precision="50"
+    ColumnName="MAIN_BUYER_CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_CROPS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblCrop"
+    Association="model.EO.Fk2TblFarmerRegCropsFkAssoc"
+    AssociationEnd="model.EO.Fk2TblFarmerRegCropsFkAssoc.TblCrop"
+    AssociationOtherEnd="model.EO.Fk2TblFarmerRegCropsFkAssoc.TblFarmerRegCrops"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblFarmerReg"
+    Association="model.EO.FkTblFarmerRegCropsFkAssoc"
+    AssociationEnd="model.EO.FkTblFarmerRegCropsFkAssoc.TblFarmerReg"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegCropsFkAssoc.TblFarmerRegCrops"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkTblFarmerRegCropsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TBL_FARMER_REG_CROPS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFarmerRegCrops.FarmerRegCropsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Fk2TblFarmerRegCropsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_CROP_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK2_TBL_FARMER_REG_CROPS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFarmerRegCrops.CropId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTblFarmerRegCropsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_FARMER_REG_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_FARMER_REG_CROPS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFarmerRegCrops.FarmerRegId"/>
+    </AttrArray>
+  </Key>
+</Entity>

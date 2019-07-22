@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Training_SchedPageDef"
+                Package="Fragments.Modules.Training">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblTrainingSchMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblTrainingSchMasterView1Iterator"/>
+    <searchRegion Binds="TblTrainingSchMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTrainingSchMasterView1Query"/>
+    <iterator Binds="TblTrainingSchDetailView4" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblTrainingSchDetailView4Iterator"/>
+    <searchRegion Binds="TblTrainingSchDetailView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTrainingSchDetailView4Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblTrainingSchMasterView1Iterator" id="TblTrainingSchMasterView1">
+      <nodeDefinition DefName="model.VO.TblTrainingSchMasterView" Name="TblTrainingSchMasterView10">
+        <AttrNames>
+          <Item Value="TrainingSchMasterId"/>
+          <Item Value="ProjCompId"/>
+          <Item Value="CourseId"/>
+          <Item Value="ModuleId"/>
+          <Item Value="Dated"/>
+          <Item Value="Status"/>
+          <Item Value="Mon"/>
+          <Item Value="StDate"/>
+          <Item Value="EnDate"/>
+          <Item Value="Remarks"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblTrainingSchDetailView4Iterator" id="TblTrainingSchDetailView4">
+      <nodeDefinition DefName="model.VO.TblTrainingSchDetailView" Name="TblTrainingSchDetailView40">
+        <AttrNames>
+          <Item Value="TrainingSchDetailId"/>
+          <Item Value="TrainingSchMasterId"/>
+          <Item Value="DatedD"/>
+          <Item Value="ClusterId"/>
+          <Item Value="Latitude"/>
+          <Item Value="Longitude"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTrainingSchDetailView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblTrainingSchDetailView4Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblTrainingSchDetailView4Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="TrainingSchMasterId">
+      <AttrNames>
+        <Item Value="TrainingSchMasterId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblTrainingSchMasterView1Iterator" StaticList="false" Uses="LOV_ProjCompId" id="ProjCompId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblTrainingSchMasterView1Iterator" StaticList="false" Uses="LOV_CourseId" id="CourseId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblTrainingSchMasterView1Iterator" StaticList="false" Uses="LOV_ModuleId" id="ModuleId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="Dated">
+      <AttrNames>
+        <Item Value="Dated"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="Mon">
+      <AttrNames>
+        <Item Value="Mon"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="StDate">
+      <AttrNames>
+        <Item Value="StDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="EnDate">
+      <AttrNames>
+        <Item Value="EnDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblTrainingSchMasterView1Iterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblTrainingSchMasterView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="TblTrainingSchMasterView1Iterator" StaticList="false" Uses="LOV_TeamFormationId"
+          id="TeamFormationId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>
+

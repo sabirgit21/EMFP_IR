@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Project_Comp_TaskFlow">
+    <default-activity>Project_Comp</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Project_Comp">
+      <page>/WEB-INF/Fragments/Modules/Monitoring/Project_Comp.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

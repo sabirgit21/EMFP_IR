@@ -1,0 +1,12 @@
+//Groovy Scripts for model.VO.USERS_MODULE
+
+package model.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="GETROLEMASTERID")
+def GETROLEMASTERID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessUID')
+}
+

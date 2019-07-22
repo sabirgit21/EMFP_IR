@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblJRVVoucherDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblVoucherD.VOUCHER_D_ID,
+       TblVoucherD.VOUCHER_D_VNO,
+       TblVoucherD.VOUCHER_D_SR_NO,
+       TblVoucherD.VOUCHER_D_GL_L4_ID,
+       TblVoucherD.VOUCHER_D_DESCRIPTION,
+       TblVoucherD.VOUCHER_D_DR,
+       TblVoucherD.VOUCHER_D_CR
+FROM TBL_VOUCHER_D TblVoucherD]]></SQLQuery>
+  <ViewAttribute
+    Name="VoucherDId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_D_ID"
+    Expression="VOUCHER_D_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VoucherDVno"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_D_VNO"
+    Expression="VOUCHER_D_VNO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherDSrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_D_SR_NO"
+    Expression="VOUCHER_D_SR_NO"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VoucherDGlL4Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_D_GL_L4_ID"
+    Expression="VOUCHER_D_GL_L4_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VoucherDDescription"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_D_DESCRIPTION"
+    Expression="VOUCHER_D_DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherDDr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_D_DR"
+    Expression="VOUCHER_D_DR"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VoucherDCr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_D_CR"
+    Expression="VOUCHER_D_CR"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="VoucherDId"/>
+  </AttrArray>
+</ViewObject>

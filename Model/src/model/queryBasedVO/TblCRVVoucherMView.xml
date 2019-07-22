@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblCRVVoucherMView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblVoucherM.VOUCHER_M_ID, 
+       TblVoucherM.VOUCHER_M_VNO, 
+       TblVoucherM.VOUCHER_M_VTP, 
+       TblVoucherM.VOUCHER_M_DATED, 
+       TblVoucherM.VOUCHER_M_P_DATE, 
+       TblVoucherM.VOUCHER_M_CHQ_NO, 
+       TblVoucherM.VOUCHER_M_CHQ_DATE, 
+       TblVoucherM.VOUCHER_M_C_DATE, 
+       TblVoucherM.VOUCHER_M_NARRATION, 
+       TblVoucherM.VOUCHER_M_USER_NAME, 
+       TblVoucherM.VOUCHER_M_APP 
+FROM TBL_VOUCHER_M TblVoucherM 
+WHERE TblVoucherM.VOUCHER_M_VTP ='CRV']]></SQLQuery>
+  <ViewAttribute
+    Name="VoucherMId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VOUCHER_M_ID"
+    Expression="VOUCHER_M_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="VoucherMVno"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_M_VNO"
+    Expression="VOUCHER_M_VNO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherMVtp"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VOUCHER_M_VTP"
+    Expression="VOUCHER_M_VTP"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherMDated"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="VOUCHER_M_DATED"
+    Expression="VOUCHER_M_DATED"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="VoucherMPDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="VOUCHER_M_P_DATE"
+    Expression="VOUCHER_M_P_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="VoucherMChqNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_M_CHQ_NO"
+    Expression="VOUCHER_M_CHQ_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherMChqDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="VOUCHER_M_CHQ_DATE"
+    Expression="VOUCHER_M_CHQ_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="VoucherMCDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="VOUCHER_M_C_DATE"
+    Expression="VOUCHER_M_C_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="VoucherMNarration"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="300"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_M_NARRATION"
+    Expression="VOUCHER_M_NARRATION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherMUserName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VOUCHER_M_USER_NAME"
+    Expression="VOUCHER_M_USER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VoucherMApp"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VOUCHER_M_APP"
+    Expression="VOUCHER_M_APP"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="VoucherMId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="TblCRVVoucherDView"
+    ViewLink="model.queryBasedVO.FkCRVVoucherDIdDVnoLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

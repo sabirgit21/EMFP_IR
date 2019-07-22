@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+    <definitionFactories>
+        <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+                 className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+        <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+        <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+                 className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+    </definitionFactories>
+    <pageMap>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Program.jsff" usageId="view_ProgramPageDef"/>
+        <page path="/Main_Pages/Modules/Setup/Setup.jsf" usageId="view_SetupPageDef1"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Crops.jsff" usageId="view_CropsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Project.jsff" usageId="view_ProjectPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Library.jsff" usageId="view_LibraryPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Supplier_Rate.jsff" usageId="view_Supplier_RatePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Target_Crops.jsff" usageId="view_Target_CropsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Farm_Machinery.jsff" usageId="view_Farm_MachineryPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Phase.jsff" usageId="view_PhasePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Setup/Supplier.jsff" usageId="view_SupplierPageDef"/>
+        <page path="/Main_Pages/Modules/Monitoring/Monitoring.jsf" usageId="view_MonitoringPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Clusters_Farmers/Cluster_Setup.jsff"
+              usageId="view_Cluster_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Clusters_Farmers/Cluster_Setup.jsff"
+              usageId="view_Cluster_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Setup.jsff"
+              usageId="view_Certification_SetupPageDef"/>
+        <page path="/Main_Pages/Modules/Monitoring/Monitoring.jsf" usageId="view_MonitoringPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Clusters_Farmers/Farmer_Registration.jsff"
+              usageId="view_Farmer_RegistrationPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Module_Setup.jsff" usageId="view_Module_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Topic_Setup.jsff" usageId="view_Topic_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Team_Setup.jsff" usageId="view_Team_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Team_Formation.jsff" usageId="view_Team_FormationPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/ATT_Detail.jsff" usageId="view_ATT_DetailPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Monitoring/Output_Ind.jsff" usageId="view_Output_IndPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Param.jsff"
+              usageId="view_Monitoring_ParamPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Training_Setup.jsff" usageId="view_Training_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Monitoring/Project_Comp.jsff" usageId="view_Project_CompPageDef"/>
+        <page path="/Main_Pages/Modules/Grants/Grants.jsf" usageId="view_GrantsPageDef"/>
+        <page path="/Main_Pages/Dashboard.jsf" usageId="view_DashboardPageDef"/>
+        <page path="/Main_Pages/Modules/Training/Training.jsf" usageId="view_TrainingPageDef"/>
+        <page path="/Main_Pages/Modules/Certification/Certification.jsf" usageId="view_CertificationPageDef"/>
+        <page path="/Main_Pages/Modules/Clusters_Farmers/Cluster_Farmer.jsf" usageId="view_Cluster_FarmerPageDef"/>
+	<page path="/WEB-INF/Fragments/Modules/Training/Trainer.jsff" usageId="view_TrainerPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Training/Training_Sched.jsff" usageId="view_Training_SchedPageDef"/>
+        <page path="/Main_Pages/Modules/Management/Main_Management.jsf" usageId="view_Main_ManagementPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Management/User_Roles.jsff" usageId="view_User_RolesPageDef"/>
+        <page path="/WEB-INF/Fragments/Dashboard.jsff" usageId="view_DashboardPageDef1"/>
+        <page path="/Reports/Reports.jsf" usageId="view_ReportsPageDef"/>
+        <page path="/WEB-INF/Fragments/Reports/Cluster_Detail_Report.jsff" usageId="view_Cluster_Detail_ReportPageDef"/>
+        <page path="/WEB-INF/Fragments/Reports/Farmer_Report.jsff" usageId="view_Farmer_ReportPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Rate.jsff" usageId="view_Grant_RatePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Application.jsff" usageId="view_Grant_ApplicationPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Approval.jsff" usageId="view_Grant_ApprovalPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Disburse.jsff" usageId="view_Grant_DisbursePageDef"/>
+        <page path="/Main_Pages/Modules/Financial/Financial.jsf" usageId="view_FinancialPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Period.jsff" usageId="view_PeriodPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Company_Profile.jsff" usageId="view_Company_ProfilePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Opening_Balance.jsff" usageId="view_Opening_BalancePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Bank_Payment.jsff" usageId="view_Bank_PaymentPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Bank_Receipt.jsff" usageId="view_Bank_ReceiptPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Cash_Payment.jsff" usageId="view_Cash_PaymentPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Financial/Journal.jsff" usageId="view_JournalPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Management/Map.jsff" usageId="view_MapPageDef"/>
+    </pageMap>
+    <pageDefinitionUsages>
+        <page id="view_Farmer_RegistrationPageDef"
+              path="Fragments.Modules.Clusters_Farmers.Farmer_RegistrationPageDef"/>
+        <page id="view_MonitoringPageDef" path="Main_Pages.Modules.Monitoring.MonitoringPageDef"/>
+        <page id="view_Cluster_SetupPageDef" path="Fragments.Modules.Clusters_Farmers.Cluster_SetupPageDef"/>
+        <page id="view_Certification_SetupPageDef" path="Fragments.Modules.Certification.Certification_SetupPageDef"/>
+        <page id="view_ProgramPageDef" path="Fragments.Modules.Setup.ProgramPageDef"/>
+        <page id="view_SetupPageDef" path="Main_Pages.Modules.Setup.SetupPageDef"/>
+        <page id="view_SetupPageDef1" path="Main_Pages.Modules.Setup.SetupPageDef1"/>
+        <page id="view_CropsPageDef" path="Fragments.Modules.Setup.CropsPageDef"/>
+        <page id="view_ProjectPageDef" path="Fragments.Modules.Setup.ProjectPageDef"/>
+        <page id="view_LibraryPageDef" path="Fragments.Modules.Setup.LibraryPageDef"/>
+        <page id="view_Supplier_RatePageDef" path="Fragments.Modules.Setup.Supplier_RatePageDef"/>
+        <page id="view_Target_CropsPageDef" path="Fragments.Modules.Setup.Target_CropsPageDef"/>
+        <page id="view_Farm_MachineryPageDef" path="Fragments.Modules.Setup.Farm_MachineryPageDef"/>
+        <page id="view_PhasePageDef" path="Fragments.Modules.Setup.PhasePageDef"/>
+        <page id="view_SupplierPageDef" path="Fragments.Modules.Setup.SupplierPageDef"/>
+        <page id="view_Module_SetupPageDef" path="Fragments.Modules.Training.Module_SetupPageDef"/>
+        <page id="view_Topic_SetupPageDef" path="Fragments.Modules.Training.Topic_SetupPageDef"/>
+        <page id="view_Team_SetupPageDef" path="Fragments.Modules.Training.Team_SetupPageDef"/>
+        <page id="view_Team_FormationPageDef" path="Fragments.Modules.Training.Team_FormationPageDef"/>
+        <page id="view_ATT_DetailPageDef" path="Fragments.Modules.Training.ATT_DetailPageDef"/>
+        <page id="view_Output_IndPageDef" path="Fragments.Modules.Monitoring.Output_IndPageDef"/>
+        <page id="view_Monitoring_ParamPageDef" path="Fragments.Modules.Monitoring.Monitoring_ParamPageDef"/>
+        <page id="view_Training_SetupPageDef" path="Fragments.Modules.Training.Training_SetupPageDef"/>
+        <page id="view_Project_CompPageDef" path="Fragments.Modules.Monitoring.Project_CompPageDef"/>
+        <page id="view_GrantsPageDef" path="Main_Pages.Modules.Grants.GrantsPageDef"/>
+        <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
+        <page id="view_TrainingPageDef" path="Main_Pages.Modules.Training.TrainingPageDef"/>
+        <page id="view_CertificationPageDef" path="Main_Pages.Modules.Certification.CertificationPageDef"/>
+        <page id="view_Cluster_FarmerPageDef" path="Main_Pages.Modules.Clusters_Farmers.Cluster_FarmerPageDef"/>
+	<page id="view_TrainerPageDef" path="Fragments.Modules.Training.TrainerPageDef"/>
+        <page id="view_Training_SchedPageDef" path="Fragments.Modules.Training.Training_SchedPageDef"/>
+        <page id="view_Main_ManagementPageDef" path="Main_Pages.Modules.Management.Main_ManagementPageDef"/>
+        <page id="view_User_RolesPageDef" path="Fragments.Modules.Management.User_RolesPageDef"/>
+        <page id="view_DashboardPageDef1" path="Fragments.DashboardPageDef"/>
+        <page id="view_Setup_SidebarPageDef" path="Main_Pages.Modules.Setup.Setup_SidebarPageDef"/>
+        <page id="view_ReportsPageDef" path="Reports.ReportsPageDef"/>
+        <page id="view_Cluster_Detail_ReportPageDef" path="Fragments.Reports.Cluster_Detail_ReportPageDef"/>
+        <page id="view_Farmer_ReportPageDef" path="Fragments.Reports.Farmer_ReportPageDef"/>
+        <page id="view_Grant_RatePageDef" path="Fragments.Modules.Grants.Grant_RatePageDef"/>
+        <page id="view_Grant_ApplicationPageDef" path="Fragments.Modules.Grants.Grant_ApplicationPageDef"/>
+        <page id="view_Grant_ApprovalPageDef" path="Fragments.Modules.Grants.Grant_ApprovalPageDef"/>
+        <page id="view_Grant_DisbursePageDef" path="Fragments.Modules.Grants.Grant_DisbursePageDef"/>
+        <page id="view_FinancialPageDef" path="Main_Pages.Modules.Financial.FinancialPageDef"/>
+        <page id="view_PeriodPageDef" path="Fragments.Modules.Financial.PeriodPageDef"/>
+        <page id="view_Company_ProfilePageDef" path="Fragments.Modules.Financial.Company_ProfilePageDef"/>
+        <page id="view_Opening_BalancePageDef" path="Fragments.Modules.Financial.Opening_BalancePageDef"/>
+        <page id="view_Bank_PaymentPageDef" path="Fragments.Modules.Financial.Bank_PaymentPageDef"/>
+        <page id="view_Bank_ReceiptPageDef" path="Fragments.Modules.Financial.Bank_ReceiptPageDef"/>
+        <page id="view_Cash_PaymentPageDef" path="Fragments.Modules.Financial.Cash_PaymentPageDef"/>
+        <page id="view_Cash_ReceiptPageDef" path="Fragments.Modules.Financial.Cash_ReceiptPageDef"/>
+        <page id="view_JournalPageDef" path="Fragments.Modules.Financial.JournalPageDef"/>
+        <page id="view_MapPageDef" path="Fragments.Modules.Management.MapPageDef"/>
+    </pageDefinitionUsages>
+    <dataControlUsages>
+        <BC4JDataControl id="AppModuleDataControl" Package="model"
+                         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                         SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                         SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                         xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+        <BC4JDataControl id="AppModuleDataControl1" Package="model.LOV"
+                         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                         SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                         SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                         xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    </dataControlUsages>
+</Application>

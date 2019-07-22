@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="ATT_DetailPageDef"
+                Package="Fragments.Modules.Training">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblClusterAttMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblClusterAttMasterView1Iterator"/>
+    <searchRegion Binds="TblClusterAttMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblClusterAttMasterView1Query"/>
+    <iterator Binds="TblClusterAttDetailView3" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblClusterAttDetailView3Iterator"/>
+    <searchRegion Binds="TblClusterAttDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblClusterAttDetailView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblClusterAttMasterView1Iterator" id="TblClusterAttMasterView1">
+      <nodeDefinition DefName="model.VO.TblClusterAttMasterView" Name="TblClusterAttMasterView10">
+        <AttrNames>
+          <Item Value="ClusterAttMasterId"/>
+          <Item Value="TrainerId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="Dated"/>
+          <Item Value="Status"/>
+          <Item Value="Remarks"/>
+          <Item Value="Trainer_Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblClusterAttMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblClusterAttMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblClusterAttMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <tree IterBinding="TblClusterAttDetailView3Iterator" id="TblClusterAttDetailView3">
+      <nodeDefinition DefName="model.VO.TblClusterAttDetailView" Name="TblClusterAttDetailView30">
+        <AttrNames>
+          <Item Value="ClusterAttDetailId"/>
+          <Item Value="ClusterAttMasterId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="Ast"/>
+          <Item Value="Farmer_Cnic"/>
+          <Item Value="Farmer_Mobile"/>
+          <Item Value="Farmer_Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblClusterAttDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblClusterAttDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblClusterAttDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblClusterAttDetailView3Iterator" id="TblClusterAttDetailView31">
+      <nodeDefinition DefName="model.VO.TblClusterAttDetailView" Name="TblClusterAttDetailView310">
+        <AttrNames>
+          <Item Value="ClusterAttDetailId"/>
+          <Item Value="ClusterAttMasterId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="Ast"/>
+          <Item Value="Farmer_Cnic"/>
+          <Item Value="FarmerRegId1"/>
+          <Item Value="Farmer_Name"/>
+          <Item Value="Farmer_Mobile"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

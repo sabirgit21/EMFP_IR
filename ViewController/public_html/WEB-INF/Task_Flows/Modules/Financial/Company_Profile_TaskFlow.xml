@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Company_Profile_TaskFlow">
+    <default-activity>Company_Profile</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="Company_Profile">
+      <page>/WEB-INF/Fragments/Modules/Financial/Company_Profile.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Journal Voucher">
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Voucher Master">
+                <af:table value="#{bindings.TblJRVVoucherMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblJRVVoucherMView1.rangeSize}"
+                          emptyText="#{bindings.TblJRVVoucherMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblJRVVoucherMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblJRVVoucherMView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblJRVVoucherMView1.rangeSize}"
+                          filterModel="#{bindings.TblJRVVoucherMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblJRVVoucherMView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2 ::b3 ::b4">
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.label}"
+                             id="c1">
+                    <af:inputText value="#{row.bindings.VoucherMId.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.VoucherMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.VoucherMVno.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMVno.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.VoucherMVno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.label}"
+                             id="c3">
+                    <af:inputText value="#{row.bindings.VoucherMVtp.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMVtp.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.VoucherMVtp.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.label}"
+                             id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblJRVVoucherMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VoucherMDated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VoucherMDated.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.displayWidth}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.VoucherMDated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMDated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.label}"
+                             id="c5">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblJRVVoucherMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VoucherMPDate.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VoucherMPDate.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.displayWidth}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.tooltip}" id="id4">
+                      <f:validator binding="#{row.bindings.VoucherMPDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMPDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.label}"
+                             id="c6">
+                    <af:inputText value="#{row.bindings.VoucherMChqNo.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqNo.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.VoucherMChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.label}"
+                             id="c7">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblJRVVoucherMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VoucherMChqDate.value}"
+                                    id="id5">
+                        <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VoucherMChqDate.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.displayWidth}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.tooltip}" id="id6">
+                      <f:validator binding="#{row.bindings.VoucherMChqDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMChqDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.label}"
+                             id="c8">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblJRVVoucherMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.VoucherMCDate.value}"
+                                    id="id7">
+                        <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.VoucherMCDate.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.displayWidth}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.tooltip}" id="id8">
+                      <f:validator binding="#{row.bindings.VoucherMCDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblJRVVoucherMView1.hints.VoucherMCDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.label}" id="c9">
+                    <af:inputText value="#{row.bindings.VoucherMNarration.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMNarration.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.VoucherMNarration.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.label}" id="c10">
+                    <af:inputText value="#{row.bindings.VoucherMUserName.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMUserName.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.VoucherMUserName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.label}"
+                             id="c11">
+                    <af:inputText value="#{row.bindings.VoucherMApp.inputValue}"
+                                  label="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.label}"
+                                  required="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherMView1.hints.VoucherMApp.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.VoucherMApp.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b6"
+                                           icon="#{resource['images:refresh.png']}"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+              <af:spacer width="300" height="10" id="s2"/>
+              <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+              icon="#{resource['images:add.png']}"
+                         disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+              <af:spacer width="5" height="10" id="s3"/>
+              <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+              icon="#{resource['images:edit.png']}"
+                         disabled="#{!bindings.Execute.enabled}" id="b3"/>
+              <af:spacer width="5" height="10" id="s4"/>
+              <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+              icon="#{resource['images:delete.png']}"
+                         disabled="#{!bindings.Delete.enabled}" id="b4"/>
+            </af:panelGroupLayout>
+            <af:spacer width="100" height="50" id="s8"/>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Voucher Detail">
+                <af:table value="#{bindings.TblJRVVoucherDView3.collectionModel}" var="row"
+                          rows="#{bindings.TblJRVVoucherDView3.rangeSize}"
+                          emptyText="#{bindings.TblJRVVoucherDView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblJRVVoucherDView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblJRVVoucherDView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblJRVVoucherDView3.rangeSize}"
+                          filterModel="#{bindings.TblJRVVoucherDView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblJRVVoucherDView3Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="::b5 ::b6 ::b7">
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.label}"
+                             id="c12">
+                    <af:inputText value="#{row.bindings.VoucherDId.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.VoucherDId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherDView3.hints.VoucherDId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.label}"
+                             id="c13">
+                    <af:inputText value="#{row.bindings.VoucherDVno.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDVno.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.VoucherDVno.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.label}"
+                             id="c14">
+                    <af:inputText value="#{row.bindings.VoucherDSrNo.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.VoucherDSrNo.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherDView3.hints.VoucherDSrNo.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.label}"
+                             id="c15">
+                    <af:inputText value="#{row.bindings.VoucherDGlL4Id.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.VoucherDGlL4Id.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherDView3.hints.VoucherDGlL4Id.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.label}" id="c16">
+                    <af:inputText value="#{row.bindings.VoucherDDescription.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDDescription.tooltip}"
+                                  id="it12">
+                      <f:validator binding="#{row.bindings.VoucherDDescription.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.label}"
+                             id="c17">
+                    <af:inputText value="#{row.bindings.VoucherDDr.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.VoucherDDr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherDView3.hints.VoucherDDr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.label}"
+                             id="c18">
+                    <af:inputText value="#{row.bindings.VoucherDCr.inputValue}"
+                                  label="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.label}"
+                                  required="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.mandatory}"
+                                  columns="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.displayWidth}"
+                                  maximumLength="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.precision}"
+                                  shortDesc="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.VoucherDCr.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblJRVVoucherDView3.hints.VoucherDCr.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b8"
+                                           icon="#{resource['images:refresh.png']}"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
+              <af:spacer width="300" height="10" id="s5"/>
+              <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+              icon="#{resource['images:add.png']}"
+                         disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
+              <af:spacer width="5" height="10" id="s6"/>
+              <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
+              icon="#{resource['images:edit.png']}"
+                         disabled="#{!bindings.Execute1.enabled}" id="b9"/>
+              <af:spacer width="5" height="10" id="s7"/>
+              <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+              icon="#{resource['images:delete.png']}"
+                         disabled="#{!bindings.Delete1.enabled}" id="b7"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

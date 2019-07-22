@@ -1,0 +1,367 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Training Schedule">
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                                           </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Training Schedule Master"
+                                                                           inflexibleHeight="100">
+                                        <af:panelFormLayout id="pfl1" maxColumns="3" rows="5">
+                                                                <af:inputText value="#{bindings.TrainingSchMasterId.inputValue}"
+                                                                              label="#{bindings.TrainingSchMasterId.hints.label}"
+                                                                              required="#{bindings.TrainingSchMasterId.hints.mandatory}"
+                                                                              columns="#{bindings.TrainingSchMasterId.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.TrainingSchMasterId.hints.precision}"
+                                                                              shortDesc="#{bindings.TrainingSchMasterId.hints.tooltip}"
+                                                                              id="it1">
+                                                                    <f:validator binding="#{bindings.TrainingSchMasterId.validator}"/>
+                                                                </af:inputText>
+                                                                <af:selectOneChoice value="#{bindings.ProjCompId.inputValue}"
+                                                                                    label="#{bindings.ProjCompId.label}"
+                                                                                    required="#{bindings.ProjCompId.hints.mandatory}"
+                                                                                    shortDesc="#{bindings.ProjCompId.hints.tooltip}"
+                                                                                    id="soc1">
+                                                                    <f:selectItems value="#{bindings.ProjCompId.items}"
+                                                                                   id="si1"/>
+                                                                    <f:validator binding="#{bindings.ProjCompId.validator}"/>
+                                                                </af:selectOneChoice>
+                                                                <af:selectOneChoice value="#{bindings.CourseId.inputValue}"
+                                                                                    label="#{bindings.CourseId.label}"
+                                                                                    required="#{bindings.CourseId.hints.mandatory}"
+                                                                                    shortDesc="#{bindings.CourseId.hints.tooltip}"
+                                                                                    id="soc2">
+                                                                    <f:selectItems value="#{bindings.CourseId.items}"
+                                                                                   id="si2"/>
+                                                                    <f:validator binding="#{bindings.CourseId.validator}"/>
+                                                                </af:selectOneChoice>
+                                                                <af:selectOneChoice value="#{bindings.ModuleId.inputValue}"
+                                                                                    label="#{bindings.ModuleId.label}"
+                                                                                    required="#{bindings.ModuleId.hints.mandatory}"
+                                                                                    shortDesc="#{bindings.ModuleId.hints.tooltip}"
+                                                                                    id="soc3" contentStyle="width:200px">
+                                                                    <f:selectItems value="#{bindings.ModuleId.items}"
+                                                                                   id="si3"/>
+                                                                    <f:validator binding="#{bindings.ModuleId.validator}"/>
+                                                                </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.TeamFormationId.inputValue}"
+                                                        label="#{bindings.TeamFormationId.label}"
+                                                        required="#{bindings.TeamFormationId.hints.mandatory}"
+                                                        shortDesc="#{bindings.TeamFormationId.hints.tooltip}" id="soc4">
+                                        <f:selectItems value="#{bindings.TeamFormationId.items}" id="si4"/>
+                                        <f:validator binding="#{bindings.TeamFormationId.validator}"/>
+                                    </af:selectOneChoice>
+                                    <!--<af:selectOneChoice value="#{bindings.ClusterId.inputValue}"
+                                                                                    label="#{bindings.ClusterId.label}"
+                                                                                    required="#{bindings.ClusterId.hints.mandatory}"
+                                                                                    shortDesc="#{bindings.ClusterId.hints.tooltip}"
+                                                                                    id="soc4">
+                                                                    <f:selectItems value="#{bindings.ClusterId.items}"
+                                                                                   id="si4"/>
+                                                                    <f:validator binding="#{bindings.ClusterId.validator}"/>
+                                                                </af:selectOneChoice>-->
+                                                                <af:inputDate value="#{bindings.Dated.inputValue}"
+                                                                              label="#{bindings.Dated.hints.label}"
+                                                                              required="#{bindings.Dated.hints.mandatory}"
+                                                                              columns="#{bindings.Dated.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.Dated.hints.tooltip}"
+                                                                              id="id1">
+                                                                    <f:validator binding="#{bindings.Dated.validator}"/>
+                                                                    <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                                                                </af:inputDate>
+                                                                <af:inputText value="#{bindings.Status.inputValue}"
+                                                                              label="#{bindings.Status.hints.label}"
+                                                                              required="#{bindings.Status.hints.mandatory}"
+                                                                              columns="#{bindings.Status.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.Status.hints.precision}"
+                                                                              shortDesc="#{bindings.Status.hints.tooltip}"
+                                                                              id="it3">
+                                                                    <f:validator binding="#{bindings.Status.validator}"/>
+                                                                    <af:convertNumber groupingUsed="false"
+                                                                                      pattern="#{bindings.Status.format}"/>
+                                                                </af:inputText>
+                                                                <af:inputText value="#{bindings.Mon.inputValue}"
+                                                                              label="#{bindings.Mon.hints.label}"
+                                                                              required="#{bindings.Mon.hints.mandatory}"
+                                                                              columns="#{bindings.Mon.hints.displayWidth}"
+                                                                              maximumLength="#{bindings.Mon.hints.precision}"
+                                                                              shortDesc="#{bindings.Mon.hints.tooltip}"
+                                                                              id="it4">
+                                                                    <f:validator binding="#{bindings.Mon.validator}"/>
+                                                                </af:inputText>
+                                                                <af:inputDate value="#{bindings.StDate.inputValue}"
+                                                                              label="#{bindings.StDate.hints.label}"
+                                                                              required="#{bindings.StDate.hints.mandatory}"
+                                                                              columns="#{bindings.StDate.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.StDate.hints.tooltip}"
+                                                                              id="id2">
+                                                                    <f:validator binding="#{bindings.StDate.validator}"/>
+                                                                    <af:convertDateTime pattern="#{bindings.StDate.format}"/>
+                                                                </af:inputDate>
+                                                                <af:inputDate value="#{bindings.EnDate.inputValue}"
+                                                                              label="#{bindings.EnDate.hints.label}"
+                                                                              required="#{bindings.EnDate.hints.mandatory}"
+                                                                              columns="#{bindings.EnDate.hints.displayWidth}"
+                                                                              shortDesc="#{bindings.EnDate.hints.tooltip}"
+                                                                              id="id3">
+                                                                    <f:validator binding="#{bindings.EnDate.validator}"/>
+                                                                    <af:convertDateTime pattern="#{bindings.EnDate.format}"/>
+                                                                </af:inputDate>
+                                                                <af:inputText value="#{bindings.Remarks.inputValue}"
+                                                                              label="#{bindings.Remarks.hints.label}"
+                                                                              required="#{bindings.Remarks.hints.mandatory}"
+                                                                              columns="30" rows="4"
+                                                                              maximumLength="#{bindings.Remarks.hints.precision}"
+                                                                              shortDesc="#{bindings.Remarks.hints.tooltip}"
+                                                                              id="it5">
+                                                                    <f:validator binding="#{bindings.Remarks.validator}"/>
+                                                                </af:inputText>
+                                                            </af:panelFormLayout>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}"
+                                                                       id="b12"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    
+                                                    <af:panelGroupLayout id="pg1">
+                                                    <af:spacer width="230" height="20" id="s16"/>
+                                                     <af:button actionListener="#{bindings.First.execute}"
+                                                                                       text="First"
+                                                                                       disabled="#{!bindings.First.enabled}"
+                                                                                       partialSubmit="true" id="b17"
+                                                                icon="#{resource['images:first.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Previous.execute}"
+                                                                                       text="Previous"
+                                                                                       disabled="#{!bindings.Previous.enabled}"
+                                                                                       partialSubmit="true" id="b18"
+                                                                                       icon="#{resource['images:backward.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Next.execute}"
+                                                                                       text="Next"
+                                                                                       disabled="#{!bindings.Next.enabled}"
+                                                                                       partialSubmit="true" id="b19"
+                                                                                       icon="#{resource['images:forward.png']}"/>
+                                                                            <af:button actionListener="#{bindings.Last.execute}"
+                                                                                       text="Last"
+                                                                                       disabled="#{!bindings.Last.enabled}"
+                                                                                       partialSubmit="true" id="b20"
+                                                                                       icon="#{resource['images:last.png']}"/>
+                                                                        <af:spacer width="100" height="10" id="s10"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                               text="Add"
+                                                               icon="#{resource['images:add.png']}"
+                                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b13"/>
+                                                        <af:spacer width="5" height="10" id="s17"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                    icon="#{resource['images:edit.png']}"
+                                                               text="Edit" disabled="#{!bindings.Execute.enabled}"
+                                                               id="b8"/>
+                                                        <af:spacer width="5" height="10" id="s11"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                    icon="#{resource['images:delete.png']}"
+                                                               disabled="#{!bindings.Delete.enabled}" id="b9"
+                                                               immediate="true" action="Training_Sched.jsf" />
+                                                    </af:panelGroupLayout>
+                                                    
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                                    
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                                    <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab2" text="Training Schedule Detail">
+                                                            <af:table value="#{bindings.TblTrainingSchDetailView4.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblTrainingSchDetailView4.rangeSize}"
+                                                                      emptyText="#{bindings.TblTrainingSchDetailView4.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblTrainingSchDetailView4.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblTrainingSchDetailView4.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblTrainingSchDetailView4.rangeSize}"
+                                                                      filterModel="#{bindings.TblTrainingSchDetailView4Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblTrainingSchDetailView4Query.processQuery}"
+                                                                      varStatus="vs" id="t2"
+                                                                      partialTriggers="::b13 ::b14 ::b15 ::b22"
+                                                                      width="694"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
+                                                                <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.ClusterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Cluster"
+                                                                           id="c2">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                                                                     id="it20" placeholder="Search Cluster">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                                                        label="#{row.bindings.ClusterId.label}"
+                                                                                        required="#{bindings.TblTrainingSchDetailView4.hints.ClusterId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblTrainingSchDetailView4.hints.ClusterId.tooltip}"
+                                                                                        id="soc6">
+                                                                        <f:selectItems value="#{row.bindings.ClusterId.items}"
+                                                                                       id="si6"/>
+                                                                        <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Training Schedule Detail ID" align="center"
+                                                                           id="c14">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.TrainingSchDetailId}"
+                                                                                     id="it21" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.TrainingSchDetailId.inputValue}"
+                                                                                  label="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.label}"
+                                                                                  required="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.mandatory}"
+                                                                                  columns="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.precision}"
+                                                                                  shortDesc="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchDetailId.tooltip}"
+                                                                                  id="it11" readOnly="true" >
+                                                                        <f:validator binding="#{row.bindings.TrainingSchDetailId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Training Schedule Master ID" align="center"
+                                                                           id="c15">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.TrainingSchMasterId}"
+                                                                                     id="it22" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.TrainingSchMasterId.inputValue}"
+                                                                                  label="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.label}"
+                                                                                  required="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.mandatory}"
+                                                                                  columns="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.precision}"
+                                                                                  shortDesc="#{bindings.TblTrainingSchDetailView4.hints.TrainingSchMasterId.tooltip}"
+                                                                                  id="it12" >
+                                                                        <f:validator binding="#{row.bindings.TrainingSchMasterId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                    <af:column headerText="#{bindings.TblTrainingSchDetailView4.hints.Latitude.label}"
+                                               id="c1">
+                                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                                      label="#{bindings.TblTrainingSchDetailView4.hints.Latitude.label}"
+                                                      required="#{bindings.TblTrainingSchDetailView4.hints.Latitude.mandatory}"
+                                                      columns="#{bindings.TblTrainingSchDetailView4.hints.Latitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingSchDetailView4.hints.Latitude.precision}"
+                                                      shortDesc="#{bindings.TblTrainingSchDetailView4.hints.Latitude.tooltip}"
+                                                      id="it6">
+                                            <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblTrainingSchDetailView4.hints.Latitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.TblTrainingSchDetailView4.hints.Longitude.label}"
+                                               id="c3">
+                                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                                      label="#{bindings.TblTrainingSchDetailView4.hints.Longitude.label}"
+                                                      required="#{bindings.TblTrainingSchDetailView4.hints.Longitude.mandatory}"
+                                                      columns="#{bindings.TblTrainingSchDetailView4.hints.Longitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingSchDetailView4.hints.Longitude.precision}"
+                                                      shortDesc="#{bindings.TblTrainingSchDetailView4.hints.Longitude.tooltip}"
+                                                      id="it7">
+                                            <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblTrainingSchDetailView4.hints.Longitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.DatedD.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Date" align="center"
+                                                                           id="c16">
+                                                                    <f:facet name="filter">
+                                                                        <af:inputDate value="#{bindings.TblTrainingSchDetailView4Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedD.value}"
+                                                                                      id="id7">
+                                                                            <af:convertDateTime pattern="#{bindings.TblTrainingSchDetailView4.hints.DatedD.format}"/>
+                                                                        </af:inputDate>
+                                                                    </f:facet>
+                                                                    <af:inputDate value="#{row.bindings.DatedD.inputValue}"
+                                                                                  label="#{bindings.TblTrainingSchDetailView4.hints.DatedD.label}"
+                                                                                  required="#{bindings.TblTrainingSchDetailView4.hints.DatedD.mandatory}"
+                                                                                  columns="#{bindings.TblTrainingSchDetailView4.hints.DatedD.displayWidth}"
+                                                                                  shortDesc="#{bindings.TblTrainingSchDetailView4.hints.DatedD.tooltip}"
+                                                                                  id="id8">
+                                                                        <f:validator binding="#{row.bindings.DatedD.validator}"/>
+                                                                        <af:convertDateTime pattern="#{bindings.TblTrainingSchDetailView4.hints.DatedD.format}"/>
+                                                                    </af:inputDate>
+                                                                </af:column>
+                                                                
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute1.enabled}"
+                                                                       id="b22"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                                    
+                                                    <af:panelGroupLayout id="pg2">
+                                                    <af:spacer width="120" height="20" id="s2"/>
+                                                         <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                               text="Add"
+                                                               icon="#{resource['images:add.png']}"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b7"/>
+                                                        <af:spacer width="5" height="10" id="s13"/>
+                                                        <af:button actionListener="#{bindings.Execute1.execute}"
+                                                               text="Edit" disabled="#{!bindings.Execute1.enabled}"
+                                                               icon="#{resource['images:edit.png']}"
+                                                               id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s14"/>
+                                                        <af:button actionListener="#{bindings.Delete1.execute}"
+                                                    icon="#{resource['images:delete.png']}"
+                                                               text="Delete" disabled="#{!bindings.Delete1.enabled}"
+                                                               id="b15"
+                                                               immediate="true" action="Training_Sched.jsf" />
+                                                    </af:panelGroupLayout>
+                                                    
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

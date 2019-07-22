@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Topic_SetupPageDef"
+                Package="Fragments.Modules.Training">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblModuleView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblModuleView1Iterator"/>
+    <iterator Binds="TblTopicsView3" RangeSize="8" DataControl="AppModuleDataControl" id="TblTopicsView3Iterator"/>
+    <searchRegion Binds="TblTopicsView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTopicsView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblModuleView1Iterator" id="TblModuleView1">
+      <nodeDefinition DefName="model.VO.TblModuleView" Name="TblModuleView10">
+        <AttrNames>
+          <Item Value="ModuleId"/>
+          <Item Value="CourseId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="Course_Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblTopicsView3Iterator" id="TblTopicsView3">
+      <nodeDefinition DefName="model.VO.TblTopicsView" Name="TblTopicsView30">
+        <AttrNames>
+          <Item Value="TopicsId"/>
+          <Item Value="ModuleId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTopicsView3Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblTopicsView3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblTopicsView3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

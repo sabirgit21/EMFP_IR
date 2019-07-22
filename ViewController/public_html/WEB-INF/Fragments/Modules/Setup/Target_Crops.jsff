@@ -1,0 +1,271 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane2" text="Target Crops">
+            <af:panelGridLayout id="pgl2">
+            <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                   </af:gridCell>
+                                           </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Project Office">
+                                <af:table value="#{bindings.TblProjOffView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblProjOffView1.rangeSize}"
+                                          emptyText="#{bindings.TblProjOffView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblProjOffView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblProjOffView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblProjOffView1.rangeSize}"
+                                          filterModel="#{bindings.TblProjOffView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblProjOffView1Query.processQuery}" varStatus="vs"
+                                          id="t1" partialTriggers="::b9 ::b2" scrollPolicy="page" autoHeightRows="0"
+                                          width="999">
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Project_Name.name}"
+                                               filterable="true" headerText="Project" id="c16" width="150">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Project_Name}" id="it36"
+                                                          placeholder="Search Project"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Project_Name}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Project_Name.tooltip}"
+                                                       id="ot11"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Name.name}"
+                                               filterable="true" headerText="Project Office" id="c3" width="150">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Name}" id="it3"
+                                                          placeholder="Search Project Office"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Name}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Name.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.ContactPer.name}"
+                                               filterable="true" headerText="Contact Person" id="c4" width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.ContactPer}" id="it6"
+                                                          placeholder="Search Contact Person"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.ContactPer}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.ContactPer.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Address.name}"
+                                               filterable="true"
+                                               headerText="#{bindings.TblProjOffView1.hints.Address.label}" id="c5"
+                                               width="150">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Address}" id="it7"
+                                                          placeholder="Search Address"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Address}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Address.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Tel.name}"
+                                               filterable="true" align="center" headerText="Telephone" id="c6"
+                                               width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Tel}" id="it8"
+                                                          placeholder="Search Telephone"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Tel}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Tel.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Fax.name}"
+                                               filterable="true" align="center"
+                                               headerText="#{bindings.TblProjOffView1.hints.Fax.label}" id="c7"
+                                               width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Fax}" id="it9"
+                                                          placeholder="Search Fax"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Fax}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Fax.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Email.name}"
+                                               filterable="true" headerText="E-mail" id="c8" width="100">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Email}" id="it10"
+                                                          placeholder="Search E-mail"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Email}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Email.tooltip}"
+                                                       id="ot8"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Category.name}"
+                                               filterable="true" align="left"
+                                               headerText="#{bindings.TblProjOffView1.hints.Category.label}" id="c1"
+                                               width="100">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Category}" id="it11"
+                                                          placeholder="Search Category"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Category.inputValue}"
+                                                            label="#{row.bindings.Category.label}"
+                                                            required="#{bindings.TblProjOffView1.hints.Category.mandatory}"
+                                                            shortDesc="#{bindings.TblProjOffView1.hints.Category.tooltip}"
+                                                            id="soc3" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.Category.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.Category.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblProjOffView1.hints.Ast.name}"
+                                               filterable="true" align="left" headerText="Active" id="c10" width="60">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it12"
+                                                          placeholder="Search Status"></af:inputText>
+                                        </f:facet>
+                                        <af:outputText value="#{row.Ast}"
+                                                       shortDesc="#{bindings.TblProjOffView1.hints.Ast.tooltip}"
+                                                       id="ot10"/>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b9"
+                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab2" text="Target Crops">
+                                <af:table value="#{bindings.TblTargetCropsView4.collectionModel}" var="row"
+                                          rows="#{bindings.TblTargetCropsView4.rangeSize}"
+                                          emptyText="#{bindings.TblTargetCropsView4.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblTargetCropsView4.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblTargetCropsView4.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblTargetCropsView4.rangeSize}"
+                                          filterModel="#{bindings.TblTargetCropsView4Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblTargetCropsView4Query.processQuery}"
+                                          varStatus="vs" id="t2" partialTriggers="::b10"
+                                          scrollPolicy="page" autoHeightRows="0" width="723">
+                                    <af:column sortProperty="#{bindings.TblTargetCropsView4.hints.CropId.name}"
+                                               filterable="true" sortable="true" headerText="Crop" id="c19" width="200">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CropId}" id="it15"
+                                                          placeholder="Search Crop"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.CropId.inputValue}"
+                                                            label="#{row.bindings.CropId.label}"
+                                                            required="#{bindings.TblTargetCropsView4.hints.CropId.mandatory}"
+                                                            shortDesc="#{bindings.TblTargetCropsView4.hints.CropId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.CropId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.CropId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTargetCropsView4.hints.TargetCropsId.name}"
+                                               filterable="true" sortable="true" align="center" headerText="Target ID"
+                                               id="c11" width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.TargetCropsId}" id="it16"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.TargetCropsId.inputValue}"
+                                                      label="#{bindings.TblTargetCropsView4.hints.TargetCropsId.label}"
+                                                      required="#{bindings.TblTargetCropsView4.hints.TargetCropsId.mandatory}"
+                                                      columns="#{bindings.TblTargetCropsView4.hints.TargetCropsId.displayWidth}"
+                                                      maximumLength="#{bindings.TblTargetCropsView4.hints.TargetCropsId.precision}"
+                                                      shortDesc="#{bindings.TblTargetCropsView4.hints.TargetCropsId.tooltip}"
+                                                      id="it1" readOnly="true">
+                                            <f:validator binding="#{row.bindings.TargetCropsId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTargetCropsView4.hints.TarDis.name}"
+                                               filterable="true" sortable="true" headerText="Target Distribution"
+                                               id="c14" width="300">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.TarDis}" id="it17"
+                                                          placeholder="Search Target Distribution"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.TarDis.inputValue}"
+                                                      label="#{bindings.TblTargetCropsView4.hints.TarDis.label}"
+                                                      required="#{bindings.TblTargetCropsView4.hints.TarDis.mandatory}"
+                                                      columns="#{bindings.TblTargetCropsView4.hints.TarDis.displayWidth}"
+                                                      maximumLength="#{bindings.TblTargetCropsView4.hints.TarDis.precision}"
+                                                      shortDesc="#{bindings.TblTargetCropsView4.hints.TarDis.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.TarDis.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTargetCropsView4.hints.Ast.name}"
+                                               filterable="true" sortable="true" headerText="Active" id="c15"
+                                               width="80">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it18"
+                                                          placeholder="Search Status"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblTargetCropsView4.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblTargetCropsView4.hints.Ast.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b2"
+                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        
+                        <af:panelGroupLayout id="pg1">
+                        <af:spacer width="220" height="10" id="s2"/>
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                       icon="#{resource['images:add.png']}" disabled="#{!bindings.CreateInsert.enabled}"
+                                       id="b12" inlineStyle="width:70px; text-align:center; vertical-align: middle;"/>
+                            <af:spacer width="5" height="20" id="s10"/>
+                            <af:button actionListener="#{bindings.Execute.execute}"
+                                       icon="#{resource['images:edit.png']}" text="Edit"
+                                       disabled="#{!bindings.Execute.enabled}" id="b13"
+                                       inlineStyle="width:70px; text-align:center; vertical-align: middle;"/>
+                            <af:spacer width="5" height="20" id="s11"/>
+                            <af:button actionListener="#{bindings.Delete.execute}"
+                                       icon="#{resource['images:delete.png']}" text="Delete"
+                                       disabled="#{!bindings.Delete.enabled}" id="b14"
+                                       inlineStyle="width:70px; text-align:center; vertical-align: middle;"
+                                       immediate="true" action="Target_Crops.jsf"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

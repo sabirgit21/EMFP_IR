@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">282.1494</property>
+      <property
+         name="x">91.5</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">Training_Setup</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Training/Training_Setup.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Training_Setup&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">268.34473</property>
+      <property
+         name="x">309.30664</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+</SDM>

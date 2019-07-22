@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1">
+        <af:showDetailItem id="pane1" text="Cluster Detail Report">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"></af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <!--<af:selectOneChoice value="#{bindings.Phase_Name_LOV1.inputValue}" label="Select Phase "
+                                                shortDesc="#{bindings.Phase_Name_LOV1.hints.tooltip}" id="soc2"
+                                                autoSubmit="true" disabled="true"
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_phase}">
+                                <af:selectItem label="none" value="none" id="si6"/>
+                                <f:selectItems value="#{bindings.Phase_Name_LOV1.items}" id="si3"/>
+                                <f:validator binding="#{bindings.Phase_Name_LOV1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice value="#{bindings.Crops_Name_LOV1.inputValue}" label="Select Crop "
+                                                shortDesc="#{bindings.Crops_Name_LOV1.hints.tooltip}" id="soc3"
+                                                autoSubmit="true" disabled="true"
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_crop}">
+                                <af:selectItem label="none" value="none" id="si8"/>
+                                <f:selectItems value="#{bindings.Crops_Name_LOV1.items}" id="si4"/>
+                                <f:validator binding="#{bindings.Crops_Name_LOV1.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s2"/>
+                            <af:selectOneChoice value="#{bindings.City_Name_LOV1.inputValue}" label="Select City"
+                                                shortDesc="#{bindings.City_Name_LOV1.hints.tooltip}" id="soc4"
+                                                autoSubmit="true" disabled="true"
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_city}">
+                                <af:selectItem label="none" value="none" id="si7"/>
+                                <f:selectItems value="#{bindings.City_Name_LOV1.items}" id="si5"/>
+                                <f:validator binding="#{bindings.City_Name_LOV1.validator}"/>
+                            </af:selectOneChoice>-->
+                            
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:spacer width="10" height="10" id="s4"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:selectOneChoice label="Select Report Type" id="soc1" unselectedLabel="---Select---"
+                                                value="#{backingBeanScope.cluster_detail_report_Backbean.reportType}">
+                                <af:selectItem label="Phase Wise" value="phaseWise" id="si1"/>
+                                <af:selectItem label="Crop Wise" value="cropWise" id="si2"/>
+                                <af:selectItem label="City Wise" value="cityWise" id="si9"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="100" height="10" id="s3"/>
+                            <af:button text="Generate Report" id="b1"
+                                       action="#{backingBeanScope.cluster_detail_report_Backbean.gen_cluster_detail_report}"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

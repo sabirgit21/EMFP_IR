@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Trainer_SM_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblTrainer.TRAINER_ID, 
+       TblTrainer.NAME, 
+       TblTrainer.AST, 
+       TblTrainer.TRAINER_TYPE"
+  FromList="TBL_TRAINER TblTrainer"
+  Where="AST='Y'   
+AND   
+TblTrainer.TRAINER_TYPE='SM'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Trainer_SM_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblTrainer"
+    Entity="model.EO.TblTrainer"/>
+  <ViewAttribute
+    Name="TrainerId"
+    PrecisionRule="true"
+    EntityAttrName="TrainerId"
+    EntityUsage="TblTrainer"
+    AliasName="TRAINER_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblTrainer"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblTrainer"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="TrainerType"
+    PrecisionRule="true"
+    EntityAttrName="TrainerType"
+    EntityUsage="TblTrainer"
+    AliasName="TRAINER_TYPE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

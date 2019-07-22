@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Cluster_SetupPageDef"
+                Package="Fragments.Modules.Clusters_Farmers">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblClusterView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
+    <searchRegion Binds="TblClusterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblClusterView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblClusterView1Iterator" id="TblClusterView1">
+      <nodeDefinition DefName="model.VO.TblClusterView" Name="TblClusterView10">
+        <AttrNames>
+          <Item Value="ClusterId"/>
+          <Item Value="CropId"/>
+          <Item Value="Name"/>
+          <Item Value="CityLibrDetail"/>
+          <Item Value="DistrictLibrDetail"/>
+          <Item Value="TehsilLibrDetail"/>
+          <Item Value="MauzaLibrDetail"/>
+          <Item Value="VillageLibrDetail"/>
+          <Item Value="Ast"/>
+          <Item Value="PhaseId"/>
+          <Item Value="ClusterNo"/>
+          <Item Value="UcLibrDetail"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblClusterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblClusterView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblClusterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Reports_Names_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblReports.AST, 
+       TblReports.REPORTS_ID, 
+       TblReports.REPORTS_NAME"
+  FromList="TBL_REPORTS TblReports"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Reports_Names_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblReports"
+    Entity="model.EO.TblReports"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblReports"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="ReportsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ReportsId"
+    EntityUsage="TblReports"
+    AliasName="REPORTS_ID"/>
+  <ViewAttribute
+    Name="ReportsName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ReportsName"
+    EntityUsage="TblReports"
+    AliasName="REPORTS_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

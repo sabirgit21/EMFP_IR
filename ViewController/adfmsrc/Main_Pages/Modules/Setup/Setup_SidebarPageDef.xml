@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Setup_SidebarPageDef"
+                Package="Main_Pages.Modules.Setup">
+  <parameters/>
+  <executables>
+    <iterator Binds="USERS_PAGES1" RangeSize="25" DataControl="AppModuleDataControl" id="USERS_PAGES1Iterator"/>
+    <searchRegion Binds="USERS_PAGES1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="USERS_PAGES1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_PAGES1Iterator" id="USERS_PAGES1">
+      <nodeDefinition DefName="model.VO.USERS_PAGES" Name="USERS_PAGES10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

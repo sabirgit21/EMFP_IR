@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="REPORTS_PAGES"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.USERS_ROLES.REPORTS_PAGES_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  
+  <Variable
+    Name="RROLEMASTERID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="REPORTS_PAGES"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT             
+TR.REPORTS_NAME, TR.AST, TR.REPORT_ICON, TR.REPORT_LINK,      
+RDR.ROLE_MASTER_ID, RDR.REPORTS_ID, RDR.ROLE_MASTER_ID, RDR.R_VIEW         
+FROM             
+TBL_REPORTS TR, TBL_ROLE_DETAIL_REPORTS RDR           
+Where             
+TR.REPORTS_ID = RDR.REPORTS_ID            
+AND            
+RDR.R_VIEW = 'Y'            
+AND            
+TR.AST = 'Y'            
+AND            
+TR.MODULE_MENU_ID = 8        
+AND            
+RDR.ROLE_MASTER_ID = :RROLEMASTERID]]></SQLQuery>
+  <ViewAttribute
+    Name="ReportsName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REPORTS_NAME"
+    Expression="REPORTS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportIcon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REPORT_ICON"
+    Expression="REPORT_ICON"
+    SQLType="VARCHAR">
+    
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  
+  <ViewAttribute
+    Name="ReportLink"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REPORT_LINK"
+    Expression="REPORT_LINK"
+    SQLType="VARCHAR">
+    
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  
+  <ViewAttribute
+    Name="RoleMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLE_MASTER_ID"
+    Expression="ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ReportsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="REPORTS_ID"
+    Expression="REPORTS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="RoleMasterId1"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLE_MASTER_ID"
+    Expression="ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+    
+  <ViewAttribute
+    Name="RView"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="R_VIEW"
+    Expression="R_VIEW"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ReportsId"/>
+  </AttrArray>
+  <ResourceBundle>
+  
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  
+</ViewObject>

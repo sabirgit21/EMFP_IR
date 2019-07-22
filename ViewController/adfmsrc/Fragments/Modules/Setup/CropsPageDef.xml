@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="CropsPageDef"
+                Package="Fragments.Modules.Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblCropView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblCropView1Iterator"/>
+    <searchRegion Binds="TblCropView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCropView1Query"/>
+    <iterator Binds="TblCropTypeView3" RangeSize="8" DataControl="AppModuleDataControl" id="TblCropTypeView3Iterator"/>
+    <searchRegion Binds="TblCropTypeView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCropTypeView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblCropView1Iterator" id="TblCropView1">
+      <nodeDefinition DefName="model.VO.TblCropView" Name="TblCropView10">
+        <AttrNames>
+          <Item Value="CropId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="FrMonth"/>
+          <Item Value="ToMonth"/>
+          <Item Value="CropType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCropView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblCropView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCropView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblCropTypeView3Iterator" id="TblCropTypeView3">
+      <nodeDefinition DefName="model.VO.TblCropTypeView" Name="TblCropTypeView30">
+        <AttrNames>
+          <Item Value="CropTypeId"/>
+          <Item Value="CropId"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCropTypeView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCropTypeView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblCropTypeView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

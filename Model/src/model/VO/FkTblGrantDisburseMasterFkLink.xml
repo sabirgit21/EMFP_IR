@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblGrantDisburseMasterFkLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblGrantDisburseMasterFkAssoc">
+  <ViewLinkDefEnd
+    Name="TblGrantApprovalMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblGrantApprovalMasterView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblGrantApprovalMasterView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantApprovalMasterView.GrantApprovalMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblGrantDisburseMasterView"
+    Cardinality="-1"
+    Owner="model.VO.TblGrantDisburseMasterView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblGrantDisburseMasterView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantDisburseMasterView.GrantApprovalMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

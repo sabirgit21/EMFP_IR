@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Program_Name_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblProg.AST, 
+       TblProg.NAME, 
+       TblProg.PROG_ID"
+  FromList="TBL_PROG TblProg"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Program_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblProg"
+    Entity="model.EO.TblProg"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblProg"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblProg"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="ProgId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProgId"
+    EntityUsage="TblProg"
+    AliasName="PROG_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cluster_Detail_ReportPageDef"
+                Package="Fragments.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Phase_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Phase_Name_LOV1Iterator"/>
+    <iterator Binds="Crops_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Crops_Name_LOV1Iterator"/>
+    <iterator Binds="City_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="City_Name_LOV1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="Phase_Name_LOV1Iterator" ListOperMode="navigation" ListIter="Phase_Name_LOV1Iterator"
+          id="Phase_Name_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="Crops_Name_LOV1Iterator" ListOperMode="navigation" ListIter="Crops_Name_LOV1Iterator"
+          id="Crops_Name_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="City_Name_LOV1Iterator" ListOperMode="navigation" ListIter="City_Name_LOV1Iterator"
+          id="City_Name_LOV1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

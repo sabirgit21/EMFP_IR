@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Role_Master_Name_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblRoleMaster.AST, 
+       TblRoleMaster.ROLE_MASTER_ID, 
+       TblRoleMaster.ROLE_MASTER_NAME"
+  FromList="TBL_ROLE_MASTER TblRoleMaster"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Role_Master_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblRoleMaster"
+    Entity="model.EO.TblRoleMaster"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblRoleMaster"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="RoleMasterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RoleMasterId"
+    EntityUsage="TblRoleMaster"
+    AliasName="ROLE_MASTER_ID"/>
+  <ViewAttribute
+    Name="RoleMasterName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RoleMasterName"
+    EntityUsage="TblRoleMaster"
+    AliasName="ROLE_MASTER_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

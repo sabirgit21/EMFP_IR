@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Pages_Name_LOV"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  SelectList="TblPages.AST, 
+       TblPages.PAGES_ID, 
+       TblPages.PAGES_NAME"
+  FromList="TBL_PAGES TblPages"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Pages_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblPages"
+    Entity="model.EO.TblPages"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPages"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="PagesId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PagesId"
+    EntityUsage="TblPages"
+    AliasName="PAGES_ID"/>
+  <ViewAttribute
+    Name="PagesName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PagesName"
+    EntityUsage="TblPages"
+    AliasName="PAGES_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

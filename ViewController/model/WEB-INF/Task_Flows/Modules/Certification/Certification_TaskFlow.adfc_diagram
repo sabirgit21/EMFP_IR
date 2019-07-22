@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Certification</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Certification/Certification.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Certification&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">284.5459</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">313.0</property>
+   </View>
+</SDM>

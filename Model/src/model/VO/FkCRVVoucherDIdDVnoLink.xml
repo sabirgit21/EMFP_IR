@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCRVVoucherDIdDVnoLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkCRVVoucherDIdDVnoAssoc">
+  <ViewLinkDefEnd
+    Name="TblCRVVoucherMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblCRVVoucherMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TblCRVVoucherMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCRVVoucherMView.VoucherMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCRVVoucherDView"
+    Cardinality="-1"
+    Owner="model.VO.TblCRVVoucherDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCRVVoucherDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCRVVoucherDView.VoucherDId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

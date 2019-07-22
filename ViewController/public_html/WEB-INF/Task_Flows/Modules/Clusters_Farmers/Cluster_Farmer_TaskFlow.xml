@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Cluster_Farmer_TaskFlow">
+    <default-activity>Cluster_Farmer</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+   
+    <managed-bean id="__2">
+      <managed-bean-name>FileManagingBean</managed-bean-name>
+      <managed-bean-class>view.FileManaging</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="Cluster_Setup">
+      <page>/WEB-INF/Fragments/Modules/Clusters_Farmers/Cluster_Setup.jsff</page>
+    </view>
+    <view id="Farmer_Registration">
+      <page>/WEB-INF/Fragments/Modules/Clusters_Farmers/Farmer_Registration.jsff</page>
+    </view>
+    <view id="Cluster_Farmer">
+      <page>/WEB-INF/Fragments/Modules/Clusters_Farmers/Main_Cluster_Farmer.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

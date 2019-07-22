@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Comapny Profile">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" halign="end" valign="middle">
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Comapny Profile">
+                                <af:table value="#{bindings.TblCompanyprofileView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblCompanyprofileView1.rangeSize}"
+                                          emptyText="#{bindings.TblCompanyprofileView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblCompanyprofileView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblCompanyprofileView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblCompanyprofileView1.rangeSize}"
+                                          filterModel="#{bindings.TblCompanyprofileView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblCompanyprofileView1Query.processQuery}"
+                                          varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4">
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.label}"
+                                               id="c1">
+                                        <af:inputText value="#{row.bindings.CompanyprofileId.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.CompanyprofileId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.label}"
+                                               id="c2">
+                                        <af:inputText value="#{row.bindings.CompanyprofileTitle.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileTitle.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.CompanyprofileTitle.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.label}"
+                                               id="c3">
+                                        <af:inputText value="#{row.bindings.CompanyprofileKeyPerson.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileKeyPerson.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.CompanyprofileKeyPerson.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.label}"
+                                               id="c4">
+                                        <af:inputText value="#{row.bindings.CompanyprofileNtn.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileNtn.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.CompanyprofileNtn.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.label}"
+                                               id="c5">
+                                        <af:inputText value="#{row.bindings.CompanyprofileOffadr.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffadr.tooltip}"
+                                                      id="it5">
+                                            <f:validator binding="#{row.bindings.CompanyprofileOffadr.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.label}"
+                                               id="c6">
+                                        <af:inputText value="#{row.bindings.CompanyprofileOffph.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileOffph.tooltip}"
+                                                      id="it6">
+                                            <f:validator binding="#{row.bindings.CompanyprofileOffph.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.label}"
+                                               id="c7">
+                                        <af:inputText value="#{row.bindings.CompanyprofileSiteadr.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteadr.tooltip}"
+                                                      id="it7">
+                                            <f:validator binding="#{row.bindings.CompanyprofileSiteadr.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.CompanyprofileSiteph.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileSiteph.tooltip}"
+                                                      id="it8">
+                                            <f:validator binding="#{row.bindings.CompanyprofileSiteph.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.label}"
+                                               id="c9">
+                                        <af:inputText value="#{row.bindings.CompanyprofileEmail.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileEmail.tooltip}"
+                                                      id="it9">
+                                            <f:validator binding="#{row.bindings.CompanyprofileEmail.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.label}"
+                                               id="c10">
+                                        <af:inputText value="#{row.bindings.CompanyprofileUrl.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileUrl.tooltip}"
+                                                      id="it10">
+                                            <f:validator binding="#{row.bindings.CompanyprofileUrl.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.label}"
+                                               id="c11">
+                                        <af:inputText value="#{row.bindings.CompanyprofileFax.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileFax.tooltip}"
+                                                      id="it11">
+                                            <f:validator binding="#{row.bindings.CompanyprofileFax.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.label}"
+                                               id="c12">
+                                        <af:inputText value="#{row.bindings.CompanyprofileAst.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileAst.tooltip}"
+                                                      id="it12">
+                                            <f:validator binding="#{row.bindings.CompanyprofileAst.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.label}"
+                                               id="c13">
+                                        <af:inputText value="#{row.bindings.CompanyprofileComments.inputValue}"
+                                                      label="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.label}"
+                                                      required="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.mandatory}"
+                                                      columns="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.displayWidth}"
+                                                      maximumLength="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.precision}"
+                                                      shortDesc="#{bindings.TblCompanyprofileView1.hints.CompanyprofileComments.tooltip}"
+                                                      id="it13">
+                                            <f:validator binding="#{row.bindings.CompanyprofileComments.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl2">
+                            <af:spacer width="200" height="10" id="s2"/>
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                            icon="#{resource['images:add.png']}"
+                                       disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+                            <af:spacer width="5" height="10" id="s3"/>
+                            <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                            icon="#{resource['images:edit.png']}"
+                                       disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                            <af:spacer width="5" height="10" id="s4"/>
+                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                            icon="#{resource['images:delete.png']}"
+                                       disabled="#{!bindings.Delete.enabled}" id="b4"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

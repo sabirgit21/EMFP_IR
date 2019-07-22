@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Supplier Rate">
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                   </af:gridCell>
+                                           </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Supplier Rate Master Setup">
+                                                            <af:table value="#{bindings.TblSupplierRateMasterView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblSupplierRateMasterView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblSupplierRateMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblSupplierRateMasterView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblSupplierRateMasterView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblSupplierRateMasterView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblSupplierRateMasterView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblSupplierRateMasterView1Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      partialTriggers="::b9 ::b10 ::b11"
+                                                                      scrollPolicy="page" autoHeightRows="0"
+                                                                      width="908">
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.SupplierId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Supplier" id="c13" width="250">
+                                                                         <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.SupplierId}"
+                                                                                      id="it15" placeholder="Search Supplier">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.SupplierId.inputValue}"
+                                                                                        label="#{row.bindings.SupplierId.label}"
+                                                                                        required="#{bindings.TblSupplierRateMasterView1.hints.SupplierId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblSupplierRateMasterView1.hints.SupplierId.tooltip}"
+                                                                                        id="soc2">
+                                                                        <f:selectItems value="#{row.bindings.SupplierId.items}"
+                                                                                       id="si2"/>
+                                                                        <f:validator binding="#{row.bindings.SupplierId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           align="center"
+                                                                           headerText="Suplier Rate Master ID" id="c1"
+                                                                           width="80">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.SupplierRateMasterId}"
+                                                                                      id="it2" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.SupplierRateMasterId.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.label}"
+                                                                                  required="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.precision}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateMasterView1.hints.SupplierRateMasterId.tooltip}"
+                                                                                  id="it1" readOnly="true" >
+                                                                        <f:validator binding="#{row.bindings.SupplierRateMasterId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.Dated.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           align="center" headerText="Date" id="c3"
+                                                                           width="100">
+                                                                        
+                                                                    <f:facet name="filter">
+                                                                        <af:inputDate value="#{bindings.TblSupplierRateMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                                                      id="id1">
+                                                                            <af:convertDateTime pattern="#{bindings.TblSupplierRateMasterView1.hints.Dated.format}"/>
+                                                                        </af:inputDate>
+                                                                    </f:facet>
+                                                                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateMasterView1.hints.Dated.label}"
+                                                                                  required="#{bindings.TblSupplierRateMasterView1.hints.Dated.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateMasterView1.hints.Dated.displayWidth}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateMasterView1.hints.Dated.tooltip}"
+                                                                                  id="id2">
+                                                                        <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                                                        <af:convertDateTime pattern="#{bindings.TblSupplierRateMasterView1.hints.Dated.format}"/>
+                                                                    </af:inputDate>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.Status.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Voucher Status" id="c4" width="100">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Status}"
+                                                                                      id="it7" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                        
+                                                                    <af:inputText value="#{row.bindings.Status.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateMasterView1.hints.Status.label}"
+                                                                                  required="#{bindings.TblSupplierRateMasterView1.hints.Status.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateMasterView1.hints.Status.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblSupplierRateMasterView1.hints.Status.precision}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateMasterView1.hints.Status.tooltip}"
+                                                                                  id="it3">
+                                                                        <f:validator binding="#{row.bindings.Status.validator}"/>
+                                                                        <af:convertNumber groupingUsed="false"
+                                                                                          pattern="#{bindings.TblSupplierRateMasterView1.hints.Status.format}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.Remarks.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.TblSupplierRateMasterView1.hints.Remarks.label}"
+                                                                           id="c5" width="300">
+                                                                         <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                                                      id="it9" placeholder="Search Remarks">
+                                                                       </af:inputText>
+                                                                   </f:facet>   
+                                                                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateMasterView1.hints.Remarks.label}"
+                                                                                  required="#{bindings.TblSupplierRateMasterView1.hints.Remarks.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateMasterView1.hints.Remarks.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblSupplierRateMasterView1.hints.Remarks.precision}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateMasterView1.hints.Remarks.tooltip}"
+                                                                                  id="it4">
+                                                                        <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}" id="b19"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    
+                                                    <af:panelGroupLayout id="pg1">
+                                                    <af:spacer width="320" height="10" id="s16"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                   text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                   id="b9"/>
+                                                        <af:spacer width="5" height="10" id="s2"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                                   text="Edit" disabled="#{!bindings.Execute.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b2"/>
+                                                        <af:spacer width="5" height="10" id="s10"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                                   text="Delete" icon="#{resource['images:delete.png']}"
+                                                                   disabled="#{!bindings.Delete.enabled}" id="b11"
+                                                                   immediate="true" action="Supplier_Rate_Setup.jsf"/>
+                        </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                                    <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab2" text="Supplier Rate Detail Setup">
+                                                            <af:table value="#{bindings.TblSupplierRateDetailView4.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblSupplierRateDetailView4.rangeSize}"
+                                                                      emptyText="#{bindings.TblSupplierRateDetailView4.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblSupplierRateDetailView4.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblSupplierRateDetailView4.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblSupplierRateDetailView4.rangeSize}"
+                                                                      filterModel="#{bindings.TblSupplierRateDetailView4Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblSupplierRateDetailView4Query.processQuery}"
+                                                                      varStatus="vs" id="t2"
+                                                                      partialTriggers="::b13 ::b14 ::b15 ::b17"
+                                                                      scrollPolicy="page" autoHeightRows="0"
+                                                                      width="572">
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           align="center"
+                                                                           headerText="Supplier Rate Detail ID" id="c6"
+                                                                           width="80">
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.SupplierRateDetailId}"
+                                                                                      id="it10" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                   </f:facet> 
+                                                                    <af:inputText value="#{row.bindings.SupplierRateDetailId.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.label}"
+                                                                                  required="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.precision}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.tooltip}"
+                                                                                  id="it5" readOnly="true" >
+                                                                        <f:validator binding="#{row.bindings.SupplierRateDetailId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateDetailView4.hints.ItemL4Id.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Item" id="c2" width="250">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+                                                                                      id="it12" placeholder="Search Item">
+                                                                       </af:inputText>
+                                                                   </f:facet> 
+                                                                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                                                                        label="#{row.bindings.ItemL4Id.label}"
+                                                                                        required="#{bindings.TblSupplierRateDetailView4.hints.ItemL4Id.mandatory}"
+                                                                                        shortDesc="#{bindings.TblSupplierRateDetailView4.hints.ItemL4Id.tooltip}"
+                                                                                        id="soc3">
+                                                                        <f:selectItems value="#{row.bindings.ItemL4Id.items}"
+                                                                                       id="si3"/>
+                                                                        <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateDetailView4.hints.Rate.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           align="center"
+                                                                           headerText="#{bindings.TblSupplierRateDetailView4.hints.Rate.label}"
+                                                                           id="c9" width="100">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Rate}"
+                                                                                      id="it13" placeholder="Search Rate">
+                                                                       </af:inputText>
+                                                                   </f:facet> 
+                                                                    <af:inputText value="#{row.bindings.Rate.inputValue}"
+                                                                                  label="#{bindings.TblSupplierRateDetailView4.hints.Rate.label}"
+                                                                                  required="#{bindings.TblSupplierRateDetailView4.hints.Rate.mandatory}"
+                                                                                  columns="#{bindings.TblSupplierRateDetailView4.hints.Rate.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblSupplierRateDetailView4.hints.Rate.precision}"
+                                                                                  shortDesc="#{bindings.TblSupplierRateDetailView4.hints.Rate.tooltip}"
+                                                                                  id="it8">
+                                                                        <f:validator binding="#{row.bindings.Rate.validator}"/>
+                                                                        <af:convertNumber groupingUsed="false"
+                                                                                          pattern="#{bindings.TblSupplierRateDetailView4.hints.Rate.format}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblSupplierRateDetailView4.hints.Ast.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Active" id="c10" width="80">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                                      id="it14" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                   </f:facet> 
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblSupplierRateDetailView4.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblSupplierRateDetailView4.hints.Ast.tooltip}"
+                                                                                        id="soc1">
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si1"/>
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute1.enabled}"
+                                                                       id="b17"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                                    
+                                                    <af:panelGroupLayout id="pg2">
+                                                    <af:spacer width="170" height="10" id="s15"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                   text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                   id="b13"/>
+                                                        <af:spacer width="5" height="10" id="s12"/>
+                                                        <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                   text="Edit" disabled="#{!bindings.Execute1.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s13"/>
+                                                        <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                   text="Delete" disabled="#{!bindings.Delete1.enabled}"
+                                                                   icon="#{resource['images:delete.png']}" id="b15"
+                                                                   immediate="true" action="Supplier_Rate_Setup.jsf"/>
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

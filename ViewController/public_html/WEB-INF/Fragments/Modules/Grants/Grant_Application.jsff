@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Grant Application">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Grant Application Master">
+                                <af:table value="#{bindings.TblGrantAppMasterView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblGrantAppMasterView1.rangeSize}"
+                                          emptyText="#{bindings.TblGrantAppMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblGrantAppMasterView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblGrantAppMasterView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblGrantAppMasterView1.rangeSize}"
+                                          filterModel="#{bindings.TblGrantAppMasterView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblGrantAppMasterView1Query.processQuery}"
+                                          varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4 ::b9" width="1017"
+                                          scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Grant Application Master ID" id="c1" align="center"
+                                               width="60">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.GrantAppMasterId}" id="id4"
+                                                          placeholder="Search ID"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.GrantAppMasterId.inputValue}"
+                                                      label="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.label}"
+                                                      required="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.mandatory}"
+                                                      columns="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.precision}"
+                                                      shortDesc="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.tooltip}"
+                                                      id="it1" readOnly="true" contentStyle='text-align:center'>
+                                            <f:validator binding="#{row.bindings.GrantAppMasterId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGrantAppMasterView1.hints.GrantAppMasterId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.FarmerRegId.name}"
+                                               filterable="true" sortable="true" headerText="Farmer" id="c2"
+                                               width="149">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.FarmerRegId}" id="it2"
+                                                          placeholder="Search Farmer"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                                            label="#{row.bindings.FarmerRegId.label}"
+                                                            required="#{bindings.TblGrantAppMasterView1.hints.FarmerRegId.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppMasterView1.hints.FarmerRegId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.Acre.name}"
+                                               filterable="true" sortable="true" headerText="Acre" id="c3" width="82">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Acre}" id="it9"
+                                                          placeholder="Search Acre"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Acre.inputValue}"
+                                                      label="#{bindings.TblGrantAppMasterView1.hints.Acre.label}"
+                                                      required="#{bindings.TblGrantAppMasterView1.hints.Acre.mandatory}"
+                                                      columns="#{bindings.TblGrantAppMasterView1.hints.Acre.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantAppMasterView1.hints.Acre.precision}"
+                                                      shortDesc="#{bindings.TblGrantAppMasterView1.hints.Acre.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.Acre.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGrantAppMasterView1.hints.Acre.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.ClusterId.name}"
+                                               filterable="true" sortable="true" headerText="Cluster" id="c4"
+                                               width="150">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.ClusterId}" id="it4"
+                                                          placeholder="Search Cluster"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                            label="#{row.bindings.ClusterId.label}"
+                                                            required="#{bindings.TblGrantAppMasterView1.hints.ClusterId.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppMasterView1.hints.ClusterId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.ClusterId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.Dated.name}"
+                                               filterable="true" sortable="true" headerText="Date" id="c5" width="104">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblGrantAppMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.TblGrantAppMasterView1.hints.Dated.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                      label="#{bindings.TblGrantAppMasterView1.hints.Dated.label}"
+                                                      required="#{bindings.TblGrantAppMasterView1.hints.Dated.mandatory}"
+                                                      columns="#{bindings.TblGrantAppMasterView1.hints.Dated.displayWidth}"
+                                                      shortDesc="#{bindings.TblGrantAppMasterView1.hints.Dated.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblGrantAppMasterView1.hints.Dated.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.Status.name}"
+                                               filterable="true" sortable="true" headerText="Status" id="c6"
+                                               width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Status}" id="it12"
+                                                          placeholder="Search Status"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Status.inputValue}"
+                                                      label="#{bindings.TblGrantAppMasterView1.hints.Status.label}"
+                                                      required="#{bindings.TblGrantAppMasterView1.hints.Status.mandatory}"
+                                                      columns="#{bindings.TblGrantAppMasterView1.hints.Status.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantAppMasterView1.hints.Status.precision}"
+                                                      shortDesc="#{bindings.TblGrantAppMasterView1.hints.Status.tooltip}"
+                                                      id="it5">
+                                            <f:validator binding="#{row.bindings.Status.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGrantAppMasterView1.hints.Status.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.CourseId.name}"
+                                               filterable="true" sortable="true" headerText="Training" id="c7"
+                                               width="123">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CourseId}" id="it6"
+                                                          placeholder="Search Training"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.CourseId.inputValue}"
+                                                            label="#{row.bindings.CourseId.label}"
+                                                            required="#{bindings.TblGrantAppMasterView1.hints.CourseId.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppMasterView1.hints.CourseId.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.CourseId.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.CourseId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.TrainerId.name}"
+                                               filterable="true" sortable="true" headerText="Trainer" id="c8"
+                                               width="143">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.TrainerId}" id="it7"
+                                                          placeholder="Search Trainer"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.TrainerId.inputValue}"
+                                                            label="#{row.bindings.TrainerId.label}"
+                                                            required="#{bindings.TblGrantAppMasterView1.hints.TrainerId.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppMasterView1.hints.TrainerId.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.TrainerId.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.TrainerId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute.enabled}" id="b9"
+                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl2">
+                            <af:spacer height="10" id="s2" width="410"/>
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                       disabled="#{!bindings.CreateInsert.enabled}" id="b2"
+                                       icon="#{resource['images:add.png']}"/>
+                            <af:spacer width="5" height="10" id="s3"/>
+                            <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                                       disabled="#{!bindings.Execute.enabled}" id="b3"
+                                       icon="#{resource['images:edit.png']}"/>
+                            <af:spacer width="5" height="10" id="s4"/>
+                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                       disabled="#{!bindings.Delete.enabled}" id="b4"
+                                       icon="#{resource['images:delete.png']}"
+                                       immediate="true" action="Grant_Application.jsf"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab2" text="Grant Application Detail">
+                                <af:table value="#{bindings.TblGrantAppDetailView3.collectionModel}" var="row"
+                                          rows="#{bindings.TblGrantAppDetailView3.rangeSize}"
+                                          emptyText="#{bindings.TblGrantAppDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblGrantAppDetailView3.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblGrantAppDetailView3.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblGrantAppDetailView3.rangeSize}"
+                                          filterModel="#{bindings.TblGrantAppDetailView3Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblGrantAppDetailView3Query.processQuery}"
+                                          varStatus="vs" id="t2" partialTriggers="::b5 ::b6 ::b7 ::b8" width="511"
+                                          scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Grant Application Detail ID" id="c9" align="center"
+                                               width="60">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.GrantAppDetailId}" id="it13"
+                                                          placeholder="Search ID">
+                                            </af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.GrantAppDetailId.inputValue}"
+                                                      label="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.label}"
+                                                      required="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.mandatory}"
+                                                      columns="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.precision}"
+                                                      shortDesc="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.tooltip}"
+                                                      id="it8" readOnly="true" 
+                                                      contentStyle='text-align:center'>
+                                            <f:validator binding="#{row.bindings.GrantAppDetailId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGrantAppDetailView3.hints.GrantAppDetailId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.SupplierId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Supplier"
+                                               id="c10" width="200">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.SupplierId}" id="it10"
+                                                          placeholder="Search Supplier">
+                                            </af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.SupplierId.inputValue}"
+                                                            label="#{row.bindings.SupplierId.label}"
+                                                            required="#{bindings.TblGrantAppDetailView3.hints.SupplierId.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppDetailView3.hints.SupplierId.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.SupplierId.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.SupplierId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.ItemL4Id.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Item"
+                                               id="c11" width="200">
+                                               <f:facet name="filter">
+                                               <af:inputText value="#{vs.filterCriteria.ItemL4Id}" id="it11"
+                                                          placeholder="Search Item">
+                                            </af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                                                            label="#{row.bindings.ItemL4Id.label}"
+                                                            required="#{bindings.TblGrantAppDetailView3.hints.ItemL4Id.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantAppDetailView3.hints.ItemL4Id.tooltip}"
+                                                            id="soc6">
+                                            <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si6"/>
+                                            <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b8"
+                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:panelGroupLayout id="pgl3">
+                            <af:spacer width="140" height="10" id="s5"/>
+                            <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                                       disabled="#{!bindings.CreateInsert1.enabled}" id="b5"
+                                       icon="#{resource['images:add.png']}"/>
+                            <af:spacer width="5" height="10" id="s6"/>
+                            <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
+                                       disabled="#{!bindings.Execute1.enabled}" id="b6"
+                                       icon="#{resource['images:edit.png']}"/>
+                            <af:spacer width="5" height="10" id="s7"/>
+                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                                       disabled="#{!bindings.Delete1.enabled}" id="b7"
+                                       icon="#{resource['images:delete.png']}"
+                                       immediate="true" action="Grant_Application.jsf"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

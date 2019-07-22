@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Target_CropsPageDef"
+                Package="Fragments.Modules.Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblProjOffView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblProjOffView1Iterator"/>
+    <searchRegion Binds="TblProjOffView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblProjOffView1Query"/>
+    <iterator Binds="TblTargetCropsView4" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblTargetCropsView4Iterator"/>
+    <searchRegion Binds="TblTargetCropsView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTargetCropsView4Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblProjOffView1Iterator" id="TblProjOffView1">
+      <nodeDefinition DefName="model.VO.TblProjOffView" Name="TblProjOffView10">
+        <AttrNames>
+          <Item Value="ProjOffId"/>
+          <Item Value="ProjId"/>
+          <Item Value="Name"/>
+          <Item Value="ContactPer"/>
+          <Item Value="Address"/>
+          <Item Value="Tel"/>
+          <Item Value="Fax"/>
+          <Item Value="Email"/>
+          <Item Value="Category"/>
+          <Item Value="Ast"/>
+          <Item Value="Designation"/>
+          <Item Value="Project_Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblProjOffView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TblTargetCropsView4Iterator" id="TblTargetCropsView4">
+      <nodeDefinition DefName="model.VO.TblTargetCropsView" Name="TblTargetCropsView40">
+        <AttrNames>
+          <Item Value="TargetCropsId"/>
+          <Item Value="ProjOffId"/>
+          <Item Value="CropId"/>
+          <Item Value="TarDis"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTargetCropsView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblTargetCropsView4Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblTargetCropsView4Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

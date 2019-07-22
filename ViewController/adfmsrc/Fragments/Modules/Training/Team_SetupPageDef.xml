@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Team_SetupPageDef"
+                Package="Fragments.Modules.Training">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblTeamView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblTeamView1Iterator"/>
+    <searchRegion Binds="TblTeamView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTeamView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblTeamView1Iterator" id="TblTeamView1">
+      <nodeDefinition DefName="model.VO.TblTeamView" Name="TblTeamView10">
+        <AttrNames>
+          <Item Value="TeamId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PhaseId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTeamView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblTeamView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblTeamView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Library">
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                   </af:gridCell>
+                                           </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Library Master">
+                                                            <af:table value="#{bindings.TblLibrMasterView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblLibrMasterView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblLibrMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblLibrMasterView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblLibrMasterView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblLibrMasterView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblLibrMasterView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblLibrMasterView1Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      partialTriggers=""
+                                                                      width="450"
+                                                                      scrollPolicy="page" autoHeightRows="0">
+                                                                <af:column sortProperty="#{bindings.TblLibrMasterView1.hints.LibrMasterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Library Master ID" id="c1"
+                                                                           align="center">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.LibrMasterId}"
+                                                                                     id="id4" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.LibrMasterId.inputValue}"
+                                                                                  label="#{bindings.TblLibrMasterView1.hints.LibrMasterId.label}"
+                                                                                  required="#{bindings.TblLibrMasterView1.hints.LibrMasterId.mandatory}"
+                                                                                  columns="#{bindings.TblLibrMasterView1.hints.LibrMasterId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblLibrMasterView1.hints.LibrMasterId.precision}"
+                                                                                  shortDesc="#{bindings.TblLibrMasterView1.hints.LibrMasterId.tooltip}"
+                                                                                  id="it1" readOnly="true"
+                                                                                  contentStyle="text-align:center">
+                                                                        <f:validator binding="#{row.bindings.LibrMasterId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblLibrMasterView1.hints.Name.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Library" id="c2" width="300">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                                     id="it7" placeholder="Search Library">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                                  label="#{bindings.TblLibrMasterView1.hints.Name.label}"
+                                                                                  required="#{bindings.TblLibrMasterView1.hints.Name.mandatory}"
+                                                                                  columns="#{bindings.TblLibrMasterView1.hints.Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblLibrMasterView1.hints.Name.precision}"
+                                                                                  shortDesc="#{bindings.TblLibrMasterView1.hints.Name.tooltip}"
+                                                                                  id="it2" readOnly="true">
+                                                                        <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}" id="b19"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    <af:spacer width="75" height="20" id="s2"/>
+                                                    <!--<h:panelGroup id="pg2">
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                   text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                   id="b10"/>
+                                                        <af:spacer width="5" height="10" id="s14"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                                   text="Edit" disabled="#{!bindings.Execute.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b11"/>
+                                                        <af:spacer width="5" height="10" id="s15"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                                   text="Delete"
+                                                                   icon="#{resource['images:delete.png']}"
+                                                                   disabled="#{!bindings.Delete.enabled}" id="b12"
+                                                                   immediate="true" action="Library.jsf"/>
+                                                        <af:spacer width="5" height="10" id="s16"/>
+                                                        <af:button actionListener="#{bindings.Commit.execute}"
+                                                                   text="Save" icon="#{resource['images:save.png']}"
+                                                                   disabled="#{!bindings.Commit.enabled}" id="b17"/>
+                                                        <af:link text="link 1" id="l1" targetFrame="_blank"
+                                                                 destination="http://192.168.1.236:8888/reports/rwservlet?userid=mfp/mfp@orcl&amp;domain=classicdomain&amp;report=d:\\\\\\\\programe.jsp&amp;destype=CACHE&amp;desformat=pdf&amp;paramform=no"/>
+                                                    </h:panelGroup>-->
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                                    <af:spacer width="200" height="30" id="s17"/>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                                    <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab2" text="Library Detail">
+                                                            <af:table value="#{bindings.TblLibrDetailView3.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblLibrDetailView3.rangeSize}"
+                                                                      emptyText="#{bindings.TblLibrDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblLibrDetailView3.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblLibrDetailView3.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblLibrDetailView3.rangeSize}"
+                                                                      filterModel="#{bindings.TblLibrDetailView3Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblLibrDetailView3Query.processQuery}"
+                                                                      varStatus="vs" id="t2"
+                                                                      partialTriggers="::b13 ::b14 ::b15 ::b9"
+                                                                      width="609"
+                                                                      scrollPolicy="page" autoHeightRows="0">
+                                                                <af:column sortProperty="#{bindings.TblLibrDetailView3.hints.LibrDetailId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Detail ID" id="c3" width="80"
+                                                                           align="center">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.LibrDetailId}"
+                                                                                     id="it9" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.LibrDetailId.inputValue}"
+                                                                                  label="#{bindings.TblLibrDetailView3.hints.LibrDetailId.label}"
+                                                                                  required="#{bindings.TblLibrDetailView3.hints.LibrDetailId.mandatory}"
+                                                                                  columns="#{bindings.TblLibrDetailView3.hints.LibrDetailId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblLibrDetailView3.hints.LibrDetailId.precision}"
+                                                                                  shortDesc="#{bindings.TblLibrDetailView3.hints.LibrDetailId.tooltip}"
+                                                                                  id="it3" readOnly="true"
+                                                                                  contentStyle="text-align:center">
+                                                                        <f:validator binding="#{row.bindings.LibrDetailId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblLibrDetailView3.hints.Name.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.TblLibrDetailView3.hints.Name.label}"
+                                                                           id="c5" width="410">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                                     id="it10" placeholder="Search Name">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                                  label="#{bindings.TblLibrDetailView3.hints.Name.label}"
+                                                                                  required="#{bindings.TblLibrDetailView3.hints.Name.mandatory}"
+                                                                                  columns="#{bindings.TblLibrDetailView3.hints.Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblLibrDetailView3.hints.Name.precision}"
+                                                                                  shortDesc="#{bindings.TblLibrDetailView3.hints.Name.tooltip}"
+                                                                                  id="it5">
+                                                                        <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblLibrDetailView3.hints.Ast.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Active"
+                                                                           id="c6" width="68">
+                                                                           
+                                                                              <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                                     id="it4" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                   </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblLibrDetailView3.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblLibrDetailView3.hints.Ast.tooltip}"
+                                                                                        id="soc1">
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si1"/>
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute1.enabled}"
+                                                                       id="b9"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                                    
+                                                    <af:panelGroupLayout id="pg1">
+                                                    <af:spacer width="200" height="20" id="s10"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                   text="Add" icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                   id="b13"/>
+                                                        <af:spacer width="5" height="10" id="s11"/>
+                                                        <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                   text="Edit" disabled="#{!bindings.Execute1.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s12"/>
+                                                        <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                   text="Delete" disabled="#{!bindings.Delete1.enabled}"
+                                                                   icon="#{resource['images:delete.png']}" id="b15"
+                                                                   immediate="true" action="Library.jsf"/>
+                        </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

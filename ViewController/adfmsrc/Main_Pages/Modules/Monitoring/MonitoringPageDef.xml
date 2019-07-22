@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="MonitoringPageDef"
+                Package="Main_Pages.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.MonitoringSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="MONITORING_PAGES1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MONITORING_PAGES1Iterator" Refresh="always" CacheResults="false"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MONITORING_PAGES1Iterator" id="MONITORING_PAGES1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.MONITORING_PAGES" Name="MONITORING_PAGES10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

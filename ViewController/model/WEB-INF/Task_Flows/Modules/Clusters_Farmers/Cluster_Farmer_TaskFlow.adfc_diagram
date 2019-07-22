@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Cluster_Setup</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Clusters_Farmers/Cluster_Setup.jsff</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Cluster_Setup&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">429.59766</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">204.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">Farmer_Registration</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Clusters_Farmers/Farmer_Registration.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Farmer_Registration&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">426.59766</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">417.0</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">Cluster_Farmer</property>
+      <property
+         name="page">/WEB-INF/Fragments/Modules/Clusters_Farmers/Main_Cluster_Farmer.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Cluster_Farmer&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">192.59766</property>
+      <property
+         name="x">438.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+</SDM>

@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+ <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Project Components">
+                                        
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                   </af:gridCell>
+                                           </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Project Components">
+                                                            <af:table value="#{bindings.TblProjCompView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblProjCompView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblProjCompView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblProjCompView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblProjCompView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblProjCompView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblProjCompView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblProjCompView1Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      partialTriggers="::b13 ::b14 ::b15 ::b2"
+                                                                      width="992"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
+                                                                <af:column sortProperty="#{bindings.TblProjCompView1.hints.ProjId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Project"
+                                                                           id="c2" width="250">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ProjId}"
+                                                                                     id="it9" placeholder="Search Project">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.ProjId.inputValue}"
+                                                                                        label="#{row.bindings.ProjId.label}"
+                                                                                        required="#{bindings.TblProjCompView1.hints.ProjId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblProjCompView1.hints.ProjId.tooltip}"
+                                                                                        id="soc5">
+                                                                        <f:selectItems value="#{row.bindings.ProjId.items}"
+                                                                                       id="si5"/>
+                                                                        <f:validator binding="#{row.bindings.ProjId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblProjCompView1.hints.ProjCompId.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Project Component ID"
+                                                                           id="c1" width="80">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ProjCompId}"
+                                                                                     id="it16" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.ProjCompId.inputValue}"
+                                                                                  label="#{bindings.TblProjCompView1.hints.ProjCompId.label}"
+                                                                                  required="#{bindings.TblProjCompView1.hints.ProjCompId.mandatory}"
+                                                                                  columns="#{bindings.TblProjCompView1.hints.ProjCompId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblProjCompView1.hints.ProjCompId.precision}"
+                                                                                  shortDesc="#{bindings.TblProjCompView1.hints.ProjCompId.tooltip}"
+                                                                                  id="it1" readOnly="true"
+                                                                                  contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.ProjCompId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblProjCompView1.hints.Name.name}"
+                                                                           filterable="true" sortable="true" 
+                                                                           headerText="Project Component"
+                                                                           id="c3" width="250">
+                                                                           
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                                     id="it19" placeholder="Search Project Component">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                                  label="#{bindings.TblProjCompView1.hints.Name.label}"
+                                                                                  required="#{bindings.TblProjCompView1.hints.Name.mandatory}"
+                                                                                  columns="#{bindings.TblProjCompView1.hints.Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblProjCompView1.hints.Name.precision}"
+                                                                                  shortDesc="#{bindings.TblProjCompView1.hints.Name.tooltip}"
+                                                                                  id="it3">
+                                                                        <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblProjCompView1.hints.Io.name}"
+                                                                           filterable="true" sortable="true" 
+                                                                           headerText="I/O"
+                                                                           id="c5" width="250">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Io}"
+                                                                                     id="it2" placeholder="Search I/O">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.Io.inputValue}"
+                                                                                        label="#{row.bindings.Io.label}"
+                                                                                        required="#{bindings.TblProjCompView1.hints.Io.mandatory}"
+                                                                                        shortDesc="#{bindings.TblProjCompView1.hints.Io.tooltip}"
+                                                                                        id="soc2">
+                                                                        <f:selectItems value="#{row.bindings.Io.items}"
+                                                                                       id="si2"/>
+                                                                        <f:validator binding="#{row.bindings.Io.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblProjCompView1.hints.Ast.name}"
+                                                                           filterable="true" sortable="true" 
+                                                                           headerText="Active" 
+                                                                           id="c4" width="80">
+                                                                           
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                                     id="it17" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblProjCompView1.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblProjCompView1.hints.Ast.tooltip}"
+                                                                                        id="soc1" >
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si1" />
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}"
+                                                                       id="b2"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    <af:panelGroupLayout id="pg3" layout="horizontal">
+                                                    <af:spacer width="343" height="10" id="s2"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                               text="Add"
+                                                                 
+                                                               icon="#{resource['images:add.png']}"
+                                                               disabled="#{!bindings.CreateInsert.enabled}" id="b13"
+                                                                   inlineStyle="width:70px; text-align:center; vertical-align: middle;"/>
+                                                        <af:spacer width="5" height="10" id="s8"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                               text="Edit"
+                                                                  
+                                                               icon="#{resource['images:edit.png']}" disabled="#{!bindings.Execute.enabled}"
+                                                               id="b14"
+                                                                   inlineStyle="width:70px; text-align:center; vertical-align: middle;"/>
+                                                        <af:spacer width="5" height="10" id="s10"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                    icon="#{resource['images:delete.png']}"
+                                                               text="Delete" disabled="#{!bindings.Delete.enabled}"
+                                                               id="b15"
+                                                                 
+                                                                   inlineStyle="width:70px; text-align:center; vertical-align: middle;"
+                                                                   immediate="true" action="Project_Components.jsf" />
+                        </af:panelGroupLayout>
+                                                    
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                                                    <af:spacer width="100" height="30" id="s4"/>
+                                                    
+                                                   
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                        <af:panelGridLayout id="pgl3">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                <af:gridCell marginStart="5px" width="100%" id="gc5">
+                                                    <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem text="Beneficiary" id="sdi3">
+                                                            <af:table value="#{bindings.TblBeneficiaryView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblBeneficiaryView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblBeneficiaryView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblBeneficiaryView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblBeneficiaryView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblBeneficiaryView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblBeneficiaryView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblBeneficiaryView1Query.processQuery}"
+                                                                      varStatus="vs" id="t4"
+                                                                      partialTriggers="::b4 ::b12 ::b19 ::b6"
+                                                                      scrollPolicy="page" autoHeightRows="0"
+                                                                      width="577">
+                                                                <af:column sortProperty="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText=" Beneficiary ID"
+                                                                           id="c14" width="80">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.BeneficiaryId}"
+                                                                                     id="it25" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                    <af:inputText value="#{row.bindings.BeneficiaryId.inputValue}"
+                                                                                  label="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.label}"
+                                                                                  required="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.mandatory}"
+                                                                                  columns="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.precision}"
+                                                                                  shortDesc="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.tooltip}"
+                                                                                  id="it8" readOnly="true" contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.BeneficiaryId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblBeneficiaryView1.hints.Name.name}"
+                                                                           filterable="true" sortable="true" 
+                                                                           headerText="Beneficiary"
+                                                                           id="c15" width="300">
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Name}"
+                                                                                     id="it26" placeholder="Search Beneficiary">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                                                  label="#{bindings.TblBeneficiaryView1.hints.Name.label}"
+                                                                                  required="#{bindings.TblBeneficiaryView1.hints.Name.mandatory}"
+                                                                                  columns="#{bindings.TblBeneficiaryView1.hints.Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblBeneficiaryView1.hints.Name.precision}"
+                                                                                  shortDesc="#{bindings.TblBeneficiaryView1.hints.Name.tooltip}"
+                                                                                  id="it12">
+                                                                        <f:validator binding="#{row.bindings.Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblBeneficiaryView1.hints.Vtp.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.TblBeneficiaryView1.hints.Vtp.label}"
+                                                                           id="c16" width="80">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Vtp}"
+                                                                                     id="it27" placeholder="Search Vtp">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                    <af:inputText value="#{row.bindings.Vtp.inputValue}"
+                                                                                  label="#{bindings.TblBeneficiaryView1.hints.Vtp.label}"
+                                                                                  required="#{bindings.TblBeneficiaryView1.hints.Vtp.mandatory}"
+                                                                                  columns="#{bindings.TblBeneficiaryView1.hints.Vtp.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblBeneficiaryView1.hints.Vtp.precision}"
+                                                                                  shortDesc="#{bindings.TblBeneficiaryView1.hints.Vtp.tooltip}"
+                                                                                  id="it13" contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.Vtp.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblBeneficiaryView1.hints.Ast.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Active" 
+                                                                           id="c17" width="60">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                                     
+                                                                                     id="it14" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblBeneficiaryView1.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblBeneficiaryView1.hints.Ast.tooltip}"
+                                                                                        id="soc4">
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si4"/>
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}"
+                                                                       id="b6"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                            <af:spacer width="30" height="40" id="s14"/>
+                                                    <af:panelGroupLayout id="pg4" layout="horizontal">
+                                                        <af:spacer width="160" height="20" id="s15"/>
+                                    
+                                    <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                               text="Add"
+                                                                  
+                                                               icon="#{resource['images:add.png']}"
+                                                               disabled="#{!bindings.CreateInsert1.enabled}" id="b4"/>
+                                                                <af:spacer width="5" height="10" id="s19"/>
+                                                                <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                  
+                                                               text="Edit" disabled="#{!bindings.Execute1.enabled}"
+                                                               icon="#{resource['images:edit.png']}"
+                                                               id="b12"/>
+                                                                <af:spacer width="5" height="10" id="s20"/>
+                                                                <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                  
+                                                               text="Delete" disabled="#{!bindings.Delete1.enabled}"
+                                                               icon="#{resource['images:delete.png']}"
+                                                               id="b19"
+                                                                immediate="true" action="Project_Components.jsf"/>
+                                                    </af:panelGroupLayout>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                                
+                                            </af:gridRow>
+                                            
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCPVVoucherDIdDVnoLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <ViewLinkDefEnd
+    Name="TblCPVVoucherMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.queryBasedVO.TblCPVVoucherMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TblCPVVoucherMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.queryBasedVO.TblCPVVoucherMView.VoucherMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCPVVoucherDView"
+    Cardinality="-1"
+    Owner="model.queryBasedVO.TblCPVVoucherDView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCPVVoucherDView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.queryBasedVO.TblCPVVoucherDView.VoucherDId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

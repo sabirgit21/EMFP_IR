@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantRate"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_GRANT_RATE"
+  AliasName="TblGrantRate"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="GrantRateId"
+    ColumnName="GRANT_RATE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="PhaseId"
+    IsNotNull="true"
+    ColumnName="PHASE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"/>
+  <Attribute
+    Name="CropId"
+    IsNotNull="true"
+    ColumnName="CROP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"/>
+  <Attribute
+    Name="Acre"
+    IsNotNull="true"
+    ColumnName="ACRE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"/>
+  <Attribute
+    Name="Dated"
+    IsNotNull="true"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_GRANT_RATE"/>
+  <Attribute
+    Name="Status"
+    ColumnName="STATUS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"/>
+  <Attribute
+    Name="Amount"
+    IsNotNull="true"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_RATE"/>
+  <AccessorAttribute
+    Name="TblCrop"
+    Association="model.EO.Fk2TblGrantRateFkAssoc"
+    AssociationEnd="model.EO.Fk2TblGrantRateFkAssoc.TblCrop"
+    AssociationOtherEnd="model.EO.Fk2TblGrantRateFkAssoc.TblGrantRate"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblPhase"
+    Association="model.EO.FkTblGrantRateFkAssoc"
+    AssociationEnd="model.EO.FkTblGrantRateFkAssoc.TblPhase"
+    AssociationOtherEnd="model.EO.FkTblGrantRateFkAssoc.TblGrantRate"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkTblGrantRatePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TBL_GRANT_RATE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantRate.GrantRateId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Fk2TblGrantRateFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_CROP_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK2_TBL_GRANT_RATE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantRate.CropId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTblGrantRateFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_PHASE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_GRANT_RATE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantRate.PhaseId"/>
+    </AttrArray>
+  </Key>
+</Entity>

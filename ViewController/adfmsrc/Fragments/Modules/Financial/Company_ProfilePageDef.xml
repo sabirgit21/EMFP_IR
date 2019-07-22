@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Company_ProfilePageDef"
+                Package="Fragments.Modules.Financial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblCompanyprofileView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblCompanyprofileView1Iterator"/>
+    <searchRegion Binds="TblCompanyprofileView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCompanyprofileView1Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblCompanyprofileView1Iterator" id="TblCompanyprofileView1">
+      <nodeDefinition DefName="model.VO.TblCompanyprofileView" Name="TblCompanyprofileView10">
+        <AttrNames>
+          <Item Value="CompanyprofileId"/>
+          <Item Value="CompanyprofileTitle"/>
+          <Item Value="CompanyprofileKeyPerson"/>
+          <Item Value="CompanyprofileNtn"/>
+          <Item Value="CompanyprofileOffadr"/>
+          <Item Value="CompanyprofileOffph"/>
+          <Item Value="CompanyprofileSiteadr"/>
+          <Item Value="CompanyprofileSiteph"/>
+          <Item Value="CompanyprofileEmail"/>
+          <Item Value="CompanyprofileUrl"/>
+          <Item Value="CompanyprofileFax"/>
+          <Item Value="CompanyprofileAst"/>
+          <Item Value="CompanyprofileComments"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCompanyprofileView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCompanyprofileView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCompanyprofileView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

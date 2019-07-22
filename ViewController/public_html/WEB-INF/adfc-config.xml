@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name>SetupSidebarBean</managed-bean-name>
+    <managed-bean-class>view.SetupSideBar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>MonitoringSidebarBean</managed-bean-name>
+    <managed-bean-class>view.MonitoringSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>GrantSidebarBean</managed-bean-name>
+    <managed-bean-class>view.GrantSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>TrainingSidebarBean</managed-bean-name>
+    <managed-bean-class>view.TrainingSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__6">
+    <managed-bean-name>CertificationSidebarBean</managed-bean-name>
+    <managed-bean-class>view.CertificationSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__7">
+    <managed-bean-name>ClusterFarmerSidebarBean</managed-bean-name>
+    <managed-bean-class>view.ClusterFarmerSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name>backing_Main_Pages_Login</managed-bean-name>
+    <managed-bean-class>view.backing.Main_Pages.Login</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Main_Pages/Login.jsf-->
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>ManagementSidebarBean</managed-bean-name>
+    <managed-bean-class>view.ManagementSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name>cluster_detail_report_Backbean</managed-bean-name>
+    <managed-bean-class>view.report.cluster_detail_report</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name>ReportSidebarBean</managed-bean-name>
+    <managed-bean-class>view.report.ReportSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__11">
+    <managed-bean-name>farmer_report_backbean</managed-bean-name>
+    <managed-bean-class>view.report.farmer_report</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__12">
+    <managed-bean-name>FinancialSidebarBean</managed-bean-name>
+    <managed-bean-class>view.FinancialSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

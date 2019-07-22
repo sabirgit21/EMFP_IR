@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Output_IndPageDef"
+                Package="Fragments.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblOutputIndView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblOutputIndView1Iterator"/>
+    <searchRegion Binds="TblOutputIndView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblOutputIndView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblOutputIndView1Iterator" id="TblOutputIndView1">
+      <nodeDefinition DefName="model.VO.TblOutputIndView" Name="TblOutputIndView10">
+        <AttrNames>
+          <Item Value="OutputIndId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PhaseId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblOutputIndView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblOutputIndView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblOutputIndView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

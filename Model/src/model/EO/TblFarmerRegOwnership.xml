@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblFarmerRegOwnership"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_FARMER_REG_OWNERSHIP"
+  AliasName="TblFarmerRegOwnership"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FarmerRegOwnershipId"
+    ColumnName="FARMER_REG_OWNERSHIP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_OWNERSHIP"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="FarmerRegId"
+    IsNotNull="true"
+    ColumnName="FARMER_REG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_OWNERSHIP"/>
+  <Attribute
+    Name="OwnerName"
+    Precision="150"
+    ColumnName="OWNER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_OWNERSHIP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Cnic"
+    Precision="25"
+    ColumnName="CNIC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_OWNERSHIP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LandAcre"
+    ColumnName="LAND_ACRE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_OWNERSHIP"/>
+  <Attribute
+    Name="Relationship"
+    Precision="50"
+    ColumnName="RELATIONSHIP"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_FARMER_REG_OWNERSHIP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblFarmerReg"
+    Association="model.EO.FkTblFarmerRegOwnershipFkAssoc"
+    AssociationEnd="model.EO.FkTblFarmerRegOwnershipFkAssoc.TblFarmerReg"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegOwnershipFkAssoc.TblFarmerRegOwnership"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkTblFarmerRegOwnershipPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TBL_FARMER_REG_OWNERSHIP_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFarmerRegOwnership.FarmerRegOwnershipId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTblFarmerRegOwnershipFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_FARMER_REG_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_FARMER_REG_OWNERSHIP_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblFarmerRegOwnership.FarmerRegId"/>
+    </AttrArray>
+  </Key>
+</Entity>

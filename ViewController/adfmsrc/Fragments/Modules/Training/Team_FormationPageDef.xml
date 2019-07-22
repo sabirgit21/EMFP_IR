@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="Team_FormationPageDef"
+                Package="Fragments.Modules.Training">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblTeamFormationView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblTeamFormationView1Iterator"/>
+    <searchRegion Binds="TblTeamFormationView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTeamFormationView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblTeamFormationView1Iterator" id="TblTeamFormationView1">
+      <nodeDefinition DefName="model.VO.TblTeamFormationView" Name="TblTeamFormationView10">
+        <AttrNames>
+          <Item Value="TeamFormationId"/>
+          <Item Value="TrainerId"/>
+          <Item Value="TeamId"/>
+          <Item Value="Ast"/>
+          <Item Value="TrainerType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblTeamFormationView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblTeamFormationView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblTeamFormationView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

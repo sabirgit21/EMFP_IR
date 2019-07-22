@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantRateView"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblGrantRate.GRANT_RATE_ID,
+       TblGrantRate.PHASE_ID,
+       TblGrantRate.CROP_ID,
+       TblGrantRate.ACRE,
+       TblGrantRate.DATED,
+       TblGrantRate.STATUS,
+       TblGrantRate.AMOUNT
+FROM TBL_GRANT_RATE TblGrantRate]]></SQLQuery>
+  <ViewAttribute
+    Name="GrantRateId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_RATE_ID"
+    Expression="GRANT_RATE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PhaseId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PHASE_ID"
+    Expression="PHASE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CropId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CROP_ID"
+    Expression="CROP_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Acre"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ACRE"
+    Expression="ACRE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Dated"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="DATED"
+    Expression="DATED"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="Status"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="STATUS"
+    Expression="STATUS"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Amount"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="AMOUNT"
+    Expression="AMOUNT"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantRateId"/>
+  </AttrArray>
+</ViewObject>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblSupplierPartFkLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblSupplierPartFkAssoc">
+  <ViewLinkDefEnd
+    Name="TblSupplierView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblSupplierView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblSupplierView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblSupplierView.SupplierId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblSupplierPartView"
+    Cardinality="-1"
+    Owner="model.VO.TblSupplierPartView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblSupplierPartView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblSupplierPartView.SupplierId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

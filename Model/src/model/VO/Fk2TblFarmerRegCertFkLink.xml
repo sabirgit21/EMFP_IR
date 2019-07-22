@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk2TblFarmerRegCertFkLink"
+  Version="12.1.3.10.8"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.Fk2TblFarmerRegCertFkAssoc">
+  <ViewLinkDefEnd
+    Name="TblCertificationView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblCertificationView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblCertificationView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCertificationView.CertificationId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblFarmerRegCertView"
+    Cardinality="-1"
+    Owner="model.VO.TblFarmerRegCertView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="TblFarmerRegCertView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblFarmerRegCertView.CertificationId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

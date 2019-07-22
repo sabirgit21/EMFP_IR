@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8" id="PhasePageDef"
+                Package="Fragments.Modules.Setup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblPhaseView1" RangeSize="8" DataControl="AppModuleDataControl" id="TblPhaseView1Iterator"/>
+    <searchRegion Binds="TblPhaseView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPhaseView1Query"/>
+    <iterator Binds="TblPhasePlanView3" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblPhasePlanView3Iterator"/>
+    <searchRegion Binds="TblPhasePlanView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblPhasePlanView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblPhaseView1Iterator" id="TblPhaseView1">
+      <nodeDefinition DefName="model.VO.TblPhaseView" Name="TblPhaseView10">
+        <AttrNames>
+          <Item Value="PhaseId"/>
+          <Item Value="Name"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblPhaseView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TblPhaseView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPhaseView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="IntlCert">
+      <AttrNames>
+        <Item Value="IntlCert"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="GlobalGapCert">
+      <AttrNames>
+        <Item Value="GlobalGapCert"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="DomExpo">
+      <AttrNames>
+        <Item Value="DomExpo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="DomMarIntv">
+      <AttrNames>
+        <Item Value="DomMarIntv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="IntlExpo">
+      <AttrNames>
+        <Item Value="IntlExpo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblPhaseView1Iterator" id="IntlPromCamp">
+      <AttrNames>
+        <Item Value="IntlPromCamp"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblPhaseView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblPhaseView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblPhaseView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblPhaseView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblPhasePlanView3Iterator" id="TblPhasePlanView3">
+      <nodeDefinition DefName="model.VO.TblPhasePlanView" Name="TblPhasePlanView30">
+        <AttrNames>
+          <Item Value="PhasePlanId"/>
+          <Item Value="PhaseId"/>
+          <Item Value="CropId"/>
+          <Item Value="CityLibrDetail"/>
+          <Item Value="DistrictLibrDetail"/>
+          <Item Value="TargetArea"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblPhasePlanView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblPhasePlanView3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblPhasePlanView3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

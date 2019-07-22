@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grant_RatePageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGrantRateView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="TblGrantRateView1Iterator"/>
+    <searchRegion Binds="TblGrantRateView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantRateView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblGrantRateView1Iterator" id="TblGrantRateView1">
+      <nodeDefinition DefName="model.VO.TblGrantRateView" Name="TblGrantRateView10">
+        <AttrNames>
+          <Item Value="GrantRateId"/>
+          <Item Value="PhaseId"/>
+          <Item Value="CropId"/>
+          <Item Value="Acre"/>
+          <Item Value="Dated"/>
+          <Item Value="Status"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGrantRateView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantRateView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblGrantRateView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

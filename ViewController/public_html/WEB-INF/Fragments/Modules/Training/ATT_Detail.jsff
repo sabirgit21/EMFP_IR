@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+                                    <af:showDetailItem id="pane2" text="Attendance Detail">
+                                        <af:panelGridLayout id="pgl2">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"
+                                                            halign="end" valign="middle">
+                       <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                  disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                  icon="#{resource['images:cancel.png']}" iconPosition="top">
+                           <af:resetActionListener/>
+                       </af:button>
+                       <af:spacer width="10" height="10" id="s9"/>
+                                                       <af:button actionListener="#{bindings.Commit.execute}"
+                                                                  text="Save All" disabled="#{!bindings.Commit.enabled}"
+                                                                  id="b10"
+
+                                                                  icon="#{resource['images:save.png']}"
+                                                                  iconPosition="top"/>
+                       <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                                           </af:gridRow>
+                                           <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                                    <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab1" text="Attendance Master">
+                                                            <af:table value="#{bindings.TblClusterAttMasterView1.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblClusterAttMasterView1.rangeSize}"
+                                                                      emptyText="#{bindings.TblClusterAttMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblClusterAttMasterView1.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblClusterAttMasterView1.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblClusterAttMasterView1.rangeSize}"
+                                                                      filterModel="#{bindings.TblClusterAttMasterView1Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblClusterAttMasterView1Query.processQuery}"
+                                                                      varStatus="vs" id="t1"
+                                                                      partialTriggers="::b8 ::b9 ::b15"
+                                                                      scrollPolicy="page" autoHeightRows="0"
+                                                                      width="979">
+                                                                <!--<af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.ClusterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Cluster"
+                                                                           id="c14" width="150">
+                                                                           <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                                                                     id="it12" placeholder="Search Cluster">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                                                        label="#{row.bindings.ClusterId.label}"
+                                                                                        required="#{bindings.TblClusterAttMasterView1.hints.ClusterId.mandatory}"
+                                                                                        shortDesc="#{bindings.TblClusterAttMasterView1.hints.ClusterId.tooltip}"
+                                                                                        id="soc2">
+                                                                        <f:selectItems value="#{row.bindings.ClusterId.items}"
+                                                                                       id="si2"/>
+                                                                        <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>-->
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.ClusterId.label}"
+                                               id="c2">
+                                        <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                            label="#{row.bindings.ClusterId.label}"
+                                                            required="#{bindings.TblClusterAttMasterView1.hints.ClusterId.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterAttMasterView1.hints.ClusterId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Cluster Attendance Master ID"
+                                                                           id="c1" align="center" width="80">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ClusterAttMasterId}"
+                                                                                     id="it22" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.ClusterAttMasterId.tooltip}"
+                                                                                  id="it1" readOnly="true"
+                                                                                  contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.ClusterAttMasterId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                
+                                                                <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Dated.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Date"
+                                                                           id="c3" width="100">
+                                                                    <f:facet name="filter">
+                                                                        <af:inputDate value="#{bindings.TblClusterAttMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                                                      id="id1" autoSubmit="true">
+                                                                            <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
+                                                                        </af:inputDate>
+                                                                    </f:facet>
+                                                                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Dated.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Dated.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Dated.displayWidth}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Dated.tooltip}"
+                                                                                  id="id2">
+                                                                        <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                                                        <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
+                                                                    </af:inputDate>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Status.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Status"
+                                                                           id="c4" width="100">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Status}"
+                                                                                     id="it23" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Status.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Status.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Status.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Status.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttMasterView1.hints.Status.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Status.tooltip}"
+                                                                                  id="it3">
+                                                                        <f:validator binding="#{row.bindings.Status.validator}"/>
+                                                                        <af:convertNumber groupingUsed="false"
+                                                                                          pattern="#{bindings.TblClusterAttMasterView1.hints.Status.format}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                    
+                                    <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Trainer"
+                                                                           id="c6" width="150">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Trainer_Name}"
+                                                                                     id="it19" placeholder="Search Trainer">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Trainer_Name.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Trainer_Name.tooltip}"
+                                                                                  id="it5">
+                                                                        <f:validator binding="#{row.bindings.Trainer_Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Remarks.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="#{bindings.TblClusterAttMasterView1.hints.Remarks.label}"
+                                                                           id="c5" width="300">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                                                     id="it20" placeholder="Search Remarks">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Remarks.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Remarks.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Remarks.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttMasterView1.hints.Remarks.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Remarks.tooltip}"
+                                                                                  id="it4">
+                                                                        <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                
+                                                            </af:table>
+                                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute.enabled}"
+                                                                       id="b15"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                                    
+                                                    <af:panelGroupLayout id="pg1">
+                                                    <af:spacer width="400" height="20" id="s16"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                                   text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}"
+                                                                   id="b8"/>
+                                                        <af:spacer width="5" height="10" id="s10"/>
+                                                        <af:button actionListener="#{bindings.Execute.execute}"
+                                                                   text="Edit"
+                                                                   disabled="#{!bindings.Execute.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b9"/>
+                                                        <af:spacer width="5" height="10" id="s11"/>
+                                                        <af:button actionListener="#{bindings.Delete.execute}"
+                                                                   text="Delete" icon="#{resource['images:delete.png']}"
+                                                                   disabled="#{!bindings.Delete.enabled}" id="b7"
+                                                                   immediate="true" action="Attendance_Detail.jsf" />
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" id="gr5">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                                    <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                                                        <af:showDetailItem id="tab2" text="Attendance Detail">
+                                                        
+                                                        
+                                                        
+                                                        
+                                                            <!--<af:table value="#{bindings.TblClusterAttDetailView3.collectionModel}"
+                                                                      var="row"
+                                                                      rows="#{bindings.TblClusterAttDetailView3.rangeSize}"
+                                                                      emptyText="#{bindings.TblClusterAttDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                                      rowBandingInterval="0"
+                                                                      selectedRowKeys="#{bindings.TblClusterAttDetailView3.collectionModel.selectedRow}"
+                                                                      selectionListener="#{bindings.TblClusterAttDetailView3.collectionModel.makeCurrent}"
+                                                                      rowSelection="single"
+                                                                      fetchSize="#{bindings.TblClusterAttDetailView3.rangeSize}"
+                                                                      filterModel="#{bindings.TblClusterAttDetailView3Query.queryDescriptor}"
+                                                                      filterVisible="true"
+                                                                      queryListener="#{bindings.TblClusterAttDetailView3Query.processQuery}"
+                                                                      varStatus="vs" id="t2"
+                                                                      partialTriggers=" ::b12 ::b13 ::b18" width="859"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
+                                                                
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Cluster Attendance Master ID"
+                                                                           id="c9" width="80" >
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ClusterAttMasterId}"
+                                                                                     id="it18" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.ClusterAttMasterId.tooltip}"
+                                                                                  id="it8" >
+                                                                        <f:validator binding="#{row.bindings.ClusterAttMasterId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Cluster Attendance Detail ID"
+                                                                           id="c8" width="80" >
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.ClusterAttDetailId}"
+                                                                                     id="it17" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.ClusterAttDetailId.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.ClusterAttDetailId.tooltip}"
+                                                                                  id="it7" readOnly="true"
+                                                                                  contentStyle='text-align:center'>
+                                                                        <f:validator binding="#{row.bindings.ClusterAttDetailId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.name}"
+                                                                           filterable="true" sortable="true" 
+                                                                           headerText="Farmer Registration ID" align="center"
+                                                                           id="c10" width="80">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
+                                                                                     id="it16" placeholder="Search ID">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.FarmerRegId.tooltip}"
+                                                                                  id="it9">
+                                                                        <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                      
+                                                                
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Farmer"
+                                                                           id="c11" width="300">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Farmer_Name}"
+                                                                                     id="it15" placeholder="Search Farmer">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Farmer_Name.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.Farmer_Name.tooltip}"
+                                                                                  id="it10">
+                                                                        <f:validator binding="#{row.bindings.Farmer_Name.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="CNIC"
+                                                                           id="c7" width="100">
+                                                                           
+                                                                             <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Farmer_Cnic}"
+                                                                                     id="it14" placeholder="Search CNIC">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Farmer_Cnic.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.Farmer_Cnic.tooltip}"
+                                                                                  id="it6" contentStyle='text-align:center'>
+                                                                        <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
+                                                                        <f:validator binding="#{row.bindings.Farmer_Cnic.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Mobile"
+                                                                           id="c12" width="100">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Farmer_Mobile}"
+                                                                                     id="it13" placeholder="Search Mobile">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:inputText value="#{row.bindings.Farmer_Mobile.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.label}"
+                                                                                  required="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.displayWidth}"
+                                                                                  maximumLength="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.precision}"
+                                                                                  shortDesc="#{bindings.TblClusterAttDetailView3.hints.Farmer_Mobile.tooltip}"
+                                                                                  id="it11">
+                                                                        <f:validator binding="#{row.bindings.Farmer_Mobile.validator}"/>
+                                                                    </af:inputText>
+                                                                </af:column>
+                                                                <af:column sortProperty="#{bindings.TblClusterAttDetailView3.hints.Ast.name}"
+                                                                           filterable="true" sortable="true"
+                                                                           headerText="Active"
+                                                                           id="c13" width="80">
+                                                                           
+                                                                            <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.Ast}"
+                                                                                     id="it24" placeholder="Search Status">
+                                                                       </af:inputText>
+                                                                            </f:facet>
+                                                                           
+                                                                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                                                        label="#{row.bindings.Ast.label}"
+                                                                                        required="#{bindings.TblClusterAttDetailView3.hints.Ast.mandatory}"
+                                                                                        shortDesc="#{bindings.TblClusterAttDetailView3.hints.Ast.tooltip}"
+                                                                                        id="soc1">
+                                                                        <f:selectItems value="#{row.bindings.Ast.items}"
+                                                                                       id="si1"/>
+                                                                        <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                                    </af:selectOneChoice>
+                                                                </af:column>
+                                                            </af:table>-->
+                               
+                               
+                               
+                               
+                                <af:table value="#{bindings.TblClusterAttDetailView31.collectionModel}" var="row"
+                                          rows="#{bindings.TblClusterAttDetailView31.rangeSize}"
+                                          emptyText="#{bindings.TblClusterAttDetailView31.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblClusterAttDetailView31.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblClusterAttDetailView31.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.TblClusterAttDetailView31.rangeSize}"
+                                          filterModel="#{bindings.TblClusterAttDetailView3Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblClusterAttDetailView3Query.processQuery}"
+                                          varStatus="vs" id="t3" partialTriggers="::b18 ::b14 ::b12 ::b13"
+                                          scrollPolicy="page">
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.label}"
+                                               id="c15">
+                                        <af:inputText value="#{row.bindings.ClusterAttDetailId.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.tooltip}"
+                                                      id="it25" readOnly="true">
+                                            <f:validator binding="#{row.bindings.ClusterAttDetailId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.label}"
+                                               id="c16">
+                                        <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.tooltip}"
+                                                      id="it26" readOnly="true">
+                                            <f:validator binding="#{row.bindings.ClusterAttMasterId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId.label}"
+                                               id="c17">
+                                        <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                                            label="#{row.bindings.FarmerRegId.label}"
+                                                            required="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId.tooltip}"
+                                                            id="soc3" readOnly="true">
+                                            <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.Ast.label}"
+                                               id="c18">
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblClusterAttDetailView31.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterAttDetailView31.hints.Ast.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.label}"
+                                               id="c19">
+                                        <af:inputText value="#{row.bindings.Farmer_Cnic.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.Farmer_Cnic.tooltip}"
+                                                      id="it27">
+                                            <f:validator binding="#{row.bindings.Farmer_Cnic.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.label}"
+                                               id="c20">
+                                        <af:inputText value="#{row.bindings.FarmerRegId1.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.tooltip}"
+                                                      id="it28">
+                                            <f:validator binding="#{row.bindings.FarmerRegId1.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttDetailView31.hints.FarmerRegId1.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.label}"
+                                               id="c21">
+                                        <af:inputText value="#{row.bindings.Farmer_Name.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.Farmer_Name.tooltip}"
+                                                      id="it29">
+                                            <f:validator binding="#{row.bindings.Farmer_Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.label}"
+                                               id="c22">
+                                        <af:inputText value="#{row.bindings.Farmer_Mobile.inputValue}"
+                                                      label="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.label}"
+                                                      required="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.mandatory}"
+                                                      columns="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttDetailView31.hints.Farmer_Mobile.tooltip}"
+                                                      id="it30">
+                                            <f:validator binding="#{row.bindings.Farmer_Mobile.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                       text="Refresh"
+                                                                       disabled="#{!bindings.Execute1.enabled}"
+                                                                       id="b18"
+                                                                       icon="#{resource['images:refresh.png']}"/>
+                                                        </af:showDetailItem>
+                                                    </af:panelTabbed>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr6">
+                                                <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                                    
+                                                    <af:panelGroupLayout id="pg2">
+                                                    <af:spacer width="335" height="20" id="s2"/>
+                                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                                   text="Add" icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert1.enabled}"
+                                                                   id="b14"/>
+                                                        <af:spacer width="5" height="10" id="s13"/>
+                                                        <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                   text="Edit" disabled="#{!bindings.Execute1.enabled}"
+                                                                   icon="#{resource['images:edit.png']}" id="b12"/>
+                                                        <af:spacer width="5" height="10" id="s14"/>
+                                                        <af:button actionListener="#{bindings.Delete1.execute}"
+                                                                   icon="#{resource['images:delete.png']}" text="Delete"
+                                                                   disabled="#{!bindings.Delete1.enabled}" id="b13"
+                                                                   immediate="true" action="Attendance_Detail.jsf" />
+                                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                        </af:panelGridLayout>
+                                    </af:showDetailItem>
+                                </af:panelAccordion>
+</ui:composition>

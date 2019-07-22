@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="FinancialPageDef"
+                Package="Main_Pages.Modules.Financial">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Financial_Setup_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Financial_Setup_Pages1Iterator"/>
+    <iterator Binds="Financial_Transaction_Pages1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Financial_Transaction_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.FinancialSidebarBean.dynamicTaskFlowId}" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Financial_Setup_Pages1Iterator" id="Financial_Setup_Pages1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.Financial_Setup_Pages" Name="Financial_Setup_Pages10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Financial_Transaction_Pages1Iterator" id="Financial_Transaction_Pages1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.Financial_Transaction_Pages" Name="Financial_Transaction_Pages10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

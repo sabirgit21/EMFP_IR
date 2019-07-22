@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblPeriodView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblPeriod.PERIOD_ID,
+       TblPeriod.PERIOD_FDATE,
+       TblPeriod.PERIOD_TDATE,
+       TblPeriod.PERIOD_AST
+FROM TBL_PERIOD TblPeriod]]></SQLQuery>
+  <ViewAttribute
+    Name="PeriodId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="3"
+    Scale="0"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    AliasName="PERIOD_ID"
+    Expression="PERIOD_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="PeriodFdate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="PERIOD_FDATE"
+    Expression="PERIOD_FDATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="PeriodTdate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="PERIOD_TDATE"
+    Expression="PERIOD_TDATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="PeriodAst"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PERIOD_AST"
+    Expression="PERIOD_AST"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="PeriodId"/>
+  </AttrArray>
+</ViewObject>

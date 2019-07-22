@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+        
+  <dvt:map id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+           inlineStyle="width:1225px; height:561px;" startingY="0.0" autoZoomThemeId="mt1">
+    <dvt:mapPointTheme id="mt1" value="#{bindings.TblTrainingSchDetailView1.geoMapModel}"
+                       clickListener="#{bindings.TblTrainingSchDetailView1.geoMapModel.processClickAction}"
+                       selectionListener="#{bindings.TblTrainingSchDetailView1.geoMapModel.processSelection}"/>
+  </dvt:map>
+  
+</ui:composition>

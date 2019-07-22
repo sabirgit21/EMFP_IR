@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane2" text="Cluster Setup">
+            <af:panelGridLayout id="pgl2">
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
+                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                        <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab2" text="Clusters Setup">
+                                <af:table value="#{bindings.TblClusterView1.collectionModel}" var="row"
+                                          rows="#{bindings.TblClusterView1.rangeSize}"
+                                          emptyText="#{bindings.TblClusterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblClusterView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblClusterView1.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblClusterView1.rangeSize}"
+                                          filterModel="#{bindings.TblClusterView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblClusterView1Query.processQuery}" varStatus="vs"
+                                          id="t2" partialTriggers="::b6 ::b7 ::b8 ::b9" scrollPolicy="page"
+                                          autoHeightRows="0" width="995">
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.ClusterId.name}"
+                                               filterable="true" sortable="true" headerText="Cluster ID" id="c8"
+                                               align="center" width="50">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.ClusterId}" id="it3"
+                                                          placeholder="Search ID "></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.ClusterId.inputValue}"
+                                                      label="#{bindings.TblClusterView1.hints.ClusterId.label}"
+                                                      required="#{bindings.TblClusterView1.hints.ClusterId.mandatory}"
+                                                      columns="#{bindings.TblClusterView1.hints.ClusterId.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterView1.hints.ClusterId.precision}"
+                                                      shortDesc="#{bindings.TblClusterView1.hints.ClusterId.tooltip}"
+                                                      id="it1" readOnly="true" contentStyle='text-align:center'>
+                                            <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.ClusterNo.name}"
+                                               filterable="true" sortable="true" headerText="Cluster No." id="c2"
+                                               width="80" align="center">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.ClusterNo}" id="it2"
+                                                          placeholder="Search Cluster No."></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.ClusterNo.inputValue}"
+                                                      label="#{bindings.TblClusterView1.hints.ClusterNo.label}"
+                                                      required="#{bindings.TblClusterView1.hints.ClusterNo.mandatory}"
+                                                      columns="#{bindings.TblClusterView1.hints.ClusterNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterView1.hints.ClusterNo.precision}"
+                                                      shortDesc="#{bindings.TblClusterView1.hints.ClusterNo.tooltip}"
+                                                      id="it13">
+                                            <f:validator binding="#{row.bindings.ClusterNo.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.PhaseId.name}"
+                                               filterable="true" sortable="true" headerText="Phase" id="c1" width="130">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.PhaseId}" id="it14"
+                                                          placeholder="Search Phase "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}"
+                                                            label="#{row.bindings.PhaseId.label}"
+                                                            required="#{bindings.TblClusterView1.hints.PhaseId.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.PhaseId.tooltip}"
+                                                            id="soc8">
+                                            <f:selectItems value="#{row.bindings.PhaseId.items}" id="si8"/>
+                                            <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.Name.name}"
+                                               filterable="true" sortable="true" headerText="Cluster" id="c9"
+                                               width="130">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Name}" id="it5"
+                                                          placeholder="Search Cluster "></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblClusterView1.hints.Name.label}"
+                                                      required="#{bindings.TblClusterView1.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblClusterView1.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterView1.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblClusterView1.hints.Name.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <!--<af:column sortProperty="#{bindings.TblClusterView1.hints.UcNumber.name}"
+                                               filterable="true" sortable="true" headerText="UC NO." id="c3"
+                                               width="100">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.UcNumber}" id="it16"
+                                                          placeholder="Search UC NO. "></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.UcNumber.inputValue}"
+                                                      label="#{bindings.TblClusterView1.hints.UcNumber.label}"
+                                                      required="#{bindings.TblClusterView1.hints.UcNumber.mandatory}"
+                                                      columns="#{bindings.TblClusterView1.hints.UcNumber.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterView1.hints.UcNumber.precision}"
+                                                      shortDesc="#{bindings.TblClusterView1.hints.UcNumber.tooltip}"
+                                                      id="it15">
+                                            <f:validator binding="#{row.bindings.UcNumber.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterView1.hints.UcNumber.format}"/>
+                                        </af:inputText>
+                                    </af:column>-->
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.UcLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="UC NO." id="c3"
+                                               width="100">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.UcLibrDetail}" id="it16"
+                                                          placeholder="Search UC NO. "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.UcLibrDetail.inputValue}"
+                                                            label="#{row.bindings.UcLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.UcLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.UcLibrDetail.tooltip}"
+                                                            id="soc9">
+                                            <f:selectItems value="#{row.bindings.UcLibrDetail.items}" id="si9"/>
+                                            <f:validator binding="#{row.bindings.UcLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CropId.name}"
+                                               filterable="true" sortable="true" headerText="Crop" id="c11" width="130">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CropId}" id="it6"
+                                                          placeholder="Search Crop "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.CropId.inputValue}"
+                                                            label="#{row.bindings.CropId.label}"
+                                                            required="#{bindings.TblClusterView1.hints.CropId.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.CropId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.CropId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.CropId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CityLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="City" id="c12" width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CityLibrDetail}" id="it7"
+                                                          placeholder="Search City "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.CityLibrDetail.inputValue}"
+                                                            label="#{row.bindings.CityLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.CityLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.CityLibrDetail.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.CityLibrDetail.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.CityLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.DistrictLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="District" id="c13"
+                                               width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.DistrictLibrDetail}" id="it8"
+                                                          placeholder="Search District "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.DistrictLibrDetail.inputValue}"
+                                                            label="#{row.bindings.DistrictLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.DistrictLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.DistrictLibrDetail.tooltip}"
+                                                            id="soc4">
+                                            <f:selectItems value="#{row.bindings.DistrictLibrDetail.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.DistrictLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.TehsilLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="Tehsil" id="c14"
+                                               width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.TehsilLibrDetail}" id="it9"
+                                                          placeholder="Search Tehsil "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.TehsilLibrDetail.inputValue}"
+                                                            label="#{row.bindings.TehsilLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.TehsilLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.TehsilLibrDetail.tooltip}"
+                                                            id="soc5">
+                                            <f:selectItems value="#{row.bindings.TehsilLibrDetail.items}" id="si5"/>
+                                            <f:validator binding="#{row.bindings.TehsilLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.MauzaLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="Mauza" id="c15" width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.MauzaLibrDetail}" id="it10"
+                                                          placeholder="Search Mauza "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.MauzaLibrDetail.inputValue}"
+                                                            label="#{row.bindings.MauzaLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.MauzaLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.MauzaLibrDetail.tooltip}"
+                                                            id="soc6">
+                                            <f:selectItems value="#{row.bindings.MauzaLibrDetail.items}" id="si6"/>
+                                            <f:validator binding="#{row.bindings.MauzaLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.VillageLibrDetail.name}"
+                                               filterable="true" sortable="true" headerText="Village" id="c16"
+                                               width="90">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.VillageLibrDetail}" id="it11"
+                                                          placeholder="Search Village "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.VillageLibrDetail.inputValue}"
+                                                            label="#{row.bindings.VillageLibrDetail.label}"
+                                                            required="#{bindings.TblClusterView1.hints.VillageLibrDetail.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.VillageLibrDetail.tooltip}"
+                                                            id="soc7">
+                                            <f:selectItems value="#{row.bindings.VillageLibrDetail.items}" id="si7"/>
+                                            <f:validator binding="#{row.bindings.VillageLibrDetail.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.Ast.name}"
+                                               filterable="true" sortable="true" headerText="Active" id="c10"
+                                               width="50">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it12"
+                                                          placeholder="Search Status "></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblClusterView1.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblClusterView1.hints.Ast.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                                           disabled="#{!bindings.Execute1.enabled}" id="b6"
+                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                        <af:panelGroupLayout id="pg1" layout="horizontal">
+                            <af:spacer width="350" height="10" id="s7"/>
+                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                       icon="#{resource['images:add.png']}" disabled="#{!bindings.CreateInsert.enabled}"
+                                       id="b7"/>
+                            <af:spacer width="5" height="10" id="s4"/>
+                            <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
+                                       icon="#{resource['images:edit.png']}" disabled="#{!bindings.Execute1.enabled}"
+                                       id="b8"/>
+                            <af:spacer width="5" height="10" id="s6"/>
+                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                       icon="#{resource['images:delete.png']}" disabled="#{!bindings.Delete.enabled}"
+                                       id="b9" immediate="true" action="Clusters_Setup.jsf"/>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>
