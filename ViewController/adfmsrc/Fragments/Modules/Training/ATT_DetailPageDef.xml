@@ -24,6 +24,8 @@
           <Item Value="Status"/>
           <Item Value="Remarks"/>
           <Item Value="Trainer_Name"/>
+          <Item Value="Latitude"/>
+          <Item Value="Longitude"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -1,12 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-        
-  <dvt:map id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
-           inlineStyle="width:1225px; height:561px;" startingY="0.0" autoZoomThemeId="mt1">
-    <dvt:mapPointTheme id="mt1" value="#{bindings.TblTrainingSchDetailView1.geoMapModel}"
-                       clickListener="#{bindings.TblTrainingSchDetailView1.geoMapModel.processClickAction}"
-                       selectionListener="#{bindings.TblTrainingSchDetailView1.geoMapModel.processSelection}"/>
-  </dvt:map>
+     
   
+  <!--<dvt:map id="m1" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+           inlineStyle="width:600px; height:375px;" startingY="0.0"  autoZoomThemeId="mt2">
+    <dvt:mapPointTheme id="mt2" value="#{bindings.Map_Sch_Detail_Att_Master1.geoMapModel}"
+                       clickListener="#{bindings.Map_Sch_Detail_Att_Master1.geoMapModel.processClickAction}"
+                       selectionListener="#{bindings.Map_Sch_Detail_Att_Master1.geoMapModel.processSelection}">
+                        <dvt:mapPointStyleItem itemValue="0" builtInImage="Bubble_Orange"/>
+                       <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
+               </dvt:mapPointTheme>
+  </dvt:map>-->
+  <!--<dvt:map id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+           inlineStyle="width:600px; height:375px;" startingY="0.0" autoZoomThemeId="mt1">
+    <dvt:mapPointTheme id="mt1" value="#{bindings.Map_Sch_Detail_Att_Master11.geoMapModel}"
+                       clickListener="#{bindings.Map_Sch_Detail_Att_Master11.geoMapModel.processClickAction}"
+                       selectionListener="#{bindings.Map_Sch_Detail_Att_Master11.geoMapModel.processSelection}">
+                       <dvt:mapPointStyleItem itemValue="0" builtInImage="Bubble_Orange"/>
+                       <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
+               </dvt:mapPointTheme>
+  </dvt:map>-->
+  <dvt:map id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+           inlineStyle="width:1101px; height:745px;" startingY="0.0" autoZoomThemeId="mt1">
+    <dvt:mapPointTheme id="mt1" value="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel}"
+                       clickListener="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel.processClickAction}"
+                       selectionListener="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel.processSelection}">
+                       <dvt:mapPointStyleItem itemValue="0" builtInImage="Bubble_Orange"/>
+                       <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
+               </dvt:mapPointTheme>
+  </dvt:map>
 </ui:composition>

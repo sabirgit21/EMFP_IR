@@ -78,9 +78,9 @@
         Operator="="
         Conjunction="AND"
         Value=":SchdDated"
-        ValidateBindVars="true"
         IsBindVarValue="true"
-        Required="Required"/>
+        Required="Required"
+        ValidateBindVars="true"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ResourceBundle>

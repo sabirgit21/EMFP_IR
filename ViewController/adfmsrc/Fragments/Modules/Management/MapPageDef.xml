@@ -4,17 +4,20 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblTrainingSchDetailView1" RangeSize="-1" DataControl="AppModuleDataControl"
-              id="TblTrainingSchDetailView1Iterator"/>
+    
+    <iterator Binds="Map_Sch_Detail_Att_Master1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="Map_Sch_Detail_Att_Master1Iterator" CacheResults="false"/>
   </executables>
   <bindings>
-    <mapTheme IterBinding="TblTrainingSchDetailView1Iterator" id="TblTrainingSchDetailView1"
+    
+    <mapTheme IterBinding="Map_Sch_Detail_Att_Master1Iterator" id="Map_Sch_Detail_Att_Master12"
               xmlns="http://xmlns.oracle.com/adfm/dvt">
       <mapThemeDataMap convert="false" mapThemeType="point">
         <data>
-          <item value="ClusterId" label="Clusters"/>
+          <item value="FarmerRegId" label="Farmer's :"/>
         </data>
-        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="ClusterId"/>
+        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="ClusterNo"/>
+        <item type="category" value="ColFlag"/>
       </mapThemeDataMap>
     </mapTheme>
   </bindings>

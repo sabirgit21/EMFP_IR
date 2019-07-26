@@ -61,7 +61,27 @@
                                                                         <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                                                                     </af:selectOneChoice>
                                                                 </af:column>-->
-                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.ClusterId.label}"
+                                                                <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Dated.name}"
+                                                                           filterable="true" sortable="true" align="center"
+                                                                           headerText="Date"
+                                                                           id="c3" width="100">
+                                                                    <f:facet name="filter">
+                                                                        <af:inputDate value="#{bindings.TblClusterAttMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                                                      id="id1" autoSubmit="true">
+                                                                            <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
+                                                                        </af:inputDate>
+                                                                    </f:facet>
+                                                                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Dated.label}"
+                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Dated.mandatory}"
+                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Dated.displayWidth}"
+                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Dated.tooltip}"
+                                                                                  id="id2">
+                                                                        <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                                                        <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
+                                                                    </af:inputDate>
+                                                                </af:column>
+                                    <af:column headerText="Cluster"
                                                id="c2">
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
@@ -95,26 +115,7 @@
                                                                     </af:inputText>
                                                                 </af:column>
                                                                 
-                                                                <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Dated.name}"
-                                                                           filterable="true" sortable="true" align="center"
-                                                                           headerText="Date"
-                                                                           id="c3" width="100">
-                                                                    <f:facet name="filter">
-                                                                        <af:inputDate value="#{bindings.TblClusterAttMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                                                                      id="id1" autoSubmit="true">
-                                                                            <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
-                                                                        </af:inputDate>
-                                                                    </f:facet>
-                                                                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                                                                  label="#{bindings.TblClusterAttMasterView1.hints.Dated.label}"
-                                                                                  required="#{bindings.TblClusterAttMasterView1.hints.Dated.mandatory}"
-                                                                                  columns="#{bindings.TblClusterAttMasterView1.hints.Dated.displayWidth}"
-                                                                                  shortDesc="#{bindings.TblClusterAttMasterView1.hints.Dated.tooltip}"
-                                                                                  id="id2">
-                                                                        <f:validator binding="#{row.bindings.Dated.validator}"/>
-                                                                        <af:convertDateTime pattern="#{bindings.TblClusterAttMasterView1.hints.Dated.format}"/>
-                                                                    </af:inputDate>
-                                                                </af:column>
+                                                                
                                                                 <af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.Status.name}"
                                                                            filterable="true" sortable="true"
                                                                            headerText="Status"
@@ -181,8 +182,35 @@
                                                                         <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                                                     </af:inputText>
                                                                 </af:column>
-                                                                
-                                                            </af:table>
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                               id="c7">
+                                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                                      label="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                                      required="#{bindings.TblClusterAttMasterView1.hints.Latitude.mandatory}"
+                                                      columns="#{bindings.TblClusterAttMasterView1.hints.Latitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttMasterView1.hints.Latitude.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttMasterView1.hints.Latitude.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttMasterView1.hints.Latitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Longitude.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                                      label="#{bindings.TblClusterAttMasterView1.hints.Longitude.label}"
+                                                      required="#{bindings.TblClusterAttMasterView1.hints.Longitude.mandatory}"
+                                                      columns="#{bindings.TblClusterAttMasterView1.hints.Longitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttMasterView1.hints.Longitude.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttMasterView1.hints.Longitude.tooltip}"
+                                                      id="it6">
+                                            <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttMasterView1.hints.Longitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
                                                             <af:button actionListener="#{bindings.Execute.execute}"
                                                                        text="Refresh"
                                                                        disabled="#{!bindings.Execute.enabled}"

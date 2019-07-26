@@ -1055,6 +1055,9 @@
   <ViewUsage
     Name="REPORTS_PAGES1"
     ViewObjectName="model.VO.USERS_ROLES.REPORTS_PAGES"/>
+  <ViewUsage
+    Name="Map_Sch_Detail_Att_Master1"
+    ViewObjectName="model.VO.Map_Sch_Detail_Att_Master"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"

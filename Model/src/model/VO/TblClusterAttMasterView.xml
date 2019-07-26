@@ -118,6 +118,20 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="Dated"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="TblClusterAttMaster"
+    AliasName="DATED">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="ClusterId"
     IsNotNull="true"
     PrecisionRule="true"
@@ -129,20 +143,6 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Dated"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Dated"
-    EntityUsage="TblClusterAttMaster"
-    AliasName="DATED">
-    <Properties>
-      <SchemaBasedProperties>
-        <AUTOSUBMIT
-          Value="true"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -171,6 +171,24 @@
     EntityAttrName="TrainerId"
     EntityUsage="TblTrainer"
     AliasName="TRAINER_ID1"/>
+  <ViewAttribute
+    Name="Longitude"
+    PrecisionRule="true"
+    EntityAttrName="Longitude"
+    EntityUsage="TblClusterAttMaster"
+    AliasName="LONGITUDE"/>
+  <ViewAttribute
+    Name="Latitude"
+    PrecisionRule="true"
+    EntityAttrName="Latitude"
+    EntityUsage="TblClusterAttMaster"
+    AliasName="LATITUDE"/>
+  <ViewAttribute
+    Name="TrainingSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="TblClusterAttMaster"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="ClusterAttMasterId"/>
   </AttrArray>
