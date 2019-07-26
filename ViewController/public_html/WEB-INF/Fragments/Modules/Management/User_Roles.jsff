@@ -22,7 +22,7 @@
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr17">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
                          <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                <af:showDetailItem id="tab3" text="Users &amp; User's Roles">
+                <af:showDetailItem id="tab3" text="Users and User's Roles">
                     <af:panelGridLayout id="pgl1">
                         
                         <af:gridRow marginTop="5px" height="auto" id="gr3">
@@ -89,7 +89,7 @@
                                                 </af:inputText>
                                             </af:column>
                                         </af:table>
-                                    </af:showDetailItem>
+                                        </af:showDetailItem>
                                 </af:panelTabbed>
                             </af:gridCell>
                         </af:gridRow>

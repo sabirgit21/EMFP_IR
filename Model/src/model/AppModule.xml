@@ -183,9 +183,6 @@
     Name="TblUserMasterView1"
     ViewObjectName="model.VO.TblUserMasterView"/>
   <ViewUsage
-    Name="TblUserView1"
-    ViewObjectName="model.VO.TblUserView"/>
-  <ViewUsage
     Name="TblBeneficiaryView2"
     ViewObjectName="model.queryBasedVO.TblBeneficiaryView"/>
   <ViewUsage
@@ -356,9 +353,6 @@
   <ViewUsage
     Name="TblTrainingSchMasterView2"
     ViewObjectName="model.queryBasedVO.TblTrainingSchMasterView"/>
-  <ViewUsage
-    Name="TblUserView2"
-    ViewObjectName="model.queryBasedVO.TblUserView"/>
   <ViewUsage
     Name="TblUserMasterView2"
     ViewObjectName="model.queryBasedVO.TblUserMasterView"/>

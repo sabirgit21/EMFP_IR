@@ -9,7 +9,7 @@
     <searchRegion Binds="TblFarmerRegView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFarmerRegView1Query"/>
     <iterator Binds="TblFarmerRegLandView3" RangeSize="8" DataControl="AppModuleDataControl"
-              id="TblFarmerRegLandView3Iterator" Refresh="ifNeeded"/>
+              id="TblFarmerRegLandView3Iterator"/>
     <searchRegion Binds="TblFarmerRegLandView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFarmerRegLandView3Query"/>
     <iterator Binds="TblFarmerRegMemView3" RangeSize="8" DataControl="AppModuleDataControl"
