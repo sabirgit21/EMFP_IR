@@ -49,6 +49,7 @@
                                                        headerText="#{bindings.TblRoleMasterView1.hints.RoleMasterId.label}"
                                                        id="c1">
                                                 <af:inputText value="#{row.bindings.RoleMasterId.inputValue}"
+                                                readOnly="true"
                                                               label="#{bindings.TblRoleMasterView1.hints.RoleMasterId.label}"
                                                               required="#{bindings.TblRoleMasterView1.hints.RoleMasterId.mandatory}"
                                                               columns="#{bindings.TblRoleMasterView1.hints.RoleMasterId.displayWidth}"
@@ -135,6 +136,7 @@
                                                        headerText="#{bindings.TblUserMasterView3.hints.UserMasterId.label}"
                                                        id="c4">
                                                 <af:inputText value="#{row.bindings.UserMasterId.inputValue}"
+                                                readOnly="true"
                                                               label="#{bindings.TblUserMasterView3.hints.UserMasterId.label}"
                                                               required="#{bindings.TblUserMasterView3.hints.UserMasterId.mandatory}"
                                                               columns="#{bindings.TblUserMasterView3.hints.UserMasterId.displayWidth}"
@@ -306,6 +308,7 @@
                                                        headerText="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.label}"
                                                        id="c12">
                                                 <af:inputText value="#{row.bindings.RoleDetailModulesId.inputValue}"
+                                                readOnly="true"
                                                               label="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.label}"
                                                               required="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.mandatory}"
                                                               columns="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.displayWidth}"
@@ -395,6 +398,7 @@
                                                        headerText="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.label}"
                                                        id="c16">
                                                 <af:inputText value="#{row.bindings.RoleDetailPagesId.inputValue}"
+                                                readOnly="true"
                                                               label="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.label}"
                                                               required="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.mandatory}"
                                                               columns="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.displayWidth}"
@@ -550,6 +554,7 @@
                                                        headerText="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.label}"
                                                        id="c25">
                                                 <af:inputText value="#{row.bindings.RoleDetailReportsId.inputValue}"
+                                                readOnly="true"
                                                               label="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.label}"
                                                               required="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.mandatory}"
                                                               columns="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.displayWidth}"

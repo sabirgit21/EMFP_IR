@@ -73,7 +73,7 @@
                                                                 </af:column>
                                                             </af:table>
                                                         </af:showDetailItem>
-                                                    </af:panelTabbed>
+                        </af:panelTabbed>
                                                 </af:gridCell>
                                             </af:gridRow>
                                             <af:gridRow marginTop="5px" height="auto" id="gr3">
