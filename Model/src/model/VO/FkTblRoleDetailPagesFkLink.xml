@@ -4,7 +4,7 @@
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="FkTblRoleDetailPagesFkLink"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   EntityAssociation="model.EO.FkTblRoleDetailPagesFkAssoc">
   <ViewLinkDefEnd

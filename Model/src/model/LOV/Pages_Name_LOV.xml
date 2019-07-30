@@ -4,13 +4,13 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Pages_Name_LOV"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectList="TblPages.AST, 
        TblPages.PAGES_ID, 
        TblPages.PAGES_NAME"
-  FromList="TBL_PAGES TblPages"
-  Where="AST='Y'"
+  FromList="TBL_PAGES TblPages, TBL_ROLE_DETAIL_PAGES TblRoleDetailPages"
+  Where="TblPages.PAGES_ID = TblRoleDetailPages.PAGES_ID"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
@@ -23,6 +23,25 @@
   <EntityUsage
     Name="TblPages"
     Entity="model.EO.TblPages"/>
+  <EntityUsage
+    Name="TblRoleDetailPages"
+    Entity="model.EO.TblRoleDetailPages"
+    Association="model.EO.Fk2TblRoleDetailPagesFkAssoc"
+    AssociationEnd="model.EO.Fk2TblRoleDetailPagesFkAssoc.TblRoleDetailPages"
+    SourceUsage="model.LOV.Pages_Name_LOV.TblPages"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblRoleDetailPages.PagesId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblPages.PagesId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Ast"
     IsNotNull="true"
