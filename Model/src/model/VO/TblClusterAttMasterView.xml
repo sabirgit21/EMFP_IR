@@ -69,7 +69,7 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ClusterId"/>
+      <Item Value="ClusterNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

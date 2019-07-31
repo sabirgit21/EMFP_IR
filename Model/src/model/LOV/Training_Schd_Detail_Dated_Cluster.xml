@@ -26,6 +26,25 @@
   <EntityUsage
     Name="TblTrainingSchDetail"
     Entity="model.EO.TblTrainingSchDetail"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblCluster"
+    SourceUsage="model.LOV.Training_Schd_Detail_Dated_Cluster.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="TrainingSchDetailId"
     PrecisionRule="true"
@@ -46,6 +65,19 @@
     EntityAttrName="DatedD"
     EntityUsage="TblTrainingSchDetail"
     AliasName="DATED_D"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId1"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
   <ViewCriteria
     Name="Training_Schd_Detail_Dated_ClusterCriteria"
     ViewObjectName="model.LOV.Training_Schd_Detail_Dated_Cluster"
@@ -83,6 +115,9 @@
         ValidateBindVars="true"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="TrainingSchDetailId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

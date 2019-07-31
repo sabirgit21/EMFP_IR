@@ -182,7 +182,7 @@
                                                                         <f:validator binding="#{row.bindings.Remarks.validator}"/>
                                                                     </af:inputText>
                                                                 </af:column>
-                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                    <!--<af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
                                                id="c7">
                                         <af:inputText value="#{row.bindings.Latitude.inputValue}"
                                                       label="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
@@ -209,7 +209,7 @@
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblClusterAttMasterView1.hints.Longitude.format}"/>
                                         </af:inputText>
-                                    </af:column>
+                                    </af:column>-->
                                 </af:table>
                                                             <af:button actionListener="#{bindings.Execute.execute}"
                                                                        text="Refresh"

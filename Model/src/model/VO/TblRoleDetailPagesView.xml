@@ -263,6 +263,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="RoleDetailModulesId"
+    PrecisionRule="true"
+    EntityAttrName="RoleDetailModulesId"
+    EntityUsage="TblRoleDetailPages"
+    AliasName="ROLE_DETAIL_MODULES_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="RoleDetailPagesId"/>
   </AttrArray>
