@@ -95,4 +95,9 @@
     EntityAttrName="CompanyprofileComments"
     EntityUsage="TblCompanyprofile"
     AliasName="COMPANYPROFILE_COMMENTS"/>
+  <SortCriteria>
+    <Sort
+      Attribute="CompanyprofileId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

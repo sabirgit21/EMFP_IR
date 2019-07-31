@@ -13,7 +13,8 @@
   Where="TblPages.PAGES_ID = TblRoleDetailPages.PAGES_ID"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblPages.PAGES_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

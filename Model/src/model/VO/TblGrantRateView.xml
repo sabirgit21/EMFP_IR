@@ -124,4 +124,9 @@
     EntityAttrName="Amount"
     EntityUsage="TblGrantRate"
     AliasName="AMOUNT"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantRateId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

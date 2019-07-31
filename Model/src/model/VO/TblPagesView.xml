@@ -62,4 +62,9 @@
     ViewLink="model.VO.Fk2TblRoleDetailPagesFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="PagesId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

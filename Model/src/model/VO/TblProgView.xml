@@ -84,4 +84,9 @@
     ViewLink="model.VO.FkTblProjTblProgFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="ProgId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

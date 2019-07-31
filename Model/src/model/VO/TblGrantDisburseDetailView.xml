@@ -102,4 +102,9 @@
     EntityAttrName="Payee"
     EntityUsage="TblGrantDisburseDetail"
     AliasName="PAYEE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseDetailId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

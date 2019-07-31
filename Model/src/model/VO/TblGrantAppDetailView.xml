@@ -104,4 +104,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantAppDetailId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

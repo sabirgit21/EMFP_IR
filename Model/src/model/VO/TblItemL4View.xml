@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="TblItemL4View"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -187,4 +187,9 @@
     ViewLink="model.VO.Fk2TblSuplierRateDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="ItemL4Id"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

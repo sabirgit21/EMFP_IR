@@ -272,4 +272,9 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="RoleDetailPagesId"/>
   </AttrArray>
+  <SortCriteria>
+    <Sort
+      Attribute="RoleDetailPagesId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

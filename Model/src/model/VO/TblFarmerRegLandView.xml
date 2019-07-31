@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="TblFarmerRegLandView"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -231,4 +231,9 @@
     EntityAttrName="KhasraNo"
     EntityUsage="TblFarmerRegLand"
     AliasName="KHASRA_NO"/>
+  <SortCriteria>
+    <Sort
+      Attribute="FarmerRegLandId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

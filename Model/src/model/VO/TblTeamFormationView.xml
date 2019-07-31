@@ -170,4 +170,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <SortCriteria>
+    <Sort
+      Attribute="TeamFormationId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

@@ -41,4 +41,9 @@
     EntityAttrName="PeriodAst"
     EntityUsage="TblPeriod"
     AliasName="PERIOD_AST"/>
+  <SortCriteria>
+    <Sort
+      Attribute="PeriodId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

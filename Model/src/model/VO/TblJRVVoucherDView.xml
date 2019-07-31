@@ -61,4 +61,9 @@
     EntityAttrName="VoucherDCr"
     EntityUsage="TblJRVVoucherD"
     AliasName="VOUCHER_D_CR"/>
+  <SortCriteria>
+    <Sort
+      Attribute="VoucherDId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

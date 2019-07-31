@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="TblLibrDetailView"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -110,4 +110,9 @@
     ViewLink="model.VO.FkTblSupplierFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="LibrDetailId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

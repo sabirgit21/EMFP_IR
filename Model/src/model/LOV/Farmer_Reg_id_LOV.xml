@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Farmer_Reg_id_LOV"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectList="TblFarmerReg.FARMER_REG_ID, 
        TblFarmerReg.NAME, 
@@ -13,7 +13,8 @@
   Where="AST='Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblFarmerReg.FARMER_REG_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

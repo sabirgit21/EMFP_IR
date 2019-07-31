@@ -86,4 +86,9 @@
     EntityAttrName="Latitude"
     EntityUsage="TblTrainingSchDetail"
     AliasName="LATITUDE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainingSchDetailId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

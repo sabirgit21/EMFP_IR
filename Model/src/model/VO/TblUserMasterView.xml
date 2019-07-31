@@ -82,4 +82,9 @@
     EntityAttrName="RoleMasterId"
     EntityUsage="TblUserMaster"
     AliasName="ROLE_MASTER_ID"/>
+  <SortCriteria>
+    <Sort
+      Attribute="UserMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

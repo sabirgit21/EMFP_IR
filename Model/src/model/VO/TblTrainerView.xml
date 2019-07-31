@@ -288,4 +288,9 @@
     ViewLink="model.VO.FkTblTrainerPercFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainerId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

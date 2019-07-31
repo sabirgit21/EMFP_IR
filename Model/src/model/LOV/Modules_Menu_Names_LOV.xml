@@ -13,7 +13,8 @@
   Where="AST='Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblModuleMenu.MODULE_MENU_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

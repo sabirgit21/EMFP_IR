@@ -88,4 +88,9 @@
     ViewLink="model.VO.FkTblUserMasterFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="RoleMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

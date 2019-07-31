@@ -4,11 +4,12 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Village_Name_LOV"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy='"LIBR_DETAIL_ID"'>
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
@@ -18,12 +19,12 @@
         ResId="model.LOV.Village_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select   
-Tbl_Libr_Detail.Libr_Detail_ID,   
-Tbl_Libr_Detail.Name   
-From Tbl_Libr_Detail,Tbl_Libr_Master   
-Where Tbl_Libr_Detail.Libr_Master_ID=Tbl_Libr_Master.Libr_Master_ID   
-And Tbl_Libr_Master.Name='VILLAGE'   
+  <SQLQuery><![CDATA[Select    
+Tbl_Libr_Detail.Libr_Detail_ID,    
+Tbl_Libr_Detail.Name    
+From Tbl_Libr_Detail,Tbl_Libr_Master    
+Where Tbl_Libr_Detail.Libr_Master_ID=Tbl_Libr_Master.Libr_Master_ID    
+And Tbl_Libr_Master.Name='VILLAGE'    
 And Tbl_Libr_Detail.AST='Y']]></SQLQuery>
   <ViewAttribute
     Name="LibrDetailId"

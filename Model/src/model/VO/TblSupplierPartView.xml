@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="TblSupplierPartView"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -74,4 +74,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <SortCriteria>
+    <Sort
+      Attribute="SupplierPartId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

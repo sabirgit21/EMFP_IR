@@ -12,7 +12,8 @@
   Where="AST = 'Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblFarmerReg.FARMER_REG_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

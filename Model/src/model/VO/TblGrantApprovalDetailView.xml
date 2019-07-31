@@ -131,4 +131,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

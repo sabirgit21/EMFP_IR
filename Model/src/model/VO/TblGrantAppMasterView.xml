@@ -201,4 +201,9 @@
     ViewLink="model.VO.FkTblGrantAppDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantAppMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

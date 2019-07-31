@@ -103,4 +103,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <SortCriteria>
+    <Sort
+      Attribute="RoleDetailModulesId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

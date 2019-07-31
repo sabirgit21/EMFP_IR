@@ -110,4 +110,9 @@
     ViewLink="model.VO.Fk2TblTeamFormationFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TeamId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

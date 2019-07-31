@@ -12,7 +12,8 @@
   Where="AST = 'Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblCluster.CLUSTER_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

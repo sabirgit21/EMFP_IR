@@ -83,4 +83,9 @@
     ViewLink="model.VO.FkTblGrantDisburseMasterFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

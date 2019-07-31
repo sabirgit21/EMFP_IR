@@ -224,4 +224,9 @@
     ViewLink="model.VO.FkTblTrainingSchDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainingSchMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

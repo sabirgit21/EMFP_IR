@@ -48,4 +48,9 @@
     EntityAttrName="OpenBlncCr"
     EntityUsage="TblOpenBlnc"
     AliasName="OPEN_BLNC_CR"/>
+  <SortCriteria>
+    <Sort
+      Attribute="OpenBlncId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

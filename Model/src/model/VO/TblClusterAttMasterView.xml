@@ -197,4 +197,9 @@
     ViewLink="model.VO.FkTblClusterAttDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="ClusterAttMasterId"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

@@ -16,7 +16,8 @@ AND
 TblTrainer.TRAINER_TYPE='SM'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblTrainer.TRAINER_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
