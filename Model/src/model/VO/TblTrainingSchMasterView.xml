@@ -88,6 +88,8 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="TeamFormationId"/>
+      <Item Value="TeamName"/>
+      <Item Value="TrainerName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -224,6 +226,11 @@
     ViewLink="model.VO.FkTblTrainingSchDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainingSchMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="TrainingSchMasterId"
