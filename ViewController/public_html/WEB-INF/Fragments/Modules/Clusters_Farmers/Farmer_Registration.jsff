@@ -871,7 +871,7 @@
                                                               pattern="#{bindings.TblFarmerRegCropsView4.hints.AnnualProd.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column filterable="true" sortable="true" headerText="Yearly Sales" id="c34"
+                                    <af:column filterable="true" sortable="true" headerText="Yearly Sales (PKR)" id="c34"
                                                align="center" width="100">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.YearlySales}" id="it72"
