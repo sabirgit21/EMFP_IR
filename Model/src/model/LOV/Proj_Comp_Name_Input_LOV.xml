@@ -15,7 +15,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblProjComp.PROJ_COMP_ID">
+  OrderBy="TblProjComp.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

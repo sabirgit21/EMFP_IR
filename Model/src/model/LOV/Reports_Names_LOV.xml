@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblReports.REPORTS_ID">
+  OrderBy="TblReports.REPORTS_NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

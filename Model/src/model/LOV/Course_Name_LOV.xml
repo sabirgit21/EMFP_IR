@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblCourse.COURSE_ID">
+  OrderBy="TblCourse.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

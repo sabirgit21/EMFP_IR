@@ -13,7 +13,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblCluster.CLUSTER_ID">
+  OrderBy="TblCluster.CLUSTER_NO">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblCertification.CERTIFICATION_ID">
+  OrderBy="TblCertification.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

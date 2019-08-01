@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblOutputInd.OUTPUT_IND_ID">
+  OrderBy="TblOutputInd.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

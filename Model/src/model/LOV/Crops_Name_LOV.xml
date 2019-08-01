@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblCrop.CROP_ID">
+  OrderBy="TblCrop.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

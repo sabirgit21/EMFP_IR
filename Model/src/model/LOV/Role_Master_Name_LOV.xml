@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblRoleMaster.ROLE_MASTER_ID">
+  OrderBy="TblRoleMaster.ROLE_MASTER_NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

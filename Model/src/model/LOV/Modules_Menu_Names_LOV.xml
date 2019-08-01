@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblModuleMenu.MODULE_MENU_ID">
+  OrderBy="TblModuleMenu.MODULE_MENU_NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

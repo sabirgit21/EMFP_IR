@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblPhase.PHASE_ID">
+  OrderBy="TblPhase.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

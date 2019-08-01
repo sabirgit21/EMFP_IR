@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblTeam.TEAM_ID">
+  OrderBy="TblTeam.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

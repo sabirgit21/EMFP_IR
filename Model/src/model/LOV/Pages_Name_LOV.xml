@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblPages.PAGES_ID">
+  OrderBy="TblPages.PAGES_NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

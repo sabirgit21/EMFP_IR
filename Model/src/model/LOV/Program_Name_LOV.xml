@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblProg.PROG_ID">
+  OrderBy="TblProg.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

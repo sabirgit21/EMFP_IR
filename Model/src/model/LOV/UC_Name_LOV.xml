@@ -9,7 +9,7 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  OrderBy='"LIBR_DETAIL_ID"'>
+  OrderBy='"NAME"'>
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
@@ -19,11 +19,11 @@
         ResId="model.LOV.UC_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[Select Tbl_Libr_Detail.Libr_Detail_ID,       
-Tbl_Libr_Detail.Name       
-From Tbl_Libr_Detail,Tbl_Libr_Master       
-Where Tbl_Libr_Detail.Libr_Master_ID=Tbl_Libr_Master.Libr_Master_ID       
-And Tbl_Libr_Master.Name='Union Council'   
+  <SQLQuery><![CDATA[Select Tbl_Libr_Detail.Libr_Detail_ID,        
+Tbl_Libr_Detail.Name        
+From Tbl_Libr_Detail,Tbl_Libr_Master        
+Where Tbl_Libr_Detail.Libr_Master_ID=Tbl_Libr_Master.Libr_Master_ID        
+And Tbl_Libr_Master.Name='Union Council'    
 And Tbl_Libr_Detail.AST='Y']]></SQLQuery>
   <ViewAttribute
     Name="LibrDetailId"

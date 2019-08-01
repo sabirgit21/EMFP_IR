@@ -14,7 +14,7 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  OrderBy="TblModule.MODULE_ID">
+  OrderBy="TblModule.NAME">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
