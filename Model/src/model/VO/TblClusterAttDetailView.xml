@@ -151,9 +151,21 @@
     EntityAttrName="Mobile"
     EntityUsage="TblFarmerReg"
     AliasName="MOBILE"/>
+  <ViewAttribute
+    Name="FatherName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblFarmerReg"
+    AliasName="FATHER_NAME"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="ClusterAttDetailId"/>
   </AttrArray>
+  <SortCriteria>
+    <Sort
+      Attribute="ClusterAttDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="ClusterAttDetailId"
