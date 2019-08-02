@@ -53,6 +53,8 @@ public class TblProgImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int PROGID = AttributesEnum.ProgId.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int AST = AttributesEnum.Ast.index();
@@ -68,6 +70,14 @@ public class TblProgImpl extends EntityImpl {
      */
     public TblProgImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblProg");
+    }
+
 
     /**
      * Gets the attribute value for ProgId, using the alias name ProgId.
@@ -117,6 +127,7 @@ public class TblProgImpl extends EntityImpl {
         setAttributeInternal(AST, value);
     }
 
+
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
@@ -139,6 +150,14 @@ public class TblProgImpl extends EntityImpl {
      */
     public Timestamp getCreatedDate() {
         return (Timestamp) getAttributeInternal(CREATEDDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CreatedDate.
+     * @param value value to set the CreatedDate
+     */
+    public void setCreatedDate(Timestamp value) {
+        setAttributeInternal(CREATEDDATE, value);
     }
 
     /**
@@ -166,6 +185,14 @@ public class TblProgImpl extends EntityImpl {
     }
 
     /**
+     * Sets <code>value</code> as the attribute value for UpdatedDate.
+     * @param value value to set the UpdatedDate
+     */
+    public void setUpdatedDate(Timestamp value) {
+        setAttributeInternal(UPDATEDDATE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblProgOff() {
@@ -179,6 +206,7 @@ public class TblProgImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLPROJ);
     }
 
+
     /**
      * @param progId key constituent
 
@@ -186,13 +214,6 @@ public class TblProgImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal progId) {
         return new Key(new Object[] { progId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblProg");
     }
 
     /**
@@ -209,18 +230,18 @@ public class TblProgImpl extends EntityImpl {
      */
     protected void doDML(int operation, TransactionEvent e) {
         BigDecimal loginId = null;
-        try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
-        } catch(Exception ex) {
-            ex.printStackTrace();
-        }
-        
-        if (operation == DML_INSERT) {
-            setCreatedBy(loginId);
-            setUpdatedBy(loginId);
-        } else {
-            setUpdatedBy(loginId);
-        }
+         try {
+             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+             setCreatedBy(loginId);
+             setUpdatedBy(loginId);
+         } else {
+             setUpdatedBy(loginId);
+         }
         super.doDML(operation, e);
     }
 }
