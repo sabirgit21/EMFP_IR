@@ -220,7 +220,7 @@
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.ClusterId.name}"
                                                                            filterable="true" sortable="true"
-                                                                           headerText="Cluster"
+                                                                           headerText="Cluster No."
                                                                            id="c2">
                                                                            
                                                                             <f:facet name="filter">
