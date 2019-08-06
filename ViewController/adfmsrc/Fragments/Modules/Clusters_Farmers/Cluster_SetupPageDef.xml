@@ -24,6 +24,8 @@
           <Item Value="PhaseId"/>
           <Item Value="ClusterNo"/>
           <Item Value="UcLibrDetail"/>
+          <Item Value="VillageName"/>
+          <Item Value="MauzaName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

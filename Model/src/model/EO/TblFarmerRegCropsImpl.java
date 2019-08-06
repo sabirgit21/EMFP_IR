@@ -33,6 +33,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        CropTypeId,
         TblCrop,
         TblFarmerReg;
         private static AttributesEnum[] vals = null;
@@ -57,6 +58,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int FARMERREGCROPSID = AttributesEnum.FarmerRegCropsId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
@@ -69,6 +71,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int CROPTYPEID = AttributesEnum.CropTypeId.index();
     public static final int TBLCROP = AttributesEnum.TblCrop.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
 
@@ -76,6 +79,13 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblFarmerRegCropsImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegCrops");
     }
 
     /**
@@ -255,6 +265,22 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CropTypeId, using the alias name CropTypeId.
+     * @return the value of CropTypeId
+     */
+    public BigDecimal getCropTypeId() {
+        return (BigDecimal) getAttributeInternal(CROPTYPEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CropTypeId.
+     * @param value value to set the CropTypeId
+     */
+    public void setCropTypeId(BigDecimal value) {
+        setAttributeInternal(CROPTYPEID, value);
+    }
+
+    /**
      * @return the associated entity TblCropImpl.
      */
     public TblCropImpl getTblCrop() {
@@ -282,6 +308,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
         setAttributeInternal(TBLFARMERREG, value);
     }
 
+
     /**
      * @param farmerRegCropsId key constituent
 
@@ -289,13 +316,6 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal farmerRegCropsId) {
         return new Key(new Object[] { farmerRegCropsId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegCrops");
     }
 
     /**

@@ -279,12 +279,12 @@
                                                   contentStyle="width:200px">
                                         <f:validator binding="#{bindings.Url.validator}"/>
                                     </af:inputText>
-                                    <af:inputText value="#{bindings.PreAddress.inputValue}" label="Present Address"
+                                    <af:inputText value="#{bindings.PreAddress.inputValue}" label="Farm Address"
                                                   required="#{bindings.PreAddress.hints.mandatory}"
                                                   columns="#{bindings.PreAddress.hints.displayWidth}"
                                                   maximumLength="#{bindings.PreAddress.hints.precision}"
                                                   shortDesc="#{bindings.PreAddress.hints.tooltip}" id="it14"
-                                                  contentStyle="width:250px">
+                                                  contentStyle="width:200px">
                                         <f:validator binding="#{bindings.PreAddress.validator}"/>
                                     </af:inputText>
                                     <af:inputText value="#{bindings.PerAddress.inputValue}" label="Permanent Address"
@@ -292,9 +292,25 @@
                                                   columns="#{bindings.PerAddress.hints.displayWidth}"
                                                   maximumLength="#{bindings.PerAddress.hints.precision}"
                                                   shortDesc="#{bindings.PerAddress.hints.tooltip}" id="it15"
-                                                  contentStyle="width:250px">
+                                                  contentStyle="width:200px">
                                         <f:validator binding="#{bindings.PerAddress.validator}"/>
                                     </af:inputText>
+                                    <af:selectOneChoice value="#{bindings.FarmerRegDistrict.inputValue}"
+                                                        label="District"
+                                                        required="#{bindings.FarmerRegDistrict.hints.mandatory}"
+                                                        shortDesc="#{bindings.FarmerRegDistrict.hints.tooltip}"
+                                                        id="soc11" contentStyle="width:200px">
+                                        <f:selectItems value="#{bindings.FarmerRegDistrict.items}" id="si11"/>
+                                        <f:validator binding="#{bindings.FarmerRegDistrict.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.FarmerRegTehsil.inputValue}"
+                                                        label="Tehsil"
+                                                        required="#{bindings.FarmerRegTehsil.hints.mandatory}"
+                                                        shortDesc="#{bindings.FarmerRegTehsil.hints.tooltip}"
+                                                        id="soc12" contentStyle="width:200px">
+                                        <f:selectItems value="#{bindings.FarmerRegTehsil.items}" id="si12"/>
+                                        <f:validator binding="#{bindings.FarmerRegTehsil.validator}"/>
+                                    </af:selectOneChoice>
                                     <af:inputText value="#{bindings.Image.inputValue}" label="Image"
                                                   required="#{bindings.Image.hints.mandatory}"
                                                   columns="#{bindings.Image.hints.displayWidth}" partialTriggers="b2"
@@ -838,19 +854,21 @@
                                             <f:validator binding="#{row.bindings.FarmerRegCropsId.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblFarmerRegCropsView4.hints.CropId.name}"
-                                               filterable="true" sortable="true" headerText="Crop" id="c32" width="200">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.CropId}" id="it67"
-                                                          placeholder="Search Crop"></af:inputText>
+                                    <af:column sortProperty="#{bindings.TblFarmerRegCropsView4.hints.CropTypeId.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="Crop Type"
+                                               id="c32" width="200">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CropTypeId}" id="it67"
+                                                          placeholder="Search Crop Type"></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.CropId.inputValue}"
-                                                            label="#{row.bindings.CropId.label}"
-                                                            required="#{bindings.TblFarmerRegCropsView4.hints.CropId.mandatory}"
-                                                            shortDesc="#{bindings.TblFarmerRegCropsView4.hints.CropId.tooltip}"
+                                        <af:selectOneChoice value="#{row.bindings.CropTypeId.inputValue}"
+                                                            label="#{row.bindings.CropTypeId.label}"
+                                                            required="#{bindings.TblFarmerRegCropsView4.hints.CropTypeId.mandatory}"
+                                                            shortDesc="#{bindings.TblFarmerRegCropsView4.hints.CropTypeId.tooltip}"
                                                             id="soc2">
-                                            <f:selectItems value="#{row.bindings.CropId.items}" id="si2"/>
-                                            <f:validator binding="#{row.bindings.CropId.validator}"/>
+                                            <f:selectItems value="#{row.bindings.CropTypeId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.CropTypeId.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column filterable="true" sortable="true" headerText="Annual Production (Tones)"

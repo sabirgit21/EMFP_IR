@@ -3,41 +3,46 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Cluster_No_LOV"
+  Name="Crop_SubType_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectList="TblCluster.CLUSTER_NO, 
-       TblCluster.CLUSTER_ID"
-  FromList="TBL_CLUSTER TblCluster"
-  Where="AST = 'Y'  
-order by TblCluster.CLUSTER_NO desc"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
+  SelectAllAttributes="false"
   PageIterMode="Full">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Cluster_No_LOV_LABEL"/>
+        ResId="model.LOV.Crop_SubType_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
-    Name="TblCluster"
-    Entity="model.EO.TblCluster"/>
+    Name="TblCropType"
+    Entity="model.EO.TblCropType"/>
   <ViewAttribute
-    Name="ClusterNo"
+    Name="CropTypeId"
+    PrecisionRule="true"
+    EntityAttrName="CropTypeId"
+    EntityUsage="TblCropType"
+    AliasName="CROP_TYPE_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="ClusterNo"
-    EntityUsage="TblCluster"
-    AliasName="CLUSTER_NO"/>
-  <ViewAttribute
-    Name="ClusterId"
-    PrecisionRule="true"
-    EntityAttrName="ClusterId"
-    EntityUsage="TblCluster"
-    AliasName="CLUSTER_ID"/>
+    EntityAttrName="Name"
+    EntityUsage="TblCropType"
+    AliasName="NAME"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="Name"
+      Ascending="false"/>
+  </SortCriteria>
 </ViewObject>

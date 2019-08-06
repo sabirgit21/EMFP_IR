@@ -122,6 +122,13 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_FARMER_REG_CROPS"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="CropTypeId"
+    ColumnName="CROP_TYPE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG_CROPS"/>
   <AccessorAttribute
     Name="TblCrop"
     Association="model.EO.Fk2TblFarmerRegCropsFkAssoc"

@@ -137,7 +137,10 @@
                                                filterable="true" sortable="true" headerText="City" id="c12" width="90">
                                         <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.CityLibrDetail}" id="it7"
-                                                          placeholder="Search City "></af:inputText>
+                                                          placeholder="Search City ">
+                                                <af:autoSuggestBehavior suggestItems="#{row.bindings.CityLibrDetail.suggestItems}"
+                                                                        maxSuggestedItems="5"/>
+                                            </af:inputText>
                                         </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.CityLibrDetail.inputValue}"
                                                             label="#{row.bindings.CityLibrDetail.label}"
@@ -199,22 +202,39 @@
                                             <f:validator binding="#{row.bindings.MauzaLibrDetail.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.VillageLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="Village" id="c16"
-                                               width="90">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.VillageLibrDetail}" id="it11"
+                                    <af:column headerText="#{bindings.TblClusterView1.hints.MauzaName.label}" id="c4">
+                                        <af:inputListOfValues id="mauzaNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.MauzaName.label}"
+                                                              value="#{row.bindings.MauzaName.inputValue}"
+                                                              model="#{row.bindings.MauzaName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.MauzaName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.MauzaName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.MauzaName.tooltip}">
+                                            <f:validator binding="#{row.bindings.MauzaName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.MauzaName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.VillageName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="Village" id="c5">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.VillageName}" id="it11"
                                                           placeholder="Search Village "></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.VillageLibrDetail.inputValue}"
-                                                            label="#{row.bindings.VillageLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.VillageLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.VillageLibrDetail.tooltip}"
-                                                            id="soc7">
-                                            <f:selectItems value="#{row.bindings.VillageLibrDetail.items}" id="si7"/>
-                                            <f:validator binding="#{row.bindings.VillageLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="villageNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.VillageName.label}"
+                                                              value="#{row.bindings.VillageName.inputValue}"
+                                                              model="#{row.bindings.VillageName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.VillageName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.VillageName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.VillageName.tooltip}">
+                                            <f:validator binding="#{row.bindings.VillageName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.VillageName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
+                                    
                                     <af:column sortProperty="#{bindings.TblClusterView1.hints.CropId.name}"
                                                filterable="true" sortable="true" headerText="Crop" id="c11" width="130">
                                         <f:facet name="filter">

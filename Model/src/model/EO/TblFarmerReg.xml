@@ -306,6 +306,20 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_FARMER_REG"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="FarmerRegDistrict"
+    ColumnName="FARMER_REG_DISTRICT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG"/>
+  <Attribute
+    Name="FarmerRegTehsil"
+    ColumnName="FARMER_REG_TEHSIL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_FARMER_REG"/>
   <AccessorAttribute
     Name="TblClusterAttDetail"
     Association="model.EO.Fk2TblClusterAttDetailFkAssoc"

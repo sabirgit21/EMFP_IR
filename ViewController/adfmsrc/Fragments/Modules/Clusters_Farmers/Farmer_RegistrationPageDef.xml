@@ -180,6 +180,7 @@
           <Item Value="MainBuyer"/>
           <Item Value="MainBuyerAddr"/>
           <Item Value="MainBuyerCity"/>
+          <Item Value="CropTypeId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -228,5 +229,9 @@
       </AttrNames>
     </attributeValues>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="TblFarmerRegView1Iterator" StaticList="false" Uses="LOV_FarmerRegDistrict"
+          id="FarmerRegDistrict" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFarmerRegView1Iterator" StaticList="false" Uses="LOV_FarmerRegTehsil" id="FarmerRegTehsil"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

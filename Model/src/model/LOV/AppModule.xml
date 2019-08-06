@@ -139,4 +139,7 @@
   <ViewUsage
     Name="UC_Name_LOV1"
     ViewObjectName="model.LOV.UC_Name_LOV"/>
+  <ViewUsage
+    Name="Crop_SubType_LOV1"
+    ViewObjectName="model.LOV.Crop_SubType_LOV"/>
 </AppModule>

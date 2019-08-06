@@ -6,13 +6,30 @@
   Name="TblClusterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblCluster.CLUSTER_ID, 
+       TblCluster.CROP_ID, 
+       TblCluster.NAME, 
+       TblCluster.CITY_LIBR_DETAIL, 
+       TblCluster.DISTRICT_LIBR_DETAIL, 
+       TblCluster.TEHSIL_LIBR_DETAIL, 
+       TblCluster.MAUZA_LIBR_DETAIL, 
+       TblCluster.VILLAGE_LIBR_DETAIL, 
+       TblCluster.AST, 
+       TblCluster.PHASE_ID, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.UC_LIBR_DETAIL, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.VILLAGE_LIBR_DETAIL) AS VIEW_ATTR, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.MAUZA_LIBR_DETAIL) AS VIEW_ATTR, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.CITY_LIBR_DETAIL) AS VIEW_ATTR, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.DISTRICT_LIBR_DETAIL) AS VIEW_ATTR, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.TEHSIL_LIBR_DETAIL) AS VIEW_ATTR, 
+       (select name from tbl_crop where crop_id=TblCluster.CROP_ID) AS VIEW_ATTR, 
+       (select name from tbl_phase where phase_id=TblCluster.PHASE_ID) AS VIEW_ATTR"
+  FromList="TBL_CLUSTER TblCluster"
+  OrderBy="TblCluster.CLUSTER_ID">
   <ViewAccessor
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
@@ -48,6 +65,30 @@
   <ViewAccessor
     Name="UC_Name_LOV1"
     ViewObjectName="model.LOV.UC_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MAUZA_Name_LOV2"
+    ViewObjectName="model.LOV.MAUZA_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="City_Name_LOV2"
+    ViewObjectName="model.LOV.City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="District_Name_LOV2"
+    ViewObjectName="model.LOV.District_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tehsil_Name_LOV2"
+    ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Crops_Name_LOV2"
+    ViewObjectName="model.LOV.Crops_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Name_LOV2"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
@@ -165,7 +206,8 @@
     ListVOName="MAUZA_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ComboRowCountHint="10">
     <AttrArray Name="AttrNames">
       <Item Value="MauzaLibrDetail"/>
     </AttrArray>
@@ -183,7 +225,8 @@
     ListVOName="Village_Name_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
-    MRUCount="0">
+    MRUCount="0"
+    ComboRowCountHint="10">
     <AttrArray Name="AttrNames">
       <Item Value="VillageLibrDetail"/>
     </AttrArray>
@@ -213,6 +256,174 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_VillageName"
+    ListVOName="Village_Name_LOV1"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VillageName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="VillageLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MauzaName"
+    ListVOName="MAUZA_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MauzaName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="MauzaLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CityName"
+    ListVOName="City_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CityName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CityLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DistrictName"
+    ListVOName="District_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DistrictName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="DistrictLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TehsilName"
+    ListVOName="Tehsil_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TehsilName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TehsilLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CropName"
+    ListVOName="Crops_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CropName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PhaseName"
+    ListVOName="Phase_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhaseName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
   </ListBinding>
   <EntityUsage
     Name="TblCluster"
@@ -303,7 +514,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -318,7 +529,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -373,6 +584,136 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="VillageName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_VillageName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.VILLAGE_LIBR_DETAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MauzaName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_MauzaName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.MAUZA_LIBR_DETAIL"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CityName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_CityName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.CITY_LIBR_DETAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DistrictName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_DistrictName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.DISTRICT_LIBR_DETAIL"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TehsilName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_TehsilName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.TEHSIL_LIBR_DETAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CropName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_CropName"
+    Expression="select name from tbl_crop where crop_id=TblCluster.CROP_ID"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhaseName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_PhaseName"
+    Expression="select name from tbl_phase where phase_id=TblCluster.PHASE_ID"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblClusterAttMasterView"
     ViewLink="model.VO.Fk2TblClusterAttMasterFkLink"
@@ -407,9 +748,4 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterId"
-      Ascending="false"/>
-  </SortCriteria>
 </ViewObject>

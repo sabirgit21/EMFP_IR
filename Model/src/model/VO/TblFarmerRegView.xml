@@ -29,6 +29,14 @@
     Name="Marital_Status_LOV1"
     ViewObjectName="model.LOV.Marital_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="District_Name_LOV1"
+    ViewObjectName="model.LOV.District_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tehsil_Name_LOV1"
+    ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Status1"
@@ -98,6 +106,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Marital_Status_View"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegDistrict"
+    ListVOName="District_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegDistrict"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegTehsil"
+    ListVOName="Tehsil_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegTehsil"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -282,6 +326,34 @@
     EntityAttrName="FarmerNo"
     EntityUsage="TblFarmerReg"
     AliasName="FARMER_NO"/>
+  <ViewAttribute
+    Name="FarmerRegDistrict"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegDistrict"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_DISTRICT"
+    LOVName="LOV_FarmerRegDistrict">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FarmerRegTehsil"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegTehsil"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_TEHSIL"
+    LOVName="LOV_FarmerRegTehsil">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblClusterAttDetailView"
     ViewLink="model.VO.Fk2TblClusterAttDetailFkLink"
@@ -332,6 +404,11 @@
     ViewLink="model.VO.Fk2TblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="FarmerRegId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="FarmerRegId"

@@ -48,6 +48,8 @@ public class TblFarmerRegImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        FarmerRegDistrict,
+        FarmerRegTehsil,
         TblClusterAttDetail,
         TblClusterDetail,
         TblBeneficiary,
@@ -82,6 +84,7 @@ public class TblFarmerRegImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int FATHERNAME = AttributesEnum.FatherName.index();
@@ -108,6 +111,8 @@ public class TblFarmerRegImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int FARMERREGDISTRICT = AttributesEnum.FarmerRegDistrict.index();
+    public static final int FARMERREGTEHSIL = AttributesEnum.FarmerRegTehsil.index();
     public static final int TBLCLUSTERATTDETAIL = AttributesEnum.TblClusterAttDetail.index();
     public static final int TBLCLUSTERDETAIL = AttributesEnum.TblClusterDetail.index();
     public static final int TBLBENEFICIARY = AttributesEnum.TblBeneficiary.index();
@@ -125,6 +130,13 @@ public class TblFarmerRegImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblFarmerRegImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblFarmerReg");
     }
 
     /**
@@ -528,6 +540,38 @@ public class TblFarmerRegImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FarmerRegDistrict, using the alias name FarmerRegDistrict.
+     * @return the value of FarmerRegDistrict
+     */
+    public BigDecimal getFarmerRegDistrict() {
+        return (BigDecimal) getAttributeInternal(FARMERREGDISTRICT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FarmerRegDistrict.
+     * @param value value to set the FarmerRegDistrict
+     */
+    public void setFarmerRegDistrict(BigDecimal value) {
+        setAttributeInternal(FARMERREGDISTRICT, value);
+    }
+
+    /**
+     * Gets the attribute value for FarmerRegTehsil, using the alias name FarmerRegTehsil.
+     * @return the value of FarmerRegTehsil
+     */
+    public BigDecimal getFarmerRegTehsil() {
+        return (BigDecimal) getAttributeInternal(FARMERREGTEHSIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FarmerRegTehsil.
+     * @param value value to set the FarmerRegTehsil
+     */
+    public void setFarmerRegTehsil(BigDecimal value) {
+        setAttributeInternal(FARMERREGTEHSIL, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblClusterAttDetail() {
@@ -625,6 +669,7 @@ public class TblFarmerRegImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLGRANTDISBURSEDETAIL);
     }
 
+
     /**
      * @param farmerRegId key constituent
 
@@ -632,13 +677,6 @@ public class TblFarmerRegImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal farmerRegId) {
         return new Key(new Object[] { farmerRegId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblFarmerReg");
     }
 
     /**
