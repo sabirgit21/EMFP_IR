@@ -19,6 +19,10 @@
         ResId="model.LOV.Tehsil_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="tehsilName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <SQLQuery><![CDATA[Select     
 Tbl_Libr_Detail.Libr_Detail_ID,     
 Tbl_Libr_Detail.Name     
@@ -51,6 +55,42 @@ And Tbl_Libr_Detail.AST='Y']]></SQLQuery>
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewCriteria
+    Name="Tehsil_Name_LOVCriteria"
+    ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="Tehsil_Name_LOVCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="Name"
+        ViewAttribute="Name"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":tehsilName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="LibrDetailId"/>
   </AttrArray>

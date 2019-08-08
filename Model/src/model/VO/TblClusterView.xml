@@ -27,9 +27,10 @@
        (select name from tbl_libr_detail where libr_detail_id=TblCluster.DISTRICT_LIBR_DETAIL) AS VIEW_ATTR, 
        (select name from tbl_libr_detail where libr_detail_id=TblCluster.TEHSIL_LIBR_DETAIL) AS VIEW_ATTR, 
        (select name from tbl_crop where crop_id=TblCluster.CROP_ID) AS VIEW_ATTR, 
-       (select name from tbl_phase where phase_id=TblCluster.PHASE_ID) AS VIEW_ATTR"
+       (select name from tbl_phase where phase_id=TblCluster.PHASE_ID) AS VIEW_ATTR, 
+       (select name from tbl_libr_detail where libr_detail_id=TblCluster.UC_LIBR_DETAIL) AS VIEW_ATTR"
   FromList="TBL_CLUSTER TblCluster"
-  OrderBy="TblCluster.CLUSTER_ID">
+  OrderBy="TblCluster.CLUSTER_ID desc">
   <ViewAccessor
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
@@ -61,7 +62,18 @@
   <ViewAccessor
     Name="Village_Name_LOV1"
     ViewObjectName="model.LOV.Village_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Village_Name_LOVCriteria"
+      FullName="model.LOV.Village_Name_LOV.Village_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="Villagename">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[VillageName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="UC_Name_LOV1"
     ViewObjectName="model.LOV.UC_Name_LOV"
@@ -69,19 +81,63 @@
   <ViewAccessor
     Name="MAUZA_Name_LOV2"
     ViewObjectName="model.LOV.MAUZA_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="MAUZA_Name_LOVCriteria"
+      FullName="model.LOV.MAUZA_Name_LOV.MAUZA_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="mauzaName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[MauzaName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="City_Name_LOV2"
     ViewObjectName="model.LOV.City_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="City_Name_LOVCriteria"
+      FullName="model.LOV.City_Name_LOV.City_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="cityName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CityName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="District_Name_LOV2"
     ViewObjectName="model.LOV.District_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="District_Name_LOVCriteria"
+      FullName="model.LOV.District_Name_LOV.District_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="districtName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[DistrictName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Tehsil_Name_LOV2"
     ViewObjectName="model.LOV.Tehsil_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Tehsil_Name_LOVCriteria"
+      FullName="model.LOV.Tehsil_Name_LOV.Tehsil_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="tehsilName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TehsilName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Crops_Name_LOV2"
     ViewObjectName="model.LOV.Crops_Name_LOV"
@@ -89,7 +145,33 @@
   <ViewAccessor
     Name="Phase_Name_LOV2"
     ViewObjectName="model.LOV.Phase_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Phase_Name_LOVCriteria"
+      FullName="model.LOV.Phase_Name_LOV.Phase_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="phaseName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[PhaseName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="UC_Name_LOV2"
+    ViewObjectName="model.LOV.UC_Name_LOV"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="UC_Name_LOVCriteria"
+      FullName="model.LOV.UC_Name_LOV.UC_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="ucName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[UCName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Status1"
@@ -279,7 +361,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="Village_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_MauzaName"
@@ -418,6 +501,30 @@
     <AttrArray Name="ListAttrNames">
       <Item Value="Name"/>
       <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UCName"
+    ListVOName="UC_Name_LOV2"
+    ListRangeSize="-1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UCName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="UcLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+      <Item Value="LibrDetailId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -707,6 +814,24 @@
     LOVName="LOV_PhaseName"
     Expression="select name from tbl_phase where phase_id=TblCluster.PHASE_ID"
     IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UCName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_UCName"
+    Expression="select name from tbl_libr_detail where libr_detail_id=TblCluster.UC_LIBR_DETAIL">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

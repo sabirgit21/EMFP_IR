@@ -69,20 +69,25 @@
                                             <f:validator binding="#{row.bindings.ClusterNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.PhaseId.name}"
-                                               filterable="true" sortable="true" headerText="Phase" id="c1" width="130">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.PhaseId}" id="it14"
-                                                          placeholder="Search Phase " rendered="true"></af:inputText>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.PhaseName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="Phase" id="c6" width="130">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.PhaseName}" id="it14"
+                                                          placeholder="Search Phase " >
+                                                           </af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}"
-                                                            label="#{row.bindings.PhaseId.label}"
-                                                            required="#{bindings.TblClusterView1.hints.PhaseId.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.PhaseId.tooltip}"
-                                                            id="soc8">
-                                            <f:selectItems value="#{row.bindings.PhaseId.items}" id="si8"/>
-                                            <f:validator binding="#{row.bindings.PhaseId.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="phaseNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.PhaseName.label}"
+                                                              value="#{row.bindings.PhaseName.inputValue}"
+                                                              model="#{row.bindings.PhaseName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.PhaseName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.PhaseName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.PhaseName.tooltip}">
+                                            <f:validator binding="#{row.bindings.PhaseName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.PhaseName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblClusterView1.hints.Name.name}"
                                                filterable="true" sortable="true" headerText="Cluster Name" id="c9"
@@ -101,55 +106,61 @@
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.DistrictLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="District" id="c13"
-                                               width="90">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.DistrictLibrDetail}" id="it8"
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.DistrictName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="District"
+                                               id="c1" width="90">
+                                              
+                                        <af:inputListOfValues id="districtNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.DistrictName.label}"
+                                                              value="#{row.bindings.DistrictName.inputValue}"
+                                                              model="#{row.bindings.DistrictName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.DistrictName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.DistrictName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.DistrictName.tooltip}">
+                                            <f:validator binding="#{row.bindings.DistrictName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.DistrictName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.TehsilName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="Tehsil" id="c7" width="90">
+                                                 <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.TehsilName}" id="it8"
                                                           placeholder="Search District "></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.DistrictLibrDetail.inputValue}"
-                                                            label="#{row.bindings.DistrictLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.DistrictLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.DistrictLibrDetail.tooltip}"
-                                                            id="soc4">
-                                            <f:selectItems value="#{row.bindings.DistrictLibrDetail.items}" id="si4"/>
-                                            <f:validator binding="#{row.bindings.DistrictLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="tehsilNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.TehsilName.label}"
+                                                              value="#{row.bindings.TehsilName.inputValue}"
+                                                              model="#{row.bindings.TehsilName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.TehsilName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.TehsilName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.TehsilName.tooltip}">
+                                            <f:validator binding="#{row.bindings.TehsilName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.TehsilName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.TehsilLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="Tehsil" id="c14"
-                                               width="90">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.TehsilLibrDetail}" id="it9"
-                                                          placeholder="Search Tehsil "></af:inputText>
-                                        </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.TehsilLibrDetail.inputValue}"
-                                                            label="#{row.bindings.TehsilLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.TehsilLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.TehsilLibrDetail.tooltip}"
-                                                            id="soc5">
-                                            <f:selectItems value="#{row.bindings.TehsilLibrDetail.items}" id="si5"/>
-                                            <f:validator binding="#{row.bindings.TehsilLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
-                                    </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CityLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="City" id="c12" width="90">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.CityLibrDetail}" id="it7"
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CityName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="City" id="c13">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CityName}" id="it7"
                                                           placeholder="Search City ">
-                                                <af:autoSuggestBehavior suggestItems="#{row.bindings.CityLibrDetail.suggestItems}"
-                                                                        maxSuggestedItems="5"/>
-                                            </af:inputText>
+                                                          </af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.CityLibrDetail.inputValue}"
-                                                            label="#{row.bindings.CityLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.CityLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.CityLibrDetail.tooltip}"
-                                                            id="soc3">
-                                            <f:selectItems value="#{row.bindings.CityLibrDetail.items}" id="si3"/>
-                                            <f:validator binding="#{row.bindings.CityLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="cityNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.CityName.label}"
+                                                              value="#{row.bindings.CityName.inputValue}"
+                                                              model="#{row.bindings.CityName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.CityName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.CityName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.CityName.tooltip}">
+                                            <f:validator binding="#{row.bindings.CityName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.CityName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
                                     
                                     <!--<af:column sortProperty="#{bindings.TblClusterView1.hints.UcNumber.name}"
@@ -171,39 +182,33 @@
                                                               pattern="#{bindings.TblClusterView1.hints.UcNumber.format}"/>
                                         </af:inputText>
                                     </af:column>-->
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.UcLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="UC NO." id="c3"
-                                               width="100">
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.UCName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="UC NO." id="c12" width="90">
                                                <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.UcLibrDetail}" id="it16"
+                                            <af:inputText value="#{vs.filterCriteria.UCName}" id="it16"
                                                           placeholder="Search UC NO. "></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.UcLibrDetail.inputValue}"
-                                                            label="#{row.bindings.UcLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.UcLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.UcLibrDetail.tooltip}"
-                                                            id="soc9">
-                                            <f:selectItems value="#{row.bindings.UcLibrDetail.items}" id="si9"/>
-                                            <f:validator binding="#{row.bindings.UcLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="uCNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.UCName.label}"
+                                                              value="#{row.bindings.UCName.inputValue}"
+                                                              model="#{row.bindings.UCName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.UCName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.UCName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.UCName.tooltip}">
+                                            <f:validator binding="#{row.bindings.UCName.validator}"/>
+                                             <af:autoSuggestBehavior suggestItems="#{row.bindings.UCName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.MauzaLibrDetail.name}"
-                                               filterable="true" sortable="true" headerText="Mauza" id="c15" width="90">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.MauzaLibrDetail}" id="it10"
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.MauzaName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Mauza" id="c3" width="90">
+                                               <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.MauzaName}" id="it10"
                                                           placeholder="Search Mauza "></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.MauzaLibrDetail.inputValue}"
-                                                            label="#{row.bindings.MauzaLibrDetail.label}"
-                                                            required="#{bindings.TblClusterView1.hints.MauzaLibrDetail.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.MauzaLibrDetail.tooltip}"
-                                                            id="soc6">
-                                            <f:selectItems value="#{row.bindings.MauzaLibrDetail.items}" id="si6"/>
-                                            <f:validator binding="#{row.bindings.MauzaLibrDetail.validator}"/>
-                                        </af:selectOneChoice>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.TblClusterView1.hints.MauzaName.label}" id="c4">
-                                        <af:inputListOfValues id="mauzaNameId"
+                                        <af:inputListOfValues id="ilov1"
                                                               popupTitle="Search and Select: #{bindings.TblClusterView1.hints.MauzaName.label}"
                                                               value="#{row.bindings.MauzaName.inputValue}"
                                                               model="#{row.bindings.MauzaName.listOfValuesModel}"
@@ -220,7 +225,9 @@
                                                 headerText="Village" id="c5">
                                                 <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.VillageName}" id="it11"
-                                                          placeholder="Search Village "></af:inputText>
+                                                          placeholder="Search Village ">
+                                                
+                                            </af:inputText>
                                         </f:facet>
                                         <af:inputListOfValues id="villageNameId"
                                                               popupTitle="Search and Select: #{bindings.TblClusterView1.hints.VillageName.label}"
@@ -234,21 +241,24 @@
                                                                     maxSuggestedItems="5"/>
                                         </af:inputListOfValues>
                                     </af:column>
-                                    
-                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CropId.name}"
-                                               filterable="true" sortable="true" headerText="Crop" id="c11" width="130">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.CropId}" id="it6"
+                                    <af:column sortProperty="#{bindings.TblClusterView1.hints.CropName.name}"
+                                               filterable="true" sortable="true"
+                                                headerText="Crop" id="c4" width="90">
+                                                <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.CropName}" id="it6"
                                                           placeholder="Search Crop "></af:inputText>
                                         </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.CropId.inputValue}"
-                                                            label="#{row.bindings.CropId.label}"
-                                                            required="#{bindings.TblClusterView1.hints.CropId.mandatory}"
-                                                            shortDesc="#{bindings.TblClusterView1.hints.CropId.tooltip}"
-                                                            id="soc2">
-                                            <f:selectItems value="#{row.bindings.CropId.items}" id="si2"/>
-                                            <f:validator binding="#{row.bindings.CropId.validator}"/>
-                                        </af:selectOneChoice>
+                                        <af:inputListOfValues id="cropNameId"
+                                                              popupTitle="Search and Select: #{bindings.TblClusterView1.hints.CropName.label}"
+                                                              value="#{row.bindings.CropName.inputValue}"
+                                                              model="#{row.bindings.CropName.listOfValuesModel}"
+                                                              required="#{bindings.TblClusterView1.hints.CropName.mandatory}"
+                                                              columns="#{bindings.TblClusterView1.hints.CropName.displayWidth}"
+                                                              shortDesc="#{bindings.TblClusterView1.hints.CropName.tooltip}">
+                                            <f:validator binding="#{row.bindings.CropName.validator}"/>
+                                            <af:autoSuggestBehavior suggestItems="#{row.bindings.CropName.suggestItems}"
+                                                                    maxSuggestedItems="5"/>
+                                        </af:inputListOfValues>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblClusterView1.hints.Ast.name}"
                                                filterable="true" sortable="true" headerText="Active" id="c10"

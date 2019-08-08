@@ -26,6 +26,12 @@
           <Item Value="UcLibrDetail"/>
           <Item Value="VillageName"/>
           <Item Value="MauzaName"/>
+          <Item Value="PhaseName"/>
+          <Item Value="DistrictName"/>
+          <Item Value="TehsilName"/>
+          <Item Value="CityName"/>
+          <Item Value="UCName"/>
+          <Item Value="CropName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
