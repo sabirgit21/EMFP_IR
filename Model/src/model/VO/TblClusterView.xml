@@ -141,7 +141,18 @@
   <ViewAccessor
     Name="Crops_Name_LOV2"
     ViewObjectName="model.LOV.Crops_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Crops_Name_LOVCriteria"
+      FullName="model.LOV.Crops_Name_LOV.Crops_Name_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="cropName">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[CropName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="Phase_Name_LOV2"
     ViewObjectName="model.LOV.Phase_Name_LOV"
@@ -386,7 +397,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="MAUZA_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_CityName"
@@ -410,7 +422,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="City_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_DistrictName"
@@ -434,7 +447,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="District_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_TehsilName"
@@ -458,7 +472,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="Tehsil_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_CropName"
@@ -482,7 +497,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="Crops_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_PhaseName"
@@ -506,7 +522,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="Phase_Name_LOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_UCName"
@@ -530,7 +547,8 @@
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="UC_Name_LOVCriteria"/>
   </ListBinding>
   <EntityUsage
     Name="TblCluster"

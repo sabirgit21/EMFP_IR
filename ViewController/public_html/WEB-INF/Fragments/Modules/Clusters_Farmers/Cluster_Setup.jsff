@@ -110,7 +110,10 @@
                                                filterable="true" sortable="true"
                                                 headerText="District"
                                                id="c1" width="90">
-                                              
+                                              <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.DistrictName}" id="it9"
+                                                          placeholder="Search District "></af:inputText>
+                                        </f:facet>
                                         <af:inputListOfValues id="districtNameId"
                                                               popupTitle="Search and Select: #{bindings.TblClusterView1.hints.DistrictName.label}"
                                                               value="#{row.bindings.DistrictName.inputValue}"
