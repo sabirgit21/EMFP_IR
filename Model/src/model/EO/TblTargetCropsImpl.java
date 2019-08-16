@@ -54,6 +54,8 @@ public class TblTargetCropsImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int TARGETCROPSID = AttributesEnum.TargetCropsId.index();
     public static final int PROJOFFID = AttributesEnum.ProjOffId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
@@ -71,6 +73,14 @@ public class TblTargetCropsImpl extends EntityImpl {
      */
     public TblTargetCropsImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblTargetCrops");
+    }
+
 
     /**
      * Gets the attribute value for TargetCropsId, using the alias name TargetCropsId.
@@ -228,6 +238,7 @@ public class TblTargetCropsImpl extends EntityImpl {
         setAttributeInternal(TBLPROJOFF, value);
     }
 
+
     /**
      * @param targetCropsId key constituent
 
@@ -235,13 +246,6 @@ public class TblTargetCropsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal targetCropsId) {
         return new Key(new Object[] { targetCropsId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblTargetCrops");
     }
 
     /**

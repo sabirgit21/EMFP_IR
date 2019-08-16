@@ -285,7 +285,7 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
          if (operation == DML_INSERT) {
              setCreatedBy(loginId);
              setUpdatedBy(loginId);
-         } else {
+             } else if(operation == DML_UPDATE) {
              setUpdatedBy(loginId);
          }
         super.doDML(operation, e);

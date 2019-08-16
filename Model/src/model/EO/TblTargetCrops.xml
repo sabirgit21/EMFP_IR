@@ -27,7 +27,6 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="ProjOffId"
-    IsNotNull="true"
     ColumnName="PROJ_OFF_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
