@@ -111,8 +111,7 @@
         Conjunction="AND"
         Value=":SchdDated"
         IsBindVarValue="true"
-        Required="Required"
-        ValidateBindVars="true"/>
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <AttrArray Name="KeyAttributes">
@@ -122,6 +121,10 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="ClusterNo"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="ClusterNo"/>

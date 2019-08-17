@@ -70,6 +70,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+      <Item Value="PhaseName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -404,6 +405,11 @@
     ViewLink="model.VO.Fk2TblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="FarmerRegId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="FarmerRegId"

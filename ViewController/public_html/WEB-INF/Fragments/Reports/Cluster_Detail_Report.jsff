@@ -10,9 +10,9 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <!--<af:selectOneChoice value="#{bindings.Phase_Name_LOV1.inputValue}" label="Select Phase "
+                            <af:selectOneChoice value="#{bindings.Phase_Name_LOV1.inputValue}" label="Select Phase "
                                                 shortDesc="#{bindings.Phase_Name_LOV1.hints.tooltip}" id="soc2"
-                                                autoSubmit="true" disabled="true"
+                                                autoSubmit="true" disabled="false"
                                                 valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_phase}">
                                 <af:selectItem label="none" value="none" id="si6"/>
                                 <f:selectItems value="#{bindings.Phase_Name_LOV1.items}" id="si3"/>
@@ -35,7 +35,7 @@
                                 <af:selectItem label="none" value="none" id="si7"/>
                                 <f:selectItems value="#{bindings.City_Name_LOV1.items}" id="si5"/>
                                 <f:validator binding="#{bindings.City_Name_LOV1.validator}"/>
-                            </af:selectOneChoice>-->
+                            </af:selectOneChoice>
                             
                         </af:panelGroupLayout>
                     </af:gridCell>

@@ -217,6 +217,34 @@
                                                               pattern="#{bindings.TblClusterAttMasterView1.hints.Longitude.format}"/>
                                         </af:inputText>
                                     </af:column>-->
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                                      label="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                                      required="#{bindings.TblClusterAttMasterView1.hints.Latitude.mandatory}"
+                                                      columns="#{bindings.TblClusterAttMasterView1.hints.Latitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttMasterView1.hints.Latitude.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttMasterView1.hints.Latitude.tooltip}"
+                                                      id="it15">
+                                            <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttMasterView1.hints.Latitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Longitude.label}"
+                                               id="c9">
+                                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                                      label="#{bindings.TblClusterAttMasterView1.hints.Longitude.label}"
+                                                      required="#{bindings.TblClusterAttMasterView1.hints.Longitude.mandatory}"
+                                                      columns="#{bindings.TblClusterAttMasterView1.hints.Longitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblClusterAttMasterView1.hints.Longitude.precision}"
+                                                      shortDesc="#{bindings.TblClusterAttMasterView1.hints.Longitude.tooltip}"
+                                                      id="it16">
+                                            <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblClusterAttMasterView1.hints.Longitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
                                 </af:table>
                                                             <af:button actionListener="#{bindings.Execute.execute}"
                                                                        text="Refresh"
@@ -232,11 +260,18 @@
                                                     
                                                     <af:panelGroupLayout id="pg1">
                                                     <af:spacer width="400" height="20" id="s16"/>
-                                                        <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                    <af:button id="cb1" clientComponent="true" text="Add"
+                                                                   icon="#{resource['images:add.png']}"
+                                                                   disabled="#{!bindings.CreateInsert.enabled}">   
+                                                            <af:clientListener type="action" method="getLocation" />
+                                                             <af:serverListener type="servListener"
+                                                                                method="#{locationManagedBean.getLocation}"/>
+                                                    </af:button>
+                                                        <!--<af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                    text="Add"
                                                                    icon="#{resource['images:add.png']}"
                                                                    disabled="#{!bindings.CreateInsert.enabled}"
-                                                                   id="b8"/>
+                                                                   id="b8"/>-->
                                                         <af:spacer width="5" height="10" id="s10"/>
                                                         <af:button actionListener="#{bindings.Execute.execute}"
                                                                    text="Edit"
@@ -640,4 +675,22 @@
                                         </af:panelGridLayout>
                                     </af:showDetailItem>
                                 </af:panelAccordion>
+<af:resource type="javascript">
+  var value;
+         function getLocation(actionEvent) {
+            if (navigator.geolocation) {
+            value = actionEvent;
+            navigator.geolocation.getCurrentPosition(showPosition);
+            
+          } else { 
+            alert("Geolocation is not supported by this browser.");
+          }
+        }
+        function showPosition(position) {
+        var values = {'long' : position.coords.longitude, 'lat' : position.coords.latitude};
+             AdfCustomEvent.queue(value.getSource(), "servListener",
+                        values, true);
+                        value.cancel();
+        }
+  </af:resource>
 </ui:composition>
