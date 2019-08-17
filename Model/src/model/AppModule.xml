@@ -1052,6 +1052,9 @@
   <ViewUsage
     Name="Map_Sch_Detail_Att_Master1"
     ViewObjectName="model.VO.Map_Sch_Detail_Att_Master"/>
+  <ViewUsage
+    Name="USERS_CRUD_OPERATIONS1"
+    ViewObjectName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"

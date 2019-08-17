@@ -61,4 +61,9 @@
     <managed-bean-class>view.FinancialSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__13">
+    <managed-bean-name>USERS_CRUD_BEAN</managed-bean-name>
+    <managed-bean-class>view.USERS_CRUD</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

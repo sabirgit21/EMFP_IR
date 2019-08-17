@@ -66,6 +66,10 @@
         <page path="/WEB-INF/Fragments/Modules/Financial/Cash_Receipt.jsff" usageId="view_Cash_ReceiptPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Financial/Journal.jsff" usageId="view_JournalPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Management/Map.jsff" usageId="view_MapPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Certification_Setup_TaskFlow.xml#Certification_Setup_TaskFlow@ExecuteWithParams"
+              usageId="view_Certification_Setup_TaskFlow_Certification_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Setup/Program_TaskFlow.xml#Program_TaskFlow@ExecuteWithParams"
+              usageId="view_Program_TaskFlow_Program_TaskFlow_ExecuteWithParamsPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -121,6 +125,10 @@
         <page id="view_Cash_ReceiptPageDef" path="Fragments.Modules.Financial.Cash_ReceiptPageDef"/>
         <page id="view_JournalPageDef" path="Fragments.Modules.Financial.JournalPageDef"/>
         <page id="view_MapPageDef" path="Fragments.Modules.Management.MapPageDef"/>
+        <page id="view_Certification_Setup_TaskFlow_Certification_Setup_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Certification_Setup_TaskFlow_Certification_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Program_TaskFlow_Program_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Setup.Program_TaskFlow_Program_TaskFlow_ExecuteWithParamsPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
