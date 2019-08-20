@@ -337,7 +337,7 @@
                                                               queryListener="#{bindings.TblItemL4View5Query.processQuery}"
                                                               varStatus="vs" id="t5"
                                                               partialTriggers="::b21 ::b22 ::b23 ::b29"
-                                                              scrollPolicy="page" autoHeightRows="0" width="476">
+                                                              scrollPolicy="page" autoHeightRows="0" width="580">
                                                         <af:column sortProperty="#{bindings.TblItemL4View5.hints.ItemL4Id.name}"
                                                                    filterable="true" sortable="true" headerText="FMI ID"
                                                                    id="c21" align="center" width="60">
@@ -374,11 +374,31 @@
                                                                 <f:validator binding="#{row.bindings.Name.validator}"/>
                                                             </af:inputText>
                                                         </af:column>
+                                                        <af:column sortProperty="#{bindings.TblItemL4View5.hints.Rate.name}"
+                                                                   filterable="true" sortable="true"
+                                                                    headerText="Rate"
+                                                                   id="c15">
+                                                                   <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Rate}" id="it28"
+                                                                              placeholder="Search Rate"></af:inputText>
+                                                            </f:facet>
+                                                            <af:inputText value="#{row.bindings.Rate.inputValue}"
+                                                                          label="#{bindings.TblItemL4View5.hints.Rate.label}"
+                                                                          required="#{bindings.TblItemL4View5.hints.Rate.mandatory}"
+                                                                          columns="#{bindings.TblItemL4View5.hints.Rate.displayWidth}"
+                                                                          maximumLength="#{bindings.TblItemL4View5.hints.Rate.precision}"
+                                                                          shortDesc="#{bindings.TblItemL4View5.hints.Rate.tooltip}"
+                                                                          id="it30">
+                                                                <f:validator binding="#{row.bindings.Rate.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.TblItemL4View5.hints.Rate.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
                                                         <af:column sortProperty="#{bindings.TblItemL4View5.hints.Ast.name}"
                                                                    filterable="true" sortable="true" headerText="Active"
                                                                    id="c26" width="60">
                                                             <f:facet name="filter">
-                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it28"
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it31"
                                                                               placeholder="Search Status"></af:inputText>
                                                             </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"

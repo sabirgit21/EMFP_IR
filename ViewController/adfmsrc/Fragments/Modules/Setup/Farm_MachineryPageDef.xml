@@ -84,6 +84,7 @@
           <Item Value="ItemL3Id"/>
           <Item Value="Name"/>
           <Item Value="Ast"/>
+          <Item Value="Rate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

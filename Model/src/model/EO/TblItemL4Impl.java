@@ -30,6 +30,7 @@ public class TblItemL4Impl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        Rate,
         TblGrantAppDetail,
         TblItemL3,
         TblSupplierRateDetail;
@@ -55,6 +56,7 @@ public class TblItemL4Impl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int ITEML4ID = AttributesEnum.ItemL4Id.index();
     public static final int ITEML3ID = AttributesEnum.ItemL3Id.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -63,6 +65,7 @@ public class TblItemL4Impl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int RATE = AttributesEnum.Rate.index();
     public static final int TBLGRANTAPPDETAIL = AttributesEnum.TblGrantAppDetail.index();
     public static final int TBLITEML3 = AttributesEnum.TblItemL3.index();
     public static final int TBLSUPPLIERRATEDETAIL = AttributesEnum.TblSupplierRateDetail.index();
@@ -71,6 +74,13 @@ public class TblItemL4Impl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblItemL4Impl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblItemL4");
     }
 
     /**
@@ -186,6 +196,22 @@ public class TblItemL4Impl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for Rate, using the alias name Rate.
+     * @return the value of Rate
+     */
+    public BigDecimal getRate() {
+        return (BigDecimal) getAttributeInternal(RATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Rate.
+     * @param value value to set the Rate
+     */
+    public void setRate(BigDecimal value) {
+        setAttributeInternal(RATE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantAppDetail() {
@@ -213,6 +239,7 @@ public class TblItemL4Impl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSUPPLIERRATEDETAIL);
     }
 
+
     /**
      * @param itemL4Id key constituent
 
@@ -220,13 +247,6 @@ public class TblItemL4Impl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal itemL4Id) {
         return new Key(new Object[] { itemL4Id });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblItemL4");
     }
 
     /**

@@ -95,6 +95,13 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_ITEM_L4"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="Rate"
+    ColumnName="RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_ITEM_L4"/>
   <AccessorAttribute
     Name="TblGrantAppDetail"
     Association="model.EO.Fk3TblGrantAppDetailFkAssoc"
