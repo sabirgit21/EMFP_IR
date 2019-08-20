@@ -160,7 +160,7 @@
                                         </af:inputText>
                                     </af:column>
                                    
-                                    <!--<af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
+                                    <af:column headerText="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
                                                id="c8">
                                         <af:inputText value="#{row.bindings.Latitude.inputValue}"
                                                       label="#{bindings.TblClusterAttMasterView1.hints.Latitude.label}"
@@ -187,7 +187,7 @@
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblClusterAttMasterView1.hints.Longitude.format}"/>
                                         </af:inputText>
-                                    </af:column>-->
+                                    </af:column>
                                 </af:table>
                                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
                                            disabled="#{!bindings.Execute.enabled}" id="b15"
@@ -200,11 +200,11 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelGroupLayout id="pg1">
                             <af:spacer width="400" height="20" id="s16"/>
-                            <!--<af:button id="cb1" clientComponent="true" text="Add Auto" icon="#{resource['images:add.png']}"
+                            <af:button id="cb1" clientComponent="true" text="Add Auto" icon="#{resource['images:add.png']}"
                                        disabled="#{!bindings.CreateInsert.enabled}">
                                 <af:clientListener type="action" method="getLocation"/>
                                 <af:serverListener type="servListener" method="#{locationManagedBean.getLocation}"/>
-                            </af:button>-->
+                            </af:button>
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                    text="Add"
                                                                    icon="#{resource['images:add.png']}"
