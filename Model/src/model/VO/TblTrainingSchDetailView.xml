@@ -32,6 +32,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+      <Item Value="PhaseName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -86,6 +87,11 @@
     EntityAttrName="Latitude"
     EntityUsage="TblTrainingSchDetail"
     AliasName="LATITUDE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainingSchDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="TrainingSchDetailId"
