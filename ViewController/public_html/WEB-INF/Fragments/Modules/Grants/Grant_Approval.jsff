@@ -60,7 +60,7 @@
                                         label="#{row.bindings.ClusterId.label}"
                                         required="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.mandatory}"
                                         shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.tooltip}"
-                                        id="soc1">
+                                        id="soc1" autoSubmit="true">
                       <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
