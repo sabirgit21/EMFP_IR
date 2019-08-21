@@ -142,4 +142,7 @@
   <ViewUsage
     Name="Crop_SubType_LOV1"
     ViewObjectName="model.LOV.Crop_SubType_LOV"/>
+  <ViewUsage
+    Name="Cluster_ID_Depen_Phase_ID_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"/>
 </AppModule>

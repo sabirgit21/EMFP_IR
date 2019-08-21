@@ -30,6 +30,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        PhaseId,
         TblGrantApprovalDetail,
         TblCluster,
         TblGrantDisburseMaster;
@@ -55,6 +56,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -63,6 +65,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int PHASEID = AttributesEnum.PhaseId.index();
     public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
@@ -71,6 +74,13 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblGrantApprovalMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalMaster");
     }
 
     /**
@@ -186,6 +196,22 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for PhaseId, using the alias name PhaseId.
+     * @return the value of PhaseId
+     */
+    public BigDecimal getPhaseId() {
+        return (BigDecimal) getAttributeInternal(PHASEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PhaseId.
+     * @param value value to set the PhaseId
+     */
+    public void setPhaseId(BigDecimal value) {
+        setAttributeInternal(PHASEID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantApprovalDetail() {
@@ -213,6 +239,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLGRANTDISBURSEMASTER);
     }
 
+
     /**
      * @param grantApprovalMasterId key constituent
 
@@ -220,13 +247,6 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantApprovalMasterId) {
         return new Key(new Object[] { grantApprovalMasterId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalMaster");
     }
 
     /**

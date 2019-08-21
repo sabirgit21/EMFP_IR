@@ -6,8 +6,8 @@
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr4" >
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
-                        
-                        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+            
+            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
                             <af:resetActionListener/>
@@ -55,7 +55,26 @@
                                         pattern="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.name}"
+                  <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.label}" id="c2">
+                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                        label="#{row.bindings.ClusterId.label}"
+                                        required="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.PhaseId.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
+                                        required="#{bindings.TblGrantApprovalMasterView1.hints.PhaseId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.PhaseId.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.name}"
                              filterable="true" sortable="true"
                              headerText="Cluster" id="c2" width="250">
                               <f:facet name="filter">
@@ -71,7 +90,7 @@
                       <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblGrantApprovalMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date" width="100"
                              id="c3" >

@@ -23,6 +23,7 @@
           <Item Value="ClusterId"/>
           <Item Value="Dated"/>
           <Item Value="Status"/>
+          <Item Value="PhaseId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -52,5 +53,7 @@
             Action="createInsertRow"/>
     <action IterBinding="TblGrantApprovalMasterView1Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>
