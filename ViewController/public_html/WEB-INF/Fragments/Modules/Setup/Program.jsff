@@ -3,23 +3,21 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
         <af:showDetailItem id="pane2" text="Program">
+            <af:panelGroupLayout id="pgl4" inlineStyle="position: fixed;right: 2%;z-index: 10;">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
             <af:panelGridLayout id="pgl2">
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle">
-                       
-                           <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
-                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
-                            <af:resetActionListener/>
-                        </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
-                                   iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
-                       
-                        
-                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle"></af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
@@ -35,7 +33,7 @@
                                           filterModel="#{bindings.TblProgView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProgView1Query.processQuery}" varStatus="vs"
-                                          id="t1" inlineStyle="height:242px;" partialTriggers=" ::b9 ::b16" width="637"
+                                          id="t1" inlineStyle="height:242px;" partialTriggers=" ::b16" width="637"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblProgView1.hints.ProgId.name}"
                                                filterable="true" sortable="true" headerText="Program ID" align="center"
@@ -111,21 +109,18 @@
                                        inlineStyle="width:70px; text-align:center; vertical-align: middle;"
                                        icon="#{resource['images:delete.png']}" immediate="true" action="Program.jsf"/>
                         </af:panelGroupLayout>-->
-                        
-                        
                         <af:panelGroupLayout id="pgl1" layout="horizontal">
-                        <af:spacer width="190" height="10" id="s2"/>
-                        <af:iterator id="i1" var="index" varStatus="status"
-                                     value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                           
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" 
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
                                 </af:button>
-                            <af:spacer width="5" height="10" id="s3"/>
-                        </af:iterator>
-                         </af:panelGroupLayout>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
@@ -146,7 +141,7 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProgOffView3Query.processQuery}" varStatus="vs"
                                           id="t2" width="1013" inlineStyle="height:241px;"
-                                          partialTriggers="::b12 ::b13 ::b14 ::b17" scrollPolicy="page"
+                                          partialTriggers=" ::b17" scrollPolicy="page"
                                           autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblProgOffView3.hints.ProgOffId.name}"
                                                filterable="true" sortable="true" headerText="Office ID" align="center"
@@ -345,20 +340,18 @@
                                        inlineStyle="width:70px; text-align:center; vertical-align: middle;"
                                        icon="#{resource['images:delete.png']}" immediate="true" action="Program.jsf"/>
                         </af:panelGroupLayout>-->
-                        
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                        <af:spacer width="190" height="10" id="s4"/>
-                        <af:iterator id="i2" var="index" varStatus="status"
-                                     value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                           
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}" 
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
                                 </af:button>
-                            <af:spacer width="5" height="10" id="s5"/>
-                        </af:iterator>
-                         </af:panelGroupLayout>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
