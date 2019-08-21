@@ -18,3 +18,9 @@
 .backColor {
     background-color: White;
 }
+
+.position_fixed_button {
+    position: fixed;
+    right: 2%;
+    z-index: 10;
+}

@@ -3,7 +3,7 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa3" styleClass="content_pannel_acc">
         <af:showDetailItem id="pane2" text="Target Crops">
-        <af:panelGroupLayout id="pgl4" inlineStyle="position: fixed;right: 2%;z-index: 10;">
+        <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                 <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                            disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                            icon="#{resource['images:cancel.png']}" iconPosition="top">
