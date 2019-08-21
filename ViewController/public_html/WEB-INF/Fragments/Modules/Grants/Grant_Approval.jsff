@@ -190,7 +190,11 @@
                                         pattern="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.FarmerRegId.name}"
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.label}" id="c17">
+                    <af:outputText value="#{row.FarmerNo}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.tooltip}" id="ot6"/>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.FarmerRegId.name}"
                              filterable="true" sortable="true"
                              headerText="Farmer" id="c6" width="250">
                              <f:facet name="filter">
@@ -206,6 +210,31 @@
                       <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Name.label}" id="c6">
+                    <af:outputText value="#{row.Name}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Name.tooltip}" id="ot7"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.label}" id="c12">
+                    <af:outputText value="#{row.FatherName}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.tooltip}"
+                                   id="ot1"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.label}" id="c13">
+                    <af:outputText value="#{row.Cnic}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.tooltip}" id="ot2"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Ntn.label}" id="c14">
+                    <af:outputText value="#{row.Ntn}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Ntn.tooltip}" id="ot3"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.PassNo.label}" id="c15">
+                    <af:outputText value="#{row.PassNo}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.PassNo.tooltip}" id="ot4"/>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.label}" id="c16">
+                    <af:outputText value="#{row.Mobile}"
+                                   shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.tooltip}" id="ot5"/>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.Acre.name}" filterable="true"
                              sortable="true" headerText="Acre"

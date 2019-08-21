@@ -38,6 +38,13 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="Ast"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Ntn"/>
+          <Item Value="PassNo"/>
+          <Item Value="Mobile"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
