@@ -1061,6 +1061,9 @@
   <ViewUsage
     Name="TblGrantApprovalDetailDView2"
     ViewObjectName="model.queryBasedVO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView3"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2044,5 +2047,11 @@
     ViewLinkObjectName="model.queryBasedVO.FkJRVVoucherDIdDVnoLink"
     SrcViewUsageName="model.AppModule.TblJRVVoucherMView2"
     DstViewUsageName="model.AppModule.TblJRVVoucherDView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKATblGrantApprovalDetailDFKLink1"
+    ViewLinkObjectName="model.VO.FKATblGrantApprovalDetailDFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView3"
     Reversed="false"/>
 </AppModule>

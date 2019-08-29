@@ -117,6 +117,13 @@
     AssociationOtherEnd="model.EO.FkTblGrantRateFkAssoc.TblGrantRate"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalDetail"
+    Association="model.EO.FKATblGrantRateFkAssoc"
+    AssociationEnd="model.EO.FKATblGrantRateFkAssoc.TblGrantApprovalDetail"
+    AssociationOtherEnd="model.EO.FKATblGrantRateFkAssoc.TblGrantRate"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblGrantRatePk"
     PrimaryKey="true">

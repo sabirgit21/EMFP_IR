@@ -51,7 +51,6 @@
     TableName="TBL_GRANT_APPROVAL_DETAIL"/>
   <Attribute
     Name="Acre"
-    IsNotNull="true"
     ColumnName="ACRE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -59,7 +58,6 @@
     TableName="TBL_GRANT_APPROVAL_DETAIL"/>
   <Attribute
     Name="Rate"
-    IsNotNull="true"
     ColumnName="RATE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -67,7 +65,6 @@
     TableName="TBL_GRANT_APPROVAL_DETAIL"/>
   <Attribute
     Name="Amount"
-    IsNotNull="true"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -119,6 +116,94 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_GRANT_APPROVAL_DETAIL"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="FAcre"
+    ColumnName="F_ACRE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="GrantAmount"
+    ColumnName="GRANT_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="GrantRateId"
+    ColumnName="GRANT_RATE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="FAmount"
+    ColumnName="F_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="GrantStatus"
+    Precision="20"
+    ColumnName="GRANT_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RoNumber"
+    Precision="50"
+    ColumnName="RO_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RoStatus"
+    Precision="20"
+    ColumnName="RO_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DisburseStatus"
+    Precision="20"
+    ColumnName="DISBURSE_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="150"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFarmerReg"
     Association="model.EO.Fk2TblGrantApprovalDetailFkAssoc"
@@ -140,6 +225,20 @@
     AssociationOtherEnd="model.EO.Fk3TblGrantApprovalDetailFkAssoc.TblGrantApprovalDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantRate"
+    Association="model.EO.FKATblGrantRateFkAssoc"
+    AssociationEnd="model.EO.FKATblGrantRateFkAssoc.TblGrantRate"
+    AssociationOtherEnd="model.EO.FKATblGrantRateFkAssoc.TblGrantApprovalDetail"
+    Type="model.EO.TblGrantRateImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalDetailD"
+    Association="model.EO.FKATblGrantApprovalDetailDFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantApprovalDetailDFKAssoc.TblGrantApprovalDetailD"
+    AssociationOtherEnd="model.EO.FKATblGrantApprovalDetailDFKAssoc.TblGrantApprovalDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblGrantApprovalDetailPk"
     PrimaryKey="true">
@@ -181,6 +280,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.EO.TblGrantApprovalDetail.GrantApprovalMasterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblGrantApprovalDetail">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_GRANT_RATE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_GRANT_APPROVAL_DETAIL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantApprovalDetail.GrantRateId"/>
     </AttrArray>
   </Key>
 </Entity>

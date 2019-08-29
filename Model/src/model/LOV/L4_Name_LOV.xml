@@ -8,7 +8,8 @@
   InheritPersonalization="merge"
   SelectList="TblItemL4.ITEM_L4_ID, 
        TblItemL4.NAME, 
-       TblItemL4.AST"
+       TblItemL4.AST, 
+       TblItemL4.RATE"
   FromList="TBL_ITEM_L4 TblItemL4"
   Where="AST='Y'"
   BindingStyle="OracleName"
@@ -46,6 +47,12 @@
     EntityAttrName="Ast"
     EntityUsage="TblItemL4"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="TblItemL4"
+    AliasName="RATE"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

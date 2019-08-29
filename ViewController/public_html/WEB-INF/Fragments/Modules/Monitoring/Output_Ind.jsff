@@ -131,14 +131,14 @@
                                                                        icon="#{resource['images:refresh.png']}"
                                                                        disabled="#{!bindings.Execute.enabled}"
                                                                        id="b9"/>
-                                                        </af:showDetailItem>
+                                  </af:showDetailItem>
                                                     </af:panelTabbed>
                                                 </af:gridCell>
                                             </af:gridRow>
                                             <af:gridRow marginTop="5px" height="auto" id="gr5">
                                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                                                     
-                                                    <af:panelGroupLayout id="pg1" layout="horizontal">
+                                                    <!--<af:panelGroupLayout id="pg1" layout="horizontal">
                                                     <af:spacer width="260" height="10" id="s2"/>
                                                         <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                    disabled="#{!bindings.CreateInsert.enabled}"
@@ -157,6 +157,18 @@
                                                                    icon="#{resource['images:delete.png']}" text="Delete"
                                                                    disabled="#{!bindings.Delete.enabled}" id="b7"
                                                                    immediate="true" action="Output_Indicators.jsf"/>
+                        </af:panelGroupLayout>-->
+                         <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
                         </af:panelGroupLayout>
                                                 </af:gridCell>
                                             </af:gridRow>

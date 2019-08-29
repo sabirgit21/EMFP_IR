@@ -7,18 +7,43 @@
       <property
          name="activityId">Output_Ind</property>
       <property
+         name="pageFragment">true</property>
+      <property
+         name="x">466.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Output_Ind&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">194.84473</property>
+      <property
          name="page">/WEB-INF/Fragments/Modules/Monitoring/Output_Ind.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">166.35156</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Output_Ind&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">213.14941</property>
       <property
          name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
       <property
-         name="y">207.94824</property>
+         name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="x">277.0</property>
-      <property
-         name="pageFragment">true</property>
-   </View>
+         name="sdm:polyPoints">R35,L48</property>
+   </ControlFlowCase>
 </SDM>

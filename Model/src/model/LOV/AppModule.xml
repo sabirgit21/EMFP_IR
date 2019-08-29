@@ -145,4 +145,25 @@
   <ViewUsage
     Name="Cluster_ID_Depen_Phase_ID_LOV1"
     ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"/>
+  <ViewUsage
+    Name="Crud_Add_LOV1"
+    ViewObjectName="model.LOV.Crud_Add_LOV"/>
+  <ViewUsage
+    Name="Crud_Edit_LOV1"
+    ViewObjectName="model.LOV.Crud_Edit_LOV"/>
+  <ViewUsage
+    Name="Crud_Delete_LOV1"
+    ViewObjectName="model.LOV.Crud_Delete_LOV"/>
+  <ViewUsage
+    Name="Grant_Rate_Rate_LOV1"
+    ViewObjectName="model.LOV.Grant_Rate_Rate_LOV"/>
+  <ViewUsage
+    Name="Grant_Status_LOV1"
+    ViewObjectName="model.LOV.Grant_Status_LOV"/>
+  <ViewUsage
+    Name="RO_Status_LOV1"
+    ViewObjectName="model.LOV.RO_Status_LOV"/>
+  <ViewUsage
+    Name="Disburse_Status_LOV1"
+    ViewObjectName="model.LOV.Disburse_Status_LOV"/>
 </AppModule>

@@ -3,7 +3,8 @@
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" inlineStyle="height:445px; width:1050px;">
     <af:showDetailItem id="pane1" text="Grant Rate">
-    <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+     
+      <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
                             <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
                                    icon="#{resource['images:cancel.png']}" iconPosition="top">
@@ -161,13 +162,13 @@
                 </af:table>
                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
                            disabled="#{!bindings.Execute.enabled}" id="b5" icon="#{resource['images:refresh.png']}"/>
-              </af:showDetailItem>
+                </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            <af:panelGroupLayout id="pgl2">
+            <!--<af:panelGroupLayout id="pgl2">
             <af:spacer width="340" height="10" id="s4"/>
               <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
                          disabled="#{!bindings.CreateInsert.enabled}" id="b4" icon="#{resource['images:add.png']}"/>
@@ -179,7 +180,19 @@
                          disabled="#{!bindings.Delete.enabled}" id="b3" icon="#{resource['images:delete.png']}"
                          immediate="true" action="Grant_Rate.jsf"/>
               
-            </af:panelGroupLayout>
+            </af:panelGroupLayout>-->
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
         

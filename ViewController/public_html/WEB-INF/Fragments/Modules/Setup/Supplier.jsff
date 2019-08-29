@@ -260,7 +260,7 @@
                                     <f:facet name="footer">
                                         <af:spacer width="50" height="20" id="s2"/>
                                         <af:panelGroupLayout id="pgl3" inlineStyle="width:982px;">
-                                            <af:panelGroupLayout layout="horizontal" id="pgl4">
+                                            <af:panelGroupLayout layout="horizontal" id="pgl1">
                                                 <af:spacer width="150" height="20" id="s17"/>
                                                 <af:button actionListener="#{bindings.First.execute}" text="First"
                                                            icon="#{resource['images:first.png']}"
@@ -281,7 +281,7 @@
                                                            icon="#{resource['images:last.png']}"
                                                            disabled="#{!bindings.Last.enabled}" partialSubmit="true"
                                                            id="b3"/>
-                                                <af:panelGroupLayout id="pg1">
+                                                <!--<af:panelGroupLayout id="pg1">
                                                     <af:spacer width="200" height="20" id="s16"/>
                                                     <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                                text="Add" icon="#{resource['images:add.png']}"
@@ -295,7 +295,19 @@
                                                                icon="#{resource['images:delete.png']}"
                                                                disabled="#{!bindings.Delete.enabled}" id="b14"
                                                                immediate="true" action="Supplier_Setup.jsf"/>
-                                                </af:panelGroupLayout>
+                                                </af:panelGroupLayout>-->
+                                                 <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                                             </af:panelGroupLayout>
                                         </af:panelGroupLayout>
                                     </f:facet>
@@ -369,7 +381,7 @@
                                            disabled="#{!bindings.Execute1.enabled}" id="b22"
                                            icon="#{resource['images:refresh.png']}"/>
                                 <af:spacer width="10" height="10" id="s24"/>
-                                <af:panelGroupLayout id="pgl5">
+                                <!--<af:panelGroupLayout id="pgl5">
                                     <af:spacer width="160" height="10" id="s19"/>
                                     <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
                                                disabled="#{!bindings.CreateInsert1.enabled}" id="b18"
@@ -382,7 +394,19 @@
                                     <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
                                                disabled="#{!bindings.Delete1.enabled}" id="b20" immediate="true"
                                                action="Supplier_Setup.jsf" icon="#{resource['images:delete.png']}"/>
-                                </af:panelGroupLayout>
+                                </af:panelGroupLayout>-->
+                                 <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s3"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s6"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>

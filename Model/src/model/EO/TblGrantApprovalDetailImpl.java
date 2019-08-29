@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -33,9 +34,20 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        FAcre,
+        GrantAmount,
+        GrantRateId,
+        FAmount,
+        GrantStatus,
+        RoNumber,
+        RoStatus,
+        DisburseStatus,
+        Remarks,
         TblFarmerReg,
         TblGrantApprovalMaster,
-        TblGrantAppMaster;
+        TblGrantAppMaster,
+        TblGrantRate,
+        TblGrantApprovalDetailD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -58,6 +70,8 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTAPPROVALDETAILID = AttributesEnum.GrantApprovalDetailId.index();
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
@@ -70,15 +84,34 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int FACRE = AttributesEnum.FAcre.index();
+    public static final int GRANTAMOUNT = AttributesEnum.GrantAmount.index();
+    public static final int GRANTRATEID = AttributesEnum.GrantRateId.index();
+    public static final int FAMOUNT = AttributesEnum.FAmount.index();
+    public static final int GRANTSTATUS = AttributesEnum.GrantStatus.index();
+    public static final int RONUMBER = AttributesEnum.RoNumber.index();
+    public static final int ROSTATUS = AttributesEnum.RoStatus.index();
+    public static final int DISBURSESTATUS = AttributesEnum.DisburseStatus.index();
+    public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
+    public static final int TBLGRANTRATE = AttributesEnum.TblGrantRate.index();
+    public static final int TBLGRANTAPPROVALDETAILD = AttributesEnum.TblGrantApprovalDetailD.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblGrantApprovalDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalDetail");
+    }
+
 
     /**
      * Gets the attribute value for GrantApprovalDetailId, using the alias name GrantApprovalDetailId.
@@ -257,6 +290,150 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FAcre, using the alias name FAcre.
+     * @return the value of FAcre
+     */
+    public BigDecimal getFAcre() {
+        return (BigDecimal) getAttributeInternal(FACRE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FAcre.
+     * @param value value to set the FAcre
+     */
+    public void setFAcre(BigDecimal value) {
+        setAttributeInternal(FACRE, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantAmount, using the alias name GrantAmount.
+     * @return the value of GrantAmount
+     */
+    public BigDecimal getGrantAmount() {
+        return (BigDecimal) getAttributeInternal(GRANTAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantAmount.
+     * @param value value to set the GrantAmount
+     */
+    public void setGrantAmount(BigDecimal value) {
+        setAttributeInternal(GRANTAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantRateId, using the alias name GrantRateId.
+     * @return the value of GrantRateId
+     */
+    public BigDecimal getGrantRateId() {
+        return (BigDecimal) getAttributeInternal(GRANTRATEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantRateId.
+     * @param value value to set the GrantRateId
+     */
+    public void setGrantRateId(BigDecimal value) {
+        setAttributeInternal(GRANTRATEID, value);
+    }
+
+    /**
+     * Gets the attribute value for FAmount, using the alias name FAmount.
+     * @return the value of FAmount
+     */
+    public BigDecimal getFAmount() {
+        return (BigDecimal) getAttributeInternal(FAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FAmount.
+     * @param value value to set the FAmount
+     */
+    public void setFAmount(BigDecimal value) {
+        setAttributeInternal(FAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantStatus, using the alias name GrantStatus.
+     * @return the value of GrantStatus
+     */
+    public String getGrantStatus() {
+        return (String) getAttributeInternal(GRANTSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantStatus.
+     * @param value value to set the GrantStatus
+     */
+    public void setGrantStatus(String value) {
+        setAttributeInternal(GRANTSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for RoNumber, using the alias name RoNumber.
+     * @return the value of RoNumber
+     */
+    public String getRoNumber() {
+        return (String) getAttributeInternal(RONUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoNumber.
+     * @param value value to set the RoNumber
+     */
+    public void setRoNumber(String value) {
+        setAttributeInternal(RONUMBER, value);
+    }
+
+    /**
+     * Gets the attribute value for RoStatus, using the alias name RoStatus.
+     * @return the value of RoStatus
+     */
+    public String getRoStatus() {
+        return (String) getAttributeInternal(ROSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoStatus.
+     * @param value value to set the RoStatus
+     */
+    public void setRoStatus(String value) {
+        setAttributeInternal(ROSTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for DisburseStatus, using the alias name DisburseStatus.
+     * @return the value of DisburseStatus
+     */
+    public String getDisburseStatus() {
+        return (String) getAttributeInternal(DISBURSESTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DisburseStatus.
+     * @param value value to set the DisburseStatus
+     */
+    public void setDisburseStatus(String value) {
+        setAttributeInternal(DISBURSESTATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for Remarks, using the alias name Remarks.
+     * @return the value of Remarks
+     */
+    public String getRemarks() {
+        return (String) getAttributeInternal(REMARKS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Remarks.
+     * @param value value to set the Remarks
+     */
+    public void setRemarks(String value) {
+        setAttributeInternal(REMARKS, value);
+    }
+
+    /**
      * @return the associated entity TblFarmerRegImpl.
      */
     public TblFarmerRegImpl getTblFarmerReg() {
@@ -273,14 +450,14 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGrantApprovalMaster() {
-        return (EntityImpl) getAttributeInternal(TBLGRANTAPPROVALMASTER);
+    public TblGrantApprovalMasterImpl getTblGrantApprovalMaster() {
+        return (TblGrantApprovalMasterImpl) getAttributeInternal(TBLGRANTAPPROVALMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGrantApprovalMaster(EntityImpl value) {
+    public void setTblGrantApprovalMaster(TblGrantApprovalMasterImpl value) {
         setAttributeInternal(TBLGRANTAPPROVALMASTER, value);
     }
 
@@ -298,6 +475,30 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         setAttributeInternal(TBLGRANTAPPMASTER, value);
     }
 
+
+    /**
+     * @return the associated entity TblGrantRateImpl.
+     */
+    public TblGrantRateImpl getTblGrantRate() {
+        return (TblGrantRateImpl) getAttributeInternal(TBLGRANTRATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblGrantRateImpl.
+     */
+    public void setTblGrantRate(TblGrantRateImpl value) {
+        setAttributeInternal(TBLGRANTRATE, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantApprovalDetailD() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALDETAILD);
+    }
+
+
     /**
      * @param grantApprovalDetailId key constituent
 
@@ -305,13 +506,6 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantApprovalDetailId) {
         return new Key(new Object[] { grantApprovalDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalDetail");
     }
 
     /**

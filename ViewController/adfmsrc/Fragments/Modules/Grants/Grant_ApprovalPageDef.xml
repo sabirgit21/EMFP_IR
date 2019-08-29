@@ -14,6 +14,13 @@
     <searchRegion Binds="TblGrantApprovalDetailView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailView4Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblGrantApprovalDetailDView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDView3Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1">
@@ -34,8 +41,6 @@
           <Item Value="GrantApprovalMasterId"/>
           <Item Value="FarmerRegId"/>
           <Item Value="GrantAppMasterId"/>
-          <Item Value="Acre"/>
-          <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="Ast"/>
           <Item Value="FatherName"/>
@@ -45,6 +50,15 @@
           <Item Value="Mobile"/>
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
+          <Item Value="FAcre"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantRateId"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantStatus"/>
+          <Item Value="RoStatus"/>
+          <Item Value="RoNumber"/>
+          <Item Value="DisburseStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -62,5 +76,41 @@
             Action="removeCurrentRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDView3Iterator" id="TblGrantApprovalDetailDView3">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView30">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailDId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGrantApprovalDetailDView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantApprovalDetailDView3Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantApprovalDetailDView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="TblGrantApprovalDetailView4Iterator" StaticList="false" Uses="LOV_RoStatus" id="RoStatus"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblGrantApprovalDetailView4Iterator" id="RoNumber">
+      <AttrNames>
+        <Item Value="RoNumber"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

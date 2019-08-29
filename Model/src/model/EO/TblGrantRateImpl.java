@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -33,7 +34,8 @@ public class TblGrantRateImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         TblCrop,
-        TblPhase;
+        TblPhase,
+        TblGrantApprovalDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -56,6 +58,8 @@ public class TblGrantRateImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTRATEID = AttributesEnum.GrantRateId.index();
     public static final int PHASEID = AttributesEnum.PhaseId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
@@ -69,12 +73,21 @@ public class TblGrantRateImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int TBLCROP = AttributesEnum.TblCrop.index();
     public static final int TBLPHASE = AttributesEnum.TblPhase.index();
+    public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblGrantRateImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantRate");
+    }
+
 
     /**
      * Gets the attribute value for GrantRateId, using the alias name GrantRateId.
@@ -253,16 +266,24 @@ public class TblGrantRateImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblPhase() {
-        return (EntityImpl) getAttributeInternal(TBLPHASE);
+    public TblPhaseImpl getTblPhase() {
+        return (TblPhaseImpl) getAttributeInternal(TBLPHASE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblPhase(EntityImpl value) {
+    public void setTblPhase(TblPhaseImpl value) {
         setAttributeInternal(TBLPHASE, value);
     }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantApprovalDetail() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALDETAIL);
+    }
+
 
     /**
      * @param grantRateId key constituent
@@ -271,13 +292,6 @@ public class TblGrantRateImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantRateId) {
         return new Key(new Object[] { grantRateId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantRate");
     }
 
     /**

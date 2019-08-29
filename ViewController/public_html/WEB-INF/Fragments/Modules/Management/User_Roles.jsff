@@ -263,7 +263,7 @@
                     </af:panelGridLayout>
                 </af:showDetailItem>
                 <af:showDetailItem text="Role's Privileges" id="sdi1">
-                    <af:panelGridLayout id="pgl4">
+                    <af:panelGridLayout id="pgl9">
                         <af:gridRow marginTop="5px" height="auto" id="gr7">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
                                 <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
@@ -333,7 +333,7 @@
                                                   filterModel="#{bindings.TblRoleDetailModulesView4Query.queryDescriptor}"
                                                   filterVisible="true" width="446"
                                                   queryListener="#{bindings.TblRoleDetailModulesView4Query.processQuery}"
-                                                  varStatus="vs" id="t4" partialTriggers="::b7 ::b8 ::b9">
+                                                  varStatus="vs" id="t4" partialTriggers=" ::b8 ">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.label}"
@@ -424,7 +424,7 @@
                                                   filterModel="#{bindings.TblRoleDetailPagesView4Query.queryDescriptor}"
                                                   filterVisible="true" width="846"
                                                   queryListener="#{bindings.TblRoleDetailPagesView4Query.processQuery}"
-                                                  varStatus="vs" id="t5" partialTriggers="::b10 ::b11 ::b12">
+                                                  varStatus="vs" id="t5" partialTriggers="::b10 ::b11 ">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.label}"
@@ -580,7 +580,7 @@
                                                   filterModel="#{bindings.TblRoleDetailReportsView4Query.queryDescriptor}"
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleDetailReportsView4Query.processQuery}"
-                                                  varStatus="vs" id="t6" partialTriggers="::b13 ::b14 ::b15"
+                                                  varStatus="vs" id="t6" partialTriggers="::b14 "
                                                   width="524">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.name}"
                                                        filterable="true" sortable="true"

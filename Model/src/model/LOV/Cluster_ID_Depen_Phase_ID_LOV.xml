@@ -20,7 +20,7 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="gotClusterID"
+    Name="gotPhaseID"
     Kind="viewcriteria"
     Type="java.math.BigDecimal"/>
   <EntityUsage
@@ -106,11 +106,11 @@
       Name="Cluster_ID_Depen_Phase_ID_LOVCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="ClusterId"
-        ViewAttribute="ClusterId"
+        Name="PhaseId"
+        ViewAttribute="PhaseId"
         Operator="="
         Conjunction="AND"
-        Value=":gotClusterID"
+        Value=":gotPhaseID"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

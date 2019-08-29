@@ -1,0 +1,12 @@
+//Groovy Scripts for model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS
+
+package model.VO.USERS_ROLES
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="CrudMastID")
+def CrudMastID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessUID')
+}
+

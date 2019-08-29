@@ -17,6 +17,22 @@
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Rate_Rate_LOV1"
+    ViewObjectName="model.LOV.Grant_Rate_Rate_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Status_LOV1"
+    ViewObjectName="model.LOV.Grant_Status_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RO_Status_LOV1"
+    ViewObjectName="model.LOV.RO_Status_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Disburse_Status_LOV1"
+    ViewObjectName="model.LOV.Disburse_Status_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Status1"
@@ -32,6 +48,78 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="astView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantRateId"
+    ListVOName="Grant_Rate_Rate_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantRateId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GrantRateId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Amount"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantStatus"
+    ListVOName="Grant_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="grant_status_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="grant_status_view"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RoStatus"
+    ListVOName="RO_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ro_status_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ro_status_view"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DisburseStatus"
+    ListVOName="Disburse_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DisburseStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="disburse_status_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="disburse_status_view"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -53,6 +141,25 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.TblGrantApprovalDetail.FarmerRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblFarmerRegLand"
+    Entity="model.EO.TblFarmerRegLand"
+    Association="model.EO.FkTblFarmerRegLandFkAssoc"
+    AssociationEnd="model.EO.FkTblFarmerRegLandFkAssoc.TblFarmerRegLand"
+    SourceUsage="model.VO.TblGrantApprovalDetailView.TblFarmerReg"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFarmerRegLand.FarmerRegId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFarmerReg.FarmerRegId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -84,20 +191,6 @@
     EntityAttrName="GrantAppMasterId"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="GRANT_APP_MASTER_ID"/>
-  <ViewAttribute
-    Name="Acre"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Acre"
-    EntityUsage="TblGrantApprovalDetail"
-    AliasName="ACRE"/>
-  <ViewAttribute
-    Name="Rate"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Rate"
-    EntityUsage="TblGrantApprovalDetail"
-    AliasName="RATE"/>
   <ViewAttribute
     Name="Amount"
     IsNotNull="true"
@@ -173,6 +266,134 @@
     EntityAttrName="Mobile"
     EntityUsage="TblFarmerReg"
     AliasName="MOBILE"/>
+  <ViewAttribute
+    Name="GrantAmount"
+    PrecisionRule="true"
+    EntityAttrName="GrantAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_AMOUNT"/>
+  <ViewAttribute
+    Name="FAcre"
+    PrecisionRule="true"
+    EntityAttrName="FAcre"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="F_ACRE"/>
+  <ViewAttribute
+    Name="LandUnderOrch"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LandUnderOrch"
+    EntityUsage="TblFarmerRegLand"
+    AliasName="LAND_UNDER_ORCH"/>
+  <ViewAttribute
+    Name="FarmerRegLandId"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegLandId"
+    EntityUsage="TblFarmerRegLand"
+    AliasName="FARMER_REG_LAND_ID"/>
+  <ViewAttribute
+    Name="GrantRateId"
+    PrecisionRule="true"
+    EntityAttrName="GrantRateId"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_RATE_ID"
+    LOVName="LOV_GrantRateId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FAmount"
+    PrecisionRule="true"
+    EntityAttrName="FAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="F_AMOUNT"/>
+  <ViewAttribute
+    Name="GrantStatus"
+    PrecisionRule="true"
+    EntityAttrName="GrantStatus"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_STATUS"
+    LOVName="LOV_GrantStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RoNumber"
+    PrecisionRule="true"
+    EntityAttrName="RoNumber"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="RO_NUMBER"/>
+  <ViewAttribute
+    Name="RoStatus"
+    PrecisionRule="true"
+    EntityAttrName="RoStatus"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="RO_STATUS"
+    LOVName="LOV_RoStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DisburseStatus"
+    PrecisionRule="true"
+    EntityAttrName="DisburseStatus"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="DISBURSE_STATUS"
+    LOVName="LOV_DisburseStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="REMARKS"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantApprovalDetailId"/>
+    <Item Value="FarmerRegId1"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDView"
+    ViewLink="model.VO.FKATblGrantApprovalDetailDFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

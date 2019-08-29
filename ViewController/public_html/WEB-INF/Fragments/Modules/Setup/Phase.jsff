@@ -127,7 +127,7 @@
                                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
                                            disabled="#{!bindings.Execute.enabled}" id="b14"
                                            icon="#{resource['images:refresh.png']}"/>
-                            </af:showDetailItem>
+                              </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
@@ -229,7 +229,7 @@
                                                            id="b4" icon="#{resource['images:forward.png']}"/>
                                             <af:spacer width="250" height="20" id="s12"/>
                                        
-                                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                            <!--<af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
                                                        icon="#{resource['images:add.png']}"
                                                        disabled="#{!bindings.CreateInsert.enabled}" id="b16"/>
                                             <af:spacer width="5" height="10" id="s13"/>
@@ -240,9 +240,22 @@
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                        icon="#{resource['images:delete.png']}"
                                                        disabled="#{!bindings.Delete.enabled}" id="b12" immediate="true"
-                                                       action="Phase.jsf"/>
+                                                       action="Phase.jsf"/>-->
                                             </af:panelGroupLayout>
+                                             <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                                         </af:panelGroupLayout>
+                                        
                                     </f:facet>
                                 </af:panelFormLayout>
                             </af:showDetailItem>
@@ -346,10 +359,10 @@
                                 </af:table>
                                 <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
                                            disabled="#{!bindings.Execute1.enabled}" id="b5"/>
-                                <af:spacer width="10" height="50" id="s5"/>
-                                <af:panelGroupLayout id="pgl5" layout="horizontal">
+                                <af:spacer width="10" height="50" id="s10"/>
+                                <!--<af:panelGroupLayout id="pgl5" layout="horizontal">
                                     <af:spacer width="350" height="10" id="s6"/>
-                                    <af:panelGroupLayout id="pgl4">
+                                    <af:panelGroupLayout id="pgl7">
                                         <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
                                                    disabled="#{!bindings.CreateInsert1.enabled}" id="b6"
                                                    icon="#{resource['images:add.png']}"/>
@@ -364,7 +377,19 @@
                                                    action="Phase.jsf"/>
                                         
                                     </af:panelGroupLayout>
-                                </af:panelGroupLayout>
+                                </af:panelGroupLayout>-->
+                                 <af:panelGroupLayout id="pgl5" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
