@@ -10,18 +10,10 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblModuleView3Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <searchRegion Binds="TblCourseView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCourseView11Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblCourseView1Iterator" id="TblCourseView1">
-      <nodeDefinition DefName="model.VO.TblCourseView" Name="TblCourseView10">
-        <AttrNames>
-          <Item Value="CourseId"/>
-          <Item Value="Name"/>
-          <Item Value="Ast"/>
-          <Item Value="PhaseId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="TblModuleView3Iterator" id="TblModuleView3">
       <nodeDefinition DefName="model.VO.TblModuleView" Name="TblModuleView30">
         <AttrNames>
@@ -49,5 +41,15 @@
       </nodeDefinition>
     </tree>
     <action IterBinding="TblCourseView1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="TblCourseView1Iterator" id="TblCourseView11">
+      <nodeDefinition DefName="model.VO.TblCourseView" Name="TblCourseView110">
+        <AttrNames>
+          <Item Value="CourseId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="PhaseId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -8,19 +8,10 @@
     <iterator Binds="TblTopicsView3" RangeSize="8" DataControl="AppModuleDataControl" id="TblTopicsView3Iterator"/>
     <searchRegion Binds="TblTopicsView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTopicsView3Query"/>
+    <searchRegion Binds="TblModuleView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblModuleView11Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="TblModuleView1Iterator" id="TblModuleView1">
-      <nodeDefinition DefName="model.VO.TblModuleView" Name="TblModuleView10">
-        <AttrNames>
-          <Item Value="ModuleId"/>
-          <Item Value="CourseId"/>
-          <Item Value="Name"/>
-          <Item Value="Ast"/>
-          <Item Value="Course_Name"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="TblTopicsView3Iterator" id="TblTopicsView3">
       <nodeDefinition DefName="model.VO.TblTopicsView" Name="TblTopicsView30">
         <AttrNames>
@@ -36,5 +27,17 @@
     <action IterBinding="TblTopicsView3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblModuleView1Iterator" id="TblModuleView11">
+      <nodeDefinition DefName="model.VO.TblModuleView" Name="TblModuleView110">
+        <AttrNames>
+          <Item Value="ModuleId"/>
+          <Item Value="CourseId"/>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="Course_Name"/>
+          <Item Value="CourseId1"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

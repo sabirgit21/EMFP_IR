@@ -26,24 +26,22 @@
                                                 <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                                                     <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
                                                         <af:showDetailItem id="tab1" text="Training Setup">
-                                                            <af:table value="#{bindings.TblCourseView1.collectionModel}"
-                                                                      var="row"
-                                                                      rows="#{bindings.TblCourseView1.rangeSize}"
-                                                                      emptyText="#{bindings.TblCourseView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                                                      rowBandingInterval="0"
-                                                                      selectedRowKeys="#{bindings.TblCourseView1.collectionModel.selectedRow}"
-                                                                      selectionListener="#{bindings.TblCourseView1.collectionModel.makeCurrent}"
-                                                                      rowSelection="single"
-                                                                      fetchSize="#{bindings.TblCourseView1.rangeSize}"
-                                                                      filterModel="#{bindings.TblCourseView1Query.queryDescriptor}"
-                                                                      filterVisible="true"
-                                                                      queryListener="#{bindings.TblCourseView1Query.processQuery}"
-                                                                      varStatus="vs" id="t1" width="663"
-                                                                      partialTriggers="::b13 ::b2"
-                                                                      scrollPolicy="page" autoHeightRows="0">
-                                                  <af:column sortProperty="#{bindings.TblCourseView1.hints.PhaseId.name}"
-                                                             filterable="true" 
-                                                             headerText="Phase" id="c9" width="150">
+                                <af:table value="#{bindings.TblCourseView11.collectionModel}" var="row"
+                                          rows="#{bindings.TblCourseView11.rangeSize}"
+                                          emptyText="#{bindings.TblCourseView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblCourseView11.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblCourseView11.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblCourseView11.rangeSize}"
+                                          filterModel="#{bindings.TblCourseView11Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblCourseView11Query.processQuery}" varStatus="vs"
+                                          id="t3" partialTriggers="::b13" 
+                                           width="663"
+                                           scrollPolicy="page" autoHeightRows="0">
+                                          <af:column sortProperty="#{bindings.TblCourseView11.hints.PhaseId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Phase" id="c11" width="150">
                                                              <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.PhaseId}"
                                                                                      id="it4" placeholder="Search Phase">
@@ -51,59 +49,62 @@
                                                                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}"
                                                             label="#{row.bindings.PhaseId.label}"
-                                                            required="#{bindings.TblCourseView1.hints.PhaseId.mandatory}"
-                                                            shortDesc="#{bindings.TblCourseView1.hints.PhaseId.tooltip}"
-                                                            id="soc2" readOnly="true">
-                                            <f:selectItems value="#{row.bindings.PhaseId.items}" id="si2"/>
+                                                            required="#{bindings.TblCourseView11.hints.PhaseId.mandatory}"
+                                                            shortDesc="#{bindings.TblCourseView11.hints.PhaseId.tooltip}"
+                                                            readOnly="true" id="soc4">
+                                            <f:selectItems value="#{row.bindings.PhaseId.items}" id="si4"/>
                                             <f:validator binding="#{row.bindings.PhaseId.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                                                <af:column sortProperty="#{bindings.TblCourseView1.hints.CourseId.name}"
-                                                                           filterable="true" 
-                                                                           headerText="Training ID"
-                                                                           id="c1" width="80">
+                                    <af:column sortProperty="#{bindings.TblCourseView11.hints.CourseId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Training ID" id="c2" 
+                                               width="80">
                                                                             <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.CourseId}"
                                                                                      id="it5" placeholder="Search ID">
                                                                        </af:inputText>
                                                                             </f:facet>
-                                                                    <af:outputText value="#{row.CourseId}"
-                                                                                   shortDesc="#{bindings.TblCourseView1.hints.CourseId.tooltip}"
-                                                                                   id="ot1"/>
-                                                                </af:column>
-                                    
-                                    <af:column sortProperty="#{bindings.TblCourseView1.hints.Name.name}"
-                                                                           filterable="true" 
-                                                                           headerText="Training"
-                                                                           id="c3" width="300">
+                                        <af:outputText value="#{row.CourseId}"
+                                                       shortDesc="#{bindings.TblCourseView11.hints.CourseId.tooltip}"
+                                                       id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblCourseView11.hints.CourseId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCourseView11.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Training" id="c6" width="300">
                                                                            
                                                                              <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.Name}"
                                                                                      id="it11" placeholder="Search Training">
                                                                        </af:inputText>
                                                                             </f:facet>
-                                                                           
-                                                                    <af:outputText value="#{row.Name}"
-                                                                                   shortDesc="#{bindings.TblCourseView1.hints.Name.tooltip}"
-                                                                                   id="ot3"/>
-                                                                </af:column>
-                                                                <af:column sortProperty="#{bindings.TblCourseView1.hints.Ast.name}"
-                                                                           filterable="true" 
-                                                                           headerText="Active" id="c4"
-                                                                           width="80">
+                                        <af:outputText value="#{row.Name}"
+                                                       shortDesc="#{bindings.TblCourseView11.hints.Name.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblCourseView11.hints.Ast.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="Active" id="c10" width="80">
                                                                            
                                                                                 <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.Ast}"
                                                                                      id="it6" placeholder="Search Status">
                                                                        </af:inputText>
-                                                                            </f:facet>
-                                                                           
-                                                                    <af:outputText value="#{row.Ast}"
-                                                                                   shortDesc="#{bindings.TblCourseView1.hints.Ast.tooltip}"
-                                                                                   id="ot4"/>
-                                                                </af:column>
-                                                            </af:table>
-                                                            <af:button actionListener="#{bindings.Execute1.execute}"
+                                                                            </f:facet>                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblCourseView11.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblCourseView11.hints.Ast.tooltip}"
+                                                            readOnly="true" id="soc3">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    
+                                </af:table>
+                                <af:button actionListener="#{bindings.Execute1.execute}"
                                                                        text="Refresh"
                                                                        disabled="#{!bindings.Execute1.enabled}"
                                                                        id="b13"
@@ -133,7 +134,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblModuleView3Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers="::b7 ::b14" width="597"
+                                                                      partialTriggers=" ::b14" width="597"
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblModuleView3.hints.ModuleId.name}"
                                                                            filterable="true" sortable="true"
