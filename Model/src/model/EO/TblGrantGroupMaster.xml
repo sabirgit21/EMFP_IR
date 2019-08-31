@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantGroupMaster"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_GRANT_GROUP_MASTER"
+  AliasName="TblGrantGroupMaster"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="GrantGroupMasterId"
+    IsNotNull="true"
+    ColumnName="GRANT_GROUP_MASTER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_GROUP_MASTER"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GrantGroupMasterPhaseId"
+    ColumnName="GRANT_GROUP_MASTER_PHASE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_GROUP_MASTER"/>
+  <Attribute
+    Name="GrantGroupMasterClusterId"
+    ColumnName="GRANT_GROUP_MASTER_CLUSTER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_GROUP_MASTER"/>
+  <Attribute
+    Name="GrantGroupMasterNominee"
+    Precision="200"
+    ColumnName="GRANT_GROUP_MASTER_NOMINEE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_GROUP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="TblGrantGroupDetail"
+    Association="model.EO.FkTblGrantGroupDetailMasterIdAssoc"
+    AssociationEnd="model.EO.FkTblGrantGroupDetailMasterIdAssoc.TblGrantGroupDetail"
+    AssociationOtherEnd="model.EO.FkTblGrantGroupDetailMasterIdAssoc.TblGrantGroupMaster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkTblGrantGroupMasterId"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TBL_GRANT_GROUP_MASTER_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantGroupMaster.GrantGroupMasterId"/>
+    </AttrArray>
+  </Key>
+</Entity>

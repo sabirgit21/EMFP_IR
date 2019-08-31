@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Grant Group">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Grant Group Master">
+                <af:table value="#{bindings.TblGrantGroupMasterView1.collectionModel}" var="row"
+                          rows="#{bindings.TblGrantGroupMasterView1.rangeSize}"
+                          emptyText="#{bindings.TblGrantGroupMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblGrantGroupMasterView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGrantGroupMasterView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblGrantGroupMasterView1.rangeSize}"
+                          filterModel="#{bindings.TblGrantGroupMasterView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGrantGroupMasterView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b3">
+                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}"
+                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.label}"
+                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.tooltip}"
+                                  id="it1">
+                      <f:validator binding="#{row.bindings.GrantGroupMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.GrantGroupMasterPhaseId.inputValue}"
+                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.label}"
+                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.tooltip}"
+                                  id="it2">
+                      <f:validator binding="#{row.bindings.GrantGroupMasterPhaseId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.label}"
+                             id="c3">
+                    <af:inputText value="#{row.bindings.GrantGroupMasterClusterId.inputValue}"
+                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.label}"
+                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.tooltip}"
+                                  id="it3">
+                      <f:validator binding="#{row.bindings.GrantGroupMasterClusterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.label}"
+                             id="c4">
+                    <af:inputText value="#{row.bindings.GrantGroupMasterNominee.inputValue}"
+                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.label}"
+                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.mandatory}"
+                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.tooltip}"
+                                  id="it4">
+                      <f:validator binding="#{row.bindings.GrantGroupMasterNominee.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                       disabled="#{!bindings.Execute.enabled}" id="b3"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Grant Group Detail">
+                <af:table value="#{bindings.TblGrantGroupDetailView3.collectionModel}" var="row"
+                          rows="#{bindings.TblGrantGroupDetailView3.rangeSize}"
+                          emptyText="#{bindings.TblGrantGroupDetailView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblGrantGroupDetailView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblGrantGroupDetailView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblGrantGroupDetailView3.rangeSize}"
+                          filterModel="#{bindings.TblGrantGroupDetailView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblGrantGroupDetailView3Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers=" ::b6">
+                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.label}" id="c5">
+                    <af:inputText value="#{row.bindings.GrantGroupDetailId.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.tooltip}"
+                                  id="it5">
+                      <f:validator binding="#{row.bindings.GrantGroupDetailId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.label}" id="c6">
+                    <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.tooltip}"
+                                  id="it6">
+                      <f:validator binding="#{row.bindings.GrantGroupMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.label}" id="c7">
+                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
+                       disabled="#{!bindings.Execute1.enabled}" id="b6"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

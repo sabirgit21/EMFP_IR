@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grant_GroupPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblGrantGroupMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantGroupMasterView1Iterator"/>
+    <searchRegion Binds="TblGrantGroupMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantGroupMasterView1Query"/>
+    <iterator Binds="TblGrantGroupDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantGroupDetailView3Iterator"/>
+    <searchRegion Binds="TblGrantGroupDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantGroupDetailView3Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantGroupMasterView1Iterator" id="TblGrantGroupMasterView1">
+      <nodeDefinition DefName="model.VO.TblGrantGroupMasterView" Name="TblGrantGroupMasterView10">
+        <AttrNames>
+          <Item Value="GrantGroupMasterId"/>
+          <Item Value="GrantGroupMasterPhaseId"/>
+          <Item Value="GrantGroupMasterClusterId"/>
+          <Item Value="GrantGroupMasterNominee"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantGroupDetailView3Iterator" id="TblGrantGroupDetailView3">
+      <nodeDefinition DefName="model.VO.TblGrantGroupDetailView" Name="TblGrantGroupDetailView30">
+        <AttrNames>
+          <Item Value="GrantGroupDetailId"/>
+          <Item Value="GrantGroupMasterId"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGrantGroupMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantGroupMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantGroupMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblGrantGroupDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantGroupDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantGroupDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

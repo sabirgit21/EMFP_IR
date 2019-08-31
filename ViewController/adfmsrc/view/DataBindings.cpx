@@ -136,6 +136,9 @@
               usageId="view_Module_Setup_TaskFlow_Module_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Task_Flows/Modules/Training/Att_Detail_TaskFlow.xml#Att_Detail_TaskFlow@ExecuteWithParams"
               usageId="view_Att_Detail_TaskFlow_Att_Detail_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Group.jsff" usageId="view_Grant_GroupPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Grants/Grant_Group_TaskFlow.xml#Grant_Group_TaskFlow@ExecuteWithParams"
+              usageId="view_Grant_Group_TaskFlow_Grant_Group_TaskFlow_ExecuteWithParamsPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -261,6 +264,9 @@
               path="Task_Flows.Modules.Training.Module_Setup_TaskFlow_Module_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Att_Detail_TaskFlow_Att_Detail_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Training.Att_Detail_TaskFlow_Att_Detail_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Grant_GroupPageDef" path="Fragments.Modules.Grants.Grant_GroupPageDef"/>
+        <page id="view_Grant_Group_TaskFlow_Grant_Group_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Grants.Grant_Group_TaskFlow_Grant_Group_TaskFlow_ExecuteWithParamsPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

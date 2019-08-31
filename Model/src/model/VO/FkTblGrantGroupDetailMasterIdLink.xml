@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblGrantGroupDetailMasterIdLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblGrantGroupDetailMasterIdAssoc">
+  <ViewLinkDefEnd
+    Name="TblGrantGroupMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblGrantGroupMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblGrantGroupMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantGroupMasterView.GrantGroupMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblGrantGroupDetailView"
+    Cardinality="-1"
+    Owner="model.VO.TblGrantGroupDetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblGrantGroupDetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantGroupDetailView.GrantGroupMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
