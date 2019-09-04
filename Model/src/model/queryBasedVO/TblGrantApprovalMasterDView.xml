@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantApprovalMasterDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblGrantApprovalMasterD.GRANT_APPROVAL_MASTER_D_ID,
+       TblGrantApprovalMasterD.GRANT_APPROVAL_MASTER_ID,
+       TblGrantApprovalMasterD.FARMER_REG_ID
+FROM TBL_GRANT_APPROVAL_MASTER_D TblGrantApprovalMasterD]]></SQLQuery>
+  <ViewAttribute
+    Name="GrantApprovalMasterDId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_APPROVAL_MASTER_D_ID"
+    Expression="GRANT_APPROVAL_MASTER_D_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="GrantApprovalMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_APPROVAL_MASTER_ID"
+    Expression="GRANT_APPROVAL_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FarmerRegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FARMER_REG_ID"
+    Expression="FARMER_REG_ID"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantApprovalMasterDId"/>
+  </AttrArray>
+</ViewObject>

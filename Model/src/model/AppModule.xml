@@ -1082,6 +1082,15 @@
   <ViewUsage
     Name="TblGrantGroupDetailView4"
     ViewObjectName="model.queryBasedVO.TblGrantGroupDetailView"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterDView1"
+    ViewObjectName="model.VO.TblGrantApprovalMasterDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterDView2"
+    ViewObjectName="model.queryBasedVO.TblGrantApprovalMasterDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterDView3"
+    ViewObjectName="model.VO.TblGrantApprovalMasterDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2083,5 +2092,11 @@
     ViewLinkObjectName="model.queryBasedVO.FkTblGrantGroupDetailMasterIdLink"
     SrcViewUsageName="model.AppModule.TblGrantGroupMasterView2"
     DstViewUsageName="model.AppModule.TblGrantGroupDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKATblGrantApprovalMasterDFKLink1"
+    ViewLinkObjectName="model.VO.FKATblGrantApprovalMasterDFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalMasterDView3"
     Reversed="false"/>
 </AppModule>

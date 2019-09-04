@@ -210,6 +210,13 @@
       <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="LandUnderOrch"
+    ColumnName="LAND_UNDER_ORCH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
   <AccessorAttribute
     Name="TblFarmerReg"
     Association="model.EO.Fk2TblGrantApprovalDetailFkAssoc"

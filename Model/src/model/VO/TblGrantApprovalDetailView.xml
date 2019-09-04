@@ -279,13 +279,6 @@
     EntityUsage="TblGrantApprovalDetail"
     AliasName="F_ACRE"/>
   <ViewAttribute
-    Name="LandUnderOrch"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="LandUnderOrch"
-    EntityUsage="TblFarmerRegLand"
-    AliasName="LAND_UNDER_ORCH"/>
-  <ViewAttribute
     Name="FarmerRegLandId"
     PrecisionRule="true"
     EntityAttrName="FarmerRegLandId"
@@ -365,6 +358,12 @@
     EntityAttrName="Remarks"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="LandUnderOrch"
+    PrecisionRule="true"
+    EntityAttrName="LandUnderOrch"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="LAND_UNDER_ORCH"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
     <Item Value="FarmerRegId1"/>

@@ -21,6 +21,11 @@
     <searchRegion Binds="TblGrantApprovalDetailDView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView3Query"/>
+    <iterator Binds="TblGrantApprovalMasterDView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterDView3Iterator"/>
+    <searchRegion Binds="TblGrantApprovalMasterDView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalMasterDView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1">
@@ -31,6 +36,8 @@
           <Item Value="Dated"/>
           <Item Value="Status"/>
           <Item Value="PhaseId"/>
+          <Item Value="GrantApprovalMasterType"/>
+          <Item Value="GrantApprovalMasterGroupId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -53,12 +60,12 @@
           <Item Value="FAcre"/>
           <Item Value="GrantAmount"/>
           <Item Value="GrantRateId"/>
-          <Item Value="LandUnderOrch"/>
           <Item Value="FAmount"/>
           <Item Value="GrantStatus"/>
           <Item Value="RoStatus"/>
           <Item Value="RoNumber"/>
           <Item Value="DisburseStatus"/>
+          <Item Value="LandUnderOrch"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -112,5 +119,21 @@
         <Item Value="RoNumber"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="TblGrantApprovalMasterDView3Iterator" id="TblGrantApprovalMasterDView3">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalMasterDView" Name="TblGrantApprovalMasterDView30">
+        <AttrNames>
+          <Item Value="GrantApprovalMasterDId"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
+          <Item Value="LandAcre"/>
+          <Item Value="LandUnderOrch"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

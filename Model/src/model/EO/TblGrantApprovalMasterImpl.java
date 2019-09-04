@@ -31,9 +31,12 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         PhaseId,
+        GrantApprovalMasterGroupId,
+        GrantApprovalMasterType,
         TblGrantApprovalDetail,
         TblCluster,
-        TblGrantDisburseMaster;
+        TblGrantDisburseMaster,
+        TblGrantApprovalMasterD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -57,6 +60,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
         }
     }
 
+
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -66,9 +70,12 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int PHASEID = AttributesEnum.PhaseId.index();
+    public static final int GRANTAPPROVALMASTERGROUPID = AttributesEnum.GrantApprovalMasterGroupId.index();
+    public static final int GRANTAPPROVALMASTERTYPE = AttributesEnum.GrantApprovalMasterType.index();
     public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
+    public static final int TBLGRANTAPPROVALMASTERD = AttributesEnum.TblGrantApprovalMasterD.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -82,6 +89,7 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalMaster");
     }
+
 
     /**
      * Gets the attribute value for GrantApprovalMasterId, using the alias name GrantApprovalMasterId.
@@ -212,6 +220,38 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GrantApprovalMasterGroupId, using the alias name GrantApprovalMasterGroupId.
+     * @return the value of GrantApprovalMasterGroupId
+     */
+    public BigDecimal getGrantApprovalMasterGroupId() {
+        return (BigDecimal) getAttributeInternal(GRANTAPPROVALMASTERGROUPID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantApprovalMasterGroupId.
+     * @param value value to set the GrantApprovalMasterGroupId
+     */
+    public void setGrantApprovalMasterGroupId(BigDecimal value) {
+        setAttributeInternal(GRANTAPPROVALMASTERGROUPID, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantApprovalMasterType, using the alias name GrantApprovalMasterType.
+     * @return the value of GrantApprovalMasterType
+     */
+    public String getGrantApprovalMasterType() {
+        return (String) getAttributeInternal(GRANTAPPROVALMASTERTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantApprovalMasterType.
+     * @param value value to set the GrantApprovalMasterType
+     */
+    public void setGrantApprovalMasterType(String value) {
+        setAttributeInternal(GRANTAPPROVALMASTERTYPE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantApprovalDetail() {
@@ -237,6 +277,14 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
      */
     public RowIterator getTblGrantDisburseMaster() {
         return (RowIterator) getAttributeInternal(TBLGRANTDISBURSEMASTER);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantApprovalMasterD() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALMASTERD);
     }
 
 

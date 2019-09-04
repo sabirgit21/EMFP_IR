@@ -43,6 +43,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         RoStatus,
         DisburseStatus,
         Remarks,
+        LandUnderOrch,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -93,6 +94,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int ROSTATUS = AttributesEnum.RoStatus.index();
     public static final int DISBURSESTATUS = AttributesEnum.DisburseStatus.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
+    public static final int LANDUNDERORCH = AttributesEnum.LandUnderOrch.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -431,6 +433,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setRemarks(String value) {
         setAttributeInternal(REMARKS, value);
+    }
+
+    /**
+     * Gets the attribute value for LandUnderOrch, using the alias name LandUnderOrch.
+     * @return the value of LandUnderOrch
+     */
+    public BigDecimal getLandUnderOrch() {
+        return (BigDecimal) getAttributeInternal(LANDUNDERORCH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LandUnderOrch.
+     * @param value value to set the LandUnderOrch
+     */
+    public void setLandUnderOrch(BigDecimal value) {
+        setAttributeInternal(LANDUNDERORCH, value);
     }
 
     /**

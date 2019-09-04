@@ -31,11 +31,18 @@
     <ParameterMap>
       <PIMap Variable="gotPhaseID">
         <TransientExpression
-          trustMode="trusted"
           Name="ExpressionScript"><![CDATA[PhaseId]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Grant_Group_Type_LOV1"
+    ViewObjectName="model.LOV.Grant_Group_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Group_Name_LOV1"
+    ViewObjectName="model.LOV.Grant_Group_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_PhaseId"
     ListVOName="Phase_Name_LOV1"
@@ -69,6 +76,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantApprovalMasterType"
+    ListVOName="Grant_Group_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantApprovalMasterType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="type_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="type_view"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantApprovalMasterGroupId"
+    ListVOName="Grant_Group_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantApprovalMasterGroupId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GrantGroupMasterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FarmerNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -124,6 +167,34 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="GrantApprovalMasterType"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterType"
+    EntityUsage="TblGrantApprovalMaster"
+    AliasName="GRANT_APPROVAL_MASTER_TYPE"
+    LOVName="LOV_GrantApprovalMasterType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrantApprovalMasterGroupId"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterGroupId"
+    EntityUsage="TblGrantApprovalMaster"
+    AliasName="GRANT_APPROVAL_MASTER_GROUP_ID"
+    LOVName="LOV_GrantApprovalMasterGroupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGrantApprovalDetailView"
     ViewLink="model.VO.FkTblGrantApprovalDetailFkLink"
@@ -134,6 +205,21 @@
     ViewLink="model.VO.FkTblGrantDisburseMasterFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalMasterDView"
+    ViewLink="model.VO.FKATblGrantApprovalMasterDFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalMasterId"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalMasterId"

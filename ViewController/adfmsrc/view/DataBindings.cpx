@@ -53,7 +53,6 @@
         <page path="/WEB-INF/Fragments/Reports/Cluster_Detail_Report.jsff" usageId="view_Cluster_Detail_ReportPageDef"/>
         <page path="/WEB-INF/Fragments/Reports/Farmer_Report.jsff" usageId="view_Farmer_ReportPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Rate.jsff" usageId="view_Grant_RatePageDef"/>
-        <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Application.jsff" usageId="view_Grant_ApplicationPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Approval.jsff" usageId="view_Grant_ApprovalPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Grants/Grant_Disburse.jsff" usageId="view_Grant_DisbursePageDef"/>
         <page path="/Main_Pages/Modules/Financial/Financial.jsf" usageId="view_FinancialPageDef"/>
@@ -96,8 +95,6 @@
               usageId="view_Grant_Disburse_TaskFlow_Grant_Disburse_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Task_Flows/Modules/Grants/Grant_Approval_TaskFlow.xml#Grant_Approval_TaskFlow@ExecuteWithParams"
               usageId="view_Grant_Approval_TaskFlow_Grant_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
-        <page path="/WEB-INF/Task_Flows/Modules/Grants/Grant_Application_TaskFlow.xml#Grant_Application_TaskFlow@ExecuteWithParams"
-              usageId="view_Grant_Application_TaskFlow_Grant_Application_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Project_Comp_TaskFlow.xml#Project_Comp_TaskFlow@ExecuteWithParams"
               usageId="view_Project_Comp_TaskFlow_Project_Comp_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Output_Ind_TaskFlow.xml#Output_Ind_TaskFlow@ExecuteWithParams"

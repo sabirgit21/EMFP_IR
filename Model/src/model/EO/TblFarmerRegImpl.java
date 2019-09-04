@@ -61,7 +61,10 @@ public class TblFarmerRegImpl extends EntityImpl {
         TblFarmerRegOwnership,
         TblGrantApprovalDetail,
         TblGrantAppMaster,
-        TblGrantDisburseDetail;
+        TblGrantDisburseDetail,
+        TblGrantGroupDetail,
+        TblGrantGroupMaster,
+        TblGrantApprovalMasterD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -84,6 +87,7 @@ public class TblFarmerRegImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -125,6 +129,9 @@ public class TblFarmerRegImpl extends EntityImpl {
     public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
     public static final int TBLGRANTDISBURSEDETAIL = AttributesEnum.TblGrantDisburseDetail.index();
+    public static final int TBLGRANTGROUPDETAIL = AttributesEnum.TblGrantGroupDetail.index();
+    public static final int TBLGRANTGROUPMASTER = AttributesEnum.TblGrantGroupMaster.index();
+    public static final int TBLGRANTAPPROVALMASTERD = AttributesEnum.TblGrantApprovalMasterD.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -138,6 +145,7 @@ public class TblFarmerRegImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblFarmerReg");
     }
+
 
     /**
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
@@ -669,6 +677,28 @@ public class TblFarmerRegImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLGRANTDISBURSEDETAIL);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantGroupDetail() {
+        return (RowIterator) getAttributeInternal(TBLGRANTGROUPDETAIL);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantGroupMaster() {
+        return (RowIterator) getAttributeInternal(TBLGRANTGROUPMASTER);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantApprovalMasterD() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALMASTERD);
+    }
 
     /**
      * @param farmerRegId key constituent

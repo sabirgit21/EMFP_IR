@@ -35,8 +35,10 @@
                           partialTriggers="::b3">
                   <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.label}" id="c1">
+                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.label}" id="c1"
+                             width="98">
                     <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}"
+                    readOnly="true"
                                   label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.label}"
                                   required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.mandatory}"
                                   columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.displayWidth}"
@@ -48,51 +50,39 @@
                                         pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.label}"
+                  <af:column headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.label}"
                              id="c2">
-                    <af:inputText value="#{row.bindings.GrantGroupMasterPhaseId.inputValue}"
-                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.label}"
-                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.mandatory}"
-                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.precision}"
-                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.tooltip}"
-                                  id="it2">
+                    <af:selectOneChoice value="#{row.bindings.GrantGroupMasterPhaseId.inputValue}"
+                    autoSubmit="true"
+                                        label="#{row.bindings.GrantGroupMasterPhaseId.label}"
+                                        required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.GrantGroupMasterPhaseId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.GrantGroupMasterPhaseId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterPhaseId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.label}"
+                  <af:column headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.label}"
                              id="c3">
-                    <af:inputText value="#{row.bindings.GrantGroupMasterClusterId.inputValue}"
-                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.label}"
-                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.mandatory}"
-                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.precision}"
-                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.tooltip}"
-                                  id="it3">
+                    <af:selectOneChoice value="#{row.bindings.GrantGroupMasterClusterId.inputValue}"
+                                        label="#{row.bindings.GrantGroupMasterClusterId.label}"
+                                        required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.tooltip}"
+                                        id="soc2" autoSubmit="true">
+                      <f:selectItems value="#{row.bindings.GrantGroupMasterClusterId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.GrantGroupMasterClusterId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.label}"
+                  <af:column headerText="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.label}"
                              id="c4">
-                    <af:inputText value="#{row.bindings.GrantGroupMasterNominee.inputValue}"
-                                  label="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.label}"
-                                  required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.mandatory}"
-                                  columns="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.precision}"
-                                  shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.tooltip}"
-                                  id="it4">
+                    <af:selectOneChoice value="#{row.bindings.GrantGroupMasterNominee.inputValue}"
+                                        label="#{row.bindings.GrantGroupMasterNominee.label}"
+                                        required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.mandatory}"
+                                        shortDesc="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.GrantGroupMasterNominee.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.GrantGroupMasterNominee.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
                 <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
@@ -134,7 +124,7 @@
                   <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.label}" id="c5">
-                    <af:inputText value="#{row.bindings.GrantGroupDetailId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantGroupDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.mandatory}"
                                   columns="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.displayWidth}"
@@ -149,7 +139,7 @@
                   <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.label}" id="c6">
-                    <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.mandatory}"
                                   columns="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.displayWidth}"
@@ -161,18 +151,64 @@
                                         pattern="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.label}" id="c7">
-                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
-                                  label="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.label}"
-                                  required="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.mandatory}"
-                                  columns="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.precision}"
-                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.tooltip}" id="it7">
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.label}" id="c7">
+                    <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                        label="#{row.bindings.FarmerRegId.label}"
+                                        required="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.format}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.Name.label}" id="c8">
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.Name.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.Name.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.FatherName.label}" id="c9">
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.FatherName.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.FatherName.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.FatherName.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.Cnic.label}" id="c10">
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.Cnic.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.Cnic.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.Cnic.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.Mobile.label}" id="c11">
+                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.Mobile.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.Mobile.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.Mobile.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.Mobile.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.Mobile.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.label}" id="c12">
+                    <af:inputText value="#{row.bindings.PerAddress.inputValue}"
+                                  label="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.label}"
+                                  required="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.mandatory}"
+                                  columns="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.precision}"
+                                  shortDesc="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.PerAddress.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>

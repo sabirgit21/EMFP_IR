@@ -45,6 +45,11 @@
           <Item Value="GrantGroupDetailId"/>
           <Item Value="GrantGroupMasterId"/>
           <Item Value="FarmerRegId"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
+          <Item Value="PerAddress"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

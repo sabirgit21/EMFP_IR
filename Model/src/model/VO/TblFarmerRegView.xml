@@ -405,6 +405,11 @@
     ViewLink="model.VO.Fk2TblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantGroupDetailView"
+    ViewLink="model.VO.FKATblGrantGroupDetailFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="FarmerRegId"

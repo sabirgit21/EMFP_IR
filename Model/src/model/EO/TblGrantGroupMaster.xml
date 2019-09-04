@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="GrantGroupMasterId"
-    IsNotNull="true"
     ColumnName="GRANT_GROUP_MASTER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_MASTER"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="GrantGroupMasterPhaseId"
     ColumnName="GRANT_GROUP_MASTER_PHASE_ID"
@@ -35,11 +36,10 @@
     TableName="TBL_GRANT_GROUP_MASTER"/>
   <Attribute
     Name="GrantGroupMasterNominee"
-    Precision="200"
     ColumnName="GRANT_GROUP_MASTER_NOMINEE"
     SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
+    Type="java.math.BigDecimal"
+    ColumnType="Number"
     TableName="TBL_GRANT_GROUP_MASTER">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
@@ -52,6 +52,13 @@
     AssociationOtherEnd="model.EO.FkTblGrantGroupDetailMasterIdAssoc.TblGrantGroupMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblFarmerReg"
+    Association="model.EO.FKATblGrantGroupMasterFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantGroupMasterFKAssoc.TblFarmerReg"
+    AssociationOtherEnd="model.EO.FKATblGrantGroupMasterFKAssoc.TblGrantGroupMaster"
+    Type="model.EO.TblFarmerRegImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblGrantGroupMasterId"
     PrimaryKey="true">

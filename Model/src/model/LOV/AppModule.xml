@@ -166,4 +166,16 @@
   <ViewUsage
     Name="Disburse_Status_LOV1"
     ViewObjectName="model.LOV.Disburse_Status_LOV"/>
+  <ViewUsage
+    Name="Grant_Master_ID_Depn_Farmer_No_LOV1"
+    ViewObjectName="model.LOV.Grant_Master_ID_Depn_Farmer_No_LOV"/>
+  <ViewUsage
+    Name="Grant_Group_Type_LOV1"
+    ViewObjectName="model.LOV.Grant_Group_Type_LOV"/>
+  <ViewUsage
+    Name="Grant_Group_Name_LOV1"
+    ViewObjectName="model.LOV.Grant_Group_Name_LOV"/>
+  <ViewUsage
+    Name="Cluster_ID_Depn_Farmer_No_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depn_Farmer_No_LOV"/>
 </AppModule>

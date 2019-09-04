@@ -13,6 +13,95 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Phase_Name_LOV1"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Cluster_ID_Depen_Phase_ID_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
+      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="gotPhaseID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GrantGroupMasterPhaseId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Cluster_ID_Depn_Farmer_No_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depn_Farmer_No_LOV"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Cluster_ID_Depn_Farmer_No_LOVCriteria"
+      FullName="model.LOV.Cluster_ID_Depn_Farmer_No_LOV.Cluster_ID_Depn_Farmer_No_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="getClstrID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[GrantGroupMasterClusterId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_GrantGroupMasterPhaseId"
+    ListVOName="Phase_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantGroupMasterPhaseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantGroupMasterClusterId"
+    ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantGroupMasterClusterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantGroupMasterNominee"
+    ListVOName="Cluster_ID_Depn_Farmer_No_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantGroupMasterNominee"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FarmerNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantGroupMaster"
     Entity="model.EO.TblGrantGroupMaster"/>
@@ -28,19 +117,43 @@
     PrecisionRule="true"
     EntityAttrName="GrantGroupMasterPhaseId"
     EntityUsage="TblGrantGroupMaster"
-    AliasName="GRANT_GROUP_MASTER_PHASE_ID"/>
+    AliasName="GRANT_GROUP_MASTER_PHASE_ID"
+    LOVName="LOV_GrantGroupMasterPhaseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GrantGroupMasterClusterId"
     PrecisionRule="true"
     EntityAttrName="GrantGroupMasterClusterId"
     EntityUsage="TblGrantGroupMaster"
-    AliasName="GRANT_GROUP_MASTER_CLUSTER_ID"/>
+    AliasName="GRANT_GROUP_MASTER_CLUSTER_ID"
+    LOVName="LOV_GrantGroupMasterClusterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GrantGroupMasterNominee"
     PrecisionRule="true"
     EntityAttrName="GrantGroupMasterNominee"
     EntityUsage="TblGrantGroupMaster"
-    AliasName="GRANT_GROUP_MASTER_NOMINEE"/>
+    AliasName="GRANT_GROUP_MASTER_NOMINEE"
+    LOVName="LOV_GrantGroupMasterNominee">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGrantGroupDetailView"
     ViewLink="model.VO.FkTblGrantGroupDetailMasterIdLink"

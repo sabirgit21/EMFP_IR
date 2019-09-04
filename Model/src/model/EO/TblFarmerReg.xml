@@ -404,6 +404,27 @@
     AssociationOtherEnd="model.EO.Fk2TblGrantDisburseDetailFkAssoc.TblFarmerReg"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGrantGroupDetail"
+    Association="model.EO.FKATblGrantGroupDetailFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantGroupDetailFKAssoc.TblGrantGroupDetail"
+    AssociationOtherEnd="model.EO.FKATblGrantGroupDetailFKAssoc.TblFarmerReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGrantGroupMaster"
+    Association="model.EO.FKATblGrantGroupMasterFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantGroupMasterFKAssoc.TblGrantGroupMaster"
+    AssociationOtherEnd="model.EO.FKATblGrantGroupMasterFKAssoc.TblFarmerReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalMasterD"
+    Association="model.EO.FKATblGrantApprovalMasterDFKAssoc2"
+    AssociationEnd="model.EO.FKATblGrantApprovalMasterDFKAssoc2.TblGrantApprovalMasterD"
+    AssociationOtherEnd="model.EO.FKATblGrantApprovalMasterDFKAssoc2.TblFarmerReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblFarmerRegPk"
     PrimaryKey="true">
