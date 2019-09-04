@@ -66,6 +66,7 @@
           <Item Value="RoNumber"/>
           <Item Value="DisburseStatus"/>
           <Item Value="LandUnderOrch"/>
+          <Item Value="OldRoNumber"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -364,6 +364,12 @@
     EntityAttrName="LandUnderOrch"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="LAND_UNDER_ORCH"/>
+  <ViewAttribute
+    Name="OldRoNumber"
+    PrecisionRule="true"
+    EntityAttrName="OldRoNumber"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="OLD_RO_NUMBER"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
     <Item Value="FarmerRegId1"/>
@@ -373,6 +379,11 @@
     ViewLink="model.VO.FKATblGrantApprovalDetailDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

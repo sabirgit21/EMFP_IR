@@ -527,6 +527,18 @@
                                             <f:validator binding="#{row.bindings.RoStatus.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
+                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.label}"
+                                               id="c40">
+                                        <af:inputText value="#{row.bindings.OldRoNumber.inputValue}" 
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.tooltip}"
+                                                      id="it26">
+                                            <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
                                     <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
                                                id="c27">
                                         <af:outputText value="#{row.RoNumber}"

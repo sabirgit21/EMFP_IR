@@ -44,6 +44,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         DisburseStatus,
         Remarks,
         LandUnderOrch,
+        OldRoNumber,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -95,6 +96,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int DISBURSESTATUS = AttributesEnum.DisburseStatus.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int LANDUNDERORCH = AttributesEnum.LandUnderOrch.index();
+    public static final int OLDRONUMBER = AttributesEnum.OldRoNumber.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -449,6 +451,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setLandUnderOrch(BigDecimal value) {
         setAttributeInternal(LANDUNDERORCH, value);
+    }
+
+    /**
+     * Gets the attribute value for OldRoNumber, using the alias name OldRoNumber.
+     * @return the value of OldRoNumber
+     */
+    public String getOldRoNumber() {
+        return (String) getAttributeInternal(OLDRONUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OldRoNumber.
+     * @param value value to set the OldRoNumber
+     */
+    public void setOldRoNumber(String value) {
+        setAttributeInternal(OLDRONUMBER, value);
     }
 
     /**
