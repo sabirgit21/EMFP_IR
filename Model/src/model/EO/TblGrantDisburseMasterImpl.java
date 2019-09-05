@@ -30,6 +30,13 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        AccountName,
+        AccountNo,
+        AdvNo,
+        ChqNo,
+        GrantApprovalDetailId,
+        IssueTo,
+        RoNumber,
         TblGrantDisburseDetail,
         TblGrantApprovalMaster;
         private static AttributesEnum[] vals = null;
@@ -54,6 +61,7 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int GRANTDISBURSEMASTERID = AttributesEnum.GrantDisburseMasterId.index();
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -62,6 +70,13 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int ACCOUNTNAME = AttributesEnum.AccountName.index();
+    public static final int ACCOUNTNO = AttributesEnum.AccountNo.index();
+    public static final int ADVNO = AttributesEnum.AdvNo.index();
+    public static final int CHQNO = AttributesEnum.ChqNo.index();
+    public static final int GRANTAPPROVALDETAILID = AttributesEnum.GrantApprovalDetailId.index();
+    public static final int ISSUETO = AttributesEnum.IssueTo.index();
+    public static final int RONUMBER = AttributesEnum.RoNumber.index();
     public static final int TBLGRANTDISBURSEDETAIL = AttributesEnum.TblGrantDisburseDetail.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
 
@@ -69,6 +84,13 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblGrantDisburseMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantDisburseMaster");
     }
 
     /**
@@ -184,6 +206,118 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for AccountName, using the alias name AccountName.
+     * @return the value of AccountName
+     */
+    public String getAccountName() {
+        return (String) getAttributeInternal(ACCOUNTNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AccountName.
+     * @param value value to set the AccountName
+     */
+    public void setAccountName(String value) {
+        setAttributeInternal(ACCOUNTNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for AccountNo, using the alias name AccountNo.
+     * @return the value of AccountNo
+     */
+    public String getAccountNo() {
+        return (String) getAttributeInternal(ACCOUNTNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AccountNo.
+     * @param value value to set the AccountNo
+     */
+    public void setAccountNo(String value) {
+        setAttributeInternal(ACCOUNTNO, value);
+    }
+
+    /**
+     * Gets the attribute value for AdvNo, using the alias name AdvNo.
+     * @return the value of AdvNo
+     */
+    public String getAdvNo() {
+        return (String) getAttributeInternal(ADVNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AdvNo.
+     * @param value value to set the AdvNo
+     */
+    public void setAdvNo(String value) {
+        setAttributeInternal(ADVNO, value);
+    }
+
+    /**
+     * Gets the attribute value for ChqNo, using the alias name ChqNo.
+     * @return the value of ChqNo
+     */
+    public String getChqNo() {
+        return (String) getAttributeInternal(CHQNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ChqNo.
+     * @param value value to set the ChqNo
+     */
+    public void setChqNo(String value) {
+        setAttributeInternal(CHQNO, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantApprovalDetailId, using the alias name GrantApprovalDetailId.
+     * @return the value of GrantApprovalDetailId
+     */
+    public BigDecimal getGrantApprovalDetailId() {
+        return (BigDecimal) getAttributeInternal(GRANTAPPROVALDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantApprovalDetailId.
+     * @param value value to set the GrantApprovalDetailId
+     */
+    public void setGrantApprovalDetailId(BigDecimal value) {
+        setAttributeInternal(GRANTAPPROVALDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for IssueTo, using the alias name IssueTo.
+     * @return the value of IssueTo
+     */
+    public String getIssueTo() {
+        return (String) getAttributeInternal(ISSUETO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IssueTo.
+     * @param value value to set the IssueTo
+     */
+    public void setIssueTo(String value) {
+        setAttributeInternal(ISSUETO, value);
+    }
+
+    /**
+     * Gets the attribute value for RoNumber, using the alias name RoNumber.
+     * @return the value of RoNumber
+     */
+    public String getRoNumber() {
+        return (String) getAttributeInternal(RONUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoNumber.
+     * @param value value to set the RoNumber
+     */
+    public void setRoNumber(String value) {
+        setAttributeInternal(RONUMBER, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantDisburseDetail() {
@@ -193,16 +327,17 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGrantApprovalMaster() {
-        return (EntityImpl) getAttributeInternal(TBLGRANTAPPROVALMASTER);
+    public TblGrantApprovalMasterImpl getTblGrantApprovalMaster() {
+        return (TblGrantApprovalMasterImpl) getAttributeInternal(TBLGRANTAPPROVALMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGrantApprovalMaster(EntityImpl value) {
+    public void setTblGrantApprovalMaster(TblGrantApprovalMasterImpl value) {
         setAttributeInternal(TBLGRANTAPPROVALMASTER, value);
     }
+
 
     /**
      * @param grantDisburseMasterId key constituent
@@ -211,13 +346,6 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantDisburseMasterId) {
         return new Key(new Object[] { grantDisburseMasterId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantDisburseMaster");
     }
 
     /**

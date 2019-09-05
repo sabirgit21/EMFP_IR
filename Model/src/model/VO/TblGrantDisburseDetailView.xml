@@ -17,6 +17,10 @@
     Name="Farmer_Reg_id_LOV1"
     ViewObjectName="model.LOV.Farmer_Reg_id_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Rate_Rate_LOV1"
+    ViewObjectName="model.LOV.Grant_Rate_Rate_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_Reg_id_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Rate"
+    ListVOName="Grant_Rate_Rate_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Rate"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GrantRateId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Amount"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -80,7 +102,15 @@
     PrecisionRule="true"
     EntityAttrName="Rate"
     EntityUsage="TblGrantDisburseDetail"
-    AliasName="RATE"/>
+    AliasName="RATE"
+    LOVName="LOV_Rate">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Amount"
     IsNotNull="true"
@@ -89,19 +119,16 @@
     EntityUsage="TblGrantDisburseDetail"
     AliasName="AMOUNT"/>
   <ViewAttribute
-    Name="ChqNo"
-    IsNotNull="true"
+    Name="FAmount"
     PrecisionRule="true"
-    EntityAttrName="ChqNo"
+    EntityAttrName="FAmount"
     EntityUsage="TblGrantDisburseDetail"
-    AliasName="CHQ_NO"/>
-  <ViewAttribute
-    Name="Payee"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Payee"
-    EntityUsage="TblGrantDisburseDetail"
-    AliasName="PAYEE"/>
+    AliasName="F_AMOUNT"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseDetailId"

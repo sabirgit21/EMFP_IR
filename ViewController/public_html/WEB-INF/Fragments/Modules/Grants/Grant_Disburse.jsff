@@ -35,11 +35,11 @@
                           rowSelection="single" fetchSize="#{bindings.TblGrantDisburseMasterView1.rangeSize}"
                           filterModel="#{bindings.TblGrantDisburseMasterView1Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.TblGrantDisburseMasterView1Query.processQuery}"
-                          varStatus="vs" id="t1" partialTriggers=" ::b8" width="334"
+                          varStatus="vs" id="t1" partialTriggers=" ::b8" width="990"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.GrantDisburseMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="Grant Disburse Master ID"
+                             headerText="Master ID"
                              id="c1" align="center" width="80">
                               <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.GrantDisburseMasterId}" id="id4"
@@ -59,6 +59,34 @@
                                         pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantDisburseMasterId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Detail ID"
+                             id="c17">
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.tooltip}"
+                                  id="it17">
+                      <f:validator binding="#{row.bindings.GrantApprovalDetailId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Approval Master ID"
+                             id="c18">
+                    <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.tooltip}"
+                                  id="it23">
+                      <f:validator binding="#{row.bindings.GrantApprovalMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date"
                              id="c3" width="100">
@@ -76,6 +104,67 @@
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblGrantDisburseMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
+                  </af:column>
+                  <af:column headerText="RO Number" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.RoNumber.inputValue}"
+                                        label="#{row.bindings.RoNumber.label}" autoSubmit="true"
+                                        required="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber.mandatory}"
+                                        shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.RoNumber.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.RoNumber.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Chq No." id="c7">
+                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.tooltip}" id="it18">
+                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Advice No." id="c13">
+                    <af:inputText value="#{row.bindings.AdvNo.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.tooltip}" id="it19">
+                      <f:validator binding="#{row.bindings.AdvNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Account No." id="c14">
+                    <af:inputText value="#{row.bindings.AccountNo.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.tooltip}" id="it20">
+                      <f:validator binding="#{row.bindings.AccountNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Account Name" id="c15">
+                    <af:inputText value="#{row.bindings.AccountName.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.tooltip}"
+                                  id="it21">
+                      <f:validator binding="#{row.bindings.AccountName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Issue To" id="c16">
+                    <af:inputText value="#{row.bindings.IssueTo.inputValue}"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.tooltip}" id="it22">
+                      <f:validator binding="#{row.bindings.IssueTo.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.Status.name}" filterable="true"
                              sortable="true" headerText="Status"
@@ -180,7 +269,7 @@
                                             </af:inputText>
                                         </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
-                                        label="#{row.bindings.FarmerRegId.label}"
+                                        label="#{row.bindings.FarmerRegId.label}" readOnly="true"
                                         required="#{bindings.TblGrantDisburseDetailView4.hints.FarmerRegId.mandatory}"
                                         shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.FarmerRegId.tooltip}"
                                         id="soc1">
@@ -189,14 +278,14 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantDisburseDetailView4.hints.Acre.name}" filterable="true"
-                             sortable="true" headerText="Acre"
+                             sortable="true" headerText="Final Acre"
                              id="c8" width="120">
                              <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Acre}" id="it12"
                                                           placeholder="Search Acre">
                                             </af:inputText>
                                         </f:facet>
-                    <af:inputText value="#{row.bindings.Acre.inputValue}"
+                    <af:inputText value="#{row.bindings.Acre.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantDisburseDetailView4.hints.Acre.label}"
                                   required="#{bindings.TblGrantDisburseDetailView4.hints.Acre.mandatory}"
                                   columns="#{bindings.TblGrantDisburseDetailView4.hints.Acre.displayWidth}"
@@ -207,26 +296,16 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.Acre.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantDisburseDetailView4.hints.Rate.name}" filterable="true"
-                             sortable="true" headerText="Rate"
-                             id="c9" width="120">
-                             <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Rate}" id="it13"
-                                                          placeholder="Search Rate">
-                                            </af:inputText>
-                                        </f:facet>
-                    <af:inputText value="#{row.bindings.Rate.inputValue}"
-                                  label="#{bindings.TblGrantDisburseDetailView4.hints.Rate.label}"
-                                  required="#{bindings.TblGrantDisburseDetailView4.hints.Rate.mandatory}"
-                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.Rate.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.Rate.precision}"
-                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.Rate.tooltip}" id="it8">
+                  <af:column headerText="Grant Rate" id="c9">
+                    <af:selectOneChoice value="#{row.bindings.Rate.inputValue}" label="#{row.bindings.Rate.label}" readOnly="true"
+                                        required="#{bindings.TblGrantDisburseDetailView4.hints.Rate.mandatory}"
+                                        shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.Rate.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.Rate.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Rate.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantDisburseDetailView4.hints.Rate.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantDisburseDetailView4.hints.Amount.name}" filterable="true"
+                  <af:column sortProperty="Grant Amount" filterable="true"
                              sortable="true" headerText="Amount"
                              id="c10" width="120">
                              <f:facet name="filter">
@@ -234,7 +313,7 @@
                                                           placeholder="Search Amount">
                                             </af:inputText>
                                         </f:facet>
-                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                    <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantDisburseDetailView4.hints.Amount.label}"
                                   required="#{bindings.TblGrantDisburseDetailView4.hints.Amount.mandatory}"
                                   columns="#{bindings.TblGrantDisburseDetailView4.hints.Amount.displayWidth}"
@@ -245,38 +324,16 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.name}" filterable="true"
-                             sortable="true" headerText="Cheque No."
-                             id="c11" width="200">
-                             <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.ChqNo}" id="it15"
-                                                          placeholder="Search Cheque No.">
-                                            </af:inputText>
-                                        </f:facet>
-                    <af:inputText value="#{row.bindings.ChqNo.inputValue}"
-                                  label="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.label}"
-                                  required="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.mandatory}"
-                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.precision}"
-                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.ChqNo.tooltip}" id="it10">
-                      <f:validator binding="#{row.bindings.ChqNo.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantDisburseDetailView4.hints.Payee.name}" filterable="true"
-                             sortable="true" headerText="Payee"
-                             id="c12" width="140">
-                             <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Payee}" id="it16"
-                                                          placeholder="Search Payee">
-                                            </af:inputText>
-                                        </f:facet>
-                    <af:inputText value="#{row.bindings.Payee.inputValue}"
-                                  label="#{bindings.TblGrantDisburseDetailView4.hints.Payee.label}"
-                                  required="#{bindings.TblGrantDisburseDetailView4.hints.Payee.mandatory}"
-                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.Payee.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.Payee.precision}"
-                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.Payee.tooltip}" id="it11">
-                      <f:validator binding="#{row.bindings.Payee.validator}"/>
+                  <af:column headerText="Final Grant" id="c11">
+                    <af:inputText value="#{row.bindings.FAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.label}"
+                                  required="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.FAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.format}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
@@ -300,7 +357,7 @@
                          disabled="#{!bindings.Delete.enabled}" id="b3" icon="#{resource['images:delete.png']}"
                          immediate="true" action="Grant_Disburse.jsf"/>
             </af:panelGroupLayout>-->
-             <af:panelGroupLayout id="pgl2" layout="horizontal">
+             <!--<af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -311,7 +368,7 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">

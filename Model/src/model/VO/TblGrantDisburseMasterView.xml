@@ -13,6 +13,34 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Grant_Approval_Detail_RONUMBER_LOV1"
+    ViewObjectName="model.LOV.Grant_Approval_Detail_RONUMBER_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RoNumber"
+    ListVOName="Grant_Approval_Detail_RONUMBER_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoNumber"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="GrantApprovalMasterId"/>
+      <Item Value="GrantApprovalDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RoNumber"/>
+      <Item Value="GrantApprovalMasterId"/>
+      <Item Value="GrantApprovalDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RoNumber"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantDisburseMaster"
     Entity="model.EO.TblGrantDisburseMaster"/>
@@ -43,11 +71,71 @@
     EntityAttrName="Status"
     EntityUsage="TblGrantDisburseMaster"
     AliasName="STATUS"/>
+  <ViewAttribute
+    Name="AccountName"
+    PrecisionRule="true"
+    EntityAttrName="AccountName"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="ACCOUNT_NAME"/>
+  <ViewAttribute
+    Name="RoNumber"
+    PrecisionRule="true"
+    EntityAttrName="RoNumber"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="RO_NUMBER"
+    LOVName="LOV_RoNumber">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrantApprovalDetailId"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalDetailId"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="GRANT_APPROVAL_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ChqNo"
+    PrecisionRule="true"
+    EntityAttrName="ChqNo"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="CHQ_NO"/>
+  <ViewAttribute
+    Name="AdvNo"
+    PrecisionRule="true"
+    EntityAttrName="AdvNo"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="ADV_NO"/>
+  <ViewAttribute
+    Name="AccountNo"
+    PrecisionRule="true"
+    EntityAttrName="AccountNo"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="ACCOUNT_NO"/>
+  <ViewAttribute
+    Name="IssueTo"
+    PrecisionRule="true"
+    EntityAttrName="IssueTo"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="ISSUE_TO"/>
   <ViewLinkAccessor
     Name="TblGrantDisburseDetailView"
     ViewLink="model.VO.FkTblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseMasterId"
+      Ascending="false"/>
+  </SortCriteria>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseMasterId"

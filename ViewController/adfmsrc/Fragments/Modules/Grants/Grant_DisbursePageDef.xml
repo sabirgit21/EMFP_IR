@@ -25,6 +25,13 @@
           <Item Value="GrantApprovalMasterId"/>
           <Item Value="Dated"/>
           <Item Value="Status"/>
+          <Item Value="RoNumber"/>
+          <Item Value="ChqNo"/>
+          <Item Value="AdvNo"/>
+          <Item Value="AccountNo"/>
+          <Item Value="AccountName"/>
+          <Item Value="IssueTo"/>
+          <Item Value="GrantApprovalDetailId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -37,8 +44,7 @@
           <Item Value="Acre"/>
           <Item Value="Rate"/>
           <Item Value="Amount"/>
-          <Item Value="ChqNo"/>
-          <Item Value="Payee"/>
+          <Item Value="FAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

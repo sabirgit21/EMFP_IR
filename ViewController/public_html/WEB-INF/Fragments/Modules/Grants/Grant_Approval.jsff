@@ -55,7 +55,7 @@
                                                               pattern="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterId.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.PhaseId.label}"
+                                    <af:column headerText="Phase"
                                                id="c8">
                                         <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}"
                                                             label="#{row.bindings.PhaseId.label}"
@@ -66,7 +66,7 @@
                                             <f:validator binding="#{row.bindings.PhaseId.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.label}"
+                                    <af:column headerText="Cluster"
                                                id="c2">
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
@@ -131,7 +131,7 @@
                                                               pattern="#{bindings.TblGrantApprovalMasterView1.hints.Status.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterType.label}"
+                                    <af:column headerText="Grant Type"
                                                id="c29">
                                         <af:selectOneChoice value="#{row.bindings.GrantApprovalMasterType.inputValue}"
                                                             label="#{row.bindings.GrantApprovalMasterType.label}"
@@ -143,7 +143,7 @@
                                             <f:validator binding="#{row.bindings.GrantApprovalMasterType.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterGroupId.label}"
+                                    <af:column headerText="Group Nominee"
                                                id="c30">
                                         <af:selectOneChoice value="#{row.bindings.GrantApprovalMasterGroupId.inputValue}"
                                                             label="#{row.bindings.GrantApprovalMasterGroupId.label}"
@@ -182,7 +182,7 @@
                                           varStatus="vs" id="t4">
                                     <af:column sortProperty="#{bindings.TblGrantApprovalMasterDView3.hints.GrantApprovalMasterDId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalMasterDView3.hints.GrantApprovalMasterDId.label}"
+                                               headerText="Detail ID"
                                                id="c31">
                                         <af:inputText value="#{row.bindings.GrantApprovalMasterDId.inputValue}"
                                                       readOnly="true"
@@ -199,7 +199,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantApprovalMasterDView3.hints.GrantApprovalMasterId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalMasterDView3.hints.GrantApprovalMasterId.label}"
+                                               headerText="Master ID"
                                                id="c32">
                                         <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}"
                                                       readOnly="true"
@@ -214,7 +214,7 @@
                                                               pattern="#{bindings.TblGrantApprovalMasterDView3.hints.GrantApprovalMasterId.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.FarmerNo.label}"
+                                    <af:column headerText="Farmer No."
                                                id="c33">
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.FarmerNo.label}"
@@ -226,7 +226,7 @@
                                             <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.Name.label}"
+                                    <af:column headerText="Name"
                                                id="c34">
                                         <af:inputText value="#{row.bindings.Name.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.Name.label}"
@@ -238,7 +238,7 @@
                                             <f:validator binding="#{row.bindings.Name.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.FatherName.label}"
+                                    <af:column headerText="Father Name"
                                                id="c35">
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.FatherName.label}"
@@ -250,7 +250,7 @@
                                             <f:validator binding="#{row.bindings.FatherName.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.Cnic.label}"
+                                    <af:column headerText="CNIC"
                                                id="c36">
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.Cnic.label}"
@@ -262,7 +262,7 @@
                                             <f:validator binding="#{row.bindings.Cnic.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.Mobile.label}"
+                                    <af:column headerText="Mobile"
                                                id="c37">
                                         <af:inputText value="#{row.bindings.Mobile.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.Mobile.label}"
@@ -274,7 +274,7 @@
                                             <f:validator binding="#{row.bindings.Mobile.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.LandAcre.label}"
+                                    <af:column headerText="Land Acre"
                                                id="c38">
                                         <af:inputText value="#{row.bindings.LandAcre.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.LandAcre.label}"
@@ -288,7 +288,7 @@
                                                               pattern="#{bindings.TblGrantApprovalMasterDView3.hints.LandAcre.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalMasterDView3.hints.LandUnderOrch.label}"
+                                    <af:column headerText="Land Under Orch"
                                                id="c39">
                                         <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalMasterDView3.hints.LandUnderOrch.label}"
@@ -362,11 +362,17 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.label}"
-                                               id="c17">
-                                        <af:outputText value="#{row.FarmerNo}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.tooltip}"
-                                                       id="ot6"/>
+                                    <af:column headerText="Farmer No."
+                                               id="c6">
+                                        <af:inputText value="#{row.bindings.FarmerNo.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.tooltip}"
+                                                      id="it27">
+                                            <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                                        </af:inputText>
                                     </af:column>
                                     <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.FarmerRegId.name}"
                              filterable="true" sortable="true"
@@ -385,31 +391,55 @@
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>-->
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Name.label}"
-                                               id="c6">
-                                        <af:outputText value="#{row.Name}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Name.tooltip}"
-                                                       id="ot7"/>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.label}"
+                                    <af:column headerText="Farmer Name"
                                                id="c12">
-                                        <af:outputText value="#{row.FatherName}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.tooltip}"
-                                                       id="ot1"/>
+                                        <af:inputText value="#{row.bindings.Name.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.Name.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Name.tooltip}"
+                                                      id="it28">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.label}"
+                                    <af:column headerText="Father Name"
                                                id="c13">
-                                        <af:outputText value="#{row.Cnic}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.tooltip}"
-                                                       id="ot2"/>
+                                        <af:inputText value="#{row.bindings.FatherName.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.tooltip}"
+                                                      id="it29">
+                                            <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                                        </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.label}"
+                                    <af:column headerText="CNIC"
                                                id="c16">
-                                        <af:outputText value="#{row.Mobile}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.tooltip}"
-                                                       id="ot5"/>
+                                        <af:inputText value="#{row.bindings.Cnic.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.tooltip}"
+                                                      id="it30">
+                                            <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                                        </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.LandUnderOrch.label}"
+                                    <af:column headerText="Mobile"
+                                               id="c17">
+                                        <af:inputText value="#{row.bindings.Mobile.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.tooltip}"
+                                                      id="it31">
+                                            <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="Land Under Orch"
                                                id="c10">
                                         <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.LandUnderOrch.label}"
@@ -423,7 +453,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.LandUnderOrch.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.GrantRateId.label}"
+                                    <af:column headerText="Grant Rate"
                                                id="c9">
                                         <af:selectOneChoice value="#{row.bindings.GrantRateId.inputValue}"
                                                             readOnly="true" label="#{row.bindings.GrantRateId.label}"
@@ -441,7 +471,7 @@
                                             <af:inputText value="#{vs.filterCriteria.Amount}" id="it14"
                                                           placeholder="Search Amount"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                        <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.Amount.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.Amount.mandatory}"
                                                       columns="#{bindings.TblGrantApprovalDetailView4.hints.Amount.displayWidth}"
@@ -468,7 +498,7 @@
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FAcre.label}"
+                                    <af:column headerText="Final Acre"
                                                id="c18">
                                         <af:inputText value="#{row.bindings.FAcre.inputValue}"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.FAcre.label}"
@@ -482,7 +512,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.FAcre.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.GrantAmount.label}"
+                                    <af:column headerText="Grant Amount"
                                                id="c19">
                                         <af:inputText value="#{row.bindings.GrantAmount.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.GrantAmount.label}"
@@ -496,7 +526,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.GrantAmount.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.FAmount.label}"
+                                    <af:column headerText="Final Grant"
                                                id="c14">
                                         <af:outputText value="#{row.FAmount}"
                                                        shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.FAmount.tooltip}"
@@ -505,7 +535,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.FAmount.format}"/>
                                         </af:outputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.GrantStatus.label}"
+                                    <af:column headerText="Grant Status"
                                                id="c25">
                                         <af:selectOneChoice value="#{row.bindings.GrantStatus.inputValue}"
                                                             label="#{row.bindings.GrantStatus.label}"
@@ -516,7 +546,7 @@
                                             <f:validator binding="#{row.bindings.GrantStatus.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.RoStatus.label}"
+                                    <af:column headerText="Ro Status"
                                                id="c26">
                                         <af:selectOneChoice value="#{row.bindings.RoStatus.inputValue}"
                                                             label="#{row.bindings.RoStatus.label}"
@@ -527,7 +557,7 @@
                                             <f:validator binding="#{row.bindings.RoStatus.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.label}"
+                                    <af:column headerText="Old Ro Number"
                                                id="c40">
                                         <af:inputText value="#{row.bindings.OldRoNumber.inputValue}" 
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.label}"
@@ -539,16 +569,16 @@
                                             <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
+                                    <af:column headerText="Ro Number"
                                                id="c27">
                                         <af:outputText value="#{row.RoNumber}"
                                                        shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.tooltip}"
                                                        id="ot4"/>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.label}"
+                                    <af:column headerText="Disburse Status"
                                                id="c28">
                                         <af:selectOneChoice value="#{row.bindings.DisburseStatus.inputValue}"
-                                                            label="#{row.bindings.DisburseStatus.label}" readOnly="true"
+                                                            label="#{row.bindings.DisburseStatus.label}" 
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.mandatory}"
                                                             shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.tooltip}"
                                                             id="soc8">
@@ -614,7 +644,7 @@
                                           varStatus="vs" id="t3">
                                     <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailDId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailDId.label}"
+                                               headerText="Detail D ID"
                                                id="c15">
                                         <af:inputText value="#{row.bindings.GrantApprovalDetailDId.inputValue}"
                                                       readOnly="true"
@@ -631,9 +661,9 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.label}"
+                                               headerText="Detail ID"
                                                id="c20">
-                                        <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                                        <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.label}"
                                                       required="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.mandatory}"
                                                       columns="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.displayWidth}"
@@ -645,7 +675,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailDView3.hints.ItemL4Id.label}"
+                                    <af:column headerText="Farm Machinery"
                                                id="c21">
                                         <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                                             label="#{row.bindings.ItemL4Id.label}"

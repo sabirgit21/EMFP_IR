@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="TblGrantDisburseDetailView"
-  Version="12.1.3.10.8"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
@@ -87,38 +87,6 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     AliasName="AMOUNT"
     Expression="AMOUNT"
     SQLType="NUMERIC"/>
-  <ViewAttribute
-    Name="ChqNo"
-    IsUpdateable="false"
-    IsPersistent="false"
-    IsNotNull="true"
-    PrecisionRule="true"
-    Precision="25"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="CHQ_NO"
-    Expression="CHQ_NO"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="25"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="Payee"
-    IsUpdateable="false"
-    IsPersistent="false"
-    IsNotNull="true"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="PAYEE"
-    Expression="PAYEE"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantDisburseDetailId"/>
   </AttrArray>

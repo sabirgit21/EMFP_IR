@@ -79,6 +79,85 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_GRANT_DISBURSE_MASTER"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="AccountName"
+    Precision="200"
+    ColumnName="ACCOUNT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AccountNo"
+    Precision="50"
+    ColumnName="ACCOUNT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AdvNo"
+    Precision="50"
+    ColumnName="ADV_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ChqNo"
+    Precision="50"
+    ColumnName="CHQ_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GrantApprovalDetailId"
+    ColumnName="GRANT_APPROVAL_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_DISBURSE_MASTER"/>
+  <Attribute
+    Name="IssueTo"
+    Precision="200"
+    ColumnName="ISSUE_TO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RoNumber"
+    Precision="50"
+    ColumnName="RO_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_DISBURSE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrantDisburseDetail"
     Association="model.EO.FkTblGrantDisburseDetailFkAssoc"

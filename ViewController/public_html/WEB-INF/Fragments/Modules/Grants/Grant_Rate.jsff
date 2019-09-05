@@ -25,7 +25,7 @@
                 </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" inlineStyle="width:892px;">
+            <af:panelTabbed position="above" id="pt1" inlineStyle="width:1023px;">
               <af:showDetailItem id="tab1"  text="Grant Rate">
                 <af:table value="#{bindings.TblGrantRateView1.collectionModel}" var="row"
                           rows="#{bindings.TblGrantRateView1.rangeSize}"
@@ -89,7 +89,7 @@
                       <f:validator binding="#{row.bindings.CropId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Acre.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.TblGrantRateView1.hints.Acre.name}" filterable="true"
                              sortable="true" headerText="Acre" id="c4" width="150">
                              <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Acre}" id="it7"
@@ -105,9 +105,10 @@
                       <f:validator binding="#{row.bindings.Acre.validator}"/>
                       <af:convertNumber groupingUsed="false" pattern="#{bindings.TblGrantRateView1.hints.Acre.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
+
                   <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Dated" id="c5" width="100">
+                             sortable="true" headerText="Date" id="c5" width="100">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblGrantRateView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1">
@@ -142,7 +143,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantRateView1.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="Amount" id="c7" width="150">
+                             sortable="true" headerText="Grant Per Acre" id="c7" width="150">
                              <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.Amount}" id="it9"
                                                           placeholder="Search Amount">

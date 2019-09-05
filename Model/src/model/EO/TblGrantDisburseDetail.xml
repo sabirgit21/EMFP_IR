@@ -66,32 +66,6 @@
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
-    Name="ChqNo"
-    IsNotNull="true"
-    Precision="25"
-    ColumnName="CHQ_NO"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_GRANT_DISBURSE_DETAIL">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="25"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="Payee"
-    IsNotNull="true"
-    Precision="150"
-    ColumnName="PAYEE"
-    SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    TableName="TBL_GRANT_DISBURSE_DETAIL">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
@@ -122,6 +96,13 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_GRANT_DISBURSE_DETAIL"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="FAmount"
+    ColumnName="F_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <AccessorAttribute
     Name="TblFarmerReg"
     Association="model.EO.Fk2TblGrantDisburseDetailFkAssoc"

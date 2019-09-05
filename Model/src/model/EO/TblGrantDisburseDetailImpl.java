@@ -27,12 +27,11 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
         Acre,
         Rate,
         Amount,
-        ChqNo,
-        Payee,
         CreatedBy,
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        FAmount,
         TblFarmerReg,
         TblGrantDisburseMaster;
         private static AttributesEnum[] vals = null;
@@ -57,18 +56,19 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTDISBURSEDETAILID = AttributesEnum.GrantDisburseDetailId.index();
     public static final int GRANTDISBURSEMASTERID = AttributesEnum.GrantDisburseMasterId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int ACRE = AttributesEnum.Acre.index();
     public static final int RATE = AttributesEnum.Rate.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
-    public static final int CHQNO = AttributesEnum.ChqNo.index();
-    public static final int PAYEE = AttributesEnum.Payee.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int FAMOUNT = AttributesEnum.FAmount.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
 
@@ -77,6 +77,14 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
      */
     public TblGrantDisburseDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantDisburseDetail");
+    }
+
 
     /**
      * Gets the attribute value for GrantDisburseDetailId, using the alias name GrantDisburseDetailId.
@@ -174,37 +182,6 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
         setAttributeInternal(AMOUNT, value);
     }
 
-    /**
-     * Gets the attribute value for ChqNo, using the alias name ChqNo.
-     * @return the value of ChqNo
-     */
-    public String getChqNo() {
-        return (String) getAttributeInternal(CHQNO);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ChqNo.
-     * @param value value to set the ChqNo
-     */
-    public void setChqNo(String value) {
-        setAttributeInternal(CHQNO, value);
-    }
-
-    /**
-     * Gets the attribute value for Payee, using the alias name Payee.
-     * @return the value of Payee
-     */
-    public String getPayee() {
-        return (String) getAttributeInternal(PAYEE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Payee.
-     * @param value value to set the Payee
-     */
-    public void setPayee(String value) {
-        setAttributeInternal(PAYEE, value);
-    }
 
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
@@ -255,16 +232,32 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FAmount, using the alias name FAmount.
+     * @return the value of FAmount
+     */
+    public BigDecimal getFAmount() {
+        return (BigDecimal) getAttributeInternal(FAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FAmount.
+     * @param value value to set the FAmount
+     */
+    public void setFAmount(BigDecimal value) {
+        setAttributeInternal(FAMOUNT, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblFarmerReg() {
-        return (EntityImpl) getAttributeInternal(TBLFARMERREG);
+    public TblFarmerRegImpl getTblFarmerReg() {
+        return (TblFarmerRegImpl) getAttributeInternal(TBLFARMERREG);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblFarmerReg(EntityImpl value) {
+    public void setTblFarmerReg(TblFarmerRegImpl value) {
         setAttributeInternal(TBLFARMERREG, value);
     }
 
@@ -282,6 +275,7 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
         setAttributeInternal(TBLGRANTDISBURSEMASTER, value);
     }
 
+
     /**
      * @param grantDisburseDetailId key constituent
 
@@ -289,13 +283,6 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantDisburseDetailId) {
         return new Key(new Object[] { grantDisburseDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantDisburseDetail");
     }
 
     /**

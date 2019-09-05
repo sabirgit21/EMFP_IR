@@ -9,8 +9,8 @@
                 <af:spacer width="10" height="10" id="s2"/>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="33%" id="gc5">
-                <af:image id="i1" inlineStyle="width:405px; height:139px;margin-top:-15%;"
-                          source="#{resource['images:mfp.png']}"/>
+                <!--<af:image id="i1" inlineStyle="width:405px; height:139px;margin-top:-15%;"
+                          source="#{resource['images:mfp.png']}"/>-->
             </af:gridCell>
             <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc6"/>
         </af:gridRow>
