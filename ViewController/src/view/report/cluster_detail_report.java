@@ -31,23 +31,25 @@ public class cluster_detail_report {
         switch (selectedReportType) {
         case "phaseWise":
             System.out.println("phaseWise");
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Cluster_Detail_Phase_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Phase_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            //        StringBuilder var = new StringBuilder();
-            //        var.append("and tbl_LSALES_M.LSALES_M_CODE=");
-            //        var.append(getParam1());
-            //        reportBean.setReportParameter("and", var.toString());
-            //        reportBean.setReportParameter("paramform", "no");
+                    
+                    StringBuilder var = new StringBuilder();
+                    var.append("and tbl_cluster.phase_id=");
+                    var.append(gotPhase);
+                    reportBean.setReportParameter("and", var.toString());
+                    reportBean.setReportParameter("paramform", "no");
+            
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
             break;
         case "cropWise":
             System.out.println("cropWise");
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Cluster_Detail_Crop_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Crop_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -58,7 +60,7 @@ public class cluster_detail_report {
             break;
         case "cityWise":
             System.out.println("cityWise");
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Cluster_Detail_City_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_City_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
