@@ -7,6 +7,7 @@
     <iterator Binds="Phase_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Phase_Name_LOV1Iterator"/>
     <iterator Binds="Crops_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="Crops_Name_LOV1Iterator"/>
     <iterator Binds="City_Name_LOV1" RangeSize="25" DataControl="AppModuleDataControl1" id="City_Name_LOV1Iterator"/>
+    <iterator Binds="TblClusterView1" RangeSize="25" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="Phase_Name_LOV1Iterator" ListOperMode="navigation" ListIter="Phase_Name_LOV1Iterator"
@@ -27,5 +28,13 @@
         <Item Value="Name"/>
       </AttrNames>
     </list>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_CropId" id="CropId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_CityName" id="CityName"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_CityLibrDetail" id="CityLibrDetail"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

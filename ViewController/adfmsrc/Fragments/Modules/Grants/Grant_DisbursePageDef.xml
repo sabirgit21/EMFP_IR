@@ -45,6 +45,7 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="FAmount"/>
+          <Item Value="GrantBase"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

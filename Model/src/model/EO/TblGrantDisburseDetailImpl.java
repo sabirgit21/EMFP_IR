@@ -32,6 +32,7 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         FAmount,
+        GrantBase,
         TblFarmerReg,
         TblGrantDisburseMaster;
         private static AttributesEnum[] vals = null;
@@ -69,6 +70,7 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int FAMOUNT = AttributesEnum.FAmount.index();
+    public static final int GRANTBASE = AttributesEnum.GrantBase.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
 
@@ -245,6 +247,22 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
      */
     public void setFAmount(BigDecimal value) {
         setAttributeInternal(FAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantBase, using the alias name GrantBase.
+     * @return the value of GrantBase
+     */
+    public String getGrantBase() {
+        return (String) getAttributeInternal(GRANTBASE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantBase.
+     * @param value value to set the GrantBase
+     */
+    public void setGrantBase(String value) {
+        setAttributeInternal(GRANTBASE, value);
     }
 
     /**

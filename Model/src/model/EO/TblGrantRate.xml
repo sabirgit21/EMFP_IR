@@ -43,7 +43,6 @@
     TableName="TBL_GRANT_RATE"/>
   <Attribute
     Name="Acre"
-    IsNotNull="true"
     ColumnName="ACRE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"

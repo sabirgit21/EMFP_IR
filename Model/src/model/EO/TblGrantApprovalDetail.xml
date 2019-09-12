@@ -229,6 +229,18 @@
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="GrantBase"
+    Precision="200"
+    ColumnName="GRANT_BASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblFarmerReg"
     Association="model.EO.Fk2TblGrantApprovalDetailFkAssoc"

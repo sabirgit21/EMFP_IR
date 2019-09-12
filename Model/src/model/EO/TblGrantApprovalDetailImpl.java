@@ -45,6 +45,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         Remarks,
         LandUnderOrch,
         OldRoNumber,
+        GrantBase,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -97,6 +98,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int LANDUNDERORCH = AttributesEnum.LandUnderOrch.index();
     public static final int OLDRONUMBER = AttributesEnum.OldRoNumber.index();
+    public static final int GRANTBASE = AttributesEnum.GrantBase.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -467,6 +469,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setOldRoNumber(String value) {
         setAttributeInternal(OLDRONUMBER, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantBase, using the alias name GrantBase.
+     * @return the value of GrantBase
+     */
+    public String getGrantBase() {
+        return (String) getAttributeInternal(GRANTBASE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantBase.
+     * @param value value to set the GrantBase
+     */
+    public void setGrantBase(String value) {
+        setAttributeInternal(GRANTBASE, value);
     }
 
     /**

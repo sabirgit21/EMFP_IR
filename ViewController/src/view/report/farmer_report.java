@@ -29,13 +29,13 @@ public class farmer_report {
         }
 
         String url = "";
-        OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "8888", null);
+        OracleReportBean reportBean = new OracleReportBean("192.168.1.3", "7001", null);
 
         switch (selectedReportType) {
         case "clusterWise":
             System.out.println("clusterWise");
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -49,7 +49,7 @@ public class farmer_report {
             System.out.println("landWise");
 
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -62,7 +62,7 @@ public class farmer_report {
         case "cropWise":
             System.out.println("cropWise");
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -75,7 +75,7 @@ public class farmer_report {
         case "cityWise":
             System.out.println("cityWise");
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Farmer_Reg_City_Wise&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -87,7 +87,7 @@ public class farmer_report {
         case "notSelected":
             System.out.println("notSelected then generic report");
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=D:/EMFP_Reports/Farmer_Reg_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,

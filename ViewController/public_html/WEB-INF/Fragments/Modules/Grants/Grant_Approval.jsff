@@ -302,6 +302,7 @@
                                                               pattern="#{bindings.TblGrantApprovalMasterDView3.hints.LandUnderOrch.format}"/>
                                         </af:inputText>
                                     </af:column>
+                                    
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>
@@ -569,11 +570,17 @@
                                             <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="Ro Number"
+                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
                                                id="c27">
-                                        <af:outputText value="#{row.RoNumber}"
-                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.tooltip}"
-                                                       id="ot4"/>
+                                        <af:inputText value="#{row.bindings.RoNumber.inputValue}"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.tooltip}"
+                                                      id="it33">
+                                            <f:validator binding="#{row.bindings.RoNumber.validator}"/>
+                                        </af:inputText>
                                     </af:column>
                                     <af:column headerText="Disburse Status"
                                                id="c28">
@@ -585,6 +592,18 @@
                                             <f:selectItems value="#{row.bindings.DisburseStatus.items}" id="si8"/>
                                             <f:validator binding="#{row.bindings.DisburseStatus.validator}"/>
                                         </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="Grant Bases}"
+                                               id="c41">
+                                        <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.tooltip}"
+                                                      id="it32">
+                                            <f:validator binding="#{row.bindings.GrantBase.validator}"/>
+                                        </af:inputText>
                                     </af:column>
                                 </af:table>
                                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"

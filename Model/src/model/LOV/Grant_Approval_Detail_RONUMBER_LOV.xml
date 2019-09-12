@@ -6,13 +6,14 @@
   Name="Grant_Approval_Detail_RONUMBER_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGrantApprovalDetail.RO_NUMBER, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
+  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
+  Where="TblGrantApprovalDetail.RO_NUMBER > 0">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

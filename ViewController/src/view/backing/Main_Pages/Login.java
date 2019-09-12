@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.util.Map;
 
 
-
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 
 
@@ -89,6 +89,18 @@ public class Login {
 
     ///////////////////////////////////////////
 
+    public String showMessage(String msgs) {
+        String messageText = msgs;
+        FacesMessage fm = new FacesMessage(messageText);
+        /**
+             * set the type of the message.
+             * Valid types: error, fatal,info,warning
+             */
+        fm.setSeverity(FacesMessage.SEVERITY_INFO);
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, fm);
+        return null;
+    }
 
     // creating generic database connection
     public static Connection getConnection() throws SQLException {
@@ -158,9 +170,11 @@ public class Login {
                 conn.close();
                 return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";
             } else {
+                showMessage("Wrong Login Credentials");
                 conn.close();
                 System.out.println("........wrong login credentials........");
-                return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
+                //return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
+                return "false";
 
             }
 

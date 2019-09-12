@@ -8,7 +8,8 @@
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy='"SR_NO"'>
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
@@ -26,18 +27,18 @@
       Name="VariableScript"
       CodeSourceName="USERS_MODULE"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT             
-MM.MODULE_MENU_ID, MM.MODULE_MENU_NAME, MM.MODULE_MENU_LINK, MM.MODULE_MENU_DESC, MM.MODULE_MENU_ICON, MM.AST, 
-RDM.ROLE_MASTER_ID 
-FROM             
-TBL_ROLE_DETAIL_MODULES RDM , TBL_MODULE_MENU MM           
-Where             
-MM.MODULE_MENU_ID = RDM.MODULE_MENU_ID            
-AND            
-RDM.R_VIEW = 'Y'            
-AND           
-MM.AST = 'Y'            
-AND            
+  <SQLQuery><![CDATA[SELECT                
+MM.MODULE_MENU_ID, MM.MODULE_MENU_NAME, MM.MODULE_MENU_LINK, MM.MODULE_MENU_DESC, MM.MODULE_MENU_ICON, MM.AST,    
+RDM.ROLE_MASTER_ID, MM.sr_no    
+FROM                
+TBL_ROLE_DETAIL_MODULES RDM , TBL_MODULE_MENU MM              
+Where                
+MM.MODULE_MENU_ID = RDM.MODULE_MENU_ID               
+AND               
+RDM.R_VIEW = 'Y'               
+AND              
+MM.AST = 'Y'               
+AND               
 RDM.ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
   <ViewAttribute
     Name="ModuleMenuId"
@@ -126,6 +127,16 @@ RDM.ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="SrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SR_NO"
+    Expression="SR_NO"
     SQLType="NUMERIC"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="ModuleMenuId"/>

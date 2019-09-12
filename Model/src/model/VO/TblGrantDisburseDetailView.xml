@@ -124,6 +124,17 @@
     EntityAttrName="FAmount"
     EntityUsage="TblGrantDisburseDetail"
     AliasName="F_AMOUNT"/>
+  <ViewAttribute
+    Name="GrantBase"
+    PrecisionRule="true"
+    EntityAttrName="GrantBase"
+    EntityUsage="TblGrantDisburseDetail"
+    AliasName="GRANT_BASE"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseDetailId"

@@ -207,7 +207,7 @@
     ListRangeSize="-1"
     NullValueFlag="start"
     MRUCount="0"
-    NullValueId="LOV_CropId_LOVUIHints_NullValueId">
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="CropId"/>
     </AttrArray>
@@ -226,7 +226,7 @@
     ListRangeSize="-1"
     NullValueFlag="start"
     MRUCount="0"
-    NullValueId="LOV_PhaseId_LOVUIHints_NullValueId">
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="PhaseId"/>
     </AttrArray>
@@ -245,7 +245,7 @@
     ListRangeSize="-1"
     NullValueFlag="start"
     MRUCount="0"
-    NullValueId="LOV_CityLibrDetail_LOVUIHints_NullValueId">
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="CityLibrDetail"/>
     </AttrArray>

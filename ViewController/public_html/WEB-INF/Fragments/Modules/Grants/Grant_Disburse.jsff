@@ -336,6 +336,16 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Grant Bases" id="c12">
+                    <af:inputText value="#{row.bindings.GrantBase.inputValue}"
+                                  label="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.label}"
+                                  required="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.GrantBase.validator}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
                            disabled="#{!bindings.Execute.enabled}" id="b4" icon="#{resource['images:refresh.png']}"/>
