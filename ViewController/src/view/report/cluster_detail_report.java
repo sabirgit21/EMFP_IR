@@ -47,13 +47,6 @@ public class cluster_detail_report {
             phasevar.append(gotCity);
             reportBean.setReportParameter("and", phasevar.toString());
             reportBean.setReportParameter("paramform", "no");
-
-                    
-                    StringBuilder var = new StringBuilder();
-                    var.append("and tbl_cluster.phase_id=");
-                    var.append(gotPhase);
-                    reportBean.setReportParameter("and", var.toString());
-                    reportBean.setReportParameter("paramform", "no");
             
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
