@@ -181,4 +181,7 @@
   <ViewUsage
     Name="Grant_Approval_Detail_RONUMBER_LOV1"
     ViewObjectName="model.LOV.Grant_Approval_Detail_RONUMBER_LOV"/>
+  <ViewUsage
+    Name="Map_Cluster_Detail_Cluster_No1"
+    ViewObjectName="model.LOV.Map_Cluster_Detail_Cluster_No"/>
 </AppModule>

@@ -18,6 +18,14 @@
   FromList="TBL_CLUSTER Map_Cluster_Detail, TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail"
   Where="Map_Cluster_Detail.CLUSTER_ID = TblTrainingSchDetail.CLUSTER_ID  
 AND TRUNC(TblTrainingSchDetail.DATED_D)= TRUNC(SYSDATE)">
+  <ViewAccessor
+    Name="Cluster_No_LOV1"
+    ViewObjectName="model.LOV.Cluster_No_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Map_Cluster_Detail_Cluster_No1"
+    ViewObjectName="model.LOV.Map_Cluster_Detail_Cluster_No"
+    RowLevelBinds="true"/>
   <EntityUsage
     Name="Map_Cluster_Detail"
     Entity="model.EO.Map_Cluster_Detail"/>
