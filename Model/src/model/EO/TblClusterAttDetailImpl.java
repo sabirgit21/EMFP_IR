@@ -30,7 +30,8 @@ public class TblClusterAttDetailImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         TblClusterAttMaster,
-        TblFarmerReg;
+        TblFarmerReg,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -53,6 +54,7 @@ public class TblClusterAttDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int CLUSTERATTDETAILID = AttributesEnum.ClusterAttDetailId.index();
     public static final int CLUSTERATTMASTERID = AttributesEnum.ClusterAttMasterId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
@@ -63,11 +65,19 @@ public class TblClusterAttDetailImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int TBLCLUSTERATTMASTER = AttributesEnum.TblClusterAttMaster.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblClusterAttDetailImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblClusterAttDetail");
     }
 
     /**
@@ -185,30 +195,45 @@ public class TblClusterAttDetailImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblClusterAttMaster() {
-        return (EntityImpl) getAttributeInternal(TBLCLUSTERATTMASTER);
+    public TblClusterAttMasterImpl getTblClusterAttMaster() {
+        return (TblClusterAttMasterImpl) getAttributeInternal(TBLCLUSTERATTMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblClusterAttMaster(EntityImpl value) {
+    public void setTblClusterAttMaster(TblClusterAttMasterImpl value) {
         setAttributeInternal(TBLCLUSTERATTMASTER, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblFarmerReg() {
-        return (EntityImpl) getAttributeInternal(TBLFARMERREG);
+    public TblFarmerRegImpl getTblFarmerReg() {
+        return (TblFarmerRegImpl) getAttributeInternal(TBLFARMERREG);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblFarmerReg(EntityImpl value) {
+    public void setTblFarmerReg(TblFarmerRegImpl value) {
         setAttributeInternal(TBLFARMERREG, value);
     }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
+    }
+
 
     /**
      * @param clusterAttDetailId key constituent
@@ -217,13 +242,6 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal clusterAttDetailId) {
         return new Key(new Object[] { clusterAttDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblClusterAttDetail");
     }
 
     /**

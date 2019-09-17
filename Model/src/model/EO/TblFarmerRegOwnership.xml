@@ -114,6 +114,13 @@
     AssociationOtherEnd="model.EO.FkTblFarmerRegOwnershipFkAssoc.TblFarmerRegOwnership"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.FkTblFarmerRegOwnershipFkAssoc1"
+    AssociationEnd="model.EO.FkTblFarmerRegOwnershipFkAssoc1.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegOwnershipFkAssoc1.TblFarmerRegOwnership"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblFarmerRegOwnershipPk"
     PrimaryKey="true">

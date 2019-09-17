@@ -355,6 +355,9 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="FarmerRegId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblClusterAttDetailView"
     ViewLink="model.VO.Fk2TblClusterAttDetailFkLink"

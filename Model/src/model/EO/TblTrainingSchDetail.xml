@@ -108,6 +108,13 @@
     AssociationOtherEnd="model.EO.FkTblTrainingSchDetailFkAssoc.TblTrainingSchDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Cluster_Detail"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc1"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc1.Map_Cluster_Detail"
+    AssociationOtherEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc1.TblTrainingSchDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblTrainingSchDetailPk"
     PrimaryKey="true">

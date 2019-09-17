@@ -29,9 +29,13 @@ public class TblGrantAppDetailImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        FarmerRegId,
+        GrantInterest,
+        GrantStatus,
         TblGrantAppMaster,
         TblItemL4,
-        TblSupplier;
+        TblSupplier,
+        TblFarmerReg;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -54,6 +58,8 @@ public class TblGrantAppDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTAPPDETAILID = AttributesEnum.GrantAppDetailId.index();
     public static final int GRANTAPPMASTERID = AttributesEnum.GrantAppMasterId.index();
     public static final int SUPPLIERID = AttributesEnum.SupplierId.index();
@@ -62,15 +68,27 @@ public class TblGrantAppDetailImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
+    public static final int GRANTINTEREST = AttributesEnum.GrantInterest.index();
+    public static final int GRANTSTATUS = AttributesEnum.GrantStatus.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
     public static final int TBLITEML4 = AttributesEnum.TblItemL4.index();
     public static final int TBLSUPPLIER = AttributesEnum.TblSupplier.index();
+    public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblGrantAppDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantAppDetail");
+    }
+
 
     /**
      * Gets the attribute value for GrantAppDetailId, using the alias name GrantAppDetailId.
@@ -185,16 +203,64 @@ public class TblGrantAppDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
+     * @return the value of FarmerRegId
+     */
+    public BigDecimal getFarmerRegId() {
+        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FarmerRegId.
+     * @param value value to set the FarmerRegId
+     */
+    public void setFarmerRegId(BigDecimal value) {
+        setAttributeInternal(FARMERREGID, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantInterest, using the alias name GrantInterest.
+     * @return the value of GrantInterest
+     */
+    public String getGrantInterest() {
+        return (String) getAttributeInternal(GRANTINTEREST);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantInterest.
+     * @param value value to set the GrantInterest
+     */
+    public void setGrantInterest(String value) {
+        setAttributeInternal(GRANTINTEREST, value);
+    }
+
+    /**
+     * Gets the attribute value for GrantStatus, using the alias name GrantStatus.
+     * @return the value of GrantStatus
+     */
+    public String getGrantStatus() {
+        return (String) getAttributeInternal(GRANTSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantStatus.
+     * @param value value to set the GrantStatus
+     */
+    public void setGrantStatus(String value) {
+        setAttributeInternal(GRANTSTATUS, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblGrantAppMaster() {
-        return (EntityImpl) getAttributeInternal(TBLGRANTAPPMASTER);
+    public TblGrantAppMasterImpl getTblGrantAppMaster() {
+        return (TblGrantAppMasterImpl) getAttributeInternal(TBLGRANTAPPMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblGrantAppMaster(EntityImpl value) {
+    public void setTblGrantAppMaster(TblGrantAppMasterImpl value) {
         setAttributeInternal(TBLGRANTAPPMASTER, value);
     }
 
@@ -226,6 +292,21 @@ public class TblGrantAppDetailImpl extends EntityImpl {
         setAttributeInternal(TBLSUPPLIER, value);
     }
 
+
+    /**
+     * @return the associated entity TblFarmerRegImpl.
+     */
+    public TblFarmerRegImpl getTblFarmerReg() {
+        return (TblFarmerRegImpl) getAttributeInternal(TBLFARMERREG);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblFarmerRegImpl.
+     */
+    public void setTblFarmerReg(TblFarmerRegImpl value) {
+        setAttributeInternal(TBLFARMERREG, value);
+    }
+
     /**
      * @param grantAppDetailId key constituent
 
@@ -233,13 +314,6 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal grantAppDetailId) {
         return new Key(new Object[] { grantAppDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantAppDetail");
     }
 
     /**

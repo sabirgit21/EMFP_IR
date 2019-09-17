@@ -102,6 +102,13 @@
     AssociationOtherEnd="model.EO.Fk2TblClusterAttDetailFkAssoc.TblClusterAttDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.Fk2TblClusterAttDetailFkAssoc1"
+    AssociationEnd="model.EO.Fk2TblClusterAttDetailFkAssoc1.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.Fk2TblClusterAttDetailFkAssoc1.TblClusterAttDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblClusterAttDetailPk"
     PrimaryKey="true">

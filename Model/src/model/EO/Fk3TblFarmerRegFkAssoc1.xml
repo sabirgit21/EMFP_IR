@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk3TblFarmerRegFkAssoc1"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="TblBeneficiary"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.TblBeneficiary">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TblBeneficiary"/>
+      <Attr Name="_foreignKey" Value="model.EO.TblBeneficiary.PkTblBeneficiaryPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblBeneficiary.BeneficiaryId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Map_Farmer_Detail"
+    Cardinality="-1"
+    Owner="model.EO.Map_Farmer_Detail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Map_Farmer_Detail"/>
+      <Attr Name="_foreignKey" Value="model.EO.Map_Farmer_Detail.Fk3TblFarmerRegFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.Map_Farmer_Detail.BeneficiaryId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

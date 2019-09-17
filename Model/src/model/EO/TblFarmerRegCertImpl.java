@@ -29,7 +29,8 @@ public class TblFarmerRegCertImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         TblCertification,
-        TblFarmerReg;
+        TblFarmerReg,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -52,6 +53,8 @@ public class TblFarmerRegCertImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int FARMERREGCERTID = AttributesEnum.FarmerRegCertId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int CERTIFICATIONID = AttributesEnum.CertificationId.index();
@@ -61,12 +64,21 @@ public class TblFarmerRegCertImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int TBLCERTIFICATION = AttributesEnum.TblCertification.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblFarmerRegCertImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegCert");
+    }
+
 
     /**
      * Gets the attribute value for FarmerRegCertId, using the alias name FarmerRegCertId.
@@ -193,19 +205,27 @@ public class TblFarmerRegCertImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
+    }
+
+
+    /**
      * @param farmerRegCertId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal farmerRegCertId) {
         return new Key(new Object[] { farmerRegCertId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegCert");
     }
 
     /**

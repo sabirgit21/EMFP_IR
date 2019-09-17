@@ -11,6 +11,7 @@ public class farmer_report {
     private static String gotFarmerNum;
     private static String gotCity;
     private static String gotCrop;
+    private static String gotPhase;
     private static String selectedReportType;
 
 
@@ -149,4 +150,9 @@ public class farmer_report {
         return null;
     }
 
+    public void get_selected_phase(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotPhase = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Phase is : " + gotPhase);
+    }
 }

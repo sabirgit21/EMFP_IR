@@ -29,6 +29,25 @@
     Name="Trainer_Name_LOV1"
     ViewObjectName="model.LOV.Trainer_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Name_LOV1"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Cluster_ID_Depen_Phase_ID_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
+      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="gotPhaseID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[PhaseId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_Reg_id_LOV1"
@@ -41,24 +60,6 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="FarmerRegId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_ClusterId"
-    ListVOName="Cluster_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ClusterId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -98,6 +99,42 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PhaseId"
+    ListVOName="Phase_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClusterId"
+    ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -144,7 +181,7 @@
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
-          Value="combo"/>
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -191,6 +228,20 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="PhaseId"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblGrantAppMaster"
+    AliasName="PHASE_ID"
+    LOVName="LOV_PhaseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblGrantApprovalDetailView"
     ViewLink="model.VO.Fk3TblGrantApprovalDetailFkLink"
@@ -201,6 +252,11 @@
     ViewLink="model.VO.FkTblGrantAppDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantAppMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantAppMasterId"

@@ -50,7 +50,8 @@ public class TblClusterImpl extends EntityImpl {
         TblLibrDetail3,
         TblLibrDetail4,
         TblPhase,
-        TblTrainingSchDetail;
+        TblTrainingSchDetail,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -73,6 +74,8 @@ public class TblClusterImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -102,12 +105,21 @@ public class TblClusterImpl extends EntityImpl {
     public static final int TBLLIBRDETAIL4 = AttributesEnum.TblLibrDetail4.index();
     public static final int TBLPHASE = AttributesEnum.TblPhase.index();
     public static final int TBLTRAININGSCHDETAIL = AttributesEnum.TblTrainingSchDetail.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblClusterImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblCluster");
+    }
+
 
     /**
      * Gets the attribute value for ClusterId, using the alias name ClusterId.
@@ -471,14 +483,14 @@ public class TblClusterImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblPhase() {
-        return (EntityImpl) getAttributeInternal(TBLPHASE);
+    public TblPhaseImpl getTblPhase() {
+        return (TblPhaseImpl) getAttributeInternal(TBLPHASE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblPhase(EntityImpl value) {
+    public void setTblPhase(TblPhaseImpl value) {
         setAttributeInternal(TBLPHASE, value);
     }
 
@@ -490,19 +502,20 @@ public class TblClusterImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getMap_Farmer_Detail() {
+        return (RowIterator) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+
+    /**
      * @param clusterId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal clusterId) {
         return new Key(new Object[] { clusterId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblCluster");
     }
 
     /**

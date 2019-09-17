@@ -86,6 +86,13 @@
     AssociationOtherEnd="model.EO.FkTblFarmerRegCertFkAssoc.TblFarmerRegCert"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.FkTblFarmerRegCertFkAssoc1"
+    AssociationEnd="model.EO.FkTblFarmerRegCertFkAssoc1.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegCertFkAssoc1.TblFarmerRegCert"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblFarmerRegCertPk"
     PrimaryKey="true">

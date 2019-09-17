@@ -8,8 +8,8 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:selectOneChoice value="#{bindings.Cluster_No_LOV1.inputValue}"
-                                                label="Select Cluster No. " autoSubmit="true" disabled="true"
+                            <!--<af:selectOneChoice value="#{bindings.Cluster_No_LOV1.inputValue}"
+                                                label="Select Cluster No. " autoSubmit="true" 
                                                 shortDesc="#{bindings.Cluster_No_LOV1.hints.tooltip}" id="soc1"
                                                 valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_cluster_num}">
                                 <f:selectItems value="#{bindings.Cluster_No_LOV1.items}" id="si1"/>
@@ -18,7 +18,7 @@
                             <af:spacer width="30" height="10" id="s1"/>
                             <af:selectOneChoice value="#{bindings.Farmer_No_LOV1.inputValue}" label="Select Farmer No. "
                                                 autoSubmit="true" shortDesc="#{bindings.Farmer_No_LOV1.hints.tooltip}"
-                                                id="soc2" disabled="true"
+                                                id="soc2" 
                                                 valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_farmer_num}">
                                 <f:selectItems value="#{bindings.Farmer_No_LOV1.items}" id="si2"/>
                                 <f:validator binding="#{bindings.Farmer_No_LOV1.validator}"/>
@@ -26,7 +26,7 @@
                             <af:spacer width="30" height="10" id="s2"/>
                             <af:selectOneChoice value="#{bindings.City_Name_LOV1.inputValue}" label="Select City "
                                                 autoSubmit="true" shortDesc="#{bindings.City_Name_LOV1.hints.tooltip}"
-                                                id="soc3" disabled="true"
+                                                id="soc3" 
                                                 valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_city}">
                                 <f:selectItems value="#{bindings.City_Name_LOV1.items}" id="si3"/>
                                 <f:validator binding="#{bindings.City_Name_LOV1.validator}"/>
@@ -34,10 +34,49 @@
                             <af:spacer width="30" height="10" id="s3"/>
                             <af:selectOneChoice value="#{bindings.Crops_Name_LOV1.inputValue}" label="Select Crop "
                                                 autoSubmit="true" shortDesc="#{bindings.Crops_Name_LOV1.hints.tooltip}"
-                                                id="soc4" disabled="true"
+                                                id="soc4" 
                                                 valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_crop}">
                                 <f:selectItems value="#{bindings.Crops_Name_LOV1.items}" id="si4"/>
                                 <f:validator binding="#{bindings.Crops_Name_LOV1.validator}"/>
+                            </af:selectOneChoice>-->
+                            -----------------------------------------
+                            <af:selectOneChoice value="#{bindings.ClusterId.inputValue}"
+                                                label="#{bindings.ClusterId.label}"
+                                                required="#{bindings.ClusterId.hints.mandatory}".
+                                                valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_cluster_num}"
+                                                shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc6">
+                                <f:selectItems value="#{bindings.ClusterId.items}" id="si10"/>
+                                <f:validator binding="#{bindings.ClusterId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.CityLibrDetail.inputValue}"
+                                                label="#{bindings.CityLibrDetail.label}"
+                                                required="#{bindings.CityLibrDetail.hints.mandatory}"
+                                                valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_city}"
+                                                shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc7">
+                                <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si11"/>
+                                <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.CropId.inputValue}" label="#{bindings.CropId.label}"
+                                                required="#{bindings.CropId.hints.mandatory}"
+                                                valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_crop}"
+                                                shortDesc="#{bindings.CropId.hints.tooltip}" id="soc8">
+                                <f:selectItems value="#{bindings.CropId.items}" id="si12"/>
+                                <f:validator binding="#{bindings.CropId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.PhaseId.inputValue}" label="#{bindings.PhaseId.label}"
+                                                required="#{bindings.PhaseId.hints.mandatory}"
+                                                shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc9"
+                                                valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_phase}">
+                                <f:selectItems value="#{bindings.PhaseId.items}" id="si13"/>
+                                <f:validator binding="#{bindings.PhaseId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:selectOneChoice value="#{bindings.FarmerRegId.inputValue}"
+                                                label="#{bindings.FarmerRegId.label}"
+                                                valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_selected_farmer_num}"
+                                                required="#{bindings.FarmerRegId.hints.mandatory}"
+                                                shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="soc10">
+                                <f:selectItems value="#{bindings.FarmerRegId.items}" id="si14"/>
+                                <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                     </af:gridCell>

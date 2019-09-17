@@ -64,7 +64,9 @@ public class TblFarmerRegImpl extends EntityImpl {
         TblGrantDisburseDetail,
         TblGrantGroupDetail,
         TblGrantGroupMaster,
-        TblGrantApprovalMasterD;
+        TblGrantApprovalMasterD,
+        Map_Cluster_Detail,
+        TblGrantAppDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -132,6 +134,8 @@ public class TblFarmerRegImpl extends EntityImpl {
     public static final int TBLGRANTGROUPDETAIL = AttributesEnum.TblGrantGroupDetail.index();
     public static final int TBLGRANTGROUPMASTER = AttributesEnum.TblGrantGroupMaster.index();
     public static final int TBLGRANTAPPROVALMASTERD = AttributesEnum.TblGrantApprovalMasterD.index();
+    public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
+    public static final int TBLGRANTAPPDETAIL = AttributesEnum.TblGrantAppDetail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -698,6 +702,28 @@ public class TblFarmerRegImpl extends EntityImpl {
      */
     public RowIterator getTblGrantApprovalMasterD() {
         return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALMASTERD);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Cluster_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_CLUSTER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Cluster_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantAppDetail() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPDETAIL);
     }
 
     /**

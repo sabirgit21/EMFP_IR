@@ -248,6 +248,13 @@
     AssociationOtherEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblCluster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.FkTblFarmerRegFkAssoc3"
+    AssociationEnd="model.EO.FkTblFarmerRegFkAssoc3.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegFkAssoc3.TblCluster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblClusterPk"
     PrimaryKey="true">

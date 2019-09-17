@@ -24,7 +24,8 @@
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
-    ColumnType="$none$"/>
+    ColumnType="$none$"
+    SQLType="VARCHAR"/>
   <ViewAttribute
     Name="grant_status_view"
     IsUpdateable="false"
@@ -39,7 +40,7 @@
     <Item Value="grant_status_db"/>
   </AttrArray>
   <StaticList
-    Rows="3"
+    Rows="2"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle

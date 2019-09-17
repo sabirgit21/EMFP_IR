@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
-                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:f="http://java.sun.com/jsf/core">
      
   
   <!--<dvt:map id="m1" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
@@ -21,7 +21,11 @@
                        <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
                </dvt:mapPointTheme>
   </dvt:map>-->
-  <dvt:map id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+  <af:panelAccordion discloseMany="false" id="pa1">
+    <af:showDetailItem id="pane1" text="Cluster Attendance Map">
+      <af:panelTabbed position="above" id="pt1">
+        <af:showDetailItem id="tab1" text="Map">
+          <dvt:map summary="Google Map" id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
            inlineStyle="width:1101px; height:745px;" startingY="0.0" autoZoomThemeId="mt1">
     <dvt:mapPointTheme id="mt1" value="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel}"
                        clickListener="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel.processClickAction}"
@@ -30,4 +34,328 @@
                        <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
                </dvt:mapPointTheme>
   </dvt:map>
+        </af:showDetailItem>
+        <af:showDetailItem text="Cluster Detail" id="sdi1">
+          <af:panelGridLayout id="pgl1">
+            <af:gridRow marginTop="5px" height="auto" id="gr1">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                <af:panelTabbed position="above" id="pt2">
+                  <af:showDetailItem id="tab2" text="Cluster Detail">
+                    <af:table value="#{bindings.Map_Cluster_DetailView1.collectionModel}" var="row"
+                              rows="#{bindings.Map_Cluster_DetailView1.rangeSize}"
+                              emptyText="#{bindings.Map_Cluster_DetailView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.Map_Cluster_DetailView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.Map_Cluster_DetailView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.Map_Cluster_DetailView1.rangeSize}"
+                              filterModel="#{bindings.Map_Cluster_DetailView1Query.queryDescriptor}"
+                              filterVisible="true" queryListener="#{bindings.Map_Cluster_DetailView1Query.processQuery}"
+                              varStatus="vs" id="t1">
+                      <af:column sortProperty="#{bindings.Map_Cluster_DetailView1.hints.DatedD.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Cluster_DetailView1.hints.DatedD.label}"
+                                 id="c1">
+                        <f:facet name="filter">
+                          <af:inputDate value="#{bindings.Map_Cluster_DetailView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedD.value}"
+                                        id="id1">
+                            <af:convertDateTime pattern="#{bindings.Map_Cluster_DetailView1.hints.DatedD.format}"/>
+                          </af:inputDate>
+                        </f:facet>
+                        <af:inputDate value="#{row.bindings.DatedD.inputValue}"
+                                      label="#{bindings.Map_Cluster_DetailView1.hints.DatedD.label}"
+                                      required="#{bindings.Map_Cluster_DetailView1.hints.DatedD.mandatory}"
+                                      columns="#{bindings.Map_Cluster_DetailView1.hints.DatedD.displayWidth}"
+                                      shortDesc="#{bindings.Map_Cluster_DetailView1.hints.DatedD.tooltip}" id="id2">
+                          <f:validator binding="#{row.bindings.DatedD.validator}"/>
+                          <af:convertDateTime pattern="#{bindings.Map_Cluster_DetailView1.hints.DatedD.format}"/>
+                        </af:inputDate>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.label}" id="c2">
+                        <af:inputText value="#{row.bindings.ClusterNo.inputValue}"
+                                      label="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.label}"
+                                      required="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.mandatory}"
+                                      columns="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.displayWidth}"
+                                      maximumLength="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.precision}"
+                                      shortDesc="#{bindings.Map_Cluster_DetailView1.hints.ClusterNo.tooltip}" id="it1">
+                          <f:validator binding="#{row.bindings.ClusterNo.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Cluster_DetailView1.hints.Latitude.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Cluster_DetailView1.hints.Latitude.label}" id="c3">
+                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                      label="#{bindings.Map_Cluster_DetailView1.hints.Latitude.label}"
+                                      required="#{bindings.Map_Cluster_DetailView1.hints.Latitude.mandatory}"
+                                      columns="#{bindings.Map_Cluster_DetailView1.hints.Latitude.displayWidth}"
+                                      maximumLength="#{bindings.Map_Cluster_DetailView1.hints.Latitude.precision}"
+                                      shortDesc="#{bindings.Map_Cluster_DetailView1.hints.Latitude.tooltip}" id="it2">
+                          <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Cluster_DetailView1.hints.Latitude.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Cluster_DetailView1.hints.Longitude.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Cluster_DetailView1.hints.Longitude.label}" id="c4">
+                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                      label="#{bindings.Map_Cluster_DetailView1.hints.Longitude.label}"
+                                      required="#{bindings.Map_Cluster_DetailView1.hints.Longitude.mandatory}"
+                                      columns="#{bindings.Map_Cluster_DetailView1.hints.Longitude.displayWidth}"
+                                      maximumLength="#{bindings.Map_Cluster_DetailView1.hints.Longitude.precision}"
+                                      shortDesc="#{bindings.Map_Cluster_DetailView1.hints.Longitude.tooltip}" id="it3">
+                          <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Cluster_DetailView1.hints.Longitude.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
+                  </af:showDetailItem>
+                </af:panelTabbed>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" id="gr2">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2"/>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" id="gr3">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                <af:panelTabbed position="above" id="pt3">
+                  <af:showDetailItem id="tab3" text="Farmer Detail">
+                    <af:table value="#{bindings.Map_Farmer_DetailView11.collectionModel}" var="row"
+                              rows="#{bindings.Map_Farmer_DetailView11.rangeSize}"
+                              emptyText="#{bindings.Map_Farmer_DetailView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.Map_Farmer_DetailView11.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.Map_Farmer_DetailView11.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.Map_Farmer_DetailView11.rangeSize}"
+                              filterModel="#{bindings.Map_Farmer_DetailView11Query.queryDescriptor}"
+                              filterVisible="true" queryListener="#{bindings.Map_Farmer_DetailView11Query.processQuery}"
+                              varStatus="vs" id="t2">
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.label}" id="c5">
+                        <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.tooltip}"
+                                      id="it4">
+                          <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Name.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Farmer_DetailView11.hints.Name.label}"
+                                 id="c6">
+                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.Name.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.Name.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.Name.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Name.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Name.tooltip}" id="it5">
+                          <f:validator binding="#{row.bindings.Name.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FatherName.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.FatherName.label}" id="c7">
+                        <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.FatherName.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.FatherName.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.FatherName.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FatherName.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FatherName.tooltip}" id="it6">
+                          <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.label}" id="c8">
+                        <af:inputText value="#{row.bindings.ClusterId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.tooltip}" id="it7">
+                          <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.ClusterId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.label}" id="c9">
+                        <af:inputText value="#{row.bindings.BeneficiaryId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.tooltip}"
+                                      id="it8">
+                          <f:validator binding="#{row.bindings.BeneficiaryId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.BeneficiaryId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Cnic.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Farmer_DetailView11.hints.Cnic.label}"
+                                 id="c10">
+                        <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.Cnic.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.Cnic.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.Cnic.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Cnic.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Cnic.tooltip}" id="it9">
+                          <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Mobile.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}"
+                                 id="c11">
+                        <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.Mobile.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.Mobile.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Mobile.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Mobile.tooltip}" id="it10">
+                          <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.label}" id="c12">
+                        <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.tooltip}" id="it11">
+                          <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.label}" id="c13">
+                        <af:inputText value="#{row.bindings.LandAcre.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.tooltip}" id="it12">
+                          <f:validator binding="#{row.bindings.LandAcre.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.LandAcre.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.label}" id="c14">
+                        <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.tooltip}"
+                                      id="it13">
+                          <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.label}" id="c15">
+                        <af:inputText value="#{row.bindings.FarmerRegLandId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.tooltip}"
+                                      id="it14">
+                          <f:validator binding="#{row.bindings.FarmerRegLandId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.FarmerRegLandId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Ast.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Farmer_DetailView11.hints.Ast.label}"
+                                 id="c16">
+                        <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.Ast.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.Ast.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.Ast.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Ast.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Ast.tooltip}" id="it15">
+                          <f:validator binding="#{row.bindings.Ast.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.label}"
+                                 id="c17">
+                        <af:inputText value="#{row.bindings.ClusterAttDetailId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.tooltip}"
+                                      id="it16">
+                          <f:validator binding="#{row.bindings.ClusterAttDetailId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttDetailId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Dated.name}" filterable="true"
+                                 sortable="true" headerText="#{bindings.Map_Farmer_DetailView11.hints.Dated.label}"
+                                 id="c18">
+                        <f:facet name="filter">
+                          <af:inputDate value="#{bindings.Map_Farmer_DetailView11Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                        id="id3">
+                            <af:convertDateTime pattern="#{bindings.Map_Farmer_DetailView11.hints.Dated.format}"/>
+                          </af:inputDate>
+                        </f:facet>
+                        <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.Dated.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.Dated.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.Dated.displayWidth}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Dated.tooltip}" id="id4">
+                          <f:validator binding="#{row.bindings.Dated.validator}"/>
+                          <af:convertDateTime pattern="#{bindings.Map_Farmer_DetailView11.hints.Dated.format}"/>
+                        </af:inputDate>
+                      </af:column>
+                      <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.name}"
+                                 filterable="true" sortable="true"
+                                 headerText="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.label}"
+                                 id="c19">
+                        <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}"
+                                      label="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.label}"
+                                      required="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.mandatory}"
+                                      columns="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.displayWidth}"
+                                      maximumLength="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.precision}"
+                                      shortDesc="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.tooltip}"
+                                      id="it17">
+                          <f:validator binding="#{row.bindings.ClusterAttMasterId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Map_Farmer_DetailView11.hints.ClusterAttMasterId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
+                  </af:showDetailItem>
+                </af:panelTabbed>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" id="gr4">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+            </af:gridRow>
+          </af:panelGridLayout>
+        </af:showDetailItem>
+      </af:panelTabbed>
+    </af:showDetailItem>
+  </af:panelAccordion>
+  
 </ui:composition>

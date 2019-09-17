@@ -27,7 +27,6 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="FarmerRegId"
-    IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -35,7 +34,6 @@
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="Acre"
-    IsNotNull="true"
     ColumnName="ACRE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -66,7 +64,6 @@
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="CourseId"
-    IsNotNull="true"
     ColumnName="COURSE_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -74,7 +71,6 @@
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="TrainerId"
-    IsNotNull="true"
     ColumnName="TRAINER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -111,6 +107,14 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_GRANT_APP_MASTER"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="PhaseId"
+    ColumnName="PHASE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APP_MASTER"
+    IsNotNull="true"/>
   <AccessorAttribute
     Name="TblGrantApprovalDetail"
     Association="model.EO.Fk3TblGrantApprovalDetailFkAssoc"
@@ -153,6 +157,20 @@
     AssociationOtherEnd="model.EO.Fk4TblGrantAppMasterFkAssoc.TblGrantAppMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Cluster_Detail"
+    Association="model.EO.Fk2TblGrantAppMasterFkAssoc1"
+    AssociationEnd="model.EO.Fk2TblGrantAppMasterFkAssoc1.Map_Cluster_Detail"
+    AssociationOtherEnd="model.EO.Fk2TblGrantAppMasterFkAssoc1.TblGrantAppMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.FkTblGrantAppMasterFkAssoc1"
+    AssociationEnd="model.EO.FkTblGrantAppMasterFkAssoc1.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.FkTblGrantAppMasterFkAssoc1.TblGrantAppMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblGrantAppMasterPk"
     PrimaryKey="true">
@@ -161,6 +179,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.EO.TblGrantAppMaster.GrantAppMasterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TblGrantAppMasterPhaseIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"PHASE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TBL_GRANT_APP_MASTER_PHASE_ID_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantAppMaster.PhaseId"/>
     </AttrArray>
   </Key>
   <Key

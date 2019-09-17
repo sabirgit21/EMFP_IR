@@ -34,12 +34,15 @@ public class TblGrantAppMasterImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        PhaseId,
         TblGrantApprovalDetail,
         TblGrantAppDetail,
         TblCluster,
         TblCourse,
         TblFarmerReg,
-        TblTrainer;
+        TblTrainer,
+        Map_Cluster_Detail,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -62,6 +65,8 @@ public class TblGrantAppMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTAPPMASTERID = AttributesEnum.GrantAppMasterId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int ACRE = AttributesEnum.Acre.index();
@@ -74,18 +79,29 @@ public class TblGrantAppMasterImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int PHASEID = AttributesEnum.PhaseId.index();
     public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
     public static final int TBLGRANTAPPDETAIL = AttributesEnum.TblGrantAppDetail.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLCOURSE = AttributesEnum.TblCourse.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLTRAINER = AttributesEnum.TblTrainer.index();
+    public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblGrantAppMasterImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantAppMaster");
+    }
+
 
     /**
      * Gets the attribute value for GrantAppMasterId, using the alias name GrantAppMasterId.
@@ -264,6 +280,22 @@ public class TblGrantAppMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for PhaseId, using the alias name PhaseId.
+     * @return the value of PhaseId
+     */
+    public BigDecimal getPhaseId() {
+        return (BigDecimal) getAttributeInternal(PHASEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PhaseId.
+     * @param value value to set the PhaseId
+     */
+    public void setPhaseId(BigDecimal value) {
+        setAttributeInternal(PHASEID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantApprovalDetail() {
@@ -334,19 +366,42 @@ public class TblGrantAppMasterImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Cluster_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_CLUSTER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Cluster_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
+    }
+
+
+    /**
      * @param grantAppMasterId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal grantAppMasterId) {
         return new Key(new Object[] { grantAppMasterId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantAppMaster");
     }
 
     /**

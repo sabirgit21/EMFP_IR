@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Map_Cluster_DetailView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="Map_Cluster_Detail.CLUSTER_ID, 
+       Map_Cluster_Detail.CLUSTER_NO, 
+       TblTrainingSchDetail.LATITUDE, 
+       TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID, 
+       TblTrainingSchDetail.LONGITUDE, 
+       TblTrainingSchDetail.DATED_D"
+  FromList="TBL_CLUSTER Map_Cluster_Detail, TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail"
+  Where="Map_Cluster_Detail.CLUSTER_ID = TblTrainingSchDetail.CLUSTER_ID  
+AND TRUNC(TblTrainingSchDetail.DATED_D)= TRUNC(SYSDATE)">
+  <EntityUsage
+    Name="Map_Cluster_Detail"
+    Entity="model.EO.Map_Cluster_Detail"/>
+  <EntityUsage
+    Name="TblTrainingSchDetail"
+    Entity="model.EO.TblTrainingSchDetail"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc1"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc1.TblTrainingSchDetail"
+    SourceUsage="model.VO.Map_Cluster_DetailView.Map_Cluster_Detail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.Map_Cluster_Detail.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ClusterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="Map_Cluster_Detail"
+    AliasName="CLUSTER_ID"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="Map_Cluster_Detail"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="Latitude"
+    PrecisionRule="true"
+    EntityAttrName="Latitude"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="LATITUDE"/>
+  <ViewAttribute
+    Name="TrainingSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="Longitude"
+    PrecisionRule="true"
+    EntityAttrName="Longitude"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="LONGITUDE"/>
+  <ViewAttribute
+    Name="DatedD"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatedD"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="DATED_D"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ClusterId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="TblTrainingSchDetailView"
+    ViewLink="model.VO.Fk2TblTrainingSchDetailFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblFarmerRegView"
+    ViewLink="model.VO.FkTblFarmerRegFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalMasterView"
+    ViewLink="model.VO.FkTblGrantApprovalMasterFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantAppMasterView"
+    ViewLink="model.VO.Fk2TblGrantAppMasterFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblClusterMasterView"
+    ViewLink="model.VO.FkTblClusterMasterFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblClusterAttMasterView"
+    ViewLink="model.VO.FK2TblClusterAttMasterFKAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Map_Farmer_DetailView"
+    ViewLink="model.VO.FKMapFarmerFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

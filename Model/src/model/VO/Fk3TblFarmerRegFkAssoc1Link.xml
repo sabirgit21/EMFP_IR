@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk3TblFarmerRegFkAssoc1Link"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.Fk3TblFarmerRegFkAssoc1">
+  <ViewLinkDefEnd
+    Name="TblBeneficiaryView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblBeneficiaryView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblBeneficiaryView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblBeneficiaryView.BeneficiaryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Map_Farmer_DetailView"
+    Cardinality="-1"
+    Owner="model.VO.Map_Farmer_DetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Map_Farmer_DetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Map_Farmer_DetailView.BeneficiaryId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
