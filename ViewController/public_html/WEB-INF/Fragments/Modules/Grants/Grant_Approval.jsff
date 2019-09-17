@@ -330,7 +330,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                         <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                            <af:showDetailItem id="tab2" text="Grant Approval Detail">
+                            <af:showDetailItem id="tab2" text="Grant Applied &amp; Interested">
                                 <af:table value="#{bindings.TblGrantApprovalDetailView4.collectionModel}" var="row"
                                           rows="#{bindings.TblGrantApprovalDetailView4.rangeSize}"
                                           emptyText="#{bindings.TblGrantApprovalDetailView4.viewable ? 'No data to display.' : 'Access Denied.'}"
