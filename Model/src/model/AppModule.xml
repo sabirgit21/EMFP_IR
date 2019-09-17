@@ -1187,6 +1187,18 @@
   <ViewUsage
     Name="Map_Farmer_DetailView11"
     ViewObjectName="model.VO.Map_Farmer_DetailView"/>
+  <ViewUsage
+    Name="Grant_Approval_Detail_NtIntr1"
+    ViewObjectName="model.VO.Grant_Approval_Detail_NtIntr"/>
+  <ViewUsage
+    Name="Grant_Approval_Detail_NtIntr2"
+    ViewObjectName="model.VO.Grant_Approval_Detail_NtIntr"/>
+  <ViewUsage
+    Name="Grant_Approval_Detail_NtAppl1"
+    ViewObjectName="model.VO.Grant_Approval_Detail_NtAppl"/>
+  <ViewUsage
+    Name="Grant_Approval_Detail_NtAppl2"
+    ViewObjectName="model.VO.Grant_Approval_Detail_NtAppl"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2296,5 +2308,17 @@
     ViewLinkObjectName="model.VO.FKMapFarmerFKLink"
     SrcViewUsageName="model.AppModule.Map_Cluster_DetailView1"
     DstViewUsageName="model.AppModule.Map_Farmer_DetailView11"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKAGrantApprovalDetailApplNtIntrFKLink1"
+    ViewLinkObjectName="model.VO.FKAGrantApprovalDetailApplNtIntrFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.Grant_Approval_Detail_NtIntr2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKAGrantApprovalDetailNtApplFKLink1"
+    ViewLinkObjectName="model.VO.FKAGrantApprovalDetailNtApplFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.Grant_Approval_Detail_NtAppl2"
     Reversed="false"/>
 </AppModule>

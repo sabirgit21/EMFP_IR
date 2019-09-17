@@ -330,7 +330,7 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr5">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                         <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                            <af:showDetailItem id="tab2" text="Grant Applied &amp; Interested">
+                            <af:showDetailItem id="tab2" text="Applied &amp; Interested">
                                 <af:table value="#{bindings.TblGrantApprovalDetailView4.collectionModel}" var="row"
                                           rows="#{bindings.TblGrantApprovalDetailView4.rangeSize}"
                                           emptyText="#{bindings.TblGrantApprovalDetailView4.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -344,25 +344,6 @@
                                           queryListener="#{bindings.TblGrantApprovalDetailView4Query.processQuery}"
                                           varStatus="vs" id="t2" partialTriggers="::b1 " width="990" scrollPolicy="page"
                                           autoHeightRows="0">
-                                    <af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.name}"
-                                               filterable="true" sortable="true" headerText="Grant Approval Detail ID"
-                                               id="c5" align="center" width="60">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.GrantApprovalDetailId}" id="it7"
-                                                          placeholder="Search ID"></af:inputText>
-                                        </f:facet>
-                                        <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
-                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.label}"
-                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.mandatory}"
-                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.displayWidth}"
-                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.precision}"
-                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.tooltip}"
-                                                      id="it4" readOnly="true" contentStyle='text-align:center'>
-                                            <f:validator binding="#{row.bindings.GrantApprovalDetailId.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.format}"/>
-                                        </af:inputText>
-                                    </af:column>
                                     <af:column headerText="Farmer No."
                                                id="c6">
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}" readOnly="true"
@@ -484,21 +465,7 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.Amount.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.Ast.name}"
-                                               filterable="true" sortable="true" headerText="Active" width="80" id="c7">
-                                        <f:facet name="filter">
-                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it15"
-                                                          placeholder="Search Status"></af:inputText>
-                                        </f:facet>
-                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
-                                                            label="#{row.bindings.Ast.label}"
-                                                            required="#{bindings.TblGrantApprovalDetailView4.hints.Ast.mandatory}"
-                                                            shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Ast.tooltip}"
-                                                            id="soc3">
-                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
-                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
-                                        </af:selectOneChoice>
-                                    </af:column>
+                                    
                                     <af:column headerText="Final Acre"
                                                id="c18">
                                         <af:inputText value="#{row.bindings.FAcre.inputValue}"
@@ -536,16 +503,17 @@
                                                               pattern="#{bindings.TblGrantApprovalDetailView4.hints.FAmount.format}"/>
                                         </af:outputText>
                                     </af:column>
-                                    <af:column headerText="Grant Status"
-                                               id="c25">
-                                        <af:selectOneChoice value="#{row.bindings.GrantStatus.inputValue}"
-                                                            label="#{row.bindings.GrantStatus.label}"
-                                                            required="#{bindings.TblGrantApprovalDetailView4.hints.GrantStatus.mandatory}"
-                                                            shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantStatus.tooltip}"
-                                                            id="soc6">
-                                            <f:selectItems value="#{row.bindings.GrantStatus.items}" id="si6"/>
-                                            <f:validator binding="#{row.bindings.GrantStatus.validator}"/>
-                                        </af:selectOneChoice>
+                                    <af:column headerText="Grant Bases"
+                                               id="c41">
+                                        <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.tooltip}"
+                                                      id="it32">
+                                            <f:validator binding="#{row.bindings.GrantBase.validator}"/>
+                                        </af:inputText>
                                     </af:column>
                                     <af:column headerText="Ro Status"
                                                id="c26">
@@ -593,22 +561,177 @@
                                             <f:validator binding="#{row.bindings.DisburseStatus.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="Grant Bases}"
-                                               id="c41">
-                                        <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
-                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.label}"
-                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.mandatory}"
-                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.displayWidth}"
-                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.precision}"
-                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.tooltip}"
-                                                      id="it32">
-                                            <f:validator binding="#{row.bindings.GrantBase.validator}"/>
+                                    
+                                    <af:column sortProperty="#{bindings.TblGrantApprovalDetailView4.hints.Ast.name}"
+                                               filterable="true" sortable="true" headerText="Active" width="80" id="c7">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Ast}" id="it15"
+                                                          placeholder="Search Status"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
+                                                            label="#{row.bindings.Ast.label}"
+                                                            required="#{bindings.TblGrantApprovalDetailView4.hints.Ast.mandatory}"
+                                                            shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Ast.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Applied &amp; Not Interested" id="sdi2">
+                                <af:table value="#{bindings.Grant_Approval_Detail_NtIntr2.collectionModel}" var="row"
+                                          rows="#{bindings.Grant_Approval_Detail_NtIntr2.rangeSize}"
+                                          emptyText="#{bindings.Grant_Approval_Detail_NtIntr2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.Grant_Approval_Detail_NtIntr2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.Grant_Approval_Detail_NtIntr2.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.Grant_Approval_Detail_NtIntr2.rangeSize}"
+                                          filterModel="#{bindings.Grant_Approval_Detail_NtIntr2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.Grant_Approval_Detail_NtIntr2Query.processQuery}"
+                                          varStatus="vs" id="t5">
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.label}"
+                                               id="c42">
+                                        <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.tooltip}"
+                                                      id="it34">
+                                            <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.label}"
+                                               id="c43">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.tooltip}"
+                                                      id="it35">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.label}"
+                                               id="c44">
+                                        <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.tooltip}"
+                                                      id="it36">
+                                            <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.label}"
+                                               id="c45">
+                                        <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.tooltip}"
+                                                      id="it37">
+                                            <f:validator binding="#{row.bindings.Cnic.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                 </af:table>
-                                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
-                                           disabled="#{!bindings.Execute.enabled}" id="b9"
-                                           icon="#{resource['images:refresh.png']}"/>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Not Applied" id="sdi3">
+                                <af:table value="#{bindings.Grant_Approval_Detail_NtAppl2.collectionModel}" var="row"
+                                          rows="#{bindings.Grant_Approval_Detail_NtAppl2.rangeSize}"
+                                          emptyText="#{bindings.Grant_Approval_Detail_NtAppl2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.Grant_Approval_Detail_NtAppl2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.Grant_Approval_Detail_NtAppl2.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.Grant_Approval_Detail_NtAppl2.rangeSize}"
+                                          filterModel="#{bindings.Grant_Approval_Detail_NtAppl2Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.Grant_Approval_Detail_NtAppl2Query.processQuery}"
+                                          varStatus="vs" id="t6">
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.label}"
+                                               id="c46">
+                                        <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.tooltip}"
+                                                      id="it38">
+                                            <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.label}"
+                                               id="c47">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.tooltip}"
+                                                      id="it39">
+                                            <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.label}"
+                                               id="c48">
+                                        <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.tooltip}"
+                                                      id="it40">
+                                            <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.label}"
+                                               id="c49">
+                                        <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                                      label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.label}"
+                                                      required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.mandatory}"
+                                                      columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.displayWidth}"
+                                                      maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.precision}"
+                                                      shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.tooltip}"
+                                                      id="it41">
+                                            <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>
                     </af:gridCell>
@@ -628,18 +751,7 @@
                          immediate="true" action="Grant_Approval.jsf"/>
               
             </af:panelGroupLayout>-->
-                        <af:panelGroupLayout id="pgl2" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s2"/>
-                            <af:iterator id="i1" var="index" varStatus="status"
-                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
-                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
-                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
-                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
-                                </af:button>
-                                <af:spacer width="5" height="10" id="s3"/>
-                            </af:iterator>
-                        </af:panelGroupLayout>
+                        
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">

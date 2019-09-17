@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Grant_Approval_Detail_NtIntr"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.Grant_Approval_Detail_NtIntr_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT TBL_Grant_App_detail.farmer_reg_id,TBL_Grant_App_detail.Grant_App_detail_ID,tbl_Grant_App_Master.cluster_id,Tbl_Farmer_Reg_Land.Land_Under_Orch LUO,tbl_farmer_reg.Farmer_No,tbl_farmer_reg.name,tbl_farmer_reg.father_name,tbl_farmer_reg.CNIC  
+      from TBL_Grant_App_detail, tbl_Grant_App_Master, Tbl_Farmer_Reg_Land,tbl_farmer_reg  
+      where TBL_Grant_App_detail.Grant_App_master_id = tbl_Grant_App_Master.Grant_App_master_id  
+      and Tbl_Farmer_Reg_Land.Farmer_Reg_ID=TBL_Grant_App_detail.farmer_reg_id  
+      and tbl_farmer_reg.farmer_reg_id=TBL_Grant_App_detail.farmer_reg_id 
+      and tbl_grant_app_detail.grant_status='Appl'  
+      and tbl_grant_app_detail.grant_Interest='NtIntr']]></SQLQuery>
+  <ViewAttribute
+    Name="FarmerRegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FARMER_REG_ID"
+    Expression="FARMER_REG_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="GrantAppDetailId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="GRANT_APP_DETAIL_ID"
+    Expression="GRANT_APP_DETAIL_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ClusterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CLUSTER_ID"
+    Expression="CLUSTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Luo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LUO"
+    Expression="LUO"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FarmerNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FARMER_NO"
+    Expression="FARMER_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FatherName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FATHER_NAME"
+    Expression="FATHER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cnic"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CNIC"
+    Expression="CNIC"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantAppDetailId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

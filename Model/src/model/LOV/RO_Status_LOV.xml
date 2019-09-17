@@ -24,7 +24,8 @@
     IsPersistent="false"
     PrecisionRule="true"
     Type="java.lang.String"
-    ColumnType="$none$"/>
+    ColumnType="$none$"
+    SQLType="VARCHAR"/>
   <ViewAttribute
     Name="ro_status_view"
     IsUpdateable="false"
@@ -39,7 +40,7 @@
     <Item Value="ro_status_db"/>
   </AttrArray>
   <StaticList
-    Rows="5"
+    Rows="6"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle
