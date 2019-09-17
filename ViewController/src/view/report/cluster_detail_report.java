@@ -7,9 +7,9 @@ import javax.faces.event.ValueChangeEvent;
 
 public class cluster_detail_report {
 
-    private static String gotPhase;
-    private static String gotCrop;
-    private static String gotCity;
+    private static String gotPhase = "";
+    private static String gotCrop = "";
+    private static String gotCity = "";
     private static String selectedReportType;
 
 
@@ -25,10 +25,13 @@ public class cluster_detail_report {
         if (selectedReportType == null) {
             selectedReportType = "notSelected";
         }
-        OracleReportBean reportBean = new OracleReportBean("192.168.1.3", "9002", null);
+        OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "9002", null);
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
+        reportBean.setReportParameter("P_Phase_id", gotPhase);
+        reportBean.setReportParameter("P_Crop_id",gotCrop);
+        reportBean.setReportParameter("P_City_id",gotCity);
         switch (selectedReportType) {
         case "phaseWise":
             System.out.println("phaseWise");
@@ -38,14 +41,14 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
-            StringBuilder phasevar = new StringBuilder();
-            phasevar.append("and tbl_cluster.phase_id=");
-            phasevar.append(gotPhase);
-            phasevar.append(" and Tbl_Cluster.CROP_ID=");
-            phasevar.append(gotCrop);
-            phasevar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
-            phasevar.append(gotCity);
-            reportBean.setReportParameter("and", phasevar.toString());
+//            StringBuilder phasevar = new StringBuilder();
+//            phasevar.append("and tbl_cluster.phase_id=");
+//            phasevar.append(gotPhase);
+//            phasevar.append(" and Tbl_Cluster.CROP_ID=");
+//            phasevar.append(gotCrop);
+//            phasevar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
+//            phasevar.append(gotCity);
+//            reportBean.setReportParameter("and", phasevar.toString());
             reportBean.setReportParameter("paramform", "no");
             
             url = reportBean.getReportServerURL();
@@ -60,14 +63,14 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
-            StringBuilder cropvar = new StringBuilder();
-            cropvar.append("and tbl_cluster.phase_id=");
-            cropvar.append(gotPhase);
-            cropvar.append(" and Tbl_Cluster.CROP_ID=");
-            cropvar.append(gotCrop);
-            cropvar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
-            cropvar.append(gotCity);
-            reportBean.setReportParameter("and", cropvar.toString());
+//            StringBuilder cropvar = new StringBuilder();
+//            cropvar.append("and tbl_cluster.phase_id=");
+//            cropvar.append(gotPhase);
+//            cropvar.append(" and Tbl_Cluster.CROP_ID=");
+//            cropvar.append(gotCrop);
+//            cropvar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
+//            cropvar.append(gotCity);
+//            reportBean.setReportParameter("and", cropvar.toString());
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -82,14 +85,14 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
-            StringBuilder cityvar = new StringBuilder();
-            cityvar.append("and tbl_cluster.phase_id=");
-            cityvar.append(gotPhase);
-            cityvar.append(" and Tbl_Cluster.CROP_ID=");
-            cityvar.append(gotCrop);
-            cityvar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
-            cityvar.append(gotCity);
-            reportBean.setReportParameter("and", cityvar.toString());
+//            StringBuilder cityvar = new StringBuilder();
+//            cityvar.append("and tbl_cluster.phase_id=");
+//            cityvar.append(gotPhase);
+//            cityvar.append(" and Tbl_Cluster.CROP_ID=");
+//            cityvar.append(gotCrop);
+//            cityvar.append(" and Tbl_Cluster.CITY_LIBR_DETAIL=");
+//            cityvar.append(gotCity);
+//            reportBean.setReportParameter("and", cityvar.toString());
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
