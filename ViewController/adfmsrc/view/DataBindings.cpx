@@ -141,6 +141,13 @@
               usageId="view_Grant_Application_TaskFlow_Grant_Application_TaskFlow_ExecuteWithParamsPageDef1"/>
         <page path="/WEB-INF/Task_Flows/Modules/Monitoring/MMP_RO_Status_TaskFlow.xml#MMP_RO_Status_TaskFlow@ExecuteWithParams"
               usageId="view_MMP_RO_Status_TaskFlow_MMP_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Monitoring/MMP_RO_Status.jsff" usageId="view_MMP_RO_StatusPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Grants/Vctat_RO_Status_TaskFlow.xml#Vctat_RO_Status_TaskFlow@ExecuteWithParams"
+              usageId="view_Vctat_RO_Status_TaskFlow_Vctat_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Vctat_RO_Status.jsff" usageId="view_Vctat_RO_StatusPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Grants/Print_RO_Status_TaskFlow.xml#Print_RO_Status_TaskFlow@ExecuteWithParams"
+              usageId="view_Print_RO_Status_TaskFlow_Print_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Print_RO_Status.jsff" usageId="view_Print_RO_StatusPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -274,6 +281,13 @@
               path="Task_Flows.Modules.Grants.Grant_Application_TaskFlow_Grant_Application_TaskFlow_ExecuteWithParamsPageDef1"/>
         <page id="view_MMP_RO_Status_TaskFlow_MMP_RO_Status_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Monitoring.MMP_RO_Status_TaskFlow_MMP_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_MMP_RO_StatusPageDef" path="Fragments.Modules.Monitoring.MMP_RO_StatusPageDef"/>
+        <page id="view_Vctat_RO_Status_TaskFlow_Vctat_RO_Status_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Grants.Vctat_RO_Status_TaskFlow_Vctat_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Vctat_RO_StatusPageDef" path="Fragments.Modules.Grants.Vctat_RO_StatusPageDef"/>
+        <page id="view_Print_RO_Status_TaskFlow_Print_RO_Status_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Grants.Print_RO_Status_TaskFlow_Print_RO_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Print_RO_StatusPageDef" path="Fragments.Modules.Grants.Print_RO_StatusPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

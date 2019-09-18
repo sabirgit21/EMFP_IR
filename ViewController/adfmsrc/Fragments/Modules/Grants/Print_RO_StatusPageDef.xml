@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Print_RO_StatusPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="Print_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="Print_RO_Status1Iterator"/>
+    <searchRegion Binds="Print_RO_Status1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Print_RO_Status1Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Print_RO_Status1Iterator" id="Print_RO_Status1">
+      <nodeDefinition DefName="model.VO.Print_RO_Status" Name="Print_RO_Status10">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+          <Item Value="OldRoNumber"/>
+          <Item Value="RoNumber"/>
+          <Item Value="RoStatus" Binds="RoStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="Print_RO_Status1Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="RoStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="print"/>
+        <Item Value="null"/>
+      </ValueList>
+    </button>
+    <action IterBinding="Print_RO_Status1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="Print_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="Print_RO_Status1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

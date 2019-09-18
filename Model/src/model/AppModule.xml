@@ -1199,6 +1199,15 @@
   <ViewUsage
     Name="Grant_Approval_Detail_NtAppl2"
     ViewObjectName="model.VO.Grant_Approval_Detail_NtAppl"/>
+  <ViewUsage
+    Name="Vctat_RO_Status1"
+    ViewObjectName="model.VO.Vctat_RO_Status"/>
+  <ViewUsage
+    Name="MMP_RO_Status1"
+    ViewObjectName="model.VO.MMP_RO_Status"/>
+  <ViewUsage
+    Name="Print_RO_Status1"
+    ViewObjectName="model.VO.Print_RO_Status"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
