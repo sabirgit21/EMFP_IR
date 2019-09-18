@@ -521,7 +521,7 @@
                                                             label="#{row.bindings.RoStatus.label}"
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.RoStatus.mandatory}"
                                                             shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.RoStatus.tooltip}"
-                                                            id="soc7">
+                                                            id="soc7" readOnly="true">
                                             <f:selectItems value="#{row.bindings.RoStatus.items}" id="si7"/>
                                             <f:validator binding="#{row.bindings.RoStatus.validator}"/>
                                         </af:selectOneChoice>
@@ -534,7 +534,7 @@
                                                       columns="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.displayWidth}"
                                                       maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.precision}"
                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.tooltip}"
-                                                      id="it26">
+                                                      id="it26" readOnly="true">
                                             <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -546,7 +546,7 @@
                                                       columns="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.displayWidth}"
                                                       maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.precision}"
                                                       shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.tooltip}"
-                                                      id="it33">
+                                                      id="it33" readOnly="true">
                                             <f:validator binding="#{row.bindings.RoNumber.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -556,7 +556,7 @@
                                                             label="#{row.bindings.DisburseStatus.label}" 
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.mandatory}"
                                                             shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.tooltip}"
-                                                            id="soc8">
+                                                            id="soc8" readOnly="true">
                                             <f:selectItems value="#{row.bindings.DisburseStatus.items}" id="si8"/>
                                             <f:validator binding="#{row.bindings.DisburseStatus.validator}"/>
                                         </af:selectOneChoice>
@@ -572,7 +572,7 @@
                                                             label="#{row.bindings.Ast.label}"
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.Ast.mandatory}"
                                                             shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.Ast.tooltip}"
-                                                            id="soc3">
+                                                            id="soc3" readOnly="true">
                                             <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                                             <f:validator binding="#{row.bindings.Ast.validator}"/>
                                         </af:selectOneChoice>

@@ -9,8 +9,6 @@
               id="Map_Sch_Detail_Att_Master1Iterator" CacheResults="false"/>
     <iterator Binds="Map_Cluster_DetailView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="Map_Cluster_DetailView1Iterator"/>
-    <searchRegion Binds="Map_Cluster_DetailView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Map_Cluster_DetailView1Query"/>
     <iterator Binds="Map_Farmer_DetailView11" RangeSize="25" DataControl="AppModuleDataControl"
               id="Map_Farmer_DetailView11Iterator"/>
     <searchRegion Binds="Map_Farmer_DetailView11Iterator" Criteria=""
@@ -28,67 +26,22 @@
         </data>
       </mapThemeDataMap>
     </mapTheme>
-    <tree IterBinding="Map_Cluster_DetailView1Iterator" id="Map_Cluster_DetailView1">
-      <nodeDefinition DefName="model.VO.Map_Cluster_DetailView" Name="Map_Cluster_DetailView10">
-        <AttrNames>
-          <Item Value="DatedD"/>
-          <Item Value="ClusterNo"/>
-          <Item Value="Latitude"/>
-          <Item Value="Longitude"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <list IterBinding="Map_Cluster_DetailView1Iterator" ListOperMode="navigation"
+          ListIter="Map_Cluster_DetailView1Iterator" id="Map_Cluster_DetailView1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
     <tree IterBinding="Map_Farmer_DetailView11Iterator" id="Map_Farmer_DetailView11">
       <nodeDefinition DefName="model.VO.Map_Farmer_DetailView" Name="Map_Farmer_DetailView110">
         <AttrNames>
-          <Item Value="FarmerRegId"/>
+          <Item Value="FarmerNo"/>
           <Item Value="Name"/>
           <Item Value="FatherName"/>
-          <Item Value="ClusterId"/>
-          <Item Value="BeneficiaryId"/>
           <Item Value="Cnic"/>
           <Item Value="Mobile"/>
-          <Item Value="FarmerNo"/>
-          <Item Value="LandAcre"/>
           <Item Value="LandUnderOrch"/>
-          <Item Value="FarmerRegLandId"/>
-          <Item Value="Ast"/>
-          <Item Value="ClusterAttDetailId"/>
-          <Item Value="Dated"/>
-          <Item Value="ClusterAttMasterId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="Map_Farmer_DetailView11Iterator" id="Map_Farmer_DetailView111">
-      <nodeDefinition DefName="model.VO.Map_Farmer_DetailView" Name="Map_Farmer_DetailView1110">
-        <AttrNames>
-          <Item Value="FarmerRegId"/>
-          <Item Value="Name"/>
-          <Item Value="FatherName"/>
-          <Item Value="ClusterId"/>
-          <Item Value="BeneficiaryId"/>
-          <Item Value="Cnic"/>
-          <Item Value="Mobile"/>
-          <Item Value="FarmerNo"/>
-          <Item Value="LandAcre"/>
-          <Item Value="LandUnderOrch"/>
-          <Item Value="FarmerRegLandId"/>
-          <Item Value="Ast"/>
-          <Item Value="ClusterAttDetailId"/>
-          <Item Value="Dated"/>
-          <Item Value="ClusterAttMasterId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="Map_Cluster_DetailView1Iterator" id="Map_Cluster_DetailView11">
-      <nodeDefinition DefName="model.VO.Map_Cluster_DetailView" Name="Map_Cluster_DetailView110">
-        <AttrNames>
-          <Item Value="ClusterId"/>
-          <Item Value="ClusterNo"/>
-          <Item Value="Latitude"/>
-          <Item Value="TrainingSchDetailId"/>
-          <Item Value="Longitude"/>
-          <Item Value="DatedD"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

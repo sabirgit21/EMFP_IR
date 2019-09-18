@@ -19,17 +19,9 @@
        Map_Farmer_Detail.FARMER_NO, 
        TblFarmerRegLand.LAND_ACRE, 
        TblFarmerRegLand.LAND_UNDER_ORCH, 
-       TblFarmerRegLand.FARMER_REG_LAND_ID, 
-       TblClusterAttDetail.AST, 
-       TblClusterAttDetail.CLUSTER_ATT_DETAIL_ID, 
-       TblClusterAttMaster.DATED, 
-       TblClusterAttMaster.CLUSTER_ATT_MASTER_ID"
-  FromList="TBL_FARMER_REG Map_Farmer_Detail, TBL_FARMER_REG_LAND TblFarmerRegLand, TBL_CLUSTER_ATT_DETAIL TblClusterAttDetail, TBL_CLUSTER_ATT_MASTER TblClusterAttMaster"
-  Where="Map_Farmer_Detail.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID 
-AND TblClusterAttDetail.CLUSTER_ATT_MASTER_ID = TblClusterAttMaster.CLUSTER_ATT_MASTER_ID(+) 
-And TblClusterAttMaster.cluster_id(+)=Map_Farmer_Detail.cluster_id 
-AND Map_Farmer_Detail.FARMER_REG_ID = TblClusterAttDetail.FARMER_REG_ID(+) 
-And (TblClusterAttMaster.dated is null or TRUNC(TblClusterAttMaster.DATED)=TRUNC(SYSDATE))">
+       TblFarmerRegLand.FARMER_REG_LAND_ID"
+  FromList="TBL_FARMER_REG Map_Farmer_Detail, TBL_FARMER_REG_LAND TblFarmerRegLand"
+  Where="Map_Farmer_Detail.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID">
   <EntityUsage
     Name="Map_Farmer_Detail"
     Entity="model.EO.Map_Farmer_Detail"/>
@@ -49,44 +41,6 @@ And (TblClusterAttMaster.dated is null or TRUNC(TblClusterAttMaster.DATED)=TRUNC
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.Map_Farmer_Detail.FarmerRegId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblClusterAttDetail"
-    Entity="model.EO.TblClusterAttDetail"
-    Association="model.EO.Fk2TblClusterAttDetailFkAssoc1"
-    AssociationEnd="model.EO.Fk2TblClusterAttDetailFkAssoc1.TblClusterAttDetail"
-    SourceUsage="model.VO.Map_Farmer_DetailView.Map_Farmer_Detail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="INNER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblClusterAttDetail.FarmerRegId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.Map_Farmer_Detail.FarmerRegId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblClusterAttMaster"
-    Entity="model.EO.TblClusterAttMaster"
-    Association="model.EO.FkTblClusterAttDetailFkAssoc"
-    AssociationEnd="model.EO.FkTblClusterAttDetailFkAssoc.TblClusterAttMaster"
-    SourceUsage="model.VO.Map_Farmer_DetailView.TblClusterAttDetail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="LEFT OUTER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblClusterAttMaster.ClusterAttMasterId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblClusterAttDetail.ClusterAttMasterId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -164,32 +118,6 @@ And (TblClusterAttMaster.dated is null or TRUNC(TblClusterAttMaster.DATED)=TRUNC
     EntityAttrName="FarmerRegLandId"
     EntityUsage="TblFarmerRegLand"
     AliasName="FARMER_REG_LAND_ID"/>
-  <ViewAttribute
-    Name="Ast"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Ast"
-    EntityUsage="TblClusterAttDetail"
-    AliasName="AST"/>
-  <ViewAttribute
-    Name="ClusterAttDetailId"
-    PrecisionRule="true"
-    EntityAttrName="ClusterAttDetailId"
-    EntityUsage="TblClusterAttDetail"
-    AliasName="CLUSTER_ATT_DETAIL_ID"/>
-  <ViewAttribute
-    Name="Dated"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Dated"
-    EntityUsage="TblClusterAttMaster"
-    AliasName="DATED"/>
-  <ViewAttribute
-    Name="ClusterAttMasterId"
-    PrecisionRule="true"
-    EntityAttrName="ClusterAttMasterId"
-    EntityUsage="TblClusterAttMaster"
-    AliasName="CLUSTER_ATT_MASTER_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FarmerRegId"/>
   </AttrArray>
