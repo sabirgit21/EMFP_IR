@@ -79,7 +79,7 @@
                       <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.Print_RO_Status1.hints.RoNumber.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.Print_RO_Status1.hints.RoNumber.name}" filterable="true"
                              sortable="true" headerText="#{bindings.Print_RO_Status1.hints.RoNumber.label}" id="c5">
                     <af:inputText value="#{row.bindings.RoNumber.inputValue}"
                                   label="#{bindings.Print_RO_Status1.hints.RoNumber.label}"
@@ -89,7 +89,7 @@
                                   shortDesc="#{bindings.Print_RO_Status1.hints.RoNumber.tooltip}" id="it5">
                       <f:validator binding="#{row.bindings.RoNumber.validator}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column headerText="#{bindings.Print_RO_Status1.hints.RoStatus.label}" id="c6">
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
                                               label="#{row.bindings.RoStatus.label}"
