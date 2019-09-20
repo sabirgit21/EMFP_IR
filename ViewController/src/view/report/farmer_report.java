@@ -7,11 +7,11 @@ import javax.faces.event.ValueChangeEvent;
 
 public class farmer_report {
 
-    private static String gotClusterNum;
-    private static String gotFarmerNum;
-    private static String gotCity;
-    private static String gotCrop;
-    private static String gotPhase;
+    private static String gotClusterNum="";
+    private static String gotFarmerNum="";
+    private static String gotCity="";
+    private static String gotCrop="";
+    private static String gotPhase="";
     private static String selectedReportType;
 
 
@@ -31,7 +31,11 @@ public class farmer_report {
 
         String url = "";
         OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "7001", null);
-
+        reportBean.setReportParameter("P_Farmer_Reg_id", gotFarmerNum);
+        reportBean.setReportParameter("P_Cluster_ID", gotClusterNum);
+        reportBean.setReportParameter("P_City_id", gotCity);
+        reportBean.setReportParameter("P_Phase_id", gotPhase);
+        reportBean.setReportParameter("P_Crop_id",gotCrop);
         switch (selectedReportType) {
         case "clusterWise":
             System.out.println("clusterWise");
