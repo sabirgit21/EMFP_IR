@@ -32,7 +32,8 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
         UpdatedBy,
         UpdatedDate,
         TblCluster,
-        TblTrainingSchMaster;
+        TblTrainingSchMaster,
+        Map_Cluster_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -55,6 +56,8 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int TRAININGSCHDETAILID = AttributesEnum.TrainingSchDetailId.index();
     public static final int TRAININGSCHMASTERID = AttributesEnum.TrainingSchMasterId.index();
     public static final int DATEDD = AttributesEnum.DatedD.index();
@@ -67,12 +70,21 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAININGSCHMASTER = AttributesEnum.TblTrainingSchMaster.index();
+    public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblTrainingSchDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblTrainingSchDetail");
+    }
+
 
     /**
      * Gets the attribute value for TrainingSchDetailId, using the alias name TrainingSchDetailId.
@@ -221,30 +233,45 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblCluster() {
-        return (EntityImpl) getAttributeInternal(TBLCLUSTER);
+    public TblClusterImpl getTblCluster() {
+        return (TblClusterImpl) getAttributeInternal(TBLCLUSTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblCluster(EntityImpl value) {
+    public void setTblCluster(TblClusterImpl value) {
         setAttributeInternal(TBLCLUSTER, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblTrainingSchMaster() {
-        return (EntityImpl) getAttributeInternal(TBLTRAININGSCHMASTER);
+    public TblTrainingSchMasterImpl getTblTrainingSchMaster() {
+        return (TblTrainingSchMasterImpl) getAttributeInternal(TBLTRAININGSCHMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblTrainingSchMaster(EntityImpl value) {
+    public void setTblTrainingSchMaster(TblTrainingSchMasterImpl value) {
         setAttributeInternal(TBLTRAININGSCHMASTER, value);
     }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Cluster_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_CLUSTER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Cluster_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
 
     /**
      * @param trainingSchDetailId key constituent
@@ -253,13 +280,6 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal trainingSchDetailId) {
         return new Key(new Object[] { trainingSchDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblTrainingSchDetail");
     }
 
     /**

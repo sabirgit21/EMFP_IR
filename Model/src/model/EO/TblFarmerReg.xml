@@ -425,6 +425,20 @@
     AssociationOtherEnd="model.EO.FKATblGrantApprovalMasterDFKAssoc2.TblFarmerReg"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Map_Cluster_Detail"
+    Association="model.EO.FkTblFarmerRegFkAssoc1"
+    AssociationEnd="model.EO.FkTblFarmerRegFkAssoc1.Map_Cluster_Detail"
+    AssociationOtherEnd="model.EO.FkTblFarmerRegFkAssoc1.TblFarmerReg"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantAppDetail"
+    Association="model.EO.FKATblGrantAppDetailFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantAppDetailFKAssoc.TblGrantAppDetail"
+    AssociationOtherEnd="model.EO.FKATblGrantAppDetailFKAssoc.TblFarmerReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblFarmerRegPk"
     PrimaryKey="true">

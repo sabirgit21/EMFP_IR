@@ -80,6 +80,11 @@
     ViewLink="model.VO.Fk3TblFarmerRegFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Map_Farmer_DetailView"
+    ViewLink="model.VO.Fk3TblFarmerRegFkAssoc1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="BeneficiaryId"

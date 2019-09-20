@@ -195,6 +195,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="GrantAppDetailId"
+    PrecisionRule="true"
+    EntityAttrName="GrantAppDetailId"
+    EntityUsage="TblGrantApprovalMaster"
+    AliasName="GRANT_APP_DETAIL_ID"/>
   <ViewLinkAccessor
     Name="TblGrantApprovalDetailView"
     ViewLink="model.VO.FkTblGrantApprovalDetailFkLink"
@@ -210,6 +216,11 @@
     ViewLink="model.VO.FKATblGrantApprovalMasterDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalMasterId"

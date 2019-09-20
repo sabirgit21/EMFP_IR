@@ -35,7 +35,8 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
         UpdatedDate,
         CropTypeId,
         TblCrop,
-        TblFarmerReg;
+        TblFarmerReg,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -59,6 +60,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
         }
     }
 
+
     public static final int FARMERREGCROPSID = AttributesEnum.FarmerRegCropsId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
@@ -74,6 +76,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
     public static final int CROPTYPEID = AttributesEnum.CropTypeId.index();
     public static final int TBLCROP = AttributesEnum.TblCrop.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -87,6 +90,7 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblFarmerRegCrops");
     }
+
 
     /**
      * Gets the attribute value for FarmerRegCropsId, using the alias name FarmerRegCropsId.
@@ -306,6 +310,21 @@ public class TblFarmerRegCropsImpl extends EntityImpl {
      */
     public void setTblFarmerReg(TblFarmerRegImpl value) {
         setAttributeInternal(TBLFARMERREG, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
     }
 
 

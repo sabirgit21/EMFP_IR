@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblGrantAppMasterFkAssoc1Link"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblGrantAppMasterFkAssoc1">
+  <ViewLinkDefEnd
+    Name="Map_Farmer_DetailView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.Map_Farmer_DetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Map_Farmer_DetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Map_Farmer_DetailView.FarmerRegId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblGrantAppMasterView"
+    Cardinality="-1"
+    Owner="model.VO.TblGrantAppMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblGrantAppMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantAppMasterView.FarmerRegId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

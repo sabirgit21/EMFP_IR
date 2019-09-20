@@ -39,7 +39,8 @@ public class TblFarmerRegLandImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
-        TblFarmerReg;
+        TblFarmerReg,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -62,6 +63,8 @@ public class TblFarmerRegLandImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int FARMERREGLANDID = AttributesEnum.FarmerRegLandId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
     public static final int LANDACRE = AttributesEnum.LandAcre.index();
@@ -81,12 +84,21 @@ public class TblFarmerRegLandImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblFarmerRegLandImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegLand");
+    }
+
 
     /**
      * Gets the attribute value for FarmerRegLandId, using the alias name FarmerRegLandId.
@@ -375,19 +387,27 @@ public class TblFarmerRegLandImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
+    }
+
+
+    /**
      * @param farmerRegLandId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal farmerRegLandId) {
         return new Key(new Object[] { farmerRegLandId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblFarmerRegLand");
     }
 
     /**

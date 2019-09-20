@@ -18,30 +18,35 @@
         ResId="model.VO.Map_Sch_Detail_Att_Master_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT Distinct             
-CLUSTER_ID, LATITUDE,LONGITUDE, Col_Flag,DATED, Cluster_No,Farmer_Reg_ID     
-FROM              
-(             
-(             
-SELECT  TSD.CLUSTER_ID, TSD.LATITUDE, TSD.LONGITUDE, 0 Col_Flag, TSD.DATED_D  DATED, TC.Cluster_No, TFR.Farmer_Reg_ID        
-FROM EMFP.TBL_TRAINING_SCH_DETAIL TSD, Tbl_Cluster TC ,TBL_FARMER_REG TFR    
+  <SQLQuery><![CDATA[SELECT Distinct       
+CLUSTER_ID, LATITUDE,LONGITUDE, Col_Flag,DATED, Cluster_No,count(Farmer_Reg_ID) Farmer_Reg_ID,Sum(Land) Land,        
+Sum(LUO) LandUnderOrchard ,'Total Farmers: '||count(Farmer_Reg_ID)||' Total Land: '||Sum(Land)||' Total Area Under Orchard: '||Sum(LUO) Tot_Sum     
+FROM       
+(       
+(       
+SELECT  TSD.CLUSTER_ID, TSD.LATITUDE, TSD.LONGITUDE, 0 Col_Flag, TSD.DATED_D  DATED, TC.Cluster_No,       
+TFR.Farmer_Reg_ID, TFRL.Land_Acre Land, TFRL.LAND_UNDER_ORCH LUO       
+FROM TBL_TRAINING_SCH_DETAIL TSD, Tbl_Cluster TC ,TBL_FARMER_REG TFR, Tbl_farmer_Reg_Land TFRL       
 Where TC.Cluster_ID=TSD.Cluster_ID       
-AND TFR.CLUSTER_ID=TSD.CLUSTER_ID    
-)             
-UNION ALL             
-(             
-SELECT  CAM.CLUSTER_ID, CAM.LATITUDE, CAM.LONGITUDE, 1 Col_Flag,CAM.DATED, TC.Cluster_No,CAD.Farmer_Reg_ID     
-FROM     
-EMFP.TBL_CLUSTER_ATT_MASTER CAM,EMFP.TBL_CLUSTER_ATT_Detail CAD ,Tbl_Cluster TC     
-Where     
-(CAD.CLUSTER_ATT_MASTER_ID=CAM.CLUSTER_ATT_MASTER_ID )    
-AND    
-(TC.Cluster_ID=CAM.Cluster_ID)    
-)             
-)             
-WHERE          
-((LATITUDE>0) AND (LONGITUDE>0))          
-AND TRUNC(DATED)= TRUNC(SYSDATE)  
+AND TFR.CLUSTER_ID=TSD.CLUSTER_ID       
+AND TFRL.FARMER_REG_ID=TFR.FARMER_REG_ID       
+)       
+UNION ALL       
+(       
+SELECT  CAM.CLUSTER_ID, CAM.LATITUDE, CAM.LONGITUDE, 1 Col_Flag,CAM.DATED, TC.Cluster_No,CAD.Farmer_Reg_ID,       
+TFRL.Land_Acre Land, TFRL.LAND_UNDER_ORCH LUO       
+FROM TBL_CLUSTER_ATT_MASTER CAM,EMFP.TBL_CLUSTER_ATT_Detail CAD ,Tbl_Cluster TC, Tbl_farmer_Reg_Land TFRL       
+Where       
+(CAD.CLUSTER_ATT_MASTER_ID=CAM.CLUSTER_ATT_MASTER_ID )       
+AND       
+(TC.Cluster_ID=CAM.Cluster_ID)       
+AND TFRL.FARMER_REG_ID=CAD.FARMER_REG_ID       
+)       
+)       
+WHERE       
+((LATITUDE>0) AND (LONGITUDE>0))       
+AND TRUNC(DATED)= TRUNC(SYSDATE)      
+group by CLUSTER_ID, Col_Flag,DATED, Cluster_No,LATITUDE,LONGITUDE       
 order by col_flag,farmer_reg_id]]></SQLQuery>
   <ViewAttribute
     Name="ClusterId"
@@ -118,6 +123,57 @@ order by col_flag,farmer_reg_id]]></SQLQuery>
     AliasName="FARMER_REG_ID"
     Expression="FARMER_REG_ID"
     SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Land"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LAND"
+    Expression="LAND"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Landunderorchard"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LANDUNDERORCHARD"
+    Expression="LANDUNDERORCHARD"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotSum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="175"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TOT_SUM"
+    Expression="TOT_SUM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="175"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NoName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="175"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="175"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ClusterId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

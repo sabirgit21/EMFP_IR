@@ -47,6 +47,20 @@
     AssociationOtherEnd="model.EO.FKATblGrantApprovalMasterDFKAssoc2.TblGrantApprovalMasterD"
     Type="model.EO.TblFarmerRegImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.fk_TblGrantApprovalMasterD1Assoc"
+    AssociationEnd="model.EO.fk_TblGrantApprovalMasterD1Assoc.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.fk_TblGrantApprovalMasterD1Assoc.TblGrantApprovalMasterD"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail1"
+    Association="model.EO.Fk2TblGrantApprovalMasterDFarmerIdAssoc"
+    AssociationEnd="model.EO.Fk2TblGrantApprovalMasterDFarmerIdAssoc.Map_Farmer_Detail1"
+    AssociationOtherEnd="model.EO.Fk2TblGrantApprovalMasterDFarmerIdAssoc.TblGrantApprovalMasterD1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblGrantApprovalMasterDId"
     PrimaryKey="true">

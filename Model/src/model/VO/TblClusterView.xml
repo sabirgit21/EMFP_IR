@@ -887,6 +887,11 @@
     ViewLink="model.VO.Fk2TblTrainingSchDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Map_Farmer_DetailView"
+    ViewLink="model.VO.FkTblFarmerRegFkAssoc3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

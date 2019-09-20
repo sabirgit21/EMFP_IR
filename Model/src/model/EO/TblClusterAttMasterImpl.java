@@ -37,7 +37,8 @@ public class TblClusterAttMasterImpl extends EntityImpl {
         UpdatedDate,
         TblClusterAttDetail,
         TblCluster,
-        TblTrainer;
+        TblTrainer,
+        Map_Cluster_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -60,6 +61,8 @@ public class TblClusterAttMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int CLUSTERATTMASTERID = AttributesEnum.ClusterAttMasterId.index();
     public static final int TRAINERID = AttributesEnum.TrainerId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
@@ -76,12 +79,21 @@ public class TblClusterAttMasterImpl extends EntityImpl {
     public static final int TBLCLUSTERATTDETAIL = AttributesEnum.TblClusterAttDetail.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAINER = AttributesEnum.TblTrainer.index();
+    public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblClusterAttMasterImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblClusterAttMaster");
+    }
+
 
     /**
      * Gets the attribute value for ClusterAttMasterId, using the alias name ClusterAttMasterId.
@@ -285,14 +297,14 @@ public class TblClusterAttMasterImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblCluster() {
-        return (EntityImpl) getAttributeInternal(TBLCLUSTER);
+    public TblClusterImpl getTblCluster() {
+        return (TblClusterImpl) getAttributeInternal(TBLCLUSTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblCluster(EntityImpl value) {
+    public void setTblCluster(TblClusterImpl value) {
         setAttributeInternal(TBLCLUSTER, value);
     }
 
@@ -311,19 +323,27 @@ public class TblClusterAttMasterImpl extends EntityImpl {
     }
 
     /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Cluster_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_CLUSTER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Cluster_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
+
+    /**
      * @param clusterAttMasterId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(BigDecimal clusterAttMasterId) {
         return new Key(new Object[] { clusterAttMasterId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblClusterAttMaster");
     }
 
     /**

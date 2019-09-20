@@ -48,6 +48,20 @@
     AssociationOtherEnd="model.EO.FKATblGrantGroupDetailFKAssoc.TblGrantGroupDetail"
     Type="model.EO.TblFarmerRegImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail"
+    Association="model.EO.fk_TblGrantGroupDetailAssoc"
+    AssociationEnd="model.EO.fk_TblGrantGroupDetailAssoc.Map_Farmer_Detail"
+    AssociationOtherEnd="model.EO.fk_TblGrantGroupDetailAssoc.TblGrantGroupDetail"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Farmer_Detail1"
+    Association="model.EO.FkTblGrantGroupDetailFarIdAssoc"
+    AssociationEnd="model.EO.FkTblGrantGroupDetailFarIdAssoc.Map_Farmer_Detail1"
+    AssociationOtherEnd="model.EO.FkTblGrantGroupDetailFarIdAssoc.TblGrantGroupDetail1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblGrantGroupDetailId"
     PrimaryKey="true">

@@ -34,7 +34,8 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
         FAmount,
         GrantBase,
         TblFarmerReg,
-        TblGrantDisburseMaster;
+        TblGrantDisburseMaster,
+        Map_Farmer_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -73,6 +74,7 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
     public static final int GRANTBASE = AttributesEnum.GrantBase.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
+    public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -291,6 +293,21 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
      */
     public void setTblGrantDisburseMaster(TblGrantDisburseMasterImpl value) {
         setAttributeInternal(TBLGRANTDISBURSEMASTER, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Farmer_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Farmer_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_FARMER_DETAIL, value);
     }
 
 

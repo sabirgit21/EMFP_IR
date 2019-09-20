@@ -21,6 +21,14 @@
     Name="L4_Name_LOV1"
     ViewObjectName="model.LOV.L4_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Interest_LOV1"
+    ViewObjectName="model.LOV.Grant_Interest_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Status_LOV1"
+    ViewObjectName="model.LOV.Grant_Status_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_SupplierId"
     ListVOName="Supplier_Name_LOV1"
@@ -57,9 +65,64 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_GrantInterest"
+    ListVOName="Grant_Interest_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantInterest"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="int_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="int_view"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GrantStatus"
+    ListVOName="Grant_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="grant_status_db"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="grant_status_view"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantAppDetail"
     Entity="model.EO.TblGrantAppDetail"/>
+  <EntityUsage
+    Name="TblFarmerReg"
+    Entity="model.EO.TblFarmerReg"
+    Association="model.EO.FKATblGrantAppDetailFKAssoc"
+    AssociationEnd="model.EO.FKATblGrantAppDetailFKAssoc.TblFarmerReg"
+    SourceUsage="model.VO.TblGrantAppDetailView.TblGrantAppDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFarmerReg.FarmerRegId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblGrantAppDetail.FarmerRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="GrantAppDetailId"
     IsNotNull="true"
@@ -104,6 +167,82 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="FarmerRegId"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegId"
+    EntityUsage="TblGrantAppDetail"
+    AliasName="FARMER_REG_ID"/>
+  <ViewAttribute
+    Name="GrantStatus"
+    PrecisionRule="true"
+    EntityAttrName="GrantStatus"
+    EntityUsage="TblGrantAppDetail"
+    AliasName="GRANT_STATUS"
+    LOVName="LOV_GrantStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GrantInterest"
+    PrecisionRule="true"
+    EntityAttrName="GrantInterest"
+    EntityUsage="TblGrantAppDetail"
+    AliasName="GRANT_INTEREST"
+    LOVName="LOV_GrantInterest">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cnic"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Cnic"
+    EntityUsage="TblFarmerReg"
+    AliasName="CNIC"/>
+  <ViewAttribute
+    Name="FarmerNo"
+    PrecisionRule="true"
+    EntityAttrName="FarmerNo"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_NO"/>
+  <ViewAttribute
+    Name="FatherName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblFarmerReg"
+    AliasName="FATHER_NAME"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblFarmerReg"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="FarmerRegId1"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegId"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantAppDetailId"/>
+  </AttrArray>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantAppDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantAppDetailId"

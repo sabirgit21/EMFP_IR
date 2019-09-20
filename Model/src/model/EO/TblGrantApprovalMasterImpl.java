@@ -33,10 +33,12 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
         PhaseId,
         GrantApprovalMasterGroupId,
         GrantApprovalMasterType,
+        GrantAppDetailId,
         TblGrantApprovalDetail,
         TblCluster,
         TblGrantDisburseMaster,
-        TblGrantApprovalMasterD;
+        TblGrantApprovalMasterD,
+        Map_Cluster_Detail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -72,10 +74,12 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     public static final int PHASEID = AttributesEnum.PhaseId.index();
     public static final int GRANTAPPROVALMASTERGROUPID = AttributesEnum.GrantApprovalMasterGroupId.index();
     public static final int GRANTAPPROVALMASTERTYPE = AttributesEnum.GrantApprovalMasterType.index();
+    public static final int GRANTAPPDETAILID = AttributesEnum.GrantAppDetailId.index();
     public static final int TBLGRANTAPPROVALDETAIL = AttributesEnum.TblGrantApprovalDetail.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLGRANTDISBURSEMASTER = AttributesEnum.TblGrantDisburseMaster.index();
     public static final int TBLGRANTAPPROVALMASTERD = AttributesEnum.TblGrantApprovalMasterD.index();
+    public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -252,6 +256,22 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GrantAppDetailId, using the alias name GrantAppDetailId.
+     * @return the value of GrantAppDetailId
+     */
+    public BigDecimal getGrantAppDetailId() {
+        return (BigDecimal) getAttributeInternal(GRANTAPPDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GrantAppDetailId.
+     * @param value value to set the GrantAppDetailId
+     */
+    public void setGrantAppDetailId(BigDecimal value) {
+        setAttributeInternal(GRANTAPPDETAILID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblGrantApprovalDetail() {
@@ -285,6 +305,21 @@ public class TblGrantApprovalMasterImpl extends EntityImpl {
      */
     public RowIterator getTblGrantApprovalMasterD() {
         return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALMASTERD);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getMap_Cluster_Detail() {
+        return (EntityImpl) getAttributeInternal(MAP_CLUSTER_DETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setMap_Cluster_Detail(EntityImpl value) {
+        setAttributeInternal(MAP_CLUSTER_DETAIL, value);
     }
 
 

@@ -140,6 +140,13 @@
     AssociationOtherEnd="model.EO.FkTblClusterAttMasterFkAssoc.TblClusterAttMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Map_Cluster_Detail"
+    Association="model.EO.Fk2TblClusterAttMasterFkAssoc1"
+    AssociationEnd="model.EO.Fk2TblClusterAttMasterFkAssoc1.Map_Cluster_Detail"
+    AssociationOtherEnd="model.EO.Fk2TblClusterAttMasterFkAssoc1.TblClusterAttMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblClusterAttMasterPk"
     PrimaryKey="true">
