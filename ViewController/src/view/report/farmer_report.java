@@ -29,7 +29,7 @@ public class farmer_report {
         }
 
         String url = "";
-        OracleReportBean reportBean = new OracleReportBean("192.168.1.3", "7001", null);
+        OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "7001", null);
 
         switch (selectedReportType) {
         case "clusterWise":
