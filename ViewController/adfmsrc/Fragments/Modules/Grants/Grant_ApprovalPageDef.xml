@@ -26,6 +26,16 @@
     <searchRegion Binds="TblGrantApprovalMasterDView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalMasterDView3Query"/>
+    <iterator Binds="Grant_Approval_Detail_NtIntr2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Grant_Approval_Detail_NtIntr2Iterator"/>
+    <searchRegion Binds="Grant_Approval_Detail_NtIntr2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Grant_Approval_Detail_NtIntr2Query"/>
+    <iterator Binds="Grant_Approval_Detail_NtAppl2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Grant_Approval_Detail_NtAppl2Iterator"/>
+    <searchRegion Binds="Grant_Approval_Detail_NtAppl2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Grant_Approval_Detail_NtAppl2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1">
@@ -134,6 +144,26 @@
           <Item Value="Mobile"/>
           <Item Value="LandAcre"/>
           <Item Value="LandUnderOrch"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Grant_Approval_Detail_NtIntr2Iterator" id="Grant_Approval_Detail_NtIntr2">
+      <nodeDefinition DefName="model.VO.Grant_Approval_Detail_NtIntr" Name="Grant_Approval_Detail_NtIntr20">
+        <AttrNames>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Grant_Approval_Detail_NtAppl2Iterator" id="Grant_Approval_Detail_NtAppl2">
+      <nodeDefinition DefName="model.VO.Grant_Approval_Detail_NtAppl" Name="Grant_Approval_Detail_NtAppl20">
+        <AttrNames>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
