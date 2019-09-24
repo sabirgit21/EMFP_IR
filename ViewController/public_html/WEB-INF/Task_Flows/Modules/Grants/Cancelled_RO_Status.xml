@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
-  <task-flow-definition id="Issue_RO_Status_TaskFlow">
+  <task-flow-definition id="Cancelled_RO_Status">
     <default-activity>ExecuteWithParams</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
-    <view id="Issue_RO_Status">
-      <page>/WEB-INF/Fragments/Modules/Grants/Issue_RO_Status.jsff</page>
+    <view id="Cancel_RO_Status">
+      <page>/WEB-INF/Fragments/Modules/Grants/Cancel_RO_Status.jsff</page>
     </view>
     <method-call id="ExecuteWithParams">
       <method>#{bindings.ExecuteWithParams.execute}</method>
@@ -18,7 +18,7 @@
       <from-activity-id>ExecuteWithParams</from-activity-id>
       <control-flow-case id="__2">
         <from-outcome>ExecuteWithParams</from-outcome>
-        <to-activity-id>Issue_RO_Status</to-activity-id>
+        <to-activity-id>Cancel_RO_Status</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

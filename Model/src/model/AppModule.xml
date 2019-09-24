@@ -1211,6 +1211,12 @@
   <ViewUsage
     Name="Issue_RO_Status1"
     ViewObjectName="model.VO.Issue_RO_Status"/>
+  <ViewUsage
+    Name="Delivered_RO_Status1"
+    ViewObjectName="model.VO.Delivered_RO_Status"/>
+  <ViewUsage
+    Name="Cancelled_RO_Status1"
+    ViewObjectName="model.VO.Cancelled_RO_Status"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"

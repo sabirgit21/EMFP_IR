@@ -1,2 +1,87 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Delivered R.O. Status">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Delivered R.O. Status">
+                <af:table value="#{bindings.Delivered_RO_Status1.collectionModel}" var="row"
+                          rows="#{bindings.Delivered_RO_Status1.rangeSize}"
+                          emptyText="#{bindings.Delivered_RO_Status1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.Delivered_RO_Status1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Delivered_RO_Status1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.Delivered_RO_Status1.rangeSize}"
+                          filterModel="#{bindings.Delivered_RO_Status1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.Delivered_RO_Status1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2">
+                  <af:column sortProperty="#{bindings.Delivered_RO_Status1.hints.FarmerNo.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Delivered_RO_Status1.hints.FarmerNo.label}" id="c1">
+                    <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                  label="#{bindings.Delivered_RO_Status1.hints.FarmerNo.label}"
+                                  required="#{bindings.Delivered_RO_Status1.hints.FarmerNo.mandatory}"
+                                  columns="#{bindings.Delivered_RO_Status1.hints.FarmerNo.displayWidth}"
+                                  maximumLength="#{bindings.Delivered_RO_Status1.hints.FarmerNo.precision}"
+                                  shortDesc="#{bindings.Delivered_RO_Status1.hints.FarmerNo.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Delivered_RO_Status1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Delivered_RO_Status1.hints.Name.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.Delivered_RO_Status1.hints.Name.label}"
+                                  required="#{bindings.Delivered_RO_Status1.hints.Name.mandatory}"
+                                  columns="#{bindings.Delivered_RO_Status1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.Delivered_RO_Status1.hints.Name.precision}"
+                                  shortDesc="#{bindings.Delivered_RO_Status1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.Delivered_RO_Status1.hints.RoStatus.label}" id="c3">
+                    <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
+                                              label="#{row.bindings.RoStatus.label}"
+                                              shortDesc="#{bindings.Delivered_RO_Status1.hints.RoStatus.tooltip}"
+                                              id="sbc1"/>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+              <af:button actionListener="#{bindings.Execute.execute}" text="Update"
+                         disabled="#{!bindings.Execute.enabled}" id="b2"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+           
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

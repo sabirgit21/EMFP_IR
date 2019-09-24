@@ -4,28 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="Vctat_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="Vctat_RO_Status1Iterator"/>
     <searchRegion Binds="Vctat_RO_Status1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Vctat_RO_Status1Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
-      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
-        <AttrNames>
-          <Item Value="Crudid"/>
-          <Item Value="Operation"/>
-          <Item Value="Icon"/>
-          <Item Value="Bindingname"/>
-          <Item Value="Btndisabled"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="Vctat_RO_Status1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="Vctat_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="Vctat_RO_Status1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <tree IterBinding="Vctat_RO_Status1Iterator" id="Vctat_RO_Status1">
       <nodeDefinition DefName="model.VO.Vctat_RO_Status" Name="Vctat_RO_Status10">
         <AttrNames>
@@ -47,5 +30,6 @@
     </button>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="Vctat_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

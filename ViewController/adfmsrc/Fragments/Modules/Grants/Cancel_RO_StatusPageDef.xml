@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cancel_RO_StatusPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Cancelled_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Cancelled_RO_Status1Iterator"/>
+    <searchRegion Binds="Cancelled_RO_Status1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Cancelled_RO_Status1Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="Cancelled_RO_Status1Iterator" id="Cancelled_RO_Status1">
+      <nodeDefinition DefName="model.VO.Cancelled_RO_Status" Name="Cancelled_RO_Status10">
+        <AttrNames>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
