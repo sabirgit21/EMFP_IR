@@ -198,7 +198,7 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                        <af:panelGroupLayout id="pg1">
+                        <!--<af:panelGroupLayout id="pg1">
                             <af:spacer width="400" height="20" id="s16"/>
                             <af:button id="cb1" clientComponent="true" text="Add Auto"
                                        icon="#{resource['images:add.png']}"
@@ -217,7 +217,7 @@
                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                        icon="#{resource['images:delete.png']}" disabled="#{!bindings.Delete.enabled}"
                                        id="b7" immediate="true" action="Attendance_Detail.jsf"/>
-                        </af:panelGroupLayout>
+                        </af:panelGroupLayout>-->
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"

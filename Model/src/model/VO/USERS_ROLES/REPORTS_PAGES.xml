@@ -26,24 +26,24 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="REPORTS_PAGES"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT             
-TR.REPORTS_NAME, TR.AST, TR.REPORT_ICON, TR.REPORT_LINK,      
-RDR.ROLE_MASTER_ID, RDR.REPORTS_ID, RDR.ROLE_MASTER_ID, RDR.R_VIEW         
-FROM             
-TBL_REPORTS TR, TBL_ROLE_DETAIL_REPORTS RDR           
-Where             
-TR.REPORTS_ID = RDR.REPORTS_ID            
-AND            
-RDR.R_VIEW = 'Y'            
-AND            
-TR.AST = 'Y'            
-AND            
-TR.MODULE_MENU_ID = 8        
-AND            
-RDR.ROLE_MASTER_ID = :RROLEMASTERID]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT              
+TR.REPORTS_NAME, TR.AST, TR.REPORT_ICON, TR.REPORT_LINK, TR.SR_NO,      
+RDR.ROLE_MASTER_ID, RDR.REPORTS_ID, RDR.ROLE_MASTER_ID, RDR.R_VIEW          
+FROM              
+TBL_REPORTS TR, TBL_ROLE_DETAIL_REPORTS RDR            
+Where              
+TR.REPORTS_ID = RDR.REPORTS_ID             
+AND             
+RDR.R_VIEW = 'Y'             
+AND             
+TR.AST = 'Y'             
+AND             
+TR.MODULE_MENU_ID = 8         
+AND             
+RDR.ROLE_MASTER_ID = :RROLEMASTERID 
+ORDER BY TR.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="ReportsName"
     IsUpdateable="false"
@@ -107,7 +107,16 @@ RDR.ROLE_MASTER_ID = :RROLEMASTERID]]></SQLQuery>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
   </ViewAttribute>
-  
+  <ViewAttribute
+    Name="SrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SR_NO"
+    Expression="SR_NO"
+    SQLType="NUMERIC"/>
   <ViewAttribute
     Name="RoleMasterId"
     IsUpdateable="false"
@@ -163,5 +172,4 @@ RDR.ROLE_MASTER_ID = :RROLEMASTERID]]></SQLQuery>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  
 </ViewObject>

@@ -26,21 +26,22 @@
       Name="VariableScript"
       CodeSourceName="SETUP_PAGES"/>
   </Variable>
-  <SQLQuery><![CDATA[SELECT          
-TP.PAGES_NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK,   
-RDP.ROLE_MASTER_ID, RDP.PAGES_ID, RDP.ROLE_MASTER_ID, RDP.R_VIEW, RDP.R_ADD, RDP.R_EDIT, RDP.R_DELETE, RDP.R_PRINT         
-FROM          
-TBL_PAGES TP, TBL_ROLE_DETAIL_PAGES RDP        
-Where          
-TP.PAGES_ID = RDP.PAGES_ID         
-AND         
-RDP.R_VIEW = 'Y'         
-AND         
-TP.AST = 'Y'         
-AND         
-TP.MODULE_MENU_ID = 9     
-AND         
-RDP.ROLE_MASTER_ID = :SROLEMASTERID]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT           
+TP.PAGES_NAME, TP.AST, TP.PAGE_ICON, TP.PAGE_LINK, TP.SR_NO,  
+RDP.ROLE_MASTER_ID, RDP.PAGES_ID, RDP.ROLE_MASTER_ID, RDP.R_VIEW, RDP.R_ADD, RDP.R_EDIT, RDP.R_DELETE, RDP.R_PRINT          
+FROM           
+TBL_PAGES TP, TBL_ROLE_DETAIL_PAGES RDP         
+Where           
+TP.PAGES_ID = RDP.PAGES_ID          
+AND          
+RDP.R_VIEW = 'Y'          
+AND          
+TP.AST = 'Y'          
+AND          
+TP.MODULE_MENU_ID = 9      
+AND          
+RDP.ROLE_MASTER_ID = :SROLEMASTERID 
+ORDER BY TP.SR_NO ASC]]></SQLQuery>
   <ViewAttribute
     Name="PagesName"
     IsUpdateable="false"
@@ -101,6 +102,16 @@ RDP.ROLE_MASTER_ID = :SROLEMASTERID]]></SQLQuery>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="SrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SR_NO"
+    Expression="SR_NO"
+    SQLType="NUMERIC"/>
   <ViewAttribute
     Name="RoleMasterId"
     IsUpdateable="false"
