@@ -30,7 +30,7 @@ public class farmer_report {
         }
 
         String url = "";
-        OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "7001", null);
+        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
         reportBean.setReportParameter("P_Farmer_Reg_id", gotFarmerNum);
         reportBean.setReportParameter("P_Cluster_ID", gotClusterNum);
         reportBean.setReportParameter("P_City_id", gotCity);

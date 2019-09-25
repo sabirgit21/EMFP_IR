@@ -43,6 +43,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FarmerNo"/>
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

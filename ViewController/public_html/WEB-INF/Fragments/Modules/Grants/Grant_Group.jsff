@@ -33,7 +33,7 @@
                           filterModel="#{bindings.TblGrantGroupMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrantGroupMasterView1Query.processQuery}" varStatus="vs" id="t1"
                           partialTriggers="::b3">
-                  <af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.name}"
+                  <!--<af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="Master ID" id="c1"
                              width="98">
@@ -49,9 +49,9 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column headerText="Phase"
-                             id="c2">
+                             id="c2" width="164">
                     <af:selectOneChoice value="#{row.bindings.GrantGroupMasterPhaseId.inputValue}"
                     autoSubmit="true"
                                         label="#{row.bindings.GrantGroupMasterPhaseId.label}"
@@ -63,7 +63,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Cluster No."
-                             id="c3">
+                             id="c3" width="133">
                     <af:selectOneChoice value="#{row.bindings.GrantGroupMasterClusterId.inputValue}"
                                         label="#{row.bindings.GrantGroupMasterClusterId.label}"
                                         required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterClusterId.mandatory}"
@@ -74,7 +74,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Nominee"
-                             id="c4">
+                             id="c4" width="330">
                     <af:selectOneChoice value="#{row.bindings.GrantGroupMasterNominee.inputValue}"
                                         label="#{row.bindings.GrantGroupMasterNominee.label}"
                                         required="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterNominee.mandatory}"
@@ -121,7 +121,7 @@
                           filterModel="#{bindings.TblGrantGroupDetailView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrantGroupDetailView3Query.processQuery}" varStatus="vs" id="t2"
                           partialTriggers=" ::b6">
-                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.name}"
+                  <!--<af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="Detail ID" id="c5">
                     <af:inputText value="#{row.bindings.GrantGroupDetailId.inputValue}" readOnly="true"
@@ -135,8 +135,8 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupDetailId.format}"/>
                     </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.name}"
+                  </af:column>-->
+                  <!--<af:column sortProperty="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="Master ID" id="c6">
                     <af:inputText value="#{row.bindings.GrantGroupMasterId.inputValue}" readOnly="true"
@@ -150,8 +150,8 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantGroupDetailView3.hints.GrantGroupMasterId.format}"/>
                     </af:inputText>
-                  </af:column>
-                  <af:column headerText="Farmer No." id="c7">
+                  </af:column>-->
+                  <af:column headerText="Farmer No." id="c7" width="133">
                     <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
                                         label="#{row.bindings.FarmerRegId.label}"
                                         required="#{bindings.TblGrantGroupDetailView3.hints.FarmerRegId.mandatory}"
@@ -161,7 +161,7 @@
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Farmer Name" id="c8">
+                  <af:column headerText="Farmer Name" id="c8" width="130">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.Name.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.Name.mandatory}"
@@ -171,7 +171,7 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Father Name" id="c9">
+                  <af:column headerText="Father Name" id="c9" width="174">
                     <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.FatherName.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.FatherName.mandatory}"
@@ -181,7 +181,7 @@
                       <f:validator binding="#{row.bindings.FatherName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="CNIC" id="c10">
+                  <af:column headerText="CNIC" id="c10" width="151">
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.Cnic.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.Cnic.mandatory}"
@@ -191,7 +191,7 @@
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Mobile" id="c11">
+                  <af:column headerText="Mobile" id="c11" width="112">
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.Mobile.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.Mobile.mandatory}"
@@ -201,7 +201,7 @@
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Address" id="c12">
+                  <af:column headerText="Address" id="c12" width="217">
                     <af:inputText value="#{row.bindings.PerAddress.inputValue}"
                                   label="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.label}"
                                   required="#{bindings.TblGrantGroupDetailView3.hints.PerAddress.mandatory}"

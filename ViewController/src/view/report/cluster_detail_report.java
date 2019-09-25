@@ -25,7 +25,7 @@ public class cluster_detail_report {
         if (selectedReportType == null) {
             selectedReportType = "notSelected";
         }
-        OracleReportBean reportBean = new OracleReportBean("203.223.173.235", "9002", null);
+        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";

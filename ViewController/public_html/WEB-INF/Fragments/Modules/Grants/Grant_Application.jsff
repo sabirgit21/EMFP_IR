@@ -37,8 +37,8 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantAppMasterView1Query.processQuery}"
                                           varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4">
-                                    <af:column headerText="#{bindings.TblGrantAppMasterView1.hints.Dated.label}"
-                                               id="c1">
+                                    <af:column headerText="Date"
+                                               id="c1" width="135">
                                         <af:inputDate value="#{row.bindings.Dated.inputValue}"
                                                       label="#{bindings.TblGrantAppMasterView1.hints.Dated.label}"
                                                       required="#{bindings.TblGrantAppMasterView1.hints.Dated.mandatory}"
@@ -51,8 +51,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.PhaseId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppMasterView1.hints.PhaseId.label}"
-                                               id="c2">
+                                               headerText="Phase"
+                                               id="c2" width="127">
                                         <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" autoSubmit="true"
                                                             label="#{row.bindings.PhaseId.label}"
                                                             required="#{bindings.TblGrantAppMasterView1.hints.PhaseId.mandatory}"
@@ -64,8 +64,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.ClusterId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppMasterView1.hints.ClusterId.label}"
-                                               id="c3">
+                                               headerText="Cluster"
+                                               id="c3" width="108">
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
                                                             required="#{bindings.TblGrantAppMasterView1.hints.ClusterId.mandatory}"
@@ -130,11 +130,11 @@
                                           filterModel="#{bindings.TblGrantAppDetailView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantAppDetailView3Query.processQuery}"
-                                          varStatus="vs" id="t2" partialTriggers="::b2 ::b3 ::b4">
+                                          varStatus="vs" id="t2">
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.label}"
-                                               id="c4">
+                                               headerText="Farmer No."
+                                               id="c4" width="148">
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.mandatory}"
@@ -147,7 +147,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.Name.label}" id="c5">
+                                               headerText="#{bindings.TblGrantAppDetailView3.hints.Name.label}" id="c5"
+                                               width="150">
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.Name.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.Name.mandatory}"
@@ -160,8 +161,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.FatherName.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.FatherName.label}"
-                                               id="c6">
+                                               headerText="Father Name"
+                                               id="c6" width="151">
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.FatherName.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.FatherName.mandatory}"
@@ -174,7 +175,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.Cnic.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.Cnic.label}" id="c7">
+                                               headerText="CNIC" id="c7" width="147">
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.Cnic.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.Cnic.mandatory}"
@@ -187,8 +188,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.GrantStatus.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.GrantStatus.label}"
-                                               id="c8">
+                                               headerText="Grant Status"
+                                               id="c8" width="132">
                                         <af:selectOneChoice value="#{row.bindings.GrantStatus.inputValue}"
                                                             label="#{row.bindings.GrantStatus.label}"
                                                             required="#{bindings.TblGrantAppDetailView3.hints.GrantStatus.mandatory}"
@@ -200,8 +201,8 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.GrantInterest.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.GrantInterest.label}"
-                                               id="c9">
+                                               headerText="Grant Interest"
+                                               id="c9" width="139">
                                         <af:selectOneChoice value="#{row.bindings.GrantInterest.inputValue}"
                                                             label="#{row.bindings.GrantInterest.label}"
                                                             required="#{bindings.TblGrantAppDetailView3.hints.GrantInterest.mandatory}"

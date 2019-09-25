@@ -38,7 +38,7 @@
                           queryListener="#{bindings.TblGrantRateView1Query.processQuery}" varStatus="vs" id="t1"
                           partialTriggers="::b1 ::b2 ::b3 ::b5" width="881"
                           scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.TblGrantRateView1.hints.GrantRateId.name}" 
+                  <!--<af:column sortProperty="#{bindings.TblGrantRateView1.hints.GrantRateId.name}" 
                              filterable="true" sortable="true" 
                              headerText="Grant Rate ID" 
                              id="c1" align="center" width="60">
@@ -58,7 +58,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantRateView1.hints.GrantRateId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblGrantRateView1.hints.PhaseId.name}" 
                              filterable="true" sortable="true" 
                              headerText="Phase" id="c2" width="150">

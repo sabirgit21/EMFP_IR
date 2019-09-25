@@ -22,8 +22,8 @@
     Name="getClstrID"
     Kind="where"
     Type="java.math.BigDecimal"/>
-  <SQLQuery><![CDATA[select tbl_farmer_reg.farmer_reg_id,tbl_farmer_reg.farmer_no,tbl_farmer_reg.cluster_id 
-from tbl_farmer_reg   
+  <SQLQuery><![CDATA[select tbl_farmer_reg.farmer_reg_id,tbl_farmer_reg.farmer_no,tbl_farmer_reg.name,tbl_farmer_reg.cluster_id  
+from tbl_farmer_reg    
 where tbl_farmer_reg.cluster_id=:getClstrID]]></SQLQuery>
   <ViewAttribute
     Name="FarmerRegId"
@@ -48,6 +48,21 @@ where tbl_farmer_reg.cluster_id=:getClstrID]]></SQLQuery>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute

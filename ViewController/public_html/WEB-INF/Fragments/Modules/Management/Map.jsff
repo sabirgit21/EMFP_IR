@@ -28,7 +28,7 @@
                     rowSelection="single" fetchSize="#{bindings.Map_Farmer_DetailView11.rangeSize}"
                     filterModel="#{bindings.Map_Farmer_DetailView11Query.queryDescriptor}" filterVisible="true"
                     queryListener="#{bindings.Map_Farmer_DetailView11Query.processQuery}" varStatus="vs" id="t3">
-                    <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.name}" filterable="true"
+                    <!--<af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.name}" filterable="true"
                        sortable="true" headerText="Farmer No." id="c16">
               <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                             label="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.label}"
@@ -38,7 +38,7 @@
                             shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.tooltip}" id="it15">
                 <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
               </af:inputText>
-            </af:column>
+            </af:column>-->
             <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Name.name}" filterable="true"
                        sortable="true" headerText="Farmer Name" id="c13">
               <af:inputText value="#{row.bindings.Name.inputValue}"
@@ -73,7 +73,16 @@
                 <f:validator binding="#{row.bindings.Cnic.validator}"/>
               </af:inputText>
             </af:column>
-            
+            <af:column headerText="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}" id="c1">
+              <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                            label="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}"
+                            required="#{bindings.Map_Farmer_DetailView11.hints.Mobile.mandatory}"
+                            columns="#{bindings.Map_Farmer_DetailView11.hints.Mobile.displayWidth}"
+                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Mobile.precision}"
+                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Mobile.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.Mobile.validator}"/>
+              </af:inputText>
+            </af:column>
             <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.name}" filterable="true"
                        sortable="true" headerText="Land Under Orchard"
                        id="c17">

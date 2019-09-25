@@ -36,7 +36,7 @@
                                           queryListener="#{bindings.TblGrantApprovalMasterView1Query.processQuery}"
                                           varStatus="vs" id="t1" width="812" scrollPolicy="page"
                                           autoHeightRows="0">
-                                    <af:column sortProperty="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterId.name}"
+                                    <!--<af:column sortProperty="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterId.name}"
                                                filterable="true" sortable="true" headerText="Grant Approval Master ID"
                                                id="c1" align="center" width="60">
                                         <f:facet name="filter">
@@ -54,9 +54,9 @@
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterId.format}"/>
                                         </af:inputText>
-                                    </af:column>
+                                    </af:column>-->
                                     <af:column headerText="Phase"
-                                               id="c8">
+                                               id="c8" width="100">
                                         <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}"
                                                             label="#{row.bindings.PhaseId.label}"
                                                             required="#{bindings.TblGrantApprovalMasterView1.hints.PhaseId.mandatory}"
@@ -67,7 +67,7 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column headerText="Cluster"
-                                               id="c2">
+                                               id="c2" width="100">
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
                                                             required="#{bindings.TblGrantApprovalMasterView1.hints.ClusterId.mandatory}"
@@ -132,7 +132,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Grant Type"
-                                               id="c29">
+                                               id="c29" width="100">
                                         <af:selectOneChoice value="#{row.bindings.GrantApprovalMasterType.inputValue}"
                                                             label="#{row.bindings.GrantApprovalMasterType.label}"
                                                             required="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterType.mandatory}"
@@ -144,7 +144,7 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column headerText="Group Nominee"
-                                               id="c30">
+                                               id="c30" width="235">
                                         <af:selectOneChoice value="#{row.bindings.GrantApprovalMasterGroupId.inputValue}"
                                                             label="#{row.bindings.GrantApprovalMasterGroupId.label}"
                                                             required="#{bindings.TblGrantApprovalMasterView1.hints.GrantApprovalMasterGroupId.mandatory}"
@@ -773,7 +773,7 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantApprovalDetailDView3Query.processQuery}"
                                           varStatus="vs" id="t3">
-                                    <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailDId.name}"
+                                    <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailDId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Detail D ID"
                                                id="c15">
@@ -805,9 +805,9 @@
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailId.format}"/>
                                         </af:inputText>
-                                    </af:column>
+                                    </af:column>-->
                                     <af:column headerText="Farm Machinery"
-                                               id="c21">
+                                               id="c21" width="130">
                                         <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                                             label="#{row.bindings.ItemL4Id.label}"
                                                             required="#{bindings.TblGrantApprovalDetailDView3.hints.ItemL4Id.mandatory}"
@@ -818,7 +818,7 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column headerText="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.label}"
-                                               id="c24">
+                                               id="c24" width="70">
                                         <af:inputText value="#{row.bindings.Qty.inputValue}"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.label}"
                                                       required="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.mandatory}"
@@ -834,7 +834,7 @@
                                     <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.name}"
                                                filterable="true" sortable="true"
                                                headerText="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.label}"
-                                               id="c22">
+                                               id="c22" width="100">
                                         <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.label}"
                                                       required="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.mandatory}"

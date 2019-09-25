@@ -4,7 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="MMP_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status1Iterator"/>
+    <iterator Binds="MMP_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status1Iterator"
+              Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MMP_RO_Status1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status1Query"/>
   </executables>
