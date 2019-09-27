@@ -106,7 +106,7 @@ public class Login {
     public static Connection getConnection() throws SQLException {
         String username = "emfp";
         String password = "emfp";
-        String thinConn = "jdbc:oracle:thin:@207.180.246.67:1521:orcl";
+        String thinConn = "jdbc:oracle:thin:@192.168.1.3:1521:orcl";
         DriverManager.registerDriver(new OracleDriver());
         Connection conn = DriverManager.getConnection(thinConn, username, password);
         conn.setAutoCommit(false);

@@ -171,9 +171,6 @@ order by col_flag,farmer_reg_id]]></SQLQuery>
       <Attr Name="_DisplaySize" Value="175"/>
     </DesignTime>
   </ViewAttribute>
-  <AttrArray Name="KeyAttributes">
-    <Item Value="ClusterId"/>
-  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
