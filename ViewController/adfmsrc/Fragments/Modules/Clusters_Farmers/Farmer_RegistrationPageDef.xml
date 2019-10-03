@@ -42,6 +42,8 @@
           <Item Value="ClusterId"/>
           <Item Value="FarmerNo"/>
           <Item Value="Cnic"/>
+          <Item Value="ClusterNo"/>
+          <Item Value="PhaseName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

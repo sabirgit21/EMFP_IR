@@ -41,15 +41,15 @@
                                                       filterVisible="true"
                                                       queryListener="#{bindings.TblFarmerRegView1Query.processQuery}"
                                                       varStatus="vs" id="t1"
-                                                      partialTriggers="::b4 ::b6 ::b7 ::b8 ::b11 ::b12 ::b13 ::b33"
+                                                      partialTriggers="::b4 ::b6 ::b7 ::b8 ::b33"
                                                       width="765" scrollPolicy="page" autoHeightRows="0">
                                                 <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.ClusterId.name}"
-                                                           filterable="true" sortable="true" headerText="Cluster"
+                                                           headerText="Cluster"
                                                            id="c20" width="150">
-                                                    <f:facet name="filter">
+                                                    <!--<f:facet name="filter">
                                                         <af:inputText value="#{vs.filterCriteria.ClusterId}" id="it18"
                                                                       placeholder="Search Cluster"></af:inputText>
-                                                    </f:facet>
+                                                    </f:facet>-->
                                                     <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                                         label="#{row.bindings.ClusterId.label}"
                                                                         required="#{bindings.TblFarmerRegView1.hints.ClusterId.mandatory}"
@@ -59,6 +59,74 @@
                                                                        id="si3"/>
                                                         <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                                                     </af:selectOneChoice>
+                                                </af:column>
+                                                <!--<af:column headerText="#{bindings.TblFarmerRegView1.hints.Cluster_NO.label}"
+                                                filterable="true" sortable="true" 
+                                                           id="c44">
+                                                           <f:facet name="filter">
+                                                        <af:inputText value="#{vs.filterCriteria.Cluster_NO}" id="it18"
+                                                                      placeholder="Search Cluster"></af:inputText>
+                                                    </f:facet>
+                                                    <af:selectOneChoice value="#{row.bindings.Cluster_NO.inputValue}"
+                                                    readOnly="true"
+                                                                        label="#{row.bindings.Cluster_NO.label}"
+                                                                        required="#{bindings.TblFarmerRegView1.hints.Cluster_NO.mandatory}"
+                                                                        shortDesc="#{bindings.TblFarmerRegView1.hints.Cluster_NO.tooltip}"
+                                                                        id="soc13">
+                                                        <f:selectItems value="#{row.bindings.Cluster_NO.items}"
+                                                                       id="si13"/>
+                                                        <f:validator binding="#{row.bindings.Cluster_NO.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>
+                                                <af:column headerText="#{bindings.TblFarmerRegView1.hints.Cluster_Phase.label}"
+                                                           id="c45" filterable="true" sortable="true">
+                                                            <f:facet name="filter">
+                                                        <af:inputText value="#{vs.filterCriteria.Cluster_Phase}"
+                                                                      id="it86"
+                                                                      placeholder="Search Phase"></af:inputText>
+                                                    </f:facet>
+                                                    <af:selectOneChoice value="#{row.bindings.Cluster_Phase.inputValue}"
+                                                    readOnly="true"
+                                                                        label="#{row.bindings.Cluster_Phase.label}"
+                                                                        required="#{bindings.TblFarmerRegView1.hints.Cluster_Phase.mandatory}"
+                                                                        shortDesc="#{bindings.TblFarmerRegView1.hints.Cluster_Phase.tooltip}"
+                                                                        id="soc14">
+                                                        <f:selectItems value="#{row.bindings.Cluster_Phase.items}"
+                                                                       id="si14"/>
+                                                        <f:validator binding="#{row.bindings.Cluster_Phase.validator}"/>
+                                                    </af:selectOneChoice>
+                                                </af:column>-->
+                                                <af:column headerText="#{bindings.TblFarmerRegView1.hints.ClusterNo.label}"
+                                                           id="c44" filterable="true" sortable="true" >
+                                                           <f:facet name="filter">
+                                                        <af:inputText value="#{vs.filterCriteria.ClusterNo}" id="it18"
+                                                                      placeholder="Search Cluster"></af:inputText>
+                                                    </f:facet>
+                                                    <af:inputText value="#{row.bindings.ClusterNo.inputValue}" readOnly="true"
+                                                                  label="#{bindings.TblFarmerRegView1.hints.ClusterNo.label}"
+                                                                  required="#{bindings.TblFarmerRegView1.hints.ClusterNo.mandatory}"
+                                                                  columns="#{bindings.TblFarmerRegView1.hints.ClusterNo.displayWidth}"
+                                                                  maximumLength="#{bindings.TblFarmerRegView1.hints.ClusterNo.precision}"
+                                                                  shortDesc="#{bindings.TblFarmerRegView1.hints.ClusterNo.tooltip}"
+                                                                  id="it87">
+                                                        <f:validator binding="#{row.bindings.ClusterNo.validator}"/>
+                                                    </af:inputText>
+                                                </af:column>
+                                                <af:column headerText="#{bindings.TblFarmerRegView1.hints.PhaseName.label}"
+                                                           id="c45" filterable="true" sortable="true" >
+                                                            <f:facet name="filter">
+                                                        <af:inputText value="#{vs.filterCriteria.PhaseName}" id="it88"
+                                                                      placeholder="Search Phase"></af:inputText>
+                                                    </f:facet>
+                                                    <af:inputText value="#{row.bindings.PhaseName.inputValue}" readOnly="true"
+                                                                  label="#{bindings.TblFarmerRegView1.hints.PhaseName.label}"
+                                                                  required="#{bindings.TblFarmerRegView1.hints.PhaseName.mandatory}"
+                                                                  columns="#{bindings.TblFarmerRegView1.hints.PhaseName.displayWidth}"
+                                                                  maximumLength="#{bindings.TblFarmerRegView1.hints.PhaseName.precision}"
+                                                                  shortDesc="#{bindings.TblFarmerRegView1.hints.PhaseName.tooltip}"
+                                                                  id="it86">
+                                                        <f:validator binding="#{row.bindings.PhaseName.validator}"/>
+                                                    </af:inputText>
                                                 </af:column>
                                                 <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.FarmerRegId.name}"
                                                            filterable="true" sortable="true" headerText="Farmer Reg ID"
@@ -385,7 +453,7 @@
                                           filterModel="#{bindings.TblFarmerRegLandView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblFarmerRegLandView3Query.processQuery}"
-                                          varStatus="vs" id="t2" partialTriggers="::b15 ::b16 ::b17 ::b34"
+                                          varStatus="vs" id="t2" partialTriggers=" ::b34"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblFarmerRegLandView3.hints.FarmerRegLandId.name}"
                                                filterable="true" sortable="true" headerText="Land ID" align="center"
@@ -666,7 +734,7 @@
                                           filterModel="#{bindings.TblFarmerRegMemView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblFarmerRegMemView3Query.processQuery}"
-                                          varStatus="vs" id="t3" partialTriggers="::b19 ::b20 ::b21 ::b35" width="1000"
+                                          varStatus="vs" id="t3" partialTriggers=" ::b35" width="1000"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblFarmerRegMemView3.hints.FarmerRegMemId.name}"
                                                filterable="true" sortable="true" align="center" headerText="Member ID"
@@ -871,7 +939,7 @@
                                           filterModel="#{bindings.TblFarmerRegCropsView4Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblFarmerRegCropsView4Query.processQuery}"
-                                          varStatus="vs" id="t4" partialTriggers="::b23 ::b24 ::b25 ::b36" width="999"
+                                          varStatus="vs" id="t4" partialTriggers=" ::b36" width="999"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblFarmerRegCropsView4.hints.FarmerRegCropsId.name}"
                                                filterable="true" sortable="true" align="center"
@@ -1035,7 +1103,7 @@
                                           filterModel="#{bindings.TblFarmerRegCertView4Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblFarmerRegCertView4Query.processQuery}"
-                                          varStatus="vs" id="t5" partialTriggers="::b12 ::b27 ::b28 ::b37" width="393"
+                                          varStatus="vs" id="t5" partialTriggers=" ::b37" width="393"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblFarmerRegCertView4.hints.FarmerRegCertId.name}"
                                                filterable="true" sortable="true" headerText="Farmer Certification ID"
@@ -1115,7 +1183,7 @@
                                           filterModel="#{bindings.TblFarmerRegOwnershipView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblFarmerRegOwnershipView3Query.processQuery}"
-                                          varStatus="vs" id="t6" partialTriggers="::b10 ::b30 ::b31 ::b38" width="927"
+                                          varStatus="vs" id="t6" partialTriggers="::b10 ::b38" width="927"
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblFarmerRegOwnershipView3.hints.FarmerRegOwnershipId.name}"
                                                filterable="true" sortable="true" headerText="Farmer Owner ID" id="c38"
@@ -1226,16 +1294,16 @@
                                                disabled="#{!bindings.Delete5.enabled}" id="b31" immediate="true"
                                                action="Farmer_Registration.jsf"/>
                                 </af:panelGroupLayout>-->
-                                 <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:spacer width="190" height="10" id="s4"/>
-                            <af:iterator id="i2" var="index" varStatus="status"
+                                 <af:panelGroupLayout id="pgl12" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s20"/>
+                            <af:iterator id="i7" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>
                                 </af:button>
-                                <af:spacer width="5" height="10" id="s5"/>
+                                <af:spacer width="5" height="10" id="s21"/>
                             </af:iterator>
                         </af:panelGroupLayout>
                             </af:showDetailItem>

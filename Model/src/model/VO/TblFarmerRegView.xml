@@ -149,6 +149,44 @@
   <EntityUsage
     Name="TblFarmerReg"
     Entity="model.EO.TblFarmerReg"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.FkTblFarmerRegFkAssoc"
+    AssociationEnd="model.EO.FkTblFarmerRegFkAssoc.TblCluster"
+    SourceUsage="model.VO.TblFarmerRegView.TblFarmerReg"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFarmerReg.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblPhase"
+    Entity="model.EO.TblPhase"
+    Association="model.EO.Fk9TblClusterFkAssoc"
+    AssociationEnd="model.EO.Fk9TblClusterFkAssoc.TblPhase"
+    SourceUsage="model.VO.TblFarmerRegView.TblCluster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblPhase.PhaseId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblCluster.PhaseId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="FarmerRegId"
     IsNotNull="true"
@@ -355,6 +393,33 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId1"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
+  <ViewAttribute
+    Name="PhaseName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblPhase"
+    AliasName="NAME1"/>
+  <ViewAttribute
+    Name="PhaseId"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblPhase"
+    AliasName="PHASE_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="FarmerRegId"/>
   </AttrArray>
@@ -413,6 +478,11 @@
     ViewLink="model.VO.FKATblGrantGroupDetailFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="FarmerRegId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="FarmerRegId"
