@@ -66,4 +66,9 @@
     <managed-bean-class>view.USERS_CRUD</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name>roprinting_report_backbean</managed-bean-name>
+    <managed-bean-class>view.report.roprinting_report</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

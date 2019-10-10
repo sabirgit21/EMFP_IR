@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="RO_PrintingPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Issue_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="Issue_RO_Status1Iterator" ListOperMode="navigation" ListIter="Issue_RO_Status1Iterator"
+          id="Issue_RO_Status1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalDetailId"/>
+        <Item Value="FarmerNo"/>
+        <Item Value="Name"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

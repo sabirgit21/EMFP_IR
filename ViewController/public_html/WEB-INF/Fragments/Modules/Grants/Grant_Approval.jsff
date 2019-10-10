@@ -344,8 +344,22 @@
                                           queryListener="#{bindings.TblGrantApprovalDetailView4Query.processQuery}"
                                           varStatus="vs" id="t2" partialTriggers="::b1 " width="990" scrollPolicy="page"
                                           autoHeightRows="0">
+                                    <af:column headerText="ID"
+                                               id="c1" width="57">
+                                        <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.label}"
+                                                      required="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.mandatory}"
+                                                      columns="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.displayWidth}"
+                                                      maximumLength="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.precision}"
+                                                      shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.tooltip}"
+                                                      id="it1">
+                                            <f:validator binding="#{row.bindings.GrantApprovalDetailId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblGrantApprovalDetailView4.hints.GrantApprovalDetailId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
                                     <af:column headerText="Farmer No."
-                                               id="c6">
+                                               id="c6" width="143">
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.FarmerNo.mandatory}"
@@ -374,7 +388,7 @@
                     </af:selectOneChoice>
                   </af:column>-->
                                     <af:column headerText="Farmer Name"
-                                               id="c12">
+                                               id="c12" width="100">
                                         <af:inputText value="#{row.bindings.Name.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.Name.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.Name.mandatory}"
@@ -386,7 +400,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Father Name"
-                                               id="c13">
+                                               id="c13" width="100">
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.FatherName.mandatory}"
@@ -398,7 +412,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="CNIC"
-                                               id="c16">
+                                               id="c16" width="100">
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.Cnic.mandatory}"
@@ -410,7 +424,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Mobile"
-                                               id="c17">
+                                               id="c17" width="100">
                                         <af:inputText value="#{row.bindings.Mobile.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.Mobile.mandatory}"
@@ -422,7 +436,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Land Under Orch"
-                                               id="c10">
+                                               id="c10" width="100">
                                         <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.LandUnderOrch.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.LandUnderOrch.mandatory}"
@@ -436,7 +450,7 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Grant Rate"
-                                               id="c9">
+                                               id="c9" width="100">
                                         <af:selectOneChoice value="#{row.bindings.GrantRateId.inputValue}"
                                                             readOnly="true" label="#{row.bindings.GrantRateId.label}"
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.GrantRateId.mandatory}"

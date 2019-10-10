@@ -158,6 +158,7 @@
         <page path="/WEB-INF/Task_Flows/Modules/Grants/Cancelled_RO_Status.xml#Cancelled_RO_Status@ExecuteWithParams"
               usageId="view_Cancelled_RO_Status_Cancelled_RO_Status_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Grants/Cancel_RO_Status.jsff" usageId="view_Cancel_RO_StatusPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/RO_Printing.jsff" usageId="view_RO_PrintingPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -309,6 +310,7 @@
         <page id="view_Cancelled_RO_Status_Cancelled_RO_Status_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Grants.Cancelled_RO_Status_Cancelled_RO_Status_ExecuteWithParamsPageDef"/>
         <page id="view_Cancel_RO_StatusPageDef" path="Fragments.Modules.Grants.Cancel_RO_StatusPageDef"/>
+        <page id="view_RO_PrintingPageDef" path="Fragments.Modules.Grants.RO_PrintingPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
