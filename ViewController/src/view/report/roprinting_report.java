@@ -21,7 +21,7 @@ public class roprinting_report {
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
-        reportBean.setReportParameter("app_det_id",gotprinting);
+        reportBean.setReportParameter("appr_det_id",gotprinting);
         
         switch (gotprinting) {
         case "notSelected":
@@ -31,17 +31,17 @@ public class roprinting_report {
         showMessage("Please Select Report Type");
         break;
         default:
-//            System.out.println("phaseWise");
-//            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_ase_Wise&");
-//            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-//                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-//            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-//                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-//            reportBean.setReportParameter("paramform", "no");
-//            
-//            url = reportBean.getReportServerURL();
-//            System.out.println("Url => " + url);
-//            reportBean.openUrlInNewWindow(url);
+            System.out.println("default");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Voucher&");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+            
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
             System.out.println("defaulter bla bla bla report");
         break;
         }
