@@ -569,6 +569,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         setAttributeInternal(MAP_FARMER_DETAIL, value);
     }
 
+
     /**
      * @param grantApprovalDetailId key constituent
 

@@ -118,6 +118,25 @@
   <EntityUsage
     Name="TblGrantApprovalMaster"
     Entity="model.EO.TblGrantApprovalMaster"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.FkTblGrantApprovalMasterFkAssoc"
+    AssociationEnd="model.EO.FkTblGrantApprovalMasterFkAssoc.TblCluster"
+    SourceUsage="model.VO.TblGrantApprovalMasterView.TblGrantApprovalMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblGrantApprovalMaster.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="GrantApprovalMasterId"
     IsNotNull="true"
@@ -201,6 +220,22 @@
     EntityAttrName="GrantAppDetailId"
     EntityUsage="TblGrantApprovalMaster"
     AliasName="GRANT_APP_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId1"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantApprovalMasterId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblGrantApprovalDetailView"
     ViewLink="model.VO.FkTblGrantApprovalDetailFkLink"
@@ -224,6 +259,11 @@
   <ViewLinkAccessor
     Name="Grant_Approval_Detail_NtAppl"
     ViewLink="model.VO.FKAGrantApprovalDetailNtApplFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MMP_RO_Status"
+    ViewLink="model.VO.MMP_RO_Status_FkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <SortCriteria>

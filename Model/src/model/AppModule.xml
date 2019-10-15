@@ -1217,6 +1217,15 @@
   <ViewUsage
     Name="Cancelled_RO_Status1"
     ViewObjectName="model.VO.Cancelled_RO_Status"/>
+  <ViewUsage
+    Name="MMP_RO_Status2"
+    ViewObjectName="model.VO.MMP_RO_Status"/>
+  <ViewUsage
+    Name="TblFarmerRegLandView6"
+    ViewObjectName="model.VO.TblFarmerRegLandView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView4"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2338,5 +2347,23 @@
     ViewLinkObjectName="model.VO.FKAGrantApprovalDetailNtApplFKLink"
     SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
     DstViewUsageName="model.AppModule.Grant_Approval_Detail_NtAppl2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MMP_RO_Status_FkLink1"
+    ViewLinkObjectName="model.VO.MMP_RO_Status_FkLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.MMP_RO_Status2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TblFarmerRegMMPROStatus1"
+    ViewLinkObjectName="model.VO.TblFarmerRegMMPROStatus"
+    SrcViewUsageName="model.AppModule.MMP_RO_Status2"
+    DstViewUsageName="model.AppModule.TblFarmerRegLandView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TblGrantApprovalDeatailDMMPROStatus1"
+    ViewLinkObjectName="model.VO.TblGrantApprovalDeatailDMMPROStatus"
+    SrcViewUsageName="model.AppModule.MMP_RO_Status2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView4"
     Reversed="false"/>
 </AppModule>

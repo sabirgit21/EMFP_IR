@@ -20,16 +20,4 @@
       <Item Value="model.queryBasedVO.TblTeamView.TeamId"/>
     </AttrArray>
   </ViewLinkDefEnd>
-  <ViewLinkDefEnd
-    Name="TblTrainingSchMasterView"
-    Cardinality="-1"
-    Owner="model.queryBasedVO.TblTrainingSchMasterView">
-    <DesignTime>
-      <Attr Name="_finderName" Value="TblTrainingSchMasterView"/>
-      <Attr Name="_isUpdateable" Value="true"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.queryBasedVO.TblTrainingSchMasterView.TeamId"/>
-    </AttrArray>
-  </ViewLinkDefEnd>
 </ViewLink>
