@@ -18,7 +18,7 @@
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-            <af:panelTabbed position="above" id="pt3">
+            <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab3" text="Tab Label 3">
                 <af:selectOneChoice value="#{bindings.TblGrantApprovalMasterView1.inputValue}"
                 autoSubmit="true" label="#{bindings.TblGrantApprovalMasterView1.label}"
@@ -32,7 +32,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-            <af:panelTabbed position="above" id="pt2">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Tab Label 2">
                 <af:table value="#{bindings.MMP_RO_Status2.collectionModel}" var="row"
                           rows="#{bindings.MMP_RO_Status2.rangeSize}"
@@ -97,7 +97,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-            <af:panelTabbed position="above" id="pt1">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Farmer's Land Detail">
                 <af:table value="#{bindings.TblFarmerRegLandView6.collectionModel}" var="row"
                           rows="#{bindings.TblFarmerRegLandView6.rangeSize}"

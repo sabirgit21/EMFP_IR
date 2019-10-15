@@ -35,7 +35,7 @@
                                           filterModel="#{bindings.TblMonParamView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblMonParamView1Query.processQuery}" varStatus="vs"
-                                          id="t2" partialTriggers="::b4 ::b6 ::b7 ::b2" width="991" scrollPolicy="page"
+                                          id="t2" partialTriggers="::b2" width="991" scrollPolicy="page"
                                           autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblMonParamView1.hints.OutputIndId.name}"
                                                filterable="true" sortable="true" headerText="Output Indicator" id="c1"
