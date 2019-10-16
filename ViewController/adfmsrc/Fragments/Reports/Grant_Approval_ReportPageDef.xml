@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Grant_Approval_ReportPageDef"
+                Package="Fragments.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblGrantApprovalMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterView1Iterator"/>
+    <iterator Binds="TblGrantApprovalDetailView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailView4Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblGrantApprovalMasterView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGrantApprovalMasterView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGrantApprovalDetailView4Iterator" StaticList="false" Uses="LOV_FarmerRegId" id="FarmerRegId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblGrantApprovalDetailView4Iterator" ListOperMode="navigation"
+          ListIter="TblGrantApprovalDetailView4Iterator" id="TblGrantApprovalDetailView4" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="FarmerNo"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>
