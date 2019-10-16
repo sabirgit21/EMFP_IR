@@ -33,7 +33,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Tab Label 2">
+              <af:showDetailItem id="tab2" text="Grant Approval Detail">
                 <af:table value="#{bindings.MMP_RO_Status2.collectionModel}" var="row"
                           rows="#{bindings.MMP_RO_Status2.rangeSize}"
                           emptyText="#{bindings.MMP_RO_Status2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -45,7 +45,7 @@
                           queryListener="#{bindings.MMP_RO_Status2Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.label}" id="c1">
+                             headerText="Grant Approval Detail ID" id="c1" align="center" width="80">
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.mandatory}"
@@ -58,7 +58,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MMP_RO_Status2.hints.FarmerNo.label}" id="c2">
+                             sortable="true" headerText="Farmer No." id="c2" align="center">
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.FarmerNo.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.FarmerNo.mandatory}"
@@ -69,7 +69,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.Name.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.MMP_RO_Status2.hints.Name.label}" id="c3">
+                             headerText="Farmer" id="c3" width="300">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.Name.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.Name.mandatory}"
@@ -80,7 +80,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.RoStatus.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MMP_RO_Status2.hints.RoStatus.label}" id="c4">
+                             sortable="true" headerText="RO Status" id="c4">
                     <af:inputText value="#{row.bindings.RoStatus.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.RoStatus.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.RoStatus.mandatory}"
@@ -110,7 +110,7 @@
                           queryListener="#{bindings.TblFarmerRegLandView6Query.processQuery}" varStatus="vs" id="t2">
                   <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.label}" id="c5">
+                             headerText="Land ID" id="c5" width="60" align="center">
                     <af:inputText value="#{row.bindings.FarmerRegLandId.inputValue}"
                                   label="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.label}"
                                   required="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.mandatory}"
@@ -122,23 +122,9 @@
                                         pattern="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.label}"
-                             id="c6">
-                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.tooltip}" id="it6">
-                      <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.FarmerRegId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandAcre.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.LandAcre.label}"
-                             id="c7">
+                             sortable="true" headerText="Land(Acre)"
+                             id="c7" align="center">
                     <af:inputText value="#{row.bindings.LandAcre.inputValue}"
                                   label="#{bindings.TblFarmerRegLandView6.hints.LandAcre.label}"
                                   required="#{bindings.TblFarmerRegLandView6.hints.LandAcre.mandatory}"
@@ -151,8 +137,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandKanal.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.LandKanal.label}"
-                             id="c8">
+                             sortable="true" headerText="Land (Kanal)"
+                             id="c8" align="center">
                     <af:inputText value="#{row.bindings.LandKanal.inputValue}"
                                   label="#{bindings.TblFarmerRegLandView6.hints.LandKanal.label}"
                                   required="#{bindings.TblFarmerRegLandView6.hints.LandKanal.mandatory}"
@@ -165,8 +151,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.PresentProd.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.PresentProd.label}"
-                             id="c9">
+                             sortable="true" headerText="Present Production"
+                             id="c9" width="120" align="center">
                     <af:inputText value="#{row.bindings.PresentProd.inputValue}"
                                   label="#{bindings.TblFarmerRegLandView6.hints.PresentProd.label}"
                                   required="#{bindings.TblFarmerRegLandView6.hints.PresentProd.mandatory}"
@@ -179,8 +165,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.label}"
-                             id="c10">
+                             sortable="true" headerText="Land Under Orchard"
+                             id="c10" width="100" align="center">
                     <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
                                   label="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.label}"
                                   required="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.mandatory}"
