@@ -1,99 +1,150 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:table value="#{bindings.TblTrainingReschView11.collectionModel}" var="row"
-            rows="#{bindings.TblTrainingReschView11.rangeSize}"
-            emptyText="#{bindings.TblTrainingReschView11.viewable ? 'No data to display.' : 'Access Denied.'}"
-            rowBandingInterval="0" selectedRowKeys="#{bindings.TblTrainingReschView11.collectionModel.selectedRow}"
-            selectionListener="#{bindings.TblTrainingReschView11.collectionModel.makeCurrent}" rowSelection="single"
-            fetchSize="#{bindings.TblTrainingReschView11.rangeSize}"
-            filterModel="#{bindings.TblTrainingReschView1Query.queryDescriptor}" filterVisible="true"
-            queryListener="#{bindings.TblTrainingReschView1Query.processQuery}" varStatus="vs" id="t1"
-            partialTriggers="::b1 ::b2 ::b3">
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.TrainingReschId.name}" filterable="true"
-               sortable="true" headerText="Re Schedule ID" id="c1" >
-      <af:inputText value="#{row.bindings.TrainingReschId.inputValue}"
-                    label="#{bindings.TblTrainingReschView11.hints.TrainingReschId.label}"
-                    required="#{bindings.TblTrainingReschView11.hints.TrainingReschId.mandatory}"
-                    columns="#{bindings.TblTrainingReschView11.hints.TrainingReschId.displayWidth}"
-                    maximumLength="#{bindings.TblTrainingReschView11.hints.TrainingReschId.precision}"
-                    shortDesc="#{bindings.TblTrainingReschView11.hints.TrainingReschId.tooltip}" id="it1" readOnly="true">
-        <f:validator binding="#{row.bindings.TrainingReschId.validator}"/>
-        <af:convertNumber groupingUsed="false"
-                          pattern="#{bindings.TblTrainingReschView11.hints.TrainingReschId.format}"/>
-      </af:inputText>
-    </af:column>
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Dated.name}" filterable="true" sortable="true"
-               headerText="Actual Date" id="c2">
-      <f:facet name="filter">
-        <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                      id="id1">
-          <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.Dated.format}"/>
-        </af:inputDate>
-      </f:facet>
-      <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                    label="#{bindings.TblTrainingReschView11.hints.Dated.label}"
-                    required="#{bindings.TblTrainingReschView11.hints.Dated.mandatory}"
-                    columns="#{bindings.TblTrainingReschView11.hints.Dated.displayWidth}"
-                    shortDesc="#{bindings.TblTrainingReschView11.hints.Dated.tooltip}" id="id2">
-        <f:validator binding="#{row.bindings.Dated.validator}"/>
-        <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.Dated.format}"/>
-      </af:inputDate>
-    </af:column>
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.ClusterId.name}" filterable="true" sortable="true"
-               headerText="Cluster No." id="c3">
-      <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}" label="#{row.bindings.ClusterId.label}"
-                          required="#{bindings.TblTrainingReschView11.hints.ClusterId.mandatory}"
-                          shortDesc="#{bindings.TblTrainingReschView11.hints.ClusterId.tooltip}" id="soc1">
-        <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
-        <f:validator binding="#{row.bindings.ClusterId.validator}"/>
-      </af:selectOneChoice>
-    </af:column>
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.DatedResch.name}" filterable="true" sortable="true"
-               headerText="Reschedule Date" id="c4">
-      <f:facet name="filter">
-        <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedResch.value}"
-                      id="id3">
-          <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.DatedResch.format}"/>
-        </af:inputDate>
-      </f:facet>
-      <af:inputDate value="#{row.bindings.DatedResch.inputValue}"
-                    label="#{bindings.TblTrainingReschView11.hints.DatedResch.label}"
-                    required="#{bindings.TblTrainingReschView11.hints.DatedResch.mandatory}"
-                    columns="#{bindings.TblTrainingReschView11.hints.DatedResch.displayWidth}"
-                    shortDesc="#{bindings.TblTrainingReschView11.hints.DatedResch.tooltip}" id="id4">
-        <f:validator binding="#{row.bindings.DatedResch.validator}"/>
-        <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.DatedResch.format}"/>
-      </af:inputDate>
-    </af:column>
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Latitude.name}" filterable="true" sortable="true"
-               headerText="Latitude" id="c5">
-      <af:inputText value="#{row.bindings.Latitude.inputValue}"
-                    label="#{bindings.TblTrainingReschView11.hints.Latitude.label}"
-                    required="#{bindings.TblTrainingReschView11.hints.Latitude.mandatory}"
-                    columns="#{bindings.TblTrainingReschView11.hints.Latitude.displayWidth}"
-                    maximumLength="#{bindings.TblTrainingReschView11.hints.Latitude.precision}"
-                    shortDesc="#{bindings.TblTrainingReschView11.hints.Latitude.tooltip}" id="it2">
-        <f:validator binding="#{row.bindings.Latitude.validator}"/>
-        <af:convertNumber groupingUsed="false" pattern="#{bindings.TblTrainingReschView11.hints.Latitude.format}"/>
-      </af:inputText>
-    </af:column>
-    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Longitude.name}" filterable="true" sortable="true"
-               headerText="Longitude" id="c6">
-      <af:inputText value="#{row.bindings.Longitude.inputValue}"
-                    label="#{bindings.TblTrainingReschView11.hints.Longitude.label}"
-                    required="#{bindings.TblTrainingReschView11.hints.Longitude.mandatory}"
-                    columns="#{bindings.TblTrainingReschView11.hints.Longitude.displayWidth}"
-                    maximumLength="#{bindings.TblTrainingReschView11.hints.Longitude.precision}"
-                    shortDesc="#{bindings.TblTrainingReschView11.hints.Longitude.tooltip}" id="it3">
-        <f:validator binding="#{row.bindings.Longitude.validator}"/>
-        <af:convertNumber groupingUsed="false" pattern="#{bindings.TblTrainingReschView11.hints.Longitude.format}"/>
-      </af:inputText>
-    </af:column>
-  </af:table>
-  <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
-             disabled="#{!bindings.CreateInsert.enabled}" id="b1"/>
-  <af:button actionListener="#{bindings.Execute.execute}" text="Execute" disabled="#{!bindings.Execute.enabled}"
-             id="b2"/>
-  <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}" id="b3"/>
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Training Reschedule">
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Training Reschedule">
+                                <af:table value="#{bindings.TblTrainingReschView11.collectionModel}" var="row"
+                                          rows="#{bindings.TblTrainingReschView11.rangeSize}"
+                                          emptyText="#{bindings.TblTrainingReschView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TblTrainingReschView11.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TblTrainingReschView11.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.TblTrainingReschView11.rangeSize}"
+                                          filterModel="#{bindings.TblTrainingReschView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.TblTrainingReschView1Query.processQuery}"
+                                          varStatus="vs" id="t1">
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.TrainingReschId.name}"
+                                               filterable="true" sortable="true" headerText="Re Schedule ID" id="c1">
+                                        <af:inputText value="#{row.bindings.TrainingReschId.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView11.hints.TrainingReschId.label}"
+                                                      required="#{bindings.TblTrainingReschView11.hints.TrainingReschId.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView11.hints.TrainingReschId.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingReschView11.hints.TrainingReschId.precision}"
+                                                      shortDesc="#{bindings.TblTrainingReschView11.hints.TrainingReschId.tooltip}"
+                                                      id="it1" readOnly="true">
+                                            <f:validator binding="#{row.bindings.TrainingReschId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblTrainingReschView11.hints.TrainingReschId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Dated.name}"
+                                               filterable="true" sortable="true" headerText="Actual Date" id="c2">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                          id="id1" autoSubmit="true">
+                                                <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.Dated.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView11.hints.Dated.label}"
+                                                      required="#{bindings.TblTrainingReschView11.hints.Dated.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView11.hints.Dated.displayWidth}"
+                                                      shortDesc="#{bindings.TblTrainingReschView11.hints.Dated.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.Dated.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.ClusterId.name}"
+                                               filterable="true" sortable="true" headerText="Cluster No." id="c3">
+                                        <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                            label="#{row.bindings.ClusterId.label}"
+                                                            required="#{bindings.TblTrainingReschView11.hints.ClusterId.mandatory}"
+                                                            shortDesc="#{bindings.TblTrainingReschView11.hints.ClusterId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.DatedResch.name}"
+                                               filterable="true" sortable="true" headerText="Reschedule Date" id="c4">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedResch.value}"
+                                                          id="id3">
+                                                <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.DatedResch.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.DatedResch.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView11.hints.DatedResch.label}"
+                                                      required="#{bindings.TblTrainingReschView11.hints.DatedResch.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView11.hints.DatedResch.displayWidth}"
+                                                      shortDesc="#{bindings.TblTrainingReschView11.hints.DatedResch.tooltip}"
+                                                      id="id4">
+                                            <f:validator binding="#{row.bindings.DatedResch.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblTrainingReschView11.hints.DatedResch.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Latitude.name}"
+                                               filterable="true" sortable="true" headerText="Latitude" id="c5">
+                                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView11.hints.Latitude.label}"
+                                                      required="#{bindings.TblTrainingReschView11.hints.Latitude.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView11.hints.Latitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingReschView11.hints.Latitude.precision}"
+                                                      shortDesc="#{bindings.TblTrainingReschView11.hints.Latitude.tooltip}"
+                                                      id="it2">
+                                            <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblTrainingReschView11.hints.Latitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.TblTrainingReschView11.hints.Longitude.name}"
+                                               filterable="true" sortable="true" headerText="Longitude" id="c6">
+                                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView11.hints.Longitude.label}"
+                                                      required="#{bindings.TblTrainingReschView11.hints.Longitude.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView11.hints.Longitude.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingReschView11.hints.Longitude.precision}"
+                                                      shortDesc="#{bindings.TblTrainingReschView11.hints.Longitude.tooltip}"
+                                                      id="it3">
+                                            <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TblTrainingReschView11.hints.Longitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                                </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
 </ui:composition>
