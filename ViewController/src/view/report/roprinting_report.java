@@ -17,6 +17,7 @@ public class roprinting_report {
         if (gotprinting == null) {
             gotprinting = "notSelected";
         }
+        
         OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");

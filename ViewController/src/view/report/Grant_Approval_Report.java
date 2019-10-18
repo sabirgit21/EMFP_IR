@@ -19,7 +19,7 @@ public class Grant_Approval_Report {
     }
 
     public void get_selected_phase(ValueChangeEvent valueChangeEvent) {
-        // Add event code here...
+        // Add event code here...++
         gotPhase = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Phase is : " + gotPhase);
     }
@@ -32,6 +32,29 @@ public class Grant_Approval_Report {
 
     public String gen_Report() {
         // Add event code here...
+       
+        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
+
+        //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
+        String url = "";
+        reportBean.setReportParameter("P_Phase_id",gotPhase);
+        reportBean.setReportParameter("P_Cluster_id",gotCluster);
+        reportBean.setReportParameter("P_farmer_reg_id",gotFarmer);
+        
+       
+            System.out.println("default");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+            
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+            System.out.println("defaulter bla bla bla report");
+        
         return null;
     }
 }
