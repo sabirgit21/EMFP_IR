@@ -7,10 +7,13 @@ public class Grant_Approval_Report {
     private static String gotPhase = "";
     private static String gotCluster = "";
     private static String gotFarmer = "";
-    
+    private static String selectedReportType;
     
     public Grant_Approval_Report() {
     }
+//    String param1;
+//    String reportType;
+//    
 
     public void get_selected_cluster(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
@@ -32,7 +35,10 @@ public class Grant_Approval_Report {
 
     public String gen_Report() {
         // Add event code here...
-       
+//        selectedReportType = getReportType();
+//        if (selectedReportType == null) {
+//            selectedReportType = "notSelected";
+//        }
         OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
@@ -57,4 +63,20 @@ public class Grant_Approval_Report {
         
         return null;
     }
+//    public void setParam1(String param1) {
+//        this.param1 = param1;
+//    }
+//
+//    public String getParam1() {
+//        return param1;
+//    }
+//
+//    public void setReportType(String reportType) {
+//        this.reportType = reportType;
+//    }
+//
+//    public String getReportType() {
+//        return reportType;
+//    }
+
 }

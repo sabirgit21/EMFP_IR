@@ -10,7 +10,7 @@
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                           
                          <af:spacer width="30" height="80" id="s3"/>
-                            <af:selectOneChoice label="#{bindings.PhaseId.label}"
+                            <af:selectOneChoice label="Phase"
                                                  autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1"
                                                 valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_phase}">
@@ -19,7 +19,7 @@
                             </af:selectOneChoice>
                             <af:spacer width="30" height="10" id="s1"/>
                             <af:selectOneChoice
-                                                label="#{bindings.ClusterId.label}" autoSubmit="true"
+                                                label="Cluster" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc2"
                                                 valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_cluster}">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si2"/>
@@ -27,7 +27,7 @@
                             </af:selectOneChoice>
                             <af:spacer width="30" height="10" id="s2"/>
                             <af:selectOneChoice
-                                                label="#{bindings.TblGrantApprovalDetailView4.label}" autoSubmit="true"
+                                                label="Famer No." autoSubmit="true"
                                             
                                                 shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.tooltip}"
                                                 id="soc4" valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_farmer}">
