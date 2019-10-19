@@ -32,7 +32,7 @@
       </AttrNames>
       <ValueList>
         <Item Value="print"/>
-        <Item Value="null"/>
+        <Item Value="mmp appr"/>
       </ValueList>
     </button>
     <action IterBinding="Print_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>

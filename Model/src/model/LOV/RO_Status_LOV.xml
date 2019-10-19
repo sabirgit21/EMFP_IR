@@ -40,7 +40,7 @@
     <Item Value="ro_status_db"/>
   </AttrArray>
   <StaticList
-    Rows="6"
+    Rows="7"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle

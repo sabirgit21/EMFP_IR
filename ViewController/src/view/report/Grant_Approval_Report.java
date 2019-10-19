@@ -1,5 +1,7 @@
 package view.report;
 
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 
 public class Grant_Approval_Report {
@@ -11,9 +13,82 @@ public class Grant_Approval_Report {
     
     public Grant_Approval_Report() {
     }
-//    String param1;
-//    String reportType;
-//    
+    
+    public String gen_Report() {
+        
+        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
+
+        String url = "";
+        reportBean.setReportParameter("P_Phase_id",gotPhase);
+        reportBean.setReportParameter("P_Cluster_id",gotCluster);
+        reportBean.setReportParameter("P_farmer_reg_id",gotFarmer);
+        
+       
+            System.out.println("default");
+            
+        switch (selectedReportType) {
+        case "detailWise":
+         
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+            
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+            System.out.println("detail wise");
+            break;
+        case "machineryWise":
+         
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+            
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+            System.out.println("machinery wise");
+            break;
+        case "machineryPhaseWise":
+         
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
+            
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+            System.out.println("machinery phase wise");
+            break;
+        default:
+        showMessage("Please Select Report Type");
+        break;
+
+        }
+        return null;
+    }
+    
+    public String showMessage(String msgs) {
+        String messageText = msgs;
+        FacesMessage fm = new FacesMessage(messageText);
+        /**
+             * set the type of the message.
+             * Valid types: error, fatal,info,warning
+             */
+        fm.setSeverity(FacesMessage.SEVERITY_INFO);
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.addMessage(null, fm);
+        return null;
+    }
 
     public void get_selected_cluster(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
@@ -33,50 +108,9 @@ public class Grant_Approval_Report {
         System.out.println("Selected Farmer is : " + gotFarmer);
     }
 
-    public String gen_Report() {
+    public void get_selected_report_type(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
-//        selectedReportType = getReportType();
-//        if (selectedReportType == null) {
-//            selectedReportType = "notSelected";
-//        }
-        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
-
-        //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
-        String url = "";
-        reportBean.setReportParameter("P_Phase_id",gotPhase);
-        reportBean.setReportParameter("P_Cluster_id",gotCluster);
-        reportBean.setReportParameter("P_farmer_reg_id",gotFarmer);
-        
-       
-            System.out.println("default");
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-            
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("defaulter bla bla bla report");
-        
-        return null;
+        selectedReportType = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Report Type is : " + selectedReportType);
     }
-//    public void setParam1(String param1) {
-//        this.param1 = param1;
-//    }
-//
-//    public String getParam1() {
-//        return param1;
-//    }
-//
-//    public void setReportType(String reportType) {
-//        this.reportType = reportType;
-//    }
-//
-//    public String getReportType() {
-//        return reportType;
-//    }
-
 }

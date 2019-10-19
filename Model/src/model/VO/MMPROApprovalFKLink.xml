@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MMPROApprovalFKLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.MMPROApprovalFKLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TblGrantApprovalMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblGrantApprovalMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblGrantApprovalMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblGrantApprovalMasterView.GrantApprovalMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MMP_RO_Approval"
+    Cardinality="-1"
+    Owner="model.VO.MMP_RO_Approval">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MMP_RO_Approval"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.MMP_RO_Approval.GrantApprovalMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

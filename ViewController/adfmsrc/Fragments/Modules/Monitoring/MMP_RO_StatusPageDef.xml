@@ -6,18 +6,19 @@
     <variableIterator id="variables"/>
    <iterator Binds="TblGrantApprovalMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="TblGrantApprovalMasterView1Iterator"/>
-    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"/>
+    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
+              Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MMP_RO_Status2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status2Query"/>
-    <iterator Binds="TblFarmerRegLandView6" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblFarmerRegLandView6Iterator"/>
-    <searchRegion Binds="TblFarmerRegLandView6Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFarmerRegLandView6Query"/>
     <iterator Binds="TblGrantApprovalDetailDView4" RangeSize="25" DataControl="AppModuleDataControl"
               id="TblGrantApprovalDetailDView4Iterator"/>
     <searchRegion Binds="TblGrantApprovalDetailDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView4Query"/>
+    <iterator Binds="MMP_RO_Status_Grant_Land1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Land1Iterator"/>
+    <searchRegion Binds="MMP_RO_Status_Grant_Land1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land1Query"/>
   </executables>
   <bindings>
     
@@ -36,27 +37,7 @@
           <Item Value="GrantApprovalDetailId"/>
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
-          <Item Value="RoStatus"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblFarmerRegLandView6Iterator" id="TblFarmerRegLandView6">
-      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView60">
-        <AttrNames>
-          <Item Value="FarmerRegLandId"/>
-          <Item Value="FarmerRegId"/>
-          <Item Value="LandAcre"/>
-          <Item Value="LandKanal"/>
-          <Item Value="PresentProd"/>
-          <Item Value="LandUnderOrch"/>
-          <Item Value="SelfshipType"/>
-          <Item Value="SelfLocalMark"/>
-          <Item Value="SelfExportMark"/>
-          <Item Value="ContractMark"/>
-          <Item Value="KhatooniNo"/>
-          <Item Value="KhauuetNo"/>
-          <Item Value="QittaNo"/>
-          <Item Value="KhasraNo"/>
+          <Item Value="RoStatus" Binds="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -72,5 +53,28 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="MMP_RO_Status_Grant_Land1Iterator" id="MMP_RO_Status_Grant_Land1">
+      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land10">
+        <AttrNames>
+          <Item Value="Cnic"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="Amount"/>
+          <Item Value="FAcre"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantBase"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="MMP_RO_Status2Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="RoStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="mmp ver"/>
+        <Item Value="vctat ver"/>
+      </ValueList>
+    </button>
+    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

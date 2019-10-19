@@ -36,12 +36,20 @@
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                              <af:panelGroupLayout id="pgl4" layout="horizontal">
+                             <af:selectOneChoice label="Select Report Type" id="soc5"
+                         autoSubmit="true" unselectedLabel="--Select--"
+                                                 valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_report_type}">
+                                <af:selectItem label="Grant Approval Detail" value="detailWise" id="si5"/>
+                                <af:selectItem label="Grant Approval Machinery Wise" value="machineryWise" id="si8"/>
+                                <af:selectItem label="Grant Approval Machinery Phase Wise" value="machineryPhaseWise" id="si7"/>
+                            </af:selectOneChoice>
                              <af:spacer width="30" height="30" id="s7"/>
-                            <af:button text="button 2" id="b2"
+                            <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.Grant_Approval_Report_BackBean.gen_Report}"/>
                             <af:spacer width="30" height="10" id="s6"/>
                             
                         </af:panelGroupLayout>
+                        
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">

@@ -266,6 +266,11 @@
     ViewLink="model.VO.MMP_RO_Status_FkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MMP_RO_Approval"
+    ViewLink="model.VO.MMPROApprovalFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalMasterId"

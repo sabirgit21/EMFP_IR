@@ -19,9 +19,9 @@
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab3" text="Tab Label 3">
+              <af:showDetailItem id="tab3" text="MMP RO Status">
                 <af:selectOneChoice value="#{bindings.TblGrantApprovalMasterView1.inputValue}"
-                autoSubmit="true" label="#{bindings.TblGrantApprovalMasterView1.label}"
+                autoSubmit="true" label="Cluster No."
                                 shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.tooltip}" id="soc1">
               <f:selectItems value="#{bindings.TblGrantApprovalMasterView1.items}" id="si1"/>
               <f:validator binding="#{bindings.TblGrantApprovalMasterView1.validator}"/>
@@ -42,11 +42,12 @@
                           selectionListener="#{bindings.MMP_RO_Status2.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.MMP_RO_Status2.rangeSize}"
                           filterModel="#{bindings.MMP_RO_Status2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MMP_RO_Status2Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.MMP_RO_Status2Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2">
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="Grant Approval Detail ID" id="c1" align="center" width="80">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.displayWidth}"
@@ -58,7 +59,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="Farmer No." id="c2" align="center">
+                             sortable="true" headerText="Farmer No." id="c2" align="center" width="132">
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.FarmerNo.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.FarmerNo.mandatory}"
@@ -69,7 +70,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.Name.name}" filterable="true" sortable="true"
-                             headerText="Farmer" id="c3" width="300">
+                             headerText="Farmer" id="c3" width="358">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MMP_RO_Status2.hints.Name.label}"
                                   required="#{bindings.MMP_RO_Status2.hints.Name.mandatory}"
@@ -79,18 +80,14 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.RoStatus.name}" filterable="true"
-                             sortable="true" headerText="RO Status" id="c4">
-                    <af:inputText value="#{row.bindings.RoStatus.inputValue}"
-                                  label="#{bindings.MMP_RO_Status2.hints.RoStatus.label}"
-                                  required="#{bindings.MMP_RO_Status2.hints.RoStatus.mandatory}"
-                                  columns="#{bindings.MMP_RO_Status2.hints.RoStatus.displayWidth}"
-                                  maximumLength="#{bindings.MMP_RO_Status2.hints.RoStatus.precision}"
-                                  shortDesc="#{bindings.MMP_RO_Status2.hints.RoStatus.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.RoStatus.validator}"/>
-                    </af:inputText>
+                  <af:column headerText="RO Status" id="c4" width="49">
+                    <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
+                                              label="#{row.bindings.RoStatus.label}"
+                                              shortDesc="#{bindings.MMP_RO_Status2.hints.RoStatus.tooltip}" id="sbc1"/>
                   </af:column>
                 </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Update"
+                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -98,193 +95,115 @@
         <af:gridRow marginTop="5px" height="auto" id="gr6">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Farmer's Land Detail">
-                <af:table value="#{bindings.TblFarmerRegLandView6.collectionModel}" var="row"
-                          rows="#{bindings.TblFarmerRegLandView6.rangeSize}"
-                          emptyText="#{bindings.TblFarmerRegLandView6.viewable ? 'No data to display.' : 'Access Denied.'}"
+              <af:showDetailItem id="tab1" text="Farmer's Grant Detail">
+                <af:table value="#{bindings.MMP_RO_Status_Grant_Land1.collectionModel}" var="row"
+                          rows="#{bindings.MMP_RO_Status_Grant_Land1.rangeSize}"
+                          emptyText="#{bindings.MMP_RO_Status_Grant_Land1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblFarmerRegLandView6.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblFarmerRegLandView6.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblFarmerRegLandView6.rangeSize}"
-                          filterModel="#{bindings.TblFarmerRegLandView6Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblFarmerRegLandView6Query.processQuery}" varStatus="vs" id="t2">
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.name}"
+                          selectedRowKeys="#{bindings.MMP_RO_Status_Grant_Land1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.MMP_RO_Status_Grant_Land1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.MMP_RO_Status_Grant_Land1.rangeSize}"
+                          filterModel="#{bindings.MMP_RO_Status_Grant_Land1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.MMP_RO_Status_Grant_Land1Query.processQuery}" varStatus="vs"
+                          id="t2">
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.name}" filterable="true"
+                             sortable="true" headerText="CNIC"
+                             id="c5" width="115">
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.Cnic.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.name}"
                              filterable="true" sortable="true"
-                             headerText="Land ID" id="c5" width="60" align="center">
-                    <af:inputText value="#{row.bindings.FarmerRegLandId.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.tooltip}" id="it5">
-                      <f:validator binding="#{row.bindings.FarmerRegLandId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.FarmerRegLandId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandAcre.name}" filterable="true"
-                             sortable="true" headerText="Land(Acre)"
-                             id="c7" align="center">
-                    <af:inputText value="#{row.bindings.LandAcre.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.LandAcre.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.LandAcre.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.LandAcre.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.LandAcre.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.LandAcre.tooltip}" id="it7">
-                      <f:validator binding="#{row.bindings.LandAcre.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.LandAcre.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandKanal.name}" filterable="true"
-                             sortable="true" headerText="Land (Kanal)"
-                             id="c8" align="center">
-                    <af:inputText value="#{row.bindings.LandKanal.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.LandKanal.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.LandKanal.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.LandKanal.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.LandKanal.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.LandKanal.tooltip}" id="it8">
-                      <f:validator binding="#{row.bindings.LandKanal.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.LandKanal.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.PresentProd.name}" filterable="true"
-                             sortable="true" headerText="Present Production"
-                             id="c9" width="120" align="center">
-                    <af:inputText value="#{row.bindings.PresentProd.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.PresentProd.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.PresentProd.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.PresentProd.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.PresentProd.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.PresentProd.tooltip}" id="it9">
-                      <f:validator binding="#{row.bindings.PresentProd.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.PresentProd.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.name}" filterable="true"
-                             sortable="true" headerText="Land Under Orchard"
-                             id="c10" width="100" align="center">
-                    <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.tooltip}" id="it10">
+                             headerText="Land Under Orchard" id="c6" width="85">
+                    <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.tooltip}"
+                                  id="it6">
                       <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
                       <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.LandUnderOrch.format}"/>
+                                        pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.SelfshipType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.SelfshipType.label}"
-                             id="c11">
-                    <af:selectOneChoice value="#{row.bindings.SelfshipType.inputValue}"
-                                        label="#{row.bindings.SelfshipType.label}"
-                                        required="#{bindings.TblFarmerRegLandView6.hints.SelfshipType.mandatory}"
-                                        shortDesc="#{bindings.TblFarmerRegLandView6.hints.SelfshipType.tooltip}"
-                                        id="soc2">
-                      <f:selectItems value="#{row.bindings.SelfshipType.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.SelfshipType.validator}"/>
-                    </af:selectOneChoice>
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.label}"
+                             id="c7" width="100">
+                    <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.Amount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.format}"/>
+                    </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.SelfLocalMark.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.SelfLocalMark.label}"
-                             id="c12">
-                    <af:selectOneChoice value="#{row.bindings.SelfLocalMark.inputValue}"
-                                        label="#{row.bindings.SelfLocalMark.label}"
-                                        required="#{bindings.TblFarmerRegLandView6.hints.SelfLocalMark.mandatory}"
-                                        shortDesc="#{bindings.TblFarmerRegLandView6.hints.SelfLocalMark.tooltip}"
-                                        id="soc3">
-                      <f:selectItems value="#{row.bindings.SelfLocalMark.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.SelfLocalMark.validator}"/>
-                    </af:selectOneChoice>
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.name}" filterable="true"
+                             sortable="true" headerText="Final Acre"
+                             id="c8" width="100">
+                    <af:inputText value="#{row.bindings.FAcre.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.FAcre.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAcre.format}"/>
+                    </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.SelfExportMark.name}"
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.name}" filterable="true"
+                             sortable="true" headerText="Final Amount"
+                             id="c9" width="100">
+                    <af:inputText value="#{row.bindings.FAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.FAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.FAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblFarmerRegLandView6.hints.SelfExportMark.label}" id="c13">
-                    <af:selectOneChoice value="#{row.bindings.SelfExportMark.inputValue}"
-                                        label="#{row.bindings.SelfExportMark.label}"
-                                        required="#{bindings.TblFarmerRegLandView6.hints.SelfExportMark.mandatory}"
-                                        shortDesc="#{bindings.TblFarmerRegLandView6.hints.SelfExportMark.tooltip}"
-                                        id="soc4">
-                      <f:selectItems value="#{row.bindings.SelfExportMark.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.SelfExportMark.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.ContractMark.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.ContractMark.label}"
-                             id="c14">
-                    <af:selectOneChoice value="#{row.bindings.ContractMark.inputValue}"
-                                        label="#{row.bindings.ContractMark.label}"
-                                        required="#{bindings.TblFarmerRegLandView6.hints.ContractMark.mandatory}"
-                                        shortDesc="#{bindings.TblFarmerRegLandView6.hints.ContractMark.tooltip}"
-                                        id="soc5">
-                      <f:selectItems value="#{row.bindings.ContractMark.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.ContractMark.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.label}"
-                             id="c15">
-                    <af:inputText value="#{row.bindings.KhatooniNo.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.tooltip}" id="it11">
-                      <f:validator binding="#{row.bindings.KhatooniNo.validator}"/>
+                             headerText="Grant Amount" id="c10" width="100">
+                    <af:inputText value="#{row.bindings.GrantAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.GrantAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.KhatooniNo.format}"/>
+                                        pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.label}"
-                             id="c16">
-                    <af:inputText value="#{row.bindings.KhauuetNo.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.tooltip}" id="it12">
-                      <f:validator binding="#{row.bindings.KhauuetNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.KhauuetNo.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.QittaNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.QittaNo.label}"
-                             id="c17">
-                    <af:inputText value="#{row.bindings.QittaNo.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.QittaNo.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.QittaNo.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.QittaNo.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.QittaNo.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.QittaNo.tooltip}" id="it13">
-                      <f:validator binding="#{row.bindings.QittaNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.QittaNo.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.label}"
-                             id="c18">
-                    <af:inputText value="#{row.bindings.KhasraNo.inputValue}"
-                                  label="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.label}"
-                                  required="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.mandatory}"
-                                  columns="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.displayWidth}"
-                                  maximumLength="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.precision}"
-                                  shortDesc="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.tooltip}" id="it14">
-                      <f:validator binding="#{row.bindings.KhasraNo.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblFarmerRegLandView6.hints.KhasraNo.format}"/>
+                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.name}" filterable="true"
+                             sortable="true" headerText="Grant Bases"
+                             id="c11" width="100">
+                    <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
+                                  label="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.label}"
+                                  required="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.mandatory}"
+                                  columns="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantBase.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.GrantBase.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
               </af:showDetailItem>
-              <af:showDetailItem text="Farm Machinery" id="sdi1">
+              <af:showDetailItem text="Farmer's Machinery" id="sdi1">
                 <af:table value="#{bindings.TblGrantApprovalDetailDView4.collectionModel}" var="row"
                           rows="#{bindings.TblGrantApprovalDetailDView4.rangeSize}"
                           emptyText="#{bindings.TblGrantApprovalDetailDView4.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -296,11 +215,11 @@
                           filterVisible="true"
                           queryListener="#{bindings.TblGrantApprovalDetailDView4Query.processQuery}" varStatus="vs"
                           id="t3">
-                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.name}"
+                  <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.label}"
                              id="c19">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailDId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailDId.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.displayWidth}"
@@ -311,12 +230,12 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailDId.format}"/>
                     </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.name}"
+                  </af:column>-->
+                  <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.label}"
                              id="c20">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.displayWidth}"
@@ -327,11 +246,11 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantApprovalDetailDView4.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.ItemL4Id.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblGrantApprovalDetailDView4.hints.ItemL4Id.label}" id="c21">
-                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                             headerText="Farm Machinery" id="c21" width="406">
+                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}" readOnly="true"
                                         label="#{row.bindings.ItemL4Id.label}"
                                         required="#{bindings.TblGrantApprovalDetailDView4.hints.ItemL4Id.mandatory}"
                                         shortDesc="#{bindings.TblGrantApprovalDetailDView4.hints.ItemL4Id.tooltip}"
@@ -340,10 +259,24 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="Qty"
+                             id="c24" width="58">
+                    <af:inputText value="#{row.bindings.Qty.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.tooltip}" id="it19">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.Rate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblGrantApprovalDetailDView4.hints.Rate.label}"
-                             id="c22">
-                    <af:inputText value="#{row.bindings.Rate.inputValue}"
+                             sortable="true" headerText="Rate"
+                             id="c22" width="72">
+                    <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView4.hints.Rate.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView4.hints.Rate.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailDView4.hints.Rate.displayWidth}"
@@ -355,9 +288,9 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.label}"
-                             id="c23">
-                    <af:inputText value="#{row.bindings.Amount.inputValue}"
+                             sortable="true" headerText="Amount"
+                             id="c23" width="98">
+                    <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.displayWidth}"
@@ -368,20 +301,7 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDView4.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.label}"
-                             id="c24">
-                    <af:inputText value="#{row.bindings.Qty.inputValue}"
-                                  label="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.label}"
-                                  required="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.mandatory}"
-                                  columns="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.tooltip}" id="it19">
-                      <f:validator binding="#{row.bindings.Qty.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantApprovalDetailDView4.hints.Qty.format}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

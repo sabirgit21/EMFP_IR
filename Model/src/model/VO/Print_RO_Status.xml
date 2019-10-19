@@ -18,8 +18,8 @@
        TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
        TblFarmerReg.FARMER_NO"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
-  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)  
-AND TblGrantApprovalDetail.RO_STATUS = 'mmp ver'">
+  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)   
+AND TblGrantApprovalDetail.RO_STATUS = 'mmp appr'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

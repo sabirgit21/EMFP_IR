@@ -3,26 +3,20 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="MMP_RO_Status"
+  Name="MMP_RO_Status_Grant_Land"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full"
-  SelectList="TblGrantApprovalDetail.FARMER_REG_ID, 
-       TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
-       TblGrantApprovalDetail.RO_STATUS, 
-       TblFarmerReg.FARMER_NO, 
-       TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
-       TblFarmerReg.NAME, 
-       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
-  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
-  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+) 
-AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
+  SelectAllAttributes="false"
+  PageIterMode="Full">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.VO.MMP_RO_Status_LABEL"/>
+        ResId="model.VO.MMP_RO_Status_Grant_Land_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
@@ -33,7 +27,7 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
     Entity="model.EO.TblFarmerReg"
     Association="model.EO.Fk2TblGrantApprovalDetailFkAssoc"
     AssociationEnd="model.EO.Fk2TblGrantApprovalDetailFkAssoc.TblFarmerReg"
-    SourceUsage="model.VO.MMP_RO_Status.TblGrantApprovalDetail"
+    SourceUsage="model.VO.MMP_RO_Status_Grant_Land.TblGrantApprovalDetail"
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
@@ -48,12 +42,11 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
     </DesignTime>
   </EntityUsage>
   <ViewAttribute
-    Name="FarmerRegId"
-    IsNotNull="true"
+    Name="LandUnderOrch"
     PrecisionRule="true"
-    EntityAttrName="FarmerRegId"
+    EntityAttrName="LandUnderOrch"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="FARMER_REG_ID"/>
+    AliasName="LAND_UNDER_ORCH"/>
   <ViewAttribute
     Name="GrantApprovalDetailId"
     PrecisionRule="true"
@@ -61,30 +54,35 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
     EntityUsage="TblGrantApprovalDetail"
     AliasName="GRANT_APPROVAL_DETAIL_ID"/>
   <ViewAttribute
-    Name="RoStatus"
+    Name="Amount"
     PrecisionRule="true"
-    EntityAttrName="RoStatus"
+    EntityAttrName="Amount"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="RO_STATUS"/>
+    AliasName="AMOUNT"/>
   <ViewAttribute
-    Name="FarmerNo"
+    Name="FAcre"
     PrecisionRule="true"
-    EntityAttrName="FarmerNo"
-    EntityUsage="TblFarmerReg"
-    AliasName="FARMER_NO"/>
+    EntityAttrName="FAcre"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="F_ACRE"/>
   <ViewAttribute
-    Name="FarmerRegId1"
+    Name="FAmount"
     PrecisionRule="true"
-    EntityAttrName="FarmerRegId"
-    EntityUsage="TblFarmerReg"
-    AliasName="FARMER_REG_ID1"/>
+    EntityAttrName="FAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="F_AMOUNT"/>
   <ViewAttribute
-    Name="Name"
-    IsNotNull="true"
+    Name="GrantAmount"
     PrecisionRule="true"
-    EntityAttrName="Name"
-    EntityUsage="TblFarmerReg"
-    AliasName="NAME"/>
+    EntityAttrName="GrantAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_AMOUNT"/>
+  <ViewAttribute
+    Name="GrantBase"
+    PrecisionRule="true"
+    EntityAttrName="GrantBase"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_BASE"/>
   <ViewAttribute
     Name="GrantApprovalMasterId"
     IsNotNull="true"
@@ -92,24 +90,23 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
     EntityAttrName="GrantApprovalMasterId"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="GRANT_APPROVAL_MASTER_ID"/>
+  <ViewAttribute
+    Name="Cnic"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Cnic"
+    EntityUsage="TblFarmerReg"
+    AliasName="CNIC"/>
+  <ViewAttribute
+    Name="FarmerRegId"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegId"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>
-  <ViewLinkAccessor
-    Name="TblFarmerRegLandView"
-    ViewLink="model.VO.TblFarmerRegMMPROStatus"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblGrantApprovalDetailDView"
-    ViewLink="model.VO.TblGrantApprovalDeatailDMMPROStatus"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="MMP_RO_Status_Grant_Land"
-    ViewLink="model.VO.MMP_RO_Status_Grant_Land_FkLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

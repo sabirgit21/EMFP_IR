@@ -164,6 +164,9 @@
               usageId="view_Training_ReschedulePageDef"/>
         <page path="/WEB-INF/Task_Flows/Modules/Training/Training_Reschedule_TaskFlow.xml#Training_Reschedule_TaskFlow@ExecuteWithParams"
               usageId="view_Training_Reschedule_TaskFlow_Training_Reschedule_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Monitoring/MMP_RO_Approved_TaskFlow.xml#MMP_RO_Approved_TaskFlow@ExecuteWithParams"
+              usageId="view_MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Monitoring/MMP_RO_Approved.jsff" usageId="view_MMP_RO_ApprovedPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -320,6 +323,9 @@
         <page id="view_Training_ReschedulePageDef" path="Fragments.Modules.Training.Training_ReschedulePageDef"/>
         <page id="view_Training_Reschedule_TaskFlow_Training_Reschedule_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Training.Training_Reschedule_TaskFlow_Training_Reschedule_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Monitoring.MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_MMP_RO_ApprovedPageDef" path="Fragments.Modules.Monitoring.MMP_RO_ApprovedPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

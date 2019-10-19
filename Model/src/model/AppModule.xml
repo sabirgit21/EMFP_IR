@@ -1232,6 +1232,18 @@
   <ViewUsage
     Name="TblTrainingReschView2"
     ViewObjectName="model.queryBasedVO.TblTrainingReschView"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land1"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="MMP_RO_Approval1"
+    ViewObjectName="model.VO.MMP_RO_Approval"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land2"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView5"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2371,5 +2383,29 @@
     ViewLinkObjectName="model.VO.TblGrantApprovalDeatailDMMPROStatus"
     SrcViewUsageName="model.AppModule.MMP_RO_Status2"
     DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MMP_RO_Status_Grant_Land_FkLink1"
+    ViewLinkObjectName="model.VO.MMP_RO_Status_Grant_Land_FkLink"
+    SrcViewUsageName="model.AppModule.MMP_RO_Status2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MMPROApprovalFKLink1"
+    ViewLinkObjectName="model.VO.MMPROApprovalFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.MMP_RO_Approval1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MMPROApprovalGrantLandFKLink1"
+    ViewLinkObjectName="model.VO.MMPROApprovalGrantLandFKLink"
+    SrcViewUsageName="model.AppModule.MMP_RO_Approval1"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MMPROApprovalDetailD1"
+    ViewLinkObjectName="model.VO.MMPROApprovalDetailD"
+    SrcViewUsageName="model.AppModule.MMP_RO_Approval1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView5"
     Reversed="false"/>
 </AppModule>
