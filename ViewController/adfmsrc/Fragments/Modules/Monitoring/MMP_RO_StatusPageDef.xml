@@ -4,19 +4,19 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-   <iterator Binds="TblGrantApprovalMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+   <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
               id="TblGrantApprovalMasterView1Iterator"/>
     <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
               Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MMP_RO_Status2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status2Query"/>
     <iterator Binds="TblGrantApprovalDetailDView4" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDView4Iterator"/>
+              id="TblGrantApprovalDetailDView4Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblGrantApprovalDetailDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView4Query"/>
     <iterator Binds="MMP_RO_Status_Grant_Land1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MMP_RO_Status_Grant_Land1Iterator"/>
+              id="MMP_RO_Status_Grant_Land1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MMP_RO_Status_Grant_Land1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land1Query"/>
   </executables>
@@ -76,5 +76,9 @@
       </ValueList>
     </button>
     <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="MMP_RO_Status_Grant_Land1Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantApprovalDetailDView4Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

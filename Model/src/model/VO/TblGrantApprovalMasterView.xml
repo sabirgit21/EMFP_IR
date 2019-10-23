@@ -6,13 +6,22 @@
   Name="TblGrantApprovalMasterView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID, 
+       TblGrantApprovalMaster.CLUSTER_ID, 
+       TblGrantApprovalMaster.DATED, 
+       TblGrantApprovalMaster.STATUS, 
+       TblGrantApprovalMaster.PHASE_ID, 
+       TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_TYPE, 
+       TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_GROUP_ID, 
+       TblGrantApprovalMaster.GRANT_APP_DETAIL_ID, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1"
+  FromList="TBL_GRANT_APPROVAL_MASTER TblGrantApprovalMaster, TBL_CLUSTER TblCluster"
+  Where="TblGrantApprovalMaster.CLUSTER_ID = TblCluster.CLUSTER_ID(+)"
+  OrderBy="TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID">
   <ViewAccessor
     Name="Cluster_Name_LOV1"
     ViewObjectName="model.LOV.Cluster_Name_LOV"
@@ -271,29 +280,4 @@
     ViewLink="model.VO.MMPROApprovalFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalMasterId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalMasterId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalMasterId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalMasterId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalMasterId"
-      Ascending="false"/>
-  </SortCriteria>
 </ViewObject>
