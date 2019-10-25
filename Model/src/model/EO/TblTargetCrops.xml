@@ -19,7 +19,7 @@
     Name="TargetCropsId"
     ColumnName="TARGET_CROPS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TARGET_CROPS"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ProjOffId"
     ColumnName="PROJ_OFF_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TARGET_CROPS"/>
   <Attribute
@@ -37,7 +37,7 @@
     IsNotNull="true"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TARGET_CROPS"/>
   <Attribute
@@ -73,7 +73,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TARGET_CROPS"/>
   <Attribute
@@ -89,7 +89,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TARGET_CROPS"/>
   <Attribute

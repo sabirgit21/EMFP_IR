@@ -22,7 +22,7 @@
   <Variable
     Name="gotPhaseID"
     Kind="viewcriteria"
-    Type="java.math.BigDecimal"/>
+    Type="oracle.jbo.domain.Number"/>
   <EntityUsage
     Name="TblCluster"
     Entity="model.EO.TblCluster"/>

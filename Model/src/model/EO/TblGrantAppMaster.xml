@@ -19,7 +19,7 @@
     Name="GrantAppMasterId"
     ColumnName="GRANT_APP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"
     PrimaryKey="true"
@@ -29,14 +29,14 @@
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="Acre"
     ColumnName="ACRE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
@@ -44,7 +44,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
@@ -59,28 +59,28 @@
     Name="Status"
     ColumnName="STATUS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="CourseId"
     ColumnName="COURSE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="TrainerId"
     ColumnName="TRAINER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
@@ -96,7 +96,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"/>
   <Attribute
@@ -111,7 +111,7 @@
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_MASTER"
     IsNotNull="true"/>

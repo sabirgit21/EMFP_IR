@@ -19,7 +19,7 @@
     Name="GrantAppDetailId"
     ColumnName="GRANT_APP_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"
     PrimaryKey="true"
@@ -29,28 +29,28 @@
     Name="GrantAppMasterId"
     ColumnName="GRANT_APP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute
     Name="SupplierId"
     ColumnName="SUPPLIER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute
     Name="ItemL4Id"
     ColumnName="ITEM_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute
@@ -66,7 +66,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute
@@ -81,7 +81,7 @@
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APP_DETAIL"/>
   <Attribute

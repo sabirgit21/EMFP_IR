@@ -19,7 +19,7 @@
     Name="TrainerPercId"
     ColumnName="TRAINER_PERC_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINER_PERC"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="TRAINER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINER_PERC"/>
   <Attribute
@@ -51,7 +51,7 @@
     Name="Amount"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINER_PERC"/>
   <Attribute
@@ -86,7 +86,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINER_PERC"/>
   <Attribute
@@ -102,7 +102,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINER_PERC"/>
   <Attribute

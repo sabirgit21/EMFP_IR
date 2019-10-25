@@ -19,7 +19,7 @@
     Name="TeamFormationId"
     ColumnName="TEAM_FORMATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TEAM_FORMATION"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="TRAINER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TEAM_FORMATION"/>
   <Attribute
@@ -38,7 +38,7 @@
     IsNotNull="true"
     ColumnName="TEAM_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TEAM_FORMATION"/>
   <Attribute
@@ -73,7 +73,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TEAM_FORMATION"/>
   <Attribute
@@ -89,7 +89,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TEAM_FORMATION"/>
   <Attribute

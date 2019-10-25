@@ -14,7 +14,7 @@
     Name="GrantGroupDetailId"
     ColumnName="GRANT_GROUP_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_DETAIL"
     PrimaryKey="true"
@@ -24,14 +24,14 @@
     Name="GrantGroupMasterId"
     ColumnName="GRANT_GROUP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_DETAIL"/>
   <Attribute
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_DETAIL"/>
   <AccessorAttribute

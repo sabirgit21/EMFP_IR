@@ -19,7 +19,7 @@
     Name="FarmerRegMemId"
     ColumnName="FARMER_REG_MEM_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_MEM"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_MEM"/>
   <Attribute
@@ -138,7 +138,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_MEM"/>
   <Attribute
@@ -154,7 +154,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_MEM"/>
   <Attribute

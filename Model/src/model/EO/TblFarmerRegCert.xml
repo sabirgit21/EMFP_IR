@@ -19,7 +19,7 @@
     Name="FarmerRegCertId"
     ColumnName="FARMER_REG_CERT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CERT"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CERT"/>
   <Attribute
@@ -38,14 +38,14 @@
     IsNotNull="true"
     ColumnName="CERTIFICATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CERT"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CERT"/>
   <Attribute
@@ -61,7 +61,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CERT"/>
   <Attribute

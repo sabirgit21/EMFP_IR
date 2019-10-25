@@ -14,7 +14,7 @@
     Name="ClusterDetailId"
     ColumnName="CLUSTER_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_DETAIL"
     PrimaryKey="true"
@@ -25,7 +25,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_DETAIL"/>
   <Attribute
@@ -33,7 +33,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_DETAIL"/>
   <Attribute
@@ -41,7 +41,7 @@
     IsNotNull="true"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_DETAIL"/>
   <AccessorAttribute

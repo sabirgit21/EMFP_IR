@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -111,15 +111,15 @@ public class TblTrainerImpl extends EntityImpl {
      * Gets the attribute value for TrainerId, using the alias name TrainerId.
      * @return the value of TrainerId
      */
-    public BigDecimal getTrainerId() {
-        return (BigDecimal) getAttributeInternal(TRAINERID);
+    public Number getTrainerId() {
+        return (Number) getAttributeInternal(TRAINERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerId.
      * @param value value to set the TrainerId
      */
-    public void setTrainerId(BigDecimal value) {
+    public void setTrainerId(Number value) {
         setAttributeInternal(TRAINERID, value);
     }
 
@@ -415,15 +415,15 @@ public class TblTrainerImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -439,15 +439,15 @@ public class TblTrainerImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -499,7 +499,7 @@ public class TblTrainerImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal trainerId) {
+    public static Key createPrimaryKey(Number trainerId) {
         return new Key(new Object[] { trainerId });
     }
 
@@ -523,9 +523,9 @@ public class TblTrainerImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

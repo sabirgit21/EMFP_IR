@@ -21,7 +21,7 @@
   <Variable
     Name="SROLEMASTERID"
     Kind="where"
-    Type="java.math.BigDecimal">
+    Type="oracle.jbo.domain.Number">
     <TransientExpression
       Name="VariableScript"
       CodeSourceName="SETUP_PAGES"/>
@@ -107,7 +107,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="SR_NO"
     Expression="SR_NO"
@@ -117,7 +117,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"
@@ -127,7 +127,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="PAGES_ID"
     Expression="PAGES_ID"
@@ -137,7 +137,7 @@ ORDER BY TP.SR_NO ASC]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"

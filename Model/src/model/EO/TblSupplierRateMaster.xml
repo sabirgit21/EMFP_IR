@@ -19,7 +19,7 @@
     Name="SupplierRateMasterId"
     ColumnName="SUPPLIER_RATE_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_MASTER"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="SUPPLIER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_MASTER"/>
   <Attribute
@@ -45,7 +45,7 @@
     Name="Status"
     ColumnName="STATUS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_MASTER"/>
   <Attribute
@@ -64,7 +64,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_MASTER"/>
   <Attribute
@@ -80,7 +80,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_MASTER"/>
   <Attribute

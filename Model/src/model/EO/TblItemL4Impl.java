@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -87,15 +87,15 @@ public class TblItemL4Impl extends EntityImpl {
      * Gets the attribute value for ItemL4Id, using the alias name ItemL4Id.
      * @return the value of ItemL4Id
      */
-    public BigDecimal getItemL4Id() {
-        return (BigDecimal) getAttributeInternal(ITEML4ID);
+    public Number getItemL4Id() {
+        return (Number) getAttributeInternal(ITEML4ID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ItemL4Id.
      * @param value value to set the ItemL4Id
      */
-    public void setItemL4Id(BigDecimal value) {
+    public void setItemL4Id(Number value) {
         setAttributeInternal(ITEML4ID, value);
     }
 
@@ -103,15 +103,15 @@ public class TblItemL4Impl extends EntityImpl {
      * Gets the attribute value for ItemL3Id, using the alias name ItemL3Id.
      * @return the value of ItemL3Id
      */
-    public BigDecimal getItemL3Id() {
-        return (BigDecimal) getAttributeInternal(ITEML3ID);
+    public Number getItemL3Id() {
+        return (Number) getAttributeInternal(ITEML3ID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ItemL3Id.
      * @param value value to set the ItemL3Id
      */
-    public void setItemL3Id(BigDecimal value) {
+    public void setItemL3Id(Number value) {
         setAttributeInternal(ITEML3ID, value);
     }
 
@@ -151,15 +151,15 @@ public class TblItemL4Impl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -175,15 +175,15 @@ public class TblItemL4Impl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -199,15 +199,15 @@ public class TblItemL4Impl extends EntityImpl {
      * Gets the attribute value for Rate, using the alias name Rate.
      * @return the value of Rate
      */
-    public BigDecimal getRate() {
-        return (BigDecimal) getAttributeInternal(RATE);
+    public Number getRate() {
+        return (Number) getAttributeInternal(RATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Rate.
      * @param value value to set the Rate
      */
-    public void setRate(BigDecimal value) {
+    public void setRate(Number value) {
         setAttributeInternal(RATE, value);
     }
 
@@ -245,7 +245,7 @@ public class TblItemL4Impl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal itemL4Id) {
+    public static Key createPrimaryKey(Number itemL4Id) {
         return new Key(new Object[] { itemL4Id });
     }
 
@@ -262,9 +262,9 @@ public class TblItemL4Impl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
         try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
         } catch(Exception ex) {
             ex.printStackTrace();
         }

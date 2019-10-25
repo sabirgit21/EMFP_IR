@@ -22,11 +22,11 @@
   <Variable
     Name="PAGEIDGET"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="oracle.jbo.domain.Number"/>
   <Variable
     Name="CrudMastID"
     Kind="where"
-    Type="java.math.BigDecimal">
+    Type="oracle.jbo.domain.Number">
     <TransientExpression
       Name="VariableScript"
       trustMode="trusted"
@@ -54,7 +54,7 @@ And tbl_role_detail_Pages.Pages_ID=:PAGEIDGET]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="CRUDID"
     Expression="CRUDID"

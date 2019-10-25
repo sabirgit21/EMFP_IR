@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -74,15 +74,15 @@ public class TblMonParamImpl extends EntityImpl {
      * Gets the attribute value for MonParamId, using the alias name MonParamId.
      * @return the value of MonParamId
      */
-    public BigDecimal getMonParamId() {
-        return (BigDecimal) getAttributeInternal(MONPARAMID);
+    public Number getMonParamId() {
+        return (Number) getAttributeInternal(MONPARAMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MonParamId.
      * @param value value to set the MonParamId
      */
-    public void setMonParamId(BigDecimal value) {
+    public void setMonParamId(Number value) {
         setAttributeInternal(MONPARAMID, value);
     }
 
@@ -90,15 +90,15 @@ public class TblMonParamImpl extends EntityImpl {
      * Gets the attribute value for OutputIndId, using the alias name OutputIndId.
      * @return the value of OutputIndId
      */
-    public BigDecimal getOutputIndId() {
-        return (BigDecimal) getAttributeInternal(OUTPUTINDID);
+    public Number getOutputIndId() {
+        return (Number) getAttributeInternal(OUTPUTINDID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for OutputIndId.
      * @param value value to set the OutputIndId
      */
-    public void setOutputIndId(BigDecimal value) {
+    public void setOutputIndId(Number value) {
         setAttributeInternal(OUTPUTINDID, value);
     }
 
@@ -154,15 +154,15 @@ public class TblMonParamImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -178,15 +178,15 @@ public class TblMonParamImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -217,7 +217,7 @@ public class TblMonParamImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal monParamId) {
+    public static Key createPrimaryKey(Number monParamId) {
         return new Key(new Object[] { monParamId });
     }
 
@@ -241,9 +241,9 @@ public class TblMonParamImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
         try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
         } catch(Exception ex) {
             ex.printStackTrace();
         }

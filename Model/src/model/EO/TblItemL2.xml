@@ -19,7 +19,7 @@
     Name="ItemL2Id"
     ColumnName="ITEM_L2_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L2"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ItemL1Id"
     ColumnName="ITEM_L1_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L2"
     RetrievedOnInsert="true"
@@ -68,7 +68,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L2"/>
   <Attribute
@@ -84,7 +84,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L2"/>
   <Attribute

@@ -15,7 +15,7 @@
     IsNotNull="true"
     ColumnName="VOUCHER_D_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_VOUCHER_D"
     PrimaryKey="true"/>
@@ -46,7 +46,7 @@
     IsNotNull="true"
     ColumnName="VOUCHER_D_GL_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_VOUCHER_D"/>
   <Attribute
@@ -65,14 +65,14 @@
     Name="VoucherDDr"
     ColumnName="VOUCHER_D_DR"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_VOUCHER_D"/>
   <Attribute
     Name="VoucherDCr"
     ColumnName="VOUCHER_D_CR"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_VOUCHER_D"/>
   <AccessorAttribute

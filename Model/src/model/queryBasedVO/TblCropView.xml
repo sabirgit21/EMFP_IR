@@ -25,7 +25,7 @@ FROM TBL_CROP TblCrop]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="CROP_ID"
     Expression="CROP_ID"

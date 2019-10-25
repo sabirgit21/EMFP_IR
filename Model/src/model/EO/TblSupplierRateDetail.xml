@@ -19,7 +19,7 @@
     Name="SupplierRateDetailId"
     ColumnName="SUPPLIER_RATE_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="SUPPLIER_RATE_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"/>
   <Attribute
@@ -38,7 +38,7 @@
     IsNotNull="true"
     ColumnName="ITEM_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"/>
   <Attribute
@@ -46,7 +46,7 @@
     IsNotNull="true"
     ColumnName="RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"/>
   <Attribute
@@ -69,7 +69,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"/>
   <Attribute
@@ -85,7 +85,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER_RATE_DETAIL"/>
   <Attribute

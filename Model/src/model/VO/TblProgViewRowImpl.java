@@ -1,6 +1,6 @@
 package model.VO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
@@ -72,15 +72,15 @@ public class TblProgViewRowImpl extends ViewRowImpl {
      * Gets the attribute value for PROG_ID using the alias name ProgId.
      * @return the PROG_ID
      */
-    public BigDecimal getProgId() {
-        return (BigDecimal) getAttributeInternal(PROGID);
+    public Number getProgId() {
+        return (Number) getAttributeInternal(PROGID);
     }
 
     /**
      * Sets <code>value</code> as attribute value for PROG_ID using the alias name ProgId.
      * @param value value to set the PROG_ID
      */
-    public void setProgId(BigDecimal value) {
+    public void setProgId(Number value) {
         setAttributeInternal(PROGID, value);
     }
 

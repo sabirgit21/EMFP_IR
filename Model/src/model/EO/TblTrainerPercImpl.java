@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -76,15 +76,15 @@ public class TblTrainerPercImpl extends EntityImpl {
      * Gets the attribute value for TrainerPercId, using the alias name TrainerPercId.
      * @return the value of TrainerPercId
      */
-    public BigDecimal getTrainerPercId() {
-        return (BigDecimal) getAttributeInternal(TRAINERPERCID);
+    public Number getTrainerPercId() {
+        return (Number) getAttributeInternal(TRAINERPERCID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerPercId.
      * @param value value to set the TrainerPercId
      */
-    public void setTrainerPercId(BigDecimal value) {
+    public void setTrainerPercId(Number value) {
         setAttributeInternal(TRAINERPERCID, value);
     }
 
@@ -92,15 +92,15 @@ public class TblTrainerPercImpl extends EntityImpl {
      * Gets the attribute value for TrainerId, using the alias name TrainerId.
      * @return the value of TrainerId
      */
-    public BigDecimal getTrainerId() {
-        return (BigDecimal) getAttributeInternal(TRAINERID);
+    public Number getTrainerId() {
+        return (Number) getAttributeInternal(TRAINERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerId.
      * @param value value to set the TrainerId
      */
-    public void setTrainerId(BigDecimal value) {
+    public void setTrainerId(Number value) {
         setAttributeInternal(TRAINERID, value);
     }
 
@@ -124,15 +124,15 @@ public class TblTrainerPercImpl extends EntityImpl {
      * Gets the attribute value for Amount, using the alias name Amount.
      * @return the value of Amount
      */
-    public BigDecimal getAmount() {
-        return (BigDecimal) getAttributeInternal(AMOUNT);
+    public Number getAmount() {
+        return (Number) getAttributeInternal(AMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Amount.
      * @param value value to set the Amount
      */
-    public void setAmount(BigDecimal value) {
+    public void setAmount(Number value) {
         setAttributeInternal(AMOUNT, value);
     }
 
@@ -172,15 +172,15 @@ public class TblTrainerPercImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -196,15 +196,15 @@ public class TblTrainerPercImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -235,7 +235,7 @@ public class TblTrainerPercImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal trainerPercId) {
+    public static Key createPrimaryKey(Number trainerPercId) {
         return new Key(new Object[] { trainerPercId });
     }
 
@@ -259,9 +259,9 @@ public class TblTrainerPercImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

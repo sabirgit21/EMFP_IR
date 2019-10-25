@@ -15,7 +15,7 @@
     IsNotNull="true"
     ColumnName="GRANT_APPROVAL_MASTER_D_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER_D"
     PrimaryKey="true"/>
@@ -23,14 +23,14 @@
     Name="GrantApprovalMasterId"
     ColumnName="GRANT_APPROVAL_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER_D"/>
   <Attribute
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER_D"/>
   <AccessorAttribute

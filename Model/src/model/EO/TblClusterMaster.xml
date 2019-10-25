@@ -15,7 +15,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_MASTER"
     PrimaryKey="true"/>
@@ -24,7 +24,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_MASTER"/>
   <Attribute
@@ -39,7 +39,7 @@
     Name="Status"
     ColumnName="STATUS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER_MASTER"/>
   <Attribute

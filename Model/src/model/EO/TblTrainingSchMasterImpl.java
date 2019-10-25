@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -93,15 +93,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for TrainingSchMasterId, using the alias name TrainingSchMasterId.
      * @return the value of TrainingSchMasterId
      */
-    public BigDecimal getTrainingSchMasterId() {
-        return (BigDecimal) getAttributeInternal(TRAININGSCHMASTERID);
+    public Number getTrainingSchMasterId() {
+        return (Number) getAttributeInternal(TRAININGSCHMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainingSchMasterId.
      * @param value value to set the TrainingSchMasterId
      */
-    public void setTrainingSchMasterId(BigDecimal value) {
+    public void setTrainingSchMasterId(Number value) {
         setAttributeInternal(TRAININGSCHMASTERID, value);
     }
 
@@ -109,15 +109,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for ProjCompId, using the alias name ProjCompId.
      * @return the value of ProjCompId
      */
-    public BigDecimal getProjCompId() {
-        return (BigDecimal) getAttributeInternal(PROJCOMPID);
+    public Number getProjCompId() {
+        return (Number) getAttributeInternal(PROJCOMPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ProjCompId.
      * @param value value to set the ProjCompId
      */
-    public void setProjCompId(BigDecimal value) {
+    public void setProjCompId(Number value) {
         setAttributeInternal(PROJCOMPID, value);
     }
 
@@ -125,15 +125,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for CourseId, using the alias name CourseId.
      * @return the value of CourseId
      */
-    public BigDecimal getCourseId() {
-        return (BigDecimal) getAttributeInternal(COURSEID);
+    public Number getCourseId() {
+        return (Number) getAttributeInternal(COURSEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CourseId.
      * @param value value to set the CourseId
      */
-    public void setCourseId(BigDecimal value) {
+    public void setCourseId(Number value) {
         setAttributeInternal(COURSEID, value);
     }
 
@@ -141,15 +141,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for ModuleId, using the alias name ModuleId.
      * @return the value of ModuleId
      */
-    public BigDecimal getModuleId() {
-        return (BigDecimal) getAttributeInternal(MODULEID);
+    public Number getModuleId() {
+        return (Number) getAttributeInternal(MODULEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ModuleId.
      * @param value value to set the ModuleId
      */
-    public void setModuleId(BigDecimal value) {
+    public void setModuleId(Number value) {
         setAttributeInternal(MODULEID, value);
     }
 
@@ -173,15 +173,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for Status, using the alias name Status.
      * @return the value of Status
      */
-    public BigDecimal getStatus() {
-        return (BigDecimal) getAttributeInternal(STATUS);
+    public Number getStatus() {
+        return (Number) getAttributeInternal(STATUS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Status.
      * @param value value to set the Status
      */
-    public void setStatus(BigDecimal value) {
+    public void setStatus(Number value) {
         setAttributeInternal(STATUS, value);
     }
 
@@ -253,15 +253,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for TeamFormationId, using the alias name TeamFormationId.
      * @return the value of TeamFormationId
      */
-    public BigDecimal getTeamFormationId() {
-        return (BigDecimal) getAttributeInternal(TEAMFORMATIONID);
+    public Number getTeamFormationId() {
+        return (Number) getAttributeInternal(TEAMFORMATIONID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TeamFormationId.
      * @param value value to set the TeamFormationId
      */
-    public void setTeamFormationId(BigDecimal value) {
+    public void setTeamFormationId(Number value) {
         setAttributeInternal(TEAMFORMATIONID, value);
     }
 
@@ -269,15 +269,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -293,15 +293,15 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -367,7 +367,7 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal trainingSchMasterId) {
+    public static Key createPrimaryKey(Number trainingSchMasterId) {
         return new Key(new Object[] { trainingSchMasterId });
     }
 
@@ -391,9 +391,9 @@ public class TblTrainingSchMasterImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -77,15 +77,15 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * Gets the attribute value for SupplierRateMasterId, using the alias name SupplierRateMasterId.
      * @return the value of SupplierRateMasterId
      */
-    public BigDecimal getSupplierRateMasterId() {
-        return (BigDecimal) getAttributeInternal(SUPPLIERRATEMASTERID);
+    public Number getSupplierRateMasterId() {
+        return (Number) getAttributeInternal(SUPPLIERRATEMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SupplierRateMasterId.
      * @param value value to set the SupplierRateMasterId
      */
-    public void setSupplierRateMasterId(BigDecimal value) {
+    public void setSupplierRateMasterId(Number value) {
         setAttributeInternal(SUPPLIERRATEMASTERID, value);
     }
 
@@ -93,15 +93,15 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * Gets the attribute value for SupplierId, using the alias name SupplierId.
      * @return the value of SupplierId
      */
-    public BigDecimal getSupplierId() {
-        return (BigDecimal) getAttributeInternal(SUPPLIERID);
+    public Number getSupplierId() {
+        return (Number) getAttributeInternal(SUPPLIERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SupplierId.
      * @param value value to set the SupplierId
      */
-    public void setSupplierId(BigDecimal value) {
+    public void setSupplierId(Number value) {
         setAttributeInternal(SUPPLIERID, value);
     }
 
@@ -125,15 +125,15 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * Gets the attribute value for Status, using the alias name Status.
      * @return the value of Status
      */
-    public BigDecimal getStatus() {
-        return (BigDecimal) getAttributeInternal(STATUS);
+    public Number getStatus() {
+        return (Number) getAttributeInternal(STATUS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Status.
      * @param value value to set the Status
      */
-    public void setStatus(BigDecimal value) {
+    public void setStatus(Number value) {
         setAttributeInternal(STATUS, value);
     }
 
@@ -157,15 +157,15 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -181,15 +181,15 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -227,7 +227,7 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal supplierRateMasterId) {
+    public static Key createPrimaryKey(Number supplierRateMasterId) {
         return new Key(new Object[] { supplierRateMasterId });
     }
 
@@ -251,9 +251,9 @@ public class TblSupplierRateMasterImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

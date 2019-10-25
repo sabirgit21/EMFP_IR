@@ -14,7 +14,7 @@
     Name="PagesId"
     ColumnName="PAGES_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PAGES"
     PrimaryKey="true"
@@ -25,7 +25,7 @@
     IsNotNull="true"
     ColumnName="MODULE_MENU_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PAGES"/>
   <Attribute

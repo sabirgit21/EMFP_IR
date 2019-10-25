@@ -22,7 +22,7 @@
   <Variable
     Name="GETROLEMASTERID"
     Kind="where"
-    Type="java.math.BigDecimal">
+    Type="oracle.jbo.domain.Number">
     <TransientExpression
       Name="VariableScript"
       CodeSourceName="USERS_MODULE"/>
@@ -44,7 +44,7 @@ RDM.ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
     Name="ModuleMenuId"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="MODULE_MENU_ID"
     Expression="MODULE_MENU_ID"
@@ -123,7 +123,7 @@ RDM.ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
     Name="RoleMasterId"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"
@@ -133,7 +133,7 @@ RDM.ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="SR_NO"
     Expression="SR_NO"

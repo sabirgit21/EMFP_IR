@@ -14,7 +14,7 @@
     Name="UserMasterId"
     ColumnName="USER_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_USER_MASTER"
     PrimaryKey="true"
@@ -68,7 +68,7 @@
     IsNotNull="true"
     ColumnName="ROLE_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_USER_MASTER"/>
   <AccessorAttribute

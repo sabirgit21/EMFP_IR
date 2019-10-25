@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -94,15 +94,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantAppDetailId, using the alias name GrantAppDetailId.
      * @return the value of GrantAppDetailId
      */
-    public BigDecimal getGrantAppDetailId() {
-        return (BigDecimal) getAttributeInternal(GRANTAPPDETAILID);
+    public Number getGrantAppDetailId() {
+        return (Number) getAttributeInternal(GRANTAPPDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantAppDetailId.
      * @param value value to set the GrantAppDetailId
      */
-    public void setGrantAppDetailId(BigDecimal value) {
+    public void setGrantAppDetailId(Number value) {
         setAttributeInternal(GRANTAPPDETAILID, value);
     }
 
@@ -110,15 +110,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantAppMasterId, using the alias name GrantAppMasterId.
      * @return the value of GrantAppMasterId
      */
-    public BigDecimal getGrantAppMasterId() {
-        return (BigDecimal) getAttributeInternal(GRANTAPPMASTERID);
+    public Number getGrantAppMasterId() {
+        return (Number) getAttributeInternal(GRANTAPPMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantAppMasterId.
      * @param value value to set the GrantAppMasterId
      */
-    public void setGrantAppMasterId(BigDecimal value) {
+    public void setGrantAppMasterId(Number value) {
         setAttributeInternal(GRANTAPPMASTERID, value);
     }
 
@@ -126,15 +126,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for SupplierId, using the alias name SupplierId.
      * @return the value of SupplierId
      */
-    public BigDecimal getSupplierId() {
-        return (BigDecimal) getAttributeInternal(SUPPLIERID);
+    public Number getSupplierId() {
+        return (Number) getAttributeInternal(SUPPLIERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SupplierId.
      * @param value value to set the SupplierId
      */
-    public void setSupplierId(BigDecimal value) {
+    public void setSupplierId(Number value) {
         setAttributeInternal(SUPPLIERID, value);
     }
 
@@ -142,15 +142,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for ItemL4Id, using the alias name ItemL4Id.
      * @return the value of ItemL4Id
      */
-    public BigDecimal getItemL4Id() {
-        return (BigDecimal) getAttributeInternal(ITEML4ID);
+    public Number getItemL4Id() {
+        return (Number) getAttributeInternal(ITEML4ID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ItemL4Id.
      * @param value value to set the ItemL4Id
      */
-    public void setItemL4Id(BigDecimal value) {
+    public void setItemL4Id(Number value) {
         setAttributeInternal(ITEML4ID, value);
     }
 
@@ -158,15 +158,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -182,15 +182,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -206,15 +206,15 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -312,7 +312,7 @@ public class TblGrantAppDetailImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal grantAppDetailId) {
+    public static Key createPrimaryKey(Number grantAppDetailId) {
         return new Key(new Object[] { grantAppDetailId });
     }
 
@@ -329,9 +329,9 @@ public class TblGrantAppDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

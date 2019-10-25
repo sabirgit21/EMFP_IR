@@ -19,7 +19,7 @@
     Name="FarmerRegLandId"
     ColumnName="FARMER_REG_LAND_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -38,7 +38,7 @@
     IsNotNull="true"
     ColumnName="LAND_ACRE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -46,7 +46,7 @@
     IsNotNull="true"
     ColumnName="LAND_KANAL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -54,7 +54,7 @@
     IsNotNull="true"
     ColumnName="PRESENT_PROD"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -62,7 +62,7 @@
     IsNotNull="true"
     ColumnName="LAND_UNDER_ORCH"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -125,21 +125,21 @@
     Name="KhatooniNo"
     ColumnName="KHATOONI_NO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
     Name="KhauuetNo"
     ColumnName="KHAUUET_NO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
     Name="QittaNo"
     ColumnName="QITTA_NO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -147,14 +147,14 @@
     IsUnique="true"
     ColumnName="KHASRA_NO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute
@@ -170,7 +170,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_LAND"/>
   <Attribute

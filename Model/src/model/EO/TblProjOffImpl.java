@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -89,15 +89,15 @@ public class TblProjOffImpl extends EntityImpl {
      * Gets the attribute value for ProjOffId, using the alias name ProjOffId.
      * @return the value of ProjOffId
      */
-    public BigDecimal getProjOffId() {
-        return (BigDecimal) getAttributeInternal(PROJOFFID);
+    public Number getProjOffId() {
+        return (Number) getAttributeInternal(PROJOFFID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ProjOffId.
      * @param value value to set the ProjOffId
      */
-    public void setProjOffId(BigDecimal value) {
+    public void setProjOffId(Number value) {
         setAttributeInternal(PROJOFFID, value);
     }
 
@@ -105,15 +105,15 @@ public class TblProjOffImpl extends EntityImpl {
      * Gets the attribute value for ProjId, using the alias name ProjId.
      * @return the value of ProjId
      */
-    public BigDecimal getProjId() {
-        return (BigDecimal) getAttributeInternal(PROJID);
+    public Number getProjId() {
+        return (Number) getAttributeInternal(PROJID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ProjId.
      * @param value value to set the ProjId
      */
-    public void setProjId(BigDecimal value) {
+    public void setProjId(Number value) {
         setAttributeInternal(PROJID, value);
     }
 
@@ -273,15 +273,15 @@ public class TblProjOffImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -297,15 +297,15 @@ public class TblProjOffImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -335,7 +335,7 @@ public class TblProjOffImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal projOffId) {
+    public static Key createPrimaryKey(Number projOffId) {
         return new Key(new Object[] { projOffId });
     }
 
@@ -359,9 +359,9 @@ public class TblProjOffImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
         try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
         } catch(Exception ex) {
             ex.printStackTrace();
         }

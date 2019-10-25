@@ -21,7 +21,7 @@
   <Variable
     Name="getClstrID"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="oracle.jbo.domain.Number"/>
   <SQLQuery><![CDATA[select tbl_farmer_reg.farmer_reg_id,tbl_farmer_reg.farmer_no,tbl_farmer_reg.name,tbl_farmer_reg.cluster_id  
 from tbl_farmer_reg    
 where tbl_farmer_reg.cluster_id=:getClstrID]]></SQLQuery>
@@ -30,7 +30,7 @@ where tbl_farmer_reg.cluster_id=:getClstrID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="FARMER_REG_ID"
     Expression="FARMER_REG_ID"
@@ -70,7 +70,7 @@ where tbl_farmer_reg.cluster_id=:getClstrID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="CLUSTER_ID"
     Expression="CLUSTER_ID"

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -96,15 +96,15 @@ public class TblFarmerRegMemImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegMemId, using the alias name FarmerRegMemId.
      * @return the value of FarmerRegMemId
      */
-    public BigDecimal getFarmerRegMemId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGMEMID);
+    public Number getFarmerRegMemId() {
+        return (Number) getAttributeInternal(FARMERREGMEMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegMemId.
      * @param value value to set the FarmerRegMemId
      */
-    public void setFarmerRegMemId(BigDecimal value) {
+    public void setFarmerRegMemId(Number value) {
         setAttributeInternal(FARMERREGMEMID, value);
     }
 
@@ -112,15 +112,15 @@ public class TblFarmerRegMemImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -256,15 +256,15 @@ public class TblFarmerRegMemImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -280,15 +280,15 @@ public class TblFarmerRegMemImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -334,7 +334,7 @@ public class TblFarmerRegMemImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal farmerRegMemId) {
+    public static Key createPrimaryKey(Number farmerRegMemId) {
         return new Key(new Object[] { farmerRegMemId });
     }
 
@@ -351,9 +351,9 @@ public class TblFarmerRegMemImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

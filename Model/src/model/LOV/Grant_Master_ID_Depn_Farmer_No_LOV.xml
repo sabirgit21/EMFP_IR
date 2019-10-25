@@ -21,7 +21,7 @@
   <Variable
     Name="ggMasID"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="oracle.jbo.domain.Number"/>
   <SQLQuery><![CDATA[select tbl_farmer_reg.farmer_reg_id,tbl_farmer_reg.farmer_no,tbl_farmer_reg.name, tbl_grant_group_master.grant_group_master_id   
 from tbl_farmer_reg,tbl_grant_group_master     
 where tbl_farmer_reg.cluster_id=tbl_grant_group_master.grant_group_master_cluster_id     
@@ -31,7 +31,7 @@ and tbl_grant_group_master.grant_group_master_id=:ggMasID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="FARMER_REG_ID"
     Expression="FARMER_REG_ID"
@@ -71,7 +71,7 @@ and tbl_grant_group_master.grant_group_master_id=:ggMasID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="GRANT_GROUP_MASTER_ID"
     Expression="GRANT_GROUP_MASTER_ID"

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -76,15 +76,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for PhasePlanId, using the alias name PhasePlanId.
      * @return the value of PhasePlanId
      */
-    public BigDecimal getPhasePlanId() {
-        return (BigDecimal) getAttributeInternal(PHASEPLANID);
+    public Number getPhasePlanId() {
+        return (Number) getAttributeInternal(PHASEPLANID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhasePlanId.
      * @param value value to set the PhasePlanId
      */
-    public void setPhasePlanId(BigDecimal value) {
+    public void setPhasePlanId(Number value) {
         setAttributeInternal(PHASEPLANID, value);
     }
 
@@ -92,15 +92,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -108,15 +108,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for CropId, using the alias name CropId.
      * @return the value of CropId
      */
-    public BigDecimal getCropId() {
-        return (BigDecimal) getAttributeInternal(CROPID);
+    public Number getCropId() {
+        return (Number) getAttributeInternal(CROPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CropId.
      * @param value value to set the CropId
      */
-    public void setCropId(BigDecimal value) {
+    public void setCropId(Number value) {
         setAttributeInternal(CROPID, value);
     }
 
@@ -124,15 +124,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for CityLibrDetail, using the alias name CityLibrDetail.
      * @return the value of CityLibrDetail
      */
-    public BigDecimal getCityLibrDetail() {
-        return (BigDecimal) getAttributeInternal(CITYLIBRDETAIL);
+    public Number getCityLibrDetail() {
+        return (Number) getAttributeInternal(CITYLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CityLibrDetail.
      * @param value value to set the CityLibrDetail
      */
-    public void setCityLibrDetail(BigDecimal value) {
+    public void setCityLibrDetail(Number value) {
         setAttributeInternal(CITYLIBRDETAIL, value);
     }
 
@@ -140,15 +140,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for DistrictLibrDetail, using the alias name DistrictLibrDetail.
      * @return the value of DistrictLibrDetail
      */
-    public BigDecimal getDistrictLibrDetail() {
-        return (BigDecimal) getAttributeInternal(DISTRICTLIBRDETAIL);
+    public Number getDistrictLibrDetail() {
+        return (Number) getAttributeInternal(DISTRICTLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DistrictLibrDetail.
      * @param value value to set the DistrictLibrDetail
      */
-    public void setDistrictLibrDetail(BigDecimal value) {
+    public void setDistrictLibrDetail(Number value) {
         setAttributeInternal(DISTRICTLIBRDETAIL, value);
     }
 
@@ -156,15 +156,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for TargetArea, using the alias name TargetArea.
      * @return the value of TargetArea
      */
-    public BigDecimal getTargetArea() {
-        return (BigDecimal) getAttributeInternal(TARGETAREA);
+    public Number getTargetArea() {
+        return (Number) getAttributeInternal(TARGETAREA);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TargetArea.
      * @param value value to set the TargetArea
      */
-    public void setTargetArea(BigDecimal value) {
+    public void setTargetArea(Number value) {
         setAttributeInternal(TARGETAREA, value);
     }
 
@@ -172,15 +172,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -196,15 +196,15 @@ public class TblPhasePlanImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -235,7 +235,7 @@ public class TblPhasePlanImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal phasePlanId) {
+    public static Key createPrimaryKey(Number phasePlanId) {
         return new Key(new Object[] { phasePlanId });
     }
 
@@ -259,9 +259,9 @@ public class TblPhasePlanImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

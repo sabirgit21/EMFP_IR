@@ -19,7 +19,7 @@
     Name="GrantDisburseDetailId"
     ColumnName="GRANT_DISBURSE_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="GRANT_DISBURSE_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -38,7 +38,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -46,7 +46,7 @@
     IsNotNull="true"
     ColumnName="ACRE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -54,7 +54,7 @@
     IsNotNull="true"
     ColumnName="RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -62,14 +62,14 @@
     IsNotNull="true"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -85,7 +85,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute
@@ -100,7 +100,7 @@
     Name="FAmount"
     ColumnName="F_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <Attribute

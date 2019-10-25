@@ -32,7 +32,7 @@ FROM TBL_COMPANYPROFILE TblCompanyprofile]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="COMPANYPROFILE_ID"
     Expression="COMPANYPROFILE_ID"

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -84,15 +84,15 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * Gets the attribute value for ClusterAttDetailId, using the alias name ClusterAttDetailId.
      * @return the value of ClusterAttDetailId
      */
-    public BigDecimal getClusterAttDetailId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERATTDETAILID);
+    public Number getClusterAttDetailId() {
+        return (Number) getAttributeInternal(CLUSTERATTDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterAttDetailId.
      * @param value value to set the ClusterAttDetailId
      */
-    public void setClusterAttDetailId(BigDecimal value) {
+    public void setClusterAttDetailId(Number value) {
         setAttributeInternal(CLUSTERATTDETAILID, value);
     }
 
@@ -100,15 +100,15 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * Gets the attribute value for ClusterAttMasterId, using the alias name ClusterAttMasterId.
      * @return the value of ClusterAttMasterId
      */
-    public BigDecimal getClusterAttMasterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERATTMASTERID);
+    public Number getClusterAttMasterId() {
+        return (Number) getAttributeInternal(CLUSTERATTMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterAttMasterId.
      * @param value value to set the ClusterAttMasterId
      */
-    public void setClusterAttMasterId(BigDecimal value) {
+    public void setClusterAttMasterId(Number value) {
         setAttributeInternal(CLUSTERATTMASTERID, value);
     }
 
@@ -116,15 +116,15 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -148,15 +148,15 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -172,15 +172,15 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -240,7 +240,7 @@ public class TblClusterAttDetailImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal clusterAttDetailId) {
+    public static Key createPrimaryKey(Number clusterAttDetailId) {
         return new Key(new Object[] { clusterAttDetailId });
     }
 
@@ -257,9 +257,9 @@ public class TblClusterAttDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

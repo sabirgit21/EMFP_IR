@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -125,15 +125,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantApprovalDetailId, using the alias name GrantApprovalDetailId.
      * @return the value of GrantApprovalDetailId
      */
-    public BigDecimal getGrantApprovalDetailId() {
-        return (BigDecimal) getAttributeInternal(GRANTAPPROVALDETAILID);
+    public Number getGrantApprovalDetailId() {
+        return (Number) getAttributeInternal(GRANTAPPROVALDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantApprovalDetailId.
      * @param value value to set the GrantApprovalDetailId
      */
-    public void setGrantApprovalDetailId(BigDecimal value) {
+    public void setGrantApprovalDetailId(Number value) {
         setAttributeInternal(GRANTAPPROVALDETAILID, value);
     }
 
@@ -141,15 +141,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantApprovalMasterId, using the alias name GrantApprovalMasterId.
      * @return the value of GrantApprovalMasterId
      */
-    public BigDecimal getGrantApprovalMasterId() {
-        return (BigDecimal) getAttributeInternal(GRANTAPPROVALMASTERID);
+    public Number getGrantApprovalMasterId() {
+        return (Number) getAttributeInternal(GRANTAPPROVALMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantApprovalMasterId.
      * @param value value to set the GrantApprovalMasterId
      */
-    public void setGrantApprovalMasterId(BigDecimal value) {
+    public void setGrantApprovalMasterId(Number value) {
         setAttributeInternal(GRANTAPPROVALMASTERID, value);
     }
 
@@ -157,15 +157,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -173,15 +173,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantAppMasterId, using the alias name GrantAppMasterId.
      * @return the value of GrantAppMasterId
      */
-    public BigDecimal getGrantAppMasterId() {
-        return (BigDecimal) getAttributeInternal(GRANTAPPMASTERID);
+    public Number getGrantAppMasterId() {
+        return (Number) getAttributeInternal(GRANTAPPMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantAppMasterId.
      * @param value value to set the GrantAppMasterId
      */
-    public void setGrantAppMasterId(BigDecimal value) {
+    public void setGrantAppMasterId(Number value) {
         setAttributeInternal(GRANTAPPMASTERID, value);
     }
 
@@ -189,15 +189,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for Acre, using the alias name Acre.
      * @return the value of Acre
      */
-    public BigDecimal getAcre() {
-        return (BigDecimal) getAttributeInternal(ACRE);
+    public Number getAcre() {
+        return (Number) getAttributeInternal(ACRE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Acre.
      * @param value value to set the Acre
      */
-    public void setAcre(BigDecimal value) {
+    public void setAcre(Number value) {
         setAttributeInternal(ACRE, value);
     }
 
@@ -205,15 +205,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for Rate, using the alias name Rate.
      * @return the value of Rate
      */
-    public BigDecimal getRate() {
-        return (BigDecimal) getAttributeInternal(RATE);
+    public Number getRate() {
+        return (Number) getAttributeInternal(RATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Rate.
      * @param value value to set the Rate
      */
-    public void setRate(BigDecimal value) {
+    public void setRate(Number value) {
         setAttributeInternal(RATE, value);
     }
 
@@ -221,15 +221,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for Amount, using the alias name Amount.
      * @return the value of Amount
      */
-    public BigDecimal getAmount() {
-        return (BigDecimal) getAttributeInternal(AMOUNT);
+    public Number getAmount() {
+        return (Number) getAttributeInternal(AMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Amount.
      * @param value value to set the Amount
      */
-    public void setAmount(BigDecimal value) {
+    public void setAmount(Number value) {
         setAttributeInternal(AMOUNT, value);
     }
 
@@ -253,15 +253,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -277,15 +277,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -301,15 +301,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for FAcre, using the alias name FAcre.
      * @return the value of FAcre
      */
-    public BigDecimal getFAcre() {
-        return (BigDecimal) getAttributeInternal(FACRE);
+    public Number getFAcre() {
+        return (Number) getAttributeInternal(FACRE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FAcre.
      * @param value value to set the FAcre
      */
-    public void setFAcre(BigDecimal value) {
+    public void setFAcre(Number value) {
         setAttributeInternal(FACRE, value);
     }
 
@@ -317,15 +317,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantAmount, using the alias name GrantAmount.
      * @return the value of GrantAmount
      */
-    public BigDecimal getGrantAmount() {
-        return (BigDecimal) getAttributeInternal(GRANTAMOUNT);
+    public Number getGrantAmount() {
+        return (Number) getAttributeInternal(GRANTAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantAmount.
      * @param value value to set the GrantAmount
      */
-    public void setGrantAmount(BigDecimal value) {
+    public void setGrantAmount(Number value) {
         setAttributeInternal(GRANTAMOUNT, value);
     }
 
@@ -333,15 +333,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for GrantRateId, using the alias name GrantRateId.
      * @return the value of GrantRateId
      */
-    public BigDecimal getGrantRateId() {
-        return (BigDecimal) getAttributeInternal(GRANTRATEID);
+    public Number getGrantRateId() {
+        return (Number) getAttributeInternal(GRANTRATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantRateId.
      * @param value value to set the GrantRateId
      */
-    public void setGrantRateId(BigDecimal value) {
+    public void setGrantRateId(Number value) {
         setAttributeInternal(GRANTRATEID, value);
     }
 
@@ -349,15 +349,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for FAmount, using the alias name FAmount.
      * @return the value of FAmount
      */
-    public BigDecimal getFAmount() {
-        return (BigDecimal) getAttributeInternal(FAMOUNT);
+    public Number getFAmount() {
+        return (Number) getAttributeInternal(FAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FAmount.
      * @param value value to set the FAmount
      */
-    public void setFAmount(BigDecimal value) {
+    public void setFAmount(Number value) {
         setAttributeInternal(FAMOUNT, value);
     }
 
@@ -445,15 +445,15 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * Gets the attribute value for LandUnderOrch, using the alias name LandUnderOrch.
      * @return the value of LandUnderOrch
      */
-    public BigDecimal getLandUnderOrch() {
-        return (BigDecimal) getAttributeInternal(LANDUNDERORCH);
+    public Number getLandUnderOrch() {
+        return (Number) getAttributeInternal(LANDUNDERORCH);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LandUnderOrch.
      * @param value value to set the LandUnderOrch
      */
-    public void setLandUnderOrch(BigDecimal value) {
+    public void setLandUnderOrch(Number value) {
         setAttributeInternal(LANDUNDERORCH, value);
     }
 
@@ -575,7 +575,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal grantApprovalDetailId) {
+    public static Key createPrimaryKey(Number grantApprovalDetailId) {
         return new Key(new Object[] { grantApprovalDetailId });
     }
 
@@ -592,9 +592,9 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

@@ -14,7 +14,7 @@
     Name="GrantApprovalDetailDId"
     ColumnName="GRANT_APPROVAL_DETAIL_D_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"
     PrimaryKey="true"
@@ -25,7 +25,7 @@
     IsNotNull="true"
     ColumnName="GRANT_APPROVAL_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"/>
   <Attribute
@@ -33,28 +33,28 @@
     IsNotNull="true"
     ColumnName="ITEM_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"/>
   <Attribute
     Name="Rate"
     ColumnName="RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"/>
   <Attribute
     Name="Amount"
     ColumnName="AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"/>
   <Attribute
     Name="Qty"
     ColumnName="QTY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D"/>
   <AccessorAttribute

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -125,15 +125,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for ClusterId, using the alias name ClusterId.
      * @return the value of ClusterId
      */
-    public BigDecimal getClusterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERID);
+    public Number getClusterId() {
+        return (Number) getAttributeInternal(CLUSTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterId.
      * @param value value to set the ClusterId
      */
-    public void setClusterId(BigDecimal value) {
+    public void setClusterId(Number value) {
         setAttributeInternal(CLUSTERID, value);
     }
 
@@ -141,15 +141,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for CropId, using the alias name CropId.
      * @return the value of CropId
      */
-    public BigDecimal getCropId() {
-        return (BigDecimal) getAttributeInternal(CROPID);
+    public Number getCropId() {
+        return (Number) getAttributeInternal(CROPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CropId.
      * @param value value to set the CropId
      */
-    public void setCropId(BigDecimal value) {
+    public void setCropId(Number value) {
         setAttributeInternal(CROPID, value);
     }
 
@@ -173,15 +173,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for CityLibrDetail, using the alias name CityLibrDetail.
      * @return the value of CityLibrDetail
      */
-    public BigDecimal getCityLibrDetail() {
-        return (BigDecimal) getAttributeInternal(CITYLIBRDETAIL);
+    public Number getCityLibrDetail() {
+        return (Number) getAttributeInternal(CITYLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CityLibrDetail.
      * @param value value to set the CityLibrDetail
      */
-    public void setCityLibrDetail(BigDecimal value) {
+    public void setCityLibrDetail(Number value) {
         setAttributeInternal(CITYLIBRDETAIL, value);
     }
 
@@ -189,15 +189,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for DistrictLibrDetail, using the alias name DistrictLibrDetail.
      * @return the value of DistrictLibrDetail
      */
-    public BigDecimal getDistrictLibrDetail() {
-        return (BigDecimal) getAttributeInternal(DISTRICTLIBRDETAIL);
+    public Number getDistrictLibrDetail() {
+        return (Number) getAttributeInternal(DISTRICTLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DistrictLibrDetail.
      * @param value value to set the DistrictLibrDetail
      */
-    public void setDistrictLibrDetail(BigDecimal value) {
+    public void setDistrictLibrDetail(Number value) {
         setAttributeInternal(DISTRICTLIBRDETAIL, value);
     }
 
@@ -205,15 +205,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for TehsilLibrDetail, using the alias name TehsilLibrDetail.
      * @return the value of TehsilLibrDetail
      */
-    public BigDecimal getTehsilLibrDetail() {
-        return (BigDecimal) getAttributeInternal(TEHSILLIBRDETAIL);
+    public Number getTehsilLibrDetail() {
+        return (Number) getAttributeInternal(TEHSILLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TehsilLibrDetail.
      * @param value value to set the TehsilLibrDetail
      */
-    public void setTehsilLibrDetail(BigDecimal value) {
+    public void setTehsilLibrDetail(Number value) {
         setAttributeInternal(TEHSILLIBRDETAIL, value);
     }
 
@@ -221,15 +221,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for MauzaLibrDetail, using the alias name MauzaLibrDetail.
      * @return the value of MauzaLibrDetail
      */
-    public BigDecimal getMauzaLibrDetail() {
-        return (BigDecimal) getAttributeInternal(MAUZALIBRDETAIL);
+    public Number getMauzaLibrDetail() {
+        return (Number) getAttributeInternal(MAUZALIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MauzaLibrDetail.
      * @param value value to set the MauzaLibrDetail
      */
-    public void setMauzaLibrDetail(BigDecimal value) {
+    public void setMauzaLibrDetail(Number value) {
         setAttributeInternal(MAUZALIBRDETAIL, value);
     }
 
@@ -237,15 +237,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for VillageLibrDetail, using the alias name VillageLibrDetail.
      * @return the value of VillageLibrDetail
      */
-    public BigDecimal getVillageLibrDetail() {
-        return (BigDecimal) getAttributeInternal(VILLAGELIBRDETAIL);
+    public Number getVillageLibrDetail() {
+        return (Number) getAttributeInternal(VILLAGELIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for VillageLibrDetail.
      * @param value value to set the VillageLibrDetail
      */
-    public void setVillageLibrDetail(BigDecimal value) {
+    public void setVillageLibrDetail(Number value) {
         setAttributeInternal(VILLAGELIBRDETAIL, value);
     }
 
@@ -269,15 +269,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -301,15 +301,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for UcLibrDetail, using the alias name UcLibrDetail.
      * @return the value of UcLibrDetail
      */
-    public BigDecimal getUcLibrDetail() {
-        return (BigDecimal) getAttributeInternal(UCLIBRDETAIL);
+    public Number getUcLibrDetail() {
+        return (Number) getAttributeInternal(UCLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UcLibrDetail.
      * @param value value to set the UcLibrDetail
      */
-    public void setUcLibrDetail(BigDecimal value) {
+    public void setUcLibrDetail(Number value) {
         setAttributeInternal(UCLIBRDETAIL, value);
     }
 
@@ -317,15 +317,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -341,15 +341,15 @@ public class TblClusterImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -514,7 +514,7 @@ public class TblClusterImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal clusterId) {
+    public static Key createPrimaryKey(Number clusterId) {
         return new Key(new Object[] { clusterId });
     }
 
@@ -531,9 +531,9 @@ public class TblClusterImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

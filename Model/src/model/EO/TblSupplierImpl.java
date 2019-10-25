@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -115,15 +115,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for SupplierId, using the alias name SupplierId.
      * @return the value of SupplierId
      */
-    public BigDecimal getSupplierId() {
-        return (BigDecimal) getAttributeInternal(SUPPLIERID);
+    public Number getSupplierId() {
+        return (Number) getAttributeInternal(SUPPLIERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SupplierId.
      * @param value value to set the SupplierId
      */
-    public void setSupplierId(BigDecimal value) {
+    public void setSupplierId(Number value) {
         setAttributeInternal(SUPPLIERID, value);
     }
 
@@ -323,15 +323,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for CityLibrDetail, using the alias name CityLibrDetail.
      * @return the value of CityLibrDetail
      */
-    public BigDecimal getCityLibrDetail() {
-        return (BigDecimal) getAttributeInternal(CITYLIBRDETAIL);
+    public Number getCityLibrDetail() {
+        return (Number) getAttributeInternal(CITYLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CityLibrDetail.
      * @param value value to set the CityLibrDetail
      */
-    public void setCityLibrDetail(BigDecimal value) {
+    public void setCityLibrDetail(Number value) {
         setAttributeInternal(CITYLIBRDETAIL, value);
     }
 
@@ -403,15 +403,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for DistrictLibrDetail, using the alias name DistrictLibrDetail.
      * @return the value of DistrictLibrDetail
      */
-    public BigDecimal getDistrictLibrDetail() {
-        return (BigDecimal) getAttributeInternal(DISTRICTLIBRDETAIL);
+    public Number getDistrictLibrDetail() {
+        return (Number) getAttributeInternal(DISTRICTLIBRDETAIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DistrictLibrDetail.
      * @param value value to set the DistrictLibrDetail
      */
-    public void setDistrictLibrDetail(BigDecimal value) {
+    public void setDistrictLibrDetail(Number value) {
         setAttributeInternal(DISTRICTLIBRDETAIL, value);
     }
 
@@ -419,15 +419,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for NoOfEmp, using the alias name NoOfEmp.
      * @return the value of NoOfEmp
      */
-    public BigDecimal getNoOfEmp() {
-        return (BigDecimal) getAttributeInternal(NOOFEMP);
+    public Number getNoOfEmp() {
+        return (Number) getAttributeInternal(NOOFEMP);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfEmp.
      * @param value value to set the NoOfEmp
      */
-    public void setNoOfEmp(BigDecimal value) {
+    public void setNoOfEmp(Number value) {
         setAttributeInternal(NOOFEMP, value);
     }
 
@@ -435,15 +435,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for NoOfYearExp, using the alias name NoOfYearExp.
      * @return the value of NoOfYearExp
      */
-    public BigDecimal getNoOfYearExp() {
-        return (BigDecimal) getAttributeInternal(NOOFYEAREXP);
+    public Number getNoOfYearExp() {
+        return (Number) getAttributeInternal(NOOFYEAREXP);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfYearExp.
      * @param value value to set the NoOfYearExp
      */
-    public void setNoOfYearExp(BigDecimal value) {
+    public void setNoOfYearExp(Number value) {
         setAttributeInternal(NOOFYEAREXP, value);
     }
 
@@ -451,15 +451,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -475,15 +475,15 @@ public class TblSupplierImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -549,7 +549,7 @@ public class TblSupplierImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal supplierId) {
+    public static Key createPrimaryKey(Number supplierId) {
         return new Key(new Object[] { supplierId });
     }
 
@@ -573,9 +573,9 @@ public class TblSupplierImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

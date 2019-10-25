@@ -19,7 +19,7 @@
     Name="GrantApprovalMasterId"
     ColumnName="GRANT_APPROVAL_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
@@ -45,14 +45,14 @@
     Name="Status"
     ColumnName="STATUS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
@@ -68,7 +68,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
@@ -83,14 +83,14 @@
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
     Name="GrantApprovalMasterGroupId"
     ColumnName="GRANT_APPROVAL_MASTER_GROUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <Attribute
@@ -109,7 +109,7 @@
     Name="GrantAppDetailId"
     ColumnName="GRANT_APP_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER"/>
   <AccessorAttribute

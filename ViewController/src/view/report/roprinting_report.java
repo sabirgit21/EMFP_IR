@@ -4,6 +4,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 
+import view.DatabaseConnection.DatabaseConnection;
+
 public class roprinting_report {
     
     private static String gotprinting = "";
@@ -18,7 +20,9 @@ public class roprinting_report {
             gotprinting = "notSelected";
         }
         
-        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
@@ -43,7 +47,7 @@ public class roprinting_report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("defaulter bla bla bla report");
+            System.out.println("default ro printing report");
         break;
         }
             

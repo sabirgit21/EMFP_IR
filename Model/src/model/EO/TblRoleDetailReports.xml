@@ -14,7 +14,7 @@
     Name="RoleDetailReportsId"
     ColumnName="ROLE_DETAIL_REPORTS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ROLE_DETAIL_REPORTS"
     PrimaryKey="true"
@@ -25,7 +25,7 @@
     IsNotNull="true"
     ColumnName="ROLE_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ROLE_DETAIL_REPORTS"/>
   <Attribute
@@ -33,7 +33,7 @@
     IsNotNull="true"
     ColumnName="REPORTS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ROLE_DETAIL_REPORTS"/>
   <Attribute

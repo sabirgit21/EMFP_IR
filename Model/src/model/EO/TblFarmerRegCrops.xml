@@ -19,7 +19,7 @@
     Name="FarmerRegCropsId"
     ColumnName="FARMER_REG_CROPS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
@@ -38,21 +38,21 @@
     IsNotNull="true"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
     Name="AnnualProd"
     ColumnName="ANNUAL_PROD"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
     Name="YearlySales"
     ColumnName="YEARLY_SALES"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
@@ -95,7 +95,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
@@ -111,7 +111,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <Attribute
@@ -126,7 +126,7 @@
     Name="CropTypeId"
     ColumnName="CROP_TYPE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG_CROPS"/>
   <AccessorAttribute

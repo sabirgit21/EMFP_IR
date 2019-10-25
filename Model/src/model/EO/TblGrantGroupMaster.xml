@@ -14,7 +14,7 @@
     Name="GrantGroupMasterId"
     ColumnName="GRANT_GROUP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_MASTER"
     PrimaryKey="true"
@@ -24,21 +24,21 @@
     Name="GrantGroupMasterPhaseId"
     ColumnName="GRANT_GROUP_MASTER_PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_MASTER"/>
   <Attribute
     Name="GrantGroupMasterClusterId"
     ColumnName="GRANT_GROUP_MASTER_CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_MASTER"/>
   <Attribute
     Name="GrantGroupMasterNominee"
     ColumnName="GRANT_GROUP_MASTER_NOMINEE"
     SQLType="VARCHAR"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="Number"
     TableName="TBL_GRANT_GROUP_MASTER">
     <DesignTime>

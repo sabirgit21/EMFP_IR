@@ -19,7 +19,7 @@
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"
     PrimaryKey="true"
@@ -86,14 +86,14 @@
     IsNotNull="true"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <Attribute
     Name="BeneficiaryId"
     ColumnName="BENEFICIARY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <Attribute
@@ -279,7 +279,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <Attribute
@@ -295,7 +295,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <Attribute
@@ -310,14 +310,14 @@
     Name="FarmerRegDistrict"
     ColumnName="FARMER_REG_DISTRICT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <Attribute
     Name="FarmerRegTehsil"
     ColumnName="FARMER_REG_TEHSIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"/>
   <AccessorAttribute

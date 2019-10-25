@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -93,15 +93,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for GrantRateId, using the alias name GrantRateId.
      * @return the value of GrantRateId
      */
-    public BigDecimal getGrantRateId() {
-        return (BigDecimal) getAttributeInternal(GRANTRATEID);
+    public Number getGrantRateId() {
+        return (Number) getAttributeInternal(GRANTRATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GrantRateId.
      * @param value value to set the GrantRateId
      */
-    public void setGrantRateId(BigDecimal value) {
+    public void setGrantRateId(Number value) {
         setAttributeInternal(GRANTRATEID, value);
     }
 
@@ -109,15 +109,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -125,15 +125,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for CropId, using the alias name CropId.
      * @return the value of CropId
      */
-    public BigDecimal getCropId() {
-        return (BigDecimal) getAttributeInternal(CROPID);
+    public Number getCropId() {
+        return (Number) getAttributeInternal(CROPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CropId.
      * @param value value to set the CropId
      */
-    public void setCropId(BigDecimal value) {
+    public void setCropId(Number value) {
         setAttributeInternal(CROPID, value);
     }
 
@@ -141,15 +141,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for Acre, using the alias name Acre.
      * @return the value of Acre
      */
-    public BigDecimal getAcre() {
-        return (BigDecimal) getAttributeInternal(ACRE);
+    public Number getAcre() {
+        return (Number) getAttributeInternal(ACRE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Acre.
      * @param value value to set the Acre
      */
-    public void setAcre(BigDecimal value) {
+    public void setAcre(Number value) {
         setAttributeInternal(ACRE, value);
     }
 
@@ -173,15 +173,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for Status, using the alias name Status.
      * @return the value of Status
      */
-    public BigDecimal getStatus() {
-        return (BigDecimal) getAttributeInternal(STATUS);
+    public Number getStatus() {
+        return (Number) getAttributeInternal(STATUS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Status.
      * @param value value to set the Status
      */
-    public void setStatus(BigDecimal value) {
+    public void setStatus(Number value) {
         setAttributeInternal(STATUS, value);
     }
 
@@ -189,15 +189,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for Amount, using the alias name Amount.
      * @return the value of Amount
      */
-    public BigDecimal getAmount() {
-        return (BigDecimal) getAttributeInternal(AMOUNT);
+    public Number getAmount() {
+        return (Number) getAttributeInternal(AMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Amount.
      * @param value value to set the Amount
      */
-    public void setAmount(BigDecimal value) {
+    public void setAmount(Number value) {
         setAttributeInternal(AMOUNT, value);
     }
 
@@ -205,15 +205,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -229,15 +229,15 @@ public class TblGrantRateImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -290,7 +290,7 @@ public class TblGrantRateImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal grantRateId) {
+    public static Key createPrimaryKey(Number grantRateId) {
         return new Key(new Object[] { grantRateId });
     }
 
@@ -307,9 +307,9 @@ public class TblGrantRateImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
         try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
         } catch(Exception ex) {
             ex.printStackTrace();
         }

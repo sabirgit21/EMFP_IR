@@ -15,7 +15,7 @@
     IsNotNull="true"
     ColumnName="OPEN_BLNC_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_OPEN_BLNC"
     PrimaryKey="true"/>
@@ -31,21 +31,21 @@
     IsNotNull="true"
     ColumnName="OPEN_BLNC_GL_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_OPEN_BLNC"/>
   <Attribute
     Name="OpenBlncDr"
     ColumnName="OPEN_BLNC_DR"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_OPEN_BLNC"/>
   <Attribute
     Name="OpenBlncCr"
     ColumnName="OPEN_BLNC_CR"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_OPEN_BLNC"/>
   <Key

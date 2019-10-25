@@ -19,7 +19,7 @@
     Name="TrainingSchMasterId"
     ColumnName="TRAINING_SCH_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="PROJ_COMP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
@@ -38,7 +38,7 @@
     IsNotNull="true"
     ColumnName="COURSE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
@@ -46,7 +46,7 @@
     IsNotNull="true"
     ColumnName="MODULE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
@@ -61,7 +61,7 @@
     Name="Status"
     ColumnName="STATUS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
@@ -112,14 +112,14 @@
     IsNotNull="true"
     ColumnName="TEAM_FORMATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute
@@ -135,7 +135,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_SCH_MASTER"/>
   <Attribute

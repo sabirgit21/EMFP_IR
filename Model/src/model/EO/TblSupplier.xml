@@ -19,7 +19,7 @@
     Name="SupplierId"
     ColumnName="SUPPLIER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"
     PrimaryKey="true"
@@ -183,7 +183,7 @@
     IsNotNull="true"
     ColumnName="CITY_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute
@@ -245,28 +245,28 @@
     IsNotNull="true"
     ColumnName="DISTRICT_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute
     Name="NoOfEmp"
     ColumnName="NO_OF_EMP"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute
     Name="NoOfYearExp"
     ColumnName="NO_OF_YEAR_EXP"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute
@@ -282,7 +282,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_SUPPLIER"/>
   <Attribute

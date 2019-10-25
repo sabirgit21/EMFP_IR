@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -155,15 +155,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -235,15 +235,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for ClusterId, using the alias name ClusterId.
      * @return the value of ClusterId
      */
-    public BigDecimal getClusterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERID);
+    public Number getClusterId() {
+        return (Number) getAttributeInternal(CLUSTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterId.
      * @param value value to set the ClusterId
      */
-    public void setClusterId(BigDecimal value) {
+    public void setClusterId(Number value) {
         setAttributeInternal(CLUSTERID, value);
     }
 
@@ -251,15 +251,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for BeneficiaryId, using the alias name BeneficiaryId.
      * @return the value of BeneficiaryId
      */
-    public BigDecimal getBeneficiaryId() {
-        return (BigDecimal) getAttributeInternal(BENEFICIARYID);
+    public Number getBeneficiaryId() {
+        return (Number) getAttributeInternal(BENEFICIARYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for BeneficiaryId.
      * @param value value to set the BeneficiaryId
      */
-    public void setBeneficiaryId(BigDecimal value) {
+    public void setBeneficiaryId(Number value) {
         setAttributeInternal(BENEFICIARYID, value);
     }
 
@@ -507,15 +507,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -531,15 +531,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -555,15 +555,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegDistrict, using the alias name FarmerRegDistrict.
      * @return the value of FarmerRegDistrict
      */
-    public BigDecimal getFarmerRegDistrict() {
-        return (BigDecimal) getAttributeInternal(FARMERREGDISTRICT);
+    public Number getFarmerRegDistrict() {
+        return (Number) getAttributeInternal(FARMERREGDISTRICT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegDistrict.
      * @param value value to set the FarmerRegDistrict
      */
-    public void setFarmerRegDistrict(BigDecimal value) {
+    public void setFarmerRegDistrict(Number value) {
         setAttributeInternal(FARMERREGDISTRICT, value);
     }
 
@@ -571,15 +571,15 @@ public class TblFarmerRegImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegTehsil, using the alias name FarmerRegTehsil.
      * @return the value of FarmerRegTehsil
      */
-    public BigDecimal getFarmerRegTehsil() {
-        return (BigDecimal) getAttributeInternal(FARMERREGTEHSIL);
+    public Number getFarmerRegTehsil() {
+        return (Number) getAttributeInternal(FARMERREGTEHSIL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegTehsil.
      * @param value value to set the FarmerRegTehsil
      */
-    public void setFarmerRegTehsil(BigDecimal value) {
+    public void setFarmerRegTehsil(Number value) {
         setAttributeInternal(FARMERREGTEHSIL, value);
     }
 
@@ -731,7 +731,7 @@ public class TblFarmerRegImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal farmerRegId) {
+    public static Key createPrimaryKey(Number farmerRegId) {
         return new Key(new Object[] { farmerRegId });
     }
 
@@ -748,9 +748,9 @@ public class TblFarmerRegImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

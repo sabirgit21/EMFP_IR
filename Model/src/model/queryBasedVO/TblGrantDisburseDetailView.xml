@@ -17,9 +17,7 @@
        TblGrantDisburseDetail.FARMER_REG_ID,
        TblGrantDisburseDetail.ACRE,
        TblGrantDisburseDetail.RATE,
-       TblGrantDisburseDetail.AMOUNT,
-       TblGrantDisburseDetail.CHQ_NO,
-       TblGrantDisburseDetail.PAYEE
+       TblGrantDisburseDetail.AMOUNT
 FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
   <ViewAttribute
     Name="GrantDisburseDetailId"
@@ -27,7 +25,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="GRANT_DISBURSE_DETAIL_ID"
     Expression="GRANT_DISBURSE_DETAIL_ID"
@@ -38,7 +36,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="GRANT_DISBURSE_MASTER_ID"
     Expression="GRANT_DISBURSE_MASTER_ID"
@@ -49,7 +47,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="FARMER_REG_ID"
     Expression="FARMER_REG_ID"
@@ -60,7 +58,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ACRE"
     Expression="ACRE"
@@ -71,7 +69,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="RATE"
     Expression="RATE"
@@ -82,7 +80,7 @@ FROM TBL_GRANT_DISBURSE_DETAIL TblGrantDisburseDetail]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="AMOUNT"
     Expression="AMOUNT"

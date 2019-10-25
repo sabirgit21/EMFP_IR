@@ -14,7 +14,7 @@
     Name="TrainingReschId"
     ColumnName="TRAINING_RESCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"
     PrimaryKey="true"
@@ -33,7 +33,7 @@
     IsNotNull="true"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Attribute
@@ -47,7 +47,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Attribute
@@ -61,14 +61,14 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Attribute
     Name="TrainingSchDetailId"
     ColumnName="TRAINING_SCH_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Attribute
@@ -82,14 +82,14 @@
     Name="Latitude"
     ColumnName="LATITUDE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Attribute
     Name="Longitude"
     ColumnName="LONGITUDE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
   <Key

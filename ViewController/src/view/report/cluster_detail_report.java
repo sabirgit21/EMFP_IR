@@ -3,6 +3,7 @@ package view.report;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
+import view.DatabaseConnection.DatabaseConnection;
 
 
 public class cluster_detail_report {
@@ -25,7 +26,8 @@ public class cluster_detail_report {
         if (selectedReportType == null) {
             selectedReportType = "notSelected";
         }
-        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -99,15 +99,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for ClusterAttMasterId, using the alias name ClusterAttMasterId.
      * @return the value of ClusterAttMasterId
      */
-    public BigDecimal getClusterAttMasterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERATTMASTERID);
+    public Number getClusterAttMasterId() {
+        return (Number) getAttributeInternal(CLUSTERATTMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterAttMasterId.
      * @param value value to set the ClusterAttMasterId
      */
-    public void setClusterAttMasterId(BigDecimal value) {
+    public void setClusterAttMasterId(Number value) {
         setAttributeInternal(CLUSTERATTMASTERID, value);
     }
 
@@ -115,15 +115,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for TrainerId, using the alias name TrainerId.
      * @return the value of TrainerId
      */
-    public BigDecimal getTrainerId() {
-        return (BigDecimal) getAttributeInternal(TRAINERID);
+    public Number getTrainerId() {
+        return (Number) getAttributeInternal(TRAINERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerId.
      * @param value value to set the TrainerId
      */
-    public void setTrainerId(BigDecimal value) {
+    public void setTrainerId(Number value) {
         setAttributeInternal(TRAINERID, value);
     }
 
@@ -131,15 +131,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for ClusterId, using the alias name ClusterId.
      * @return the value of ClusterId
      */
-    public BigDecimal getClusterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERID);
+    public Number getClusterId() {
+        return (Number) getAttributeInternal(CLUSTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterId.
      * @param value value to set the ClusterId
      */
-    public void setClusterId(BigDecimal value) {
+    public void setClusterId(Number value) {
         setAttributeInternal(CLUSTERID, value);
     }
 
@@ -163,15 +163,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for Status, using the alias name Status.
      * @return the value of Status
      */
-    public BigDecimal getStatus() {
-        return (BigDecimal) getAttributeInternal(STATUS);
+    public Number getStatus() {
+        return (Number) getAttributeInternal(STATUS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Status.
      * @param value value to set the Status
      */
-    public void setStatus(BigDecimal value) {
+    public void setStatus(Number value) {
         setAttributeInternal(STATUS, value);
     }
 
@@ -195,15 +195,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for Latitude, using the alias name Latitude.
      * @return the value of Latitude
      */
-    public BigDecimal getLatitude() {
-        return (BigDecimal) getAttributeInternal(LATITUDE);
+    public Number getLatitude() {
+        return (Number) getAttributeInternal(LATITUDE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Latitude.
      * @param value value to set the Latitude
      */
-    public void setLatitude(BigDecimal value) {
+    public void setLatitude(Number value) {
         setAttributeInternal(LATITUDE, value);
     }
 
@@ -211,15 +211,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for Longitude, using the alias name Longitude.
      * @return the value of Longitude
      */
-    public BigDecimal getLongitude() {
-        return (BigDecimal) getAttributeInternal(LONGITUDE);
+    public Number getLongitude() {
+        return (Number) getAttributeInternal(LONGITUDE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Longitude.
      * @param value value to set the Longitude
      */
-    public void setLongitude(BigDecimal value) {
+    public void setLongitude(Number value) {
         setAttributeInternal(LONGITUDE, value);
     }
 
@@ -227,15 +227,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for TrainingSchDetailId, using the alias name TrainingSchDetailId.
      * @return the value of TrainingSchDetailId
      */
-    public BigDecimal getTrainingSchDetailId() {
-        return (BigDecimal) getAttributeInternal(TRAININGSCHDETAILID);
+    public Number getTrainingSchDetailId() {
+        return (Number) getAttributeInternal(TRAININGSCHDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainingSchDetailId.
      * @param value value to set the TrainingSchDetailId
      */
-    public void setTrainingSchDetailId(BigDecimal value) {
+    public void setTrainingSchDetailId(Number value) {
         setAttributeInternal(TRAININGSCHDETAILID, value);
     }
 
@@ -243,15 +243,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -267,15 +267,15 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -342,7 +342,7 @@ public class TblClusterAttMasterImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal clusterAttMasterId) {
+    public static Key createPrimaryKey(Number clusterAttMasterId) {
         return new Key(new Object[] { clusterAttMasterId });
     }
 
@@ -359,9 +359,9 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

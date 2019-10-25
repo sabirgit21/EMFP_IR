@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -76,15 +76,15 @@ public class TblTeamFormationImpl extends EntityImpl {
      * Gets the attribute value for TeamFormationId, using the alias name TeamFormationId.
      * @return the value of TeamFormationId
      */
-    public BigDecimal getTeamFormationId() {
-        return (BigDecimal) getAttributeInternal(TEAMFORMATIONID);
+    public Number getTeamFormationId() {
+        return (Number) getAttributeInternal(TEAMFORMATIONID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TeamFormationId.
      * @param value value to set the TeamFormationId
      */
-    public void setTeamFormationId(BigDecimal value) {
+    public void setTeamFormationId(Number value) {
         setAttributeInternal(TEAMFORMATIONID, value);
     }
 
@@ -92,15 +92,15 @@ public class TblTeamFormationImpl extends EntityImpl {
      * Gets the attribute value for TrainerId, using the alias name TrainerId.
      * @return the value of TrainerId
      */
-    public BigDecimal getTrainerId() {
-        return (BigDecimal) getAttributeInternal(TRAINERID);
+    public Number getTrainerId() {
+        return (Number) getAttributeInternal(TRAINERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerId.
      * @param value value to set the TrainerId
      */
-    public void setTrainerId(BigDecimal value) {
+    public void setTrainerId(Number value) {
         setAttributeInternal(TRAINERID, value);
     }
 
@@ -108,15 +108,15 @@ public class TblTeamFormationImpl extends EntityImpl {
      * Gets the attribute value for TeamId, using the alias name TeamId.
      * @return the value of TeamId
      */
-    public BigDecimal getTeamId() {
-        return (BigDecimal) getAttributeInternal(TEAMID);
+    public Number getTeamId() {
+        return (Number) getAttributeInternal(TEAMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TeamId.
      * @param value value to set the TeamId
      */
-    public void setTeamId(BigDecimal value) {
+    public void setTeamId(Number value) {
         setAttributeInternal(TEAMID, value);
     }
 
@@ -156,15 +156,15 @@ public class TblTeamFormationImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -180,15 +180,15 @@ public class TblTeamFormationImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -233,7 +233,7 @@ public class TblTeamFormationImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal teamFormationId) {
+    public static Key createPrimaryKey(Number teamFormationId) {
         return new Key(new Object[] { teamFormationId });
     }
 
@@ -257,9 +257,9 @@ public class TblTeamFormationImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
         try {
-            loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
         } catch(Exception ex) {
             ex.printStackTrace();
         }

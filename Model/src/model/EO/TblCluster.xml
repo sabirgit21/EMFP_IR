@@ -19,7 +19,7 @@
     Name="ClusterId"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"
     PrimaryKey="true"
@@ -30,7 +30,7 @@
     IsNotNull="true"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
@@ -51,35 +51,35 @@
     Name="CityLibrDetail"
     ColumnName="CITY_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
     Name="DistrictLibrDetail"
     ColumnName="DISTRICT_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
     Name="TehsilLibrDetail"
     ColumnName="TEHSIL_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
     Name="MauzaLibrDetail"
     ColumnName="MAUZA_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
     Name="VillageLibrDetail"
     ColumnName="VILLAGE_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
@@ -103,7 +103,7 @@
     IsNotNull="true"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
@@ -123,14 +123,14 @@
     Name="UcLibrDetail"
     ColumnName="UC_LIBR_DETAIL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute
@@ -146,7 +146,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CLUSTER"/>
   <Attribute

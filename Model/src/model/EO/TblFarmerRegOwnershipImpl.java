@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -88,15 +88,15 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegOwnershipId, using the alias name FarmerRegOwnershipId.
      * @return the value of FarmerRegOwnershipId
      */
-    public BigDecimal getFarmerRegOwnershipId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGOWNERSHIPID);
+    public Number getFarmerRegOwnershipId() {
+        return (Number) getAttributeInternal(FARMERREGOWNERSHIPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegOwnershipId.
      * @param value value to set the FarmerRegOwnershipId
      */
-    public void setFarmerRegOwnershipId(BigDecimal value) {
+    public void setFarmerRegOwnershipId(Number value) {
         setAttributeInternal(FARMERREGOWNERSHIPID, value);
     }
 
@@ -104,15 +104,15 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -152,15 +152,15 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * Gets the attribute value for LandAcre, using the alias name LandAcre.
      * @return the value of LandAcre
      */
-    public BigDecimal getLandAcre() {
-        return (BigDecimal) getAttributeInternal(LANDACRE);
+    public Number getLandAcre() {
+        return (Number) getAttributeInternal(LANDACRE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LandAcre.
      * @param value value to set the LandAcre
      */
-    public void setLandAcre(BigDecimal value) {
+    public void setLandAcre(Number value) {
         setAttributeInternal(LANDACRE, value);
     }
 
@@ -184,15 +184,15 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -208,15 +208,15 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -262,7 +262,7 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal farmerRegOwnershipId) {
+    public static Key createPrimaryKey(Number farmerRegOwnershipId) {
         return new Key(new Object[] { farmerRegOwnershipId });
     }
 
@@ -279,9 +279,9 @@ public class TblFarmerRegOwnershipImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

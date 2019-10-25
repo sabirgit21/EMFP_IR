@@ -19,7 +19,7 @@
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"
     PrimaryKey="true"
@@ -76,7 +76,7 @@
     IsNotNull="true"
     ColumnName="INTL_CERT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -84,7 +84,7 @@
     IsNotNull="true"
     ColumnName="GLOBAL_GAP_CERT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -92,7 +92,7 @@
     IsNotNull="true"
     ColumnName="DOM_EXPO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -100,7 +100,7 @@
     IsNotNull="true"
     ColumnName="DOM_MAR_INTV"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -108,7 +108,7 @@
     IsNotNull="true"
     ColumnName="INTL_EXPO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -116,14 +116,14 @@
     IsNotNull="true"
     ColumnName="INTL_PROM_CAMP"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute
@@ -139,7 +139,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"/>
   <Attribute

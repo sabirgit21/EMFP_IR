@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -95,15 +95,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -175,15 +175,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for IntlCert, using the alias name IntlCert.
      * @return the value of IntlCert
      */
-    public BigDecimal getIntlCert() {
-        return (BigDecimal) getAttributeInternal(INTLCERT);
+    public Number getIntlCert() {
+        return (Number) getAttributeInternal(INTLCERT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlCert.
      * @param value value to set the IntlCert
      */
-    public void setIntlCert(BigDecimal value) {
+    public void setIntlCert(Number value) {
         setAttributeInternal(INTLCERT, value);
     }
 
@@ -191,15 +191,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for GlobalGapCert, using the alias name GlobalGapCert.
      * @return the value of GlobalGapCert
      */
-    public BigDecimal getGlobalGapCert() {
-        return (BigDecimal) getAttributeInternal(GLOBALGAPCERT);
+    public Number getGlobalGapCert() {
+        return (Number) getAttributeInternal(GLOBALGAPCERT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for GlobalGapCert.
      * @param value value to set the GlobalGapCert
      */
-    public void setGlobalGapCert(BigDecimal value) {
+    public void setGlobalGapCert(Number value) {
         setAttributeInternal(GLOBALGAPCERT, value);
     }
 
@@ -207,15 +207,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for DomExpo, using the alias name DomExpo.
      * @return the value of DomExpo
      */
-    public BigDecimal getDomExpo() {
-        return (BigDecimal) getAttributeInternal(DOMEXPO);
+    public Number getDomExpo() {
+        return (Number) getAttributeInternal(DOMEXPO);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DomExpo.
      * @param value value to set the DomExpo
      */
-    public void setDomExpo(BigDecimal value) {
+    public void setDomExpo(Number value) {
         setAttributeInternal(DOMEXPO, value);
     }
 
@@ -223,15 +223,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for DomMarIntv, using the alias name DomMarIntv.
      * @return the value of DomMarIntv
      */
-    public BigDecimal getDomMarIntv() {
-        return (BigDecimal) getAttributeInternal(DOMMARINTV);
+    public Number getDomMarIntv() {
+        return (Number) getAttributeInternal(DOMMARINTV);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for DomMarIntv.
      * @param value value to set the DomMarIntv
      */
-    public void setDomMarIntv(BigDecimal value) {
+    public void setDomMarIntv(Number value) {
         setAttributeInternal(DOMMARINTV, value);
     }
 
@@ -239,15 +239,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for IntlExpo, using the alias name IntlExpo.
      * @return the value of IntlExpo
      */
-    public BigDecimal getIntlExpo() {
-        return (BigDecimal) getAttributeInternal(INTLEXPO);
+    public Number getIntlExpo() {
+        return (Number) getAttributeInternal(INTLEXPO);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlExpo.
      * @param value value to set the IntlExpo
      */
-    public void setIntlExpo(BigDecimal value) {
+    public void setIntlExpo(Number value) {
         setAttributeInternal(INTLEXPO, value);
     }
 
@@ -255,15 +255,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for IntlPromCamp, using the alias name IntlPromCamp.
      * @return the value of IntlPromCamp
      */
-    public BigDecimal getIntlPromCamp() {
-        return (BigDecimal) getAttributeInternal(INTLPROMCAMP);
+    public Number getIntlPromCamp() {
+        return (Number) getAttributeInternal(INTLPROMCAMP);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlPromCamp.
      * @param value value to set the IntlPromCamp
      */
-    public void setIntlPromCamp(BigDecimal value) {
+    public void setIntlPromCamp(Number value) {
         setAttributeInternal(INTLPROMCAMP, value);
     }
 
@@ -271,15 +271,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -295,15 +295,15 @@ public class TblPhaseImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -355,7 +355,7 @@ public class TblPhaseImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal phaseId) {
+    public static Key createPrimaryKey(Number phaseId) {
         return new Key(new Object[] { phaseId });
     }
 
@@ -379,9 +379,9 @@ public class TblPhaseImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

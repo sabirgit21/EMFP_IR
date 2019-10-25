@@ -21,12 +21,12 @@
   <Variable
     Name="GETMODULEMENUID"
     Kind="where"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     DefaultValue="9"/>
   <Variable
     Name="GETROLLMASTERID"
     Kind="where"
-    Type="java.math.BigDecimal">
+    Type="oracle.jbo.domain.Number">
     <TransientExpression
       Name="VariableScript"
       CodeSourceName="USERS_PAGES"/>
@@ -111,7 +111,7 @@ RDP.ROLE_MASTER_ID = :GETROLLMASTERID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"
@@ -121,7 +121,7 @@ RDP.ROLE_MASTER_ID = :GETROLLMASTERID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="PAGES_ID"
     Expression="PAGES_ID"
@@ -131,7 +131,7 @@ RDP.ROLE_MASTER_ID = :GETROLLMASTERID]]></SQLQuery>
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="ROLE_MASTER_ID"
     Expression="ROLE_MASTER_ID"

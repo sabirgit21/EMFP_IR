@@ -4,6 +4,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 
+import view.DatabaseConnection.DatabaseConnection;
+
 public class Grant_Approval_Report {
     
     private static String gotPhase = "";
@@ -16,7 +18,9 @@ public class Grant_Approval_Report {
     
     public String gen_Report() {
         
-        OracleReportBean reportBean = new OracleReportBean("207.180.246.67", "9002", null);
+        DatabaseConnection dbconnect = new DatabaseConnection();
+        OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
+
 
         String url = "";
         reportBean.setReportParameter("P_Phase_id",gotPhase);

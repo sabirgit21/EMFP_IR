@@ -19,7 +19,7 @@
     Name="ItemL4Id"
     ColumnName="ITEM_L4_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ItemL3Id"
     ColumnName="ITEM_L3_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"
     RetrievedOnInsert="true"
@@ -68,7 +68,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"/>
   <Attribute
@@ -84,7 +84,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"/>
   <Attribute
@@ -99,7 +99,7 @@
     Name="Rate"
     ColumnName="RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_ITEM_L4"/>
   <AccessorAttribute

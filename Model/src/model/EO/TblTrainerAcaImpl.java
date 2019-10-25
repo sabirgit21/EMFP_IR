@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -80,15 +80,15 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * Gets the attribute value for TrainerAcaId, using the alias name TrainerAcaId.
      * @return the value of TrainerAcaId
      */
-    public BigDecimal getTrainerAcaId() {
-        return (BigDecimal) getAttributeInternal(TRAINERACAID);
+    public Number getTrainerAcaId() {
+        return (Number) getAttributeInternal(TRAINERACAID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerAcaId.
      * @param value value to set the TrainerAcaId
      */
-    public void setTrainerAcaId(BigDecimal value) {
+    public void setTrainerAcaId(Number value) {
         setAttributeInternal(TRAINERACAID, value);
     }
 
@@ -96,15 +96,15 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * Gets the attribute value for TrainerId, using the alias name TrainerId.
      * @return the value of TrainerId
      */
-    public BigDecimal getTrainerId() {
-        return (BigDecimal) getAttributeInternal(TRAINERID);
+    public Number getTrainerId() {
+        return (Number) getAttributeInternal(TRAINERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TrainerId.
      * @param value value to set the TrainerId
      */
-    public void setTrainerId(BigDecimal value) {
+    public void setTrainerId(Number value) {
         setAttributeInternal(TRAINERID, value);
     }
 
@@ -128,15 +128,15 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * Gets the attribute value for PassYear, using the alias name PassYear.
      * @return the value of PassYear
      */
-    public BigDecimal getPassYear() {
-        return (BigDecimal) getAttributeInternal(PASSYEAR);
+    public Number getPassYear() {
+        return (Number) getAttributeInternal(PASSYEAR);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PassYear.
      * @param value value to set the PassYear
      */
-    public void setPassYear(BigDecimal value) {
+    public void setPassYear(Number value) {
         setAttributeInternal(PASSYEAR, value);
     }
 
@@ -208,15 +208,15 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -232,15 +232,15 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -271,7 +271,7 @@ public class TblTrainerAcaImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal trainerAcaId) {
+    public static Key createPrimaryKey(Number trainerAcaId) {
         return new Key(new Object[] { trainerAcaId });
     }
 
@@ -295,9 +295,9 @@ public class TblTrainerAcaImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }

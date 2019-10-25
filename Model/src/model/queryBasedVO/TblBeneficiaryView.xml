@@ -23,7 +23,7 @@ FROM TBL_BENEFICIARY TblBeneficiary]]></SQLQuery>
     IsPersistent="false"
     IsNotNull="true"
     PrecisionRule="true"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     AliasName="BENEFICIARY_ID"
     Expression="BENEFICIARY_ID"

@@ -1,6 +1,6 @@
 package model.EO;
 
-import java.math.BigDecimal;
+import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
 
@@ -84,15 +84,15 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegCertId, using the alias name FarmerRegCertId.
      * @return the value of FarmerRegCertId
      */
-    public BigDecimal getFarmerRegCertId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGCERTID);
+    public Number getFarmerRegCertId() {
+        return (Number) getAttributeInternal(FARMERREGCERTID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegCertId.
      * @param value value to set the FarmerRegCertId
      */
-    public void setFarmerRegCertId(BigDecimal value) {
+    public void setFarmerRegCertId(Number value) {
         setAttributeInternal(FARMERREGCERTID, value);
     }
 
@@ -100,15 +100,15 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -116,15 +116,15 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * Gets the attribute value for CertificationId, using the alias name CertificationId.
      * @return the value of CertificationId
      */
-    public BigDecimal getCertificationId() {
-        return (BigDecimal) getAttributeInternal(CERTIFICATIONID);
+    public Number getCertificationId() {
+        return (Number) getAttributeInternal(CERTIFICATIONID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertificationId.
      * @param value value to set the CertificationId
      */
-    public void setCertificationId(BigDecimal value) {
+    public void setCertificationId(Number value) {
         setAttributeInternal(CERTIFICATIONID, value);
     }
 
@@ -132,15 +132,15 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -156,15 +156,15 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -224,7 +224,7 @@ public class TblFarmerRegCertImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal farmerRegCertId) {
+    public static Key createPrimaryKey(Number farmerRegCertId) {
         return new Key(new Object[] { farmerRegCertId });
     }
 
@@ -241,9 +241,9 @@ public class TblFarmerRegCertImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-        BigDecimal loginId = null;
+        Number loginId = null;
          try {
-             loginId = new BigDecimal((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
