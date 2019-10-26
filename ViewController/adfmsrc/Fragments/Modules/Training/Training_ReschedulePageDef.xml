@@ -4,37 +4,32 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="TblTrainingReschView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="TblTrainingReschView1Iterator"/>
     <searchRegion Binds="TblTrainingReschView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblTrainingReschView1Query"/>
-    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
     <tree IterBinding="TblTrainingReschView1Iterator" id="TblTrainingReschView1">
       <nodeDefinition DefName="model.VO.TblTrainingReschView" Name="TblTrainingReschView10">
         <AttrNames>
           <Item Value="TrainingReschId"/>
           <Item Value="Dated"/>
           <Item Value="ClusterId"/>
-          <Item Value="CreatedDate"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="UpdatedDate"/>
-          <Item Value="UpdatedBy"/>
           <Item Value="TrainingSchDetailId"/>
-          <Item Value="DatedResch"/>
-          <Item Value="Latitude"/>
-          <Item Value="Longitude"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblTrainingReschView1Iterator" id="TblTrainingReschView11">
-      <nodeDefinition DefName="model.VO.TblTrainingReschView" Name="TblTrainingReschView110">
-        <AttrNames>
-          <Item Value="TrainingReschId"/>
-          <Item Value="Dated"/>
-          <Item Value="ClusterId"/>
           <Item Value="DatedResch"/>
           <Item Value="Latitude"/>
           <Item Value="Longitude"/>
@@ -47,31 +42,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblTrainingReschView1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
-      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
-        <AttrNames>
-          <Item Value="Crudid"/>
-          <Item Value="Operation"/>
-          <Item Value="Icon"/>
-          <Item Value="Bindingname"/>
-          <Item Value="Btndisabled"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="TblTrainingReschView1Iterator" id="TblTrainingReschView12">
-      <nodeDefinition DefName="model.VO.TblTrainingReschView" Name="TblTrainingReschView120">
-        <AttrNames>
-          <Item Value="TrainingReschId"/>
-          <Item Value="Dated"/>
-          <Item Value="ClusterId"/>
-          <Item Value="TrainingSchDetailId"/>
-          <Item Value="DatedResch"/>
-          <Item Value="Latitude"/>
-          <Item Value="Longitude"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
   </bindings>
 </pageDefinition>
