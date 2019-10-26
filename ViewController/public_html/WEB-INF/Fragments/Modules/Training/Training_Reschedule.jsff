@@ -36,15 +36,22 @@
                                           varStatus="vs" id="t1">
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.TrainingReschId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.TrainingReschId.label}"
-                                               id="c1">
+                                               headerText="Training Reschedule ID"
+                                               id="c1" width="70" align="center">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TrainingReschId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                                         <af:inputText value="#{row.bindings.TrainingReschId.inputValue}" readOnly="true"
                                                       label="#{bindings.TblTrainingReschView1.hints.TrainingReschId.label}"
                                                       required="#{bindings.TblTrainingReschView1.hints.TrainingReschId.mandatory}"
                                                       columns="#{bindings.TblTrainingReschView1.hints.TrainingReschId.displayWidth}"
                                                       maximumLength="#{bindings.TblTrainingReschView1.hints.TrainingReschId.precision}"
                                                       shortDesc="#{bindings.TblTrainingReschView1.hints.TrainingReschId.tooltip}"
-                                                      id="it1">
+                                                      id="it1" 
+                                                        contentStyle='text-align: center'> 
                                             <f:validator binding="#{row.bindings.TrainingReschId.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTrainingReschView1.hints.TrainingReschId.format}"/>
@@ -52,8 +59,9 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.Dated.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.Dated.label}" id="c2">
+                                               headerText="Date" id="c2" align="center">
                                         <f:facet name="filter">
+                                        
                                             <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                                           id="id1">
                                                 <af:convertDateTime pattern="#{bindings.TblTrainingReschView1.hints.Dated.format}"/>
@@ -71,8 +79,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.ClusterId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.ClusterId.label}"
-                                               id="c3">
+                                               headerText="Cluster"
+                                               id="c3" width="200">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                          id="it5" placeholder="Search Cluster">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
                                                             required="#{bindings.TblTrainingReschView1.hints.ClusterId.mandatory}"
@@ -84,15 +97,21 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.label}"
-                                               id="c4">
+                                               headerText="Training Schedule Detail ID"
+                                               id="c4" width="70" align="center">
+                                            <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TrainingSchDetailId}"
+                                          id="it6" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.TrainingSchDetailId.inputValue}"
                                                       label="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.label}"
                                                       required="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.mandatory}"
                                                       columns="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.displayWidth}"
                                                       maximumLength="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.precision}"
                                                       shortDesc="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.tooltip}"
-                                                      id="it2">
+                                                      id="it2" readOnly="true"
+                                                      contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.TrainingSchDetailId.validator}"/>
                                             <af:convertNumber groupingUsed="false"
                                                               pattern="#{bindings.TblTrainingReschView1.hints.TrainingSchDetailId.format}"/>
@@ -100,8 +119,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.DatedResch.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.DatedResch.label}"
-                                               id="c5">
+                                               id="c5" headerText="Reschedule Date" align="center">
                                         <f:facet name="filter">
                                             <af:inputDate value="#{bindings.TblTrainingReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedResch.value}"
                                                           id="id3">
@@ -113,14 +131,14 @@
                                                       required="#{bindings.TblTrainingReschView1.hints.DatedResch.mandatory}"
                                                       columns="#{bindings.TblTrainingReschView1.hints.DatedResch.displayWidth}"
                                                       shortDesc="#{bindings.TblTrainingReschView1.hints.DatedResch.tooltip}"
-                                                      id="id4">
+                                                      id="id5">
                                             <f:validator binding="#{row.bindings.DatedResch.validator}"/>
                                             <af:convertDateTime pattern="#{bindings.TblTrainingReschView1.hints.DatedResch.format}"/>
                                         </af:inputDate>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.Latitude.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.Latitude.label}"
+                                               headerText="Latitude"
                                                id="c6">
                                         <af:inputText value="#{row.bindings.Latitude.inputValue}"
                                                       label="#{bindings.TblTrainingReschView1.hints.Latitude.label}"
@@ -136,7 +154,7 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.Longitude.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblTrainingReschView1.hints.Longitude.label}"
+                                               headerText="longitude"
                                                id="c7">
                                         <af:inputText value="#{row.bindings.Longitude.inputValue}"
                                                       label="#{bindings.TblTrainingReschView1.hints.Longitude.label}"
