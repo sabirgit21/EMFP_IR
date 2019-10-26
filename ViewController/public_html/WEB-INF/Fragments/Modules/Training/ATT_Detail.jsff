@@ -34,7 +34,7 @@
                                           filterModel="#{bindings.TblClusterAttMasterView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblClusterAttMasterView1Query.processQuery}"
-                                          varStatus="vs" id="t1" partialTriggers="::b8 ::b9 ::b15" scrollPolicy="page"
+                                          varStatus="vs" id="t1" partialTriggers=" ::b15" scrollPolicy="page"
                                           autoHeightRows="0" width="979">
                                     <!--<af:column sortProperty="#{bindings.TblClusterAttMasterView1.hints.ClusterId.name}"
                                                                            filterable="true" sortable="true"
