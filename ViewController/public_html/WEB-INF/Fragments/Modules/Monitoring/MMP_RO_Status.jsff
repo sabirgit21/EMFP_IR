@@ -44,7 +44,8 @@
                           selectionListener="#{bindings.MMP_RO_Status2.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.MMP_RO_Status2.rangeSize}"
                           filterModel="#{bindings.MMP_RO_Status2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MMP_RO_Status2Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.MMP_RO_Status2Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2">
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.FarmerRegId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.MMP_RO_Status2.hints.FarmerRegId.label}" id="c1">
                     <af:inputText value="#{row.bindings.FarmerRegId.inputValue}" readOnly="true"
@@ -95,8 +96,18 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  
+                  <af:column headerText="#{bindings.MMP_RO_Status2.hints.RoStatus.label}" id="c4">
+                    <af:selectOneChoice value="#{row.bindings.RoStatus.inputValue}"
+                                        label="#{row.bindings.RoStatus.label}"
+                                        required="#{bindings.MMP_RO_Status2.hints.RoStatus.mandatory}"
+                                        shortDesc="#{bindings.MMP_RO_Status2.hints.RoStatus.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.RoStatus.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.RoStatus.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                 </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Update"
+                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>

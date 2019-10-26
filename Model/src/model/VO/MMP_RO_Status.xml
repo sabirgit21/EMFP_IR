@@ -25,6 +25,28 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
         ResId="model.VO.MMP_RO_Status_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="MMP_Ro_Status_LOV1"
+    ViewObjectName="model.LOV.MMP_Ro_Status_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RoStatus"
+    ListVOName="MMP_Ro_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbStatus"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewStatus"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantApprovalDetail"
     Entity="model.EO.TblGrantApprovalDetail"/>
@@ -65,7 +87,15 @@ AND TblGrantApprovalDetail.RO_STATUS = 'vctat ver'">
     PrecisionRule="true"
     EntityAttrName="RoStatus"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="RO_STATUS"/>
+    AliasName="RO_STATUS"
+    LOVName="LOV_RoStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FarmerNo"
     PrecisionRule="true"

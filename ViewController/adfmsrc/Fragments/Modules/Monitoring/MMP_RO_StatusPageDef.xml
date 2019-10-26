@@ -6,7 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
               id="TblGrantApprovalMasterView1Iterator"/>
-    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"/>
+    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
+              Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MMP_RO_Status2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status2Query"/>
     <iterator Binds="MMP_RO_Status_Grant_Land1" RangeSize="25" DataControl="AppModuleDataControl"
@@ -38,6 +39,7 @@
           <Item Value="FarmerRegId1"/>
           <Item Value="Name"/>
           <Item Value="GrantApprovalMasterId"/>
+          <Item Value="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -69,5 +71,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
