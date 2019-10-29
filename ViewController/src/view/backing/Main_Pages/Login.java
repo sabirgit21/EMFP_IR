@@ -24,8 +24,10 @@ import oracle.adf.view.rich.component.rich.input.RichInputText;
 
 import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 
+import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.nav.RichButton;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
+import oracle.adf.view.rich.component.rich.output.RichOutputLabel;
 import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import oracle.adf.view.rich.context.AdfFacesContext;
 import oracle.jdbc.driver.OracleDriver;
@@ -58,9 +60,9 @@ public class Login {
     private RichInputText it1;
     private RichInputText it2;
     private RichLink l1;
-    private RichPanelFormLayout panel_form_layout;
-    private RichButton gen;
-    private RichSpacer s7;
+    private RichButton b1;
+    private RichPanelGroupLayout pgl2;
+    private RichButton b2;
 
 
     public void setIt1(RichInputText it1) {

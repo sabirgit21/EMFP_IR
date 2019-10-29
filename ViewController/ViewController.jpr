@@ -119,6 +119,15 @@
                   <url path="Reports/"/>
                </list>
             </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+agri_slider.jpg"/>
+                  <string v="+agri_slider.jpg"/>
+               </list>
+               <list n="url-path">
+                  <url protocol="file" path="/C:/Users/OracleServer/Desktop/"/>
+               </list>
+            </hash>
          </list>
          <list n="url-path"/>
       </hash>
