@@ -105,9 +105,7 @@
       <af:button text="Go" id="b1">
         <af:showPopupBehavior popupId="p1"/>
       </af:button>
-    
-      
-      
+      <dvt:mapToolbar mapId="map" id="mt2"/>
       <dvt:map summary="Google Map" id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
            inlineStyle="width:1101px; height:745px;" startingY="0.0" autoZoomThemeId="mt1">
     <dvt:mapPointTheme id="mt1" value="#{bindings.Map_Sch_Detail_Att_Master12.geoMapModel}"
