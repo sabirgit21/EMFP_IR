@@ -73,6 +73,20 @@ public class Grant_Approval_Report {
             reportBean.openUrlInNewWindow(url);
             System.out.println("machinery phase wise");
             break;
+            case "consolidatedDetail":
+             
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+                
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("consolidated detail");
+                break;
         default:
         showMessage("Please Select Report Type");
         break;
