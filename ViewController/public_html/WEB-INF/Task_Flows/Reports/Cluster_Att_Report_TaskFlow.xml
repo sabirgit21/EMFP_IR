@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>cluster_att_report_bean</managed-bean-name>
+      <managed-bean-class>view.report.cluster_att_report</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
     <view id="Cluster_Att_Report">
       <page>/WEB-INF/Fragments/Reports/Cluster_Att_Report.jsff</page>
     </view>

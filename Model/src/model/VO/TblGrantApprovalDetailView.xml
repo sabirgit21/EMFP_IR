@@ -131,8 +131,9 @@
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_No_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="FarmerRegId"/>
     </AttrArray>
@@ -415,6 +416,11 @@
     ViewLink="model.VO.FKATblGrantApprovalDetailDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

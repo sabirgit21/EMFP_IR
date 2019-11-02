@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Cluster_Att_ReportPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Training_SchedulePageDef"
                 Package="Fragments.Reports">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="TblClusterAttMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="TblClusterAttMasterView1Iterator"/>
-    <iterator Binds="TblClusterAttDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblClusterAttDetailView3Iterator"/>
     <iterator Binds="TblClusterView1" RangeSize="25" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
   </executables>
   <bindings>
@@ -15,9 +13,7 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblClusterAttMasterView1Iterator" StaticList="false" Uses="LOV_TrainerId" id="TrainerId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblClusterAttDetailView3Iterator" StaticList="false" Uses="LOV_FarmerRegId" id="FarmerRegId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_CityLibrDetail" id="CityLibrDetail"
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

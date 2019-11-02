@@ -43,8 +43,9 @@
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_Reg_id_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="FarmerRegId"/>
     </AttrArray>
@@ -161,6 +162,11 @@
   <AttrArray Name="KeyAttributes">
     <Item Value="ClusterAttDetailId"/>
   </AttrArray>
+  <SortCriteria>
+    <Sort
+      Attribute="ClusterAttDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="ClusterAttDetailId"

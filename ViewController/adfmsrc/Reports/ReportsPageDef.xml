@@ -6,7 +6,8 @@
     <variableIterator id="variables"/>
      <taskFlow id="dynamicRegion2" taskFlowId="${viewScope.ReportSidebarBean.dynamicTaskFlowId1}" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <iterator Binds="REPORTS_PAGES1" RangeSize="25" DataControl="AppModuleDataControl" id="REPORTS_PAGES1Iterator"/>
+    <iterator Binds="REPORTS_PAGES1" RangeSize="25" DataControl="AppModuleDataControl" id="REPORTS_PAGES1Iterator"
+              Refresh="always" CacheResults="false"/>
   </executables>
   <bindings>
     <tree IterBinding="REPORTS_PAGES1Iterator" id="REPORTS_PAGES1">

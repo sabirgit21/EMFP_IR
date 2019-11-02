@@ -167,6 +167,8 @@
         <page path="/WEB-INF/Task_Flows/Modules/Monitoring/MMP_RO_Approved_TaskFlow.xml#MMP_RO_Approved_TaskFlow@ExecuteWithParams"
               usageId="view_MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Monitoring/MMP_RO_Approved.jsff" usageId="view_MMP_RO_ApprovedPageDef"/>
+        <page path="/WEB-INF/Fragments/Reports/Cluster_Att_Report.jsff" usageId="view_Cluster_Att_ReportPageDef"/>
+        <page path="/WEB-INF/Fragments/Reports/Training_Schedule.jsff" usageId="view_Training_SchedulePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -326,6 +328,8 @@
         <page id="view_MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Monitoring.MMP_RO_Approved_TaskFlow_MMP_RO_Approved_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_MMP_RO_ApprovedPageDef" path="Fragments.Modules.Monitoring.MMP_RO_ApprovedPageDef"/>
+        <page id="view_Cluster_Att_ReportPageDef" path="Fragments.Reports.Cluster_Att_ReportPageDef"/>
+        <page id="view_Training_SchedulePageDef" path="Fragments.Reports.Training_SchedulePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

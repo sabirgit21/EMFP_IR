@@ -2,36 +2,40 @@ package view.report;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+
 import javax.faces.event.ValueChangeEvent;
 
 import view.DatabaseConnection.DatabaseConnection;
 
-public class Grant_Approval_Report {
-
-    private static String gotPhase = "";
-    private static String gotCluster = "";
-    private static String gotFarmer = "";
-    private static String selectedReportType;
-
-    public Grant_Approval_Report() {
+public class cluster_att_report {
+    public cluster_att_report() {
     }
 
-    public String gen_Report() {
 
+    private static String gotCluster = "";
+    private static String gotTrainer = "";
+    private static String gotFarmer = "";
+    private static String gotCity = "";
+    
+    private static String  selectedReportType = "";
+    
+    public String get_report() {
+        // Add event code here...
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
 
         String url = "";
-        reportBean.setReportParameter("P_Phase_id", gotPhase);
+        reportBean.setReportParameter("P_Trainer_id", gotTrainer);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
-        reportBean.setReportParameter("P_farmer_reg_id", gotFarmer);
+        reportBean.setReportParameter("P_Farmer_reg_id", gotFarmer);
+        reportBean.setReportParameter("P_City_id", gotCity);
 
 
         System.out.println("default");
 
         switch (selectedReportType) {
-        case "detailWise":
+        case "attDetailWise":
 
             reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -43,9 +47,9 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("detail wise");
+            System.out.println("att detail wise");
             break;
-        case "machineryWise":
+        case "attDetailCityWise":
 
             reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -57,9 +61,9 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("machinery wise");
+            System.out.println("att detail city wise");
             break;
-        case "machineryPhaseWise":
+        case "attDetaiClusterlWise":
 
             reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -71,10 +75,10 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("machinery phase wise");
+            System.out.println("att detail cluster wise");
             break;
 
-        case "consolidatedDetail":
+        case "attDetailFarmerWise":
 
             reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -86,10 +90,10 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("consolidated detail");
+            System.out.println("att detail farmer wise");
             break;
 
-        case "grantFarmerEligibilty":
+        case "attDetailTrainerWise":
 
             reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
@@ -101,7 +105,7 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("Grant Farmer Eligibility Detail");
+            System.out.println("att detail trainer wise");
             break;
         
         default:
@@ -109,9 +113,10 @@ public class Grant_Approval_Report {
             break;
 
         }
+        
         return null;
     }
-
+    
     public String showMessage(String msgs) {
         String messageText = msgs;
         FacesMessage fm = new FacesMessage(messageText);
@@ -125,16 +130,22 @@ public class Grant_Approval_Report {
         return null;
     }
 
+    public void get_selected_report_type(ValueChangeEvent valueChangeEvent) {
+        selectedReportType = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Report Type is : " + selectedReportType);
+        // Add event code here...
+    }
+
     public void get_selected_cluster(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
         gotCluster = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Cluster is : " + gotCluster);
     }
 
-    public void get_selected_phase(ValueChangeEvent valueChangeEvent) {
-        // Add event code here...++
-        gotPhase = (valueChangeEvent.getNewValue()).toString();
-        System.out.println("Selected Phase is : " + gotPhase);
+    public void get_selected_trainer(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotTrainer = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Trainer is : " + gotTrainer);
     }
 
     public void get_selected_farmer(ValueChangeEvent valueChangeEvent) {
@@ -143,9 +154,9 @@ public class Grant_Approval_Report {
         System.out.println("Selected Farmer is : " + gotFarmer);
     }
 
-    public void get_selected_report_type(ValueChangeEvent valueChangeEvent) {
+    public void get_selected_city(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
-        selectedReportType = (valueChangeEvent.getNewValue()).toString();
-        System.out.println("Selected Report Type is : " + selectedReportType);
+        gotCity = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected City is : " + gotCity);
     }
 }
