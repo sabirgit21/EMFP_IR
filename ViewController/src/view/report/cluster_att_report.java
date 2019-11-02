@@ -37,7 +37,7 @@ public class cluster_att_report {
         switch (selectedReportType) {
         case "attDetailWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -51,7 +51,7 @@ public class cluster_att_report {
             break;
         case "attDetailCityWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_City_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -65,7 +65,7 @@ public class cluster_att_report {
             break;
         case "attDetaiClusterlWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -80,7 +80,7 @@ public class cluster_att_report {
 
         case "attDetailFarmerWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Farmer_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -95,7 +95,7 @@ public class cluster_att_report {
 
         case "attDetailTrainerWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Wise&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,

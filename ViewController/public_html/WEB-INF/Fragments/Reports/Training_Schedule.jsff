@@ -34,12 +34,13 @@
                                                 unselectedLabel="--Select--">
                                 <af:selectItem label="Training Sched Detail" value="trainingSchDetail" id="si5"/>
                                 <af:selectItem label="Training Sched Detail Component Wise" value="trainingSchDetailCompWise" id="si8"/>
-                                <af:selectItem label="Training Sched Detail Cluster Wise" value="trainingSchDetailClusteWise" id="si7"/>
+                                <af:selectItem label="Training Sched Detail Cluster Wise" value="trainingSchDetailClusterWise" id="si7"/>
                                 <af:selectItem label="Training Sched Detail Date Wise" value="trainingSchDetailDateWise" id="si9"/>
                                 <af:selectItem label="Training Sched Detail Module Wise" value="trainingSchDetailModuleWise" id="si6"/>
                                 <af:selectItem label="Training Sched Detail Team Formation Wise" value="trainingSchDetailTeamFormaWise" id="si4"/>
                                 <af:selectItem label="Training Sched Detail Team Wise" value="trainingSchDetailTeamWise" id="si10"/>
                                 <af:selectItem label="Training Sched Detail Trainer Wise" value="trainingSchDetailTrainerWise" id="si11"/>
+                                <af:selectItem label="Training Sched Detail Training Wise" value="trainingSchDetailTrainingWise" id="si12"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s7"/>
                             <af:button text="Generate Report" id="b2"

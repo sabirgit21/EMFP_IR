@@ -33,9 +33,10 @@ public class training_sch_report {
         System.out.println("default");
 
         switch (selectedReportType) {
+        
         case "trainingSchDetail":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail&");
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -45,8 +46,129 @@ public class training_sch_report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail wise");
+            System.out.println("training Sch Detail");
             break;
+        
+            case "trainingSchDetailCompWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Component_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Comp Wise");
+                break;
+        
+            case "trainingSchDetailClusterWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Cluster_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Cluster Wise");
+                break;
+        
+            case "trainingSchDetailDateWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Date_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Date Wise");
+                break;
+        
+            case "trainingSchDetailModuleWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Module_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Module Wise");
+                break;
+        
+            case "trainingSchDetailTeamFormaWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_Formation_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Team Forma Wise");
+                break;
+        
+            case "trainingSchDetailTeamWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Team Wise");
+                break;
+        
+            case "trainingSchDetailTrainerWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Trainer_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Trainer Wise");
+                break;
+        
+            case "trainingSchDetailTrainingWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Training_wise&");
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                                "CACHE"); // which will be one of the [cashe - file - mail - printer]
+                reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                reportBean.setReportParameter("paramform", "no");
+
+                url = reportBean.getReportServerURL();
+                System.out.println("Url => " + url);
+                reportBean.openUrlInNewWindow(url);
+                System.out.println("training Sch Detail Training Wise");
+                break;
+        
         
         default:
             showMessage("Please Select Report Type");
