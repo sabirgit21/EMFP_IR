@@ -9,25 +9,24 @@ import view.DatabaseConnection.DatabaseConnection;
 
 public class farmer_report {
 
-    private static String gotClusterNum="";
-    private static String gotFarmerNum="";
-    private static String gotCity="";
-    private static String gotCrop="";
-    private static String gotPhase="";
-    private static String selectedReportType;  
-    private static String  gotFormat = "";
+    private static String gotClusterNum = "";
+    private static String gotFarmerNum = "";
+    private static String gotCity = "";
+    private static String gotCrop = "";
+    private static String gotPhase = "";
+    private static String selectedReportType;
+    private static String gotFormat = "";
 
 
     public farmer_report() {
     }
 
-    
 
     public String gen_farmer_report() {
         // Add event code here...
         System.out.println(selectedReportType);
-        
-        
+
+
         if (selectedReportType == null) {
             selectedReportType = "notSelected";
         }
@@ -40,19 +39,53 @@ public class farmer_report {
         reportBean.setReportParameter("P_Cluster_ID", gotClusterNum);
         reportBean.setReportParameter("P_City_id", gotCity);
         reportBean.setReportParameter("P_Phase_id", gotPhase);
-        reportBean.setReportParameter("P_Crop_id",gotCrop);
-        
+        reportBean.setReportParameter("P_Crop_id", gotCrop);
 
-        if(gotFormat==""){
+
+        if (gotFormat == "") {
             showMessage("Please Select Report Format");
-        }
-        else {
+        } else {
 
-        switch (selectedReportType) {
-        case "clusterWise":
-            System.out.println("clusterWise");
+            switch (selectedReportType) {
+            case "clusterWise":
+                System.out.println("clusterWise");
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
+
+                break;
+
+            case "landWise":
+                System.out.println("landWise");
+
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
+
+                break;
+
+            case "cropWise":
+                System.out.println("cropWise");
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
+
+                break;
+
+            case "cityWise":
+                System.out.println("cityWise");
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
+
+                break;
+            case "notSelected":
+                System.out.println("notSelected then generic report");
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Detail&");
+
+                break;
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -60,64 +93,6 @@ public class farmer_report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            break;
-
-        case "landWise":
-            System.out.println("landWise");
-
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            break;
-
-        case "cropWise":
-            System.out.println("cropWise");
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            break;
-
-        case "cityWise":
-            System.out.println("cityWise");
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            break;
-        case "notSelected":
-            System.out.println("notSelected then generic report");
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            break;
-        default:
-            showMessage("Please Select Report Type");
-            break;
-
-        }
         }
         return null;
 

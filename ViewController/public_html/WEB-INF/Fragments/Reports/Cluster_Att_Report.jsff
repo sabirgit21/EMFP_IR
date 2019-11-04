@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa1">
-        <af:showDetailItem id="pane1" text="Cluster Detail Report">
+        <af:showDetailItem id="pane1" text="Cluster Attendance Report">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"></af:gridCell>
@@ -37,13 +37,13 @@
                             </af:selectOneChoice>
                         <af:spacer width="30" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
-                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                             valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_format_type}">
-                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
-                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                                                 <af:selectItem label="PDF" value="PDF" id="si5"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
                             </af:selectOneChoice>
-                        <af:spacer width="30" height="30" id="s22"/>
+                        <af:spacer width="30" height="30" id="s2"/>
                             <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_report_type}">

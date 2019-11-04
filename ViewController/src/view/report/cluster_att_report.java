@@ -16,10 +16,10 @@ public class cluster_att_report {
     private static String gotTrainer = "";
     private static String gotFarmer = "";
     private static String gotCity = "";
-    
-    private static String  selectedReportType = "";    
-    private static String  gotFormat = "";
-    
+
+    private static String selectedReportType = "";
+    private static String gotFormat = "";
+
     public String get_report() {
         // Add event code here...
         DatabaseConnection dbconnect = new DatabaseConnection();
@@ -33,15 +33,50 @@ public class cluster_att_report {
         reportBean.setReportParameter("P_City_id", gotCity);
 
 
-        if(gotFormat==""){
+        if (gotFormat == "") {
             showMessage("Please Select Report Format");
-        }
-        else {
+        } else {
 
-        switch (selectedReportType) {
-        case "attDetailWise":
+            switch (selectedReportType) {
+            case "attDetailWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail&");
+
+                System.out.println("att detail wise");
+                break;
+            case "attDetailCityWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_City_Wise&");
+
+                System.out.println("att detail city wise");
+                break;
+            case "attDetaiClusterlWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");
+
+                System.out.println("att detail cluster wise");
+                break;
+
+            case "attDetailFarmerWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Farmer_Wise&");
+
+                System.out.println("att detail farmer wise");
+                break;
+
+            case "attDetailTrainerWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Wise&");
+
+                System.out.println("att detail trainer wise");
+                break;
+
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
+
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -51,78 +86,10 @@ public class cluster_att_report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail wise");
-            break;
-        case "attDetailCityWise":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_City_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail city wise");
-            break;
-        case "attDetaiClusterlWise":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail cluster wise");
-            break;
-
-        case "attDetailFarmerWise":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Farmer_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail farmer wise");
-            break;
-
-        case "attDetailTrainerWise":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Wise&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("att detail trainer wise");
-            break;
-        
-        default:
-            showMessage("Please Select Report Type");
-            break;
-
-        }
-
-            
         }
         return null;
     }
-    
+
     public String showMessage(String msgs) {
         String messageText = msgs;
         FacesMessage fm = new FacesMessage(messageText);

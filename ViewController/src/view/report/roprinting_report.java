@@ -7,11 +7,11 @@ import javax.faces.event.ValueChangeEvent;
 import view.DatabaseConnection.DatabaseConnection;
 
 public class roprinting_report {
-    
+
     private static String gotprinting = "";
-    private static String  gotFormat = "";
-    
-    
+    private static String gotFormat = "";
+
+
     public roprinting_report() {
     }
 
@@ -20,45 +20,45 @@ public class roprinting_report {
         if (gotprinting == null) {
             gotprinting = "notSelected";
         }
-        
+
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
 
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
-        reportBean.setReportParameter("appr_det_id",gotprinting);
+        reportBean.setReportParameter("appr_det_id", gotprinting);
 
 
-        if(gotFormat==""){
+        if (gotFormat == "") {
             showMessage("Please Select Report Format");
-        }
-        else {
+        } else {
 
-        switch (gotprinting) {
-        case "notSelected":
-        showMessage("Please Select Report Type");
-        break;
-        case "null":
-        showMessage("Please Select Report Type");
-        break;
-        default:
-            System.out.println("default");
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Voucher&");
+            switch (gotprinting) {
+            case "notSelected":
+                showMessage("Please Select Report Type");
+                break;
+            case "null":
+                showMessage("Please Select Report Type");
+                break;
+            default:
+                System.out.println("default");
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Voucher&");
+
+                System.out.println("default ro printing report");
+                break;
+            }
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
                                             gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
-            
+
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("default ro printing report");
-        break;
         }
-        }
-            
+
         return null;
     }
 
@@ -67,7 +67,7 @@ public class roprinting_report {
         gotprinting = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Printing is : " + gotprinting);
     }
-    
+
     public String showMessage(String msgs) {
         String messageText = msgs;
         FacesMessage fm = new FacesMessage(messageText);

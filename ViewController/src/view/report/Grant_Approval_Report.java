@@ -13,7 +13,7 @@ public class Grant_Approval_Report {
     private static String gotFarmer = "";
     private static String selectedReportType;
     private static String selectedgrantType;
-    private static String  gotFormat = "";
+    private static String gotFormat = "";
 
     public Grant_Approval_Report() {
     }
@@ -33,15 +33,49 @@ public class Grant_Approval_Report {
 
         System.out.println("default");
 
-        if(gotFormat==""){
+        if (gotFormat == "") {
             showMessage("Please Select Report Format");
-        }
-        else {
+        } else {
 
-        switch (selectedReportType) {
-        case "detailWise":
+            switch (selectedReportType) {
+            case "detailWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+
+                System.out.println("detail wise");
+                break;
+            case "machineryWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
+
+                System.out.println("machinery wise");
+                break;
+            case "machineryPhaseWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
+
+                System.out.println("machinery phase wise");
+                break;
+
+            case "consolidatedDetail":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
+
+                System.out.println("consolidated detail");
+                break;
+
+            case "grantFarmerEligibilty":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
+
+                System.out.println("Grant Farmer Eligibility Detail");
+                break;
+
+            default:
+                showMessage("Please Select Report Type");
+                break;
+
+            }
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
@@ -51,72 +85,8 @@ public class Grant_Approval_Report {
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
-            System.out.println("detail wise");
-            break;
-        case "machineryWise":
 
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
 
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("machinery wise");
-            break;
-        case "machineryPhaseWise":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("machinery phase wise");
-            break;
-
-        case "consolidatedDetail":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("consolidated detail");
-            break;
-
-        case "grantFarmerEligibilty":
-
-            reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
-            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-            reportBean.setReportParameter("paramform", "no");
-
-            url = reportBean.getReportServerURL();
-            System.out.println("Url => " + url);
-            reportBean.openUrlInNewWindow(url);
-            System.out.println("Grant Farmer Eligibility Detail");
-            break;
-        
-        default:
-            showMessage("Please Select Report Type");
-            break;
-
-        }
         }
         return null;
     }
