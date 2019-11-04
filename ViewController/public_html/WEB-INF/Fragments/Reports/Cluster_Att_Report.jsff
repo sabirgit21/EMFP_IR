@@ -28,24 +28,33 @@
                                 <f:selectItems value="#{bindings.FarmerRegId.items}" id="si3"/>
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>
+                        </af:panelGroupLayout>
                             <af:selectOneChoice label="#{bindings.CityLibrDetail.label}" autoSubmit="true"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_city}">
                                 <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si4"/>
                                 <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
                             </af:selectOneChoice>
-                        </af:panelGroupLayout>
+                        <af:spacer width="30" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
-                            <af:selectOneChoice label="Select Report Type" id="soc5" autoSubmit="true"
+                        <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_format_type}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s22"/>
+                            <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_report_type}">
-                                <af:selectItem label="Cluster Attendance Detail" value="attDetailWise" id="si5"/>
+                                <af:selectItem label="Cluster Attendance Detail" value="attDetailWise" id="si10"/>
                                 <af:selectItem label="Cluster Attendance Detail City Wise" value="attDetailCityWise" id="si8"/>
                                 <af:selectItem label="Cluster Attendance Detail Cluster Wise" value="attDetaiClusterlWise" id="si7"/>
                                 <af:selectItem label="Cluster Attendance Detail Farmer Wise" value="attDetailFarmerWise" id="si9"/>
-                                <af:selectItem label="Cluster Attendance Detail Trainer Wise" value="attDetailTrainerWise" id="si6"/>
+                                <af:selectItem label="Cluster Attendance Detail Trainer Wise" value="attDetailTrainerWise"
+                                               id="si11"/>
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="30" id="s7"/>
+                            <af:spacer width="30" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.cluster_att_report_bean.get_report}"/>
                             <af:spacer width="30" height="10" id="s6"/>

@@ -17,7 +17,8 @@ public class cluster_att_report {
     private static String gotFarmer = "";
     private static String gotCity = "";
     
-    private static String  selectedReportType = "";
+    private static String  selectedReportType = "";    
+    private static String  gotFormat = "";
     
     public String get_report() {
         // Add event code here...
@@ -32,7 +33,10 @@ public class cluster_att_report {
         reportBean.setReportParameter("P_City_id", gotCity);
 
 
-        System.out.println("default");
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
 
         switch (selectedReportType) {
         case "attDetailWise":
@@ -41,7 +45,7 @@ public class cluster_att_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -55,7 +59,7 @@ public class cluster_att_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -69,7 +73,7 @@ public class cluster_att_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -84,7 +88,7 @@ public class cluster_att_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -99,7 +103,7 @@ public class cluster_att_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -113,7 +117,9 @@ public class cluster_att_report {
             break;
 
         }
-        
+
+            
+        }
         return null;
     }
     
@@ -158,5 +164,11 @@ public class cluster_att_report {
         // Add event code here...
         gotCity = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected City is : " + gotCity);
+    }
+
+    public void get_format_type(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }

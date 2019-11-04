@@ -34,6 +34,13 @@
                             </af:inputDate>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
+                         <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                             valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_report_format}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si55"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s22"/>
                             <af:selectOneChoice label="Select Report Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_report_type}">

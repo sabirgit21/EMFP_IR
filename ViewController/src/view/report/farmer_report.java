@@ -14,7 +14,8 @@ public class farmer_report {
     private static String gotCity="";
     private static String gotCrop="";
     private static String gotPhase="";
-    private static String selectedReportType;
+    private static String selectedReportType;  
+    private static String  gotFormat = "";
 
 
     public farmer_report() {
@@ -40,6 +41,13 @@ public class farmer_report {
         reportBean.setReportParameter("P_City_id", gotCity);
         reportBean.setReportParameter("P_Phase_id", gotPhase);
         reportBean.setReportParameter("P_Crop_id",gotCrop);
+        
+
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
+
         switch (selectedReportType) {
         case "clusterWise":
             System.out.println("clusterWise");
@@ -48,7 +56,7 @@ public class farmer_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
@@ -62,7 +70,7 @@ public class farmer_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
@@ -75,7 +83,7 @@ public class farmer_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
@@ -88,7 +96,7 @@ public class farmer_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
@@ -100,7 +108,7 @@ public class farmer_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             url = reportBean.getReportServerURL();
             System.out.println("Url => " + url);
             reportBean.openUrlInNewWindow(url);
@@ -109,6 +117,7 @@ public class farmer_report {
             showMessage("Please Select Report Type");
             break;
 
+        }
         }
         return null;
 
@@ -162,5 +171,11 @@ public class farmer_report {
         // Add event code here...
         gotPhase = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Phase is : " + gotPhase);
+    }
+
+    public void get_report_format(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }

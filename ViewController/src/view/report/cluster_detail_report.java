@@ -12,6 +12,7 @@ public class cluster_detail_report {
     private static String gotCrop = "";
     private static String gotCity = "";
     private static String selectedReportType;
+    private static String  gotFormat = "";
 
 
     public cluster_detail_report() {
@@ -34,6 +35,14 @@ public class cluster_detail_report {
         reportBean.setReportParameter("P_Phase_id", gotPhase);
         reportBean.setReportParameter("P_Crop_id",gotCrop);
         reportBean.setReportParameter("P_City_id",gotCity);
+        
+
+
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
+
         switch (selectedReportType) {
         case "phaseWise":
             System.out.println("phaseWise");
@@ -41,7 +50,7 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
 //            StringBuilder phasevar = new StringBuilder();
 //            phasevar.append("and tbl_cluster.phase_id=");
@@ -63,7 +72,7 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
 //            StringBuilder cropvar = new StringBuilder();
 //            cropvar.append("and tbl_cluster.phase_id=");
@@ -85,7 +94,7 @@ public class cluster_detail_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
 
 //            StringBuilder cityvar = new StringBuilder();
 //            cityvar.append("and tbl_cluster.phase_id=");
@@ -111,7 +120,7 @@ public class cluster_detail_report {
             showMessage("Please Select Report Type");
             break;
         }
-
+        }
 
         return null;
     }
@@ -161,5 +170,11 @@ public class cluster_detail_report {
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, fm);
         return null;
+    }
+
+    public void get_report_format(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }

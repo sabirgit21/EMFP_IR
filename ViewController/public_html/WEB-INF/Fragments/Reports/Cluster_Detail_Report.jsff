@@ -65,6 +65,13 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
+                        <af:selectOneChoice label="Select Format Type" id="soc4" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_report_format}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si5"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s5"/>
                             <af:selectOneChoice label="Select Report Type" id="soc1" unselectedLabel="---Select---"
                                                 value="#{backingBeanScope.cluster_detail_report_Backbean.reportType}">
                                 <af:selectItem label="Phase Wise" value="phaseWise" id="si1"/>

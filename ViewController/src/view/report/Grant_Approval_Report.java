@@ -13,6 +13,7 @@ public class Grant_Approval_Report {
     private static String gotFarmer = "";
     private static String selectedReportType;
     private static String selectedgrantType;
+    private static String  gotFormat = "";
 
     public Grant_Approval_Report() {
     }
@@ -32,6 +33,11 @@ public class Grant_Approval_Report {
 
         System.out.println("default");
 
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
+
         switch (selectedReportType) {
         case "detailWise":
 
@@ -39,7 +45,7 @@ public class Grant_Approval_Report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -53,7 +59,7 @@ public class Grant_Approval_Report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -67,7 +73,7 @@ public class Grant_Approval_Report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -82,7 +88,7 @@ public class Grant_Approval_Report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -97,7 +103,7 @@ public class Grant_Approval_Report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -110,6 +116,7 @@ public class Grant_Approval_Report {
             showMessage("Please Select Report Type");
             break;
 
+        }
         }
         return null;
     }
@@ -155,5 +162,11 @@ public class Grant_Approval_Report {
         // Add event code here...
         selectedgrantType = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Grant Type is : " + selectedgrantType);
+    }
+
+    public void get_report_format(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }

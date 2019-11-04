@@ -86,6 +86,12 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr3">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
+                         <af:selectOneChoice label="Select Format Type" id="soc67" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                             valueChangeListener="#{backingBeanScope.farmer_report_backbean.get_report_format}">
+                                                 <af:selectItem label="PDF" value="PDF" id="si99"/>
+                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si88"/>
+                            </af:selectOneChoice>
                             <af:spacer width="30" id="s8"/>
                             <af:selectOneChoice label="Select Report Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"

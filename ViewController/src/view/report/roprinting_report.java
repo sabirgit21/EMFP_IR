@@ -9,6 +9,7 @@ import view.DatabaseConnection.DatabaseConnection;
 public class roprinting_report {
     
     private static String gotprinting = "";
+    private static String  gotFormat = "";
     
     
     public roprinting_report() {
@@ -27,7 +28,13 @@ public class roprinting_report {
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
         reportBean.setReportParameter("appr_det_id",gotprinting);
-        
+
+
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
+
         switch (gotprinting) {
         case "notSelected":
         showMessage("Please Select Report Type");
@@ -41,7 +48,7 @@ public class roprinting_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
             
             url = reportBean.getReportServerURL();
@@ -49,6 +56,7 @@ public class roprinting_report {
             reportBean.openUrlInNewWindow(url);
             System.out.println("default ro printing report");
         break;
+        }
         }
             
         return null;
@@ -71,5 +79,11 @@ public class roprinting_report {
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, fm);
         return null;
+    }
+
+    public void get_report_format(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }

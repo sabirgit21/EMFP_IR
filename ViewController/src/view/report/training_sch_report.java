@@ -28,6 +28,7 @@ public class training_sch_report {
     private static String gotDate = "";   
     
     private static String  selectedReportType = "";
+    private static String  gotFormat = "";
 
     public String get_report() {
         // Add event code here...
@@ -42,7 +43,11 @@ public class training_sch_report {
         reportBean.setReportParameter("P_Date", gotDate);
 
 
-        System.out.println("default");
+
+        if(gotFormat==""){
+            showMessage("Please Select Report Format");
+        }
+        else {
 
         switch (selectedReportType) {
         
@@ -52,7 +57,7 @@ public class training_sch_report {
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                            "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
             reportBean.setReportParameter("paramform", "no");
 
             url = reportBean.getReportServerURL();
@@ -67,7 +72,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -82,7 +87,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -97,7 +102,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -112,7 +117,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -127,7 +132,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -142,7 +147,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -157,7 +162,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -172,7 +177,7 @@ public class training_sch_report {
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                                 "CACHE"); // which will be one of the [cashe - file - mail - printer]
                 reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                                "PDF"); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+                                                gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
                 reportBean.setReportParameter("paramform", "no");
 
                 url = reportBean.getReportServerURL();
@@ -187,7 +192,7 @@ public class training_sch_report {
             break;
 
         }
-        
+        }
         return null;
     }
     
@@ -245,5 +250,11 @@ public class training_sch_report {
         selectedReportType = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Report Type is : " + selectedReportType);
         
+    }
+
+    public void get_report_format(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFormat = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Format is : " + gotFormat);
     }
 }
