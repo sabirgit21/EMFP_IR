@@ -1,9 +1,19 @@
 package view.report;
 
+import com.tangosol.internal.sleepycat.je.utilint.Timestamp;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import javax.faces.event.ValueChangeEvent;
+
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import java.util.Locale;
 
 import view.DatabaseConnection.DatabaseConnection;
 
@@ -14,7 +24,8 @@ public class training_sch_report {
 
     private static String gotCluster = "";
     private static String gotTrainer = "";
-    private static String gotPhase = "";   
+    private static String gotPhase = "";  
+    private static String gotDate = "";   
     
     private static String  selectedReportType = "";
 
@@ -28,6 +39,7 @@ public class training_sch_report {
         reportBean.setReportParameter("P_Trainer_id", gotTrainer);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
         reportBean.setReportParameter("P_Phase_id", gotPhase);
+        reportBean.setReportParameter("P_Date", gotDate);
 
 
         System.out.println("default");
@@ -204,9 +216,34 @@ public class training_sch_report {
         System.out.println("Selected Trainer is : " + gotTrainer);
     }
 
+    public void get_selected_date(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        
+        gotDate = (valueChangeEvent.getNewValue()).toString();
+
+        try {
+        DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy",
+                                            Locale.ENGLISH);
+        Date parsedDate = sdf.parse(gotDate);
+        SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+        gotDate = (print.format(parsedDate));
+        } catch (ParseException e) {
+                                       e.printStackTrace();
+                                }
+        
+        System.out.println("Selected Date is : " + gotDate);
+    }
+
     public void get_phase(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
         gotPhase = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Phase is : " + gotPhase);
+    }
+
+    public void get_report_type(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        selectedReportType = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Report Type is : " + selectedReportType);
+        
     }
 }

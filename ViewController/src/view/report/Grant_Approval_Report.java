@@ -12,6 +12,7 @@ public class Grant_Approval_Report {
     private static String gotCluster = "";
     private static String gotFarmer = "";
     private static String selectedReportType;
+    private static String selectedgrantType;
 
     public Grant_Approval_Report() {
     }
@@ -26,6 +27,7 @@ public class Grant_Approval_Report {
         reportBean.setReportParameter("P_Phase_id", gotPhase);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
         reportBean.setReportParameter("P_farmer_reg_id", gotFarmer);
+        reportBean.setReportParameter("P_Grant_Type", selectedgrantType);
 
 
         System.out.println("default");
@@ -147,5 +149,11 @@ public class Grant_Approval_Report {
         // Add event code here...
         selectedReportType = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Report Type is : " + selectedReportType);
+    }
+
+    public void get_selected_grant_type(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        selectedgrantType = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Grant Type is : " + selectedgrantType);
     }
 }

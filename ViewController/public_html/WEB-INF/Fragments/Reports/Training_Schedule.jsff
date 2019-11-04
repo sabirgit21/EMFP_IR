@@ -28,19 +28,32 @@
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si3"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
                             </af:selectOneChoice>
+                            <af:inputDate label="Select a date:" id="id1" autoSubmit="true"
+                                          valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_selected_date}">
+                             
+                            </af:inputDate>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                             <af:selectOneChoice label="Select Report Type" id="soc5" autoSubmit="true"
-                                                unselectedLabel="--Select--">
+                                                unselectedLabel="--Select--"
+                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_report_type}">
                                 <af:selectItem label="Training Sched Detail" value="trainingSchDetail" id="si5"/>
-                                <af:selectItem label="Training Sched Detail Component Wise" value="trainingSchDetailCompWise" id="si8"/>
-                                <af:selectItem label="Training Sched Detail Cluster Wise" value="trainingSchDetailClusterWise" id="si7"/>
-                                <af:selectItem label="Training Sched Detail Date Wise" value="trainingSchDetailDateWise" id="si9"/>
-                                <af:selectItem label="Training Sched Detail Module Wise" value="trainingSchDetailModuleWise" id="si6"/>
-                                <af:selectItem label="Training Sched Detail Team Formation Wise" value="trainingSchDetailTeamFormaWise" id="si4"/>
-                                <af:selectItem label="Training Sched Detail Team Wise" value="trainingSchDetailTeamWise" id="si10"/>
-                                <af:selectItem label="Training Sched Detail Trainer Wise" value="trainingSchDetailTrainerWise" id="si11"/>
-                                <af:selectItem label="Training Sched Detail Training Wise" value="trainingSchDetailTrainingWise" id="si12"/>
+                                <af:selectItem label="Training Sched Detail Component Wise"
+                                               value="trainingSchDetailCompWise" id="si8"/>
+                                <af:selectItem label="Training Sched Detail Cluster Wise"
+                                               value="trainingSchDetailClusterWise" id="si7"/>
+                                <af:selectItem label="Training Sched Detail Date Wise" value="trainingSchDetailDateWise"
+                                               id="si9"/>
+                                <af:selectItem label="Training Sched Detail Module Wise"
+                                               value="trainingSchDetailModuleWise" id="si6"/>
+                                <af:selectItem label="Training Sched Detail Team Formation Wise"
+                                               value="trainingSchDetailTeamFormaWise" id="si4"/>
+                                <af:selectItem label="Training Sched Detail Team Wise" value="trainingSchDetailTeamWise"
+                                               id="si10"/>
+                                <af:selectItem label="Training Sched Detail Trainer Wise"
+                                               value="trainingSchDetailTrainerWise" id="si11"/>
+                                <af:selectItem label="Training Sched Detail Training Wise"
+                                               value="trainingSchDetailTrainingWise" id="si12"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s7"/>
                             <af:button text="Generate Report" id="b2"
@@ -56,9 +69,7 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                        <af:panelGroupLayout id="pgl2" layout="horizontal">
-                           
-                         </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl2" layout="horizontal"></af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr5">

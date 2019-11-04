@@ -37,17 +37,24 @@
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
-                            <af:selectOneChoice label="Select Report Type" id="soc5" autoSubmit="true"
+                        <af:selectOneChoice label="Select Grant Type" id="soc5" autoSubmit="true"
+                                                unselectedLabel="--Select--"
+                                            valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_grant_type}">
+                                <af:selectItem label="Group" value="grp" id="si5"/>
+                                <af:selectItem label="Individual" value="ind" id="si10"/>
+                            </af:selectOneChoice>
+                        <af:spacer width="30" height="30" id="s7"/>
+                            <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                                 valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_report_type}">
-                                <af:selectItem label="Grant Approval Detail" value="detailWise" id="si5"/>
+                                <af:selectItem label="Grant Approval Detail" value="detailWise" id="si9"/>
                                 <af:selectItem label="Grant Approval Machinery Wise" value="machineryWise" id="si8"/>
                                 <af:selectItem label="Grant Approval Machinery Phase Wise" value="machineryPhaseWise"
                                                id="si7"/>
                                 <af:selectItem label="Grant Consolidated Detail" value="consolidatedDetail" id="si3"/>
                                 <af:selectItem label="Grant Farmer Eligibility Detail" value="grantFarmerEligibilty" id="si6"/>
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="30" id="s7"/>
+                            <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
                                        action="#{backingBeanScope.Grant_Approval_Report_BackBean.gen_Report}"/>
                             <af:spacer width="30" height="10" id="s6"/>
