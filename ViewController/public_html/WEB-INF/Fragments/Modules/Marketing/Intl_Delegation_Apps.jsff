@@ -1,0 +1,729 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Intl. Delegation Application">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Delegation Application Master">
+                <af:table value="#{bindings.TblIntlDelegAppMView1.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegAppMView1.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegAppMView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegAppMView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegAppMView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegAppMView1.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegAppMView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblIntlDelegAppMView1Query.processQuery}" varStatus="vs" id="t1">
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.Dated.label}" id="c3">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblIntlDelegAppMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblIntlDelegAppMView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.Dated.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblIntlDelegAppMView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.Name.label}" id="c4">
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.Name.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.Name.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.CoName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.CoName.label}" id="c5">
+                    <af:inputText value="#{row.bindings.CoName.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.CoName.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.CoName.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.CoName.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.CoName.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.CoName.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.CoName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.label}"
+                             id="c6">
+                    <af:inputText value="#{row.bindings.RepDesig.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.RepDesig.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.EMail.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.EMail.label}" id="c7">
+                    <af:inputText value="#{row.bindings.EMail.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.EMail.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.EMail.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.EMail.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.EMail.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.EMail.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.EMail.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Mobile.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAppMView1.hints.Mobile.label}" id="c8">
+                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.Mobile.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.Mobile.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.Mobile.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.Mobile.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.Mobile.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+             <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Delegation Application Detail">
+                <af:panelFormLayout id="pfl1">
+                  <af:inputText value="#{bindings.Address.inputValue}" label="#{bindings.Address.hints.label}"
+                                required="#{bindings.Address.hints.mandatory}"
+                                columns="#{bindings.Address.hints.displayWidth}"
+                                maximumLength="#{bindings.Address.hints.precision}"
+                                shortDesc="#{bindings.Address.hints.tooltip}" id="it8">
+                    <f:validator binding="#{bindings.Address.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.PassportNo.inputValue}" label="#{bindings.PassportNo.hints.label}"
+                                required="#{bindings.PassportNo.hints.mandatory}"
+                                columns="#{bindings.PassportNo.hints.displayWidth}"
+                                maximumLength="#{bindings.PassportNo.hints.precision}"
+                                shortDesc="#{bindings.PassportNo.hints.tooltip}" id="it9">
+                    <f:validator binding="#{bindings.PassportNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.PassportCntr.inputValue}" label="#{bindings.PassportCntr.hints.label}"
+                                required="#{bindings.PassportCntr.hints.mandatory}"
+                                columns="#{bindings.PassportCntr.hints.displayWidth}"
+                                maximumLength="#{bindings.PassportCntr.hints.precision}"
+                                shortDesc="#{bindings.PassportCntr.hints.tooltip}" id="it10">
+                    <f:validator binding="#{bindings.PassportCntr.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.WebsiteAddr.inputValue}" label="#{bindings.WebsiteAddr.hints.label}"
+                                required="#{bindings.WebsiteAddr.hints.mandatory}"
+                                columns="#{bindings.WebsiteAddr.hints.displayWidth}"
+                                maximumLength="#{bindings.WebsiteAddr.hints.precision}"
+                                shortDesc="#{bindings.WebsiteAddr.hints.tooltip}" id="it11">
+                    <f:validator binding="#{bindings.WebsiteAddr.validator}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.PassportIssDate.inputValue}"
+                                label="#{bindings.PassportIssDate.hints.label}"
+                                required="#{bindings.PassportIssDate.hints.mandatory}"
+                                columns="#{bindings.PassportIssDate.hints.displayWidth}"
+                                shortDesc="#{bindings.PassportIssDate.hints.tooltip}" id="id3">
+                    <f:validator binding="#{bindings.PassportIssDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.PassportIssDate.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.WhatsappNo.inputValue}" label="#{bindings.WhatsappNo.hints.label}"
+                                required="#{bindings.WhatsappNo.hints.mandatory}"
+                                columns="#{bindings.WhatsappNo.hints.displayWidth}"
+                                maximumLength="#{bindings.WhatsappNo.hints.precision}"
+                                shortDesc="#{bindings.WhatsappNo.hints.tooltip}" id="it12">
+                    <f:validator binding="#{bindings.WhatsappNo.validator}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.PassportExpDate.inputValue}"
+                                label="#{bindings.PassportExpDate.hints.label}"
+                                required="#{bindings.PassportExpDate.hints.mandatory}"
+                                columns="#{bindings.PassportExpDate.hints.displayWidth}"
+                                shortDesc="#{bindings.PassportExpDate.hints.tooltip}" id="id4">
+                    <f:validator binding="#{bindings.PassportExpDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.PassportExpDate.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.BizNature.inputValue}" label="#{bindings.BizNature.hints.label}"
+                                required="#{bindings.BizNature.hints.mandatory}"
+                                columns="#{bindings.BizNature.hints.displayWidth}"
+                                maximumLength="#{bindings.BizNature.hints.precision}"
+                                shortDesc="#{bindings.BizNature.hints.tooltip}" id="it13">
+                    <f:validator binding="#{bindings.BizNature.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.AnnTurnSale.inputValue}" label="#{bindings.AnnTurnSale.hints.label}"
+                                required="#{bindings.AnnTurnSale.hints.mandatory}"
+                                columns="#{bindings.AnnTurnSale.hints.displayWidth}"
+                                maximumLength="#{bindings.AnnTurnSale.hints.precision}"
+                                shortDesc="#{bindings.AnnTurnSale.hints.tooltip}" id="it14">
+                    <f:validator binding="#{bindings.AnnTurnSale.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AnnTurnSale.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.AnnImports.inputValue}" label="#{bindings.AnnImports.hints.label}"
+                                required="#{bindings.AnnImports.hints.mandatory}"
+                                columns="#{bindings.AnnImports.hints.displayWidth}"
+                                maximumLength="#{bindings.AnnImports.hints.precision}"
+                                shortDesc="#{bindings.AnnImports.hints.tooltip}" id="it15">
+                    <f:validator binding="#{bindings.AnnImports.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AnnImports.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ProIntrExpo.inputValue}" label="#{bindings.ProIntrExpo.hints.label}"
+                                required="#{bindings.ProIntrExpo.hints.mandatory}"
+                                columns="#{bindings.ProIntrExpo.hints.displayWidth}"
+                                maximumLength="#{bindings.ProIntrExpo.hints.precision}"
+                                shortDesc="#{bindings.ProIntrExpo.hints.tooltip}" id="it16">
+                    <f:validator binding="#{bindings.ProIntrExpo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.TradeProfile.inputValue}" label="#{bindings.TradeProfile.hints.label}"
+                                required="#{bindings.TradeProfile.hints.mandatory}"
+                                columns="#{bindings.TradeProfile.hints.displayWidth}"
+                                maximumLength="#{bindings.TradeProfile.hints.precision}"
+                                shortDesc="#{bindings.TradeProfile.hints.tooltip}" id="it17">
+                    <f:validator binding="#{bindings.TradeProfile.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ChamberName.inputValue}" label="#{bindings.ChamberName.hints.label}"
+                                required="#{bindings.ChamberName.hints.mandatory}"
+                                columns="#{bindings.ChamberName.hints.displayWidth}"
+                                maximumLength="#{bindings.ChamberName.hints.precision}"
+                                shortDesc="#{bindings.ChamberName.hints.tooltip}" id="it18">
+                    <f:validator binding="#{bindings.ChamberName.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.GovtRepres.inputValue}" label="#{bindings.GovtRepres.hints.label}"
+                                required="#{bindings.GovtRepres.hints.mandatory}"
+                                columns="#{bindings.GovtRepres.hints.displayWidth}"
+                                maximumLength="#{bindings.GovtRepres.hints.precision}"
+                                shortDesc="#{bindings.GovtRepres.hints.tooltip}" id="it19">
+                    <f:validator binding="#{bindings.GovtRepres.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.LibrInterpretReq.inputValue}"
+                                label="#{bindings.LibrInterpretReq.hints.label}"
+                                required="#{bindings.LibrInterpretReq.hints.mandatory}"
+                                columns="#{bindings.LibrInterpretReq.hints.displayWidth}"
+                                maximumLength="#{bindings.LibrInterpretReq.hints.precision}"
+                                shortDesc="#{bindings.LibrInterpretReq.hints.tooltip}" id="it20">
+                    <f:validator binding="#{bindings.LibrInterpretReq.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.LibrInterpretReq.format}"/>
+                  </af:inputText>
+                  <af:inputDate value="#{bindings.TrvDateExp.inputValue}" label="#{bindings.TrvDateExp.hints.label}"
+                                required="#{bindings.TrvDateExp.hints.mandatory}"
+                                columns="#{bindings.TrvDateExp.hints.displayWidth}"
+                                shortDesc="#{bindings.TrvDateExp.hints.tooltip}" id="id5">
+                    <f:validator binding="#{bindings.TrvDateExp.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.TrvDateExp.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.TrvFrom.inputValue}" label="#{bindings.TrvFrom.hints.label}"
+                                required="#{bindings.TrvFrom.hints.mandatory}"
+                                columns="#{bindings.TrvFrom.hints.displayWidth}"
+                                maximumLength="#{bindings.TrvFrom.hints.precision}"
+                                shortDesc="#{bindings.TrvFrom.hints.tooltip}" id="it21">
+                    <f:validator binding="#{bindings.TrvFrom.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.TrvTo.inputValue}" label="#{bindings.TrvTo.hints.label}"
+                                required="#{bindings.TrvTo.hints.mandatory}"
+                                columns="#{bindings.TrvTo.hints.displayWidth}"
+                                maximumLength="#{bindings.TrvTo.hints.precision}"
+                                shortDesc="#{bindings.TrvTo.hints.tooltip}" id="it22">
+                    <f:validator binding="#{bindings.TrvTo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Status.inputValue}" label="#{bindings.Status.hints.label}"
+                                required="#{bindings.Status.hints.mandatory}"
+                                columns="#{bindings.Status.hints.displayWidth}"
+                                maximumLength="#{bindings.Status.hints.precision}"
+                                shortDesc="#{bindings.Status.hints.tooltip}" id="it23">
+                    <f:validator binding="#{bindings.Status.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Remarks.inputValue}" label="#{bindings.Remarks.hints.label}"
+                                required="#{bindings.Remarks.hints.mandatory}"
+                                columns="#{bindings.Remarks.hints.displayWidth}"
+                                maximumLength="#{bindings.Remarks.hints.precision}"
+                                shortDesc="#{bindings.Remarks.hints.tooltip}" id="it24">
+                    <f:validator binding="#{bindings.Remarks.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="vertical" id="pgl5">
+                      <af:panelGroupLayout layout="horizontal" id="pgl6">
+                        <af:button actionListener="#{bindings.First.execute}" text="First"
+                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                      </af:panelGroupLayout>
+                      <af:button text="Submit" id="b6"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi1" text="Delegation Trade">
+                <af:table value="#{bindings.TblIntlDelegTradeView3.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegTradeView3.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegTradeView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegTradeView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegTradeView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegTradeView3.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegTradeView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblIntlDelegTradeView3Query.processQuery}" varStatus="vs" id="t2">
+                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.label}" id="c9">
+                    <af:inputText value="#{row.bindings.IntlDelegTradeId.inputValue}"
+                                  label="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.label}"
+                                  required="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.tooltip}"
+                                  id="it25">
+                      <f:validator binding="#{row.bindings.IntlDelegTradeId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.label}" id="c10">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.tooltip}"
+                                  id="it26">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.label}" id="c11">
+                    <af:inputText value="#{row.bindings.LibrTradeTypesId.inputValue}"
+                                  label="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.label}"
+                                  required="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.tooltip}"
+                                  id="it27">
+                      <f:validator binding="#{row.bindings.LibrTradeTypesId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegTradeView3.hints.Ast.label}" id="c12">
+                    <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                  label="#{bindings.TblIntlDelegTradeView3.hints.Ast.label}"
+                                  required="#{bindings.TblIntlDelegTradeView3.hints.Ast.mandatory}"
+                                  columns="#{bindings.TblIntlDelegTradeView3.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.Ast.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.Ast.tooltip}" id="it28">
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:panelGroupLayout id="pgl10" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s14"/>
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s13"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi2" text="Import Other">
+                <af:table value="#{bindings.TblIntlDelegImportOthView3.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegImportOthView3.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegImportOthView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegImportOthView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegImportOthView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportOthView3.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegImportOthView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblIntlDelegImportOthView3Query.processQuery}" varStatus="vs"
+                          id="t3">
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.label}"
+                             id="c13">
+                    <af:inputText value="#{row.bindings.IntlDelegImportOthId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.label}"
+                                  required="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.tooltip}"
+                                  id="it29">
+                      <f:validator binding="#{row.bindings.IntlDelegImportOthId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.label}" id="c14">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.tooltip}"
+                                  id="it30">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.label}" id="c15">
+                    <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.label}"
+                                  required="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.tooltip}"
+                                  id="it31">
+                      <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.label}" id="c16">
+                    <af:inputText value="#{row.bindings.ProdImport.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.label}"
+                                  required="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.tooltip}" id="it32">
+                      <f:validator binding="#{row.bindings.ProdImport.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                <af:panelGroupLayout id="pgl9" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s12"/>
+                            <af:iterator id="i5" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s11"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi3" text="Import from Paskistan">
+                <af:table value="#{bindings.TblIntlDelegImportPkView3.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegImportPkView3.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegImportPkView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegImportPkView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegImportPkView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportPkView3.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegImportPkView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblIntlDelegImportPkView3Query.processQuery}" varStatus="vs"
+                          id="t4">
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.label}"
+                             id="c17">
+                    <af:inputText value="#{row.bindings.IntlDelegImportPkId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.label}"
+                                  required="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.tooltip}"
+                                  id="it33">
+                      <f:validator binding="#{row.bindings.IntlDelegImportPkId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.label}" id="c18">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.tooltip}"
+                                  id="it34">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.label}"
+                             id="c19">
+                    <af:inputText value="#{row.bindings.ProdName.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.label}"
+                                  required="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.tooltip}" id="it35">
+                      <f:validator binding="#{row.bindings.ProdName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegImportPkView3.hints.Qty.label}"
+                             id="c20">
+                    <af:inputText value="#{row.bindings.Qty.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportPkView3.hints.Qty.label}"
+                                  required="#{bindings.TblIntlDelegImportPkView3.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportPkView3.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportPkView3.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportPkView3.hints.Qty.tooltip}" id="it36">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportPkView3.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s10"/>
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s8"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi4" text="Import Interest">
+                <af:table value="#{bindings.TblIntlDelegImportIntrView3.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegImportIntrView3.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegImportIntrView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegImportIntrView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegImportIntrView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportIntrView3.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegImportIntrView3Query.queryDescriptor}"
+                          filterVisible="true" queryListener="#{bindings.TblIntlDelegImportIntrView3Query.processQuery}"
+                          varStatus="vs" id="t5">
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.label}"
+                             id="c21">
+                    <af:inputText value="#{row.bindings.IntlDelegImportIntrId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.label}"
+                                  required="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.tooltip}"
+                                  id="it37">
+                      <f:validator binding="#{row.bindings.IntlDelegImportIntrId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.label}" id="c22">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.tooltip}"
+                                  id="it38">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.label}" id="c23">
+                    <af:inputText value="#{row.bindings.ProdName.inputValue}"
+                                  label="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.label}"
+                                  required="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.mandatory}"
+                                  columns="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.tooltip}" id="it39">
+                      <f:validator binding="#{row.bindings.ProdName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s7"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s6"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+              <af:showDetailItem id="sdi5" text="Delegation Accomodation">
+                <af:table value="#{bindings.TblIntlDelegAccomView3.collectionModel}" var="row"
+                          rows="#{bindings.TblIntlDelegAccomView3.rangeSize}"
+                          emptyText="#{bindings.TblIntlDelegAccomView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblIntlDelegAccomView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblIntlDelegAccomView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblIntlDelegAccomView3.rangeSize}"
+                          filterModel="#{bindings.TblIntlDelegAccomView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblIntlDelegAccomView3Query.processQuery}" varStatus="vs" id="t6">
+                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.label}" id="c24">
+                    <af:inputText value="#{row.bindings.IntlDelegAccomId.inputValue}"
+                                  label="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.label}"
+                                  required="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.tooltip}"
+                                  id="it40">
+                      <f:validator binding="#{row.bindings.IntlDelegAccomId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.label}" id="c25">
+                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
+                                  label="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.label}"
+                                  required="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.tooltip}"
+                                  id="it41">
+                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAppMId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.label}" id="c26">
+                    <af:inputText value="#{row.bindings.LibrAccomTypesId.inputValue}"
+                                  label="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.label}"
+                                  required="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.tooltip}"
+                                  id="it42">
+                      <f:validator binding="#{row.bindings.LibrAccomTypesId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblIntlDelegAccomView3.hints.Ast.label}" id="c27">
+                    <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                  label="#{bindings.TblIntlDelegAccomView3.hints.Ast.label}"
+                                  required="#{bindings.TblIntlDelegAccomView3.hints.Ast.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAccomView3.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.Ast.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.Ast.tooltip}" id="it43">
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                 <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s3"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}5"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+            
+           </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

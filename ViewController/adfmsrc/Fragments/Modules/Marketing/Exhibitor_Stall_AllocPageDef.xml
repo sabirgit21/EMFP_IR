@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Exhibitor_Stall_AllocPageDef"
+                Package="Fragments.Modules.Marketing">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblExhibitorsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExhibitorsView1Iterator"/>
+    <searchRegion Binds="TblExhibitorsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExhibitorsView1Query"/>
+    <iterator Binds="TblStallsAllocView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblStallsAllocView3Iterator"/>
+    <searchRegion Binds="TblStallsAllocView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblStallsAllocView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblExhibitorsView1Iterator" id="TblExhibitorsView1">
+      <nodeDefinition DefName="model.VO.TblExhibitorsView" Name="TblExhibitorsView10">
+        <AttrNames>
+          <Item Value="ExhibitorsId"/>
+          <Item Value="ExpoSetupId"/>
+          <Item Value="Name"/>
+          <Item Value="Representative"/>
+          <Item Value="ExhibitorType"/>
+          <Item Value="ExhibitorProd"/>
+          <Item Value="LibrCountryId"/>
+          <Item Value="ExhibitorStatus"/>
+          <Item Value="StallAllocType"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblExhibitorsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblExhibitorsView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblExhibitorsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblStallsAllocView3Iterator" id="TblStallsAllocView3">
+      <nodeDefinition DefName="model.VO.TblStallsAllocView" Name="TblStallsAllocView30">
+        <AttrNames>
+          <Item Value="StallsAllocId"/>
+          <Item Value="ExhibitorsId"/>
+          <Item Value="ExpoHallsId"/>
+          <Item Value="ExpoStallsId"/>
+          <Item Value="ExpoStallsType"/>
+          <Item Value="StallDiscAmt"/>
+          <Item Value="StallAmount"/>
+          <Item Value="Representative"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblStallsAllocView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblStallsAllocView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblStallsAllocView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

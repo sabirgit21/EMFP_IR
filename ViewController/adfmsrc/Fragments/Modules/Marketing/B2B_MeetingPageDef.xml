@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="B2B_MeetingPageDef"
+                Package="Fragments.Modules.Marketing">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblB2bMeetingView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblB2bMeetingView1Iterator"/>
+    <searchRegion Binds="TblB2bMeetingView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblB2bMeetingView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblB2bMeetingView1Iterator" id="TblB2bMeetingView1">
+      <nodeDefinition DefName="model.VO.TblB2bMeetingView" Name="TblB2bMeetingView10">
+        <AttrNames>
+          <Item Value="B2bMeetingId"/>
+          <Item Value="B2bMeetingType"/>
+          <Item Value="ExhibitorsId"/>
+          <Item Value="Name"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="Remarks"/>
+          <Item Value="Linkages"/>
+          <Item Value="ExpDeal"/>
+          <Item Value="ExpDealAmt"/>
+          <Item Value="FinalDeal"/>
+          <Item Value="FinalDealAmt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblB2bMeetingView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblB2bMeetingView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblB2bMeetingView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

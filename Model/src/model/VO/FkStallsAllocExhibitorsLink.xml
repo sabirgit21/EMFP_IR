@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkStallsAllocExhibitorsLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkStallsAllocExhibitorsAssoc">
+  <ViewLinkDefEnd
+    Name="TblExhibitorsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblExhibitorsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblExhibitorsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblExhibitorsView.ExhibitorsId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblStallsAllocView"
+    Cardinality="-1"
+    Owner="model.VO.TblStallsAllocView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblStallsAllocView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblStallsAllocView.ExhibitorsId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblIntlDelegTradeView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblIntlDelegTrade.INTL_DELEG_TRADE_ID,
+       TblIntlDelegTrade.INTL_DELEG_APP_M_ID,
+       TblIntlDelegTrade.LIBR_TRADE_TYPES_ID,
+       TblIntlDelegTrade.AST,
+       TblIntlDelegTrade.CREATED_DATE,
+       TblIntlDelegTrade.CREATED_BY,
+       TblIntlDelegTrade.UPDATED_DATE,
+       TblIntlDelegTrade.UPDATED_BY
+FROM TBL_INTL_DELEG_TRADE TblIntlDelegTrade]]></SQLQuery>
+  <ViewAttribute
+    Name="IntlDelegTradeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="INTL_DELEG_TRADE_ID"
+    Expression="INTL_DELEG_TRADE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="IntlDelegAppMId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="INTL_DELEG_APP_M_ID"
+    Expression="INTL_DELEG_APP_M_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LibrTradeTypesId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LIBR_TRADE_TYPES_ID"
+    Expression="LIBR_TRADE_TYPES_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="CREATED_DATE"
+    Expression="CREATED_DATE"
+    SQLType="TIMESTAMP"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CREATED_BY"
+    Expression="CREATED_BY"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="UPDATED_DATE"
+    Expression="UPDATED_DATE"
+    SQLType="TIMESTAMP"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="UPDATED_BY"
+    Expression="UPDATED_BY"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="IntlDelegTradeId"/>
+  </AttrArray>
+</ViewObject>

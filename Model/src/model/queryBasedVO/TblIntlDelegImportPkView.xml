@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblIntlDelegImportPkView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblIntlDelegImportPk.INTL_DELEG_IMPORT_PK_ID,
+       TblIntlDelegImportPk.INTL_DELEG_APP_M_ID,
+       TblIntlDelegImportPk.PROD_NAME,
+       TblIntlDelegImportPk.QTY,
+       TblIntlDelegImportPk.CREATED_DATE,
+       TblIntlDelegImportPk.CREATED_BY,
+       TblIntlDelegImportPk.UPDATED_DATE,
+       TblIntlDelegImportPk.UPDATED_BY
+FROM TBL_INTL_DELEG_IMPORT_PK TblIntlDelegImportPk]]></SQLQuery>
+  <ViewAttribute
+    Name="IntlDelegImportPkId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="INTL_DELEG_IMPORT_PK_ID"
+    Expression="INTL_DELEG_IMPORT_PK_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="IntlDelegAppMId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="INTL_DELEG_APP_M_ID"
+    Expression="INTL_DELEG_APP_M_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ProdName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PROD_NAME"
+    Expression="PROD_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Qty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="QTY"
+    Expression="QTY"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="CREATED_DATE"
+    Expression="CREATED_DATE"
+    SQLType="TIMESTAMP"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CREATED_BY"
+    Expression="CREATED_BY"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="UPDATED_DATE"
+    Expression="UPDATED_DATE"
+    SQLType="TIMESTAMP"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="UPDATED_BY"
+    Expression="UPDATED_BY"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="IntlDelegImportPkId"/>
+  </AttrArray>
+</ViewObject>

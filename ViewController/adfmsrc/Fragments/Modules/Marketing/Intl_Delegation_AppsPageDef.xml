@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Intl_Delegation_AppsPageDef"
+                Package="Fragments.Modules.Marketing">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblIntlDelegAppMView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegAppMView1Iterator"/>
+    <searchRegion Binds="TblIntlDelegAppMView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIntlDelegAppMView1Query"/>
+    <iterator Binds="TblIntlDelegTradeView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegTradeView3Iterator"/>
+    <searchRegion Binds="TblIntlDelegTradeView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIntlDelegTradeView3Query"/>
+    <iterator Binds="TblIntlDelegImportOthView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegImportOthView3Iterator"/>
+    <searchRegion Binds="TblIntlDelegImportOthView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIntlDelegImportOthView3Query"/>
+    <iterator Binds="TblIntlDelegImportPkView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegImportPkView3Iterator"/>
+    <searchRegion Binds="TblIntlDelegImportPkView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIntlDelegImportPkView3Query"/>
+    <iterator Binds="TblIntlDelegImportIntrView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegImportIntrView3Iterator"/>
+    <searchRegion Binds="TblIntlDelegImportIntrView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblIntlDelegImportIntrView3Query"/>
+    <iterator Binds="TblIntlDelegAccomView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblIntlDelegAccomView3Iterator"/>
+    <searchRegion Binds="TblIntlDelegAccomView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblIntlDelegAccomView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblIntlDelegAppMView1Iterator" id="TblIntlDelegAppMView1">
+      <nodeDefinition DefName="model.VO.TblIntlDelegAppMView" Name="TblIntlDelegAppMView10">
+        <AttrNames>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="ExpoSetupId"/>
+          <Item Value="Dated"/>
+          <Item Value="Name"/>
+          <Item Value="CoName"/>
+          <Item Value="RepDesig"/>
+          <Item Value="EMail"/>
+          <Item Value="Mobile"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="PassportNo">
+      <AttrNames>
+        <Item Value="PassportNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="PassportCntr">
+      <AttrNames>
+        <Item Value="PassportCntr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="WebsiteAddr">
+      <AttrNames>
+        <Item Value="WebsiteAddr"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="PassportIssDate">
+      <AttrNames>
+        <Item Value="PassportIssDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="WhatsappNo">
+      <AttrNames>
+        <Item Value="WhatsappNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="PassportExpDate">
+      <AttrNames>
+        <Item Value="PassportExpDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="BizNature">
+      <AttrNames>
+        <Item Value="BizNature"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="AnnTurnSale">
+      <AttrNames>
+        <Item Value="AnnTurnSale"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="AnnImports">
+      <AttrNames>
+        <Item Value="AnnImports"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="ProIntrExpo">
+      <AttrNames>
+        <Item Value="ProIntrExpo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TradeProfile">
+      <AttrNames>
+        <Item Value="TradeProfile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="ChamberName">
+      <AttrNames>
+        <Item Value="ChamberName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="GovtRepres">
+      <AttrNames>
+        <Item Value="GovtRepres"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="LibrInterpretReq">
+      <AttrNames>
+        <Item Value="LibrInterpretReq"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TrvDateExp">
+      <AttrNames>
+        <Item Value="TrvDateExp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TrvFrom">
+      <AttrNames>
+        <Item Value="TrvFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TrvTo">
+      <AttrNames>
+        <Item Value="TrvTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="Remarks">
+      <AttrNames>
+        <Item Value="Remarks"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblIntlDelegTradeView3Iterator" id="TblIntlDelegTradeView3">
+      <nodeDefinition DefName="model.VO.TblIntlDelegTradeView" Name="TblIntlDelegTradeView30">
+        <AttrNames>
+          <Item Value="IntlDelegTradeId"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="LibrTradeTypesId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblIntlDelegImportOthView3Iterator" id="TblIntlDelegImportOthView3">
+      <nodeDefinition DefName="model.VO.TblIntlDelegImportOthView" Name="TblIntlDelegImportOthView30">
+        <AttrNames>
+          <Item Value="IntlDelegImportOthId"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="LibrCountryId"/>
+          <Item Value="ProdImport"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblIntlDelegImportPkView3Iterator" id="TblIntlDelegImportPkView3">
+      <nodeDefinition DefName="model.VO.TblIntlDelegImportPkView" Name="TblIntlDelegImportPkView30">
+        <AttrNames>
+          <Item Value="IntlDelegImportPkId"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="ProdName"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblIntlDelegImportIntrView3Iterator" id="TblIntlDelegImportIntrView3">
+      <nodeDefinition DefName="model.VO.TblIntlDelegImportIntrView" Name="TblIntlDelegImportIntrView30">
+        <AttrNames>
+          <Item Value="IntlDelegImportIntrId"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="ProdName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblIntlDelegAccomView3Iterator" id="TblIntlDelegAccomView3">
+      <nodeDefinition DefName="model.VO.TblIntlDelegAccomView" Name="TblIntlDelegAccomView30">
+        <AttrNames>
+          <Item Value="IntlDelegAccomId"/>
+          <Item Value="IntlDelegAppMId"/>
+          <Item Value="LibrAccomTypesId"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegAppMView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblIntlDelegTradeView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegTradeView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegTradeView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblIntlDelegImportOthView3Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegImportOthView3Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegImportOthView3Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblIntlDelegImportPkView3Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegImportPkView3Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegImportPkView3Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblIntlDelegImportIntrView3Iterator" id="CreateInsert4" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegImportIntrView3Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegImportIntrView3Iterator" id="Delete4" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblIntlDelegAccomView3Iterator" id="CreateInsert5" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblIntlDelegAccomView3Iterator" id="Execute5" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblIntlDelegAccomView3Iterator" id="Delete5" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

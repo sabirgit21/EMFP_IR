@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblExpoIntlDelegView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblExpoIntlDeleg.EXPO_INTL_DELEG_ID,
+       TblExpoIntlDeleg.EXPO_SETUP_ID,
+       TblExpoIntlDeleg.TOTAL_DELEG,
+       TblExpoIntlDeleg.LIBR_COUNTRY_ID
+FROM TBL_EXPO_INTL_DELEG TblExpoIntlDeleg]]></SQLQuery>
+  <ViewAttribute
+    Name="ExpoIntlDelegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EXPO_INTL_DELEG_ID"
+    Expression="EXPO_INTL_DELEG_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ExpoSetupId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EXPO_SETUP_ID"
+    Expression="EXPO_SETUP_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotalDeleg"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_DELEG"
+    Expression="TOTAL_DELEG"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LibrCountryId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LIBR_COUNTRY_ID"
+    Expression="LIBR_COUNTRY_ID"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ExpoIntlDelegId"/>
+  </AttrArray>
+</ViewObject>

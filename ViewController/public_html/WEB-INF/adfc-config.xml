@@ -71,4 +71,9 @@
     <managed-bean-class>view.report.roprinting_report</managed-bean-class>
     <managed-bean-scope>backingBean</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__15">
+    <managed-bean-name>MarketingSidebarBean</managed-bean-name>
+    <managed-bean-class>view.MarketingSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

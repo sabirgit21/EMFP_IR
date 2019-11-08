@@ -169,6 +169,26 @@
         <page path="/WEB-INF/Fragments/Modules/Monitoring/MMP_RO_Approved.jsff" usageId="view_MMP_RO_ApprovedPageDef"/>
         <page path="/WEB-INF/Fragments/Reports/Cluster_Att_Report.jsff" usageId="view_Cluster_Att_ReportPageDef"/>
         <page path="/WEB-INF/Fragments/Reports/Training_Schedule.jsff" usageId="view_Training_SchedulePageDef"/>
+        <page path="/Main_Pages/Modules/Marketing/Marketing.jsf" usageId="view_MarketingPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Expo_Schedule_TaskFlow.xml#Expo_Schedule_TaskFlow@ExecuteWithParams"
+              usageId="view_Expo_Schedule_TaskFlow_Expo_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Expo_Setup_TaskFlow.xml#Expo_Setup_TaskFlow@ExecuteWithParams"
+              usageId="view_Expo_Setup_TaskFlow_Expo_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Exhibitor_Stall_Alloc_TaskFlow.xml#Exhibitor_Stall_Alloc_TaskFlow@ExecuteWithParams"
+              usageId="view_Exhibitor_Stall_Alloc_TaskFlow_Exhibitor_Stall_Alloc_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Intl_Delegation_Apps_TaskFlow.xml#Intl_Delegation_Apps_TaskFlow@ExecuteWithParams"
+              usageId="view_Intl_Delegation_Apps_TaskFlow_Intl_Delegation_Apps_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/B2B_Meeting_TaskFlow.xml#B2B_Meeting_TaskFlow@ExecuteWithParams"
+              usageId="view_B2B_Meeting_TaskFlow_B2B_Meeting_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Expo_Finalization_Achievement_TaskFlow.xml#Expo_Finalization_Achievement_TaskFlow@ExecuteWithParams"
+              usageId="view_Expo_Finalization_Achievement_TaskFlow_Expo_Finalization_Achievement_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Expo_Schedule.jsff" usageId="view_Expo_SchedulePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Expo_Setup.jsff" usageId="view_Expo_SetupPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Exhibitor_Stall_Alloc.jsff"
+              usageId="view_Exhibitor_Stall_AllocPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Intl_Delegation_Apps.jsff"
+              usageId="view_Intl_Delegation_AppsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/B2B_Meeting.jsff" usageId="view_B2B_MeetingPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -330,6 +350,24 @@
         <page id="view_MMP_RO_ApprovedPageDef" path="Fragments.Modules.Monitoring.MMP_RO_ApprovedPageDef"/>
         <page id="view_Cluster_Att_ReportPageDef" path="Fragments.Reports.Cluster_Att_ReportPageDef"/>
         <page id="view_Training_SchedulePageDef" path="Fragments.Reports.Training_SchedulePageDef"/>
+        <page id="view_MarketingPageDef" path="Main_Pages.Modules.Marketing.MarketingPageDef"/>
+        <page id="view_Expo_Schedule_TaskFlow_Expo_Schedule_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Expo_Schedule_TaskFlow_Expo_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Expo_Setup_TaskFlow_Expo_Setup_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Expo_Setup_TaskFlow_Expo_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Exhibitor_Stall_Alloc_TaskFlow_Exhibitor_Stall_Alloc_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Exhibitor_Stall_Alloc_TaskFlow_Exhibitor_Stall_Alloc_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Intl_Delegation_Apps_TaskFlow_Intl_Delegation_Apps_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Intl_Delegation_Apps_TaskFlow_Intl_Delegation_Apps_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_B2B_Meeting_TaskFlow_B2B_Meeting_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.B2B_Meeting_TaskFlow_B2B_Meeting_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Expo_Finalization_Achievement_TaskFlow_Expo_Finalization_Achievement_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Expo_Finalization_Achievement_TaskFlow_Expo_Finalization_Achievement_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Expo_SchedulePageDef" path="Fragments.Modules.Marketing.Expo_SchedulePageDef"/>
+        <page id="view_Expo_SetupPageDef" path="Fragments.Modules.Marketing.Expo_SetupPageDef"/>
+        <page id="view_Exhibitor_Stall_AllocPageDef" path="Fragments.Modules.Marketing.Exhibitor_Stall_AllocPageDef"/>
+        <page id="view_Intl_Delegation_AppsPageDef" path="Fragments.Modules.Marketing.Intl_Delegation_AppsPageDef"/>
+        <page id="view_B2B_MeetingPageDef" path="Fragments.Modules.Marketing.B2B_MeetingPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

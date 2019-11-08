@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblExpoStalls"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_EXPO_STALLS"
+  AliasName="TblExpoStalls"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ExpoStallsId"
+    IsNotNull="true"
+    ColumnName="EXPO_STALLS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ExpoHallsId"
+    IsNotNull="true"
+    ColumnName="EXPO_HALLS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="StallNo"
+    ColumnName="STALL_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="StallName"
+    Precision="10"
+    ColumnName="STALL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EXPO_STALLS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StallType"
+    Precision="1"
+    ColumnName="STALL_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EXPO_STALLS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StallDimension"
+    Precision="20"
+    ColumnName="STALL_DIMENSION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EXPO_STALLS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StallArea"
+    Precision="20"
+    ColumnName="STALL_AREA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EXPO_STALLS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StallValue"
+    ColumnName="STALL_VALUE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_EXPO_STALLS"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_STALLS"/>
+  <AccessorAttribute
+    Name="TblExpoHalls"
+    Association="model.EO.FkExpoStallsExpoHallsAssoc"
+    AssociationEnd="model.EO.FkExpoStallsExpoHallsAssoc.TblExpoHalls"
+    AssociationOtherEnd="model.EO.FkExpoStallsExpoHallsAssoc.TblExpoStalls"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblStallsAlloc"
+    Association="model.EO.FkStallsAllocExpoStallsAssoc"
+    AssociationEnd="model.EO.FkStallsAllocExpoStallsAssoc.TblStallsAlloc"
+    AssociationOtherEnd="model.EO.FkStallsAllocExpoStallsAssoc.TblExpoStalls"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkExpoStalls"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_EXPO_STALLS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblExpoStalls.ExpoStallsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkExpoStallsExpoHalls">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_EXPO_HALLS"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EXPO_STALLS_EXPO_HALLS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblExpoStalls.ExpoHallsId"/>
+    </AttrArray>
+  </Key>
+</Entity>

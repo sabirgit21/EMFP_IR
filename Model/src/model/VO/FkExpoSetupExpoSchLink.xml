@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkExpoSetupExpoSchLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkExpoSetupExpoSchAssoc">
+  <ViewLinkDefEnd
+    Name="TblExpoSchView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblExpoSchView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblExpoSchView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblExpoSchView.ExpoSchId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblExpoSetupView"
+    Cardinality="-1"
+    Owner="model.VO.TblExpoSetupView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblExpoSetupView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblExpoSetupView.ExpoSchId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

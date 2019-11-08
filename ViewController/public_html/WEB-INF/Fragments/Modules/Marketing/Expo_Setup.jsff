@@ -1,0 +1,884 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Expo Setup">
+         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Expo Schedule">
+                <af:table value="#{bindings.TblExpoSchView1.collectionModel}" var="row"
+                          rows="#{bindings.TblExpoSchView1.rangeSize}"
+                          emptyText="#{bindings.TblExpoSchView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblExpoSchView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblExpoSchView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblExpoSchView1.rangeSize}"
+                          filterModel="#{bindings.TblExpoSchView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblExpoSchView1Query.processQuery}" varStatus="vs" id="t1"
+                          >
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.ExpoSchId.inputValue}" readOnly="true"
+                                  label="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}"
+                                  required="#{bindings.TblExpoSchView1.hints.ExpoSchId.mandatory}"
+                                  columns="#{bindings.TblExpoSchView1.hints.ExpoSchId.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchView1.hints.ExpoSchId.precision}"
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblExpoSchView1.hints.ExpoSchId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.Name.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Name.inputValue}" readOnly="true"
+                                  label="#{bindings.TblExpoSchView1.hints.Name.label}"
+                                  required="#{bindings.TblExpoSchView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblExpoSchView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}" id="c3">
+                    <af:inputText value="#{row.bindings.ExpoSchMonth.inputValue}" readOnly="true"
+                                  label="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}"
+                                  required="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.mandatory}"
+                                  columns="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.precision}"
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.CropId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.CropId.label}" id="c4">
+                    <af:selectOneChoice value="#{row.bindings.CropId.inputValue}" label="#{row.bindings.CropId.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.CropId.mandatory}" readOnly="true"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.CropId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.CropId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.CropId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.PhaseId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.PhaseId.label}" id="c5">
+                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.PhaseId.mandatory}" readOnly="true"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.PhaseId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
+                             headerText="#{bindings.TblExpoSchView1.hints.Ast.label}" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.Ast.mandatory}" readOnly="true"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.Ast.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+           <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab2" text="Expo Setup">
+              
+                <af:panelGridLayout id="pgl3">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
+                      <af:panelTabbed position="above" id="pt3">
+                        <af:showDetailItem id="tab3" text="Expo Setup">
+                          <af:table value="#{bindings.TblExpoSetupView3.collectionModel}" var="row"
+                                    rows="#{bindings.TblExpoSetupView3.rangeSize}"
+                                    emptyText="#{bindings.TblExpoSetupView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblExpoSetupView3.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblExpoSetupView3.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblExpoSetupView3.rangeSize}"
+                                    filterModel="#{bindings.TblExpoSetupView3Query.queryDescriptor}"
+                                    filterVisible="true" queryListener="#{bindings.TblExpoSetupView3Query.processQuery}"
+                                    varStatus="vs" id="t2">
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSchId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSchId.label}" id="c7">
+                              <af:inputText value="#{row.bindings.ExpoSchId.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.ExpoSchId.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.ExpoSchId.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.ExpoSchId.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.ExpoSchId.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.ExpoSchId.tooltip}" id="it4">
+                                <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.ExpoSchId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.label}" id="c8">
+                              <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.tooltip}"
+                                            id="it5">
+                                <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.FDate.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.FDate.label}"
+                                       id="c9">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FDate.value}"
+                                              id="id1">
+                                  <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.FDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.FDate.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.FDate.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.FDate.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.FDate.displayWidth}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.FDate.tooltip}" id="id2">
+                                <f:validator binding="#{row.bindings.FDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.FDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.TDate.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.TDate.label}"
+                                       id="c10">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TDate.value}"
+                                              id="id3">
+                                  <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.TDate.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.TDate.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.TDate.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.TDate.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.TDate.displayWidth}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.TDate.tooltip}" id="id4">
+                                <f:validator binding="#{row.bindings.TDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.TDate.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.NoOfDays.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.NoOfDays.label}" id="c11">
+                              <af:inputText value="#{row.bindings.NoOfDays.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.NoOfDays.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.NoOfDays.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.NoOfDays.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.NoOfDays.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.NoOfDays.tooltip}" id="it6">
+                                <f:validator binding="#{row.bindings.NoOfDays.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.NoOfDays.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.label}" id="c12">
+                              <af:inputText value="#{row.bindings.ExpoSetupVenue.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.tooltip}"
+                                            id="it7">
+                                <f:validator binding="#{row.bindings.ExpoSetupVenue.validator}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.TotalHalls.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.TotalHalls.label}" id="c13">
+                              <af:inputText value="#{row.bindings.TotalHalls.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.TotalHalls.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.TotalHalls.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.TotalHalls.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.TotalHalls.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.TotalHalls.tooltip}" id="it8">
+                                <f:validator binding="#{row.bindings.TotalHalls.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.TotalHalls.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.STime.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.STime.label}"
+                                       id="c14">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.STime.value}"
+                                              id="id5">
+                                  <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.STime.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.STime.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.STime.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.STime.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.STime.displayWidth}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.STime.tooltip}" id="id6">
+                                <f:validator binding="#{row.bindings.STime.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.STime.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ETime.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.ETime.label}"
+                                       id="c15">
+                              <f:facet name="filter">
+                                <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ETime.value}"
+                                              id="id7">
+                                  <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.ETime.format}"/>
+                                </af:inputDate>
+                              </f:facet>
+                              <af:inputDate value="#{row.bindings.ETime.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.ETime.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.ETime.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.ETime.displayWidth}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.ETime.tooltip}" id="id8">
+                                <f:validator binding="#{row.bindings.ETime.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.TblExpoSetupView3.hints.ETime.format}"/>
+                              </af:inputDate>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.label}" id="c16">
+                              <af:inputText value="#{row.bindings.ExpoSetupArea.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.tooltip}"
+                                            id="it9">
+                                <f:validator binding="#{row.bindings.ExpoSetupArea.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.AreaRate.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.AreaRate.label}" id="c17">
+                              <af:inputText value="#{row.bindings.AreaRate.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.AreaRate.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.AreaRate.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.AreaRate.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.AreaRate.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.AreaRate.tooltip}" id="it10">
+                                <f:validator binding="#{row.bindings.AreaRate.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.AreaRate.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinExhibitors.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MinExhibitors.label}" id="c18">
+                              <af:inputText value="#{row.bindings.MinExhibitors.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MinExhibitors.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MinExhibitors.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MinExhibitors.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MinExhibitors.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MinExhibitors.tooltip}"
+                                            id="it11">
+                                <f:validator binding="#{row.bindings.MinExhibitors.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MinExhibitors.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.label}" id="c19">
+                              <af:inputText value="#{row.bindings.MaxExhibitors.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.tooltip}"
+                                            id="it12">
+                                <f:validator binding="#{row.bindings.MaxExhibitors.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinStalls.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MinStalls.label}" id="c20">
+                              <af:inputText value="#{row.bindings.MinStalls.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MinStalls.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MinStalls.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MinStalls.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MinStalls.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MinStalls.tooltip}" id="it13">
+                                <f:validator binding="#{row.bindings.MinStalls.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MinStalls.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxStalls.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxStalls.label}" id="c21">
+                              <af:inputText value="#{row.bindings.MaxStalls.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MaxStalls.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MaxStalls.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MaxStalls.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MaxStalls.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MaxStalls.tooltip}" id="it14">
+                                <f:validator binding="#{row.bindings.MaxStalls.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MaxStalls.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinB2b.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.MinB2b.label}"
+                                       id="c22">
+                              <af:inputText value="#{row.bindings.MinB2b.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MinB2b.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MinB2b.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MinB2b.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MinB2b.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MinB2b.tooltip}" id="it15">
+                                <f:validator binding="#{row.bindings.MinB2b.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MinB2b.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxB2b.name}" filterable="true"
+                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.MaxB2b.label}"
+                                       id="c23">
+                              <af:inputText value="#{row.bindings.MaxB2b.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MaxB2b.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MaxB2b.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MaxB2b.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MaxB2b.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MaxB2b.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.MaxB2b.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MaxB2b.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.label}" id="c24">
+                              <af:inputText value="#{row.bindings.MinLocalDeleg.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.tooltip}"
+                                            id="it17">
+                                <f:validator binding="#{row.bindings.MinLocalDeleg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.label}" id="c25">
+                              <af:inputText value="#{row.bindings.MaxLocalDeleg.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.tooltip}"
+                                            id="it18">
+                                <f:validator binding="#{row.bindings.MaxLocalDeleg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.label}" id="c26">
+                              <af:inputText value="#{row.bindings.MinIntlDeleg.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.tooltip}"
+                                            id="it19">
+                                <f:validator binding="#{row.bindings.MinIntlDeleg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.label}" id="c27">
+                              <af:inputText value="#{row.bindings.MaxIntlDeleg.inputValue}"
+                                            label="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.label}"
+                                            required="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.tooltip}"
+                                            id="it20">
+                                <f:validator binding="#{row.bindings.MaxIntlDeleg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr8">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8">
+                      <af:panelGroupLayout id="pgl6" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr7">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                      <af:panelTabbed position="above" id="pt4">
+              <af:showDetailItem id="sdi1" text="Expo Intl. Delegation">
+                          <af:table value="#{bindings.TblExpoIntlDelegView6.collectionModel}" var="row"
+                                    rows="#{bindings.TblExpoIntlDelegView6.rangeSize}"
+                                    emptyText="#{bindings.TblExpoIntlDelegView6.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblExpoIntlDelegView6.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblExpoIntlDelegView6.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblExpoIntlDelegView6.rangeSize}"
+                                    filterModel="#{bindings.TblExpoIntlDelegView6Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblExpoIntlDelegView6Query.processQuery}" varStatus="vs"
+                                    id="t3">
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.label}"
+                                       id="c28">
+                              <af:inputText value="#{row.bindings.ExpoIntlDelegId.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.label}"
+                                            required="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.tooltip}"
+                                            id="it21">
+                                <f:validator binding="#{row.bindings.ExpoIntlDelegId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.label}" id="c29">
+                              <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.label}"
+                                            required="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.tooltip}"
+                                            id="it22">
+                                <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.label}" id="c30">
+                              <af:inputText value="#{row.bindings.TotalDeleg.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.label}"
+                                            required="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.tooltip}"
+                                            id="it23">
+                                <f:validator binding="#{row.bindings.TotalDeleg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.label}"
+                                       id="c31">
+                              <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.label}"
+                                            required="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.tooltip}"
+                                            id="it24">
+                                <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                        <af:panelGroupLayout id="pgl7" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s6"/>
+                            <af:iterator id="i3" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}2"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s7"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                        </af:showDetailItem>
+              <af:showDetailItem id="sdi2" text="Expo Halls">
+                          <af:panelGridLayout id="pgl5">
+                            <af:gridRow marginTop="5px" height="auto" id="gr11">
+                              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
+                                <af:panelTabbed position="above" id="pt5">
+                                  <af:showDetailItem id="tab4" text="Expo Halls">
+                                    <af:table value="#{bindings.TblExpoHallsView5.collectionModel}" var="row"
+                                              rows="#{bindings.TblExpoHallsView5.rangeSize}"
+                                              emptyText="#{bindings.TblExpoHallsView5.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.TblExpoHallsView5.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.TblExpoHallsView5.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.TblExpoHallsView5.rangeSize}"
+                                              filterModel="#{bindings.TblExpoHallsView5Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.TblExpoHallsView5Query.processQuery}"
+                                              varStatus="vs" id="t4">
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.label}"
+                                                 id="c32">
+                                        <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.tooltip}"
+                                                      id="it25">
+                                          <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.label}"
+                                                 id="c33">
+                                        <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.tooltip}"
+                                                      id="it26">
+                                          <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.HallNo.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.HallNo.label}" id="c34">
+                                        <af:inputText value="#{row.bindings.HallNo.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.HallNo.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.HallNo.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.HallNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.HallNo.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.HallNo.tooltip}"
+                                                      id="it27">
+                                          <f:validator binding="#{row.bindings.HallNo.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoHallsView5.hints.HallNo.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.Name.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.Name.label}" id="c35">
+                                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.Name.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.Name.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.Name.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.Name.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.Name.tooltip}"
+                                                      id="it28">
+                                          <f:validator binding="#{row.bindings.Name.validator}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.TotalStalls.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.TotalStalls.label}"
+                                                 id="c36">
+                                        <af:inputText value="#{row.bindings.TotalStalls.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.TotalStalls.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.TotalStalls.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.TotalStalls.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.TotalStalls.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.TotalStalls.tooltip}"
+                                                      id="it29">
+                                          <f:validator binding="#{row.bindings.TotalStalls.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoHallsView5.hints.TotalStalls.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.HallArea.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoHallsView5.hints.HallArea.label}"
+                                                 id="c37">
+                                        <af:inputText value="#{row.bindings.HallArea.inputValue}"
+                                                      label="#{bindings.TblExpoHallsView5.hints.HallArea.label}"
+                                                      required="#{bindings.TblExpoHallsView5.hints.HallArea.mandatory}"
+                                                      columns="#{bindings.TblExpoHallsView5.hints.HallArea.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoHallsView5.hints.HallArea.precision}"
+                                                      shortDesc="#{bindings.TblExpoHallsView5.hints.HallArea.tooltip}"
+                                                      id="it30">
+                                          <f:validator binding="#{row.bindings.HallArea.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoHallsView5.hints.HallArea.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                    </af:table>
+                                  
+                                  </af:showDetailItem>
+                                </af:panelTabbed>
+                              </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" id="gr12">
+                              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12">
+                               <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s8"/>
+                            <af:iterator id="i4" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}3"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s10"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                              </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" id="gr13">
+                              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
+                                <af:panelTabbed position="above" id="pt6">
+              <af:showDetailItem id="sdi3" text="Expo Stalls">
+                                    <af:table value="#{bindings.TblExpoStallsView5.collectionModel}" var="row"
+                                              rows="#{bindings.TblExpoStallsView5.rangeSize}"
+                                              emptyText="#{bindings.TblExpoStallsView5.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.TblExpoStallsView5.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.TblExpoStallsView5.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.TblExpoStallsView5.rangeSize}"
+                                              filterModel="#{bindings.TblExpoStallsView5Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.TblExpoStallsView5Query.processQuery}"
+                                              varStatus="vs" id="t5">
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.label}"
+                                                 id="c38">
+                                        <af:inputText value="#{row.bindings.ExpoStallsId.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.tooltip}"
+                                                      id="it31">
+                                          <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.label}"
+                                                 id="c39">
+                                        <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.tooltip}"
+                                                      id="it32">
+                                          <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallNo.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallNo.label}"
+                                                 id="c40">
+                                        <af:inputText value="#{row.bindings.StallNo.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallNo.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallNo.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallNo.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallNo.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallNo.tooltip}"
+                                                      id="it33">
+                                          <f:validator binding="#{row.bindings.StallNo.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoStallsView5.hints.StallNo.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallName.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallName.label}"
+                                                 id="c41">
+                                        <af:inputText value="#{row.bindings.StallName.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallName.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallName.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallName.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallName.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallName.tooltip}"
+                                                      id="it34">
+                                          <f:validator binding="#{row.bindings.StallName.validator}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallType.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallType.label}"
+                                                 id="c42">
+                                        <af:inputText value="#{row.bindings.StallType.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallType.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallType.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallType.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallType.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallType.tooltip}"
+                                                      id="it35">
+                                          <f:validator binding="#{row.bindings.StallType.validator}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallDimension.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallDimension.label}"
+                                                 id="c43">
+                                        <af:inputText value="#{row.bindings.StallDimension.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallDimension.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallDimension.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallDimension.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallDimension.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallDimension.tooltip}"
+                                                      id="it36">
+                                          <f:validator binding="#{row.bindings.StallDimension.validator}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallArea.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallArea.label}"
+                                                 id="c44">
+                                        <af:inputText value="#{row.bindings.StallArea.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallArea.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallArea.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallArea.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallArea.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallArea.tooltip}"
+                                                      id="it37">
+                                          <f:validator binding="#{row.bindings.StallArea.validator}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                      <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallValue.name}"
+                                                 filterable="true" sortable="true"
+                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallValue.label}"
+                                                 id="c45">
+                                        <af:inputText value="#{row.bindings.StallValue.inputValue}"
+                                                      label="#{bindings.TblExpoStallsView5.hints.StallValue.label}"
+                                                      required="#{bindings.TblExpoStallsView5.hints.StallValue.mandatory}"
+                                                      columns="#{bindings.TblExpoStallsView5.hints.StallValue.displayWidth}"
+                                                      maximumLength="#{bindings.TblExpoStallsView5.hints.StallValue.precision}"
+                                                      shortDesc="#{bindings.TblExpoStallsView5.hints.StallValue.tooltip}"
+                                                      id="it38">
+                                          <f:validator binding="#{row.bindings.StallValue.validator}"/>
+                                          <af:convertNumber groupingUsed="false"
+                                                            pattern="#{bindings.TblExpoStallsView5.hints.StallValue.format}"/>
+                                        </af:inputText>
+                                      </af:column>
+                                    </af:table>
+                                  </af:showDetailItem>
+                                </af:panelTabbed>
+                              </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" id="gr14">
+                              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14">
+                                 <af:panelGroupLayout id="pgl9" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s12"/>
+                            <af:iterator id="i6" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}4"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s11"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+                           
+                                 </af:gridCell>
+                            </af:gridRow>
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr15">
+                              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
+                            </af:gridRow>
+                          </af:panelGridLayout>
+                        </af:showDetailItem>
+                      </af:panelTabbed>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr9">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+                
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             
+                 </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

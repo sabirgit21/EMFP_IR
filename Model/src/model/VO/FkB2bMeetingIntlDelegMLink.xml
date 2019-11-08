@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkB2bMeetingIntlDelegMLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkB2bMeetingIntlDelegMAssoc">
+  <ViewLinkDefEnd
+    Name="TblIntlDelegAppMView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblIntlDelegAppMView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblIntlDelegAppMView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblIntlDelegAppMView.IntlDelegAppMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblB2bMeetingView"
+    Cardinality="-1"
+    Owner="model.VO.TblB2bMeetingView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblB2bMeetingView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblB2bMeetingView.IntlDelegAppMId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>
