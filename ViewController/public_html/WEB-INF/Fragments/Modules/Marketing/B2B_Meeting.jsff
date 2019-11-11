@@ -1,4 +1,4 @@
- 00<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
@@ -35,12 +35,19 @@
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.name}" filterable="true"
                              sortable="true" headerText="B2B Meeting ID"
                              id="c1" align="center" width="60">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.B2bMeetingId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.B2bMeetingId.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.mandatory}"
                                   columns="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.displayWidth}"
                                   maximumLength="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.precision}"
-                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.tooltip}" 
+                                  id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.B2bMeetingId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.format}"/>
@@ -49,6 +56,11 @@
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.name}" filterable="true"
                              sortable="true"
                              id="c2" headerText="B2B Meeting Type" width="120">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.B2bMeetingType}"
+                                          id="it12" placeholder="Search B2B Type">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.B2bMeetingType.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.mandatory}"
@@ -61,12 +73,19 @@
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.name}" filterable="true"
                              sortable="true" headerText="Exhibitors ID"
                              id="c3" align="center" width="60">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExhibitorsId}"
+                                          id="it13" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.mandatory}"
                                   columns="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.displayWidth}"
                                   maximumLength="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.precision}"
-                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.tooltip}" 
+                                  id="it3" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ExhibitorsId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.format}"/>
@@ -74,6 +93,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Exhibitors" id="c4" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it14" placeholder="Search Exhibitors">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.Name.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.Name.mandatory}"
@@ -83,22 +108,13 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.label}"
-                             id="c5">
-                    <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
-                                  label="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.label}"
-                                  required="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.mandatory}"
-                                  columns="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.displayWidth}"
-                                  maximumLength="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.precision}"
-                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.tooltip}" id="it5">
-                      <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblB2bMeetingView1.hints.IntlDelegAppMId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.Remarks.label}" id="c6">
+                             sortable="true" headerText="Remarks" id="c6" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it5" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.Remarks.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.Remarks.mandatory}"
@@ -109,7 +125,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Linkages.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.Linkages.label}" id="c7">
+                             sortable="true" headerText="Linkages" id="c7">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Linkages}"
+                                          id="it15" placeholder="Search Linkages">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Linkages.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.Linkages.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.Linkages.mandatory}"
@@ -122,7 +143,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExpDeal.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.ExpDeal.label}" id="c8">
+                             sortable="true" headerText="Expo Deal" id="c8">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpDeal}"
+                                          id="it16" placeholder="Search Expo Deal">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExpDeal.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.ExpDeal.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.ExpDeal.mandatory}"
@@ -135,7 +161,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.label}" id="c9">
+                             sortable="true" headerText="Expo Deal Amount" id="c9" align="left">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpDealAmt}"
+                                          id="it17" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExpDealAmt.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.mandatory}"
@@ -148,7 +179,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.FinalDeal.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.FinalDeal.label}" id="c10">
+                             sortable="true" headerText="Final Deal" id="c10">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FinalDeal}"
+                                          id="it18" placeholder="Search Final Deal">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FinalDeal.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.FinalDeal.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.FinalDeal.mandatory}"
@@ -161,8 +197,13 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.label}"
+                             sortable="true" headerText="Final Deal Amount"
                              id="c11">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FinalDealAmt}"
+                                          id="it19" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FinalDealAmt.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.mandatory}"

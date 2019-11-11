@@ -31,7 +31,8 @@
                           selectionListener="#{bindings.TblExpoSchView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblExpoSchView1.rangeSize}"
                           filterModel="#{bindings.TblExpoSchView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblExpoSchView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblExpoSchView1Query.processQuery}" varStatus="vs" 
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchId.name}" filterable="true"
                              sortable="true" headerText="Expo Schedule ID" id="c1" align="center" width="60">
                              <f:facet name="filter">
