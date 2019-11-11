@@ -33,20 +33,32 @@
                           filterModel="#{bindings.TblExpoSchView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblExpoSchView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}" id="c1">
+                             sortable="true" headerText="Expo Schedule ID" id="c1" align="center" width="60">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.ExpoSchId.inputValue}" readOnly="true"
                                   label="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}"
                                   required="#{bindings.TblExpoSchView1.hints.ExpoSchId.mandatory}"
                                   columns="#{bindings.TblExpoSchView1.hints.ExpoSchId.displayWidth}"
                                   maximumLength="#{bindings.TblExpoSchView1.hints.ExpoSchId.precision}"
-                                  shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchId.tooltip}" 
+                                  id="it1" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoSchView1.hints.ExpoSchId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.Name.label}" id="c2">
+                             sortable="true" headerText="Expo" id="c2" width="250">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it4" placeholder="Search Expo">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblExpoSchView1.hints.Name.label}"
                                   required="#{bindings.TblExpoSchView1.hints.Name.mandatory}"
@@ -57,7 +69,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}" id="c3">
+                             sortable="true" id="c3" headerText="Expo Schedule Monthly" width="150" align="left">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchMonth}"
+                                          id="it5" placeholder="Search Schedule Monthly">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExpoSchMonth.inputValue}"
                                   label="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}"
                                   required="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.mandatory}"
@@ -68,7 +85,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.CropId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.CropId.label}" id="c4">
+                             sortable="true" headerText="Crop" id="c4" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CropId}"
+                                          id="it6" placeholder="Search Crop">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.CropId.inputValue}" label="#{row.bindings.CropId.label}"
                                         required="#{bindings.TblExpoSchView1.hints.CropId.mandatory}"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.CropId.tooltip}" id="soc1">
@@ -77,7 +99,12 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.PhaseId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.PhaseId.label}" id="c5">
+                             sortable="true" headerText="Phase" id="c5" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.PhaseId}"
+                                          id="it7" placeholder="Search Phase">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
                                         required="#{bindings.TblExpoSchView1.hints.PhaseId.mandatory}"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.PhaseId.tooltip}" id="soc2">
@@ -86,7 +113,12 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoSchView1.hints.Ast.label}" id="c6">
+                             headerText="Active" id="c6" width="80">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it8" placeholder="Search Active">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblExpoSchView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.Ast.tooltip}" id="soc3">

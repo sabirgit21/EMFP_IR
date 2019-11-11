@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+ 00<?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
@@ -33,8 +33,8 @@
                           filterModel="#{bindings.TblB2bMeetingView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblB2bMeetingView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.label}"
-                             id="c1">
+                             sortable="true" headerText="B2B Meeting ID"
+                             id="c1" align="center" width="60">
                     <af:inputText value="#{row.bindings.B2bMeetingId.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.mandatory}"
@@ -47,8 +47,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.label}"
-                             id="c2">
+                             sortable="true"
+                             id="c2" headerText="B2B Meeting Type" width="120">
                     <af:inputText value="#{row.bindings.B2bMeetingType.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.B2bMeetingType.mandatory}"
@@ -59,8 +59,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.label}"
-                             id="c3">
+                             sortable="true" headerText="Exhibitors ID"
+                             id="c3" align="center" width="60">
                     <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.ExhibitorsId.mandatory}"
@@ -73,7 +73,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingView1.hints.Name.label}" id="c4">
+                             sortable="true" headerText="Exhibitors" id="c4" width="150">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblB2bMeetingView1.hints.Name.label}"
                                   required="#{bindings.TblB2bMeetingView1.hints.Name.mandatory}"
