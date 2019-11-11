@@ -124,7 +124,7 @@
                 <af:panelGridLayout id="pgl3">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                      <af:panelTabbed position="above" id="pt3">
+                      <af:panelTabbed position="above" id="pt3" inlineStyle="width:971px;">
                         <af:showDetailItem id="tab3" text="Expo Setup">
                           <af:table value="#{bindings.TblExpoSetupView3.collectionModel}" var="row"
                                     rows="#{bindings.TblExpoSetupView3.rangeSize}"
