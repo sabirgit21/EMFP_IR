@@ -39,7 +39,7 @@
                           rows="#{bindings.MMP_RO_Approval1.rangeSize}"
                           emptyText="#{bindings.MMP_RO_Approval1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.MMP_RO_Approval1.rangeSize}" id="t1"
-                          partialTriggers="::b2">
+                        partialTriggers="::b2">
                   <af:column headerText="Grant Approval Detail ID" id="c1" width="100">
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
                                   label="#{bindings.MMP_RO_Approval1.hints.GrantApprovalDetailId.label}"
@@ -79,6 +79,8 @@
                                               id="sbc1"/>
                   </af:column>
                 </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -193,8 +195,6 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.Execute.execute}" text="Update"
-                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
               </af:showDetailItem>
               <af:showDetailItem text="Farmer's Machinery" id="sdi1">
                 <af:table value="#{bindings.TblGrantApprovalDetailDView5.collectionModel}" var="row"
@@ -278,7 +278,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-           
+            
           </af:gridCell>
         </af:gridRow> 
       </af:panelGridLayout>

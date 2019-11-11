@@ -12,13 +12,14 @@
        TblFarmerReg.NAME, 
        TblFarmerReg.FARMER_NO, 
        TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1"
-  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg, TBL_GRANT_APPROVAL_DETAIL_D TblGrantApprovalDetailD"
+  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
   Where="(TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+))  
-AND (TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID = TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID) 
+And TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID in (Select distinct TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID from Tbl_Grant_Approval_Detail_D TblGrantApprovalDetailD) 
 AND TblGrantApprovalDetail.RO_STATUS = 'null'"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  OrderBy="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -44,25 +45,6 @@ AND TblGrantApprovalDetail.RO_STATUS = 'null'"
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.TblGrantApprovalDetail.FarmerRegId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblGrantApprovalDetailD"
-    Entity="model.EO.TblGrantApprovalDetailD"
-    Association="model.EO.FKATblGrantApprovalDetailDFKAssoc"
-    AssociationEnd="model.EO.FKATblGrantApprovalDetailDFKAssoc.TblGrantApprovalDetailD"
-    SourceUsage="model.VO.Vctat_RO_Status.TblGrantApprovalDetail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="INNER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblGrantApprovalDetailD.GrantApprovalDetailId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblGrantApprovalDetail.GrantApprovalDetailId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>

@@ -25,12 +25,12 @@
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="VCTAT RO Status">
                 <af:table value="#{bindings.Vctat_RO_Status1.collectionModel}" var="row"
-                          rows="#{bindings.Vctat_RO_Status1.rangeSize}"
+                          rows="#{bindings.Vctat_RO_Status1.rangeSize}" scrollPolicy="page" autoHeightRows="0"
                           emptyText="#{bindings.Vctat_RO_Status1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.Vctat_RO_Status1.rangeSize}" id="t1"
                           partialTriggers="::b2">
                   <af:column headerText="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.label}" id="c1">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.displayWidth}"

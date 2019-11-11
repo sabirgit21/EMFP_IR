@@ -4,18 +4,17 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalMasterView1Iterator" Refresh="default"/>
-    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
-              Refresh="default"/>
+    <iterator Binds="TblGrantApprovalMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterView1Iterator"/>
+    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"/>
     <searchRegion Binds="MMP_RO_Status2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status2Query"/>
     <iterator Binds="MMP_RO_Status_Grant_Land1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MMP_RO_Status_Grant_Land1Iterator" Refresh="default"/>
+              id="MMP_RO_Status_Grant_Land1Iterator"/>
     <searchRegion Binds="MMP_RO_Status_Grant_Land1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land1Query"/>
     <iterator Binds="TblGrantApprovalDetailDView4" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDView4Iterator" Refresh="default"/>
+              id="TblGrantApprovalDetailDView4Iterator"/>
     <searchRegion Binds="TblGrantApprovalDetailDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView4Query"/>
@@ -35,11 +34,11 @@
         <AttrNames>
           <Item Value="FarmerRegId"/>
           <Item Value="GrantApprovalDetailId"/>
+          <Item Value="RoStatus"/>
           <Item Value="FarmerNo"/>
           <Item Value="FarmerRegId1"/>
           <Item Value="Name"/>
           <Item Value="GrantApprovalMasterId"/>
-          <Item Value="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -71,6 +70,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
