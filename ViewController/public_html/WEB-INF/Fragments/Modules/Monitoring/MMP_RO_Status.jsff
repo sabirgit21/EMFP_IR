@@ -59,7 +59,7 @@
                                         pattern="#{bindings.MMP_RO_Status2.hints.FarmerRegId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.name}"
+                  <!--<af:column sortProperty="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.label}" id="c2">
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
@@ -73,7 +73,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MMP_RO_Status2.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.FarmerNo.name}" filterable="true"
                              sortable="true" headerText="#{bindings.MMP_RO_Status2.hints.FarmerNo.label}" id="c3">
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
@@ -141,7 +141,7 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantApprovalDetailId.name}"
+                  <!--<af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantApprovalDetailId.label}"
                              id="c8">
@@ -156,7 +156,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land1.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.name}" filterable="true"
                              sortable="true" headerText="#{bindings.MMP_RO_Status_Grant_Land1.hints.Amount.label}"
                              id="c9">
