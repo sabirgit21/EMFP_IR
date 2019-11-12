@@ -33,8 +33,8 @@
                           filterModel="#{bindings.TblExhibitorsView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblExhibitorsView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.label}"
-                             id="c1">
+                             sortable="true" headerText="Exhibitors ID"
+                             id="c1" align="center" width="60">
                     <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.label}"
                                   required="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.mandatory}"
@@ -46,22 +46,8 @@
                                         pattern="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.label}"
-                             id="c2">
-                    <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.Name.label}" id="c3">
+                             sortable="true" headerText="Exhibitors" id="c3" width="150">
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.Name.label}"
                                   required="#{bindings.TblExhibitorsView1.hints.Name.mandatory}"
@@ -72,7 +58,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.Representative.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.Representative.label}"
+                             sortable="true" headerText="Representative"
                              id="c4">
                     <af:inputText value="#{row.bindings.Representative.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.Representative.label}"
@@ -84,7 +70,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.ExhibitorType.label}"
+                             sortable="true" headerText="Exhibitor Type"
                              id="c5">
                     <af:inputText value="#{row.bindings.ExhibitorType.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.ExhibitorType.label}"
@@ -96,8 +82,8 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.label}"
-                             id="c6">
+                             sortable="true"
+                             id="c6" headerText="Exhibitors Products">
                     <af:inputText value="#{row.bindings.ExhibitorProd.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.label}"
                                   required="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.mandatory}"
@@ -108,7 +94,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.LibrCountryId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.LibrCountryId.label}"
+                             sortable="true" headerText="Country ID"
                              id="c7">
                     <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.LibrCountryId.label}"
@@ -122,7 +108,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.label}"
+                             sortable="true" headerText="Exhibitors Status"
                              id="c8">
                     <af:inputText value="#{row.bindings.ExhibitorStatus.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.label}"
@@ -134,7 +120,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.StallAllocType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.StallAllocType.label}"
+                             sortable="true" headerText="Stall Allocation Type"
                              id="c9">
                     <af:inputText value="#{row.bindings.StallAllocType.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.StallAllocType.label}"
@@ -146,7 +132,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExhibitorsView1.hints.FarmerRegId.label}"
+                             sortable="true" headerText="Framer ID"
                              id="c10">
                     <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
                                   label="#{bindings.TblExhibitorsView1.hints.FarmerRegId.label}"
@@ -195,7 +181,7 @@
                           queryListener="#{bindings.TblStallsAllocView3Query.processQuery}" varStatus="vs" id="t2"
                           partialTriggers="::b2 ::b3 ::b4">
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallsAllocId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallsAllocId.label}"
+                             sortable="true" headerText="Stall Allocation ID"
                              id="c11">
                     <af:inputText value="#{row.bindings.StallsAllocId.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.StallsAllocId.label}"
@@ -209,7 +195,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.label}"
+                             sortable="true" headerText="Exhibitors ID"
                              id="c12">
                     <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.label}"
@@ -223,7 +209,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.label}"
+                             sortable="true" headerText="Expo Halls ID"
                              id="c13">
                     <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.label}"
@@ -237,7 +223,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.label}"
+                             sortable="true" headerText="Expo Stall ID"
                              id="c14">
                     <af:inputText value="#{row.bindings.ExpoStallsId.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.label}"
@@ -251,7 +237,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.label}"
+                             sortable="true" headerText="Expo Stall Type"
                              id="c15">
                     <af:inputText value="#{row.bindings.ExpoStallsType.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.label}"
@@ -263,7 +249,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.label}"
+                             sortable="true" headerText="Stall Discount Amount"
                              id="c16">
                     <af:inputText value="#{row.bindings.StallDiscAmt.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.label}"
@@ -277,7 +263,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallAmount.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallAmount.label}"
+                             sortable="true" headerText="Stall Amount"
                              id="c17">
                     <af:inputText value="#{row.bindings.StallAmount.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.StallAmount.label}"
@@ -291,7 +277,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.Representative.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.Representative.label}"
+                             sortable="true" headerText="Representative"
                              id="c18">
                     <af:inputText value="#{row.bindings.Representative.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.Representative.label}"

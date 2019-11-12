@@ -34,7 +34,7 @@
                           queryListener="#{bindings.TblExpoSchView1Query.processQuery}" varStatus="vs" id="t1"
                           >
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}" id="c1">
+                             sortable="true" headerText="Expo Schedule ID" id="c1">
                     <af:inputText value="#{row.bindings.ExpoSchId.inputValue}" readOnly="true"
                                   label="#{bindings.TblExpoSchView1.hints.ExpoSchId.label}"
                                   required="#{bindings.TblExpoSchView1.hints.ExpoSchId.mandatory}"
@@ -47,7 +47,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.Name.label}" id="c2">
+                             sortable="true" headerText="Name" id="c2">
                     <af:inputText value="#{row.bindings.Name.inputValue}" readOnly="true"
                                   label="#{bindings.TblExpoSchView1.hints.Name.label}"
                                   required="#{bindings.TblExpoSchView1.hints.Name.mandatory}"
@@ -58,7 +58,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}" id="c3">
+                             sortable="true" headerText="Expo Schedule Month" id="c3">
                     <af:inputText value="#{row.bindings.ExpoSchMonth.inputValue}" readOnly="true"
                                   label="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}"
                                   required="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.mandatory}"
@@ -69,7 +69,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.CropId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.CropId.label}" id="c4">
+                             sortable="true" headerText="Crop ID" id="c4">
                     <af:selectOneChoice value="#{row.bindings.CropId.inputValue}" label="#{row.bindings.CropId.label}"
                                         required="#{bindings.TblExpoSchView1.hints.CropId.mandatory}" readOnly="true"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.CropId.tooltip}" id="soc1">
@@ -78,7 +78,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.PhaseId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoSchView1.hints.PhaseId.label}" id="c5">
+                             sortable="true" headerText="Phase ID" id="c5">
                     <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
                                         required="#{bindings.TblExpoSchView1.hints.PhaseId.mandatory}" readOnly="true"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.PhaseId.tooltip}" id="soc2">
@@ -87,7 +87,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoSchView1.hints.Ast.label}" id="c6">
+                             headerText="Active" id="c6">
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.TblExpoSchView1.hints.Ast.mandatory}" readOnly="true"
                                         shortDesc="#{bindings.TblExpoSchView1.hints.Ast.tooltip}" id="soc3">
@@ -138,7 +138,7 @@
                                     varStatus="vs" id="t2">
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSchId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSchId.label}" id="c7">
+                                       headerText="Expo Schedule ID" id="c7">
                               <af:inputText value="#{row.bindings.ExpoSchId.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.ExpoSchId.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.ExpoSchId.mandatory}"
@@ -152,7 +152,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.label}" id="c8">
+                                       headerText="Expo Setup ID" id="c8">
                               <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.ExpoSetupId.mandatory}"
@@ -166,7 +166,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.FDate.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.FDate.label}"
+                                       sortable="true" headerText="FDate"
                                        id="c9">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FDate.value}"
@@ -184,7 +184,7 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.TDate.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.TDate.label}"
+                                       sortable="true" headerText="TDate"
                                        id="c10">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TDate.value}"
@@ -203,7 +203,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.NoOfDays.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.NoOfDays.label}" id="c11">
+                                       headerText="No of Days" id="c11">
                               <af:inputText value="#{row.bindings.NoOfDays.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.NoOfDays.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.NoOfDays.mandatory}"
@@ -217,7 +217,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.label}" id="c12">
+                                       headerText="Expo Setup Venu" id="c12">
                               <af:inputText value="#{row.bindings.ExpoSetupVenue.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.ExpoSetupVenue.mandatory}"
@@ -230,7 +230,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.TotalHalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.TotalHalls.label}" id="c13">
+                                       headerText="Total Halls" id="c13">
                               <af:inputText value="#{row.bindings.TotalHalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.TotalHalls.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.TotalHalls.mandatory}"
@@ -243,7 +243,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.STime.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.STime.label}"
+                                       sortable="true" headerText="S Time"
                                        id="c14">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.STime.value}"
@@ -261,7 +261,7 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ETime.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.ETime.label}"
+                                       sortable="true" headerText="E Time"
                                        id="c15">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ETime.value}"
@@ -280,7 +280,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.label}" id="c16">
+                                       headerText="Expo Setup Area" id="c16">
                               <af:inputText value="#{row.bindings.ExpoSetupArea.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.ExpoSetupArea.mandatory}"
@@ -295,7 +295,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.AreaRate.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.AreaRate.label}" id="c17">
+                                       headerText="Area Rate" id="c17">
                               <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.AreaRate.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.AreaRate.mandatory}"
@@ -309,7 +309,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinExhibitors.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MinExhibitors.label}" id="c18">
+                                       headerText="Minimum Exhibitors" id="c18">
                               <af:inputText value="#{row.bindings.MinExhibitors.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MinExhibitors.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MinExhibitors.mandatory}"
@@ -324,7 +324,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.label}" id="c19">
+                                       headerText="Maximum Exhibitors" id="c19">
                               <af:inputText value="#{row.bindings.MaxExhibitors.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MaxExhibitors.mandatory}"
@@ -339,7 +339,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinStalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MinStalls.label}" id="c20">
+                                       headerText="Minimum Stalls" id="c20">
                               <af:inputText value="#{row.bindings.MinStalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MinStalls.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MinStalls.mandatory}"
@@ -353,7 +353,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxStalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxStalls.label}" id="c21">
+                                       headerText="Maximum Stalls" id="c21">
                               <af:inputText value="#{row.bindings.MaxStalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MaxStalls.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MaxStalls.mandatory}"
@@ -366,7 +366,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinB2b.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.MinB2b.label}"
+                                       sortable="true" headerText="Minimum B2B"
                                        id="c22">
                               <af:inputText value="#{row.bindings.MinB2b.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MinB2b.label}"
@@ -380,7 +380,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxB2b.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView3.hints.MaxB2b.label}"
+                                       sortable="true" headerText="Maximum B2B"
                                        id="c23">
                               <af:inputText value="#{row.bindings.MaxB2b.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MaxB2b.label}"
@@ -395,7 +395,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.label}" id="c24">
+                                       headerText="Minimum Local Delegation" id="c24">
                               <af:inputText value="#{row.bindings.MinLocalDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MinLocalDeleg.mandatory}"
@@ -410,7 +410,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.label}" id="c25">
+                                       headerText="Maximum Local Delegation" id="c25">
                               <af:inputText value="#{row.bindings.MaxLocalDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MaxLocalDeleg.mandatory}"
@@ -425,7 +425,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.label}" id="c26">
+                                       headerText="Minimum International Delegation" id="c26">
                               <af:inputText value="#{row.bindings.MinIntlDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MinIntlDeleg.mandatory}"
@@ -440,7 +440,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.label}" id="c27">
+                                       headerText="Maximum International Delegation" id="c27">
                               <af:inputText value="#{row.bindings.MaxIntlDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.label}"
                                             required="#{bindings.TblExpoSetupView3.hints.MaxIntlDeleg.mandatory}"
@@ -491,7 +491,7 @@
                                     id="t3">
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.label}"
+                                       headerText="Expo International Delegation ID"
                                        id="c28">
                               <af:inputText value="#{row.bindings.ExpoIntlDelegId.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView6.hints.ExpoIntlDelegId.label}"
@@ -507,7 +507,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.label}" id="c29">
+                                       headerText="Expo Setup ID" id="c29">
                               <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.label}"
                                             required="#{bindings.TblExpoIntlDelegView6.hints.ExpoSetupId.mandatory}"
@@ -522,7 +522,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.label}" id="c30">
+                                       headerText="Total Delegation" id="c30">
                               <af:inputText value="#{row.bindings.TotalDeleg.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.label}"
                                             required="#{bindings.TblExpoIntlDelegView6.hints.TotalDeleg.mandatory}"
@@ -537,7 +537,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.label}"
+                                       headerText="Country ID"
                                        id="c31">
                               <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView6.hints.LibrCountryId.label}"
@@ -584,7 +584,7 @@
                                               varStatus="vs" id="t4">
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.label}"
+                                                 headerText="Expo Hall ID"
                                                  id="c32">
                                         <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.ExpoHallsId.label}"
@@ -600,7 +600,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.label}"
+                                                 headerText="Expo Setup ID"
                                                  id="c33">
                                         <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.ExpoSetupId.label}"
@@ -616,7 +616,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.HallNo.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.HallNo.label}" id="c34">
+                                                 headerText="Hall No." id="c34">
                                         <af:inputText value="#{row.bindings.HallNo.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.HallNo.label}"
                                                       required="#{bindings.TblExpoHallsView5.hints.HallNo.mandatory}"
@@ -631,7 +631,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.Name.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.Name.label}" id="c35">
+                                                 headerText="Name" id="c35">
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.Name.label}"
                                                       required="#{bindings.TblExpoHallsView5.hints.Name.mandatory}"
@@ -644,7 +644,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.TotalStalls.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.TotalStalls.label}"
+                                                 headerText="Total Stalls"
                                                  id="c36">
                                         <af:inputText value="#{row.bindings.TotalStalls.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.TotalStalls.label}"
@@ -660,7 +660,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView5.hints.HallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView5.hints.HallArea.label}"
+                                                 headerText="Hall Area"
                                                  id="c37">
                                         <af:inputText value="#{row.bindings.HallArea.inputValue}"
                                                       label="#{bindings.TblExpoHallsView5.hints.HallArea.label}"
@@ -713,7 +713,7 @@
                                               varStatus="vs" id="t5">
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.label}"
+                                                 headerText="Expo Stall ID"
                                                  id="c38">
                                         <af:inputText value="#{row.bindings.ExpoStallsId.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.ExpoStallsId.label}"
@@ -729,7 +729,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.label}"
+                                                 headerText="Expo Hall ID"
                                                  id="c39">
                                         <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.ExpoHallsId.label}"
@@ -745,7 +745,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallNo.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallNo.label}"
+                                                 headerText="Stall No."
                                                  id="c40">
                                         <af:inputText value="#{row.bindings.StallNo.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallNo.label}"
@@ -761,7 +761,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallName.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallName.label}"
+                                                 headerText="Stall Name"
                                                  id="c41">
                                         <af:inputText value="#{row.bindings.StallName.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallName.label}"
@@ -775,7 +775,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallType.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallType.label}"
+                                                 headerText="Stall Type"
                                                  id="c42">
                                         <af:inputText value="#{row.bindings.StallType.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallType.label}"
@@ -789,7 +789,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallDimension.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallDimension.label}"
+                                                 headerText="Stall Dimension"
                                                  id="c43">
                                         <af:inputText value="#{row.bindings.StallDimension.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallDimension.label}"
@@ -803,7 +803,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallArea.label}"
+                                                 headerText="Stall Area"
                                                  id="c44">
                                         <af:inputText value="#{row.bindings.StallArea.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallArea.label}"
@@ -817,7 +817,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView5.hints.StallValue.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView5.hints.StallValue.label}"
+                                                 headerText="Stall Value"
                                                  id="c45">
                                         <af:inputText value="#{row.bindings.StallValue.inputValue}"
                                                       label="#{bindings.TblExpoStallsView5.hints.StallValue.label}"
