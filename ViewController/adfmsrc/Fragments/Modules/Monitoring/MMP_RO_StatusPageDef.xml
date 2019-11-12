@@ -70,5 +70,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
