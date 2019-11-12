@@ -74,12 +74,12 @@
                   </af:column>
                   <af:column headerText="R.O. Status" id="c4" width="84">
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
-                                              label="#{row.bindings.RoStatus.label}"
+                                              label="#{row.bindings.RoStatus.label}" autoSubmit="true"
                                               shortDesc="#{bindings.MMP_RO_Approval1.hints.RoStatus.tooltip}"
                                               id="sbc1"/>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                <af:button actionListener="#{bindings.Execute.execute}" text="Update / Refresh"
                            disabled="#{!bindings.Execute.enabled}" id="b2"/>
               </af:showDetailItem>
             </af:panelTabbed>
