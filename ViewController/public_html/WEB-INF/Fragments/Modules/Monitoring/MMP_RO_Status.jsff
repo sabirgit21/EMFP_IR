@@ -76,7 +76,7 @@
                   <af:column sortProperty="#{bindings.MMP_RO_Status2.hints.RoStatus.name}" filterable="true"
                              sortable="true" headerText="#{bindings.MMP_RO_Status2.hints.RoStatus.label}" id="c3">
                     <af:selectOneChoice value="#{row.bindings.RoStatus.inputValue}"
-                                        label="#{row.bindings.RoStatus.label}"
+                                        label="#{row.bindings.RoStatus.label}" autoSubmit="true"
                                         required="#{bindings.MMP_RO_Status2.hints.RoStatus.mandatory}"
                                         shortDesc="#{bindings.MMP_RO_Status2.hints.RoStatus.tooltip}" id="soc2">
                       <f:selectItems value="#{row.bindings.RoStatus.items}" id="si2"/>
