@@ -27,13 +27,16 @@
                 <af:table value="#{bindings.Vctat_RO_Status1.collectionModel}" var="row"
                           rows="#{bindings.Vctat_RO_Status1.rangeSize}"
                           emptyText="#{bindings.Vctat_RO_Status1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          scrollPolicy="page" autoHeightRows="0"
+ rowBandingInterval="0" rowSelection="single"
                           selectedRowKeys="#{bindings.Vctat_RO_Status1.collectionModel.selectedRow}"
+                          autoHeightRows="0"
+                          scrollPolicy="page"
                           selectionListener="#{bindings.Vctat_RO_Status1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.Vctat_RO_Status1.rangeSize}"
-                          filterModel="#{bindings.Vctat_RO_Status1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.Vctat_RO_Status1Query.processQuery}" varStatus="vs" id="t1">
+                          fetchSize="#{bindings.Vctat_RO_Status1.rangeSize}"
+                          filterModel="#{bindings.Vctat_RO_Status1Query.queryDescriptor}"
+                          id="t1"
+                          varStatus="vs"
+                          queryListener="#{bindings.Vctat_RO_Status1Query.processQuery}" filterVisible="true">
                   <af:column sortProperty="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Vctat_RO_Status1.hints.GrantApprovalDetailId.label}" id="c1">
@@ -76,7 +79,11 @@
                                               shortDesc="#{bindings.Vctat_RO_Status1.hints.RoStatus.tooltip}"
                                               id="sbc1"/>
                   </af:column>
-                </af:table>
+        
+
+        
+        
+</af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
