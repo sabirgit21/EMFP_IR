@@ -4,7 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Issue_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"/>
+    <iterator Binds="Issue_RO_Status1" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"
+              Refresh="always" CacheResults="false"/>
   </executables>
   <bindings>
     <list IterBinding="Issue_RO_Status1Iterator" ListOperMode="navigation" ListIter="Issue_RO_Status1Iterator"

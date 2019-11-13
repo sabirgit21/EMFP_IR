@@ -1433,6 +1433,9 @@
   <ViewUsage
     Name="TblExpoStallsView5"
     ViewObjectName="model.VO.TblExpoStallsView"/>
+  <ViewUsage
+    Name="TblExpoStallsView6"
+    ViewObjectName="model.VO.TblExpoStallsView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2806,5 +2809,11 @@
     ViewLinkObjectName="model.VO.FkExpoStallsExpoHallsLink"
     SrcViewUsageName="model.AppModule.TblExpoHallsView5"
     DstViewUsageName="model.AppModule.TblExpoStallsView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkExpoStallsExpoHallsLink4"
+    ViewLinkObjectName="model.VO.FkExpoStallsExpoHallsLink"
+    SrcViewUsageName="model.AppModule.TblExpoHallsView3"
+    DstViewUsageName="model.AppModule.TblExpoStallsView6"
     Reversed="false"/>
 </AppModule>
