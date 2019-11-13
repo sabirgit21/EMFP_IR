@@ -27,7 +27,7 @@
                 <af:panelGridLayout id="pgl3">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6">
-                      <af:panelTabbed position="above" id="pt3" inlineStyle="width:971px;">
+                      <af:panelTabbed position="above" id="pt3"  styleClass="tabel_pannel_tab">
                         <af:showDetailItem id="tab3" text="Expo Setup">
                           <af:table value="#{bindings.TblExpoSetupView1.collectionModel}" var="row"
                                     rows="#{bindings.TblExpoSetupView1.rangeSize}"
@@ -379,7 +379,7 @@
                   </af:gridRow>
                   <af:gridRow marginTop="5px" height="auto" id="gr7">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
-                      <af:panelTabbed position="above" id="pt4">
+                      <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi1" text="Expo Intl. Delegation">
                           <af:table value="#{bindings.TblExpoIntlDelegView3.collectionModel}" var="row"
                                     rows="#{bindings.TblExpoIntlDelegView3.rangeSize}"
@@ -472,7 +472,7 @@
                           <af:panelGridLayout id="pgl5">
                             <af:gridRow marginTop="5px" height="auto" id="gr11">
                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">
-                                <af:panelTabbed position="above" id="pt5">
+                                <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
                                   <af:showDetailItem id="tab4" text="Expo Halls">
                                     <af:table value="#{bindings.TblExpoHallsView3.collectionModel}" var="row"
                                               rows="#{bindings.TblExpoHallsView3.rangeSize}"
@@ -600,7 +600,7 @@
                             </af:gridRow>
                             <af:gridRow marginTop="5px" height="auto" id="gr13">
                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13">
-                                <af:panelTabbed position="above" id="pt6">
+                                <af:panelTabbed position="above" id="pt6" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="sdi3" text="Expo Stalls">
                                     <af:table value="#{bindings.TblExpoStallsView6.collectionModel}" var="row"
                                               rows="#{bindings.TblExpoStallsView6.rangeSize}"
