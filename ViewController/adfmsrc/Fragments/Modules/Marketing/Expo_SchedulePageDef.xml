@@ -33,6 +33,7 @@
           <Item Value="CropId"/>
           <Item Value="PhaseId"/>
           <Item Value="Ast"/>
+          <Item Value="ExpoType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

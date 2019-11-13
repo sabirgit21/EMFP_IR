@@ -102,6 +102,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SCH"/>
+  <Attribute
+    Name="ExpoType"
+    Precision="3"
+    ColumnName="EXPO_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EXPO_SCH"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblExpoSetup"
     Association="model.EO.FkExpoSetupExpoSchAssoc"

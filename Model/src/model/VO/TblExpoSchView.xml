@@ -25,6 +25,14 @@
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Month_LOV1"
+    ViewObjectName="model.LOV.Month_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Expo_Type_LOV1"
+    ViewObjectName="model.LOV.Expo_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_CropId"
     ListVOName="Crops_Name_LOV1"
@@ -79,6 +87,42 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoSchMonth"
+    ListVOName="Month_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoSchMonth"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MonthDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MonthView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoType"
+    ListVOName="Expo_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblExpoSch"
     Entity="model.EO.TblExpoSch"/>
@@ -101,7 +145,15 @@
     PrecisionRule="true"
     EntityAttrName="ExpoSchMonth"
     EntityUsage="TblExpoSch"
-    AliasName="EXPO_SCH_MONTH"/>
+    AliasName="EXPO_SCH_MONTH"
+    LOVName="LOV_ExpoSchMonth">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CropId"
     PrecisionRule="true"
@@ -168,6 +220,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblExpoSch"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ExpoType"
+    PrecisionRule="true"
+    EntityAttrName="ExpoType"
+    EntityUsage="TblExpoSch"
+    AliasName="EXPO_TYPE"
+    LOVName="LOV_ExpoType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblExpoSetupView"
     ViewLink="model.VO.FkExpoSetupExpoSchLink"

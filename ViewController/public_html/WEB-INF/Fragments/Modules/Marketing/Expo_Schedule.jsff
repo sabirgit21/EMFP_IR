@@ -53,37 +53,19 @@
                                         pattern="#{bindings.TblExpoSchView1.hints.ExpoSchId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Expo" id="c2" width="250">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Name}"
-                                          id="it4" placeholder="Search Expo">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.Name.inputValue}"
-                                  label="#{bindings.TblExpoSchView1.hints.Name.label}"
-                                  required="#{bindings.TblExpoSchView1.hints.Name.mandatory}"
-                                  columns="#{bindings.TblExpoSchView1.hints.Name.displayWidth}"
-                                  maximumLength="#{bindings.TblExpoSchView1.hints.Name.precision}"
-                                  shortDesc="#{bindings.TblExpoSchView1.hints.Name.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.Name.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.name}" filterable="true"
-                             sortable="true" id="c3" headerText="Expo Schedule Monthly" width="150" align="left">
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.PhaseId.name}" filterable="true"
+                             sortable="true" headerText="Phase" id="c5" width="150">
                               <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.ExpoSchMonth}"
-                                          id="it5" placeholder="Search Schedule Monthly">
+                                          <af:inputText value="#{vs.filterCriteria.PhaseId}"
+                                          id="it7" placeholder="Search Phase">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExpoSchMonth.inputValue}"
-                                  label="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.label}"
-                                  required="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.mandatory}"
-                                  columns="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.displayWidth}"
-                                  maximumLength="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.precision}"
-                                  shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.tooltip}" id="it3">
-                      <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
-                    </af:inputText>
+                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.PhaseId.mandatory}"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.PhaseId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.CropId.name}" filterable="true"
                              sortable="true" headerText="Crop" id="c4" width="150">
@@ -99,22 +81,52 @@
                       <f:validator binding="#{row.bindings.CropId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.PhaseId.name}" filterable="true"
-                             sortable="true" headerText="Phase" id="c5" width="150">
-                              <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.PhaseId}"
-                                          id="it7" placeholder="Search Phase">
+                  <af:column headerText="Expo Type" id="c7" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoType}"
+                                          id="it9" placeholder="Search Type">
                            </af:inputText>
                              </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
-                                        required="#{bindings.TblExpoSchView1.hints.PhaseId.mandatory}"
-                                        shortDesc="#{bindings.TblExpoSchView1.hints.PhaseId.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    <af:selectOneChoice value="#{row.bindings.ExpoType.inputValue}"
+                                        label="#{row.bindings.ExpoType.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.ExpoType.mandatory}"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.ExpoType.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.ExpoType.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.ExpoType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="Expo/Exhibition" id="c2" width="240">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it4" placeholder="Search Expo">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblExpoSchView1.hints.Name.label}"
+                                  required="#{bindings.TblExpoSchView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblExpoSchView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Expo Schedule Monthly" id="c3" sortable="true" filterable="true" width="150">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchMonth}"
+                                          id="it3" placeholder="Search Schedule Monthly">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ExpoSchMonth.inputValue}"
+                                        label="#{row.bindings.ExpoSchMonth.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.mandatory}"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.ExpoSchMonth.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.ExpoSchMonth.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
-                             headerText="Active" id="c6" width="80">
+                             headerText="Active" id="c6" width="60">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
                                           id="it8" placeholder="Search Active">
