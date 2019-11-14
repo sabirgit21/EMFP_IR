@@ -189,6 +189,9 @@
         <page path="/WEB-INF/Fragments/Modules/Marketing/Intl_Delegation_Apps.jsff"
               usageId="view_Intl_Delegation_AppsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Marketing/B2B_Meeting.jsff" usageId="view_B2B_MeetingPageDef"/>
+        <page path="/Main_Pages/Modules/Infrastructure/Infrastructure.jsf" usageId="view_InfrastructurePageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Infrastructure/Infrastructure.jsff"
+              usageId="view_InfrastructurePageDef1"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -368,6 +371,8 @@
         <page id="view_Exhibitor_Stall_AllocPageDef" path="Fragments.Modules.Marketing.Exhibitor_Stall_AllocPageDef"/>
         <page id="view_Intl_Delegation_AppsPageDef" path="Fragments.Modules.Marketing.Intl_Delegation_AppsPageDef"/>
         <page id="view_B2B_MeetingPageDef" path="Fragments.Modules.Marketing.B2B_MeetingPageDef"/>
+        <page id="view_InfrastructurePageDef" path="Main_Pages.Modules.Infrastructure.InfrastructurePageDef"/>
+        <page id="view_InfrastructurePageDef1" path="Fragments.Modules.Infrastructure.InfrastructurePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

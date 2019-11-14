@@ -10,6 +10,12 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:selectOneChoice label="#{bindings.ModuleId.label}" autoSubmit="true"
+                                                shortDesc="#{bindings.ModuleId.hints.tooltip}" id="soc7"
+                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_module}">
+                                <f:selectItems value="#{bindings.ModuleId.items}" id="si12"/>
+                                <f:validator binding="#{bindings.ModuleId.validator}"/>
+                            </af:selectOneChoice>
                             <af:selectOneChoice label="#{bindings.ClusterId.label}" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc1"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_cluster}">

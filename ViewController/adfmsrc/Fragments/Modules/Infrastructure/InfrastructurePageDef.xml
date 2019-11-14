@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="InfrastructurePageDef"
+                Package="Fragments.Modules.Infrastructure">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblClusterView1" RangeSize="-1" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TblClusterView1Iterator" id="TblClusterView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.TblClusterView" Name="TblClusterView1">
+        <AttrNames>
+          <Item Value="ClusterId"/>
+          <Item Value="PhaseId"/>
+          <Item Value="ClusterNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

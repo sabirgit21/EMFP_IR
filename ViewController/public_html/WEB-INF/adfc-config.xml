@@ -76,4 +76,9 @@
     <managed-bean-class>view.MarketingSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name>InfrastructureSidebarBean</managed-bean-name>
+    <managed-bean-class>view.InfrastructureSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

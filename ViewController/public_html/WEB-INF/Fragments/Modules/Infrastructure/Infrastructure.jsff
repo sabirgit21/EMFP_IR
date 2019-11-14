@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+    <af:showDetailItem id="pane1" text="Infrastructure">
+         
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+              <af:showDetailItem id="tab1" text="Clusters in each Phase">
+                <dvt:barChart stack="on"
+                              selectionListener="#{bindings.TblClusterView1.collectionModel.makeCurrent}"
+                              dataSelection="single" id="barChart1" var="row"
+                              value="#{bindings.TblClusterView1.collectionModel}" coordinateSystem="cartesian"
+                              dataCursor="on" dataCursorBehavior="smooth"
+                              inlineStyle="width:900px;height:1300px;">
+                  <dvt:chartLegend id="cl1" title="Clusters" titleHalign="center"/>
+                  <f:facet name="dataStamp">
+                    <dvt:chartDataItem id="di1" series="#{row.ClusterNo}" value="#{row.ClusterId}"
+                                       group="#{bindings.TblClusterView1.hints.ClusterId.label} #{row.PhaseId}"/>
+                  </f:facet>
+                </dvt:barChart>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+          </af:gridCell>
+        </af:gridRow>
+        
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

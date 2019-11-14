@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="InfrastructurePageDef"
+                Package="Main_Pages.Modules.Infrastructure">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="INFRASTRUCTURE_PAGES1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="INFRASTRUCTURE_PAGES1Iterator"/>
+    <searchRegion Binds="INFRASTRUCTURE_PAGES1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="INFRASTRUCTURE_PAGES1Query"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.InfrastructureSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="INFRASTRUCTURE_PAGES1Iterator" id="INFRASTRUCTURE_PAGES1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.INFRASTRUCTURE_PAGES" Name="INFRASTRUCTURE_PAGES10">
+        <AttrNames>
+          <Item Value="PagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="PageIcon"/>
+          <Item Value="PageLink"/>
+          <Item Value="SrNo"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="PagesId"/>
+          <Item Value="RoleMasterId1"/>
+          <Item Value="RView"/>
+          <Item Value="RAdd"/>
+          <Item Value="REdit"/>
+          <Item Value="RDelete"/>
+          <Item Value="RPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

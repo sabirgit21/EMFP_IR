@@ -16,6 +16,8 @@ public class cluster_att_report {
     private static String gotTrainer = "";
     private static String gotFarmer = "";
     private static String gotCity = "";
+    private static String gotModule = "";
+    
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
@@ -29,6 +31,7 @@ public class cluster_att_report {
         String url = "";
         reportBean.setReportParameter("P_Trainer_id", gotTrainer);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
+        reportBean.setReportParameter("P_Module_id", gotModule);
         reportBean.setReportParameter("P_Farmer_reg_id", gotFarmer);
         reportBean.setReportParameter("P_City_id", gotCity);
 
@@ -107,6 +110,12 @@ public class cluster_att_report {
         selectedReportType = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected Report Type is : " + selectedReportType);
         // Add event code here...
+    }
+
+    public void get_module(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotModule = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Module is : " + gotModule);
     }
 
     public void get_selected_cluster(ValueChangeEvent valueChangeEvent) {
