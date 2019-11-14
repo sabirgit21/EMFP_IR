@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Stall_Type_LOV1"
+    ViewObjectName="model.LOV.Stall_Type_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StallType"
+    ListVOName="Stall_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StallType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblExpoStalls"
     Entity="model.EO.TblExpoStalls"/>
@@ -47,7 +69,15 @@
     PrecisionRule="true"
     EntityAttrName="StallType"
     EntityUsage="TblExpoStalls"
-    AliasName="STALL_TYPE"/>
+    AliasName="STALL_TYPE"
+    LOVName="LOV_StallType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StallDimension"
     PrecisionRule="true"

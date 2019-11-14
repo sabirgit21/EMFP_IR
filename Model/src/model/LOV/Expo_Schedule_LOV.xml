@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Expo_Schedule_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblExpoSch.EXPO_SCH_ID, 
+       TblExpoSch.NAME, 
+       TblExpoSch.AST, 
+       TblExpoSch.EXPO_TYPE"
+  FromList="TBL_EXPO_SCH TblExpoSch"
+  Where="TblExpoSch.AST='Y' 
+ AND  TblExpoSch.EXPO_TYPE='LEX'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Expo_Schedule_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblExpoSch"
+    Entity="model.EO.TblExpoSch"/>
+  <ViewAttribute
+    Name="ExpoSchId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpoSchId"
+    EntityUsage="TblExpoSch"
+    AliasName="EXPO_SCH_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblExpoSch"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblExpoSch"
+    AliasName="AST"/>
+  <ViewAttribute
+    Name="ExpoType"
+    PrecisionRule="true"
+    EntityAttrName="ExpoType"
+    EntityUsage="TblExpoSch"
+    AliasName="EXPO_TYPE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

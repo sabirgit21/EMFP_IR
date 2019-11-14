@@ -38,39 +38,48 @@
                                     rowSelection="single" fetchSize="#{bindings.TblExpoSetupView1.rangeSize}"
                                     filterModel="#{bindings.TblExpoSetupView1Query.queryDescriptor}"
                                     filterVisible="true" queryListener="#{bindings.TblExpoSetupView1Query.processQuery}"
-                                    varStatus="vs" id="t1">
-                            <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.ExpoSchId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.ExpoSchId.label}" id="c1">
-                              <af:inputText value="#{row.bindings.ExpoSchId.inputValue}"
-                                            label="#{bindings.TblExpoSetupView1.hints.ExpoSchId.label}"
-                                            required="#{bindings.TblExpoSetupView1.hints.ExpoSchId.mandatory}"
-                                            columns="#{bindings.TblExpoSetupView1.hints.ExpoSchId.displayWidth}"
-                                            maximumLength="#{bindings.TblExpoSetupView1.hints.ExpoSchId.precision}"
-                                            shortDesc="#{bindings.TblExpoSetupView1.hints.ExpoSchId.tooltip}" id="it1">
-                                <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblExpoSetupView1.hints.ExpoSchId.format}"/>
-                              </af:inputText>
-                            </af:column>
+                                    varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.label}" id="c2">
+                                       headerText="Expo Setup ID" id="c2"
+                                       align="center" width="60">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSetupId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.mandatory}"
                                             columns="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.displayWidth}"
                                             maximumLength="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.precision}"
                                             shortDesc="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.tooltip}"
-                                            id="it2">
+                                            id="it2" readOnly="true"
+                                  contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="Expo/Exhibition" id="c1" sortable="true" filterable="true"
+                                       width="200">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchId}"
+                                          id="it1" placeholder="Search Expo/Exhibition">
+                           </af:inputText>
+                             </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.ExpoSchId.inputValue}"
+                                                  label="#{row.bindings.ExpoSchId.label}"
+                                                  required="#{bindings.TblExpoSetupView1.hints.ExpoSchId.mandatory}"
+                                                  shortDesc="#{bindings.TblExpoSetupView1.hints.ExpoSchId.tooltip}"
+                                                  id="soc1">
+                                <f:selectItems value="#{row.bindings.ExpoSchId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                              </af:selectOneChoice>
+                            </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.FDate.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.FDate.label}"
-                                       id="c3">
+                                       sortable="true" headerText="From Date"
+                                       id="c3" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FDate.value}"
                                               id="id1">
@@ -87,8 +96,8 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.TDate.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.TDate.label}"
-                                       id="c4">
+                                       sortable="true" headerText="To Date"
+                                       id="c4" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TDate.value}"
                                               id="id3">
@@ -99,20 +108,26 @@
                                             label="#{bindings.TblExpoSetupView1.hints.TDate.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.TDate.mandatory}"
                                             columns="#{bindings.TblExpoSetupView1.hints.TDate.displayWidth}"
-                                            shortDesc="#{bindings.TblExpoSetupView1.hints.TDate.tooltip}" id="id4">
+                                            shortDesc="#{bindings.TblExpoSetupView1.hints.TDate.tooltip}" id="id9">
                                 <f:validator binding="#{row.bindings.TDate.validator}"/>
                                 <af:convertDateTime pattern="#{bindings.TblExpoSetupView1.hints.TDate.format}"/>
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.NoOfDays.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.NoOfDays.label}" id="c5">
+                                       headerText="No of Days" id="c5" align="center" width="100">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.NoOfDays}"
+                                          id="it36" placeholder="Search No of Days">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.NoOfDays.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.NoOfDays.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.NoOfDays.mandatory}"
                                             columns="#{bindings.TblExpoSetupView1.hints.NoOfDays.displayWidth}"
                                             maximumLength="#{bindings.TblExpoSetupView1.hints.NoOfDays.precision}"
-                                            shortDesc="#{bindings.TblExpoSetupView1.hints.NoOfDays.tooltip}" id="it3">
+                                            shortDesc="#{bindings.TblExpoSetupView1.hints.NoOfDays.tooltip}" 
+                                            id="it3" contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.NoOfDays.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoSetupView1.hints.NoOfDays.format}"/>
@@ -120,7 +135,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.ExpoSetupVenue.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.ExpoSetupVenue.label}" id="c6">
+                                       headerText="Expo Setup Venue" id="c6" width="200">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSetupVenue}"
+                                          id="it37" placeholder="Search Expo Venue">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.ExpoSetupVenue.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.ExpoSetupVenue.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.ExpoSetupVenue.mandatory}"
@@ -133,21 +153,27 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.TotalHalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.TotalHalls.label}" id="c7">
+                                       headerText="Total Halls" id="c7" align="center" width="80">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TotalHalls}"
+                                          id="it38" placeholder="Search Total Halls">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.TotalHalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.TotalHalls.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.TotalHalls.mandatory}"
                                             columns="#{bindings.TblExpoSetupView1.hints.TotalHalls.displayWidth}"
                                             maximumLength="#{bindings.TblExpoSetupView1.hints.TotalHalls.precision}"
-                                            shortDesc="#{bindings.TblExpoSetupView1.hints.TotalHalls.tooltip}" id="it5">
+                                            shortDesc="#{bindings.TblExpoSetupView1.hints.TotalHalls.tooltip}" 
+                                            id="it5">
                                 <f:validator binding="#{row.bindings.TotalHalls.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoSetupView1.hints.TotalHalls.format}"/>
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.STime.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.STime.label}"
-                                       id="c8">
+                                       sortable="true" headerText="Start Date"
+                                       id="c8" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.STime.value}"
                                               id="id5">
@@ -164,8 +190,8 @@
                               </af:inputDate>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.ETime.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.ETime.label}"
-                                       id="c9">
+                                       sortable="true" headerText="End Date"
+                                       id="c9" align="center">
                               <f:facet name="filter">
                                 <af:inputDate value="#{bindings.TblExpoSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ETime.value}"
                                               id="id7">
@@ -183,7 +209,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.ExpoSetupArea.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.ExpoSetupArea.label}" id="c10">
+                                       headerText="Expo Setup Area" id="c10">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSetupArea}"
+                                          id="it39" placeholder="Search Area">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.ExpoSetupArea.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.ExpoSetupArea.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.ExpoSetupArea.mandatory}"
@@ -198,7 +229,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.AreaRate.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.AreaRate.label}" id="c11">
+                                       headerText="Area Rate" id="c11" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AreaRate}"
+                                          id="it40" placeholder="Search Area Rate">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.AreaRate.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.AreaRate.mandatory}"
@@ -212,7 +248,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MinExhibitors.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MinExhibitors.label}" id="c12">
+                                       headerText="Minimum Ehibitors" id="c12" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MinExhibitors}"
+                                          id="it41" placeholder="Search Minimum Ehibitors">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MinExhibitors.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MinExhibitors.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MinExhibitors.mandatory}"
@@ -227,7 +268,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MaxExhibitors.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MaxExhibitors.label}" id="c13">
+                                       headerText="Maximum Exhibitors" id="c13" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MaxExhibitors}"
+                                          id="it42" placeholder="Search Maximum Ehibitors">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MaxExhibitors.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MaxExhibitors.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MaxExhibitors.mandatory}"
@@ -242,7 +288,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MinStalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MinStalls.label}" id="c14">
+                                       headerText="Minimum Stalls" id="c14" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MinStalls}"
+                                          id="it43" placeholder="Search Minimum Stalls">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MinStalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MinStalls.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MinStalls.mandatory}"
@@ -256,7 +307,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MaxStalls.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MaxStalls.label}" id="c15">
+                                       headerText="Maximum Stalls" id="c15" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MaxStalls}"
+                                          id="it44" placeholder="Search Maximum Stalls">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MaxStalls.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MaxStalls.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MaxStalls.mandatory}"
@@ -269,8 +325,13 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MinB2b.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.MinB2b.label}"
-                                       id="c16">
+                                       sortable="true" headerText="Minimum B2B"
+                                       id="c16" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MinB2b}"
+                                          id="it45" placeholder="Search Minimum B2B">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MinB2b.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MinB2b.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MinB2b.mandatory}"
@@ -283,8 +344,13 @@
                               </af:inputText>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MaxB2b.name}" filterable="true"
-                                       sortable="true" headerText="#{bindings.TblExpoSetupView1.hints.MaxB2b.label}"
-                                       id="c17">
+                                       sortable="true" headerText="Maximum B2B"
+                                       id="c17" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MaxB2b}"
+                                          id="it46" placeholder="Search Maximum B2B">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MaxB2b.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MaxB2b.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MaxB2b.mandatory}"
@@ -298,7 +364,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MinLocalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MinLocalDeleg.label}" id="c18">
+                                       headerText="Minimum Local Delegation" id="c18" align="center">
+                                         <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MinLocalDeleg}"
+                                          id="it47" placeholder="Search Minimum Local Delegation">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MinLocalDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MinLocalDeleg.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MinLocalDeleg.mandatory}"
@@ -313,7 +384,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MaxLocalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MaxLocalDeleg.label}" id="c19">
+                                       headerText="Maximum Local Delegation" id="c19" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MaxLocalDeleg}"
+                                          id="it48" placeholder="Search Maximum Local Delegation">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MaxLocalDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MaxLocalDeleg.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MaxLocalDeleg.mandatory}"
@@ -328,7 +404,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MinIntlDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MinIntlDeleg.label}" id="c20">
+                                       headerText="Minimum International Delegation" id="c20" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MinIntlDeleg}"
+                                          id="it49" placeholder="Search Minimum International Delegation">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MinIntlDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MinIntlDeleg.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MinIntlDeleg.mandatory}"
@@ -343,7 +424,12 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoSetupView1.hints.MaxIntlDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoSetupView1.hints.MaxIntlDeleg.label}" id="c21">
+                                       headerText="Maximum International Delegation" id="c21" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MaxIntlDeleg}"
+                                          id="it50" placeholder="Search Maximum International Delegation">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.MaxIntlDeleg.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.MaxIntlDeleg.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.MaxIntlDeleg.mandatory}"
@@ -391,41 +477,53 @@
                                     filterModel="#{bindings.TblExpoIntlDelegView3Query.queryDescriptor}"
                                     filterVisible="true"
                                     queryListener="#{bindings.TblExpoIntlDelegView3Query.processQuery}" varStatus="vs"
-                                    id="t2">
+                                    id="t2" scrollPolicy="page" autoHeightRows="0">
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.label}"
-                                       id="c22">
+                                       headerText="Expo International Delegation"
+                                       id="c22" align="center" width="80">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoIntlDelegId}"
+                                          id="it51" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.ExpoIntlDelegId.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.label}"
                                             required="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.mandatory}"
                                             columns="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.displayWidth}"
                                             maximumLength="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.precision}"
                                             shortDesc="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.tooltip}"
-                                            id="it18">
+                                            id="it18" readOnly="true"
+                                  contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ExpoIntlDelegId.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.label}" id="c23">
-                              <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
-                                            label="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.label}"
-                                            required="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.mandatory}"
-                                            columns="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.displayWidth}"
-                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.precision}"
-                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.tooltip}"
-                                            id="it19">
-                                <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.ExpoSetupId.format}"/>
-                              </af:inputText>
+                            <af:column headerText="Country"
+                                       id="c23" sortable="true" filterable="true">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LibrCountryId}"
+                                          id="it21" placeholder="Search Country">
+                           </af:inputText>
+                             </f:facet>
+                              <af:selectOneChoice value="#{row.bindings.LibrCountryId.inputValue}"
+                                                  label="#{row.bindings.LibrCountryId.label}"
+                                                  required="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.mandatory}"
+                                                  shortDesc="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.tooltip}"
+                                                  id="soc2">
+                                <f:selectItems value="#{row.bindings.LibrCountryId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
+                              </af:selectOneChoice>
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.label}" id="c24">
+                                       headerText="Total Delegation" id="c24" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TotalDeleg}"
+                                          id="it19" placeholder="Search Total Delegation">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.TotalDeleg.inputValue}"
                                             label="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.label}"
                                             required="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.mandatory}"
@@ -438,22 +536,7 @@
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.label}"
-                                       id="c25">
-                              <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
-                                            label="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.label}"
-                                            required="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.mandatory}"
-                                            columns="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.displayWidth}"
-                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.precision}"
-                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.tooltip}"
-                                            id="it21">
-                                <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.LibrCountryId.format}"/>
-                              </af:inputText>
-                            </af:column>
+                            
                           </af:table>
                           <af:panelGroupLayout id="pgl7" layout="horizontal">
                             <af:spacer width="190" height="10" id="s6"/>
@@ -484,42 +567,39 @@
                                               filterModel="#{bindings.TblExpoHallsView3Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblExpoHallsView3Query.processQuery}"
-                                              varStatus="vs" id="t3">
+                                              varStatus="vs" id="t3" scrollPolicy="page" autoHeightRows="0">
                                       <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.label}"
-                                                 id="c26">
+                                                 headerText="Expo Halls ID"
+                                                 id="c26" align="center" width="60">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoHallsId}"
+                                          id="it52" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
                                                       label="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.label}"
                                                       required="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.mandatory}"
                                                       columns="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.displayWidth}"
                                                       maximumLength="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.precision}"
                                                       shortDesc="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.tooltip}"
-                                                      id="it22">
+                                                      id="it22" readOnly="true"
+                                                      contentStyle='text-align: center'>
                                           <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.label}"
-                                                 id="c27">
-                                        <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
-                                                      label="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.label}"
-                                                      required="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.mandatory}"
-                                                      columns="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.displayWidth}"
-                                                      maximumLength="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.precision}"
-                                                      shortDesc="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.tooltip}"
-                                                      id="it23">
-                                          <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblExpoHallsView3.hints.ExpoSetupId.format}"/>
-                                        </af:inputText>
-                                      </af:column>
+                                     
                                       <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.HallNo.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.HallNo.label}" id="c28">
+                                                 headerText="Hall No." id="c28" align="center" width="80">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.HallNo}"
+                                          id="it23" placeholder="Search Hall No.">
+                           </af:inputText>
+                             </f:facet>
+
                                         <af:inputText value="#{row.bindings.HallNo.inputValue}"
                                                       label="#{bindings.TblExpoHallsView3.hints.HallNo.label}"
                                                       required="#{bindings.TblExpoHallsView3.hints.HallNo.mandatory}"
@@ -534,7 +614,12 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.Name.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.Name.label}" id="c29">
+                                                 headerText="Expo Hall" id="c29">
+                                                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it53" placeholder="Search Hall">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.TblExpoHallsView3.hints.Name.label}"
                                                       required="#{bindings.TblExpoHallsView3.hints.Name.mandatory}"
@@ -547,8 +632,13 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.TotalStalls.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.TotalStalls.label}"
-                                                 id="c30">
+                                                 headerText="Total Stalls"
+                                                 id="c30" align="center">
+                                                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TotalStalls}"
+                                          id="it54" placeholder="Search Total Stalls">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.TotalStalls.inputValue}"
                                                       label="#{bindings.TblExpoHallsView3.hints.TotalStalls.label}"
                                                       required="#{bindings.TblExpoHallsView3.hints.TotalStalls.mandatory}"
@@ -563,8 +653,13 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView3.hints.HallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoHallsView3.hints.HallArea.label}"
+                                                 headerText="Hall Area"
                                                  id="c31">
+                                                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.HallArea}"
+                                          id="it55" placeholder="Search Hall Area">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.HallArea.inputValue}"
                                                       label="#{bindings.TblExpoHallsView3.hints.HallArea.label}"
                                                       required="#{bindings.TblExpoHallsView3.hints.HallArea.mandatory}"
@@ -612,43 +707,39 @@
                                               filterModel="#{bindings.TblExpoStallsView6Query.queryDescriptor}"
                                               filterVisible="true"
                                               queryListener="#{bindings.TblExpoStallsView6Query.processQuery}"
-                                              varStatus="vs" id="t4">
+                                              varStatus="vs" id="t4" scrollPolicy="page" autoHeightRows="0">
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.label}"
-                                                 id="c32">
+                                                 headerText="Expo Stalls ID"
+                                                 id="c32" align="center" width="60">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoStallsId}"
+                                          id="it56" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.ExpoStallsId.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.mandatory}"
                                                       columns="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.displayWidth}"
                                                       maximumLength="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.precision}"
                                                       shortDesc="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.tooltip}"
-                                                      id="it28">
+                                                      id="it28" readOnly="true"
+                                  contentStyle='text-align: center'>
                                           <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
                                           <af:convertNumber groupingUsed="false"
                                                             pattern="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.format}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.label}"
-                                                 id="c33">
-                                        <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
-                                                      label="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.label}"
-                                                      required="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.mandatory}"
-                                                      columns="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.displayWidth}"
-                                                      maximumLength="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.precision}"
-                                                      shortDesc="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.tooltip}"
-                                                      id="it29">
-                                          <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
-                                          <af:convertNumber groupingUsed="false"
-                                                            pattern="#{bindings.TblExpoStallsView6.hints.ExpoHallsId.format}"/>
-                                        </af:inputText>
-                                      </af:column>
+                                     
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallNo.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallNo.label}"
-                                                 id="c34">
+                                                 headerText="Stall No."
+                                                 id="c34" align="center">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallNo}"
+                                          id="it29" placeholder="Search Stall No.">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.StallNo.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.StallNo.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.StallNo.mandatory}"
@@ -663,8 +754,13 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallName.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallName.label}"
+                                                 headerText="Stall"
                                                  id="c35">
+                                                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallName}"
+                                          id="it57" placeholder="Search Stall">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.StallName.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.StallName.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.StallName.mandatory}"
@@ -675,24 +771,31 @@
                                           <f:validator binding="#{row.bindings.StallName.validator}"/>
                                         </af:inputText>
                                       </af:column>
-                                      <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallType.name}"
-                                                 filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallType.label}"
-                                                 id="c36">
-                                        <af:inputText value="#{row.bindings.StallType.inputValue}"
-                                                      label="#{bindings.TblExpoStallsView6.hints.StallType.label}"
-                                                      required="#{bindings.TblExpoStallsView6.hints.StallType.mandatory}"
-                                                      columns="#{bindings.TblExpoStallsView6.hints.StallType.displayWidth}"
-                                                      maximumLength="#{bindings.TblExpoStallsView6.hints.StallType.precision}"
-                                                      shortDesc="#{bindings.TblExpoStallsView6.hints.StallType.tooltip}"
-                                                      id="it32">
+                                      <af:column headerText="Stall Type"
+                                                 id="c25" sortable="true" filterable="true">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallType}"
+                                          id="it32" placeholder="Search Type">
+                           </af:inputText>
+                             </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.StallType.inputValue}"
+                                                            label="#{row.bindings.StallType.label}"
+                                                            required="#{bindings.TblExpoStallsView6.hints.StallType.mandatory}"
+                                                            shortDesc="#{bindings.TblExpoStallsView6.hints.StallType.tooltip}"
+                                                            id="soc3">
+                                          <f:selectItems value="#{row.bindings.StallType.items}" id="si3"/>
                                           <f:validator binding="#{row.bindings.StallType.validator}"/>
-                                        </af:inputText>
+                                        </af:selectOneChoice>
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallDimension.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallDimension.label}"
+                                                 headerText="Stall Dimension"
                                                  id="c37">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallDimension}"
+                                          id="it58" placeholder="Search Dimension">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.StallDimension.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.StallDimension.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.StallDimension.mandatory}"
@@ -705,8 +808,13 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallArea.label}"
+                                                 headerText="Stall Area"
                                                  id="c38">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallArea}"
+                                          id="it59" placeholder="Search Stall Area">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.StallArea.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.StallArea.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.StallArea.mandatory}"
@@ -719,8 +827,13 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView6.hints.StallValue.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="#{bindings.TblExpoStallsView6.hints.StallValue.label}"
-                                                 id="c39">
+                                                 headerText="Stall Value"
+                                                 id="c39" align="center">
+                                                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallValue}"
+                                          id="it60" placeholder="Search Stall Value">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.StallValue.inputValue}"
                                                       label="#{bindings.TblExpoStallsView6.hints.StallValue.label}"
                                                       required="#{bindings.TblExpoStallsView6.hints.StallValue.mandatory}"

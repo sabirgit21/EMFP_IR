@@ -34,34 +34,27 @@
                           queryListener="#{bindings.TblIntlDelegAppMView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.name}"
                              filterable="true" sortable="true"
-                             headerText="Delegation Application Master ID" id="c1">
+                             headerText="Delegation Application Master ID" id="c1" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegAppMId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.IntlDelegAppMId.inputValue}"
                                   label="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.label}"
                                   required="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.mandatory}"
                                   columns="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.tooltip}" 
+                                  id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegAppMId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.name}" filterable="true"
-                             sortable="true" headerText="Expo Setup ID"
-                             id="c2">
-                    <af:inputText value="#{row.bindings.ExpoSetupId.inputValue}"
-                                  label="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.label}"
-                                  required="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.mandatory}"
-                                  columns="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblIntlDelegAppMView1.hints.ExpoSetupId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Dated" id="c3">
+                             sortable="true" headerText="Dated" id="c3" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblIntlDelegAppMView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1">
@@ -78,7 +71,14 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Name" id="c4">
+                             sortable="true" headerText="Internaional Delegation" id="c4" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it38" placeholder="Search Internaional Delegation">
+                           </af:inputText>
+                             </f:facet>
+
+
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.TblIntlDelegAppMView1.hints.Name.label}"
                                   required="#{bindings.TblIntlDelegAppMView1.hints.Name.mandatory}"
@@ -89,7 +89,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.CoName.name}" filterable="true"
-                             sortable="true" headerText="Company NAme" id="c5">
+                             sortable="true" headerText="Company" id="c5" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CoName}"
+                                          id="it2" placeholder="Search Company">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.CoName.inputValue}"
                                   label="#{bindings.TblIntlDelegAppMView1.hints.CoName.label}"
                                   required="#{bindings.TblIntlDelegAppMView1.hints.CoName.mandatory}"
@@ -101,7 +106,14 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.name}" filterable="true"
                              sortable="true" headerText="Representative Design"
-                             id="c6">
+                             id="c6" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RepDesig}"
+                                          id="it34" placeholder="Search Design">
+                           </af:inputText>
+                             </f:facet>
+
+
                     <af:inputText value="#{row.bindings.RepDesig.inputValue}"
                                   label="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.label}"
                                   required="#{bindings.TblIntlDelegAppMView1.hints.RepDesig.mandatory}"
@@ -111,8 +123,30 @@
                       <f:validator binding="#{row.bindings.RepDesig.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Mobile.name}" filterable="true"
+                             sortable="true" headerText="Mobile" id="c8" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Mobile}"
+                                          id="it26" placeholder="Search Mobile">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                  label="#{bindings.TblIntlDelegAppMView1.hints.Mobile.label}"
+                                  required="#{bindings.TblIntlDelegAppMView1.hints.Mobile.mandatory}"
+                                  columns="#{bindings.TblIntlDelegAppMView1.hints.Mobile.displayWidth}"
+                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.Mobile.precision}"
+                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.Mobile.tooltip}" 
+                                  id="it7" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.EMail.name}" filterable="true"
-                             sortable="true" headerText="E mail" id="c7">
+                             sortable="true" headerText="E mail" id="c7" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.EMail}"
+                                          id="it30" placeholder="Search E mail">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.EMail.inputValue}"
                                   label="#{bindings.TblIntlDelegAppMView1.hints.EMail.label}"
                                   required="#{bindings.TblIntlDelegAppMView1.hints.EMail.mandatory}"
@@ -122,17 +156,7 @@
                       <f:validator binding="#{row.bindings.EMail.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="Mobile" id="c8">
-                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
-                                  label="#{bindings.TblIntlDelegAppMView1.hints.Mobile.label}"
-                                  required="#{bindings.TblIntlDelegAppMView1.hints.Mobile.mandatory}"
-                                  columns="#{bindings.TblIntlDelegAppMView1.hints.Mobile.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegAppMView1.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegAppMView1.hints.Mobile.tooltip}" id="it7">
-                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
@@ -158,7 +182,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Delegation Application Detail">
-                <af:panelFormLayout id="pfl1">
+                <af:panelFormLayout id="pfl1" maxColumns="3" rows="5">
                   <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                 required="#{bindings.Address.hints.mandatory}"
                                 columns="#{bindings.Address.hints.displayWidth}"
@@ -188,7 +212,7 @@
                     <f:validator binding="#{bindings.WebsiteAddr.validator}"/>
                   </af:inputText>
                   <af:inputDate value="#{bindings.PassportIssDate.inputValue}"
-                                label="Passport iss Date"
+                                label="Passport issue Date"
                                 required="#{bindings.PassportIssDate.hints.mandatory}"
                                 columns="#{bindings.PassportIssDate.hints.displayWidth}"
                                 shortDesc="#{bindings.PassportIssDate.hints.tooltip}" id="id3">
@@ -206,11 +230,11 @@
                                 label="Passport Expiry Date"
                                 required="#{bindings.PassportExpDate.hints.mandatory}"
                                 columns="#{bindings.PassportExpDate.hints.displayWidth}"
-                                shortDesc="#{bindings.PassportExpDate.hints.tooltip}" id="id4">
+                                shortDesc="#{bindings.PassportExpDate.hints.tooltip}" id="id6">
                     <f:validator binding="#{bindings.PassportExpDate.validator}"/>
                     <af:convertDateTime pattern="#{bindings.PassportExpDate.format}"/>
                   </af:inputDate>
-                  <af:inputText value="#{bindings.BizNature.inputValue}" label="#{bindings.BizNature.hints.label}"
+                  <af:inputText value="#{bindings.BizNature.inputValue}" label="Business Nature"
                                 required="#{bindings.BizNature.hints.mandatory}"
                                 columns="#{bindings.BizNature.hints.displayWidth}"
                                 maximumLength="#{bindings.BizNature.hints.precision}"
@@ -334,14 +358,21 @@
                           queryListener="#{bindings.TblIntlDelegTradeView3Query.processQuery}" varStatus="vs" id="t2">
                   <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.name}"
                              filterable="true" sortable="true"
-                             headerText="Internation Delegation Trade ID" id="c9">
+                             headerText="Internation Delegation Trade ID" id="c9" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegTradeId}"
+                                          id="it41" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.IntlDelegTradeId.inputValue}"
                                   label="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.label}"
                                   required="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.mandatory}"
                                   columns="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.precision}"
                                   shortDesc="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.tooltip}"
-                                  id="it25">
+                                  id="it25" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegTradeId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.format}"/>
@@ -350,6 +381,11 @@
                   <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.name}"
                              filterable="true" sortable="true"
                              headerText="Library Trade Type ID" id="c11">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LibrTradeTypesId}"
+                                          id="it44" placeholder="Search Type">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.LibrTradeTypesId.inputValue}"
                                   label="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.label}"
                                   required="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.mandatory}"
@@ -364,6 +400,11 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c12">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it45" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Ast.inputValue}"
                                   label="#{bindings.TblIntlDelegTradeView3.hints.Ast.label}"
                                   required="#{bindings.TblIntlDelegTradeView3.hints.Ast.mandatory}"
@@ -401,37 +442,51 @@
                   <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.name}"
                              filterable="true" sortable="true"
                              headerText="International Delegation Import ID"
-                             id="c13">
+                             id="c13" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegImportOthId}"
+                                          id="it46" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.IntlDelegImportOthId.inputValue}"
                                   label="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.label}"
                                   required="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.mandatory}"
                                   columns="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.precision}"
                                   shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.tooltip}"
-                                  id="it29">
+                                  id="it29" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegImportOthId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Country ID" id="c15">
-                    <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
-                                  label="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.label}"
-                                  required="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.mandatory}"
-                                  columns="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.tooltip}"
-                                  id="it31">
+                  <af:column headerText="Country" id="c2" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LibrCountryId}"
+                                          id="it31" placeholder="Search Country">
+                           </af:inputText>
+                             </f:facet>
+
+                    <af:selectOneChoice value="#{row.bindings.LibrCountryId.inputValue}"
+                                        label="#{row.bindings.LibrCountryId.label}"
+                                        required="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.LibrCountryId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblIntlDelegImportOthView3.hints.LibrCountryId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.name}"
                              filterable="true" sortable="true"
-                             headerText="Product Import" id="c16">
+                             headerText="Product Import" id="c16" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ProdImport}"
+                                          id="it47" placeholder="Search Product">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.ProdImport.inputValue}"
                                   label="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.label}"
                                   required="#{bindings.TblIntlDelegImportOthView3.hints.ProdImport.mandatory}"
@@ -469,22 +524,34 @@
                   <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.name}"
                              filterable="true" sortable="true"
                              headerText="International Delegation Import Pakistan ID"
-                             id="c17">
+                             id="c17" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegImportPkId}"
+                                          id="it48" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.IntlDelegImportPkId.inputValue}"
                                   label="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.label}"
                                   required="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.mandatory}"
                                   columns="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.precision}"
                                   shortDesc="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.tooltip}"
-                                  id="it33">
+                                  id="it33" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegImportPkId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.name}" filterable="true"
-                             sortable="true" headerText="Product Name"
-                             id="c19">
+                             sortable="true" headerText="Product"
+                             id="c19" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ProdName}"
+                                          id="it49" placeholder="Search Product">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ProdName.inputValue}"
                                   label="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.label}"
                                   required="#{bindings.TblIntlDelegImportPkView3.hints.ProdName.mandatory}"
@@ -496,7 +563,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.Qty.name}" filterable="true"
                              sortable="true" headerText="Quantity"
-                             id="c20">
+                             id="c20" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Qty}"
+                                          id="it50" placeholder="Search Quantity">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Qty.inputValue}"
                                   label="#{bindings.TblIntlDelegImportPkView3.hints.Qty.label}"
                                   required="#{bindings.TblIntlDelegImportPkView3.hints.Qty.mandatory}"
@@ -536,14 +608,22 @@
                   <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.name}"
                              filterable="true" sortable="true"
                              headerText="Internaional Delegation Import International ID"
-                             id="c21">
+                             id="c21" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegImportIntrId}"
+                                          id="it51" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
+
                     <af:inputText value="#{row.bindings.IntlDelegImportIntrId.inputValue}"
                                   label="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.label}"
                                   required="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.mandatory}"
                                   columns="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.precision}"
                                   shortDesc="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.tooltip}"
-                                  id="it37">
+                                  id="it37" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegImportIntrId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.format}"/>
@@ -551,7 +631,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.name}"
                              filterable="true" sortable="true"
-                             headerText="Product Name" id="c23">
+                             headerText="Product" id="c23">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ProdName}"
+                                          id="it52" placeholder="Search Product">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ProdName.inputValue}"
                                   label="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.label}"
                                   required="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.mandatory}"
@@ -587,14 +672,22 @@
                           queryListener="#{bindings.TblIntlDelegAccomView3Query.processQuery}" varStatus="vs" id="t6">
                   <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.name}"
                              filterable="true" sortable="true"
-                             headerText="International Delegation Accomodation ID" id="c24">
+                             headerText="International Delegation Accomodation ID" id="c24" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IntlDelegAccomId}"
+                                          id="it53" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
+
                     <af:inputText value="#{row.bindings.IntlDelegAccomId.inputValue}"
                                   label="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.label}"
                                   required="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.mandatory}"
                                   columns="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.displayWidth}"
                                   maximumLength="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.precision}"
                                   shortDesc="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.tooltip}"
-                                  id="it40">
+                                  id="it40" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.IntlDelegAccomId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.format}"/>
@@ -617,6 +710,13 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.Ast.name}" filterable="true"
                              sortable="true" headerText="Active" id="c27">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it54" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+
+
                     <af:inputText value="#{row.bindings.Ast.inputValue}"
                                   label="#{bindings.TblIntlDelegAccomView3.hints.Ast.label}"
                                   required="#{bindings.TblIntlDelegAccomView3.hints.Ast.mandatory}"
