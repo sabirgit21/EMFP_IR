@@ -31,7 +31,8 @@
                           selectionListener="#{bindings.TblB2bMeetingView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblB2bMeetingView1.rangeSize}"
                           filterModel="#{bindings.TblB2bMeetingView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblB2bMeetingView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblB2bMeetingView1Query.processQuery}" varStatus="vs" 
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.name}" filterable="true"
                              sortable="true" headerText="B2B Meeting ID"
                              id="c1" align="center" width="60">

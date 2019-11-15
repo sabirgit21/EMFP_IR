@@ -31,7 +31,8 @@
                           selectionListener="#{bindings.TblIntlDelegAppMView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegAppMView1.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegAppMView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblIntlDelegAppMView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblIntlDelegAppMView1Query.processQuery}" varStatus="vs" 
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.name}"
                              filterable="true" sortable="true"
                              headerText="Delegation Application Master ID" id="c1" align="center">
@@ -355,7 +356,8 @@
                           selectionListener="#{bindings.TblIntlDelegTradeView3.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegTradeView3.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegTradeView3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblIntlDelegTradeView3Query.processQuery}" varStatus="vs" id="t2">
+                          queryListener="#{bindings.TblIntlDelegTradeView3Query.processQuery}" varStatus="vs" 
+                          id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.name}"
                              filterable="true" sortable="true"
                              headerText="Internation Delegation Trade ID" id="c9" align="center">
@@ -438,7 +440,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportOthView3.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegImportOthView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblIntlDelegImportOthView3Query.processQuery}" varStatus="vs"
-                          id="t3">
+                          id="t3" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegImportOthView3.hints.IntlDelegImportOthId.name}"
                              filterable="true" sortable="true"
                              headerText="International Delegation Import ID"
@@ -520,7 +522,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportPkView3.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegImportPkView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblIntlDelegImportPkView3Query.processQuery}" varStatus="vs"
-                          id="t4">
+                          id="t4" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegImportPkView3.hints.IntlDelegImportPkId.name}"
                              filterable="true" sortable="true"
                              headerText="International Delegation Import Pakistan ID"
@@ -604,7 +606,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegImportIntrView3.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegImportIntrView3Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.TblIntlDelegImportIntrView3Query.processQuery}"
-                          varStatus="vs" id="t5">
+                          varStatus="vs" id="t5" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.IntlDelegImportIntrId.name}"
                              filterable="true" sortable="true"
                              headerText="Internaional Delegation Import International ID"
@@ -631,7 +633,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegImportIntrView3.hints.ProdName.name}"
                              filterable="true" sortable="true"
-                             headerText="Product" id="c23">
+                             headerText="Product" id="c23" width="200">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ProdName}"
                                           id="it52" placeholder="Search Product">
@@ -669,7 +671,8 @@
                           selectionListener="#{bindings.TblIntlDelegAccomView3.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblIntlDelegAccomView3.rangeSize}"
                           filterModel="#{bindings.TblIntlDelegAccomView3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblIntlDelegAccomView3Query.processQuery}" varStatus="vs" id="t6">
+                          queryListener="#{bindings.TblIntlDelegAccomView3Query.processQuery}" varStatus="vs" 
+                          id="t6" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.name}"
                              filterable="true" sortable="true"
                              headerText="International Delegation Accomodation ID" id="c24" align="center">
