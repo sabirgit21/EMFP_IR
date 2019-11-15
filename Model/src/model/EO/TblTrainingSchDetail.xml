@@ -115,6 +115,13 @@
     AssociationOtherEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc1.TblTrainingSchDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblClusterAttMaster"
+    Association="model.EO.FKTblClusterAttMasterFKAssocA"
+    AssociationEnd="model.EO.FKTblClusterAttMasterFKAssocA.TblClusterAttMaster"
+    AssociationOtherEnd="model.EO.FKTblClusterAttMasterFKAssocA.TblTrainingSchDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblTrainingSchDetailPk"
     PrimaryKey="true">

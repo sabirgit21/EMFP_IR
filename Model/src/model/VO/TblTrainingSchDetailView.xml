@@ -87,6 +87,11 @@
     EntityAttrName="Latitude"
     EntityUsage="TblTrainingSchDetail"
     AliasName="LATITUDE"/>
+  <ViewLinkAccessor
+    Name="TblClusterAttMasterView"
+    ViewLink="model.VO.FKTblClusterAttMasterFKLinkA"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="TrainingSchDetailId"

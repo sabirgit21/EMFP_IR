@@ -37,6 +37,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Module_Name_LOV1"
+    ViewObjectName="model.LOV.Module_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_TrainerId"
     ListVOName="Trainer_Name_LOV1"
@@ -79,6 +83,25 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ModuleId"
+    ListVOName="Module_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ModuleId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModuleId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblClusterAttMaster"
     Entity="model.EO.TblClusterAttMaster"/>
@@ -98,6 +121,44 @@
       </AttrArray>
       <AttrArray Name="_dstAttributes">
         <Item Value="model.EO.TblTrainer.TrainerId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchDetail"
+    Entity="model.EO.TblTrainingSchDetail"
+    Association="model.EO.FKTblClusterAttMasterFKAssocA"
+    AssociationEnd="model.EO.FKTblClusterAttMasterFKAssocA.TblTrainingSchDetail"
+    SourceUsage="model.VO.TblClusterAttMasterView.TblClusterAttMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.TrainingSchDetailId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblClusterAttMaster.TrainingSchDetailId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchMaster"
+    Entity="model.EO.TblTrainingSchMaster"
+    Association="model.EO.FkTblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.FkTblTrainingSchDetailFkAssoc.TblTrainingSchMaster"
+    SourceUsage="model.VO.TblClusterAttMasterView.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.TrainingSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.TrainingSchMasterId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -195,6 +256,27 @@
     EntityAttrName="TrainingSchDetailId"
     EntityUsage="TblClusterAttMaster"
     AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ModuleId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblTrainingSchMaster"
+    AliasName="MODULE_ID"
+    LOVName="LOV_ModuleId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TrainingSchMasterId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchMasterId"
+    EntityUsage="TblTrainingSchMaster"
+    AliasName="TRAINING_SCH_MASTER_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="ClusterAttMasterId"/>
   </AttrArray>

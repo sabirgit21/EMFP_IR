@@ -38,7 +38,8 @@ public class TblClusterAttMasterImpl extends EntityImpl {
         TblClusterAttDetail,
         TblCluster,
         TblTrainer,
-        Map_Cluster_Detail;
+        Map_Cluster_Detail,
+        TblTrainingSchDetail;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -80,6 +81,7 @@ public class TblClusterAttMasterImpl extends EntityImpl {
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAINER = AttributesEnum.TblTrainer.index();
     public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
+    public static final int TBLTRAININGSCHDETAIL = AttributesEnum.TblTrainingSchDetail.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -334,6 +336,21 @@ public class TblClusterAttMasterImpl extends EntityImpl {
      */
     public void setMap_Cluster_Detail(EntityImpl value) {
         setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity TblTrainingSchDetailImpl.
+     */
+    public TblTrainingSchDetailImpl getTblTrainingSchDetail() {
+        return (TblTrainingSchDetailImpl) getAttributeInternal(TBLTRAININGSCHDETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity TblTrainingSchDetailImpl.
+     */
+    public void setTblTrainingSchDetail(TblTrainingSchDetailImpl value) {
+        setAttributeInternal(TBLTRAININGSCHDETAIL, value);
     }
 
 

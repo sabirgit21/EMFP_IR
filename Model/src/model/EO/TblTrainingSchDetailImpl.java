@@ -1,5 +1,6 @@
 package model.EO;
 
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
@@ -33,7 +34,8 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
         UpdatedDate,
         TblCluster,
         TblTrainingSchMaster,
-        Map_Cluster_Detail;
+        Map_Cluster_Detail,
+        TblClusterAttMaster;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -71,6 +73,7 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAININGSCHMASTER = AttributesEnum.TblTrainingSchMaster.index();
     public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
+    public static final int TBLCLUSTERATTMASTER = AttributesEnum.TblClusterAttMaster.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -270,6 +273,14 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
      */
     public void setMap_Cluster_Detail(EntityImpl value) {
         setAttributeInternal(MAP_CLUSTER_DETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblClusterAttMaster() {
+        return (RowIterator) getAttributeInternal(TBLCLUSTERATTMASTER);
     }
 
 

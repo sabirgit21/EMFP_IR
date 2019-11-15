@@ -28,6 +28,7 @@
           <Item Value="Trainer_Name"/>
           <Item Value="Latitude"/>
           <Item Value="Longitude"/>
+          <Item Value="ModuleId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
