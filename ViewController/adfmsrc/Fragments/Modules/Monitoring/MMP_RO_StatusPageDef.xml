@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGrantApprovalMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
               id="TblGrantApprovalMasterView1Iterator" Refresh="ifNeeded"/>
     <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
               Refresh="ifNeeded"/>
