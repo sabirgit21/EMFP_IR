@@ -1,5 +1,12 @@
 package view.report;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+import java.util.Locale;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -15,6 +22,8 @@ public class cluster_att_report {
     private static String gotCluster = "";
     private static String gotTrainer = "";
     private static String gotFarmer = "";
+    private static String gotFromDate = "";
+    private static String gotToDate = "";
     private static String gotCity = "";
     private static String gotModule = "";
     
@@ -33,6 +42,8 @@ public class cluster_att_report {
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
         reportBean.setReportParameter("P_Module_id", gotModule);
         reportBean.setReportParameter("P_Farmer_reg_id", gotFarmer);
+        reportBean.setReportParameter("P_Fdated", gotFromDate);
+        reportBean.setReportParameter("P_Tdated", gotToDate);
         reportBean.setReportParameter("P_City_id", gotCity);
 
 
@@ -140,6 +151,38 @@ public class cluster_att_report {
         // Add event code here...
         gotCity = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected City is : " + gotCity);
+    }
+
+    public void get_from_date(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotFromDate = (valueChangeEvent.getNewValue()).toString();
+        
+        try {
+            DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+            Date parsedDate = sdf.parse(gotFromDate);
+            SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+            gotFromDate = (print.format(parsedDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Selected From Date is : " + gotFromDate);
+    }
+
+    public void get_to_date(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotToDate = (valueChangeEvent.getNewValue()).toString();
+        
+        try {
+            DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+            Date parsedDate = sdf.parse(gotToDate);
+            SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+            gotToDate = (print.format(parsedDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Selected To Date is : " + gotToDate);
     }
 
     public void get_format_type(ValueChangeEvent valueChangeEvent) {

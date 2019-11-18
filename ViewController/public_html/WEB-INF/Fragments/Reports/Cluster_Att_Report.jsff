@@ -35,6 +35,14 @@
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
+                         <af:inputDate label="From date:" id="id1" autoSubmit="true"
+                                       valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}">
+                             
+                            </af:inputDate> 
+                            <af:inputDate label="To date:" id="id2" autoSubmit="true"
+                                          valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}">
+                             
+                            </af:inputDate>
                             <af:selectOneChoice label="#{bindings.CityLibrDetail.label}" autoSubmit="true"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_city}">
