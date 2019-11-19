@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Expo_PromotionPageDef"
+                Package="Fragments.Modules.Marketing">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblExpoPromSetupView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoPromSetupView1Iterator"/>
+    <searchRegion Binds="TblExpoPromSetupView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoPromSetupView1Query"/>
+    <iterator Binds="TblExpoPromDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoPromDetailView3Iterator"/>
+    <searchRegion Binds="TblExpoPromDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoPromDetailView3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblExpoPromSetupView1Iterator" id="TblExpoPromSetupView1">
+      <nodeDefinition DefName="model.VO.TblExpoPromSetupView" Name="TblExpoPromSetupView10">
+        <AttrNames>
+          <Item Value="ExpoSchId"/>
+          <Item Value="ExpoPromSetupId"/>
+          <Item Value="FDate"/>
+          <Item Value="TDate"/>
+          <Item Value="NoOfDays"/>
+          <Item Value="ExpoSetupVenue"/>
+          <Item Value="STime"/>
+          <Item Value="ETime"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblExpoPromSetupView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblExpoPromSetupView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblExpoPromSetupView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="TblExpoPromDetailView3Iterator" id="TblExpoPromDetailView3">
+      <nodeDefinition DefName="model.VO.TblExpoPromDetailView" Name="TblExpoPromDetailView30">
+        <AttrNames>
+          <Item Value="ExpoPromDetailId"/>
+          <Item Value="ExpoPromSetupId"/>
+          <Item Value="StallArea"/>
+          <Item Value="AreaRate"/>
+          <Item Value="StallAmount"/>
+          <Item Value="TastingAmt"/>
+          <Item Value="SalesAmt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblExpoPromDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblExpoPromDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblExpoPromDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

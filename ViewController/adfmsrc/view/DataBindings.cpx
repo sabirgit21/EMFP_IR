@@ -192,6 +192,9 @@
         <page path="/Main_Pages/Modules/Infrastructure/Infrastructure.jsf" usageId="view_InfrastructurePageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Infrastructure/Infrastructure.jsff"
               usageId="view_InfrastructurePageDef1"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Expo_Promotion_TaskFlow.xml#Expo_Promotion_TaskFlow@ExecuteWithParams"
+              usageId="view_Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Expo_Promotion.jsff" usageId="view_Expo_PromotionPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -373,6 +376,9 @@
         <page id="view_B2B_MeetingPageDef" path="Fragments.Modules.Marketing.B2B_MeetingPageDef"/>
         <page id="view_InfrastructurePageDef" path="Main_Pages.Modules.Infrastructure.InfrastructurePageDef"/>
         <page id="view_InfrastructurePageDef1" path="Fragments.Modules.Infrastructure.InfrastructurePageDef"/>
+        <page id="view_Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Expo_PromotionPageDef" path="Fragments.Modules.Marketing.Expo_PromotionPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

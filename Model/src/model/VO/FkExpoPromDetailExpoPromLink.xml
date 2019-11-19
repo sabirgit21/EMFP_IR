@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkExpoPromDetailExpoPromLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkExpoPromDetailExpoPromAssoc">
+  <ViewLinkDefEnd
+    Name="TblExpoPromSetupView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblExpoPromSetupView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TblExpoPromSetupView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblExpoPromSetupView.ExpoPromSetupId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblExpoPromDetailView"
+    Cardinality="1"
+    Owner="model.VO.TblExpoPromDetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblExpoPromDetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblExpoPromDetailView.ExpoPromSetupId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

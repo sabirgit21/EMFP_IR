@@ -1439,6 +1439,24 @@
   <ViewUsage
     Name="TblClusterAttMasterView8"
     ViewObjectName="model.VO.TblClusterAttMasterView"/>
+  <ViewUsage
+    Name="TblExpoPromDetailView1"
+    ViewObjectName="model.VO.TblExpoPromDetailView"/>
+  <ViewUsage
+    Name="TblExpoPromSetupView1"
+    ViewObjectName="model.VO.TblExpoPromSetupView"/>
+  <ViewUsage
+    Name="TblExpoPromSetupView2"
+    ViewObjectName="model.queryBasedVO.TblExpoPromSetupView"/>
+  <ViewUsage
+    Name="TblExpoPromDetailView2"
+    ViewObjectName="model.queryBasedVO.TblExpoPromDetailView"/>
+  <ViewUsage
+    Name="TblExpoPromDetailView3"
+    ViewObjectName="model.VO.TblExpoPromDetailView"/>
+  <ViewUsage
+    Name="TblExpoPromDetailView4"
+    ViewObjectName="model.queryBasedVO.TblExpoPromDetailView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2824,5 +2842,17 @@
     ViewLinkObjectName="model.VO.FKTblClusterAttMasterFKLinkA"
     SrcViewUsageName="model.AppModule.TblTrainingSchDetailView1"
     DstViewUsageName="model.AppModule.TblClusterAttMasterView8"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkExpoPromDetailExpoPromLink1"
+    ViewLinkObjectName="model.VO.FkExpoPromDetailExpoPromLink"
+    SrcViewUsageName="model.AppModule.TblExpoPromSetupView1"
+    DstViewUsageName="model.AppModule.TblExpoPromDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkExpoPromDetailExpoPromLink2"
+    ViewLinkObjectName="model.queryBasedVO.FkExpoPromDetailExpoPromLink"
+    SrcViewUsageName="model.AppModule.TblExpoPromSetupView2"
+    DstViewUsageName="model.AppModule.TblExpoPromDetailView4"
     Reversed="false"/>
 </AppModule>
