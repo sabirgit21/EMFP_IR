@@ -68,6 +68,12 @@ public class cluster_att_report {
 
                 System.out.println("att detail city wise");
                 break;
+            case "attDetailDistrictWise":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_District_Wise&");
+
+                System.out.println("att detail city wise");
+                break;
             case "attDetaiClusterlWise":
 
                 reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");

@@ -76,10 +76,11 @@
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_report_type}">
                                 <af:selectItem label="Cluster Attendance Detail" value="attDetailWise" id="si10"/>
                                 <af:selectItem label="Cluster Attendance Detail City Wise" value="attDetailCityWise" id="si8"/>
+                                <af:selectItem label="Cluster Attendance Detail District Wise" value="attDetailDistrictWise" id="si11"/>
                                 <af:selectItem label="Cluster Attendance Detail Cluster Wise" value="attDetaiClusterlWise" id="si7"/>
                                 <af:selectItem label="Cluster Attendance Detail Farmer Wise" value="attDetailFarmerWise" id="si9"/>
                                 <af:selectItem label="Cluster Attendance Detail Trainer Wise" value="attDetailTrainerWise"
-                                               id="si11"/>
+                                               id="si15"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
