@@ -35,7 +35,20 @@
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
-                         <af:inputDate label="From date:" id="id1" autoSubmit="true"
+                        <af:selectOneChoice shortDesc="#{bindings.CropId.hints.tooltip}" id="soc8" 
+                        label="Select Crop :" autoSubmit="true"
+                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_crop}">
+                            <f:selectItems value="#{bindings.CropId.items}" id="si13"/>
+                            <f:validator binding="#{bindings.CropId.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice label="Select District :" autoSubmit="true"
+                        
+                                            shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" id="soc9"
+                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_district}">
+                            <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si14"/>
+                            <f:validator binding="#{bindings.DistrictLibrDetail.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputDate label="From date:" id="id1" autoSubmit="true"
                                        valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}">
                              
                             </af:inputDate> 

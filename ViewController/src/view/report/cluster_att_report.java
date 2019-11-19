@@ -25,6 +25,8 @@ public class cluster_att_report {
     private static String gotFromDate = "";
     private static String gotToDate = "";
     private static String gotCity = "";
+    private static String gotCrop = "";
+    private static String gotDistrict = "";
     private static String gotModule = "";
     
 
@@ -45,6 +47,8 @@ public class cluster_att_report {
         reportBean.setReportParameter("P_Fdated", gotFromDate);
         reportBean.setReportParameter("P_Tdated", gotToDate);
         reportBean.setReportParameter("P_City_id", gotCity);
+        reportBean.setReportParameter("P_Crop_id", gotCrop);
+        reportBean.setReportParameter("P_District_id", gotDistrict);
 
 
         if (gotFormat == "") {
@@ -151,6 +155,18 @@ public class cluster_att_report {
         // Add event code here...
         gotCity = (valueChangeEvent.getNewValue()).toString();
         System.out.println("Selected City is : " + gotCity);
+    }
+
+    public void get_selected_crop(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotCrop = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected Crop is : " + gotCrop);
+    }
+
+    public void get_selected_district(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        gotDistrict = (valueChangeEvent.getNewValue()).toString();
+        System.out.println("Selected District is : " + gotDistrict);
     }
 
     public void get_from_date(ValueChangeEvent valueChangeEvent) {

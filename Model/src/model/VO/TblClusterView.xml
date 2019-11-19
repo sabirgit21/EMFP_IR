@@ -262,8 +262,9 @@
     Name="LOV_DistrictLibrDetail"
     ListVOName="District_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="DistrictLibrDetail"/>
     </AttrArray>

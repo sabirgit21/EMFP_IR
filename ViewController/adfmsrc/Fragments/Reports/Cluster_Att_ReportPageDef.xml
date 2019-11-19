@@ -23,5 +23,9 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="TblTrainingSchMasterView1Iterator" StaticList="false" Uses="LOV_ModuleId" id="ModuleId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_CropId" id="CropId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_DistrictLibrDetail"
+          id="DistrictLibrDetail" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
