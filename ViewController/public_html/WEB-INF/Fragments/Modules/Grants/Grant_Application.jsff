@@ -36,9 +36,9 @@
                                           filterModel="#{bindings.TblGrantAppMasterView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantAppMasterView1Query.processQuery}"
-                                          varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4">
+                                          varStatus="vs" id="t1" partialTriggers="" scrollPolicy="page" autoHeightRows="0">
                                     <af:column headerText="Date"
-                                               id="c1" width="135">
+                                               id="c1" width="150" sortable="true" filterable="true">
                                         <af:inputDate value="#{row.bindings.Dated.inputValue}"
                                                       label="#{bindings.TblGrantAppMasterView1.hints.Dated.label}"
                                                       required="#{bindings.TblGrantAppMasterView1.hints.Dated.mandatory}"
@@ -52,7 +52,13 @@
                                     <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.PhaseId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Phase"
-                                               id="c2" width="127">
+                                               id="c2" width="150">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.PhaseId}"
+                                          id="id4" placeholder="Search Phase">
+                           </af:inputText>
+                             </f:facet>
+
                                         <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" autoSubmit="true"
                                                             label="#{row.bindings.PhaseId.label}"
                                                             required="#{bindings.TblGrantAppMasterView1.hints.PhaseId.mandatory}"
@@ -65,7 +71,12 @@
                                     <af:column sortProperty="#{bindings.TblGrantAppMasterView1.hints.ClusterId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Cluster"
-                                               id="c3" width="108">
+                                               id="c3" width="150">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                          id="it1" placeholder="Search Cluster">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                             label="#{row.bindings.ClusterId.label}"
                                                             required="#{bindings.TblGrantAppMasterView1.hints.ClusterId.mandatory}"
@@ -130,25 +141,35 @@
                                           filterModel="#{bindings.TblGrantAppDetailView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantAppDetailView3Query.processQuery}"
-                                          varStatus="vs" id="t2">
+                                          varStatus="vs" id="t2" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.name}"
                                                filterable="true" sortable="true"
                                                headerText="Farmer No."
-                                               id="c4" width="148">
+                                               id="c4" width="150" align="center">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it6" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.mandatory}"
                                                       columns="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.displayWidth}"
                                                       maximumLength="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.precision}"
                                                       shortDesc="#{bindings.TblGrantAppDetailView3.hints.FarmerNo.tooltip}"
-                                                      id="it2">
+                                                      id="it2" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantAppDetailView3.hints.Name.label}" id="c5"
-                                               width="150">
+                                               headerText="Farmer" id="c5"
+                                               width="170">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it7" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.Name.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.Name.mandatory}"
@@ -161,8 +182,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.FatherName.name}"
                                                filterable="true" sortable="true"
-                                               headerText="Father Name"
-                                               id="c6" width="151">
+                                               headerText="Father"
+                                               id="c6" width="170">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FatherName}"
+                                          id="it8" placeholder="Search Father">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.FatherName.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.FatherName.mandatory}"
@@ -175,14 +201,20 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantAppDetailView3.hints.Cnic.name}"
                                                filterable="true" sortable="true"
-                                               headerText="CNIC" id="c7" width="147">
+                                               headerText="CNIC" id="c7" width="150" align="center">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it9" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                                       label="#{bindings.TblGrantAppDetailView3.hints.Cnic.label}"
                                                       required="#{bindings.TblGrantAppDetailView3.hints.Cnic.mandatory}"
                                                       columns="#{bindings.TblGrantAppDetailView3.hints.Cnic.displayWidth}"
                                                       maximumLength="#{bindings.TblGrantAppDetailView3.hints.Cnic.precision}"
                                                       shortDesc="#{bindings.TblGrantAppDetailView3.hints.Cnic.tooltip}"
-                                                      id="it5">
+                                                      id="it5" contentStyle='text-align: center'>
+                                            <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                                             <f:validator binding="#{row.bindings.Cnic.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -190,6 +222,11 @@
                                                filterable="true" sortable="true"
                                                headerText="Grant Status"
                                                id="c8" width="132">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GrantStatus}"
+                                          id="it10" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.GrantStatus.inputValue}"
                                                             label="#{row.bindings.GrantStatus.label}"
                                                             required="#{bindings.TblGrantAppDetailView3.hints.GrantStatus.mandatory}"
@@ -203,6 +240,11 @@
                                                filterable="true" sortable="true"
                                                headerText="Grant Interest"
                                                id="c9" width="139">
+                                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GrantInterest}"
+                                          id="it11" placeholder="Search Grant Interest">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.GrantInterest.inputValue}"
                                                             label="#{row.bindings.GrantInterest.label}"
                                                             required="#{bindings.TblGrantAppDetailView3.hints.GrantInterest.mandatory}"

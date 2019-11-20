@@ -4,11 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGrantAppMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantAppMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantAppMasterView1Iterator"/>
     <searchRegion Binds="TblGrantAppMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantAppMasterView1Query"/>
-    <iterator Binds="TblGrantAppDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantAppDetailView3" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantAppDetailView3Iterator"/>
     <searchRegion Binds="TblGrantAppDetailView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantAppDetailView3Query"/>
