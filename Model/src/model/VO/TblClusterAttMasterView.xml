@@ -45,9 +45,9 @@
     Name="LOV_TrainerId"
     ListVOName="Trainer_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="TrainerId"/>
     </AttrArray>
@@ -64,9 +64,9 @@
     Name="LOV_ClusterId"
     ListVOName="Training_Schd_Detail_Dated_Cluster1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="ClusterId"/>
     </AttrArray>
@@ -87,8 +87,8 @@
     Name="LOV_ModuleId"
     ListVOName="Module_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
+    
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ModuleId"/>

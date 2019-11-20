@@ -56,9 +56,9 @@
     Name="LOV_PhaseId"
     ListVOName="Phase_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="PhaseId"/>
     </AttrArray>
@@ -75,9 +75,9 @@
     Name="LOV_ClusterId"
     ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="ClusterId"/>
     </AttrArray>

@@ -9,26 +9,27 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                        <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:selectOneChoice label="#{bindings.ModuleId.label}" autoSubmit="true"
+                            unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.ModuleId.hints.tooltip}" id="soc7"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_module}">
                                 <f:selectItems value="#{bindings.ModuleId.items}" id="si12"/>
                                 <f:validator binding="#{bindings.ModuleId.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice label="#{bindings.ClusterId.label}" autoSubmit="true"
+                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:selectOneChoice label="#{bindings.ClusterId.label}" autoSubmit="true" unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc1"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_cluster}">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice label="#{bindings.TrainerId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="#{bindings.TrainerId.label}" autoSubmit="true" unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.TrainerId.hints.tooltip}" id="soc2"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_trainer}">
                                 <f:selectItems value="#{bindings.TrainerId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.TrainerId.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice label="#{bindings.FarmerRegId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="#{bindings.FarmerRegId.label}" autoSubmit="true" unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="soc3"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_farmer}">
                                 <f:selectItems value="#{bindings.FarmerRegId.items}" id="si3"/>
@@ -36,12 +37,12 @@
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:selectOneChoice shortDesc="#{bindings.CropId.hints.tooltip}" id="soc8" 
-                        label="Select Crop :" autoSubmit="true"
+                        label="Select Crop :" autoSubmit="true" unselectedLabel="---Not Selected---"
                                             valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_crop}">
                             <f:selectItems value="#{bindings.CropId.items}" id="si13"/>
                             <f:validator binding="#{bindings.CropId.validator}"/>
                         </af:selectOneChoice>
-                        <af:selectOneChoice label="Select District :" autoSubmit="true"
+                        <af:selectOneChoice label="Select District :" autoSubmit="true" unselectedLabel="---Not Selected---"
                                             shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" id="soc9"
                                             valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_district}">
                             <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si14"/>
@@ -53,7 +54,7 @@
                             <af:inputDate label="To date:" id="id2" autoSubmit="true"
                                           valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}">
                             </af:inputDate>
-                            <af:selectOneChoice label="#{bindings.CityLibrDetail.label}" autoSubmit="true"
+                            <af:selectOneChoice label="#{bindings.CityLibrDetail.label}" autoSubmit="true" unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_city}">
                                 <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si4"/>

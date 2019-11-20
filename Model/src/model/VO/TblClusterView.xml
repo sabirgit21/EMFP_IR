@@ -205,9 +205,9 @@
     Name="LOV_CropId"
     ListVOName="Crops_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="CropId"/>
     </AttrArray>
@@ -224,9 +224,9 @@
     Name="LOV_PhaseId"
     ListVOName="Phase_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="PhaseId"/>
     </AttrArray>
@@ -243,9 +243,9 @@
     Name="LOV_CityLibrDetail"
     ListVOName="City_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="CityLibrDetail"/>
     </AttrArray>
@@ -262,9 +262,9 @@
     Name="LOV_DistrictLibrDetail"
     ListVOName="District_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="DistrictLibrDetail"/>
     </AttrArray>

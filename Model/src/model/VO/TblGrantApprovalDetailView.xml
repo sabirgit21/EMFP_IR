@@ -131,9 +131,9 @@
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_No_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="start"
+    NullValueFlag="none"
     MRUCount="0"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    >
     <AttrArray Name="AttrNames">
       <Item Value="FarmerRegId"/>
     </AttrArray>
