@@ -42,7 +42,6 @@
                             <f:validator binding="#{bindings.CropId.validator}"/>
                         </af:selectOneChoice>
                         <af:selectOneChoice label="Select District :" autoSubmit="true"
-                        
                                             shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" id="soc9"
                                             valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_district}">
                             <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si14"/>
@@ -50,11 +49,9 @@
                         </af:selectOneChoice>
                         <af:inputDate label="From date:" id="id1" autoSubmit="true"
                                        valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}">
-                             
                             </af:inputDate> 
                             <af:inputDate label="To date:" id="id2" autoSubmit="true"
                                           valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}">
-                             
                             </af:inputDate>
                             <af:selectOneChoice label="#{bindings.CityLibrDetail.label}" autoSubmit="true"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
