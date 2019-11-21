@@ -195,6 +195,18 @@
         <page path="/WEB-INF/Task_Flows/Modules/Marketing/Expo_Promotion_TaskFlow.xml#Expo_Promotion_TaskFlow@ExecuteWithParams"
               usageId="view_Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Marketing/Expo_Promotion.jsff" usageId="view_Expo_PromotionPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Certification_Disburse_TaskFlow.xml#Certification_Disburse_TaskFlow@ExecuteWithParams"
+              usageId="view_Certification_Disburse_TaskFlow_Certification_Disburse_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Certification_Approval_TaskFlow.xml#Certification_Approval_TaskFlow@ExecuteWithParams"
+              usageId="view_Certification_Approval_TaskFlow_Certification_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Certification_Application_TaskFlow.xml#Certification_Application_TaskFlow@ExecuteWithParams"
+              usageId="view_Certification_Application_TaskFlow_Certification_Application_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Application.jsff"
+              usageId="view_Certification_ApplicationPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Approval.jsff"
+              usageId="view_Certification_ApprovalPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Disburse.jsff"
+              usageId="view_Certification_DisbursePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -379,6 +391,18 @@
         <page id="view_Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Marketing.Expo_Promotion_TaskFlow_Expo_Promotion_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Expo_PromotionPageDef" path="Fragments.Modules.Marketing.Expo_PromotionPageDef"/>
+        <page id="view_Certification_Disburse_TaskFlow_Certification_Disburse_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Certification_Disburse_TaskFlow_Certification_Disburse_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Certification_Approval_TaskFlow_Certification_Approval_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Certification_Approval_TaskFlow_Certification_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Certification_Application_TaskFlow_Certification_Application_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Certification_Application_TaskFlow_Certification_Application_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Certification_ApplicationPageDef"
+              path="Fragments.Modules.Certification.Certification_ApplicationPageDef"/>
+        <page id="view_Certification_ApprovalPageDef"
+              path="Fragments.Modules.Certification.Certification_ApprovalPageDef"/>
+        <page id="view_Certification_DisbursePageDef"
+              path="Fragments.Modules.Certification.Certification_DisbursePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
