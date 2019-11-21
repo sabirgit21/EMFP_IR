@@ -11,8 +11,8 @@ public class Grant_Approval_Report {
     private static String gotPhase = "";
     private static String gotCluster = "";
     private static String gotFarmer = "";
-    private static String selectedReportType;
-    private static String selectedgrantType;
+    private static String selectedReportType = "";
+    private static String selectedgrantType = "";
     private static String gotFormat = "";
 
     public Grant_Approval_Report() {

@@ -12,7 +12,7 @@ public class cluster_detail_report {
     private static String gotPhase = "";
     private static String gotCrop = "";
     private static String gotCity = "";
-    private static String selectedReportType;
+    private static String selectedReportType = "";
     private static String gotFormat = "";
 
 

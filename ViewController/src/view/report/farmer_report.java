@@ -14,7 +14,7 @@ public class farmer_report {
     private static String gotCity = "";
     private static String gotCrop = "";
     private static String gotPhase = "";
-    private static String selectedReportType;
+    private static String selectedReportType = "";
     private static String gotFormat = "";
 
 
