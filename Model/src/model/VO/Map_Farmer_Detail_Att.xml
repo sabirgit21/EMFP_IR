@@ -40,28 +40,27 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT Map_Farmer_Detail.FARMER_REG_ID,  
-       Map_Farmer_Detail.NAME,  
-       CATT.AST, 
-       Map_Farmer_Detail.FATHER_NAME,  
-       Map_Farmer_Detail.CLUSTER_ID,  
-       Map_Farmer_Detail.BENEFICIARY_ID,  
-       Map_Farmer_Detail.CNIC,  
-       Map_Farmer_Detail.MOBILE,  
-       Map_Farmer_Detail.FARMER_NO,  
-       TblFarmerRegLand.LAND_ACRE,  
-       TblFarmerRegLand.LAND_UNDER_ORCH,  
-       TblFarmerRegLand.FARMER_REG_LAND_ID 
-FROM  TBL_FARMER_REG Map_Farmer_Detail, TBL_FARMER_REG_LAND TblFarmerRegLand, 
- 
-(Select Distinct CAD.farmer_reg_id,CAD.AST,CAM.Cluster_ID from tbl_cluster_att_detail CAD,tbl_cluster_att_Master CAM 
-Where cad.cluster_att_master_id= cam.cluster_att_master_id 
-And cam.dated= '20-Nov-19') CATT 
- 
-where Map_Farmer_Detail.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID 
-And Catt.Farmer_Reg_Id=Map_Farmer_Detail.FARMER_REG_ID 
-And Catt.Cluster_ID=Map_Farmer_Detail.Cluster_ID 
-And Map_Farmer_Detail.Cluster_ID=587]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT Map_Farmer_Detail.FARMER_REG_ID,     
+       Map_Farmer_Detail.NAME,     
+       CATT.AST,    
+       Map_Farmer_Detail.FATHER_NAME,     
+       Map_Farmer_Detail.CLUSTER_ID,     
+       Map_Farmer_Detail.BENEFICIARY_ID,     
+       Map_Farmer_Detail.CNIC,     
+       Map_Farmer_Detail.MOBILE,     
+       Map_Farmer_Detail.FARMER_NO,     
+       TblFarmerRegLand.LAND_ACRE,     
+       TblFarmerRegLand.LAND_UNDER_ORCH,     
+       TblFarmerRegLand.FARMER_REG_LAND_ID    
+FROM  TBL_FARMER_REG Map_Farmer_Detail, TBL_FARMER_REG_LAND TblFarmerRegLand,    
+    
+(Select Distinct CAD.farmer_reg_id,CAD.AST,CAM.Cluster_ID from tbl_cluster_att_detail CAD,tbl_cluster_att_Master CAM    
+Where cad.cluster_att_master_id= cam.cluster_att_master_id    
+And TRUNC(cam.dated)=  TRUNC(SYSDATE)) CATT    
+    
+where Map_Farmer_Detail.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID    
+And Catt.Farmer_Reg_Id=Map_Farmer_Detail.FARMER_REG_ID    
+And Catt.Cluster_ID=Map_Farmer_Detail.Cluster_ID]]></SQLQuery>
   <ViewAttribute
     Name="FarmerRegId"
     IsUpdateable="false"
