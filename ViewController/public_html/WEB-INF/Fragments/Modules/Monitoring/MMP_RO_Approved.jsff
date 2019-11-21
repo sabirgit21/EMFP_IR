@@ -107,7 +107,7 @@
                           rowSelection="single" fetchSize="#{bindings.MMP_RO_Status_Grant_Land2.rangeSize}"
                           filterModel="#{bindings.MMP_RO_Status_Grant_Land2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MMP_RO_Status_Grant_Land2Query.processQuery}" varStatus="vs"
-                          id="t2" partialTriggers="::b3">
+                          id="t2">
                   <af:column sortProperty="#{bindings.MMP_RO_Status_Grant_Land2.hints.Cnic.name}" filterable="true"
                              sortable="true" headerText="CNIC"
                              id="c12" width="147">
@@ -216,7 +216,7 @@
                           filterModel="#{bindings.TblGrantApprovalDetailDView5Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblGrantApprovalDetailDView5Query.processQuery}" varStatus="vs"
-                          id="t3" partialTriggers="::b4">
+                          id="t3">
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView5.hints.ItemL4Id.name}"
                              filterable="true" sortable="true"
                              headerText="Farm Machinery" id="c15" width="341">
