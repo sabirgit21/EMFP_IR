@@ -1457,6 +1457,12 @@
   <ViewUsage
     Name="TblExpoPromDetailView4"
     ViewObjectName="model.queryBasedVO.TblExpoPromDetailView"/>
+  <ViewUsage
+    Name="Map_Farmer_Detail_Att1"
+    ViewObjectName="model.VO.Map_Farmer_Detail_Att"/>
+  <ViewUsage
+    Name="Map_Farmer_Detail_Att2"
+    ViewObjectName="model.VO.Map_Farmer_Detail_Att"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -2854,5 +2860,11 @@
     ViewLinkObjectName="model.queryBasedVO.FkExpoPromDetailExpoPromLink"
     SrcViewUsageName="model.AppModule.TblExpoPromSetupView2"
     DstViewUsageName="model.AppModule.TblExpoPromDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKMapFarmerDetailAttFKLink1"
+    ViewLinkObjectName="model.VO.FKMapFarmerDetailAttFKLink"
+    SrcViewUsageName="model.AppModule.Map_Cluster_DetailView1"
+    DstViewUsageName="model.AppModule.Map_Farmer_Detail_Att2"
     Reversed="false"/>
 </AppModule>

@@ -9,10 +9,10 @@
               id="Map_Sch_Detail_Att_Master1Iterator" CacheResults="false"/>
     <iterator Binds="Map_Cluster_DetailView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="Map_Cluster_DetailView1Iterator"/>
-    <iterator Binds="Map_Farmer_DetailView11" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Map_Farmer_DetailView11Iterator"/>
-    <searchRegion Binds="Map_Farmer_DetailView11Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Map_Farmer_DetailView11Query"/>
+    <iterator Binds="Map_Farmer_Detail_Att2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Map_Farmer_Detail_Att2Iterator"/>
+    <searchRegion Binds="Map_Farmer_Detail_Att2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Map_Farmer_Detail_Att2Query"/>
   </executables>
   <bindings>
     
@@ -33,12 +33,13 @@
         <Item Value="ClusterNo"/>
       </AttrNames>
     </list>
-    <tree IterBinding="Map_Farmer_DetailView11Iterator" id="Map_Farmer_DetailView11">
-      <nodeDefinition DefName="model.VO.Map_Farmer_DetailView" Name="Map_Farmer_DetailView110">
+    <tree IterBinding="Map_Farmer_Detail_Att2Iterator" id="Map_Farmer_Detail_Att2">
+      <nodeDefinition DefName="model.VO.Map_Farmer_Detail_Att" Name="Map_Farmer_Detail_Att20">
         <AttrNames>
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
           <Item Value="FatherName"/>
+          <Item Value="Ast"/>
           <Item Value="Cnic"/>
           <Item Value="Mobile"/>
           <Item Value="LandUnderOrch"/>

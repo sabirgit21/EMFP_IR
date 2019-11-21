@@ -125,4 +125,9 @@ AND TRUNC(TblTrainingSchDetail.DATED_D)= TRUNC(SYSDATE)">
     ViewLink="model.VO.FKMapFarmerFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Map_Farmer_Detail_Att"
+    ViewLink="model.VO.FKMapFarmerDetailAttFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
