@@ -625,6 +625,11 @@
                                     </af:column>
                                     <af:column headerText="Grant Bases"
                                                id="c41" sortable="true" filterable="true" width="120" align="center">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GrantBase}"
+                                          id="it59" placeholder="Search Grant Bases">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.GrantBase.mandatory}"
@@ -637,6 +642,11 @@
                                     </af:column>
                                     <af:column headerText="Ro Status"
                                                id="c26" align="center" sortable="true" filterable="true" width="120">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoStatus}"
+                                          id="it60" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.RoStatus.inputValue}"
                                                             label="#{row.bindings.RoStatus.label}"
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.RoStatus.mandatory}"
@@ -647,7 +657,12 @@
                                         </af:selectOneChoice>
                                     </af:column>
                                     <af:column headerText="Old Ro Number"
-                                               id="c40">
+                                               id="c40" align="center" sortable="true" filterable="true">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.OldRoNumber}"
+                                          id="it61" placeholder="Search  Status">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.OldRoNumber.inputValue}" 
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.OldRoNumber.mandatory}"
@@ -658,8 +673,13 @@
                                             <f:validator binding="#{row.bindings.OldRoNumber.validator}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
-                                               id="c27">
+                                    <af:column headerText="RO Number"
+                                               id="c27" align="center" sortable="true" filterable="true">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoNumber}"
+                                          id="it62" placeholder="Search  RO Number">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.RoNumber.inputValue}"
                                                       label="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.label}"
                                                       required="#{bindings.TblGrantApprovalDetailView4.hints.RoNumber.mandatory}"
@@ -671,7 +691,12 @@
                                         </af:inputText>
                                     </af:column>
                                     <af:column headerText="Disburse Status"
-                                               id="c28">
+                                               id="c28" sortable="true" filterable="true" align="center">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.DisburseStatus}"
+                                          id="it63" placeholder="Search  Status">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.DisburseStatus.inputValue}"
                                                             label="#{row.bindings.DisburseStatus.label}" 
                                                             required="#{bindings.TblGrantApprovalDetailView4.hints.DisburseStatus.mandatory}"
@@ -724,11 +749,11 @@
                                           filterModel="#{bindings.Grant_Approval_Detail_NtIntr2Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.Grant_Approval_Detail_NtIntr2Query.processQuery}"
-                                          varStatus="vs" id="t5">
+                                          varStatus="vs" id="t5" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.label}"
-                                               id="c42">
+                                               headerText="Farmer No."
+                                               id="c42" align="center">
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.mandatory}"
