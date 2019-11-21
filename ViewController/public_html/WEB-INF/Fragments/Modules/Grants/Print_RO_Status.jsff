@@ -37,6 +37,7 @@
                              filterable="true" sortable="true"
                              headerText="#{bindings.Print_RO_Status1.hints.GrantApprovalDetailId.label}" id="c1">
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    readOnly="true"
                                   label="#{bindings.Print_RO_Status1.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Print_RO_Status1.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.Print_RO_Status1.hints.GrantApprovalDetailId.displayWidth}"

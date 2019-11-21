@@ -6,8 +6,6 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
               id="TblGrantApprovalMasterView1Iterator" Refresh="ifNeeded"/>
-    <iterator Binds="MMP_RO_Approval1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Approval1Iterator"
-              Refresh="always" CacheResults="false"/>
     <iterator Binds="MMP_RO_Status_Grant_Land2" RangeSize="25" DataControl="AppModuleDataControl"
               id="MMP_RO_Status_Grant_Land2Iterator" Refresh="ifNeeded"/>
     <searchRegion Binds="MMP_RO_Status_Grant_Land2Iterator" Criteria=""
@@ -17,6 +15,9 @@
     <searchRegion Binds="TblGrantApprovalDetailDView5Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView5Query"/>
+    <iterator Binds="MMP_RO_Approval1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Approval1Iterator"/>
+    <searchRegion Binds="MMP_RO_Approval1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Approval1Query"/>
   </executables>
   <bindings>
     <list IterBinding="TblGrantApprovalMasterView1Iterator" ListOperMode="navigation"
@@ -26,25 +27,6 @@
         <Item Value="ClusterNo"/>
       </AttrNames>
     </list>
-    <tree IterBinding="MMP_RO_Approval1Iterator" id="MMP_RO_Approval1">
-      <nodeDefinition DefName="model.VO.MMP_RO_Approval" Name="MMP_RO_Approval10">
-        <AttrNames>
-          <Item Value="GrantApprovalDetailId"/>
-          <Item Value="Name"/>
-          <Item Value="FarmerNo"/>
-          <Item Value="RoStatus" Binds="RoStatus"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <button IterBinding="MMP_RO_Approval1Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
-      <AttrNames>
-        <Item Value="RoStatus"/>
-      </AttrNames>
-      <ValueList>
-        <Item Value="mmp appr"/>
-        <Item Value="mmp ver"/>
-      </ValueList>
-    </button>
     <tree IterBinding="MMP_RO_Status_Grant_Land2Iterator" id="MMP_RO_Status_Grant_Land2">
       <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land20">
         <AttrNames>
@@ -71,8 +53,27 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="MMP_RO_Approval1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="MMP_RO_Approval1Iterator" id="MMP_RO_Approval1">
+      <nodeDefinition DefName="model.VO.MMP_RO_Approval" Name="MMP_RO_Approval10">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="Name"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="RoStatus" Binds="RoStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="MMP_RO_Approval1Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="RoStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="mmp appr"/>
+        <Item Value="mmp ver"/>
+      </ValueList>
+    </button>
+    <action IterBinding="MMP_RO_Approval1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

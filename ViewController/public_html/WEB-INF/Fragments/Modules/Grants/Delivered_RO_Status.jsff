@@ -75,7 +75,7 @@
                            </af:inputText>
                              </f:facet>
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
-                                              label="#{row.bindings.RoStatus.label}"
+                                              label="#{row.bindings.RoStatus.label}" autoSubmit="true"
                                               shortDesc="#{bindings.Delivered_RO_Status1.hints.RoStatus.tooltip}"
                                               id="sbc1"/>
                   </af:column>

@@ -26,6 +26,28 @@ OR TblGrantApprovalDetail.RO_STATUS = 'dlvrd')">
         ResId="model.VO.Cancelled_RO_Status_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="Cancelled_RO_Status_LOV1"
+    ViewObjectName="model.LOV.Cancelled_RO_Status_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_RoStatus"
+    ListVOName="Cancelled_RO_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RoStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbVal"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewVal"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantApprovalDetail"
     Entity="model.EO.TblGrantApprovalDetail"/>
@@ -66,7 +88,15 @@ OR TblGrantApprovalDetail.RO_STATUS = 'dlvrd')">
     PrecisionRule="true"
     EntityAttrName="RoStatus"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="RO_STATUS"/>
+    AliasName="RO_STATUS"
+    LOVName="LOV_RoStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FarmerNo"
     PrecisionRule="true"

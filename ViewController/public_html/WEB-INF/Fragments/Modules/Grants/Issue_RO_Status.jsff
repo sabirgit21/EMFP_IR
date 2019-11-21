@@ -34,6 +34,7 @@
                              filterable="true" sortable="true"
                              headerText="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.label}" id="c1">
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    readOnly="true"
                                   label="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.displayWidth}"
@@ -68,7 +69,7 @@
                   </af:column>
                   <af:column headerText="#{bindings.Issue_RO_Status1.hints.RoStatus.label}" id="c4">
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
-                                              label="#{row.bindings.RoStatus.label}"
+                                              label="#{row.bindings.RoStatus.label}" autoSubmit="true"
                                               shortDesc="#{bindings.Issue_RO_Status1.hints.RoStatus.tooltip}"
                                               id="sbc1"/>
                   </af:column>

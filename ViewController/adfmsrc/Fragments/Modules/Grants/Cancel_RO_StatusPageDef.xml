@@ -17,8 +17,11 @@
         <AttrNames>
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
+          <Item Value="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="Cancelled_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

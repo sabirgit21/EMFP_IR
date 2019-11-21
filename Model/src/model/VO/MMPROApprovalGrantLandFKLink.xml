@@ -34,7 +34,7 @@
       <Attr Name="_finderName" Value="MMP_RO_Status_Grant_Land"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MMP_RO_Status_Grant_Land.FarmerRegId"/>
+      <Item Value="model.VO.MMP_RO_Status_Grant_Land.GrantApprovalDetailId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>
