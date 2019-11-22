@@ -19,85 +19,7 @@
             <f:selectItems value="#{bindings.Map_Cluster_DetailView1.items}" id="si1"/>
             <f:validator binding="#{bindings.Map_Cluster_DetailView1.validator}"/>
           </af:selectOneChoice>
-          <!--<af:table value="#{bindings.Map_Farmer_DetailView11.collectionModel}" var="row"
-                    rows="#{bindings.Map_Farmer_DetailView11.rangeSize}"
-                    emptyText="#{bindings.Map_Farmer_DetailView11.viewable ? 'No data to display.' : 'Access Denied.'}"
-                    rowBandingInterval="0"
-                    selectedRowKeys="#{bindings.Map_Farmer_DetailView11.collectionModel.selectedRow}"
-                    selectionListener="#{bindings.Map_Farmer_DetailView11.collectionModel.makeCurrent}"
-                    rowSelection="single" fetchSize="#{bindings.Map_Farmer_DetailView11.rangeSize}"
-                    filterModel="#{bindings.Map_Farmer_DetailView11Query.queryDescriptor}" filterVisible="true"
-                    queryListener="#{bindings.Map_Farmer_DetailView11Query.processQuery}" varStatus="vs" id="t3">
-                    --><!--<af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.name}" filterable="true"
-                       sortable="true" headerText="Farmer No." id="c16">
-              <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FarmerNo.tooltip}" id="it15">
-                <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
-              </af:inputText>
-            </af:column>--><!--
-            <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Name.name}" filterable="true"
-                       sortable="true" headerText="Farmer Name" id="c13">
-              <af:inputText value="#{row.bindings.Name.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.Name.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.Name.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.Name.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Name.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Name.tooltip}" id="it12">
-                <f:validator binding="#{row.bindings.Name.validator}"/>
-              </af:inputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.FatherName.name}" filterable="true"
-                       sortable="true" headerText="Father Name"
-                       id="c14">
-              <af:inputText value="#{row.bindings.FatherName.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.FatherName.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.FatherName.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.FatherName.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.FatherName.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.FatherName.tooltip}" id="it13">
-                <f:validator binding="#{row.bindings.FatherName.validator}"/>
-              </af:inputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.Cnic.name}" filterable="true"
-                       sortable="true" headerText="CNIC" id="c15">
-              <af:inputText value="#{row.bindings.Cnic.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.Cnic.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.Cnic.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.Cnic.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Cnic.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Cnic.tooltip}" id="it14">
-                <f:validator binding="#{row.bindings.Cnic.validator}"/>
-              </af:inputText>
-            </af:column>
-            <af:column headerText="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}" id="c1">
-              <af:inputText value="#{row.bindings.Mobile.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.Mobile.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.Mobile.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.Mobile.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.Mobile.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.Mobile.tooltip}" id="it1">
-                <f:validator binding="#{row.bindings.Mobile.validator}"/>
-              </af:inputText>
-            </af:column>
-            <af:column sortProperty="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.name}" filterable="true"
-                       sortable="true" headerText="Land Under Orchard"
-                       id="c17">
-              <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
-                            label="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.label}"
-                            required="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.mandatory}"
-                            columns="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.displayWidth}"
-                            maximumLength="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.precision}"
-                            shortDesc="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.tooltip}" id="it16">
-                <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.Map_Farmer_DetailView11.hints.LandUnderOrch.format}"/>
-              </af:inputText>
-            </af:column>
-          </af:table>-->
+         
           <af:table value="#{bindings.Map_Farmer_Detail_Att2.collectionModel}" var="row"
                     rows="#{bindings.Map_Farmer_Detail_Att2.rangeSize}"
                     emptyText="#{bindings.Map_Farmer_Detail_Att2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -140,15 +62,6 @@
                 <f:validator binding="#{row.bindings.FatherName.validator}"/>
               </af:inputText>
             </af:column>
-            <af:column sortProperty="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.name}" filterable="true"
-                       sortable="true" headerText="Attendance" id="c4">
-              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
-                                  required="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.mandatory}" readOnly="true"
-                                  shortDesc="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.tooltip}" id="soc2">
-                <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
-                <f:validator binding="#{row.bindings.Ast.validator}"/>
-              </af:selectOneChoice>
-            </af:column>
             <af:column sortProperty="#{bindings.Map_Farmer_Detail_Att2.hints.Cnic.name}" filterable="true"
                        sortable="true" headerText="CNIC" id="c5">
               <af:inputText value="#{row.bindings.Cnic.inputValue}" readOnly="true"
@@ -184,6 +97,15 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.Map_Farmer_Detail_Att2.hints.LandUnderOrch.format}"/>
               </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.name}" filterable="true"
+                       sortable="true" headerText="Attendance" id="c4">
+              <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                  required="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.mandatory}" readOnly="true"
+                                  shortDesc="#{bindings.Map_Farmer_Detail_Att2.hints.Ast.tooltip}" id="soc2">
+                <f:selectItems value="#{row.bindings.Ast.items}" id="si2"/>
+                <f:validator binding="#{row.bindings.Ast.validator}"/>
+              </af:selectOneChoice>
             </af:column>
           </af:table>
           <!--<f:facet name="buttonBar"/>-->

@@ -94,6 +94,15 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_TRAINING_SCH_DETAIL"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="DatedA"
+    ColumnName="DATED_A"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_TRAINING_SCH_DETAIL"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <AccessorAttribute
     Name="TblCluster"
     Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"

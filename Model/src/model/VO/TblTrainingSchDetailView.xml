@@ -87,11 +87,22 @@
     EntityAttrName="Latitude"
     EntityUsage="TblTrainingSchDetail"
     AliasName="LATITUDE"/>
+  <ViewAttribute
+    Name="DatedA"
+    PrecisionRule="true"
+    EntityAttrName="DatedA"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="DATED_A"/>
   <ViewLinkAccessor
     Name="TblClusterAttMasterView"
     ViewLink="model.VO.FKTblClusterAttMasterFKLinkA"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="TrainingSchDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="TrainingSchDetailId"

@@ -92,6 +92,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_TRAINING_RESCH"/>
+  <Attribute
+    Name="Remarks"
+    Precision="150"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_TRAINING_RESCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PkTblTrainingReschPk"
     PrimaryKey="true">

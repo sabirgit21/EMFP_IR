@@ -14,23 +14,22 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Training_Schd_Detail_Dated_Cluster1"
-    ViewObjectName="model.LOV.Training_Schd_Detail_Dated_Cluster"
+    Name="Training_Scchd_Detail_DateAA_Cluster1"
+    ViewObjectName="model.LOV.Training_Scchd_Detail_DateAA_Cluster"
     RowLevelBinds="true">
     <ViewCriteriaUsage
-      Name="Training_Schd_Detail_Dated_ClusterCriteria"
-      FullName="model.LOV.Training_Schd_Detail_Dated_Cluster.Training_Schd_Detail_Dated_ClusterCriteria"/>
+      Name="Training_Scchd_Detail_DateAA_ClusterCriteria"
+      FullName="model.LOV.Training_Scchd_Detail_DateAA_Cluster.Training_Scchd_Detail_DateAA_ClusterCriteria"/>
     <ParameterMap>
-      <PIMap Variable="SchdDated">
+      <PIMap Variable="schd_DateAA">
         <TransientExpression
-          trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
   <ListBinding
     Name="LOV_ClusterId"
-    ListVOName="Training_Schd_Detail_Dated_Cluster1"
+    ListVOName="Training_Scchd_Detail_DateAA_Cluster1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -38,12 +37,8 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="TrainingSchDetailId"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
-      <Item Value="TrainingSchDetailId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
@@ -137,4 +132,10 @@
     EntityAttrName="Longitude"
     EntityUsage="TblTrainingResch"
     AliasName="LONGITUDE"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblTrainingResch"
+    AliasName="REMARKS"/>
 </ViewObject>

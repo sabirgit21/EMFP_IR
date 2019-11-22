@@ -168,6 +168,18 @@
                                                               pattern="#{bindings.TblTrainingReschView1.hints.Longitude.format}"/>
                                         </af:inputText>
                                     </af:column>
+                                    <af:column headerText="#{bindings.TblTrainingReschView1.hints.Remarks.label}"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                      label="#{bindings.TblTrainingReschView1.hints.Remarks.label}"
+                                                      required="#{bindings.TblTrainingReschView1.hints.Remarks.mandatory}"
+                                                      columns="#{bindings.TblTrainingReschView1.hints.Remarks.displayWidth}"
+                                                      maximumLength="#{bindings.TblTrainingReschView1.hints.Remarks.precision}"
+                                                      shortDesc="#{bindings.TblTrainingReschView1.hints.Remarks.tooltip}"
+                                                      id="it7">
+                                            <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>

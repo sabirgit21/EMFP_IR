@@ -3,24 +3,27 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Training_Schd_Detail_Dated_Cluster"
+  Name="Training_Scchd_Detail_DateAA_Cluster"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblTrainingSchDetail.CLUSTER_ID, 
+       TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID, 
+       TblTrainingSchDetail.DATED_A, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1"
+  FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_CLUSTER TblCluster"
+  Where="(TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+))">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Training_Schd_Detail_Dated_Cluster_LABEL"/>
+        ResId="model.LOV.Training_Scchd_Detail_DateAA_Cluster_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="SchdDated"
+    Name="schd_DateAA"
     Kind="viewcriteria"
     Type="java.sql.Timestamp"/>
   <EntityUsage
@@ -31,7 +34,7 @@
     Entity="model.EO.TblCluster"
     Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
     AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblCluster"
-    SourceUsage="model.LOV.Training_Schd_Detail_Dated_Cluster.TblTrainingSchDetail"
+    SourceUsage="model.LOV.Training_Scchd_Detail_DateAA_Cluster.TblTrainingSchDetail"
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
@@ -46,12 +49,6 @@
     </DesignTime>
   </EntityUsage>
   <ViewAttribute
-    Name="TrainingSchDetailId"
-    PrecisionRule="true"
-    EntityAttrName="TrainingSchDetailId"
-    EntityUsage="TblTrainingSchDetail"
-    AliasName="TRAINING_SCH_DETAIL_ID"/>
-  <ViewAttribute
     Name="ClusterId"
     IsNotNull="true"
     PrecisionRule="true"
@@ -59,12 +56,17 @@
     EntityUsage="TblTrainingSchDetail"
     AliasName="CLUSTER_ID"/>
   <ViewAttribute
-    Name="DatedD"
-    IsNotNull="true"
+    Name="TrainingSchDetailId"
     PrecisionRule="true"
-    EntityAttrName="DatedD"
+    EntityAttrName="TrainingSchDetailId"
     EntityUsage="TblTrainingSchDetail"
-    AliasName="DATED_D"/>
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="DatedA"
+    PrecisionRule="true"
+    EntityAttrName="DatedA"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="DATED_A"/>
   <ViewAttribute
     Name="ClusterNo"
     IsNotNull="true"
@@ -78,15 +80,9 @@
     EntityAttrName="ClusterId"
     EntityUsage="TblCluster"
     AliasName="CLUSTER_ID1"/>
-  <ViewAttribute
-    Name="DatedA"
-    PrecisionRule="true"
-    EntityAttrName="DatedA"
-    EntityUsage="TblTrainingSchDetail"
-    AliasName="DATED_A"/>
   <ViewCriteria
-    Name="Training_Schd_Detail_Dated_ClusterCriteria"
-    ViewObjectName="model.LOV.Training_Schd_Detail_Dated_Cluster"
+    Name="Training_Scchd_Detail_DateAA_ClusterCriteria"
+    ViewObjectName="model.LOV.Training_Scchd_Detail_DateAA_Cluster"
     Conjunction="AND">
     <Properties Name="_Props">
       <CustomProperties>
@@ -108,14 +104,14 @@
       </CustomProperties>
     </Properties>
     <ViewCriteriaRow
-      Name="Training_Schd_Detail_Dated_ClusterCriteria_row_0"
+      Name="Training_Scchd_Detail_DateAA_ClusterCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="DatedD"
-        ViewAttribute="DatedD"
+        Name="DatedA"
+        ViewAttribute="DatedA"
         Operator="="
         Conjunction="AND"
-        Value=":SchdDated"
+        Value=":schd_DateAA"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>
@@ -127,16 +123,4 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
 </ViewObject>

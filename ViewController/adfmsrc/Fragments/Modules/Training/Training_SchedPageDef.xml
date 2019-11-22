@@ -46,6 +46,7 @@
           <Item Value="ClusterId"/>
           <Item Value="Latitude"/>
           <Item Value="Longitude"/>
+          <Item Value="DatedA"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

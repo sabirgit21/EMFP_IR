@@ -33,6 +33,7 @@
           <Item Value="DatedResch"/>
           <Item Value="Latitude"/>
           <Item Value="Longitude"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

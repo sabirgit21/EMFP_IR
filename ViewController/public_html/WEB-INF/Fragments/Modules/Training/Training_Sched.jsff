@@ -356,8 +356,19 @@
                                                                         <af:convertDateTime pattern="#{bindings.TblTrainingSchDetailView4.hints.DatedD.format}"/>
                                                                     </af:inputDate>
                                                                 </af:column>
-                                                                
-                                                            </af:table>
+                                    <af:column headerText="Actual Date"
+                                               id="c4">
+                                        <af:inputDate value="#{row.bindings.DatedA.inputValue}" readOnly="true"
+                                                      label="#{bindings.TblTrainingSchDetailView4.hints.DatedA.label}"
+                                                      required="#{bindings.TblTrainingSchDetailView4.hints.DatedA.mandatory}"
+                                                      columns="#{bindings.TblTrainingSchDetailView4.hints.DatedA.displayWidth}"
+                                                      shortDesc="#{bindings.TblTrainingSchDetailView4.hints.DatedA.tooltip}"
+                                                      id="id4">
+                                            <f:validator binding="#{row.bindings.DatedA.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.TblTrainingSchDetailView4.hints.DatedA.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                </af:table>
                                                             <af:button actionListener="#{bindings.Execute1.execute}"
                                                                        text="Refresh"
                                                                        disabled="#{!bindings.Execute1.enabled}"

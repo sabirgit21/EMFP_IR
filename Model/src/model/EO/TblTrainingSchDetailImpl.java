@@ -32,6 +32,7 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        DatedA,
         TblCluster,
         TblTrainingSchMaster,
         Map_Cluster_Detail,
@@ -70,6 +71,7 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int DATEDA = AttributesEnum.DatedA.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAININGSCHMASTER = AttributesEnum.TblTrainingSchMaster.index();
     public static final int MAP_CLUSTER_DETAIL = AttributesEnum.Map_Cluster_Detail.index();
@@ -231,6 +233,22 @@ public class TblTrainingSchDetailImpl extends EntityImpl {
      */
     public Timestamp getUpdatedDate() {
         return (Timestamp) getAttributeInternal(UPDATEDDATE);
+    }
+
+    /**
+     * Gets the attribute value for DatedA, using the alias name DatedA.
+     * @return the value of DatedA
+     */
+    public Timestamp getDatedA() {
+        return (Timestamp) getAttributeInternal(DATEDA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DatedA.
+     * @param value value to set the DatedA
+     */
+    public void setDatedA(Timestamp value) {
+        setAttributeInternal(DATEDA, value);
     }
 
     /**
