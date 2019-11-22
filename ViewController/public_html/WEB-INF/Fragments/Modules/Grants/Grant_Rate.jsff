@@ -36,8 +36,8 @@
                           rowSelection="single" fetchSize="#{bindings.TblGrantRateView1.rangeSize}"
                           filterModel="#{bindings.TblGrantRateView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrantRateView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b1 ::b2 ::b3 ::b5" width="881"
-                          scrollPolicy="page" autoHeightRows="0">
+                          partialTriggers=" " width="881"
+                          scrollPolicy="page" autoHeightRows="0" >
                   <!--<af:column sortProperty="#{bindings.TblGrantRateView1.hints.GrantRateId.name}" 
                              filterable="true" sortable="true" 
                              headerText="Grant Rate ID" 

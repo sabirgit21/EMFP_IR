@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Issue_RO_Status1" RangeSize="25" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"
+    <iterator Binds="Issue_RO_Status1" RangeSize="8" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"
               Refresh="always" CacheResults="false"/>
     <searchRegion Binds="Issue_RO_Status1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Issue_RO_Status1Query"/>
