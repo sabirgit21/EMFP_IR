@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCertApprovalCertRateLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkCertApprovalCertRateAssoc">
+  <ViewLinkDefEnd
+    Name="TblCertRateView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblCertRateView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCertRateView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCertRateView.CertRateId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCertApprovalView"
+    Cardinality="-1"
+    Owner="model.VO.TblCertApprovalView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCertApprovalView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblCertApprovalView.CertRateId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

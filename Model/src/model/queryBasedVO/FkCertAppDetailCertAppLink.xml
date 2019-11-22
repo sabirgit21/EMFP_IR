@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkCertAppDetailCertAppLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <ViewLinkDefEnd
+    Name="TblCertAppMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.queryBasedVO.TblCertAppMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCertAppMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.queryBasedVO.TblCertAppMasterView.CertAppMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblCertAppDetailView"
+    Cardinality="-1"
+    Owner="model.queryBasedVO.TblCertAppDetailView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblCertAppDetailView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.queryBasedVO.TblCertAppDetailView.CertAppMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

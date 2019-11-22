@@ -23,7 +23,50 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Certification Setup">
-                
+                <af:table value="#{bindings.TblCertification1View1.collectionModel}" var="row"
+                          rows="#{bindings.TblCertification1View1.rangeSize}"
+                          emptyText="#{bindings.TblCertification1View1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblCertification1View1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblCertification1View1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblCertification1View1.rangeSize}"
+                          filterModel="#{bindings.TblCertification1View1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblCertification1View1Query.processQuery}" varStatus="vs" id="t1">
+                  <af:column sortProperty="#{bindings.TblCertification1View1.hints.CertificationId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblCertification1View1.hints.CertificationId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.CertificationId.inputValue}"
+                                  label="#{bindings.TblCertification1View1.hints.CertificationId.label}"
+                                  required="#{bindings.TblCertification1View1.hints.CertificationId.mandatory}"
+                                  columns="#{bindings.TblCertification1View1.hints.CertificationId.displayWidth}"
+                                  maximumLength="#{bindings.TblCertification1View1.hints.CertificationId.precision}"
+                                  shortDesc="#{bindings.TblCertification1View1.hints.CertificationId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.CertificationId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertification1View1.hints.CertificationId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertification1View1.hints.Name.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertification1View1.hints.Name.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblCertification1View1.hints.Name.label}"
+                                  required="#{bindings.TblCertification1View1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblCertification1View1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblCertification1View1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblCertification1View1.hints.Name.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertification1View1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertification1View1.hints.Ast.label}" id="c3">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblCertification1View1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblCertification1View1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -32,7 +75,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
              <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
-                            <af:iterator id="i2" var="index" varStatus="status"
+              <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
@@ -48,7 +91,157 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Certification Rate">
-                
+                <af:table value="#{bindings.TblCertRateView3.collectionModel}" var="row"
+                          rows="#{bindings.TblCertRateView3.rangeSize}"
+                          emptyText="#{bindings.TblCertRateView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblCertRateView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblCertRateView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblCertRateView3.rangeSize}"
+                          filterModel="#{bindings.TblCertRateView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblCertRateView3Query.processQuery}" varStatus="vs" id="t2">
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CertRateId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CertRateId.label}" id="c4">
+                    <af:inputText value="#{row.bindings.CertRateId.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CertRateId.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CertRateId.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CertRateId.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.CertRateId.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CertRateId.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.CertRateId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.CertRateId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CertificationId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CertificationId.label}"
+                             id="c5">
+                    <af:inputText value="#{row.bindings.CertificationId.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CertificationId.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CertificationId.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CertificationId.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.CertificationId.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CertificationId.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.CertificationId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.CertificationId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CertAmount.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CertAmount.label}" id="c6">
+                    <af:inputText value="#{row.bindings.CertAmount.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CertAmount.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CertAmount.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CertAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.CertAmount.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CertAmount.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.CertAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.CertAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CertGrant.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CertGrant.label}" id="c7">
+                    <af:inputText value="#{row.bindings.CertGrant.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CertGrant.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CertGrant.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CertGrant.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.CertGrant.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CertGrant.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.CertGrant.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.CertGrant.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.Dated.label}" id="c8">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCertRateView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.Dated.label}"
+                                  required="#{bindings.TblCertRateView3.hints.Dated.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.Ast.label}" id="c9">
+                    <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.Ast.label}"
+                                  required="#{bindings.TblCertRateView3.hints.Ast.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.Ast.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.Ast.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CreatedDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CreatedDate.label}" id="c10">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCertRateView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.CreatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CreatedDate.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CreatedDate.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CreatedDate.displayWidth}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CreatedDate.tooltip}" id="id4">
+                      <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.CreatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.CreatedBy.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.CreatedBy.label}" id="c11">
+                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.CreatedBy.label}"
+                                  required="#{bindings.TblCertRateView3.hints.CreatedBy.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.CreatedBy.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.CreatedBy.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.CreatedBy.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.CreatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.UpdatedDate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.UpdatedDate.label}" id="c12">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblCertRateView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                    id="id5">
+                        <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.UpdatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.UpdatedDate.label}"
+                                  required="#{bindings.TblCertRateView3.hints.UpdatedDate.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.UpdatedDate.displayWidth}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.UpdatedDate.tooltip}" id="id6">
+                      <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCertRateView3.hints.UpdatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertRateView3.hints.UpdatedBy.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblCertRateView3.hints.UpdatedBy.label}" id="c13">
+                    <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                  label="#{bindings.TblCertRateView3.hints.UpdatedBy.label}"
+                                  required="#{bindings.TblCertRateView3.hints.UpdatedBy.mandatory}"
+                                  columns="#{bindings.TblCertRateView3.hints.UpdatedBy.displayWidth}"
+                                  maximumLength="#{bindings.TblCertRateView3.hints.UpdatedBy.precision}"
+                                  shortDesc="#{bindings.TblCertRateView3.hints.UpdatedBy.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblCertRateView3.hints.UpdatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -57,7 +250,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
              <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer width="190" height="10" id="s2"/>
-                            <af:iterator id="i1" var="index" varStatus="status"
+              <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.Operation}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"

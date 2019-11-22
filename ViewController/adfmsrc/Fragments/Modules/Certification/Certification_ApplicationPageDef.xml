@@ -6,6 +6,14 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblCertAppMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblCertAppMasterView1Iterator"/>
+    <searchRegion Binds="TblCertAppMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCertAppMasterView1Query"/>
+    <iterator Binds="TblCertAppDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblCertAppDetailView3Iterator"/>
+    <searchRegion Binds="TblCertAppDetailView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCertAppDetailView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -21,5 +29,67 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblCertAppMasterView1Iterator" id="TblCertAppMasterView1">
+      <nodeDefinition DefName="model.VO.TblCertAppMasterView" Name="TblCertAppMasterView10">
+        <AttrNames>
+          <Item Value="CertAppMasterId"/>
+          <Item Value="CertificationId"/>
+          <Item Value="AppStatus"/>
+          <Item Value="AppType"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="CoName"/>
+          <Item Value="BussNature"/>
+          <Item Value="OwnType"/>
+          <Item Value="Website"/>
+          <Item Value="Ntn"/>
+          <Item Value="CoAddress"/>
+          <Item Value="OwnerName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Acres"/>
+          <Item Value="Tel"/>
+          <Item Value="Fax"/>
+          <Item Value="Email"/>
+          <Item Value="ContPerson"/>
+          <Item Value="Designation"/>
+          <Item Value="Mobile"/>
+          <Item Value="NoOfEmpM"/>
+          <Item Value="NoOfEmpF"/>
+          <Item Value="Ast"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblCertAppDetailView3Iterator" id="TblCertAppDetailView3">
+      <nodeDefinition DefName="model.VO.TblCertAppDetailView" Name="TblCertAppDetailView30">
+        <AttrNames>
+          <Item Value="CertAppMasterId"/>
+          <Item Value="CertAppDetailId"/>
+          <Item Value="CropId"/>
+          <Item Value="ProdQty"/>
+          <Item Value="ExportQty"/>
+          <Item Value="ExportAmount"/>
+          <Item Value="MarketServ"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblCertAppMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCertAppMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCertAppMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="TblCertAppDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblCertAppDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblCertAppDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
