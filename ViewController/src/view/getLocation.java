@@ -34,6 +34,6 @@ public class getLocation {
                String dateString = format.format( new Date()   );
                
                r.setAttribute("Dated", dateString);
-                       r.setAttribute("ClusterAttMasterId", 00);
+//                       r.setAttribute("ClusterAttMasterId", 00);
     }
 }
