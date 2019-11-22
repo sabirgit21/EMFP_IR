@@ -6,11 +6,11 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblGrantGroupMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantGroupMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantGroupMasterView1Iterator"/>
     <searchRegion Binds="TblGrantGroupMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantGroupMasterView1Query"/>
-    <iterator Binds="TblGrantGroupDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantGroupDetailView3" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantGroupDetailView3Iterator"/>
     <searchRegion Binds="TblGrantGroupDetailView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblGrantGroupDetailView3Query"/>
@@ -55,14 +55,10 @@
     </tree>
     <action IterBinding="TblGrantGroupMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblGrantGroupMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <action IterBinding="TblGrantGroupMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action IterBinding="TblGrantGroupDetailView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblGrantGroupDetailView3Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <action IterBinding="TblGrantGroupDetailView3Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>

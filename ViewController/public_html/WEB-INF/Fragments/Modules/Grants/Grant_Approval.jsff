@@ -754,20 +754,32 @@
                                                filterable="true" sortable="true"
                                                headerText="Farmer No."
                                                id="c42" align="center">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it64" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
+
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.mandatory}"
                                                       columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.displayWidth}"
                                                       maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.precision}"
                                                       shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FarmerNo.tooltip}"
-                                                      id="it34">
+                                                      id="it34" 
+                                  contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.label}"
-                                               id="c43">
+                                               headerText="Farmer"
+                                               id="c43" width="200">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it65" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Name.mandatory}"
@@ -780,8 +792,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.label}"
-                                               id="c44">
+                                               headerText="Father"
+                                               id="c44" width="200">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FatherName}"
+                                          id="it66" placeholder="Search Father">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.FatherName.mandatory}"
@@ -794,15 +811,21 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.label}"
-                                               id="c45">
+                                               headerText="CNIC"
+                                               id="c45" align="center" width="150">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it67" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.mandatory}"
                                                       columns="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.displayWidth}"
                                                       maximumLength="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.precision}"
                                                       shortDesc="#{bindings.Grant_Approval_Detail_NtIntr2.hints.Cnic.tooltip}"
-                                                      id="it37">
+                                                      id="it37" contentStyle='text-align: center'>
+                                            <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>          
                                             <f:validator binding="#{row.bindings.Cnic.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -820,25 +843,35 @@
                                           filterModel="#{bindings.Grant_Approval_Detail_NtAppl2Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.Grant_Approval_Detail_NtAppl2Query.processQuery}"
-                                          varStatus="vs" id="t6">
+                                          varStatus="vs" id="t6" scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.label}"
-                                               id="c46">
+                                               headerText="Farmer No."
+                                               id="c46" align="center">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it68" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.mandatory}"
                                                       columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.displayWidth}"
                                                       maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.precision}"
                                                       shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FarmerNo.tooltip}"
-                                                      id="it38">
+                                                      id="it38" contentStyle='text-align: center'>
                                             <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                                         </af:inputText>
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.label}"
-                                               id="c47">
+                                               headerText="Farmer"
+                                               id="c47" width="200">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it69" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Name.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Name.mandatory}"
@@ -851,8 +884,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.label}"
-                                               id="c48">
+                                               headerText="Father"
+                                               id="c48" width="200">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FatherName}"
+                                          id="it70" placeholder="Search Father">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.FatherName.mandatory}"
@@ -865,15 +903,21 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.label}"
-                                               id="c49">
+                                               headerText="CNIC"
+                                               id="c49" align="center" width="150">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it71" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                                       label="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.label}"
                                                       required="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.mandatory}"
                                                       columns="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.displayWidth}"
                                                       maximumLength="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.precision}"
                                                       shortDesc="#{bindings.Grant_Approval_Detail_NtAppl2.hints.Cnic.tooltip}"
-                                                      id="it41">
+                                                      id="it41" contentStyle='text-align: center'>
+                                             <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                                             <f:validator binding="#{row.bindings.Cnic.validator}"/>
                                         </af:inputText>
                                     </af:column>
@@ -918,7 +962,7 @@
                                           filterModel="#{bindings.TblGrantApprovalDetailDView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblGrantApprovalDetailDView3Query.processQuery}"
-                                          varStatus="vs" id="t3">
+                                          varStatus="vs" id="t3" scrollPolicy="page" autoHeightRows="0">
                                     <!--<af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.GrantApprovalDetailDId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Detail D ID"
@@ -953,7 +997,12 @@
                                         </af:inputText>
                                     </af:column>-->
                                     <af:column headerText="Farm Machinery"
-                                               id="c21" width="130">
+                                               id="c21" width="200" sortable="true" filterable="true">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+                                          id="it72" placeholder="Search Machinery">
+                           </af:inputText>
+                             </f:facet>
                                         <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                                             label="#{row.bindings.ItemL4Id.label}"
                                                             required="#{bindings.TblGrantApprovalDetailDView3.hints.ItemL4Id.mandatory}"
@@ -963,8 +1012,13 @@
                                             <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                                         </af:selectOneChoice>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.label}"
-                                               id="c24" width="70">
+                                    <af:column headerText="Quantity"
+                                               id="c24" width="100" align="center" sortable="true" filterable="true">
+                                                 <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Qty}"
+                                          id="it73" placeholder="Search Quantity">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Qty.inputValue}"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.label}"
                                                       required="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.mandatory}"
@@ -979,8 +1033,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.label}"
-                                               id="c22" width="100">
+                                               headerText="Rate"
+                                               id="c22" width="100" align="center">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Rate}"
+                                          id="it74" placeholder="Search Rate">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.label}"
                                                       required="#{bindings.TblGrantApprovalDetailDView3.hints.Rate.mandatory}"
@@ -995,8 +1054,13 @@
                                     </af:column>
                                     <af:column sortProperty="#{bindings.TblGrantApprovalDetailDView3.hints.Amount.name}"
                                                filterable="true" sortable="true"
-                                               headerText="#{bindings.TblGrantApprovalDetailDView3.hints.Amount.label}"
-                                               id="c23">
+                                               headerText="Amount"
+                                               id="c23" align="center">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Amount}"
+                                          id="it75" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Amount.inputValue}"
                                                       label="#{bindings.TblGrantApprovalDetailDView3.hints.Amount.label}"
                                                       readOnly="true"

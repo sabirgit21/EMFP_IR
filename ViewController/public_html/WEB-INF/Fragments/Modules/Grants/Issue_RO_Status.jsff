@@ -29,35 +29,52 @@
                           rowBandingInterval="0" fetchSize="#{bindings.Issue_RO_Status1.rangeSize}"
                           filterModel="#{bindings.Issue_RO_Status1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.Issue_RO_Status1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2">
+                          partialTriggers="::b2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.label}" id="c1">
+                             headerText="Grant Approval Detail ID" id="c1" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GrantApprovalDetailId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
                     readOnly="true"
                                   label="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.displayWidth}"
                                   maximumLength="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.precision}"
-                                  shortDesc="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.tooltip}" 
+                                  id="it1" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.GrantApprovalDetailId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.Issue_RO_Status1.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Issue_RO_Status1.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Issue_RO_Status1.hints.FarmerNo.label}" id="c2">
+                             sortable="true" headerText="Farmer No." align="center" id="c2">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it4" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                   label="#{bindings.Issue_RO_Status1.hints.FarmerNo.label}"
                                   required="#{bindings.Issue_RO_Status1.hints.FarmerNo.mandatory}"
                                   columns="#{bindings.Issue_RO_Status1.hints.FarmerNo.displayWidth}"
                                   maximumLength="#{bindings.Issue_RO_Status1.hints.FarmerNo.precision}"
-                                  shortDesc="#{bindings.Issue_RO_Status1.hints.FarmerNo.tooltip}" id="it2">
+                                  shortDesc="#{bindings.Issue_RO_Status1.hints.FarmerNo.tooltip}" 
+                                  id="it2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Issue_RO_Status1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Issue_RO_Status1.hints.Name.label}" id="c3">
+                             sortable="true" headerText="Farmer" id="c3" width="200">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it5" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.Issue_RO_Status1.hints.Name.label}"
                                   required="#{bindings.Issue_RO_Status1.hints.Name.mandatory}"
@@ -67,7 +84,12 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.Issue_RO_Status1.hints.RoStatus.label}" id="c4">
+                  <af:column headerText="RO Status" id="c4" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoStatus}"
+                                          id="it6" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
                                               label="#{row.bindings.RoStatus.label}" autoSubmit="true"
                                               shortDesc="#{bindings.Issue_RO_Status1.hints.RoStatus.tooltip}"

@@ -39,7 +39,7 @@
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.GrantDisburseMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="Master ID"
+                             headerText="Grant Disburse MasterId ID"
                              id="c1" align="center" width="80">
                               <f:facet name="filter">
                                             <af:inputText value="#{vs.filterCriteria.GrantDisburseMasterId}" id="id4"
@@ -59,34 +59,8 @@
                                         pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantDisburseMasterId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Detail ID"
-                             id="c17">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
-                                  label="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.label}"
-                                  required="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.mandatory}"
-                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.precision}"
-                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.tooltip}"
-                                  id="it17">
-                      <f:validator binding="#{row.bindings.GrantApprovalDetailId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalDetailId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column headerText="Approval Master ID"
-                             id="c18">
-                    <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}"
-                                  label="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.label}"
-                                  required="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.mandatory}"
-                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.precision}"
-                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.tooltip}"
-                                  id="it23">
-                      <f:validator binding="#{row.bindings.GrantApprovalMasterId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantDisburseMasterView1.hints.GrantApprovalMasterId.format}"/>
-                    </af:inputText>
-                  </af:column>
+                 
+                 
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date"
                              id="c3" width="100">
@@ -105,7 +79,13 @@
                       <af:convertDateTime pattern="#{bindings.TblGrantDisburseMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="RO Number" id="c6">
+                  <af:column headerText="RO Number" id="c6" align="center" filterable="true" sortable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoNumber}"
+                                          id="it11" placeholder="Search RO Number">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:selectOneChoice value="#{row.bindings.RoNumber.inputValue}"
                                         label="#{row.bindings.RoNumber.label}" autoSubmit="true"
                                         required="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber.mandatory}"
@@ -115,7 +95,12 @@
                       <f:validator binding="#{row.bindings.RoNumber.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Chq No." id="c7">
+                  <af:column headerText="Cheque No." id="c7" sortable="true" filterable="true" width="200" align="center">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ChqNo}"
+                                          id="it13" placeholder="Search Cheque No.">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ChqNo.inputValue}"
                                   label="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.label}"
                                   required="#{bindings.TblGrantDisburseMasterView1.hints.ChqNo.mandatory}"
@@ -125,7 +110,12 @@
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Advice No." id="c13">
+                  <af:column headerText="Advice No." id="c13" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AdvNo}"
+                                          id="it15" placeholder="Search Advice No.">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.AdvNo.inputValue}"
                                   label="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.label}"
                                   required="#{bindings.TblGrantDisburseMasterView1.hints.AdvNo.mandatory}"
@@ -135,7 +125,12 @@
                       <f:validator binding="#{row.bindings.AdvNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Account No." id="c14">
+                  <af:column headerText="Account No." id="c14" align="center" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AccountNo}"
+                                          id="it16" placeholder="Search Account No.">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.AccountNo.inputValue}"
                                   label="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.label}"
                                   required="#{bindings.TblGrantDisburseMasterView1.hints.AccountNo.mandatory}"
@@ -145,7 +140,12 @@
                       <f:validator binding="#{row.bindings.AccountNo.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Account Name" id="c15">
+                  <af:column headerText="Account Name" id="c15" sortable="true" filterable="true" width="200">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AccountName}"
+                                          id="it17" placeholder="Search Account Name">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.AccountName.inputValue}"
                                   label="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.label}"
                                   required="#{bindings.TblGrantDisburseMasterView1.hints.AccountName.mandatory}"
@@ -156,7 +156,12 @@
                       <f:validator binding="#{row.bindings.AccountName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Issue To" id="c16">
+                  <af:column headerText="Issue To" id="c16" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IssueTo}"
+                                          id="it23" placeholder="Search Issue To">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.IssueTo.inputValue}"
                                   label="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.label}"
                                   required="#{bindings.TblGrantDisburseMasterView1.hints.IssueTo.mandatory}"
@@ -296,7 +301,12 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.Acre.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grant Rate" id="c9">
+                  <af:column headerText="Grant Rate" id="c9" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Rate}"
+                                          id="it24" placeholder="Search Rate">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Rate.inputValue}" label="#{row.bindings.Rate.label}" readOnly="true"
                                         required="#{bindings.TblGrantDisburseDetailView4.hints.Rate.mandatory}"
                                         shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.Rate.tooltip}"
@@ -324,7 +334,12 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Final Grant" id="c11">
+                  <af:column headerText="Final Grant" id="c11" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FAmount}"
+                                          id="it25" placeholder="Search Final Grant">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FAmount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.label}"
                                   required="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.mandatory}"
@@ -336,7 +351,12 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grant Bases" id="c12">
+                  <af:column headerText="Grant Bases" id="c12" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GrantBase}"
+                                          id="it26" placeholder="Search Grant Base">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.GrantBase.inputValue}"
                                   label="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.label}"
                                   required="#{bindings.TblGrantDisburseDetailView4.hints.GrantBase.mandatory}"

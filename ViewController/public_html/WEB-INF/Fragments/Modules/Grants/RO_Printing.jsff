@@ -20,7 +20,7 @@
                             </af:selectOneChoice>
                         <af:spacer width="30" height="30" id="s22"/>
                 <af:selectOneChoice autoSubmit="true"
-                                    label="#{bindings.Issue_RO_Status1.label}"
+                                    label="Issue RO Status"
                                     required="#{bindings.Issue_RO_Status1.hints.mandatory}"
                                     shortDesc="#{bindings.Issue_RO_Status1.hints.tooltip}" id="soc1"
                                     valueChangeListener="#{backingBeanScope.roprinting_report_backbean.get_ro_printing_name}">
