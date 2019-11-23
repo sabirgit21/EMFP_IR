@@ -6,11 +6,11 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblCertAppMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblCertAppMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblCertAppMasterView1Iterator"/>
     <searchRegion Binds="TblCertAppMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCertAppMasterView1Query"/>
-    <iterator Binds="TblCertAppDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblCertAppDetailView3" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblCertAppDetailView3Iterator"/>
     <searchRegion Binds="TblCertAppDetailView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblCertAppDetailView3Query"/>
