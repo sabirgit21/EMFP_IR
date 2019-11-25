@@ -23,8 +23,8 @@
                 <af:selectOneChoice value="#{bindings.TblGrantApprovalMasterView1.inputValue}"
                                     label="#{bindings.TblGrantApprovalMasterView1.label}" autoSubmit="true"
                                     required="#{bindings.TblGrantApprovalMasterView1.hints.mandatory}"
-                                    shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.tooltip}" id="soc4">
-                  <f:selectItems value="#{bindings.TblGrantApprovalMasterView1.items}" id="si4"/>
+                                    shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.tooltip}" id="soc1">
+                  <f:selectItems value="#{bindings.TblGrantApprovalMasterView1.items}" id="si1"/>
                   <f:validator binding="#{bindings.TblGrantApprovalMasterView1.validator}"/>
                 </af:selectOneChoice>
               </af:showDetailItem>
