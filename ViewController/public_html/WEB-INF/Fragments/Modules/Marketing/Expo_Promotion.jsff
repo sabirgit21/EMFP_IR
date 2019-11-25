@@ -91,7 +91,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.name}" filterable="true"
                              sortable="true" headerText="No of Days"
-                             id="c5" align="center">
+                             id="c5" align="center" width="110">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.NoOfDays}"
                                           id="it1" placeholder="Search Days">
@@ -102,7 +102,8 @@
                                   required="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.mandatory}"
                                   columns="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.precision}"
-                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.tooltip}" id="it3">
+                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.tooltip}" 
+                                  id="it3" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.NoOfDays.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.format}"/>
@@ -110,7 +111,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.name}"
                              filterable="true" sortable="true"
-                             headerText="Expo Setup Venue" id="c6" width="200">
+                             headerText="Expo Setup Venue" id="c6" width="300">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoSetupVenue}"
                                           id="it12" placeholder="Search Venue">
@@ -196,36 +197,33 @@
                           id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.label}" id="c9">
+                             headerText="Expo Promotion Detail ID" id="c9" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoPromDetailId}"
+                                          id="it6" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExpoPromDetailId.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.mandatory}"
                                   columns="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.precision}"
                                   shortDesc="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.tooltip}"
-                                  id="it5">
+                                  id="it5" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ExpoPromDetailId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.label}" id="c10">
-                    <af:inputText value="#{row.bindings.ExpoPromSetupId.inputValue}"
-                                  label="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.label}"
-                                  required="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.mandatory}"
-                                  columns="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.displayWidth}"
-                                  maximumLength="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.precision}"
-                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.tooltip}" id="it6">
-                      <f:validator binding="#{row.bindings.ExpoPromSetupId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblExpoPromDetailView3.hints.ExpoPromSetupId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.StallArea.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromDetailView3.hints.StallArea.label}"
-                             id="c11">
+                             sortable="true" headerText="Sall Area"
+                             id="c11" width="220">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallArea}"
+                                          id="it13" placeholder="Search Sall Area">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.StallArea.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.StallArea.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.StallArea.mandatory}"
@@ -238,56 +236,80 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.AreaRate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromDetailView3.hints.AreaRate.label}"
-                             id="c12">
+                             sortable="true" headerText="Area Rate"
+                             id="c12" align="center" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AreaRate}"
+                                          id="it14" placeholder="Search Rate">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.AreaRate.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.AreaRate.mandatory}"
                                   columns="#{bindings.TblExpoPromDetailView3.hints.AreaRate.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromDetailView3.hints.AreaRate.precision}"
-                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.AreaRate.tooltip}" id="it8">
+                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.AreaRate.tooltip}" id="it8"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.AreaRate.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromDetailView3.hints.AreaRate.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.StallAmount.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromDetailView3.hints.StallAmount.label}"
-                             id="c13">
+                             sortable="true" headerText="Stall Amount"
+                             id="c13" align="center" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallAmount}"
+                                          id="it15" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.StallAmount.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.StallAmount.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.StallAmount.mandatory}"
                                   columns="#{bindings.TblExpoPromDetailView3.hints.StallAmount.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromDetailView3.hints.StallAmount.precision}"
-                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.StallAmount.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.StallAmount.tooltip}" id="it9"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.StallAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromDetailView3.hints.StallAmount.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.label}"
-                             id="c14">
+                             sortable="true" headerText="Tasting Amount"
+                             id="c14" align="center" width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TastingAmt}"
+                                          id="it16" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.TastingAmt.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.mandatory}"
                                   columns="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.precision}"
-                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.tooltip}" id="it10"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.TastingAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromDetailView3.hints.TastingAmt.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.label}"
-                             id="c15">
+                             sortable="true" headerText="Sales Amount"
+                             id="c15" align="center" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.SalesAmt}"
+                                          id="it17" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.SalesAmt.inputValue}"
                                   label="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.label}"
                                   required="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.mandatory}"
                                   columns="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.precision}"
-                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.tooltip}" id="it11">
+                                  shortDesc="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.tooltip}" id="it11"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.SalesAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromDetailView3.hints.SalesAmt.format}"/>

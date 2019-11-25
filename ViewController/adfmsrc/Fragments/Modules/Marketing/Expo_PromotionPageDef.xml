@@ -10,7 +10,7 @@
               id="TblExpoPromSetupView1Iterator"/>
     <searchRegion Binds="TblExpoPromSetupView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoPromSetupView1Query"/>
-    <iterator Binds="TblExpoPromDetailView3" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblExpoPromDetailView3" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblExpoPromDetailView3Iterator"/>
     <searchRegion Binds="TblExpoPromDetailView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoPromDetailView3Query"/>
