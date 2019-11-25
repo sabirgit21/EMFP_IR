@@ -13,6 +13,138 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Certification_Name_LOV1"
+    ViewObjectName="model.LOV.Certification_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Cert_Application_Status_LOV1"
+    ViewObjectName="model.LOV.Cert_Application_Status_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Cert_Application_Type_LOV1"
+    ViewObjectName="model.LOV.Cert_Application_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Farmer_Reg_id_LOV1"
+    ViewObjectName="model.LOV.Farmer_Reg_id_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Owner_Type_LOV1"
+    ViewObjectName="model.LOV.Owner_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Status1"
+    ViewObjectName="model.LOV.Active_Status"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CertificationId"
+    ListVOName="Certification_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CertificationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CertificationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AppStatus"
+    ListVOName="Cert_Application_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AppStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AppType"
+    ListVOName="Cert_Application_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AppType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegId"
+    ListVOName="Farmer_Reg_id_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OwnType"
+    ListVOName="Owner_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OwnType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_Status1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="astDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="astView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblCertAppMaster"
     Entity="model.EO.TblCertAppMaster"/>
@@ -28,25 +160,57 @@
     PrecisionRule="true"
     EntityAttrName="CertificationId"
     EntityUsage="TblCertAppMaster"
-    AliasName="CERTIFICATION_ID"/>
+    AliasName="CERTIFICATION_ID"
+    LOVName="LOV_CertificationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AppStatus"
     PrecisionRule="true"
     EntityAttrName="AppStatus"
     EntityUsage="TblCertAppMaster"
-    AliasName="APP_STATUS"/>
+    AliasName="APP_STATUS"
+    LOVName="LOV_AppStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AppType"
     PrecisionRule="true"
     EntityAttrName="AppType"
     EntityUsage="TblCertAppMaster"
-    AliasName="APP_TYPE"/>
+    AliasName="APP_TYPE"
+    LOVName="LOV_AppType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FarmerRegId"
     PrecisionRule="true"
     EntityAttrName="FarmerRegId"
     EntityUsage="TblCertAppMaster"
-    AliasName="FARMER_REG_ID"/>
+    AliasName="FARMER_REG_ID"
+    LOVName="LOV_FarmerRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CoName"
     PrecisionRule="true"
@@ -64,7 +228,15 @@
     PrecisionRule="true"
     EntityAttrName="OwnType"
     EntityUsage="TblCertAppMaster"
-    AliasName="OWN_TYPE"/>
+    AliasName="OWN_TYPE"
+    LOVName="LOV_OwnType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Website"
     PrecisionRule="true"
@@ -154,7 +326,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="TblCertAppMaster"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

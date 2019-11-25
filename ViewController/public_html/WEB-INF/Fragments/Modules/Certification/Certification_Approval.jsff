@@ -31,16 +31,25 @@
                           selectionListener="#{bindings.TblCertAppMasterView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblCertAppMasterView1.rangeSize}"
                           filterModel="#{bindings.TblCertAppMasterView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblCertAppMasterView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.TblCertAppMasterView1Query.processQuery}" varStatus="vs" 
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.label}" id="c1">
+                             headerText="Certification Application Master ID" id="c1" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CertAppMasterId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.CertAppMasterId.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.tooltip}" id="it1"
+                                  readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.CertAppMasterId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.format}"/>
@@ -48,329 +57,386 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CertificationId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblCertAppMasterView1.hints.CertificationId.label}" id="c2">
-                    <af:inputText value="#{row.bindings.CertificationId.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CertificationId.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CertificationId.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CertificationId.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CertificationId.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CertificationId.tooltip}" id="it2">
+                             headerText="Certification" id="c2" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CertificationId}"
+                                          id="it18" placeholder="Search Certification">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CertificationId.inputValue}"
+                                        label="#{row.bindings.CertificationId.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.CertificationId.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.CertificationId.tooltip}"
+                                        id="soc2" readOnly="true">
+                      <f:selectItems value="#{row.bindings.CertificationId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.CertificationId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertAppMasterView1.hints.CertificationId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.AppStatus.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.AppStatus.label}"
-                             id="c3">
-                    <af:inputText value="#{row.bindings.AppStatus.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.AppStatus.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.AppStatus.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.AppStatus.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.AppStatus.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.AppStatus.tooltip}" id="it3">
+                             sortable="true" headerText="Application Status"
+                             id="c3" width="120">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AppStatus}"
+                                          id="it19" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AppStatus.inputValue}"
+                                        label="#{row.bindings.AppStatus.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.AppStatus.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.AppStatus.tooltip}" 
+                                        id="soc3" readOnly="true">
+                      <f:selectItems value="#{row.bindings.AppStatus.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.AppStatus.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.AppType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.AppType.label}" id="c4">
-                    <af:inputText value="#{row.bindings.AppType.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.AppType.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.AppType.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.AppType.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.AppType.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.AppType.tooltip}" id="it4">
+                             sortable="true" headerText="Application Type" id="c4" width="120">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.AppType}"
+                                          id="it20" placeholder="Search Type">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.AppType.inputValue}" label="#{row.bindings.AppType.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.AppType.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.AppType.tooltip}" 
+                                        id="soc4" readOnly="true">
+                      <f:selectItems value="#{row.bindings.AppType.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.AppType.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.label}"
-                             id="c5">
-                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.tooltip}" id="it5">
+                             sortable="true" headerText="Farmer"
+                             id="c5" width="200">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
+                                          id="it21" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                        label="#{row.bindings.FarmerRegId.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.tooltip}"
+                                        id="soc5" readOnly="true">
+                      <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CoName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.CoName.label}" id="c6">
+                             sortable="true" headerText="Company" id="c6" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CoName}"
+                                          id="it22" placeholder="Search Company">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.CoName.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.CoName.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.CoName.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.CoName.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.CoName.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoName.tooltip}" id="it6">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoName.tooltip}" 
+                                  id="it2" readOnly="true">
                       <f:validator binding="#{row.bindings.CoName.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.BussNature.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.BussNature.label}"
-                             id="c7">
+                             sortable="true" headerText="Business Nature"
+                             id="c7" width="120">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.BussNature}"
+                                          id="it23" placeholder="Search Business">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.BussNature.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.BussNature.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.BussNature.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.BussNature.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.BussNature.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.BussNature.tooltip}" id="it7">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.BussNature.tooltip}" 
+                                  id="it3" readOnly="true">
                       <f:validator binding="#{row.bindings.BussNature.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.OwnType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.OwnType.label}" id="c8">
-                    <af:inputText value="#{row.bindings.OwnType.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.OwnType.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.OwnType.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.OwnType.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.OwnType.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.OwnType.tooltip}" id="it8">
+                             sortable="true" headerText="Owner Type" id="c8">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.OwnType}"
+                                          id="it24" placeholder="Search Type">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.OwnType.inputValue}" label="#{row.bindings.OwnType.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.OwnType.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.OwnType.tooltip}" 
+                                        id="soc6" readOnly="true">
+                      <f:selectItems value="#{row.bindings.OwnType.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.OwnType.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Website.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Website.label}" id="c9">
-                    <af:inputText value="#{row.bindings.Website.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Website.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Website.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Website.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Website.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Website.tooltip}" id="it9">
-                      <f:validator binding="#{row.bindings.Website.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Ntn.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Ntn.label}" id="c10">
-                    <af:inputText value="#{row.bindings.Ntn.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Ntn.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Ntn.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Ntn.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Ntn.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Ntn.tooltip}" id="it10">
-                      <f:validator binding="#{row.bindings.Ntn.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CoAddress.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.CoAddress.label}"
-                             id="c11">
-                    <af:inputText value="#{row.bindings.CoAddress.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CoAddress.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CoAddress.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CoAddress.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CoAddress.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoAddress.tooltip}" id="it11">
-                      <f:validator binding="#{row.bindings.CoAddress.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.OwnerName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.OwnerName.label}"
-                             id="c12">
+                             sortable="true" headerText="Owner"
+                             id="c12" width="200">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.OwnerName}"
+                                          id="it31" placeholder="Search Owner">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.OwnerName.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.OwnerName.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.OwnerName.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.OwnerName.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.OwnerName.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.OwnerName.tooltip}" id="it12">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.OwnerName.tooltip}" 
+                                  id="it7" readOnly="true">
                       <f:validator binding="#{row.bindings.OwnerName.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Cnic.label}" id="c13">
+                             sortable="true" headerText="CNIC" id="c13" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it32" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.Cnic.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.Cnic.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.Cnic.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Cnic.tooltip}" id="it13">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Cnic.tooltip}" 
+                                  id="it8" readOnly="true">
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Acres.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Acres.label}" id="c14">
+                             sortable="true" headerText="Acres" id="c14" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Acres}"
+                                          id="it33" placeholder="Search Acres">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Acres.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.Acres.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.Acres.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.Acres.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.Acres.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Acres.tooltip}" id="it14">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Acres.tooltip}" 
+                                  id="it9" readOnly="true">
                       <f:validator binding="#{row.bindings.Acres.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertAppMasterView1.hints.Acres.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Tel.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Tel.label}" id="c15">
-                    <af:inputText value="#{row.bindings.Tel.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Tel.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Tel.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Tel.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Tel.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Tel.tooltip}" id="it15">
-                      <f:validator binding="#{row.bindings.Tel.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Fax.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Fax.label}" id="c16">
-                    <af:inputText value="#{row.bindings.Fax.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Fax.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Fax.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Fax.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Fax.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Fax.tooltip}" id="it16">
-                      <f:validator binding="#{row.bindings.Fax.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Email.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Email.label}" id="c17">
-                    <af:inputText value="#{row.bindings.Email.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Email.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Email.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Email.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Email.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Email.tooltip}" id="it17">
-                      <f:validator binding="#{row.bindings.Email.validator}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.ContPerson.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.ContPerson.label}"
+                             sortable="true" headerText="Person Contact"
                              id="c18">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ContPerson}"
+                                          id="it37" placeholder="Search Contact">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ContPerson.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.ContPerson.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.ContPerson.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.ContPerson.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.ContPerson.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.ContPerson.tooltip}" id="it18">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.ContPerson.tooltip}" 
+                                  id="it13" readOnly="true">
                       <f:validator binding="#{row.bindings.ContPerson.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Designation.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Designation.label}"
+                             sortable="true" headerText="Designation"
                              id="c19">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Designation}"
+                                          id="it39" placeholder="Search Designation">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Designation.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.Designation.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.Designation.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.Designation.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.Designation.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Designation.tooltip}" id="it19">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Designation.tooltip}" 
+                                  id="it14" readOnly="true">
                       <f:validator binding="#{row.bindings.Designation.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Mobile.label}" id="c20">
+                             sortable="true" headerText="Mobile" id="c20" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Mobile}"
+                                          id="it38" placeholder="Search Mobile">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.Mobile.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.Mobile.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.Mobile.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Mobile.tooltip}" id="it20">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Mobile.tooltip}" id="it15"
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Website.name}" filterable="true"
+                             sortable="true" headerText="Website" id="c9">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Website}"
+                                          id="it25" placeholder="Search Website">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Website.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.Website.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.Website.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.Website.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Website.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Website.tooltip}" 
+                                  id="it4" readOnly="true">
+                      <f:validator binding="#{row.bindings.Website.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Ntn.name}" filterable="true"
+                             sortable="true" headerText="NTN" id="c10">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ntn}"
+                                          id="it29" placeholder="Search NTN">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Ntn.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.Ntn.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.Ntn.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.Ntn.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Ntn.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Ntn.tooltip}" 
+                                  id="it5" readOnly="true">
+                      <f:validator binding="#{row.bindings.Ntn.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CoAddress.name}" filterable="true"
+                             sortable="true" headerText="Company Address"
+                             id="c11" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CoAddress}"
+                                          id="it30" placeholder="Search Address">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.CoAddress.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.CoAddress.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.CoAddress.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.CoAddress.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CoAddress.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoAddress.tooltip}" 
+                                  id="it6" readOnly="true">
+                      <f:validator binding="#{row.bindings.CoAddress.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Tel.name}" filterable="true"
+                             sortable="true" headerText="Telephone" id="c15">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Tel}"
+                                          id="it34" placeholder="Search Telephone">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Tel.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.Tel.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.Tel.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.Tel.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Tel.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Tel.tooltip}" 
+                                  id="it10" readOnly="true">
+                      <f:validator binding="#{row.bindings.Tel.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Fax.name}" filterable="true"
+                             sortable="true" headerText="Fax" id="c16">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Fax}"
+                                          id="it35" placeholder="Search Fax">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Fax.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.Fax.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.Fax.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.Fax.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Fax.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Fax.tooltip}" 
+                                  id="it11" readOnly="true">
+                      <f:validator binding="#{row.bindings.Fax.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Email.name}" filterable="true"
+                             sortable="true" headerText="Email" id="c17">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Email}"
+                                          id="it36" placeholder="Search Email">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Email.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.Email.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.Email.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.Email.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Email.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Email.tooltip}" 
+                                  id="it12" readOnly="true">
+                      <f:validator binding="#{row.bindings.Email.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.label}"
-                             id="c21">
+                             sortable="true" headerText="No of Employee Male"
+                             id="c21" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.NoOfEmpM}"
+                                          id="it40" placeholder="Search No">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.NoOfEmpM.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.tooltip}" id="it21">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.tooltip}" id="it16"
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.NoOfEmpM.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertAppMasterView1.hints.NoOfEmpM.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.label}"
-                             id="c22">
+                             sortable="true" headerText="No of Employee Female"
+                             id="c22" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.NoOfEmpF}"
+                                          id="it42" placeholder="Search No">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.NoOfEmpF.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.mandatory}"
                                   columns="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.displayWidth}"
                                   maximumLength="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.tooltip}" id="it22">
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.tooltip}" id="it17"
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.NoOfEmpF.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertAppMasterView1.hints.NoOfEmpF.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Ast.label}" id="c23">
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Ast.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Ast.tooltip}" id="it23">
+                             sortable="true" headerText="Active" id="c23">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it41" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.Ast.tooltip}" id="soc7"
+                                        readOnly="true">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CreatedDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.CreatedDate.label}"
-                             id="c24">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblCertAppMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.TblCertAppMasterView1.hints.CreatedDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CreatedDate.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CreatedDate.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CreatedDate.displayWidth}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CreatedDate.tooltip}" id="id2">
-                      <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblCertAppMasterView1.hints.CreatedDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CreatedBy.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.CreatedBy.label}"
-                             id="c25">
-                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CreatedBy.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CreatedBy.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CreatedBy.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CreatedBy.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CreatedBy.tooltip}" id="it24">
-                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertAppMasterView1.hints.CreatedBy.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.label}"
-                             id="c26">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblCertAppMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
-                                    id="id3">
-                        <af:convertDateTime pattern="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.displayWidth}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.tooltip}" id="id4">
-                      <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblCertAppMasterView1.hints.UpdatedDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.label}"
-                             id="c27">
-                    <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.tooltip}" id="it25">
-                      <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertAppMasterView1.hints.UpdatedBy.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
               </af:showDetailItem>
@@ -394,37 +460,31 @@
                           selectionListener="#{bindings.TblCertApprovalView3.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblCertApprovalView3.rangeSize}"
                           filterModel="#{bindings.TblCertApprovalView3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblCertApprovalView3Query.processQuery}" varStatus="vs" id="t2">
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.label}" id="c28">
-                    <af:inputText value="#{row.bindings.CertAppMasterId.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.displayWidth}"
-                                  maximumLength="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.precision}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.tooltip}" id="it26">
-                      <f:validator binding="#{row.bindings.CertAppMasterId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertApprovalView3.hints.CertAppMasterId.format}"/>
-                    </af:inputText>
-                  </af:column>
+                          queryListener="#{bindings.TblCertApprovalView3Query.processQuery}" varStatus="vs" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.CertApprovalId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.CertApprovalId.label}"
-                             id="c29">
+                             sortable="true" headerText="Certification Approval ID"
+                             id="c29" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CertApprovalId}"
+                                          id="it26" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.CertApprovalId.inputValue}"
                                   label="#{bindings.TblCertApprovalView3.hints.CertApprovalId.label}"
                                   required="#{bindings.TblCertApprovalView3.hints.CertApprovalId.mandatory}"
                                   columns="#{bindings.TblCertApprovalView3.hints.CertApprovalId.displayWidth}"
                                   maximumLength="#{bindings.TblCertApprovalView3.hints.CertApprovalId.precision}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CertApprovalId.tooltip}" id="it27">
+                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CertApprovalId.tooltip}" 
+                                  id="it27" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.CertApprovalId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertApprovalView3.hints.CertApprovalId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.Dated.label}" id="c30">
+                             sortable="true" headerText="Dated" id="c30">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCertApprovalView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id5">
@@ -440,83 +500,19 @@
                       <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.CertRateId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.CertRateId.label}"
-                             id="c31">
-                    <af:inputText value="#{row.bindings.CertRateId.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.CertRateId.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.CertRateId.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.CertRateId.displayWidth}"
-                                  maximumLength="#{bindings.TblCertApprovalView3.hints.CertRateId.precision}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CertRateId.tooltip}" id="it28">
+                  <af:column headerText="Rate" id="c28" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.CertRateId}"
+                                          id="it28" placeholder="Search Rate">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.CertRateId.inputValue}"
+                                        label="#{row.bindings.CertRateId.label}"
+                                        required="#{bindings.TblCertApprovalView3.hints.CertRateId.mandatory}"
+                                        shortDesc="#{bindings.TblCertApprovalView3.hints.CertRateId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.CertRateId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.CertRateId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertApprovalView3.hints.CertRateId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.CreatedDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.CreatedDate.label}"
-                             id="c32">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblCertApprovalView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
-                                    id="id7">
-                        <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.CreatedDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.CreatedDate.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.CreatedDate.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.CreatedDate.displayWidth}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CreatedDate.tooltip}" id="id8">
-                      <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.CreatedDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.CreatedBy.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.CreatedBy.label}"
-                             id="c33">
-                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.CreatedBy.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.CreatedBy.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.CreatedBy.displayWidth}"
-                                  maximumLength="#{bindings.TblCertApprovalView3.hints.CreatedBy.precision}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.CreatedBy.tooltip}" id="it29">
-                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertApprovalView3.hints.CreatedBy.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.UpdatedDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.UpdatedDate.label}"
-                             id="c34">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.TblCertApprovalView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
-                                    id="id9">
-                        <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.UpdatedDate.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.UpdatedDate.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.UpdatedDate.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.UpdatedDate.displayWidth}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.UpdatedDate.tooltip}" id="id10">
-                      <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.UpdatedDate.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.UpdatedBy.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView3.hints.UpdatedBy.label}"
-                             id="c35">
-                    <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
-                                  label="#{bindings.TblCertApprovalView3.hints.UpdatedBy.label}"
-                                  required="#{bindings.TblCertApprovalView3.hints.UpdatedBy.mandatory}"
-                                  columns="#{bindings.TblCertApprovalView3.hints.UpdatedBy.displayWidth}"
-                                  maximumLength="#{bindings.TblCertApprovalView3.hints.UpdatedBy.precision}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.UpdatedBy.tooltip}" id="it30">
-                      <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertApprovalView3.hints.UpdatedBy.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Crops_Name_LOV1"
+    ViewObjectName="model.LOV.Crops_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Market_Service_LOV1"
+    ViewObjectName="model.LOV.Market_Service_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CropId"
+    ListVOName="Crops_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MarketServ"
+    ListVOName="Market_Service_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MarketServ"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblCertAppDetail"
     Entity="model.EO.TblCertAppDetail"/>
@@ -34,7 +78,15 @@
     PrecisionRule="true"
     EntityAttrName="CropId"
     EntityUsage="TblCertAppDetail"
-    AliasName="CROP_ID"/>
+    AliasName="CROP_ID"
+    LOVName="LOV_CropId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProdQty"
     PrecisionRule="true"
@@ -58,7 +110,15 @@
     PrecisionRule="true"
     EntityAttrName="MarketServ"
     EntityUsage="TblCertAppDetail"
-    AliasName="MARKET_SERV"/>
+    AliasName="MARKET_SERV"
+    LOVName="LOV_MarketServ">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

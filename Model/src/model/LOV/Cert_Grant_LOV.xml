@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Cert_Grant_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblCertRate.CERT_RATE_ID, 
+       TblCertRate.CERT_GRANT, 
+       TblCertRate.AST"
+  FromList="TBL_CERT_RATE TblCertRate"
+  Where="TblCertRate.AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Cert_Grant_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblCertRate"
+    Entity="model.EO.TblCertRate"/>
+  <ViewAttribute
+    Name="CertRateId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CertRateId"
+    EntityUsage="TblCertRate"
+    AliasName="CERT_RATE_ID"/>
+  <ViewAttribute
+    Name="CertGrant"
+    PrecisionRule="true"
+    EntityAttrName="CertGrant"
+    EntityUsage="TblCertRate"
+    AliasName="CERT_GRANT"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblCertRate"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
