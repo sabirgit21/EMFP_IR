@@ -31,37 +31,32 @@
                           selectionListener="#{bindings.TblExpoPromSetupView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblExpoPromSetupView1.rangeSize}"
                           filterModel="#{bindings.TblExpoPromSetupView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblExpoPromSetupView1Query.processQuery}" varStatus="vs" id="t1">
-                  <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.label}"
-                             id="c1">
-                    <af:inputText value="#{row.bindings.ExpoSchId.inputValue}"
-                                  label="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.label}"
-                                  required="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.mandatory}"
-                                  columns="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.displayWidth}"
-                                  maximumLength="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.precision}"
-                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.tooltip}" id="it1">
-                      <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblExpoPromSetupView1.hints.ExpoSchId.format}"/>
-                    </af:inputText>
-                  </af:column>
+                          queryListener="#{bindings.TblExpoPromSetupView1Query.processQuery}" varStatus="vs" 
+                          id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.label}" id="c2">
+                             headerText="Expo Promotion Setup ID" id="c2" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoPromSetupId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.ExpoPromSetupId.inputValue}"
                                   label="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.label}"
                                   required="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.mandatory}"
                                   columns="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.displayWidth}"
                                   maximumLength="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.precision}"
-                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.tooltip}" id="it2">
+                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.tooltip}" 
+                                  id="it2" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ExpoPromSetupId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoPromSetupView1.hints.ExpoPromSetupId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.FDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.FDate.label}" id="c3">
+                             sortable="true" headerText="From Date" id="c3">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.FDate.value}"
                                     id="id1">
@@ -78,7 +73,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.TDate.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.TDate.label}" id="c4">
+                             sortable="true" headerText="To Date" id="c4">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TDate.value}"
                                     id="id3">
@@ -89,14 +84,19 @@
                                   label="#{bindings.TblExpoPromSetupView1.hints.TDate.label}"
                                   required="#{bindings.TblExpoPromSetupView1.hints.TDate.mandatory}"
                                   columns="#{bindings.TblExpoPromSetupView1.hints.TDate.displayWidth}"
-                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.TDate.tooltip}" id="id4">
+                                  shortDesc="#{bindings.TblExpoPromSetupView1.hints.TDate.tooltip}" id="id9">
                       <f:validator binding="#{row.bindings.TDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblExpoPromSetupView1.hints.TDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.label}"
-                             id="c5">
+                             sortable="true" headerText="No of Days"
+                             id="c5" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.NoOfDays}"
+                                          id="it1" placeholder="Search Days">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.NoOfDays.inputValue}"
                                   label="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.label}"
                                   required="#{bindings.TblExpoPromSetupView1.hints.NoOfDays.mandatory}"
@@ -110,7 +110,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.label}" id="c6">
+                             headerText="Expo Setup Venue" id="c6" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSetupVenue}"
+                                          id="it12" placeholder="Search Venue">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.ExpoSetupVenue.inputValue}"
                                   label="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.label}"
                                   required="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.mandatory}"
@@ -121,7 +126,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.STime.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.STime.label}" id="c7">
+                             sortable="true" headerText="Start Date" id="c7">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.STime.value}"
                                     id="id5">
@@ -138,7 +143,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ETime.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblExpoPromSetupView1.hints.ETime.label}" id="c8">
+                             sortable="true" headerText="End Date" id="c8">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ETime.value}"
                                     id="id7">
@@ -187,7 +192,8 @@
                           selectionListener="#{bindings.TblExpoPromDetailView3.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblExpoPromDetailView3.rangeSize}"
                           filterModel="#{bindings.TblExpoPromDetailView3Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblExpoPromDetailView3Query.processQuery}" varStatus="vs" id="t2">
+                          queryListener="#{bindings.TblExpoPromDetailView3Query.processQuery}" varStatus="vs" 
+                          id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblExpoPromDetailView3.hints.ExpoPromDetailId.label}" id="c9">
