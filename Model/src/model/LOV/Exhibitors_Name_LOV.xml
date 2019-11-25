@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Exhibitors_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblExhibitors.EXHIBITORS_ID, 
+       TblExhibitors.NAME"
+  FromList="TBL_EXHIBITORS TblExhibitors"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Exhibitors_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblExhibitors"
+    Entity="model.EO.TblExhibitors"/>
+  <ViewAttribute
+    Name="ExhibitorsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExhibitorsId"
+    EntityUsage="TblExhibitors"
+    AliasName="EXHIBITORS_ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblExhibitors"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
