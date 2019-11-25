@@ -326,7 +326,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.name}" filterable="true"
                              sortable="true" headerText="Stall Discount Amount"
-                             id="c16" align="center">
+                             id="c16" align="center" width="140">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallDiscAmt}"
                                           id="it31" placeholder="Search Discount Amount">

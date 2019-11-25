@@ -162,7 +162,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.name}" filterable="true"
-                             sortable="true" headerText="Expo Deal Amount" id="c9" align="left">
+                             sortable="true" headerText="Expo Deal Amount" id="c9" align="left" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpDealAmt}"
                                           id="it17" placeholder="Search Amount">
