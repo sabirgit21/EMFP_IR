@@ -4,8 +4,6 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalMasterView1Iterator" Refresh="ifNeeded"/>
     <iterator Binds="MMP_RO_Status_Grant_Land2" RangeSize="25" DataControl="AppModuleDataControl"
               id="MMP_RO_Status_Grant_Land2Iterator" Refresh="ifNeeded"/>
     <searchRegion Binds="MMP_RO_Status_Grant_Land2Iterator" Criteria=""
@@ -18,15 +16,10 @@
     <iterator Binds="MMP_RO_Approval1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Approval1Iterator"/>
     <searchRegion Binds="MMP_RO_Approval1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Approval1Query"/>
+    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterView1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="TblGrantApprovalMasterView1Iterator" ListOperMode="navigation"
-          ListIter="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="ClusterNo"/>
-      </AttrNames>
-    </list>
     <tree IterBinding="MMP_RO_Status_Grant_Land2Iterator" id="MMP_RO_Status_Grant_Land2">
       <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land20">
         <AttrNames>
@@ -75,5 +68,13 @@
       </ValueList>
     </button>
     <action IterBinding="MMP_RO_Approval1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="TblGrantApprovalMasterView1Iterator" ListOperMode="navigation"
+          ListIter="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
   </bindings>
 </pageDefinition>

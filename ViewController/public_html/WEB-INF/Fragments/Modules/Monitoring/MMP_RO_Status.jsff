@@ -21,11 +21,10 @@
             <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab3" text="MMP RO Status">
                 <af:selectOneChoice value="#{bindings.TblGrantApprovalMasterView1.inputValue}"
-                autoSubmit="true"
-                                    label="#{bindings.TblGrantApprovalMasterView1.label}"
+                                    label="#{bindings.TblGrantApprovalMasterView1.label}" autoSubmit="true"
                                     required="#{bindings.TblGrantApprovalMasterView1.hints.mandatory}"
-                                    shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.tooltip}" id="soc1">
-                  <f:selectItems value="#{bindings.TblGrantApprovalMasterView1.items}" id="si1"/>
+                                    shortDesc="#{bindings.TblGrantApprovalMasterView1.hints.tooltip}" id="soc4">
+                  <f:selectItems value="#{bindings.TblGrantApprovalMasterView1.items}" id="si4"/>
                   <f:validator binding="#{bindings.TblGrantApprovalMasterView1.validator}"/>
                 </af:selectOneChoice>
               </af:showDetailItem>
