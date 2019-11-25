@@ -13,6 +13,72 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="B2B_Meeting_Type_LOV1"
+    ViewObjectName="model.LOV.B2B_Meeting_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Exhibitors_Name_LOV1"
+    ViewObjectName="model.LOV.Exhibitors_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="International_Delegation_LOV1"
+    ViewObjectName="model.LOV.International_Delegation_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_B2bMeetingType"
+    ListVOName="B2B_Meeting_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="B2bMeetingType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExhibitorsId"
+    ListVOName="Exhibitors_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExhibitorsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExhibitorsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IntlDelegAppMId"
+    ListVOName="International_Delegation_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IntlDelegAppMId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="IntlDelegAppMId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblB2bMeeting"
     Entity="model.EO.TblB2bMeeting"/>
@@ -28,13 +94,29 @@
     PrecisionRule="true"
     EntityAttrName="B2bMeetingType"
     EntityUsage="TblB2bMeeting"
-    AliasName="B2B_MEETING_TYPE"/>
+    AliasName="B2B_MEETING_TYPE"
+    LOVName="LOV_B2bMeetingType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExhibitorsId"
     PrecisionRule="true"
     EntityAttrName="ExhibitorsId"
     EntityUsage="TblB2bMeeting"
-    AliasName="EXHIBITORS_ID"/>
+    AliasName="EXHIBITORS_ID"
+    LOVName="LOV_ExhibitorsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
@@ -46,7 +128,15 @@
     PrecisionRule="true"
     EntityAttrName="IntlDelegAppMId"
     EntityUsage="TblB2bMeeting"
-    AliasName="INTL_DELEG_APP_M_ID"/>
+    AliasName="INTL_DELEG_APP_M_ID"
+    LOVName="LOV_IntlDelegAppMId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
