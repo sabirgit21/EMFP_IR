@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Expo_Halls_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblExpoHalls.EXPO_HALLS_ID, 
+       TblExpoHalls.NAME"
+  FromList="TBL_EXPO_HALLS TblExpoHalls"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Expo_Halls_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblExpoHalls"
+    Entity="model.EO.TblExpoHalls"/>
+  <ViewAttribute
+    Name="ExpoHallsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpoHallsId"
+    EntityUsage="TblExpoHalls"
+    AliasName="EXPO_HALLS_ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblExpoHalls"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

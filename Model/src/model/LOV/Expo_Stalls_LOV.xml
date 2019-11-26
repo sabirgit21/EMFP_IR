@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Expo_Stalls_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblExpoStalls.EXPO_STALLS_ID, 
+       TblExpoStalls.STALL_NAME"
+  FromList="TBL_EXPO_STALLS TblExpoStalls"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Expo_Stalls_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblExpoStalls"
+    Entity="model.EO.TblExpoStalls"/>
+  <ViewAttribute
+    Name="ExpoStallsId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ExpoStallsId"
+    EntityUsage="TblExpoStalls"
+    AliasName="EXPO_STALLS_ID"/>
+  <ViewAttribute
+    Name="StallName"
+    PrecisionRule="true"
+    EntityAttrName="StallName"
+    EntityUsage="TblExpoStalls"
+    AliasName="STALL_NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
