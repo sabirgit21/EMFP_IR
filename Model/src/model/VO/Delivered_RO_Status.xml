@@ -14,7 +14,8 @@
        TblGrantApprovalDetail.FARMER_REG_ID, 
        TblFarmerReg.FARMER_NO, 
        TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
-       TblFarmerReg.NAME"
+       TblFarmerReg.NAME, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
   Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)  
 AND TblGrantApprovalDetail.RO_STATUS = 'issued'">
@@ -84,9 +85,26 @@ AND TblGrantApprovalDetail.RO_STATUS = 'issued'">
     EntityAttrName="Name"
     EntityUsage="TblFarmerReg"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="GrantApprovalMasterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterId"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_APPROVAL_MASTER_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDView"
+    ViewLink="model.VO.Delivered_RO_Status_Detail_D_FkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MMP_RO_Status_Grant_Land"
+    ViewLink="model.VO.Delivered_RO_Status_Grant_Land_FkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

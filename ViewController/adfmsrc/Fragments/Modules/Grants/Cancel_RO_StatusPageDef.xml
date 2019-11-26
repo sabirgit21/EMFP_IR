@@ -4,24 +4,74 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Cancelled_RO_Status1" RangeSize="8" DataControl="AppModuleDataControl"
-              id="Cancelled_RO_Status1Iterator"/>
-    <searchRegion Binds="Cancelled_RO_Status1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Cancelled_RO_Status1Query"/>
+    <iterator Binds="Cancel_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Cancel_Grant_Approval_Master1Iterator"/>
+    <iterator Binds="Cancelled_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Cancelled_RO_Status2Iterator"/>
+    <searchRegion Binds="Cancelled_RO_Status2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Cancelled_RO_Status2Query"/>
+    <iterator Binds="MMP_RO_Status_Grant_Land7" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Land7Iterator"/>
+    <searchRegion Binds="MMP_RO_Status_Grant_Land7Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land7Query"/>
+    <iterator Binds="TblGrantApprovalDetailDView10" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDView10Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDView10Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDView10Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="Cancelled_RO_Status1Iterator" id="Cancelled_RO_Status1">
-      <nodeDefinition DefName="model.VO.Cancelled_RO_Status" Name="Cancelled_RO_Status10">
+    <list IterBinding="Cancel_Grant_Approval_Master1Iterator" ListOperMode="navigation"
+          ListIter="Cancel_Grant_Approval_Master1Iterator" id="Cancel_Grant_Approval_Master1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="ClusterName"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="Cancelled_RO_Status2Iterator" id="Cancelled_RO_Status2">
+      <nodeDefinition DefName="model.VO.Cancelled_RO_Status" Name="Cancelled_RO_Status20">
         <AttrNames>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="GrantApprovalDetailId"/>
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
           <Item Value="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="Cancelled_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true"
+    <tree IterBinding="MMP_RO_Status_Grant_Land7Iterator" id="MMP_RO_Status_Grant_Land7">
+      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land70">
+        <AttrNames>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="Amount"/>
+          <Item Value="FAcre"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantBase"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="Cnic"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDView10Iterator" id="TblGrantApprovalDetailDView10">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView100">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailDId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Cancelled_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

@@ -4,33 +4,81 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Issue_RO_Status1" RangeSize="8" DataControl="AppModuleDataControl" id="Issue_RO_Status1Iterator"
-              Refresh="always" CacheResults="false"/>
-    <searchRegion Binds="Issue_RO_Status1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Issue_RO_Status1Query"/>
+    <iterator Binds="Issued_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Issued_Grant_Approval_Master1Iterator"/>
+    <iterator Binds="Issue_RO_Status3" RangeSize="25" DataControl="AppModuleDataControl" id="Issue_RO_Status3Iterator"/>
+    <searchRegion Binds="Issue_RO_Status3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Issue_RO_Status3Query"/>
+    <iterator Binds="MMP_RO_Status_Grant_Land6" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Land6Iterator"/>
+    <searchRegion Binds="MMP_RO_Status_Grant_Land6Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land6Query"/>
+    <iterator Binds="TblGrantApprovalDetailDView9" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDView9Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDView9Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDView9Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="Issue_RO_Status1Iterator" id="Issue_RO_Status1">
-      <nodeDefinition DefName="model.VO.Issue_RO_Status" Name="Issue_RO_Status10">
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="Issued_Grant_Approval_Master1Iterator" ListOperMode="navigation"
+          ListIter="Issued_Grant_Approval_Master1Iterator" id="Issued_Grant_Approval_Master1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="ClusterName"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="Issue_RO_Status3Iterator" id="Issue_RO_Status3">
+      <nodeDefinition DefName="model.VO.Issue_RO_Status" Name="Issue_RO_Status30">
         <AttrNames>
+          <Item Value="GrantApprovalMasterId"/>
           <Item Value="GrantApprovalDetailId"/>
-          <Item Value="FarmerNo"/>
           <Item Value="Name"/>
+          <Item Value="FarmerNo"/>
           <Item Value="RoStatus" Binds="RoStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <button IterBinding="Issue_RO_Status1Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
+    <button IterBinding="Issue_RO_Status3Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
       <AttrNames>
         <Item Value="RoStatus"/>
       </AttrNames>
       <ValueList>
         <Item Value="issued"/>
-        <Item Value="null"/>
+        <Item Value="print"/>
       </ValueList>
     </button>
-    <action IterBinding="Issue_RO_Status1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="Issue_RO_Status3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <tree IterBinding="MMP_RO_Status_Grant_Land6Iterator" id="MMP_RO_Status_Grant_Land6">
+      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land60">
+        <AttrNames>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="Amount"/>
+          <Item Value="FAcre"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantBase"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="Cnic"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDView9Iterator" id="TblGrantApprovalDetailDView9">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView90">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailDId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

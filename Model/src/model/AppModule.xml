@@ -1547,6 +1547,54 @@
   <ViewUsage
     Name="TblGrantApprovalDetailDView6"
     ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="Print_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Print_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Issued_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Issued_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Delivered_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Delivered_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Cancel_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Cancel_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Print_RO_Status2"
+    ViewObjectName="model.VO.Print_RO_Status"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land4"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView7"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="Issue_RO_Status3"
+    ViewObjectName="model.VO.Issue_RO_Status"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land6"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView9"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="Delivered_RO_Status2"
+    ViewObjectName="model.VO.Delivered_RO_Status"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView8"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land5"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="Cancelled_RO_Status2"
+    ViewObjectName="model.VO.Cancelled_RO_Status"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView10"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land7"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3040,5 +3088,77 @@
     ViewLinkObjectName="model.VO.VCTAT_Approval_Detail_D_FKlink"
     SrcViewUsageName="model.AppModule.Vctat_RO_Status2"
     DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Print_RO_Status_FKLink1"
+    ViewLinkObjectName="model.VO.Print_RO_Status_FKLink"
+    SrcViewUsageName="model.AppModule.Print_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Print_RO_Status2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Print_RO_Status_Grant_Land_FKLink1"
+    ViewLinkObjectName="model.VO.Print_RO_Status_Grant_Land_FKLink"
+    SrcViewUsageName="model.AppModule.Print_RO_Status2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Print_RO_Status_Detail_D_FKLink1"
+    ViewLinkObjectName="model.VO.Print_RO_Status_Detail_D_FKLink"
+    SrcViewUsageName="model.AppModule.Print_RO_Status2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView7"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Issue_RO_Status_FkLink2"
+    ViewLinkObjectName="model.VO.Issue_RO_Status_FkLink"
+    SrcViewUsageName="model.AppModule.Issued_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Issue_RO_Status3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Issue_RO_Status_Grant_Land_FkLink2"
+    ViewLinkObjectName="model.VO.Issue_RO_Status_Grant_Land_FkLink"
+    SrcViewUsageName="model.AppModule.Issue_RO_Status3"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Issue_RO_Status_Detail_D_FkLink2"
+    ViewLinkObjectName="model.VO.Issue_RO_Status_Detail_D_FkLink"
+    SrcViewUsageName="model.AppModule.Issue_RO_Status3"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView9"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Delivered_RO_Status_FkLink1"
+    ViewLinkObjectName="model.VO.Delivered_RO_Status_FkLink"
+    SrcViewUsageName="model.AppModule.Delivered_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Delivered_RO_Status2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Delivered_RO_Status_Detail_D_FkLink1"
+    ViewLinkObjectName="model.VO.Delivered_RO_Status_Detail_D_FkLink"
+    SrcViewUsageName="model.AppModule.Delivered_RO_Status2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView8"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Delivered_RO_Status_Grant_Land_FkLink1"
+    ViewLinkObjectName="model.VO.Delivered_RO_Status_Grant_Land_FkLink"
+    SrcViewUsageName="model.AppModule.Delivered_RO_Status2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Cancel_RO_Status_FkLink1"
+    ViewLinkObjectName="model.VO.Cancel_RO_Status_FkLink"
+    SrcViewUsageName="model.AppModule.Cancel_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Cancelled_RO_Status2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Cancel_RO_Status_Detail_D_FkLink1"
+    ViewLinkObjectName="model.VO.Cancel_RO_Status_Detail_D_FkLink"
+    SrcViewUsageName="model.AppModule.Cancelled_RO_Status2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView10"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Cancel_RO_Status_Grant_Land_FkLink1"
+    ViewLinkObjectName="model.VO.Cancel_RO_Status_Grant_Land_FkLink"
+    SrcViewUsageName="model.AppModule.Cancelled_RO_Status2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land7"
     Reversed="false"/>
 </AppModule>
