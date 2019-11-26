@@ -111,7 +111,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt3" inlineStyle="width:803px;">
+            <af:panelTabbed position="above" id="pt3" inlineStyle="width:1010px;">
               <af:showDetailItem id="tab3" text="Farmer's Grant Detail">
                 <af:table value="#{bindings.MMP_RO_Status_Grant_Land1.collectionModel}" var="row"
                           rows="#{bindings.MMP_RO_Status_Grant_Land1.rangeSize}"
@@ -123,7 +123,7 @@
                           filterModel="#{bindings.MMP_RO_Status_Grant_Land1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MMP_RO_Status_Grant_Land1Query.processQuery}" varStatus="vs"
                           id="t2">
-                  <af:column headerText="#{bindings.MMP_RO_Status_Grant_Land1.hints.FarmerRegId.label}" id="c4">
+                  <af:column headerText="Farmer" id="c4">
                     <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
                                         label="#{row.bindings.FarmerRegId.label}"
                                         required="#{bindings.MMP_RO_Status_Grant_Land1.hints.FarmerRegId.mandatory}"

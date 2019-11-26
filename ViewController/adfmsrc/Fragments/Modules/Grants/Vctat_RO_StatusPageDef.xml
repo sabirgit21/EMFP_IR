@@ -29,6 +29,7 @@
           <Item Value="Name"/>
           <Item Value="FarmerNo"/>
           <Item Value="RoStatus" Binds="RoStatus"/>
+          <Item Value="GrantApprovalMasterId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -78,5 +79,6 @@
         <Item Value="ClusterNo"/>
       </AttrNames>
     </list>
+    <action IterBinding="Vctat_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
