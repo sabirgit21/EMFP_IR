@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="Issued_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="Issued_Grant_Approval_Master1" DataControl="AppModuleDataControl"
               id="Issued_Grant_Approval_Master1Iterator"/>
     <iterator Binds="Issue_RO_Status3" RangeSize="25" DataControl="AppModuleDataControl" id="Issue_RO_Status3Iterator"/>
     <searchRegion Binds="Issue_RO_Status3Iterator" Criteria=""

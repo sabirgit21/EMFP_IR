@@ -4,29 +4,36 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"
-              Refresh="ifNeeded"/>
+    <iterator Binds="MMP_RO_Status_Grant_Approval_Master1" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Approval_Master1Iterator"/>
+    <iterator Binds="MMP_RO_Status2" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Status2Iterator"/>
     <searchRegion Binds="MMP_RO_Status2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status2Query"/>
     <iterator Binds="MMP_RO_Status_Grant_Land1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MMP_RO_Status_Grant_Land1Iterator" Refresh="ifNeeded"/>
+              id="MMP_RO_Status_Grant_Land1Iterator"/>
     <searchRegion Binds="MMP_RO_Status_Grant_Land1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land1Query"/>
     <iterator Binds="TblGrantApprovalDetailDView4" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDView4Iterator" Refresh="ifNeeded"/>
+              id="TblGrantApprovalDetailDView4Iterator"/>
     <searchRegion Binds="TblGrantApprovalDetailDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView4Query"/>
-    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalMasterView1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="MMP_RO_Status_Grant_Approval_Master1Iterator" ListOperMode="navigation"
+          ListIter="MMP_RO_Status_Grant_Approval_Master1Iterator" id="MMP_RO_Status_Grant_Approval_Master1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="Name"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
     <tree IterBinding="MMP_RO_Status2Iterator" id="MMP_RO_Status2">
       <nodeDefinition DefName="model.VO.MMP_RO_Status" Name="MMP_RO_Status20">
         <AttrNames>
-          <Item Value="FarmerRegId"/>
           <Item Value="GrantApprovalDetailId"/>
           <Item Value="RoStatus"/>
           <Item Value="FarmerNo"/>
@@ -36,6 +43,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <tree IterBinding="MMP_RO_Status_Grant_Land1Iterator" id="MMP_RO_Status_Grant_Land1">
       <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land10">
         <AttrNames>
@@ -64,14 +72,5 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="MMP_RO_Status2Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <list IterBinding="TblGrantApprovalMasterView1Iterator" ListOperMode="navigation"
-          ListIter="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="GrantApprovalMasterId"/>
-        <Item Value="ClusterNo"/>
-      </AttrNames>
-    </list>
   </bindings>
 </pageDefinition>

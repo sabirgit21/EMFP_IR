@@ -4,54 +4,38 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="MMP_RO_Status_Grant_Land2" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MMP_RO_Status_Grant_Land2Iterator" Refresh="ifNeeded"/>
-    <searchRegion Binds="MMP_RO_Status_Grant_Land2Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land2Query"/>
-    <iterator Binds="TblGrantApprovalDetailDView5" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDView5Iterator" Refresh="ifNeeded"/>
-    <searchRegion Binds="TblGrantApprovalDetailDView5Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="TblGrantApprovalDetailDView5Query"/>
+    <iterator Binds="MMP_RO_Approval_Grant_Approval_Master1" DataControl="AppModuleDataControl"
+              id="MMP_RO_Approval_Grant_Approval_Master1Iterator"/>
     <iterator Binds="MMP_RO_Approval1" RangeSize="25" DataControl="AppModuleDataControl" id="MMP_RO_Approval1Iterator"/>
     <searchRegion Binds="MMP_RO_Approval1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Approval1Query"/>
-    <iterator Binds="TblGrantApprovalMasterView1" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalMasterView1Iterator"/>
+    <iterator Binds="MMP_RO_Status_Grant_Land2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Land2Iterator"/>
+    <searchRegion Binds="MMP_RO_Status_Grant_Land2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MMP_RO_Status_Grant_Land2Query"/>
+    <iterator Binds="TblGrantApprovalDetailDView5" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDView5Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDView5Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDView5Query"/>
   </executables>
   <bindings>
-    <tree IterBinding="MMP_RO_Status_Grant_Land2Iterator" id="MMP_RO_Status_Grant_Land2">
-      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land20">
-        <AttrNames>
-          <Item Value="GrantApprovalDetailId"/>
-          <Item Value="LandUnderOrch"/>
-          <Item Value="Amount"/>
-          <Item Value="FAcre"/>
-          <Item Value="FAmount"/>
-          <Item Value="GrantAmount"/>
-          <Item Value="GrantBase"/>
-          <Item Value="Cnic"/>
-          <Item Value="FarmerRegId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblGrantApprovalDetailDView5Iterator" id="TblGrantApprovalDetailDView5">
-      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView50">
-        <AttrNames>
-          <Item Value="GrantApprovalDetailDId"/>
-          <Item Value="ItemL4Id"/>
-          <Item Value="Rate"/>
-          <Item Value="Amount"/>
-          <Item Value="Qty"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="MMP_RO_Approval_Grant_Approval_Master1Iterator" ListOperMode="navigation"
+          ListIter="MMP_RO_Approval_Grant_Approval_Master1Iterator" id="MMP_RO_Approval_Grant_Approval_Master1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="Name"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
     <tree IterBinding="MMP_RO_Approval1Iterator" id="MMP_RO_Approval1">
       <nodeDefinition DefName="model.VO.MMP_RO_Approval" Name="MMP_RO_Approval10">
         <AttrNames>
           <Item Value="GrantApprovalDetailId"/>
+          <Item Value="GrantApprovalMasterId"/>
           <Item Value="Name"/>
           <Item Value="FarmerNo"/>
           <Item Value="RoStatus" Binds="RoStatus"/>
@@ -68,13 +52,33 @@
       </ValueList>
     </button>
     <action IterBinding="MMP_RO_Approval1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <list IterBinding="TblGrantApprovalMasterView1Iterator" ListOperMode="navigation"
-          ListIter="TblGrantApprovalMasterView1Iterator" id="TblGrantApprovalMasterView1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="GrantApprovalMasterId"/>
-        <Item Value="ClusterNo"/>
-      </AttrNames>
-    </list>
+    <tree IterBinding="MMP_RO_Status_Grant_Land2Iterator" id="MMP_RO_Status_Grant_Land2">
+      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land20">
+        <AttrNames>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="Amount"/>
+          <Item Value="FAcre"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantBase"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="Cnic"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDView5Iterator" id="TblGrantApprovalDetailDView5">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView50">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailDId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

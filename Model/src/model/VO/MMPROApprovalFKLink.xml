@@ -13,16 +13,16 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="TblGrantApprovalMasterView"
+    Name="MMP_RO_Approval_Grant_Approval_Master"
     Cardinality="1"
     Source="true"
-    Owner="model.VO.TblGrantApprovalMasterView">
+    Owner="model.VO.MMP_RO_Approval_Grant_Approval_Master">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TblGrantApprovalMasterView"/>
+      <Attr Name="_finderName" Value="MMP_RO_Approval_Grant_Approval_Master"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.TblGrantApprovalMasterView.GrantApprovalMasterId"/>
+      <Item Value="model.VO.MMP_RO_Approval_Grant_Approval_Master.GrantApprovalMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
