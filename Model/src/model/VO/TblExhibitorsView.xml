@@ -13,6 +13,116 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Exhibitor_Type_LOV1"
+    ViewObjectName="model.LOV.Exhibitor_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Country_Name_LOV1"
+    ViewObjectName="model.LOV.Country_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Status1"
+    ViewObjectName="model.LOV.Active_Status"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Stall_Allocation_Type_LOV1"
+    ViewObjectName="model.LOV.Stall_Allocation_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Farmer_Reg_id_LOV1"
+    ViewObjectName="model.LOV.Farmer_Reg_id_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ExhibitorType"
+    ListVOName="Exhibitor_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExhibitorType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LibrCountryId"
+    ListVOName="Country_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LibrCountryId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExhibitorStatus"
+    ListVOName="Active_Status1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExhibitorStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="astDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="astView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StallAllocType"
+    ListVOName="Stall_Allocation_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StallAllocType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ViewDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegId"
+    ListVOName="Farmer_Reg_id_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblExhibitors"
     Entity="model.EO.TblExhibitors"/>
@@ -47,7 +157,15 @@
     PrecisionRule="true"
     EntityAttrName="ExhibitorType"
     EntityUsage="TblExhibitors"
-    AliasName="EXHIBITOR_TYPE"/>
+    AliasName="EXHIBITOR_TYPE"
+    LOVName="LOV_ExhibitorType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExhibitorProd"
     PrecisionRule="true"
@@ -59,25 +177,57 @@
     PrecisionRule="true"
     EntityAttrName="LibrCountryId"
     EntityUsage="TblExhibitors"
-    AliasName="LIBR_COUNTRY_ID"/>
+    AliasName="LIBR_COUNTRY_ID"
+    LOVName="LOV_LibrCountryId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExhibitorStatus"
     PrecisionRule="true"
     EntityAttrName="ExhibitorStatus"
     EntityUsage="TblExhibitors"
-    AliasName="EXHIBITOR_STATUS"/>
+    AliasName="EXHIBITOR_STATUS"
+    LOVName="LOV_ExhibitorStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StallAllocType"
     PrecisionRule="true"
     EntityAttrName="StallAllocType"
     EntityUsage="TblExhibitors"
-    AliasName="STALL_ALLOC_TYPE"/>
+    AliasName="STALL_ALLOC_TYPE"
+    LOVName="LOV_StallAllocType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FarmerRegId"
     PrecisionRule="true"
     EntityAttrName="FarmerRegId"
     EntityUsage="TblExhibitors"
-    AliasName="FARMER_REG_ID"/>
+    AliasName="FARMER_REG_ID"
+    LOVName="LOV_FarmerRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

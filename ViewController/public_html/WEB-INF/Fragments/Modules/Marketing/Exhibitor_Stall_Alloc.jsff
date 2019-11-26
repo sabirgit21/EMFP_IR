@@ -88,26 +88,24 @@
                       <f:validator binding="#{row.bindings.Representative.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorType.name}" filterable="true"
-                             sortable="true" headerText="Exhibitor Type"
-                             id="c5">
-                             <f:facet name="filter">
+                  <af:column headerText="Exhibitor Type" id="c2" sortable="true" filterable="true" width="120">
+                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExhibitorType}"
                                           id="it20" placeholder="Search Type">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExhibitorType.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.ExhibitorType.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.ExhibitorType.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.ExhibitorType.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.ExhibitorType.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.ExhibitorType.tooltip}" id="it5">
+                    <af:selectOneChoice value="#{row.bindings.ExhibitorType.inputValue}"
+                                        label="#{row.bindings.ExhibitorType.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.ExhibitorType.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.ExhibitorType.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.ExhibitorType.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.ExhibitorType.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.name}" filterable="true"
                              sortable="true"
-                             id="c6" headerText="Exhibitors Products">
+                             id="c6" headerText="Exhibitors Products" width="130">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExhibitorProd}"
                                           id="it21" placeholder="Search Products">
@@ -122,77 +120,64 @@
                       <f:validator binding="#{row.bindings.ExhibitorProd.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.LibrCountryId.name}" filterable="true"
-                             sortable="true" headerText="Country"
-                             id="c7">
-                             <f:facet name="filter">
+                  <af:column headerText="Country" id="c5" sortable="true" filterable="true">
+                  <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.LibrCountryId}"
                                           id="it22" placeholder="Search Country">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.LibrCountryId.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.LibrCountryId.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.LibrCountryId.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.LibrCountryId.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.LibrCountryId.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.LibrCountryId.tooltip}" id="it7">
+                    <af:selectOneChoice value="#{row.bindings.LibrCountryId.inputValue}"
+                                        label="#{row.bindings.LibrCountryId.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.LibrCountryId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.LibrCountryId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.LibrCountryId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.LibrCountryId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblExhibitorsView1.hints.LibrCountryId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.name}" filterable="true"
-                             sortable="true" headerText="Exhibitors Status"
-                             id="c8">
-                             <f:facet name="filter">
+                  <af:column headerText="Exhibitor Status" id="c7" sortable="true" filterable="true">
+                  <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExhibitorStatus}"
                                           id="it23" placeholder="Search Status">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExhibitorStatus.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.tooltip}" id="it8">
+                    <af:selectOneChoice value="#{row.bindings.ExhibitorStatus.inputValue}"
+                                        label="#{row.bindings.ExhibitorStatus.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.ExhibitorStatus.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.ExhibitorStatus.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.ExhibitorStatus.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.StallAllocType.name}" filterable="true"
-                             sortable="true" headerText="Stall Allocation Type"
-                             id="c9">
-                              <f:facet name="filter">
+                  <af:column headerText="Stall Allocation Type" id="c8" sortable="true" filterable="true" width="120">
+                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallAllocType}"
                                           id="it24" placeholder="Search Type">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.StallAllocType.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.StallAllocType.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.StallAllocType.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.StallAllocType.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.StallAllocType.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.StallAllocType.tooltip}" id="it9">
+                    <af:selectOneChoice value="#{row.bindings.StallAllocType.inputValue}"
+                                        label="#{row.bindings.StallAllocType.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.StallAllocType.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.StallAllocType.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.StallAllocType.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.StallAllocType.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="Framer"
-                             id="c10">
-                              <f:facet name="filter">
+                  <af:column headerText="Farmer" id="c9" sortable="true" filterable="true" width="200">
+                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
                                           id="it25" placeholder="Search Framer">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
-                                  label="#{bindings.TblExhibitorsView1.hints.FarmerRegId.label}"
-                                  required="#{bindings.TblExhibitorsView1.hints.FarmerRegId.mandatory}"
-                                  columns="#{bindings.TblExhibitorsView1.hints.FarmerRegId.displayWidth}"
-                                  maximumLength="#{bindings.TblExhibitorsView1.hints.FarmerRegId.precision}"
-                                  shortDesc="#{bindings.TblExhibitorsView1.hints.FarmerRegId.tooltip}" id="it10">
+                    <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                        label="#{row.bindings.FarmerRegId.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.FarmerRegId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.FarmerRegId.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblExhibitorsView1.hints.FarmerRegId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
               </af:showDetailItem>
@@ -250,79 +235,49 @@
                                         pattern="#{bindings.TblStallsAllocView3.hints.StallsAllocId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.name}" filterable="true"
-                             sortable="true" headerText="Exhibitors"
-                             id="c12">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.ExhibitorsId}"
-                                          id="it27" placeholder="Search Exhibitors">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
-                                  label="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.label}"
-                                  required="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.mandatory}"
-                                  columns="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.displayWidth}"
-                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.precision}"
-                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.tooltip}" id="it12">
-                      <f:validator binding="#{row.bindings.ExhibitorsId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.name}" filterable="true"
-                             sortable="true" headerText="Expo Halls"
-                             id="c13">
-                              <f:facet name="filter">
+                  <af:column headerText="Expo Hall" id="c10" sortable="true" filterable="true" width="150">
+                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoHallsId}"
                                           id="it28" placeholder="Search Expo Halls">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExpoHallsId.inputValue}"
-                                  label="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.label}"
-                                  required="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.mandatory}"
-                                  columns="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.displayWidth}"
-                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.precision}"
-                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.tooltip}" id="it13">
+                    <af:selectOneChoice value="#{row.bindings.ExpoHallsId.inputValue}"
+                                        label="#{row.bindings.ExpoHallsId.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.tooltip}" id="soc6">
+                      <f:selectItems value="#{row.bindings.ExpoHallsId.items}" id="si6"/>
                       <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.name}" filterable="true"
-                             sortable="true" headerText="Expo Stall ID"
-                             id="c14">
-                              <f:facet name="filter">
+                  <af:column headerText="Expo Stall" id="c12" sortable="true" filterable="true">
+                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoStallsId}"
                                           id="it29" placeholder="Search Expo Stalls">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExpoStallsId.inputValue}"
-                                  label="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.label}"
-                                  required="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.mandatory}"
-                                  columns="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.displayWidth}"
-                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.precision}"
-                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.tooltip}" id="it14">
+                    <af:selectOneChoice value="#{row.bindings.ExpoStallsId.inputValue}"
+                                        label="#{row.bindings.ExpoStallsId.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.tooltip}"
+                                        id="soc7">
+                      <f:selectItems value="#{row.bindings.ExpoStallsId.items}" id="si7"/>
                       <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.name}" filterable="true"
-                             sortable="true" headerText="Expo Stall Type"
-                             id="c15">
-                              <f:facet name="filter">
+                  <af:column headerText="Expo Stall Type" id="c13" sortable="true" filterable="true" width="120">
+                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoStallsType}"
-                                          id="it30" placeholder="Search Stall Type">
+                                          id="it30" placeholder="Search Type">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.ExpoStallsType.inputValue}"
-                                  label="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.label}"
-                                  required="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.mandatory}"
-                                  columns="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.displayWidth}"
-                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.precision}"
-                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.tooltip}" id="it15">
+                    <af:selectOneChoice value="#{row.bindings.ExpoStallsType.inputValue}"
+                                        label="#{row.bindings.ExpoStallsType.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.tooltip}"
+                                        id="soc8">
+                      <f:selectItems value="#{row.bindings.ExpoStallsType.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.ExpoStallsType.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.name}" filterable="true"
                              sortable="true" headerText="Stall Discount Amount"
@@ -364,7 +319,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.Representative.name}" filterable="true"
                              sortable="true" headerText="Representative"
-                             id="c18">
+                             id="c18" width="150">
                                <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Representative}"
                                           id="it33" placeholder="Search Representative">

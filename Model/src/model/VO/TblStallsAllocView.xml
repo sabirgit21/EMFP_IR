@@ -13,6 +13,76 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Expo_Halls_LOV1"
+    ViewObjectName="model.LOV.Expo_Halls_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Expo_Stalls_LOV1"
+    ViewObjectName="model.LOV.Expo_Stalls_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Expo_Type_LOV1"
+    ViewObjectName="model.LOV.Expo_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Stall_Type_LOV1"
+    ViewObjectName="model.LOV.Stall_Type_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ExpoHallsId"
+    ListVOName="Expo_Halls_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoHallsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoHallsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoStallsId"
+    ListVOName="Expo_Stalls_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoStallsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoStallsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StallName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoStallsType"
+    ListVOName="Stall_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoStallsType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStallsAlloc"
     Entity="model.EO.TblStallsAlloc"/>
@@ -35,19 +105,43 @@
     PrecisionRule="true"
     EntityAttrName="ExpoHallsId"
     EntityUsage="TblStallsAlloc"
-    AliasName="EXPO_HALLS_ID"/>
+    AliasName="EXPO_HALLS_ID"
+    LOVName="LOV_ExpoHallsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExpoStallsId"
     PrecisionRule="true"
     EntityAttrName="ExpoStallsId"
     EntityUsage="TblStallsAlloc"
-    AliasName="EXPO_STALLS_ID"/>
+    AliasName="EXPO_STALLS_ID"
+    LOVName="LOV_ExpoStallsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExpoStallsType"
     PrecisionRule="true"
     EntityAttrName="ExpoStallsType"
     EntityUsage="TblStallsAlloc"
-    AliasName="EXPO_STALLS_TYPE"/>
+    AliasName="EXPO_STALLS_TYPE"
+    LOVName="LOV_ExpoStallsType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StallDiscAmt"
     PrecisionRule="true"
