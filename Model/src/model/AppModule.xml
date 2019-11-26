@@ -1535,6 +1535,18 @@
   <ViewUsage
     Name="TblCertApprovalView6"
     ViewObjectName="model.queryBasedVO.TblCertApprovalView"/>
+  <ViewUsage
+    Name="Vctat_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Vctat_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Vctat_RO_Status2"
+    ViewObjectName="model.VO.Vctat_RO_Status"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land3"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView6"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3010,5 +3022,23 @@
     ViewLinkObjectName="model.queryBasedVO.FkCertApprovalCertRateLink"
     SrcViewUsageName="model.AppModule.TblCertRateView2"
     DstViewUsageName="model.AppModule.TblCertApprovalView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="VCTAT_RO_Status_FKLink1"
+    ViewLinkObjectName="model.VO.VCTAT_RO_Status_FKLink"
+    SrcViewUsageName="model.AppModule.Vctat_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Vctat_RO_Status2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="VCTAT_RO_Status_Grant_Land1"
+    ViewLinkObjectName="model.VO.VCTAT_RO_Status_Grant_Land"
+    SrcViewUsageName="model.AppModule.Vctat_RO_Status2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="VCTAT_Approval_Detail_D_FKlink1"
+    ViewLinkObjectName="model.VO.VCTAT_Approval_Detail_D_FKlink"
+    SrcViewUsageName="model.AppModule.Vctat_RO_Status2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView6"
     Reversed="false"/>
 </AppModule>

@@ -11,12 +11,11 @@
        TblGrantApprovalDetail.RO_STATUS, 
        TblFarmerReg.NAME, 
        TblFarmerReg.FARMER_NO, 
-       TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1"
-  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg, TBL_GRANT_APPROVAL_MASTER TblGrantApprovalMaster, TBL_GRANT_APPROVAL_DETAIL_D TblGrantApprovalDetailD"
-  Where="((TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+))  
-AND (TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID = TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID(+)))  
-AND (TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID = TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID) 
-And TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID in (Select distinct TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID from Tbl_Grant_Approval_Detail_D TblGrantApprovalDetailD)   
+       TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
+  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
+  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+) 
+And TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID in (Select distinct TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID from Tbl_Grant_Approval_Detail_D TblGrantApprovalDetailD)    
 AND TblGrantApprovalDetail.RO_STATUS = 'null'"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -47,44 +46,6 @@ AND TblGrantApprovalDetail.RO_STATUS = 'null'"
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.TblGrantApprovalDetail.FarmerRegId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblGrantApprovalMaster"
-    Entity="model.EO.TblGrantApprovalMaster"
-    Association="model.EO.FkTblGrantApprovalDetailFkAssoc"
-    AssociationEnd="model.EO.FkTblGrantApprovalDetailFkAssoc.TblGrantApprovalMaster"
-    SourceUsage="model.VO.Vctat_RO_Status.TblGrantApprovalDetail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="LEFT OUTER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblGrantApprovalMaster.GrantApprovalMasterId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblGrantApprovalDetail.GrantApprovalMasterId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
-    Name="TblGrantApprovalDetailD"
-    Entity="model.EO.TblGrantApprovalDetailD"
-    Association="model.EO.FKATblGrantApprovalDetailDFKAssoc"
-    AssociationEnd="model.EO.FKATblGrantApprovalDetailDFKAssoc.TblGrantApprovalDetailD"
-    SourceUsage="model.VO.Vctat_RO_Status.TblGrantApprovalDetail"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="INNER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblGrantApprovalDetailD.GrantApprovalDetailId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblGrantApprovalDetail.GrantApprovalDetailId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -126,9 +87,26 @@ AND TblGrantApprovalDetail.RO_STATUS = 'null'"
     EntityAttrName="FarmerRegId"
     EntityUsage="TblFarmerReg"
     AliasName="FARMER_REG_ID1"/>
+  <ViewAttribute
+    Name="GrantApprovalMasterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterId"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_APPROVAL_MASTER_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDView"
+    ViewLink="model.VO.VCTAT_Approval_Detail_D_FKlink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MMP_RO_Status_Grant_Land"
+    ViewLink="model.VO.VCTAT_RO_Status_Grant_Land"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
