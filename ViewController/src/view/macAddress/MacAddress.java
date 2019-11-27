@@ -14,7 +14,7 @@ public class MacAddress extends JApplet{
     }
     private String macAddr;
     
-    private void jbInit() throws Exception {
+    public void jbInit() throws Exception {
         
         InetAddress ip;
         

@@ -81,4 +81,9 @@
     <managed-bean-class>view.InfrastructureSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__17">
+    <managed-bean-name>MacAddress</managed-bean-name>
+    <managed-bean-class>view.macAddress.MacAddress</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

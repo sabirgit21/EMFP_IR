@@ -1,11 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
-<!--<af:resource type="javascript">
+<af:resource type="javascript">
 //Javascript function calling client side
 function callMeNow(evt){
 alert(document.applets[0].getMacAddr());
 }
-</af:resource>-->
+</af:resource>
 
+        <af:panelFormLayout id="pfl1">
+            <!--<af:commandButton text="callllll" id="cb1" partialSubmit="true">
+    <af:clientListener method="callMeNow" type="action"/>
+    </af:commandButton>-->
+        <af:button text="button 1" id="b1" />
+        <h:commandButton value="commandButton1" id="cb1"/>
+    </af:panelFormLayout>
+
+    
 </ui:composition>
