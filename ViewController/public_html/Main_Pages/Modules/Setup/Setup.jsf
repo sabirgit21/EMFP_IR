@@ -4,6 +4,7 @@
         xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="Setup.jsf" id="d1">
         <af:messages id="m1"/>
+        <af:resource type="javascript" source="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" />
         <af:form id="f1">
             <af:panelGridLayout id="pgl2">
                 <af:gridRow height="160px" id="gr1">
