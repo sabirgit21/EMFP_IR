@@ -6,13 +6,19 @@
   Name="Training_Schd_Detail_Dated_Cluster"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID, 
+       TblTrainingSchDetail.CLUSTER_ID, 
+       TblTrainingSchDetail.DATED_D, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
+       TblTrainingSchDetail.DATED_A"
+  FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_CLUSTER TblCluster"
+  Where="TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+) 
+and TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID not in (select TRAINING_SCH_DETAIL_ID from tbl_cluster_att_master)"
+  OrderBy="TblCluster.CLUSTER_NO">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -127,16 +133,4 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="ClusterNo"/>
-  </SortCriteria>
 </ViewObject>

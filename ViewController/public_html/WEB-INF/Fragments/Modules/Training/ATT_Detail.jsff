@@ -279,7 +279,7 @@
                                             <af:inputText value="#{vs.filterCriteria.ClusterAttDetailId}" id="it6"
                                                           placeholder="Search ID"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.ClusterAttDetailId.inputValue}"
+                                        <af:inputText value="#{row.bindings.ClusterAttDetailId.inputValue}" readOnly="true"
                                                       label="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.label}"
                                                       required="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.mandatory}"
                                                       columns="#{bindings.TblClusterAttDetailView31.hints.ClusterAttDetailId.displayWidth}"
@@ -298,7 +298,7 @@
                                             <af:inputText value="#{vs.filterCriteria.ClusterAttMasterId}" id="it8"
                                                           placeholder="Search ID"></af:inputText>
                                         </f:facet>
-                                        <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}"
+                                        <af:inputText value="#{row.bindings.ClusterAttMasterId.inputValue}" readOnly="true"
                                                       label="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.label}"
                                                       required="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.mandatory}"
                                                       columns="#{bindings.TblClusterAttDetailView31.hints.ClusterAttMasterId.displayWidth}"
