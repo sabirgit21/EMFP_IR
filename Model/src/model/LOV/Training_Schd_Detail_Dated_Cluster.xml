@@ -16,8 +16,7 @@
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        TblTrainingSchDetail.DATED_A"
   FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_CLUSTER TblCluster"
-  Where="TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+) 
-and TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID not in (select TRAINING_SCH_DETAIL_ID from tbl_cluster_att_master)"
+  Where="TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+)"
   OrderBy="TblCluster.CLUSTER_NO">
   <Properties>
     <SchemaBasedProperties>
