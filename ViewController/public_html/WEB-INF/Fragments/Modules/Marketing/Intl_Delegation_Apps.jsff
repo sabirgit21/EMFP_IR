@@ -380,41 +380,33 @@
                                         pattern="#{bindings.TblIntlDelegTradeView3.hints.IntlDelegTradeId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Library Trade Type ID" id="c11">
-                              <f:facet name="filter">
+                  <af:column headerText="Trade Type" id="c10" sortable="true" filterable="true" width="200">
+                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.LibrTradeTypesId}"
                                           id="it44" placeholder="Search Type">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.LibrTradeTypesId.inputValue}"
-                                  label="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.label}"
-                                  required="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.mandatory}"
-                                  columns="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.tooltip}"
-                                  id="it27">
+                    <af:selectOneChoice value="#{row.bindings.LibrTradeTypesId.inputValue}"
+                                        label="#{row.bindings.LibrTradeTypesId.label}"
+                                        required="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.LibrTradeTypesId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.LibrTradeTypesId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblIntlDelegTradeView3.hints.LibrTradeTypesId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegTradeView3.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c12">
-                             <f:facet name="filter">
+                  <af:column headerText="Active" id="c11" sortable="true" filterable="true">
+                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
                                           id="it45" placeholder="Search Status">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblIntlDelegTradeView3.hints.Ast.label}"
-                                  required="#{bindings.TblIntlDelegTradeView3.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblIntlDelegTradeView3.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegTradeView3.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegTradeView3.hints.Ast.tooltip}" id="it28">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblIntlDelegTradeView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegTradeView3.hints.Ast.tooltip}" id="soc3">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
                  <af:panelGroupLayout id="pgl10" layout="horizontal">
@@ -696,38 +688,33 @@
                                         pattern="#{bindings.TblIntlDelegAccomView3.hints.IntlDelegAccomId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Accomodation Type" id="c26">
-                    <af:inputText value="#{row.bindings.LibrAccomTypesId.inputValue}"
-                                  label="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.label}"
-                                  required="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.mandatory}"
-                                  columns="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.tooltip}"
-                                  id="it42">
+                  <af:column headerText="Accomodation Type" id="c12" sortable="true" filterable="true" width="200">
+                     <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LibrAccomTypesId}"
+                                          id="it27" placeholder="Search Type">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LibrAccomTypesId.inputValue}"
+                                        label="#{row.bindings.LibrAccomTypesId.label}"
+                                        required="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.LibrAccomTypesId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.LibrAccomTypesId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblIntlDelegAccomView3.hints.LibrAccomTypesId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblIntlDelegAccomView3.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="Active" id="c27">
-                             <f:facet name="filter">
+                  <af:column headerText="Active" id="c14" sortable="true" filterable="true">
+                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
                                           id="it54" placeholder="Search Status">
                            </af:inputText>
                              </f:facet>
-
-
-                    <af:inputText value="#{row.bindings.Ast.inputValue}"
-                                  label="#{bindings.TblIntlDelegAccomView3.hints.Ast.label}"
-                                  required="#{bindings.TblIntlDelegAccomView3.hints.Ast.mandatory}"
-                                  columns="#{bindings.TblIntlDelegAccomView3.hints.Ast.displayWidth}"
-                                  maximumLength="#{bindings.TblIntlDelegAccomView3.hints.Ast.precision}"
-                                  shortDesc="#{bindings.TblIntlDelegAccomView3.hints.Ast.tooltip}" id="it43">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.TblIntlDelegAccomView3.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegAccomView3.hints.Ast.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
                  <af:panelGroupLayout id="pgl2" layout="horizontal">
