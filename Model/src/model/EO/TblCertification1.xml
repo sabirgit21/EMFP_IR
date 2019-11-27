@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="CertificationId"
-    IsNotNull="true"
     ColumnName="CERTIFICATION_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_CERTIFICATION"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Name"
     IsUnique="true"

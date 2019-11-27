@@ -19,13 +19,14 @@
     TableName="TBL_CERT_APPROVAL"/>
   <Attribute
     Name="CertApprovalId"
-    IsNotNull="true"
     ColumnName="CERT_APPROVAL_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Dated"
     ColumnName="DATED"
