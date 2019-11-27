@@ -55,7 +55,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertApprovalView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertApprovalView1.hints.Dated.label}" id="c3">
+                             sortable="true" headerText="Dated" id="c3">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCertApprovalView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1">
@@ -133,7 +133,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertDisburseView3.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Datet" id="c11">
+                             sortable="true" headerText="Dated" id="c11">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCertDisburseView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id7">
