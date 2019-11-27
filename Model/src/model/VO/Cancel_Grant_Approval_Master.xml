@@ -20,7 +20,8 @@
 AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRANT_APPROVAL_MASTER_ID from Tbl_Grant_Approval_Detail TGAD      
 where TGAD.RO_STATUS='print'     
 OR TGAD.RO_STATUS='issued'     
-OR TGAD.RO_STATUS='dlvrd')">
+OR TGAD.RO_STATUS='dlvrd')"
+  OrderBy="TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

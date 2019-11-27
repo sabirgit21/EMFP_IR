@@ -1,3 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+
+<!--<af:resource type="javascript">
+//Javascript function calling client side
+function callMeNow(evt){
+alert(document.applets[0].getMacAddr());
+}
+</af:resource>-->
+
 </ui:composition>
