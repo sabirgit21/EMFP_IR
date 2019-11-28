@@ -98,6 +98,16 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.Delivered_RO_Status2.hints.FatherName.label}" id="c16">
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                  label="#{bindings.Delivered_RO_Status2.hints.FatherName.label}"
+                                  required="#{bindings.Delivered_RO_Status2.hints.FatherName.mandatory}"
+                                  columns="#{bindings.Delivered_RO_Status2.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.Delivered_RO_Status2.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.Delivered_RO_Status2.hints.FatherName.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column headerText="RO Status" id="c5">
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
                                               label="#{row.bindings.RoStatus.label}" autoSubmit="true"

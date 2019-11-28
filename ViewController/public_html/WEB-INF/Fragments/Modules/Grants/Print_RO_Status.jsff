@@ -110,6 +110,16 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.Print_RO_Status2.hints.FatherName.label}" id="c17">
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                  label="#{bindings.Print_RO_Status2.hints.FatherName.label}"
+                                  required="#{bindings.Print_RO_Status2.hints.FatherName.mandatory}"
+                                  columns="#{bindings.Print_RO_Status2.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.Print_RO_Status2.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.Print_RO_Status2.hints.FatherName.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.Print_RO_Status2.hints.FarmerNo.name}" filterable="true"
                              sortable="true" headerText="Farmer No." id="c6">
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"

@@ -74,6 +74,16 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.MMP_RO_Approval1.hints.FatherName.label}" id="c13">
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                  label="#{bindings.MMP_RO_Approval1.hints.FatherName.label}"
+                                  required="#{bindings.MMP_RO_Approval1.hints.FatherName.mandatory}"
+                                  columns="#{bindings.MMP_RO_Approval1.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.MMP_RO_Approval1.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.MMP_RO_Approval1.hints.FatherName.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MMP_RO_Approval1.hints.FarmerNo.name}" filterable="true"
                              sortable="true" headerText="Farmer No." id="c4">
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"

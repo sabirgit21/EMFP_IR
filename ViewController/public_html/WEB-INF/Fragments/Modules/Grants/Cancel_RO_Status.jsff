@@ -98,6 +98,16 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.Cancelled_RO_Status2.hints.FatherName.label}" id="c22">
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                  label="#{bindings.Cancelled_RO_Status2.hints.FatherName.label}"
+                                  required="#{bindings.Cancelled_RO_Status2.hints.FatherName.mandatory}"
+                                  columns="#{bindings.Cancelled_RO_Status2.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.Cancelled_RO_Status2.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.Cancelled_RO_Status2.hints.FatherName.tooltip}" id="it20">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.Cancelled_RO_Status2.hints.RoStatus.name}" filterable="true"
                              sortable="true" headerText="#{bindings.Cancelled_RO_Status2.hints.RoStatus.label}" id="c5">
                     <af:selectOneChoice value="#{row.bindings.RoStatus.inputValue}"

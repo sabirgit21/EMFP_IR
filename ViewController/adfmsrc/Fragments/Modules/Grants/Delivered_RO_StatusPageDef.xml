@@ -40,6 +40,7 @@
           <Item Value="FarmerNo"/>
           <Item Value="Name"/>
           <Item Value="RoStatus" Binds="RoStatus"/>
+          <Item Value="FatherName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -14,7 +14,8 @@
        TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
        TblFarmerReg.NAME, 
        TblFarmerReg.FARMER_REG_ID, 
-       TblFarmerReg.FARMER_NO"
+       TblFarmerReg.FARMER_NO, 
+       TblFarmerReg.FATHER_NAME"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
   Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+) 
 AND TblGrantApprovalDetail.RO_STATUS = 'mmp ver'">
@@ -84,6 +85,13 @@ AND TblGrantApprovalDetail.RO_STATUS = 'mmp ver'">
     EntityAttrName="FarmerNo"
     EntityUsage="TblFarmerReg"
     AliasName="FARMER_NO"/>
+  <ViewAttribute
+    Name="FatherName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblFarmerReg"
+    AliasName="FATHER_NAME"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>
