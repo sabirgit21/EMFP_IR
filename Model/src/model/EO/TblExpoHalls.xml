@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="ExpoHallsId"
-    IsNotNull="true"
     ColumnName="EXPO_HALLS_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="ExpoSetupId"
     IsNotNull="true"
