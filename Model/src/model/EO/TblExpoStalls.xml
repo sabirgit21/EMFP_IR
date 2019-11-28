@@ -49,7 +49,7 @@
   </Attribute>
   <Attribute
     Name="StallType"
-    Precision="1"
+    Precision="3"
     ColumnName="STALL_TYPE"
     SQLType="CHAR"
     Type="java.lang.String"
