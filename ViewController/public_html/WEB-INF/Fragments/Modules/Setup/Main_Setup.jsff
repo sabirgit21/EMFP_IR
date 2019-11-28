@@ -5,36 +5,30 @@
 
     
     <!--<af:resource type="javascript">
+      
+    
       //Javascript function calling client side
       function onPageLoad(evt) {
       //    alert(document.applets[0].getMacAddr());
       
       
-      var locator = new ActiveXObject("WbemScripting.SWbemLocator");
-  var service = locator.ConnectServer(".");
-  var properties = service.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration");
-  var e = new Enumerator (properties);
-  
-  dispHeading();
-  for (;!e.atEnd();e.moveNext ())
-  {
-        var p = e.item ();
+      var macAddress = "";
+    var ipAddress = "";
+    var computerName = "";
+    var wmi = GetObject("winmgmts:{impersonationLevel=impersonate}");
+    e = new Enumerator(wmi.ExecQuery("SELECT * FROM Win32_NetworkAdapterConfiguration WHERE IPEnabled = True"));
+    for(; !e.atEnd(); e.moveNext()) {
+        var s = e.item();
+        macAddress = s.MACAddress;
+        ipAddress = s.IPAddress(0);
+        computerName = s.DNSHostName;
         
-        p.Caption;
-        p.IPFilterSecurityEnabled ;
-        p.IPPortSecurityEnabled ;
-        alert(p.IPXAddress) ;
-        alert(p.IPXEnabled);
-        alert(p.IPXNetworkNumber) ;
-        p.MACAddress ;
-        p.WINSPrimaryServer ;
-        p.WINSSecondaryServer;
-  }
-  
-   // alert(macAddress);
-        //window.alert(5 + 6);
-       // console.log("nvkdfkuvfdvhvv");
     }
+    
+        alert(macAddress);
+        console.log("nvkdfkuvfdvhvv");
+    }
+    
     </af:resource>
     
     <af:clientListener method="onPageLoad" type="load"/>

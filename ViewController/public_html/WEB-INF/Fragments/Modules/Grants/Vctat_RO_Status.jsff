@@ -102,6 +102,22 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.Vctat_RO_Status2.hints.FatherName.label}"  filterable="true"
+                             sortable="true" id="c12">
+                              <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.FatherName}" id="it30"
+                                                          placeholder="Search Father Name">
+                                            </af:inputText>
+                                        </f:facet>
+                    <af:inputText value="#{row.bindings.FatherName.inputValue}" readOnly="true"
+                                  label="#{bindings.Vctat_RO_Status2.hints.FatherName.label}"
+                                  required="#{bindings.Vctat_RO_Status2.hints.FatherName.mandatory}"
+                                  columns="#{bindings.Vctat_RO_Status2.hints.FatherName.displayWidth}"
+                                  maximumLength="#{bindings.Vctat_RO_Status2.hints.FatherName.precision}"
+                                  shortDesc="#{bindings.Vctat_RO_Status2.hints.FatherName.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.Vctat_RO_Status2.hints.FarmerNo.name}" filterable="true"
                              sortable="true" headerText="Farmer No." id="c3">
                               <f:facet name="filter">
