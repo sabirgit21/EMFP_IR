@@ -31,8 +31,7 @@
                           selectionListener="#{bindings.TblCertAppMasterView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.TblCertAppMasterView1.rangeSize}"
                           filterModel="#{bindings.TblCertAppMasterView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblCertAppMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          queryListener="#{bindings.TblCertAppMasterView1Query.processQuery}" varStatus="vs" id="t1">
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.label}" id="c1">
