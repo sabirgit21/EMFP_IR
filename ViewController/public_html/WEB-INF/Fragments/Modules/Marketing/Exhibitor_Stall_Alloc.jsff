@@ -55,6 +55,21 @@
                                         pattern="#{bindings.TblExhibitorsView1.hints.ExhibitorsId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Expo Setup Venue" filterable="true"
+                             sortable="true" id="c14">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSetupId}"
+                                          id="it5" placeholder="Search Venue">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ExpoSetupId.inputValue}"
+                                        label="#{row.bindings.ExpoSetupId.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.ExpoSetupId.tooltip}" id="soc9">
+                      <f:selectItems value="#{row.bindings.ExpoSetupId.items}" id="si9"/>
+                      <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Exhibitors" id="c3" width="150">
                              <f:facet name="filter">
