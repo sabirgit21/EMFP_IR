@@ -54,7 +54,7 @@
   </Attribute>
   <Attribute
     Name="ExhibitorType"
-    Precision="1"
+    Precision="3"
     ColumnName="EXHIBITOR_TYPE"
     SQLType="CHAR"
     Type="java.lang.String"
@@ -101,7 +101,7 @@
   </Attribute>
   <Attribute
     Name="StallAllocType"
-    Precision="1"
+    Precision="3"
     ColumnName="STALL_ALLOC_TYPE"
     SQLType="CHAR"
     Type="java.lang.String"
