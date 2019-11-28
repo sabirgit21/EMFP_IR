@@ -127,7 +127,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.STime.name}" filterable="true"
-                             sortable="true" headerText="Start Date" id="c7">
+                             sortable="true" headerText="Start Time" id="c7">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.STime.value}"
                                     id="id5">
@@ -144,7 +144,7 @@
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ETime.name}" filterable="true"
-                             sortable="true" headerText="End Date" id="c8">
+                             sortable="true" headerText="End Time" id="c8">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblExpoPromSetupView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ETime.value}"
                                     id="id7">
