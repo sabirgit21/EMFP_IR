@@ -207,6 +207,10 @@
               usageId="view_Certification_ApprovalPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Disburse.jsff"
               usageId="view_Certification_DisbursePageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Certification_Status_TaskFlow.xml#Certification_Status_TaskFlow@ExecuteWithParams"
+              usageId="view_Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Status.jsff"
+              usageId="view_Certification_StatusPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -403,6 +407,9 @@
               path="Fragments.Modules.Certification.Certification_ApprovalPageDef"/>
         <page id="view_Certification_DisbursePageDef"
               path="Fragments.Modules.Certification.Certification_DisbursePageDef"/>
+        <page id="view_Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Certification_StatusPageDef" path="Fragments.Modules.Certification.Certification_StatusPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
