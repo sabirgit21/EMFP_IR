@@ -111,7 +111,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoPromSetupView1.hints.ExpoSetupVenue.name}"
                              filterable="true" sortable="true"
-                             headerText="Expo Setup Venue" id="c6" width="300">
+                             headerText="Setup Venue" id="c6" width="300">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoSetupVenue}"
                                           id="it12" placeholder="Search Venue">

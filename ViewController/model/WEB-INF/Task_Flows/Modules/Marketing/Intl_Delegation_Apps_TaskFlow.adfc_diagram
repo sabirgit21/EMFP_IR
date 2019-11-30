@@ -32,7 +32,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">132.14941</property>
+         name="y">131.44824</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">B50,116.35156,185.79883,253.0,257.1953,L50</property>
+         name="sdm:polyPoints">B50,116.35156,185.09766,253.0,257.1953,L50</property>
    </ControlFlowCase>
 </SDM>

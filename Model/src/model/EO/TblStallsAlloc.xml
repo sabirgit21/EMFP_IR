@@ -44,7 +44,7 @@
     TableName="TBL_STALLS_ALLOC"/>
   <Attribute
     Name="ExpoStallsType"
-    Precision="1"
+    Precision="3"
     ColumnName="EXPO_STALLS_TYPE"
     SQLType="CHAR"
     Type="java.lang.String"
