@@ -19,7 +19,8 @@
        TblFarmerReg.FATHER_NAME"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
   Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+) 
-AND TblGrantApprovalDetail.RO_STATUS = 'print'">
+AND TblGrantApprovalDetail.RO_STATUS = 'print'"
+  OrderBy="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
