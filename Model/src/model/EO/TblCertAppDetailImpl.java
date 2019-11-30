@@ -4,7 +4,10 @@ import java.math.BigDecimal;
 
 import java.sql.Timestamp;
 
+import oracle.adf.share.ADFContext;
+
 import oracle.jbo.Key;
+import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -53,6 +56,8 @@ public class TblCertAppDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int CERTAPPMASTERID = AttributesEnum.CertAppMasterId.index();
     public static final int CERTAPPDETAILID = AttributesEnum.CertAppDetailId.index();
     public static final int CROPID = AttributesEnum.CropId.index();
@@ -71,6 +76,14 @@ public class TblCertAppDetailImpl extends EntityImpl {
      */
     public TblCertAppDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblCertAppDetail");
+    }
+
 
     /**
      * Gets the attribute value for CertAppMasterId, using the alias name CertAppMasterId.
@@ -196,15 +209,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -220,15 +233,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -246,6 +259,7 @@ public class TblCertAppDetailImpl extends EntityImpl {
         setAttributeInternal(TBLCERTAPPMASTER, value);
     }
 
+
     /**
      * @param certAppDetailId key constituent
 
@@ -253,13 +267,6 @@ public class TblCertAppDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal certAppDetailId) {
         return new Key(new Object[] { certAppDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblCertAppDetail");
     }
 
     /**
@@ -275,6 +282,19 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
+        Number loginId = null;
+         try {
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+         } catch(Exception ex) {
+             ex.printStackTrace();
+         }
+         
+         if (operation == DML_INSERT) {
+             setCreatedBy(loginId);
+             setUpdatedBy(loginId);
+             } else if(operation == DML_UPDATE) {
+             setUpdatedBy(loginId);
+         }
         super.doDML(operation, e);
     }
 }

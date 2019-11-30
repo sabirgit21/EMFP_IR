@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -60,6 +61,8 @@ public class TblB2bMeetingImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int B2BMEETINGID = AttributesEnum.B2bMeetingId.index();
     public static final int B2BMEETINGTYPE = AttributesEnum.B2bMeetingType.index();
     public static final int EXHIBITORSID = AttributesEnum.ExhibitorsId.index();
@@ -83,6 +86,14 @@ public class TblB2bMeetingImpl extends EntityImpl {
      */
     public TblB2bMeetingImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblB2bMeeting");
+    }
+
 
     /**
      * Gets the attribute value for B2bMeetingId, using the alias name B2bMeetingId.
@@ -272,15 +283,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
      */
-    public BigDecimal getCreatedBy() {
-        return (BigDecimal) getAttributeInternal(CREATEDBY);
+    public oracle.jbo.domain.Number getCreatedBy() {
+        return (oracle.jbo.domain.Number) getAttributeInternal(CREATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CreatedBy.
      * @param value value to set the CreatedBy
      */
-    public void setCreatedBy(BigDecimal value) {
+    public void setCreatedBy(oracle.jbo.domain.Number value) {
         setAttributeInternal(CREATEDBY, value);
     }
 
@@ -296,15 +307,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
      */
-    public BigDecimal getUpdatedBy() {
-        return (BigDecimal) getAttributeInternal(UPDATEDBY);
+    public Number getUpdatedBy() {
+        return (Number) getAttributeInternal(UPDATEDBY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for UpdatedBy.
      * @param value value to set the UpdatedBy
      */
-    public void setUpdatedBy(BigDecimal value) {
+    public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
     }
 
@@ -336,6 +347,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
         setAttributeInternal(TBLINTLDELEGAPPM, value);
     }
 
+
     /**
      * @param b2bMeetingId key constituent
 
@@ -343,13 +355,6 @@ public class TblB2bMeetingImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal b2bMeetingId) {
         return new Key(new Object[] { b2bMeetingId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblB2bMeeting");
     }
 
     /**
@@ -365,19 +370,19 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-//        Number loginId = null;
-//                 try {
-//                     loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
-//                 } catch(Exception ex) {
-//                     ex.printStackTrace();
-//                 }
-//                 
-//                 if (operation == DML_INSERT) {
-//                     setCreatedBy(loginId);
-//                     setUpdatedBy(loginId);
-//                     } else if(operation == DML_UPDATE) {
-//                     setUpdatedBy(loginId);
-//                 }
+        Number loginId = null;
+        try {
+            loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        if (operation == DML_INSERT) {
+            setCreatedBy(loginId);
+            setUpdatedBy(loginId);
+        } else if (operation == DML_UPDATE) {
+            setUpdatedBy(loginId);
+        }
         super.doDML(operation, e);
     }
 }
