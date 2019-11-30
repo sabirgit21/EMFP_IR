@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_CERT_APP_DETAIL"
   AliasName="TblCertAppDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblCertAppDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="CertAppMasterId"
     ColumnName="CERT_APP_MASTER_ID"
@@ -75,7 +80,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_APP_DETAIL"/>
+    TableName="TBL_CERT_APP_DETAIL"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
@@ -89,7 +96,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_APP_DETAIL"/>
+    TableName="TBL_CERT_APP_DETAIL"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"

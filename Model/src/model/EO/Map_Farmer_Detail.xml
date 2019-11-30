@@ -9,16 +9,22 @@
   DBObjectType="table"
   DBObjectName="TBL_FARMER_REG"
   AliasName="Map_Farmer_Detail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.Map_Farmer_DetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FarmerRegId"
-    IsNotNull="true"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_FARMER_REG"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Name"
     IsNotNull="true"
@@ -273,7 +279,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FARMER_REG"/>
+    TableName="TBL_FARMER_REG"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
@@ -287,7 +295,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_FARMER_REG"/>
+    TableName="TBL_FARMER_REG"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
