@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_B2B_MEETING"
   AliasName="TblB2bMeeting"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblB2bMeetingImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="B2bMeetingId"
     ColumnName="B2B_MEETING_ID"
@@ -113,7 +118,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_B2B_MEETING"/>
+    TableName="TBL_B2B_MEETING"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
@@ -127,7 +134,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_B2B_MEETING"/>
+    TableName="TBL_B2B_MEETING"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
