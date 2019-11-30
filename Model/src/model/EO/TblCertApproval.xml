@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_CERT_APPROVAL"
   AliasName="TblCertApproval"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblCertApprovalImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="CertAppMasterId"
     ColumnName="CERT_APP_MASTER_ID"
@@ -47,12 +52,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_APPROVAL"/>
+    TableName="TBL_CERT_APPROVAL"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"/>
   <Attribute
@@ -61,12 +68,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_APPROVAL"/>
+    TableName="TBL_CERT_APPROVAL"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"/>
   <AccessorAttribute

@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_CERT_DISBURSE"
   AliasName="TblCertDisburse"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblCertDisburseImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="CertApprovalId"
     ColumnName="CERT_APPROVAL_ID"
@@ -78,12 +83,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_DISBURSE"/>
+    TableName="TBL_CERT_DISBURSE"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"/>
   <Attribute
@@ -92,12 +99,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_CERT_DISBURSE"/>
+    TableName="TBL_CERT_DISBURSE"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"/>
   <AccessorAttribute

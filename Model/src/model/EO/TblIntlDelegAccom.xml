@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_INTL_DELEG_ACCOM"
   AliasName="TblIntlDelegAccom"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblIntlDelegAccomImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="IntlDelegAccomId"
     ColumnName="INTL_DELEG_ACCOM_ID"
@@ -54,12 +59,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_INTL_DELEG_ACCOM"/>
+    TableName="TBL_INTL_DELEG_ACCOM"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_ACCOM"/>
   <Attribute
@@ -68,12 +75,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_INTL_DELEG_ACCOM"/>
+    TableName="TBL_INTL_DELEG_ACCOM"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_ACCOM"/>
   <AccessorAttribute

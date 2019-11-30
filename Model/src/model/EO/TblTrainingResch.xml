@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_TRAINING_RESCH"
   AliasName="TblTrainingResch"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblTrainingReschImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="TrainingReschId"
     ColumnName="TRAINING_RESCH_ID"
@@ -42,7 +47,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_TRAINING_RESCH"/>
+    TableName="TBL_TRAINING_RESCH"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
@@ -56,7 +63,8 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_TRAINING_RESCH"/>
+    TableName="TBL_TRAINING_RESCH"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"

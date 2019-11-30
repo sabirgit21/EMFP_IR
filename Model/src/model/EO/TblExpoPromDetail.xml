@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_EXPO_PROM_DETAIL"
   AliasName="TblExpoPromDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblExpoPromDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="ExpoPromDetailId"
     ColumnName="EXPO_PROM_DETAIL_ID"
@@ -70,12 +75,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_EXPO_PROM_DETAIL"/>
+    TableName="TBL_EXPO_PROM_DETAIL"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute
@@ -84,12 +91,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="TBL_EXPO_PROM_DETAIL"/>
+    TableName="TBL_EXPO_PROM_DETAIL"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <AccessorAttribute
