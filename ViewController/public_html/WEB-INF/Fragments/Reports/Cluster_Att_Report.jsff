@@ -62,7 +62,7 @@
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
                             <af:spacer width="20" height="10" id="s11"/>
-                            <af:selectOneChoice label="Select District :" autoSubmit="true" unselectedLabel="---Not Selected---"
+                            <af:selectOneChoice label="District " autoSubmit="true" unselectedLabel="---Not Selected---"
                                             shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" id="soc9"
                                             valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_district}"
                                                 contentStyle="width:200px">
@@ -70,7 +70,7 @@
                             <f:validator binding="#{bindings.DistrictLibrDetail.validator}"/>
                         </af:selectOneChoice>
                             <af:spacer width="20" height="10" id="s12"/>
-                            <af:selectOneChoice label="Select City :" autoSubmit="true" unselectedLabel="---Not Selected---"
+                            <af:selectOneChoice label="City" autoSubmit="true" unselectedLabel="---Not Selected---"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
                                                 valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_city}"
                                             contentStyle="width:200px">

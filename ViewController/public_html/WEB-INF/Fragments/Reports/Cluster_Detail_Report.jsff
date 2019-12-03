@@ -18,9 +18,10 @@
                                 <f:selectItems value="#{bindings.Phase_Name_LOV1.items}" id="si3"/>
                                 <f:validator binding="#{bindings.Phase_Name_LOV1.validator}"/>
                             </af:selectOneChoice>-->
-                            <af:selectOneChoice label="#{bindings.PhaseId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="Phase" autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc5"
-                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_phase}">
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_phase}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si10"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
                             </af:selectOneChoice>
@@ -33,9 +34,10 @@
                                 <f:selectItems value="#{bindings.Crops_Name_LOV1.items}" id="si4"/>
                                 <f:validator binding="#{bindings.Crops_Name_LOV1.validator}"/>
                             </af:selectOneChoice>-->
-                            <af:selectOneChoice label="#{bindings.CropId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="Crop" autoSubmit="true"
                                                 shortDesc="#{bindings.CropId.hints.tooltip}" id="soc2"
-                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_crop}">
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_crop}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.CropId.items}" id="si3"/>
                                 <f:validator binding="#{bindings.CropId.validator}"/>
                             </af:selectOneChoice>
@@ -48,9 +50,10 @@
                                 <f:selectItems value="#{bindings.City_Name_LOV1.items}" id="si5"/>
                                 <f:validator binding="#{bindings.City_Name_LOV1.validator}"/>
                             </af:selectOneChoice>-->
-                            <af:selectOneChoice autoSubmit="true" label="#{bindings.CityLibrDetail.label}"
+                            <af:selectOneChoice autoSubmit="true" label="City"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc3"
-                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_city}">
+                                                valueChangeListener="#{backingBeanScope.cluster_detail_report_Backbean.get_selected_city}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si4"/>
                                 <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
                             </af:selectOneChoice>

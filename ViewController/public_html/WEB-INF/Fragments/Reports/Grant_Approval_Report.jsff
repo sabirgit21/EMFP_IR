@@ -10,14 +10,16 @@
                             <af:spacer width="30" height="80" id="s3"/>
                             <af:selectOneChoice label="Phase" autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_phase}">
+                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_phase}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="10" id="s1"/>
                             <af:selectOneChoice label="Cluster" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc2"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_cluster}">
+                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_cluster}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
                             </af:selectOneChoice>
@@ -29,9 +31,10 @@
                                 <f:selectItems value="#{bindings.TblGrantApprovalDetailView4.items}" id="si4"/>
                                 <f:validator binding="#{bindings.TblGrantApprovalDetailView4.validator}"/>
                             </af:selectOneChoice>-->
-                            <af:selectOneChoice label="#{bindings.FarmerRegId.label}"
+                            <af:selectOneChoice label="Farmer"
                                                 shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="soc3"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_farmer}">
+                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_farmer}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.FarmerRegId.items}" id="si4"/>
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>

@@ -10,29 +10,37 @@
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                         <af:panelGroupLayout id="pgl3" layout="horizontal">
-                            <af:selectOneChoice label="#{bindings.ClusterId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="Cluster" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc1"
-                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_Cluster}">
+                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_Cluster}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice label="#{bindings.TrainerId.label}" autoSubmit="true"
+                            <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice label="Trainer" autoSubmit="true"
                                                 shortDesc="#{bindings.TrainerId.hints.tooltip}" id="soc2"
-                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_trainer}">
+                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_trainer}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.TrainerId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.TrainerId.validator}"/>
                             </af:selectOneChoice>
-                            <af:selectOneChoice label="#{bindings.PhaseId.label}" autoSubmit="true"
+                            <af:spacer width="30" height="10" id="s2"/>
+                            <af:selectOneChoice label="Phase" autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc3"
-                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_phase}">
+                                                valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_phase}"
+                                                contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si3"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputDate label="Select a date:" id="id1" autoSubmit="true"
-                                          valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_selected_date}">
+                            <af:spacer width="30" height="10" id="s3"/>
+                            <af:inputDate label="Select a Date:" id="id1" autoSubmit="true"
+                                          valueChangeListener="#{backingBeanScope.training_sch_report_bean.get_selected_date}"
+                                          contentStyle="width:200px">
                              
                             </af:inputDate>
                         </af:panelGroupLayout>
+                        <af:spacer width="30" height="30" id="s5"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                          <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
