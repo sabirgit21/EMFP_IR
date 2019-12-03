@@ -109,6 +109,8 @@
                                 <af:selectItem label="Cluster Attendance Detail Farmer Wise" value="attDetailFarmerWise" id="si9"/>
                                 <af:selectItem label="Cluster Attendance Detail Trainer Wise" value="attDetailTrainerWise"
                                                id="si15"/>
+                                <af:selectItem label="Cluster Attendance Detail Trainer Module Wise" value="attDetailTrainerModuleWise"
+                                               id="si16"/>               
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
