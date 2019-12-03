@@ -23,7 +23,16 @@ public class Grant_Approval_Report {
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
-
+        if (gotPhase == "") {
+            gotPhase = "";
+        }
+        if (gotCluster == "") {
+            gotCluster = "";
+        }
+        if (gotFarmer == "") {
+            gotFarmer = "";
+        }
+        
         String url = "";
         reportBean.setReportParameter("P_Phase_id", gotPhase);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);

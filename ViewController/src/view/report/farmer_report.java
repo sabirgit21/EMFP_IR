@@ -30,7 +30,22 @@ public class farmer_report {
         if (selectedReportType == null) {
             selectedReportType = "notSelected";
         }
-
+        if (gotClusterNum == "") {
+            gotClusterNum = "";
+        }
+        if (gotFarmerNum == "") {
+            gotFarmerNum = "";
+        }
+        if (gotCity == "") {
+            gotCity = "";
+        }
+        if (gotCrop == "") {
+            gotCrop = "";
+        }
+        if (gotPhase == "") {
+            gotPhase = "";
+        }
+        
         String url = "";
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);

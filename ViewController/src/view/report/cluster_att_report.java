@@ -28,7 +28,7 @@ public class cluster_att_report {
     private static String gotCrop = "";
     private static String gotDistrict = "";
     private static String gotModule = "";
-    
+
 
     private static String selectedReportType = "";
     private static String gotFormat = "";
@@ -38,6 +38,33 @@ public class cluster_att_report {
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
+        if (gotTrainer == "") {
+            gotTrainer = "";
+        }
+        if (gotCluster == "") {
+            gotCluster = "";
+        }
+        if (gotModule == "") {
+            gotModule = "";
+        }
+        if (gotFarmer == "") {
+            gotFarmer = "";
+        }
+        if (gotFromDate == "") {
+            gotFromDate = "";
+        }
+        if (gotToDate == "") {
+            gotToDate = "";
+        }
+        if (gotCity == "") {
+            gotCity = "";
+        }
+        if (gotCrop == "") {
+            gotCrop = "";
+        }
+        if (gotDistrict == "") {
+            gotDistrict = "";
+        }
 
         String url = "";
         reportBean.setReportParameter("P_Trainer_id", gotTrainer);
@@ -178,7 +205,7 @@ public class cluster_att_report {
     public void get_from_date(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
         gotFromDate = (valueChangeEvent.getNewValue()).toString();
-        
+
         try {
             DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
             Date parsedDate = sdf.parse(gotFromDate);
@@ -187,14 +214,14 @@ public class cluster_att_report {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        
+
         System.out.println("Selected From Date is : " + gotFromDate);
     }
 
     public void get_to_date(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
         gotToDate = (valueChangeEvent.getNewValue()).toString();
-        
+
         try {
             DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
             Date parsedDate = sdf.parse(gotToDate);
@@ -203,7 +230,7 @@ public class cluster_att_report {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        
+
         System.out.println("Selected To Date is : " + gotToDate);
     }
 

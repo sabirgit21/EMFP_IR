@@ -31,6 +31,17 @@ public class cluster_detail_report {
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
+
+        if (gotPhase == "") {
+            gotPhase = "";
+        }
+        if (gotCrop == "") {
+            gotCrop = "";
+        }
+        if (gotCity == "") {
+            gotCity = "";
+        }
+        
         //        reportBean.setReportURLName("userid=ir19/ir19@orcl&domain=classicdomain&report=C:/ERP/ir19/REPORTS/ReportsGl/SALE_INVOICE&");
         String url = "";
         reportBean.setReportParameter("P_Phase_id", gotPhase);

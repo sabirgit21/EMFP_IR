@@ -38,6 +38,20 @@ public class training_sch_report {
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
 
 
+        if (gotCluster == "") {
+            gotCluster = "";
+        }
+        if (gotTrainer == "") {
+            gotTrainer = "";
+        }
+        if (gotPhase == "") {
+            gotPhase = "";
+        }
+        if (gotDate == "") {
+            gotDate = "";
+        }
+        
+        
         String url = "";
         reportBean.setReportParameter("P_Trainer_id", gotTrainer);
         reportBean.setReportParameter("P_Cluster_id", gotCluster);
