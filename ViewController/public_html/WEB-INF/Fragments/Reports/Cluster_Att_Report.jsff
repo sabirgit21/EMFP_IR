@@ -9,40 +9,41 @@
                 </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" id="gr2">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                    
                         <af:panelGroupLayout id="pgl3">
                             <af:spacer width="20" height="10" id="s3"/>
                             
                            
                             <af:panelGroupLayout id="pgl5" layout="horizontal">
-                            <af:selectOneChoice label="Module" autoSubmit="true"
-                            unselectedLabel="---Not Selected---"
+                           <af:selectOneChoice label="Module" autoSubmit="true"
+                            unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.ModuleId.hints.tooltip}" id="soc7"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_module}"
-                                                contentStyle="width:200px">
+                                                contentStyle="width:200px"
+                                        binding="#{backingBeanScope.cluster_att_report_bean.selected_module}">
                                 <f:selectItems value="#{bindings.ModuleId.items}" id="si12"/>
                                 <f:validator binding="#{bindings.ModuleId.validator}"/>
                             </af:selectOneChoice>
                              <af:spacer width="20" height="10" id="s5"/>
-                            <af:selectOneChoice label="Cluster" autoSubmit="true" unselectedLabel="---Not Selected---"
+                            <af:selectOneChoice label="Cluster" autoSubmit="true" unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc1"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_cluster}"
-                                                contentStyle="width:200px">
+                                                contentStyle="width:200px"
+                                                binding="#{backingBeanScope.cluster_att_report_bean.selected_cluster}">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
                             </af:selectOneChoice>
                                 <af:spacer width="20" height="10" id="s8"/>
-                                <af:selectOneChoice label="Trainer" autoSubmit="true" unselectedLabel="---Not Selected---"
+                                <af:selectOneChoice label="Trainer" autoSubmit="true" unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.TrainerId.hints.tooltip}" id="soc2"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_trainer}"
-                                                    contentStyle="width:200px">
+                                                    contentStyle="width:200px"
+                                                    binding="#{backingBeanScope.cluster_att_report_bean.selected_trainer}">
                                 <f:selectItems value="#{bindings.TrainerId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.TrainerId.validator}"/>
                             </af:selectOneChoice>
                                 <af:spacer width="20" height="10" id="s9"/>
-                                <af:selectOneChoice label="Farmer" autoSubmit="true" unselectedLabel="---Not Selected---"
+                                <af:selectOneChoice label="Farmer" autoSubmit="true" unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="soc3"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_farmer}"
-                                                    contentStyle="width:200px">
+                                                    contentStyle="width:200px"
+                                                    binding="#{backingBeanScope.cluster_att_report_bean.selected_farmer}">
                                 <f:selectItems value="#{bindings.FarmerRegId.items}" id="si3"/>
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
                             </af:selectOneChoice>
@@ -50,8 +51,8 @@
                             </af:panelGroupLayout>
                             
                             <af:selectOneChoice shortDesc="#{bindings.CropId.hints.tooltip}" id="soc8" 
-                        label="Crop" autoSubmit="true" unselectedLabel="---Not Selected---"
-                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_crop}">
+                        label="Crop" autoSubmit="true" unselectedLabel="Not Selected"
+                                                binding="#{backingBeanScope.cluster_att_report_bean.selected_crop}">
                             <f:selectItems value="#{bindings.CropId.items}" id="si13"/>
                             <f:validator binding="#{bindings.CropId.validator}"/>
                         </af:selectOneChoice>
@@ -62,30 +63,30 @@
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
                             <af:spacer width="20" height="10" id="s11"/>
-                            <af:selectOneChoice label="District " autoSubmit="true" unselectedLabel="---Not Selected---"
+                            <af:selectOneChoice label="District " autoSubmit="true" unselectedLabel="Not Selected"
                                             shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" id="soc9"
-                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_district}"
-                                                contentStyle="width:200px">
+                                                contentStyle="width:200px"
+                                                binding="#{backingBeanScope.cluster_att_report_bean.selected_district}">
                             <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si14"/>
                             <f:validator binding="#{bindings.DistrictLibrDetail.validator}"/>
                         </af:selectOneChoice>
                             <af:spacer width="20" height="10" id="s12"/>
-                            <af:selectOneChoice label="City" autoSubmit="true" unselectedLabel="---Not Selected---"
+                            <af:selectOneChoice label="City" autoSubmit="true" unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" id="soc4"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_city}"
-                                            contentStyle="width:200px">
+                                            contentStyle="width:200px"
+                                                binding="#{backingBeanScope.cluster_att_report_bean.selected_city}">
                                 <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si4"/>
                                 <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer width="20" height="10" id="s13"/>
                             <af:inputDate label="Select From date:" id="id1" autoSubmit="true"
-                                       valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}"
-                                      contentStyle="width:200px">
+                                      contentStyle="width:200px"
+                                          binding="#{backingBeanScope.cluster_att_report_bean.from_date}">
                             </af:inputDate>
                             <af:spacer width="20" height="10" id="s14"/>
                             <af:inputDate label="Select To date:" id="id2" autoSubmit="true"
-                                          valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}"
-                                          contentStyle="width:200px">
+                                          contentStyle="width:200px"
+                                          binding="#{backingBeanScope.cluster_att_report_bean.to_date}">
                             </af:inputDate>
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
@@ -93,15 +94,15 @@
                             <af:spacer width="20" height="10" id="s16"/>
                             <af:selectOneChoice label="Select Format Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
-                                            valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_format_type}"
-                                                contentStyle="width:200px">
+                                                contentStyle="width:200px"
+                                                binding="#{backingBeanScope.cluster_att_report_bean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si5"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
                             </af:selectOneChoice>
                         <af:spacer width="20" height="10" id="s2"/>
                             <af:selectOneChoice label="Select Report Type" id="soc6" autoSubmit="true"
                                                 unselectedLabel="--Select--"
-                                                valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_selected_report_type}">
+                                                binding="#{backingBeanScope.cluster_att_report_bean.report_type}">
                                 <af:selectItem label="Cluster Attendance Detail" value="attDetailWise" id="si10"/>
                                 <af:selectItem label="Cluster Attendance Detail City Wise" value="attDetailCityWise" id="si8"/>
                                 <af:selectItem label="Cluster Attendance Detail District Wise" value="attDetailDistrictWise" id="si11"/>
