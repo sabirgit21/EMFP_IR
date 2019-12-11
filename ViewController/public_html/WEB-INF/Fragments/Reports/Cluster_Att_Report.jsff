@@ -79,14 +79,23 @@
                                 <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
                             </af:selectOneChoice>
                             <af:spacer width="20" height="10" id="s13"/>
+                            <!--<af:inputDate label="Select From date:" id="id1" autoSubmit="true"
+                                      contentStyle="width:200px"
+                                      value="11/11/1111"
+                                          binding="#{backingBeanScope.cluster_att_report_bean.from_date}">
+                            </af:inputDate>-->
                             <af:inputDate label="Select From date:" id="id1" autoSubmit="true"
                                       contentStyle="width:200px"
-                                          binding="#{backingBeanScope.cluster_att_report_bean.from_date}">
+                                      valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}">
                             </af:inputDate>
                             <af:spacer width="20" height="10" id="s14"/>
+                            <!--<af:inputDate label="Select To date:" id="id2" autoSubmit="true"
+                                          contentStyle="width:200px" value="11/11/1111"
+                                          binding="#{backingBeanScope.cluster_att_report_bean.to_date}">
+                            </af:inputDate>-->
                             <af:inputDate label="Select To date:" id="id2" autoSubmit="true"
                                           contentStyle="width:200px"
-                                          binding="#{backingBeanScope.cluster_att_report_bean.to_date}">
+                                          valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}">
                             </af:inputDate>
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>

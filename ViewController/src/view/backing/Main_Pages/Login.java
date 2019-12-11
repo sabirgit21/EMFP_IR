@@ -160,7 +160,7 @@ public class Login {
                 //Storing value in session username from input text field and role_master_id from DB
 
                 System.out.println(".........User Name stored in session is :..." + username + "...");
-                System.out.println(".........User Password stored in session is :..." + password + "...");
+//                System.out.println(".........User Password stored in session is :..." + password + "...");
                 System.out.println(".........User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........User Master ID stored in session is :..." + user_master_id + "...");
 
@@ -168,8 +168,9 @@ public class Login {
                 //System.out.println("....... here we go /// you are redirecting now to DASHBOARD ......");
                 //                return "good";
 //                get_module_view_rights();
-                
-                storeOnSession("sessUID", role_master_id);
+                                
+                storeOnSession("sessUID", role_master_id);                
+                storeOnSession("sessRID", user_master_id);
                 
                 conn.close();
                 return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";
@@ -199,6 +200,7 @@ public class Login {
         role_master_id = "";
         storeOnSession("sessUName", "");
         storeOnSession("sessUID", "");
+        storeOnSession("sessRID", "");
         //        return "good";
         return "/faces/Main_Pages/Login.jsf?faces-redirect=true";
     }

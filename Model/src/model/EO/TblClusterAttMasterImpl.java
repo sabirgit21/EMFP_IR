@@ -378,7 +378,7 @@ public class TblClusterAttMasterImpl extends EntityImpl {
     protected void doDML(int operation, TransactionEvent e) {
         Number loginId = null;
          try {
-             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessUID"));
+             loginId = new Number((String) ADFContext.getCurrent().getSessionScope().get("sessRID"));
          } catch(Exception ex) {
              ex.printStackTrace();
          }
