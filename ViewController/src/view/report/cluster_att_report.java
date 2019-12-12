@@ -199,6 +199,13 @@ public class cluster_att_report {
 
                     System.out.println("att detail trainer module wise");
                     break;
+            
+                case "attDetailCropWise":
+
+                         reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Crop_Wise&");
+
+                         System.out.println("att detail crop wise");
+                         break;
 
             default:
                 showMessage("Please Select Report Type");
