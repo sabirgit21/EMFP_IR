@@ -312,11 +312,17 @@
                                                   filterModel="#{bindings.TblRoleMasterView1Query.queryDescriptor}"
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
-                                                  varStatus="vs" id="t3" partialTriggers="::b1 ::b2 ::b3" width="446">
+                                                  varStatus="vs" id="t3" partialTriggers="::b1 ::b2 ::b3" width="446"
+                                                  scrollPolicy="page" autoHeightRows="0">
                                             <af:column sortProperty="#{bindings.TblRoleMasterView11.hints.RoleMasterId.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleMasterView11.hints.RoleMasterId.label}"
-                                                       id="c9">
+                                                       headerText="Role ID"
+                                                       id="c9" align="center" width="60">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoleMasterId}"
+                                          id="it10" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:outputText value="#{row.RoleMasterId}"
                                                                shortDesc="#{bindings.TblRoleMasterView11.hints.RoleMasterId.tooltip}"
                                                                id="ot1">
@@ -326,16 +332,26 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleMasterView11.hints.RoleMasterName.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleMasterView11.hints.RoleMasterName.label}"
-                                                       id="c10">
+                                                       headerText="Role"
+                                                       id="c10" width="200">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RoleMasterName}"
+                                          id="it11" placeholder="Search Role">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:outputText value="#{row.RoleMasterName}"
                                                                shortDesc="#{bindings.TblRoleMasterView11.hints.RoleMasterName.tooltip}"
                                                                id="ot2"/>
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleMasterView11.hints.Ast.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleMasterView11.hints.Ast.label}"
+                                                       headerText="Active"
                                                        id="c11">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it12" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:outputText value="#{row.Ast}"
                                                                shortDesc="#{bindings.TblRoleMasterView11.hints.Ast.tooltip}"
                                                                id="ot3"/>
@@ -366,7 +382,8 @@
                                                   filterModel="#{bindings.TblRoleDetailModulesView4Query.queryDescriptor}"
                                                   filterVisible="true" width="446"
                                                   queryListener="#{bindings.TblRoleDetailModulesView4Query.processQuery}"
-                                                  varStatus="vs" id="t4" partialTriggers=" ::b8 ">
+                                                  varStatus="vs" id="t4" partialTriggers=" ::b8 "
+                                                  scrollPolicy="page" autoHeightRows="0">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailModulesView4.hints.RoleDetailModulesId.label}"
@@ -402,8 +419,13 @@
                                             </af:column>-->
                                             <af:column sortProperty="#{bindings.TblRoleDetailModulesView4.hints.ModuleMenuId.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailModulesView4.hints.ModuleMenuId.label}"
-                                                       id="c14">
+                                                       headerText="Module"
+                                                       id="c14" >
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ModuleMenuId}"
+                                          id="it13" placeholder="Search Module">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.ModuleMenuId.inputValue}"
                                                 readOnly="true"
                                                                     label="#{row.bindings.ModuleMenuId.label}"
@@ -416,8 +438,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailModulesView4.hints.RView.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailModulesView4.hints.RView.label}"
+                                                       headerText="Module View"
                                                        id="c15">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RView}"
+                                          id="it14" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
                                                                     label="#{row.bindings.RView.label}"
                                                                     required="#{bindings.TblRoleDetailModulesView4.hints.RView.mandatory}"
@@ -457,7 +484,8 @@
                                                   filterModel="#{bindings.TblRoleDetailPagesView4Query.queryDescriptor}"
                                                   filterVisible="true" width="846"
                                                   queryListener="#{bindings.TblRoleDetailPagesView4Query.processQuery}"
-                                                  varStatus="vs" id="t5" partialTriggers="::b10 ::b11 ">
+                                                  varStatus="vs" id="t5" partialTriggers="::b10 ::b11 "
+                                                  scrollPolicy="page" autoHeightRows="0">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailPagesView4.hints.RoleDetailPagesId.label}"
@@ -495,6 +523,11 @@
                                                        filterable="true" sortable="true"
                                                        headerText="Pages" 
                                                        id="c18">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.PagesId}"
+                                          id="it15" placeholder="Search Pages">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.PagesId.inputValue}"
                                                 readOnly="true"
                                                                     label="#{row.bindings.PagesId.label}"
@@ -507,8 +540,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RView.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.RView.label}"
+                                                       headerText="Page View"
                                                        id="c19">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RView}"
+                                          id="it16" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
                                                                     label="#{row.bindings.RView.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.RView.mandatory}"
@@ -520,8 +558,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RAdd.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.RAdd.label}"
+                                                       headerText="Add"
                                                        id="c20">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RAdd}"
+                                          id="it17" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RAdd.inputValue}"
                                                                     label="#{row.bindings.RAdd.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.RAdd.mandatory}"
@@ -533,8 +576,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.REdit.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.REdit.label}"
+                                                       headerText="Edit"
                                                        id="c21">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.REdit}"
+                                          id="it18" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.REdit.inputValue}"
                                                                     label="#{row.bindings.REdit.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.REdit.mandatory}"
@@ -546,8 +594,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RDelete.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.RDelete.label}"
+                                                       headerText="Delete"
                                                        id="c22">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RDelete}"
+                                          id="it19" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RDelete.inputValue}"
                                                                     label="#{row.bindings.RDelete.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.RDelete.mandatory}"
@@ -559,8 +612,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RPrint.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.RPrint.label}"
+                                                       headerText="Print"
                                                        id="c23">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RPrint}"
+                                          id="it20" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RPrint.inputValue}"
                                                                     label="#{row.bindings.RPrint.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.RPrint.mandatory}"
@@ -572,8 +630,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailPagesView4.hints.RPost.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailPagesView4.hints.RPost.label}"
+                                                       headerText="Post"
                                                        id="c24">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RPost}"
+                                          id="it21" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RPost.inputValue}"
                                                                     label="#{row.bindings.RPost.label}"
                                                                     required="#{bindings.TblRoleDetailPagesView4.hints.RPost.mandatory}"
@@ -614,7 +677,7 @@
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleDetailReportsView4Query.processQuery}"
                                                   varStatus="vs" id="t6" partialTriggers="::b14 "
-                                                  width="524">
+                                                  width="524" scrollPolicy="page" autoHeightRows="0">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.label}"
@@ -650,8 +713,13 @@
                                             </af:column>-->
                                             <af:column sortProperty="#{bindings.TblRoleDetailReportsView4.hints.ReportsId.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailReportsView4.hints.ReportsId.label}"
-                                                       id="c27">
+                                                       headerText="Reports"
+                                                       id="c27" width="300">
+                                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ReportsId}"
+                                          id="it22" placeholder="Search Reports">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.ReportsId.inputValue}"
                                                 readOnly="true"
                                                                     label="#{row.bindings.ReportsId.label}"
@@ -664,8 +732,13 @@
                                             </af:column>
                                             <af:column sortProperty="#{bindings.TblRoleDetailReportsView4.hints.RView.name}"
                                                        filterable="true" sortable="true"
-                                                       headerText="#{bindings.TblRoleDetailReportsView4.hints.RView.label}"
+                                                       headerText="Report View"
                                                        id="c28">
+                                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.RView}"
+                                          id="it23" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                                                 <af:selectOneChoice value="#{row.bindings.RView.inputValue}"
                                                                     label="#{row.bindings.RView.label}"
                                                                     required="#{bindings.TblRoleDetailReportsView4.hints.RView.mandatory}"
