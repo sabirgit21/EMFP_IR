@@ -107,6 +107,7 @@
                                 <af:selectItem label="Land Wise" value="landWise" id="si7"/>
                                 <af:selectItem label="Crop Wise" value="cropWise" id="si6"/>
                                 <af:selectItem label="City Wise" value="cityWise" id="si9"/>
+                                <af:selectItem label="Cluster Wise Summary" value="clusterWiseSummary" id="si1"/>
                             </af:selectOneChoice>
                             <af:spacer width="100" height="10" id="s4"/>
                             <af:button text="Generate Report" id="b1"

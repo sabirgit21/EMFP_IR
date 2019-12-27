@@ -90,6 +90,12 @@ public class farmer_report {
                 reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
 
                 break;
+                case "clusterWiseSummary":
+                    System.out.println("clusterWiseSummary");
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise_Summary&");
+
+                    break;
             case "notSelected":
                 System.out.println("notSelected then generic report");
 
