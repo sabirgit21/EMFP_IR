@@ -201,7 +201,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblExpoSch"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -213,7 +214,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblExpoSch"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -234,6 +236,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="SchYear"
+    PrecisionRule="true"
+    EntityAttrName="SchYear"
+    EntityUsage="TblExpoSch"
+    AliasName="SCH_YEAR"/>
   <ViewLinkAccessor
     Name="TblExpoSetupView"
     ViewLink="model.VO.FkExpoSetupExpoSchLink"

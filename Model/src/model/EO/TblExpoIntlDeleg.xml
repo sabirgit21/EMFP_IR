@@ -78,6 +78,13 @@
     ColumnType="TIMESTAMP"
     TableName="TBL_EXPO_INTL_DELEG"
     HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="FDeleg"
+    ColumnName="F_DELEG"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_INTL_DELEG"/>
   <AccessorAttribute
     Name="TblExpoSetup"
     Association="model.EO.FkExpoIntlDelegExpoSetupAssoc"

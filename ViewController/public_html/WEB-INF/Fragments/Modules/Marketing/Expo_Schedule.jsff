@@ -125,6 +125,18 @@
                       <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="#{bindings.TblExpoSchView1.hints.SchYear.label}" id="c7">
+                    <af:inputText value="#{row.bindings.SchYear.inputValue}"
+                                  label="#{bindings.TblExpoSchView1.hints.SchYear.label}"
+                                  required="#{bindings.TblExpoSchView1.hints.SchYear.mandatory}"
+                                  columns="#{bindings.TblExpoSchView1.hints.SchYear.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchView1.hints.SchYear.precision}"
+                                  shortDesc="#{bindings.TblExpoSchView1.hints.SchYear.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.SchYear.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblExpoSchView1.hints.SchYear.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c6" width="60">
                               <f:facet name="filter">

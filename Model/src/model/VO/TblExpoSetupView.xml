@@ -17,6 +17,10 @@
     Name="Expo_Schedule_LOV1"
     ViewObjectName="model.LOV.Expo_Schedule_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Approve_NtApprove_LOV1"
+    ViewObjectName="model.LOV.Approve_NtApprove_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ExpoSchId"
     ListVOName="Expo_Schedule_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="Approve_NtApprove_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewValue"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -178,7 +200,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblExpoSetup"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -190,13 +213,58 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblExpoSetup"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblExpoSetup"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="FIntlDeleg"
+    PrecisionRule="true"
+    EntityAttrName="FIntlDeleg"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_INTL_DELEG"/>
+  <ViewAttribute
+    Name="FStalls"
+    PrecisionRule="true"
+    EntityAttrName="FStalls"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_STALLS"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="TblExpoSetup"
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FExhibitors"
+    PrecisionRule="true"
+    EntityAttrName="FExhibitors"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_EXHIBITORS"/>
+  <ViewAttribute
+    Name="FLocalDeleg"
+    PrecisionRule="true"
+    EntityAttrName="FLocalDeleg"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_LOCAL_DELEG"/>
+  <ViewAttribute
+    Name="FB2b"
+    PrecisionRule="true"
+    EntityAttrName="FB2b"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_B2B"/>
   <ViewLinkAccessor
     Name="TblExpoHallsView"
     ViewLink="model.VO.FkExpoHallsExpoSetupLink"

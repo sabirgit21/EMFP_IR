@@ -201,6 +201,55 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="FB2b"
+    ColumnName="F_B2B"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="FExhibitors"
+    ColumnName="F_EXHIBITORS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="FIntlDeleg"
+    ColumnName="F_INTL_DELEG"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="FLocalDeleg"
+    ColumnName="F_LOCAL_DELEG"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="FStalls"
+    ColumnName="F_STALLS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SETUP"/>
+  <Attribute
+    Name="Status"
+    Precision="3"
+    ColumnName="STATUS"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_EXPO_SETUP"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblExpoHalls"
     Association="model.EO.FkExpoHallsExpoSetupAssoc"

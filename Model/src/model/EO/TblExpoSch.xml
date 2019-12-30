@@ -125,6 +125,13 @@
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="SchYear"
+    ColumnName="SCH_YEAR"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXPO_SCH"/>
   <AccessorAttribute
     Name="TblExpoSetup"
     Association="model.EO.FkExpoSetupExpoSchAssoc"

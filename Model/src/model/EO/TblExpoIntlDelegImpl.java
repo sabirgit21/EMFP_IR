@@ -30,6 +30,7 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
         CreatedDate,
         UpdatedBy,
         UpdatedDate,
+        FDeleg,
         TblExpoSetup;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -53,6 +54,7 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXPOINTLDELEGID = AttributesEnum.ExpoIntlDelegId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
     public static final int TOTALDELEG = AttributesEnum.TotalDeleg.index();
@@ -61,12 +63,20 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
+    public static final int FDELEG = AttributesEnum.FDeleg.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblExpoIntlDelegImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExpoIntlDeleg");
     }
 
     /**
@@ -182,18 +192,35 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FDeleg, using the alias name FDeleg.
+     * @return the value of FDeleg
+     */
+    public BigDecimal getFDeleg() {
+        return (BigDecimal) getAttributeInternal(FDELEG);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FDeleg.
+     * @param value value to set the FDeleg
+     */
+    public void setFDeleg(BigDecimal value) {
+        setAttributeInternal(FDELEG, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblExpoSetup() {
-        return (EntityImpl) getAttributeInternal(TBLEXPOSETUP);
+    public TblExpoSetupImpl getTblExpoSetup() {
+        return (TblExpoSetupImpl) getAttributeInternal(TBLEXPOSETUP);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblExpoSetup(EntityImpl value) {
+    public void setTblExpoSetup(TblExpoSetupImpl value) {
         setAttributeInternal(TBLEXPOSETUP, value);
     }
+
 
     /**
      * @param expoIntlDelegId key constituent
@@ -202,13 +229,6 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal expoIntlDelegId) {
         return new Key(new Object[] { expoIntlDelegId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExpoIntlDeleg");
     }
 
     /**

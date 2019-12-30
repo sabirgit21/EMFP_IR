@@ -34,6 +34,7 @@
           <Item Value="PhaseId"/>
           <Item Value="Ast"/>
           <Item Value="ExpoType"/>
+          <Item Value="SchYear"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

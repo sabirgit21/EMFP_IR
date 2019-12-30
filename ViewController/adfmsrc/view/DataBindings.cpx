@@ -211,6 +211,14 @@
               usageId="view_Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Certification/Certification_Status.jsff"
               usageId="view_Certification_StatusPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Exhibition_Approval_TaskFlow.xml#Exhibition_Approval_TaskFlow@ExecuteWithParams"
+              usageId="view_Exhibition_Approval_TaskFlow_Exhibition_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Exhibition_Approval.jsff"
+              usageId="view_Exhibition_ApprovalPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Marketing/Halls_Stalls_Setup_TaskFlow.xml#Halls_Stalls_Setup_TaskFlow@ExecuteWithParams"
+              usageId="view_Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Marketing/Halls_Stalls_Setup.jsff"
+              usageId="view_Halls_Stalls_SetupPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -410,6 +418,12 @@
         <page id="view_Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Certification.Certification_Status_TaskFlow_Certification_Status_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Certification_StatusPageDef" path="Fragments.Modules.Certification.Certification_StatusPageDef"/>
+        <page id="view_Exhibition_Approval_TaskFlow_Exhibition_Approval_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Exhibition_Approval_TaskFlow_Exhibition_Approval_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Exhibition_ApprovalPageDef" path="Fragments.Modules.Marketing.Exhibition_ApprovalPageDef"/>
+        <page id="view_Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Marketing.Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Halls_Stalls_SetupPageDef" path="Fragments.Modules.Monitoring.Halls_Stalls_SetupPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

@@ -34,6 +34,7 @@ public class TblExpoSchImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         ExpoType,
+        SchYear,
         TblExpoSetup;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -57,6 +58,7 @@ public class TblExpoSchImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int EXPOSCHMONTH = AttributesEnum.ExpoSchMonth.index();
@@ -68,12 +70,20 @@ public class TblExpoSchImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int EXPOTYPE = AttributesEnum.ExpoType.index();
+    public static final int SCHYEAR = AttributesEnum.SchYear.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblExpoSchImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExpoSch");
     }
 
     /**
@@ -237,11 +247,28 @@ public class TblExpoSchImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for SchYear, using the alias name SchYear.
+     * @return the value of SchYear
+     */
+    public BigDecimal getSchYear() {
+        return (BigDecimal) getAttributeInternal(SCHYEAR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SchYear.
+     * @param value value to set the SchYear
+     */
+    public void setSchYear(BigDecimal value) {
+        setAttributeInternal(SCHYEAR, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblExpoSetup() {
         return (RowIterator) getAttributeInternal(TBLEXPOSETUP);
     }
+
 
     /**
      * @param expoSchId key constituent
@@ -250,13 +277,6 @@ public class TblExpoSchImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal expoSchId) {
         return new Key(new Object[] { expoSchId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExpoSch");
     }
 
     /**

@@ -48,6 +48,12 @@ public class TblExpoSetupImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        FB2b,
+        FExhibitors,
+        FIntlDeleg,
+        FLocalDeleg,
+        FStalls,
+        Status,
         TblExpoHalls,
         TblExhibitors,
         TblExpoIntlDeleg,
@@ -75,6 +81,7 @@ public class TblExpoSetupImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
     public static final int FDATE = AttributesEnum.FDate.index();
@@ -100,6 +107,12 @@ public class TblExpoSetupImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int FB2B = AttributesEnum.FB2b.index();
+    public static final int FEXHIBITORS = AttributesEnum.FExhibitors.index();
+    public static final int FINTLDELEG = AttributesEnum.FIntlDeleg.index();
+    public static final int FLOCALDELEG = AttributesEnum.FLocalDeleg.index();
+    public static final int FSTALLS = AttributesEnum.FStalls.index();
+    public static final int STATUS = AttributesEnum.Status.index();
     public static final int TBLEXPOHALLS = AttributesEnum.TblExpoHalls.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLEXPOINTLDELEG = AttributesEnum.TblExpoIntlDeleg.index();
@@ -110,6 +123,13 @@ public class TblExpoSetupImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblExpoSetupImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExpoSetup");
     }
 
     /**
@@ -497,6 +517,102 @@ public class TblExpoSetupImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FB2b, using the alias name FB2b.
+     * @return the value of FB2b
+     */
+    public BigDecimal getFB2b() {
+        return (BigDecimal) getAttributeInternal(FB2B);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FB2b.
+     * @param value value to set the FB2b
+     */
+    public void setFB2b(BigDecimal value) {
+        setAttributeInternal(FB2B, value);
+    }
+
+    /**
+     * Gets the attribute value for FExhibitors, using the alias name FExhibitors.
+     * @return the value of FExhibitors
+     */
+    public BigDecimal getFExhibitors() {
+        return (BigDecimal) getAttributeInternal(FEXHIBITORS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FExhibitors.
+     * @param value value to set the FExhibitors
+     */
+    public void setFExhibitors(BigDecimal value) {
+        setAttributeInternal(FEXHIBITORS, value);
+    }
+
+    /**
+     * Gets the attribute value for FIntlDeleg, using the alias name FIntlDeleg.
+     * @return the value of FIntlDeleg
+     */
+    public BigDecimal getFIntlDeleg() {
+        return (BigDecimal) getAttributeInternal(FINTLDELEG);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FIntlDeleg.
+     * @param value value to set the FIntlDeleg
+     */
+    public void setFIntlDeleg(BigDecimal value) {
+        setAttributeInternal(FINTLDELEG, value);
+    }
+
+    /**
+     * Gets the attribute value for FLocalDeleg, using the alias name FLocalDeleg.
+     * @return the value of FLocalDeleg
+     */
+    public BigDecimal getFLocalDeleg() {
+        return (BigDecimal) getAttributeInternal(FLOCALDELEG);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FLocalDeleg.
+     * @param value value to set the FLocalDeleg
+     */
+    public void setFLocalDeleg(BigDecimal value) {
+        setAttributeInternal(FLOCALDELEG, value);
+    }
+
+    /**
+     * Gets the attribute value for FStalls, using the alias name FStalls.
+     * @return the value of FStalls
+     */
+    public BigDecimal getFStalls() {
+        return (BigDecimal) getAttributeInternal(FSTALLS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FStalls.
+     * @param value value to set the FStalls
+     */
+    public void setFStalls(BigDecimal value) {
+        setAttributeInternal(FSTALLS, value);
+    }
+
+    /**
+     * Gets the attribute value for Status, using the alias name Status.
+     * @return the value of Status
+     */
+    public String getStatus() {
+        return (String) getAttributeInternal(STATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Status.
+     * @param value value to set the Status
+     */
+    public void setStatus(String value) {
+        setAttributeInternal(STATUS, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblExpoHalls() {
@@ -538,6 +654,7 @@ public class TblExpoSetupImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLINTLDELEGAPPM);
     }
 
+
     /**
      * @param expoSetupId key constituent
 
@@ -545,13 +662,6 @@ public class TblExpoSetupImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal expoSetupId) {
         return new Key(new Object[] { expoSetupId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExpoSetup");
     }
 
     /**

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Exhibition_ApprovalPageDef"
+                Package="Fragments.Modules.Marketing">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblExpoSetupView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoSetupView1Iterator"/>
+    <searchRegion Binds="TblExpoSetupView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoSetupView1Query"/>
+    <iterator Binds="TblExpoIntlDelegView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoIntlDelegView3Iterator"/>
+    <searchRegion Binds="TblExpoIntlDelegView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoIntlDelegView3Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblExpoSetupView1Iterator" id="TblExpoSetupView1">
+      <nodeDefinition DefName="model.VO.TblExpoSetupView" Name="TblExpoSetupView10">
+        <AttrNames>
+          <Item Value="ExpoSchId"/>
+          <Item Value="ExpoSetupId"/>
+          <Item Value="FDate"/>
+          <Item Value="TDate"/>
+          <Item Value="NoOfDays"/>
+          <Item Value="ExpoSetupVenue"/>
+          <Item Value="TotalHalls"/>
+          <Item Value="STime"/>
+          <Item Value="ETime"/>
+          <Item Value="ExpoSetupArea"/>
+          <Item Value="AreaRate"/>
+          <Item Value="MinExhibitors"/>
+          <Item Value="MaxExhibitors"/>
+          <Item Value="MinStalls"/>
+          <Item Value="MaxStalls"/>
+          <Item Value="MinB2b"/>
+          <Item Value="MaxB2b"/>
+          <Item Value="MinLocalDeleg"/>
+          <Item Value="MaxLocalDeleg"/>
+          <Item Value="MinIntlDeleg"/>
+          <Item Value="MaxIntlDeleg"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="FIntlDeleg"/>
+          <Item Value="FStalls"/>
+          <Item Value="Status"/>
+          <Item Value="FExhibitors"/>
+          <Item Value="FLocalDeleg"/>
+          <Item Value="FB2b"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="TblExpoSetupView1Iterator" StaticList="false" Uses="LOV_ExpoSchId" id="ExpoSchId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ExpoSetupId">
+      <AttrNames>
+        <Item Value="ExpoSetupId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FDate">
+      <AttrNames>
+        <Item Value="FDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="TDate">
+      <AttrNames>
+        <Item Value="TDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="NoOfDays">
+      <AttrNames>
+        <Item Value="NoOfDays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ExpoSetupVenue">
+      <AttrNames>
+        <Item Value="ExpoSetupVenue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="TotalHalls">
+      <AttrNames>
+        <Item Value="TotalHalls"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="STime">
+      <AttrNames>
+        <Item Value="STime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ETime">
+      <AttrNames>
+        <Item Value="ETime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ExpoSetupArea">
+      <AttrNames>
+        <Item Value="ExpoSetupArea"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="AreaRate">
+      <AttrNames>
+        <Item Value="AreaRate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MinExhibitors">
+      <AttrNames>
+        <Item Value="MinExhibitors"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MaxExhibitors">
+      <AttrNames>
+        <Item Value="MaxExhibitors"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MinStalls">
+      <AttrNames>
+        <Item Value="MinStalls"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MaxStalls">
+      <AttrNames>
+        <Item Value="MaxStalls"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MinB2b">
+      <AttrNames>
+        <Item Value="MinB2b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MaxB2b">
+      <AttrNames>
+        <Item Value="MaxB2b"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MinLocalDeleg">
+      <AttrNames>
+        <Item Value="MinLocalDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MaxLocalDeleg">
+      <AttrNames>
+        <Item Value="MaxLocalDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MinIntlDeleg">
+      <AttrNames>
+        <Item Value="MinIntlDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MaxIntlDeleg">
+      <AttrNames>
+        <Item Value="MaxIntlDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FIntlDeleg">
+      <AttrNames>
+        <Item Value="FIntlDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FStalls">
+      <AttrNames>
+        <Item Value="FStalls"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FExhibitors">
+      <AttrNames>
+        <Item Value="FExhibitors"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FLocalDeleg">
+      <AttrNames>
+        <Item Value="FLocalDeleg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FB2b">
+      <AttrNames>
+        <Item Value="FB2b"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblExpoSetupView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblExpoSetupView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblExpoSetupView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblExpoSetupView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblExpoIntlDelegView3Iterator" id="TblExpoIntlDelegView3">
+      <nodeDefinition DefName="model.VO.TblExpoIntlDelegView" Name="TblExpoIntlDelegView30">
+        <AttrNames>
+          <Item Value="ExpoIntlDelegId"/>
+          <Item Value="ExpoSetupId"/>
+          <Item Value="TotalDeleg"/>
+          <Item Value="LibrCountryId"/>
+          <Item Value="FDeleg"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblExpoSetupView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblExpoIntlDelegView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

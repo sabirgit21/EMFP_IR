@@ -72,4 +72,10 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="FDeleg"
+    PrecisionRule="true"
+    EntityAttrName="FDeleg"
+    EntityUsage="TblExpoIntlDeleg"
+    AliasName="F_DELEG"/>
 </ViewObject>
