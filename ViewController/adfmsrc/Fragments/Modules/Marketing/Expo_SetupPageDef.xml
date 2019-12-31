@@ -225,5 +225,10 @@
         <Item Value="TDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ETime">
+      <AttrNames>
+        <Item Value="ETime"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
