@@ -81,7 +81,7 @@
                       <f:validator binding="#{row.bindings.CropId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column headerText="Expo Type" id="c7" sortable="true" filterable="true">
+                  <af:column headerText="Type" id="c7" sortable="true" filterable="true">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoType}"
                                           id="it9" placeholder="Search Type">
@@ -94,7 +94,7 @@
                       <f:selectItems value="#{row.bindings.ExpoType.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.ExpoType.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>-->
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="Expo/Exhibition" id="c2" width="240">
                              <f:facet name="filter">
@@ -125,7 +125,7 @@
                       <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.TblExpoSchView1.hints.SchYear.label}" id="c7">
+                  <af:column headerText="#{bindings.TblExpoSchView1.hints.SchYear.label}" id="c8">
                     <af:inputText value="#{row.bindings.SchYear.inputValue}"
                                   label="#{bindings.TblExpoSchView1.hints.SchYear.label}"
                                   required="#{bindings.TblExpoSchView1.hints.SchYear.mandatory}"

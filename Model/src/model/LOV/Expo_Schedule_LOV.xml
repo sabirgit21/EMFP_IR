@@ -11,8 +11,9 @@
        TblExpoSch.AST, 
        TblExpoSch.EXPO_TYPE"
   FromList="TBL_EXPO_SCH TblExpoSch"
-  Where="TblExpoSch.AST='Y' 
- AND  TblExpoSch.EXPO_TYPE='LEX'"
+  Where="TblExpoSch.AST='Y'   
+AND TblExpoSch.EXPO_TYPE='DEX' 
+AND TblExpoSch.AST = 'Y'"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full">
