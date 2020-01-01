@@ -139,6 +139,13 @@
     AssociationOtherEnd="model.EO.FkExpoSetupExpoSchAssoc.TblExpoSch"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblExpoSchCrop"
+    Association="model.EO.FKTblExpoSchCropFKAssoc"
+    AssociationEnd="model.EO.FKTblExpoSchCropFKAssoc.TblExpoSchCrop"
+    AssociationOtherEnd="model.EO.FKTblExpoSchCropFKAssoc.TblExpoSch"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkExpoSch"
     PrimaryKey="true">

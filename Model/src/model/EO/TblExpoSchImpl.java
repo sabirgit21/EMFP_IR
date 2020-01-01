@@ -35,7 +35,8 @@ public class TblExpoSchImpl extends EntityImpl {
         UpdatedBy,
         ExpoType,
         SchYear,
-        TblExpoSetup;
+        TblExpoSetup,
+        TblExpoSchCrop;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -59,6 +60,7 @@ public class TblExpoSchImpl extends EntityImpl {
         }
     }
 
+
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int EXPOSCHMONTH = AttributesEnum.ExpoSchMonth.index();
@@ -72,6 +74,7 @@ public class TblExpoSchImpl extends EntityImpl {
     public static final int EXPOTYPE = AttributesEnum.ExpoType.index();
     public static final int SCHYEAR = AttributesEnum.SchYear.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
+    public static final int TBLEXPOSCHCROP = AttributesEnum.TblExpoSchCrop.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -85,6 +88,7 @@ public class TblExpoSchImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblExpoSch");
     }
+
 
     /**
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
@@ -267,6 +271,14 @@ public class TblExpoSchImpl extends EntityImpl {
      */
     public RowIterator getTblExpoSetup() {
         return (RowIterator) getAttributeInternal(TBLEXPOSETUP);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblExpoSchCrop() {
+        return (RowIterator) getAttributeInternal(TBLEXPOSCHCROP);
     }
 
 

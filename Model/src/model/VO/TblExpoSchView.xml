@@ -33,6 +33,10 @@
     Name="Expo_Type_LOV1"
     ViewObjectName="model.LOV.Expo_Type_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Fiscal_Year_LOV1"
+    ViewObjectName="model.LOV.Fiscal_Year_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_CropId"
     ListVOName="Crops_Name_LOV1"
@@ -120,6 +124,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SchYear"
+    ListVOName="Fiscal_Year_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SchYear"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -241,10 +263,23 @@
     PrecisionRule="true"
     EntityAttrName="SchYear"
     EntityUsage="TblExpoSch"
-    AliasName="SCH_YEAR"/>
+    AliasName="SCH_YEAR"
+    LOVName="LOV_SchYear">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblExpoSetupView"
     ViewLink="model.VO.FkExpoSetupExpoSchLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblExpoSchCropView"
+    ViewLink="model.VO.FKTblExpoSchCropFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

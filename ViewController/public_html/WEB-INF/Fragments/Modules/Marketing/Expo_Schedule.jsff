@@ -111,7 +111,7 @@
                       <f:validator binding="#{row.bindings.ExpoSchMonth.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Schedule Year" id="c8" sortable="true" filterable="true">
+                  <!--<af:column headerText="Schedule Year" id="c8" sortable="true" filterable="true">
                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.SchYear}"
                                           id="it10" placeholder="Search Schedule Year">
@@ -127,6 +127,14 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblExpoSchView1.hints.SchYear.format}"/>
                     </af:inputText>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.TblExpoSchView1.hints.SchYear.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.SchYear.inputValue}" label="#{row.bindings.SchYear.label}"
+                                        required="#{bindings.TblExpoSchView1.hints.SchYear.mandatory}"
+                                        shortDesc="#{bindings.TblExpoSchView1.hints.SchYear.tooltip}" id="soc6">
+                      <f:selectItems value="#{row.bindings.SchYear.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.SchYear.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblExpoSchView1.hints.Ast.name}" filterable="true" sortable="true"
                              headerText="Active" id="c6" width="60">
@@ -163,7 +171,76 @@
                         </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
-        
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2">
+              <af:showDetailItem id="tab2" text="Expo Sch Crop">
+                <af:table value="#{bindings.TblExpoSchCropView3.collectionModel}" var="row"
+                          rows="#{bindings.TblExpoSchCropView3.rangeSize}"
+                          emptyText="#{bindings.TblExpoSchCropView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblExpoSchCropView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblExpoSchCropView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblExpoSchCropView3.rangeSize}"
+                          filterModel="#{bindings.TblExpoSchCropView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblExpoSchCropView3Query.processQuery}" varStatus="vs" id="t2">
+                  <af:column sortProperty="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.label}" id="c4">
+                    <af:inputText value="#{row.bindings.ExpoSchId.inputValue}" readOnly="true"
+                                  label="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.label}"
+                                  required="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.mandatory}"
+                                  columns="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.precision}"
+                                  shortDesc="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblExpoSchCropView3.hints.ExpoSchId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.label}"
+                             id="c9">
+                    <af:inputText value="#{row.bindings.ExpoSchCropId.inputValue}" readOnly="true"
+                                  label="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.label}"
+                                  required="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.mandatory}"
+                                  columns="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.displayWidth}"
+                                  maximumLength="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.precision}"
+                                  shortDesc="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.ExpoSchCropId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblExpoSchCropView3.hints.ExpoSchCropId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblExpoSchCropView3.hints.CropId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblExpoSchCropView3.hints.CropId.label}" id="c10">
+                    <af:selectOneChoice value="#{row.bindings.CropId.inputValue}" label="#{row.bindings.CropId.label}"
+                                        required="#{bindings.TblExpoSchCropView3.hints.CropId.mandatory}"
+                                        shortDesc="#{bindings.TblExpoSchCropView3.hints.CropId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.CropId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.CropId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+             <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s2"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s3"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>
