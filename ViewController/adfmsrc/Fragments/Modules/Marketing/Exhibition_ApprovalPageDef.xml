@@ -63,6 +63,7 @@
           <Item Value="FExhibitors"/>
           <Item Value="FLocalDeleg"/>
           <Item Value="FB2b"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -236,5 +237,15 @@
     <action IterBinding="TblExpoSetupView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblExpoIntlDelegView3Iterator" id="Execute1" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="BusLeads">
+      <AttrNames>
+        <Item Value="BusLeads"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FLeads">
+      <AttrNames>
+        <Item Value="FLeads"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblExpoSetupApp"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="TblExpoSetup.EXPO_SETUP_ID, 
+       TblExpoSetup.EXPO_SCH_ID, 
+       TblExpoSetup.F_DATE, 
+       TblExpoSetup.T_DATE, 
+       TblExpoSetup.NO_OF_DAYS, 
+       TblExpoSetup.EXPO_SETUP_VENUE, 
+       TblExpoSetup.STATUS"
+  FromList="TBL_EXPO_SETUP TblExpoSetup"
+  Where="TblExpoSetup.STATUS = 'app'">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.TblExpoSetupApp_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="Expo_Schedule_LOV1"
+    ViewObjectName="model.LOV.Expo_Schedule_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Approve_NtApprove_LOV1"
+    ViewObjectName="model.LOV.Approve_NtApprove_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ExpoSchId"
+    ListVOName="Expo_Schedule_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoSchId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoSchId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="Approve_NtApprove_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblExpoSetup"
+    Entity="model.EO.TblExpoSetup"/>
+  <ViewAttribute
+    Name="ExpoSetupId"
+    PrecisionRule="true"
+    EntityAttrName="ExpoSetupId"
+    EntityUsage="TblExpoSetup"
+    AliasName="EXPO_SETUP_ID"/>
+  <ViewAttribute
+    Name="ExpoSchId"
+    PrecisionRule="true"
+    EntityAttrName="ExpoSchId"
+    EntityUsage="TblExpoSetup"
+    AliasName="EXPO_SCH_ID"
+    LOVName="LOV_ExpoSchId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FDate"
+    PrecisionRule="true"
+    EntityAttrName="FDate"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_DATE"/>
+  <ViewAttribute
+    Name="TDate"
+    PrecisionRule="true"
+    EntityAttrName="TDate"
+    EntityUsage="TblExpoSetup"
+    AliasName="T_DATE"/>
+  <ViewAttribute
+    Name="NoOfDays"
+    PrecisionRule="true"
+    EntityAttrName="NoOfDays"
+    EntityUsage="TblExpoSetup"
+    AliasName="NO_OF_DAYS"/>
+  <ViewAttribute
+    Name="ExpoSetupVenue"
+    PrecisionRule="true"
+    EntityAttrName="ExpoSetupVenue"
+    EntityUsage="TblExpoSetup"
+    AliasName="EXPO_SETUP_VENUE"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="TblExpoSetup"
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="TblExpoHallsView"
+    ViewLink="model.VO.FkTblExpoSetupAppHallsFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

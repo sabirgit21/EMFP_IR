@@ -57,6 +57,7 @@
           <Item Value="RepDesig"/>
           <Item Value="EMail"/>
           <Item Value="Mobile"/>
+          <Item Value="ExpoSchId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -54,6 +54,9 @@ public class TblExpoSetupImpl extends EntityImpl {
         FLocalDeleg,
         FStalls,
         Status,
+        Remarks,
+        BusLeads,
+        FLeads,
         TblExpoHalls,
         TblExhibitors,
         TblExpoIntlDeleg,
@@ -81,6 +84,7 @@ public class TblExpoSetupImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
@@ -113,6 +117,9 @@ public class TblExpoSetupImpl extends EntityImpl {
     public static final int FLOCALDELEG = AttributesEnum.FLocalDeleg.index();
     public static final int FSTALLS = AttributesEnum.FStalls.index();
     public static final int STATUS = AttributesEnum.Status.index();
+    public static final int REMARKS = AttributesEnum.Remarks.index();
+    public static final int BUSLEADS = AttributesEnum.BusLeads.index();
+    public static final int FLEADS = AttributesEnum.FLeads.index();
     public static final int TBLEXPOHALLS = AttributesEnum.TblExpoHalls.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLEXPOINTLDELEG = AttributesEnum.TblExpoIntlDeleg.index();
@@ -131,6 +138,7 @@ public class TblExpoSetupImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblExpoSetup");
     }
+
 
     /**
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
@@ -610,6 +618,54 @@ public class TblExpoSetupImpl extends EntityImpl {
      */
     public void setStatus(String value) {
         setAttributeInternal(STATUS, value);
+    }
+
+    /**
+     * Gets the attribute value for Remarks, using the alias name Remarks.
+     * @return the value of Remarks
+     */
+    public String getRemarks() {
+        return (String) getAttributeInternal(REMARKS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Remarks.
+     * @param value value to set the Remarks
+     */
+    public void setRemarks(String value) {
+        setAttributeInternal(REMARKS, value);
+    }
+
+    /**
+     * Gets the attribute value for BusLeads, using the alias name BusLeads.
+     * @return the value of BusLeads
+     */
+    public BigDecimal getBusLeads() {
+        return (BigDecimal) getAttributeInternal(BUSLEADS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BusLeads.
+     * @param value value to set the BusLeads
+     */
+    public void setBusLeads(BigDecimal value) {
+        setAttributeInternal(BUSLEADS, value);
+    }
+
+    /**
+     * Gets the attribute value for FLeads, using the alias name FLeads.
+     * @return the value of FLeads
+     */
+    public BigDecimal getFLeads() {
+        return (BigDecimal) getAttributeInternal(FLEADS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FLeads.
+     * @param value value to set the FLeads
+     */
+    public void setFLeads(BigDecimal value) {
+        setAttributeInternal(FLEADS, value);
     }
 
     /**

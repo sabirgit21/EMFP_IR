@@ -6,18 +6,17 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="TblExpoSetupView1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblExpoSetupView1Iterator"/>
-    <searchRegion Binds="TblExpoSetupView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoSetupView1Query"/>
-    <iterator Binds="TblExpoHallsView3" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblExpoHallsView3Iterator"/>
-    <searchRegion Binds="TblExpoHallsView3Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoHallsView3Query"/>
-    <iterator Binds="TblExpoStallsView6" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TblExpoStallsView6Iterator"/>
-    <searchRegion Binds="TblExpoStallsView6Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoStallsView6Query"/>
+    <iterator Binds="TblExpoSetupApp1" RangeSize="25" DataControl="AppModuleDataControl" id="TblExpoSetupApp1Iterator"/>
+    <searchRegion Binds="TblExpoSetupApp1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoSetupApp1Query"/>
+    <iterator Binds="TblExpoHallsView6" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoHallsView6Iterator"/>
+    <searchRegion Binds="TblExpoHallsView6Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoHallsView6Query"/>
+    <iterator Binds="TblExpoStallsView7" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoStallsView7Iterator"/>
+    <searchRegion Binds="TblExpoStallsView7Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblExpoStallsView7Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -33,45 +32,21 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="TblExpoSetupView1Iterator" id="TblExpoSetupView1">
-      <nodeDefinition DefName="model.VO.TblExpoSetupView" Name="TblExpoSetupView10">
+    <tree IterBinding="TblExpoSetupApp1Iterator" id="TblExpoSetupApp1">
+      <nodeDefinition DefName="model.VO.TblExpoSetupApp" Name="TblExpoSetupApp10">
         <AttrNames>
-          <Item Value="ExpoSchId"/>
           <Item Value="ExpoSetupId"/>
+          <Item Value="ExpoSchId"/>
           <Item Value="FDate"/>
           <Item Value="TDate"/>
           <Item Value="NoOfDays"/>
           <Item Value="ExpoSetupVenue"/>
-          <Item Value="TotalHalls"/>
-          <Item Value="STime"/>
-          <Item Value="ETime"/>
-          <Item Value="ExpoSetupArea"/>
-          <Item Value="AreaRate"/>
-          <Item Value="MinExhibitors"/>
-          <Item Value="MaxExhibitors"/>
-          <Item Value="MinStalls"/>
-          <Item Value="MaxStalls"/>
-          <Item Value="MinB2b"/>
-          <Item Value="MaxB2b"/>
-          <Item Value="MinLocalDeleg"/>
-          <Item Value="MaxLocalDeleg"/>
-          <Item Value="MinIntlDeleg"/>
-          <Item Value="MaxIntlDeleg"/>
-          <Item Value="CreatedDate"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="UpdatedDate"/>
-          <Item Value="UpdatedBy"/>
-          <Item Value="FIntlDeleg"/>
-          <Item Value="FStalls"/>
           <Item Value="Status"/>
-          <Item Value="FExhibitors"/>
-          <Item Value="FLocalDeleg"/>
-          <Item Value="FB2b"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblExpoHallsView3Iterator" id="TblExpoHallsView3">
-      <nodeDefinition DefName="model.VO.TblExpoHallsView" Name="TblExpoHallsView30">
+    <tree IterBinding="TblExpoHallsView6Iterator" id="TblExpoHallsView6">
+      <nodeDefinition DefName="model.VO.TblExpoHallsView" Name="TblExpoHallsView60">
         <AttrNames>
           <Item Value="ExpoHallsId"/>
           <Item Value="ExpoSetupId"/>
@@ -82,8 +57,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TblExpoStallsView6Iterator" id="TblExpoStallsView6">
-      <nodeDefinition DefName="model.VO.TblExpoStallsView" Name="TblExpoStallsView60">
+    <tree IterBinding="TblExpoStallsView7Iterator" id="TblExpoStallsView7">
+      <nodeDefinition DefName="model.VO.TblExpoStallsView" Name="TblExpoStallsView70">
         <AttrNames>
           <Item Value="ExpoStallsId"/>
           <Item Value="ExpoHallsId"/>
@@ -93,21 +68,17 @@
           <Item Value="StallDimension"/>
           <Item Value="StallArea"/>
           <Item Value="StallValue"/>
-          <Item Value="CreatedDate"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="UpdatedDate"/>
-          <Item Value="UpdatedBy"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="TblExpoHallsView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="TblExpoHallsView6Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblExpoHallsView3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblExpoHallsView3Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <action IterBinding="TblExpoStallsView6Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+    <action IterBinding="TblExpoHallsView6Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblExpoHallsView6Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="TblExpoStallsView7Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="TblExpoStallsView6Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
-    <action IterBinding="TblExpoStallsView6Iterator" id="Delete1" RequiresUpdateModel="false"
+    <action IterBinding="TblExpoStallsView7Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="TblExpoStallsView7Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

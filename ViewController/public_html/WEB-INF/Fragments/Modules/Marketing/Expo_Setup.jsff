@@ -55,7 +55,7 @@
                                             columns="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.displayWidth}"
                                             maximumLength="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.precision}"
                                             shortDesc="#{bindings.TblExpoSetupView1.hints.ExpoSetupId.tooltip}"
-                                            id="it2" readOnly="true"
+                                            id="it2" disabled="true"
                                   contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ExpoSetupId.validator}"/>
                                 <af:convertNumber groupingUsed="false"
@@ -162,10 +162,20 @@
                                                   label="#{row.bindings.Status.label}"
                                                   required="#{bindings.TblExpoSetupView1.hints.Status.mandatory}"
                                                   shortDesc="#{bindings.TblExpoSetupView1.hints.Status.tooltip}"
-                                                  id="soc3" readOnly="true">
+                                                  id="soc3" disabled="true">
                                 <f:selectItems value="#{row.bindings.Status.items}" id="si3"/>
                                 <f:validator binding="#{row.bindings.Status.validator}"/>
                               </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.TblExpoSetupView1.hints.Remarks.label}" id="c9">
+                              <af:inputText value="#{row.bindings.Remarks.inputValue}" disabled="true"
+                                            label="#{bindings.TblExpoSetupView1.hints.Remarks.label}"
+                                            required="#{bindings.TblExpoSetupView1.hints.Remarks.mandatory}"
+                                            columns="#{bindings.TblExpoSetupView1.hints.Remarks.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoSetupView1.hints.Remarks.precision}"
+                                            shortDesc="#{bindings.TblExpoSetupView1.hints.Remarks.tooltip}" id="it8">
+                                <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                              </af:inputText>
                             </af:column>
                           </af:table>
                         </af:showDetailItem>
@@ -220,7 +230,7 @@
                               <f:validator binding="#{bindings.AreaRate.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.AreaRate.format}"/>
                             </af:inputText>
-                            <af:inputText value="#{bindings.MinExhibitors.inputValue}"
+                            <!--<af:inputText value="#{bindings.MinExhibitors.inputValue}"
                                           label="Minimum Exhibitors"
                                           required="#{bindings.MinExhibitors.hints.mandatory}"
                                           columns="#{bindings.MinExhibitors.hints.displayWidth}"
@@ -243,10 +253,10 @@
                                           required="#{bindings.FExhibitors.hints.mandatory}"
                                           columns="#{bindings.FExhibitors.hints.displayWidth}"
                                           maximumLength="#{bindings.FExhibitors.hints.precision}"
-                                          shortDesc="#{bindings.FExhibitors.hints.tooltip}" id="it66" readOnly="true">
+                                          shortDesc="#{bindings.FExhibitors.hints.tooltip}" id="it66" disabled="true">
                               <f:validator binding="#{bindings.FExhibitors.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FExhibitors.format}"/>
-                            </af:inputText>
+                            </af:inputText>-->
                             <af:inputText value="#{bindings.MinStalls.inputValue}"
                                           label="Minimum Stalls"
                                           required="#{bindings.MinStalls.hints.mandatory}"
@@ -269,7 +279,7 @@
                                           required="#{bindings.FStalls.hints.mandatory}"
                                           columns="#{bindings.FStalls.hints.displayWidth}"
                                           maximumLength="#{bindings.FStalls.hints.precision}"
-                                          shortDesc="#{bindings.FStalls.hints.tooltip}" id="it69" readOnly="true">
+                                          shortDesc="#{bindings.FStalls.hints.tooltip}" id="it69" disabled="true">
                               <f:validator binding="#{bindings.FStalls.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FStalls.format}"/>
                             </af:inputText>
@@ -293,11 +303,11 @@
                                           required="#{bindings.FB2b.hints.mandatory}"
                                           columns="#{bindings.FB2b.hints.displayWidth}"
                                           maximumLength="#{bindings.FB2b.hints.precision}"
-                                          shortDesc="#{bindings.FB2b.hints.tooltip}" id="it72" readOnly="true">
+                                          shortDesc="#{bindings.FB2b.hints.tooltip}" id="it72" disabled="true">
                               <f:validator binding="#{bindings.FB2b.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FB2b.format}"/>
                             </af:inputText>
-                            <af:inputText value="#{bindings.MinLocalDeleg.inputValue}"
+                            <!--<af:inputText value="#{bindings.MinLocalDeleg.inputValue}"
                                           label="Minimum Local Delegation"
                                           required="#{bindings.MinLocalDeleg.hints.mandatory}"
                                           columns="#{bindings.MinLocalDeleg.hints.displayWidth}"
@@ -320,10 +330,10 @@
                                           required="#{bindings.FLocalDeleg.hints.mandatory}"
                                           columns="#{bindings.FLocalDeleg.hints.displayWidth}"
                                           maximumLength="#{bindings.FLocalDeleg.hints.precision}"
-                                          shortDesc="#{bindings.FLocalDeleg.hints.tooltip}" id="it75" readOnly="true">
+                                          shortDesc="#{bindings.FLocalDeleg.hints.tooltip}" id="it75" disabled="true">
                               <f:validator binding="#{bindings.FLocalDeleg.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FLocalDeleg.format}"/>
-                            </af:inputText>
+                            </af:inputText>-->
                             <af:inputText value="#{bindings.MinIntlDeleg.inputValue}"
                                           label="Minimum International Delegation"
                                           required="#{bindings.MinIntlDeleg.hints.mandatory}"
@@ -347,11 +357,11 @@
                                           required="#{bindings.FIntlDeleg.hints.mandatory}"
                                           columns="#{bindings.FIntlDeleg.hints.displayWidth}"
                                           maximumLength="#{bindings.FIntlDeleg.hints.precision}"
-                                          shortDesc="#{bindings.FIntlDeleg.hints.tooltip}" id="it78" readOnly="true">
+                                          shortDesc="#{bindings.FIntlDeleg.hints.tooltip}" id="it78" disabled="true">
                               <f:validator binding="#{bindings.FIntlDeleg.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FIntlDeleg.format}"/>
                             </af:inputText>
-                            <af:inputText value="#{bindings.STime.inputValue}" 
+                            <!--<af:inputText value="#{bindings.STime.inputValue}" 
                             label="Start Time"
                                           required="#{bindings.STime.hints.mandatory}"
                                           columns="#{bindings.STime.hints.displayWidth}"
@@ -359,14 +369,40 @@
                                           shortDesc="#{bindings.STime.hints.tooltip}" id="it79">
                               <f:validator binding="#{bindings.STime.validator}"/>
                               <af:convertDateTime pattern="#{bindings.STime.format}"/>
-                            </af:inputText>
+                            </af:inputText>-->
+                            <af:inputDate value="#{bindings.STime.inputValue}" label="Start Time"
+                                          required="#{bindings.STime.hints.mandatory}"
+                                          columns="#{bindings.STime.hints.displayWidth}"
+                                          shortDesc="#{bindings.STime.hints.tooltip}" id="id6">
+                              <f:validator binding="#{bindings.STime.validator}"/>
+                              <af:convertDateTime pattern="#{bindings.STime.format}"/>
+                              <af:convertDateTime pattern="HH:mm"/>
+                            </af:inputDate>
                             <af:inputDate value="#{bindings.ETime.inputValue}" label="End Date"
                                           required="#{bindings.ETime.hints.mandatory}"
                                           columns="#{bindings.ETime.hints.displayWidth}"
                                           shortDesc="#{bindings.ETime.hints.tooltip}" id="id5">
                               <f:validator binding="#{bindings.ETime.validator}"/>
                               <af:convertDateTime pattern="#{bindings.ETime.format}"/>
+                              <af:convertDateTime pattern="HH:mm"/>
                             </af:inputDate>
+                            <af:inputText value="#{bindings.BusLeads.inputValue}"
+                                          label="Business Leads"
+                                          required="#{bindings.BusLeads.hints.mandatory}"
+                                          columns="#{bindings.BusLeads.hints.displayWidth}"
+                                          maximumLength="#{bindings.BusLeads.hints.precision}"
+                                          shortDesc="#{bindings.BusLeads.hints.tooltip}" id="it10">
+                              <f:validator binding="#{bindings.BusLeads.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.BusLeads.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.FLeads.inputValue}" label="Final Leads"
+                                          required="#{bindings.FLeads.hints.mandatory}" disabled="true"
+                                          columns="#{bindings.FLeads.hints.displayWidth}"
+                                          maximumLength="#{bindings.FLeads.hints.precision}"
+                                          shortDesc="#{bindings.FLeads.hints.tooltip}" id="it9">
+                              <f:validator binding="#{bindings.FLeads.validator}"/>
+                              <af:convertNumber groupingUsed="false" pattern="#{bindings.FLeads.format}"/>
+                            </af:inputText>
                             <f:facet name="footer">
                               <af:panelGroupLayout layout="horizontal" id="pgl2">
                                 <af:button actionListener="#{bindings.First.execute}" text="First"
@@ -408,7 +444,7 @@
                                             columns="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.displayWidth}"
                                             maximumLength="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.precision}"
                                             shortDesc="#{bindings.TblExpoIntlDelegView3.hints.ExpoIntlDelegId.tooltip}"
-                                            id="it18" readOnly="true"
+                                            id="it18" disabled="true"
                                   contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.ExpoIntlDelegId.validator}"/>
                                 <af:convertNumber groupingUsed="false"
@@ -463,7 +499,7 @@
                                             columns="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.displayWidth}"
                                             maximumLength="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.precision}"
                                             shortDesc="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.tooltip}" 
-                                            id="it6" readOnly="true">
+                                            id="it6" disabled="true">
                                 <f:validator binding="#{row.bindings.FDeleg.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.format}"/>
@@ -515,7 +551,7 @@
                                                       columns="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.displayWidth}"
                                                       maximumLength="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.precision}"
                                                       shortDesc="#{bindings.TblExpoHallsView3.hints.ExpoHallsId.tooltip}"
-                                                      id="it22" readOnly="true"
+                                                      id="it22" disabled="true"
                                                       contentStyle='text-align: center'>
                                           <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
                                           <af:convertNumber groupingUsed="false"
@@ -655,7 +691,7 @@
                                                       columns="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.displayWidth}"
                                                       maximumLength="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.precision}"
                                                       shortDesc="#{bindings.TblExpoStallsView6.hints.ExpoStallsId.tooltip}"
-                                                      id="it28" readOnly="true"
+                                                      id="it28" disabled="true"
                                   contentStyle='text-align: center'>
                                           <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
                                           <af:convertNumber groupingUsed="false"

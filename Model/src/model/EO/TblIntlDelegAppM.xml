@@ -341,6 +341,13 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="ExpoSchId"
+    ColumnName="EXPO_SCH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
   <AccessorAttribute
     Name="TblB2bMeeting"
     Association="model.EO.FkB2bMeetingIntlDelegMAssoc"

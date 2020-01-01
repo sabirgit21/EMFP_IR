@@ -58,6 +58,7 @@ public class TblExpoHallsImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXPOHALLSID = AttributesEnum.ExpoHallsId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
     public static final int HALLNO = AttributesEnum.HallNo.index();
@@ -76,6 +77,13 @@ public class TblExpoHallsImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblExpoHallsImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExpoHalls");
     }
 
     /**
@@ -225,14 +233,14 @@ public class TblExpoHallsImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblExpoSetup() {
-        return (EntityImpl) getAttributeInternal(TBLEXPOSETUP);
+    public TblExpoSetupImpl getTblExpoSetup() {
+        return (TblExpoSetupImpl) getAttributeInternal(TBLEXPOSETUP);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblExpoSetup(EntityImpl value) {
+    public void setTblExpoSetup(TblExpoSetupImpl value) {
         setAttributeInternal(TBLEXPOSETUP, value);
     }
 
@@ -250,6 +258,7 @@ public class TblExpoHallsImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTALLSALLOC);
     }
 
+
     /**
      * @param expoHallsId key constituent
 
@@ -257,13 +266,6 @@ public class TblExpoHallsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal expoHallsId) {
         return new Key(new Object[] { expoHallsId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExpoHalls");
     }
 
     /**

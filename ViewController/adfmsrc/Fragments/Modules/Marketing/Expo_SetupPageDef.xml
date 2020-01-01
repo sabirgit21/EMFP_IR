@@ -62,6 +62,7 @@
           <Item Value="MinIntlDeleg"/>
           <Item Value="MaxIntlDeleg"/>
           <Item Value="Status"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -228,6 +229,16 @@
     <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ETime">
       <AttrNames>
         <Item Value="ETime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="FLeads">
+      <AttrNames>
+        <Item Value="FLeads"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="BusLeads">
+      <AttrNames>
+        <Item Value="BusLeads"/>
       </AttrNames>
     </attributeValues>
   </bindings>

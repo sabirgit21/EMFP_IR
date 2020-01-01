@@ -265,6 +265,24 @@
     EntityAttrName="FB2b"
     EntityUsage="TblExpoSetup"
     AliasName="F_B2B"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="TblExpoSetup"
+    AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="FLeads"
+    PrecisionRule="true"
+    EntityAttrName="FLeads"
+    EntityUsage="TblExpoSetup"
+    AliasName="F_LEADS"/>
+  <ViewAttribute
+    Name="BusLeads"
+    PrecisionRule="true"
+    EntityAttrName="BusLeads"
+    EntityUsage="TblExpoSetup"
+    AliasName="BUS_LEADS"/>
   <ViewLinkAccessor
     Name="TblExpoHallsView"
     ViewLink="model.VO.FkExpoHallsExpoSetupLink"

@@ -1607,6 +1607,15 @@
   <ViewUsage
     Name="TblExpoSchCropView3"
     ViewObjectName="model.VO.TblExpoSchCropView"/>
+  <ViewUsage
+    Name="TblExpoSetupApp1"
+    ViewObjectName="model.VO.TblExpoSetupApp"/>
+  <ViewUsage
+    Name="TblExpoHallsView6"
+    ViewObjectName="model.VO.TblExpoHallsView"/>
+  <ViewUsage
+    Name="TblExpoStallsView7"
+    ViewObjectName="model.VO.TblExpoStallsView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3172,5 +3181,17 @@
     ViewLinkObjectName="model.VO.FKTblExpoSchCropFKLink"
     SrcViewUsageName="model.AppModule.TblExpoSchView1"
     DstViewUsageName="model.AppModule.TblExpoSchCropView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblExpoSetupAppHallsFkLink1"
+    ViewLinkObjectName="model.VO.FkTblExpoSetupAppHallsFkLink"
+    SrcViewUsageName="model.AppModule.TblExpoSetupApp1"
+    DstViewUsageName="model.AppModule.TblExpoHallsView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkExpoStallsExpoHallsLink5"
+    ViewLinkObjectName="model.VO.FkExpoStallsExpoHallsLink"
+    SrcViewUsageName="model.AppModule.TblExpoHallsView6"
+    DstViewUsageName="model.AppModule.TblExpoStallsView7"
     Reversed="false"/>
 </AppModule>

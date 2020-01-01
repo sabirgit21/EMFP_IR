@@ -54,6 +54,15 @@
                                         pattern="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.TblIntlDelegAppMView1.hints.ExpoSchId.label}" id="c15">
+                    <af:selectOneChoice value="#{row.bindings.ExpoSchId.inputValue}"
+                                        label="#{row.bindings.ExpoSchId.label}"
+                                        required="#{bindings.TblIntlDelegAppMView1.hints.ExpoSchId.mandatory}"
+                                        shortDesc="#{bindings.TblIntlDelegAppMView1.hints.ExpoSchId.tooltip}" id="soc6">
+                      <f:selectItems value="#{row.bindings.ExpoSchId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblIntlDelegAppMView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Dated" id="c3" align="center">
                     <f:facet name="filter">
@@ -347,7 +356,7 @@
                   </f:facet>
                 </af:panelFormLayout>
               </af:showDetailItem>
-              <!--<af:showDetailItem id="sdi1" text="Delegation Trade">
+              <af:showDetailItem id="sdi1" text="Delegation Trade">
                 <af:table value="#{bindings.TblIntlDelegTradeView3.collectionModel}" var="row"
                           rows="#{bindings.TblIntlDelegTradeView3.rangeSize}"
                           emptyText="#{bindings.TblIntlDelegTradeView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -421,7 +430,7 @@
                                 <af:spacer width="5" height="10" id="s13"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-              </af:showDetailItem>-->
+              </af:showDetailItem>
               <af:showDetailItem id="sdi2" text="Import Other">
                 <af:table value="#{bindings.TblIntlDelegImportOthView3.collectionModel}" var="row"
                           rows="#{bindings.TblIntlDelegImportOthView3.rangeSize}"
@@ -654,7 +663,7 @@
                             </af:iterator>
                         </af:panelGroupLayout>
               </af:showDetailItem>
-              <!--<af:showDetailItem id="sdi5" text="Delegation Accomodation">
+              <af:showDetailItem id="sdi5" text="Delegation Accomodation">
                 <af:table value="#{bindings.TblIntlDelegAccomView3.collectionModel}" var="row"
                           rows="#{bindings.TblIntlDelegAccomView3.rangeSize}"
                           emptyText="#{bindings.TblIntlDelegAccomView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -729,7 +738,7 @@
                                 <af:spacer width="5" height="10" id="s2"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-              </af:showDetailItem>-->
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
