@@ -88,6 +88,20 @@
     </DesignTime>
   </Attribute>
   <Attribute
+    Name="StallAllocStatus"
+    Precision="3"
+    ColumnName="STALL_ALLOC_STATUS"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_STALLS_ALLOC"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"

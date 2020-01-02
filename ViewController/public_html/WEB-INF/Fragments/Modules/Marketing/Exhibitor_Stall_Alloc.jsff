@@ -103,7 +103,7 @@
                       <f:validator binding="#{row.bindings.Representative.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <!--<af:column headerText="Exhibitor Type" id="c2" sortable="true" filterable="true" width="120">
+                  <af:column headerText="Exhibitor Type" id="c2" sortable="true" filterable="true" width="120">
                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExhibitorType}"
                                           id="it20" placeholder="Search Type">
@@ -117,7 +117,7 @@
                       <f:selectItems value="#{row.bindings.ExhibitorType.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.ExhibitorType.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>-->
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblExhibitorsView1.hints.ExhibitorProd.name}" filterable="true"
                              sortable="true"
                              id="c6" headerText="Exhibitors Products" width="130">
@@ -165,7 +165,7 @@
                       <f:validator binding="#{row.bindings.ExhibitorStatus.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column headerText="Stall Allocation Type" id="c8" sortable="true" filterable="true" width="120">
+                  <af:column headerText="Stall Allocation Type" id="c8" sortable="true" filterable="true" width="120">
                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallAllocType}"
                                           id="it24" placeholder="Search Type">
@@ -193,7 +193,7 @@
                       <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si5"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>-->
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
@@ -348,6 +348,16 @@
                                   shortDesc="#{bindings.TblStallsAllocView3.hints.Representative.tooltip}" id="it18">
                       <f:validator binding="#{row.bindings.Representative.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="Stalls Allocation Status" id="c15">
+                    <af:selectOneChoice value="#{row.bindings.StallAllocStatus.inputValue}"
+                                        label="#{row.bindings.StallAllocStatus.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.tooltip}"
+                                        id="soc10">
+                      <f:selectItems value="#{row.bindings.StallAllocStatus.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.StallAllocStatus.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

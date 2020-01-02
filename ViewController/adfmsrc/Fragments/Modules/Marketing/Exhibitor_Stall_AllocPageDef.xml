@@ -60,6 +60,7 @@
           <Item Value="StallDiscAmt"/>
           <Item Value="StallAmount"/>
           <Item Value="Representative"/>
+          <Item Value="StallAllocStatus"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

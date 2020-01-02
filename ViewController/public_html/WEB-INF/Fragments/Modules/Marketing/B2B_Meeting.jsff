@@ -134,7 +134,7 @@
                       <f:validator binding="#{row.bindings.Remarks.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <!--<af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Linkages.name}" filterable="true"
+                  <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Linkages.name}" filterable="true"
                              sortable="true" headerText="Linkages" id="c7">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Linkages}"
@@ -224,7 +224,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.format}"/>
                     </af:inputText>
-                  </af:column>-->
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

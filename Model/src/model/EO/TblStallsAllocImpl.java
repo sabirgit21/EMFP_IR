@@ -30,6 +30,7 @@ public class TblStallsAllocImpl extends EntityImpl {
         StallDiscAmt,
         StallAmount,
         Representative,
+        StallAllocStatus,
         CreatedDate,
         CreatedBy,
         UpdatedDate,
@@ -59,6 +60,8 @@ public class TblStallsAllocImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int STALLSALLOCID = AttributesEnum.StallsAllocId.index();
     public static final int EXHIBITORSID = AttributesEnum.ExhibitorsId.index();
     public static final int EXPOHALLSID = AttributesEnum.ExpoHallsId.index();
@@ -67,6 +70,7 @@ public class TblStallsAllocImpl extends EntityImpl {
     public static final int STALLDISCAMT = AttributesEnum.StallDiscAmt.index();
     public static final int STALLAMOUNT = AttributesEnum.StallAmount.index();
     public static final int REPRESENTATIVE = AttributesEnum.Representative.index();
+    public static final int STALLALLOCSTATUS = AttributesEnum.StallAllocStatus.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
@@ -80,6 +84,14 @@ public class TblStallsAllocImpl extends EntityImpl {
      */
     public TblStallsAllocImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblStallsAlloc");
+    }
+
 
     /**
      * Gets the attribute value for StallsAllocId, using the alias name StallsAllocId.
@@ -258,6 +270,22 @@ public class TblStallsAllocImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for StallAllocStatus, using the alias name StallAllocStatus.
+     * @return the value of StallAllocStatus
+     */
+    public String getStallAllocStatus() {
+        return (String) getAttributeInternal(STALLALLOCSTATUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for StallAllocStatus.
+     * @param value value to set the StallAllocStatus
+     */
+    public void setStallAllocStatus(String value) {
+        setAttributeInternal(STALLALLOCSTATUS, value);
+    }
+
+    /**
      * @return the associated entity TblExhibitorsImpl.
      */
     public TblExhibitorsImpl getTblExhibitors() {
@@ -299,6 +327,7 @@ public class TblStallsAllocImpl extends EntityImpl {
         setAttributeInternal(TBLEXPOSTALLS, value);
     }
 
+
     /**
      * @param stallsAllocId key constituent
 
@@ -306,13 +335,6 @@ public class TblStallsAllocImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal stallsAllocId) {
         return new Key(new Object[] { stallsAllocId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblStallsAlloc");
     }
 
     /**

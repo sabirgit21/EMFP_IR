@@ -29,6 +29,10 @@
     Name="Stall_Type_LOV1"
     ViewObjectName="model.LOV.Stall_Type_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Stall_Alloc_Status_LOV1"
+    ViewObjectName="model.LOV.Stall_Alloc_Status_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ExpoHallsId"
     ListVOName="Expo_Halls_LOV1"
@@ -80,6 +84,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StallAllocStatus"
+    ListVOName="Stall_Alloc_Status_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StallAllocStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbValue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Viewstatus"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -161,11 +183,26 @@
     EntityUsage="TblStallsAlloc"
     AliasName="REPRESENTATIVE"/>
   <ViewAttribute
+    Name="StallAllocStatus"
+    PrecisionRule="true"
+    EntityAttrName="StallAllocStatus"
+    EntityUsage="TblStallsAlloc"
+    AliasName="STALL_ALLOC_STATUS"
+    LOVName="LOV_StallAllocStatus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblStallsAlloc"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -177,7 +214,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblStallsAlloc"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
