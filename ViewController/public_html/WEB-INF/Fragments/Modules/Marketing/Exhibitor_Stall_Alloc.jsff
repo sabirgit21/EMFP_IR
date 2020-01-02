@@ -349,7 +349,13 @@
                       <f:validator binding="#{row.bindings.Representative.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Stalls Allocation Status" id="c15">
+                  <af:column headerText="Stalls Allocation Status" id="c15" sortable="true" filterable="true"
+                             width="150">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallAllocStatus}"
+                                          id="it7" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.StallAllocStatus.inputValue}"
                                         label="#{row.bindings.StallAllocStatus.label}"
                                         required="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.mandatory}"

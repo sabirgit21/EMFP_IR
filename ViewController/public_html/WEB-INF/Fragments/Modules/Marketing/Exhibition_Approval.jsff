@@ -169,7 +169,12 @@
                                 <f:validator binding="#{row.bindings.Status.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.TblExpoSetupView1.hints.Remarks.label}" id="c9">
+                            <af:column headerText="Remarks" id="c9" sortable="true" filterable="true" width="200">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it11" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                             label="#{bindings.TblExpoSetupView1.hints.Remarks.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.Remarks.mandatory}"
@@ -382,7 +387,7 @@
                               <af:convertDateTime pattern="#{bindings.ETime.format}"/>
                             </af:inputDate>
                             <af:inputText value="#{bindings.BusLeads.inputValue}" disabled="true"
-                                          label="#{bindings.BusLeads.hints.label}"
+                                          label="Business Leads"
                                           required="#{bindings.BusLeads.hints.mandatory}"
                                           columns="#{bindings.BusLeads.hints.displayWidth}"
                                           maximumLength="#{bindings.BusLeads.hints.precision}"
@@ -390,7 +395,7 @@
                               <f:validator binding="#{bindings.BusLeads.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.BusLeads.format}"/>
                             </af:inputText>
-                            <af:inputText value="#{bindings.FLeads.inputValue}" label="#{bindings.FLeads.hints.label}"
+                            <af:inputText value="#{bindings.FLeads.inputValue}" label="Final Leads"
                                           required="#{bindings.FLeads.hints.mandatory}"
                                           columns="#{bindings.FLeads.hints.displayWidth}"
                                           maximumLength="#{bindings.FLeads.hints.precision}"
@@ -483,7 +488,7 @@
                               </af:inputText>
                             </af:column>
                             <af:column headerText="Final Delegation" id="c8"
-                                       sortable="true" filterable="true">
+                                       sortable="true" filterable="true" width="150">
                                        <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FDeleg}"
                                           id="it7" placeholder="Search Final Delegation">

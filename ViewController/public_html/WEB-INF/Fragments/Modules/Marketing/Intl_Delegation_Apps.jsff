@@ -54,7 +54,12 @@
                                         pattern="#{bindings.TblIntlDelegAppMView1.hints.IntlDelegAppMId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblIntlDelegAppMView1.hints.ExpoSchId.label}" id="c15">
+                  <af:column headerText="Expo Schedule" id="c15" sortable="true" filterable="true" width="200">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchId}"
+                                          id="it28" placeholder="Search Schedule">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ExpoSchId.inputValue}"
                                         label="#{row.bindings.ExpoSchId.label}"
                                         required="#{bindings.TblIntlDelegAppMView1.hints.ExpoSchId.mandatory}"

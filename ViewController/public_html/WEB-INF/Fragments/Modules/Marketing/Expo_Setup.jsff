@@ -167,7 +167,13 @@
                                 <f:validator binding="#{row.bindings.Status.validator}"/>
                               </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.TblExpoSetupView1.hints.Remarks.label}" id="c9">
+                            <af:column headerText="Remarks" id="c9"
+                                       sortable="true" filterable="true" width="200">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it11" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                               <af:inputText value="#{row.bindings.Remarks.inputValue}" disabled="true"
                                             label="#{bindings.TblExpoSetupView1.hints.Remarks.label}"
                                             required="#{bindings.TblExpoSetupView1.hints.Remarks.mandatory}"
@@ -399,7 +405,7 @@
                                           required="#{bindings.FLeads.hints.mandatory}" disabled="true"
                                           columns="#{bindings.FLeads.hints.displayWidth}"
                                           maximumLength="#{bindings.FLeads.hints.precision}"
-                                          shortDesc="#{bindings.FLeads.hints.tooltip}" id="it9">
+                                          shortDesc="#{bindings.FLeads.hints.tooltip}" id="it9" >
                               <f:validator binding="#{bindings.FLeads.validator}"/>
                               <af:convertNumber groupingUsed="false" pattern="#{bindings.FLeads.format}"/>
                             </af:inputText>
@@ -487,7 +493,8 @@
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.format}"/>
                               </af:inputText>
                             </af:column>
-                            <af:column headerText="Final Delegation" id="c8" sortable="true" filterable="true">
+                            <af:column headerText="Final Delegation" id="c8" sortable="true" filterable="true"
+                                       width="150">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FDeleg}"
                                           id="it7" placeholder="Search Final Delegation">
