@@ -27,7 +27,6 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="ExpoSetupId"
-    IsNotNull="true"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
@@ -154,6 +153,13 @@
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_EXHIBITORS"/>
+  <Attribute
+    Name="ExpoSchId"
+    ColumnName="EXPO_SCH_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <AccessorAttribute

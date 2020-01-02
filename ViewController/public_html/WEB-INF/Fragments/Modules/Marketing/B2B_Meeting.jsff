@@ -54,8 +54,16 @@
                                         pattern="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.format}"/>
                     </af:inputText>
                   </af:column>
-                  
-                  <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Name.name}" filterable="true"
+                  <af:column headerText="#{bindings.TblB2bMeetingView1.hints.ExpoSchId.label}" id="c12">
+                    <af:selectOneChoice value="#{row.bindings.ExpoSchId.inputValue}"
+                                        label="#{row.bindings.ExpoSchId.label}"
+                                        required="#{bindings.TblB2bMeetingView1.hints.ExpoSchId.mandatory}"
+                                        shortDesc="#{bindings.TblB2bMeetingView1.hints.ExpoSchId.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.ExpoSchId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.ExpoSchId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Name.name}" filterable="true"
                              sortable="true" headerText="B2B Meeting" id="c4" width="150">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Name}"
@@ -86,7 +94,7 @@
                       <f:selectItems value="#{row.bindings.B2bMeetingType.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.B2bMeetingType.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
+                  </af:column>-->
                   <af:column headerText="Exhibitor" id="c3"
                              sortable="true" filterable="true" width="200">
                             <f:facet name="filter">

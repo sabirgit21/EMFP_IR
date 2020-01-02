@@ -25,6 +25,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
         B2bMeetingId,
         B2bMeetingType,
         ExhibitorsId,
+        ExpoSchId,
         Name,
         IntlDelegAppMId,
         Remarks,
@@ -66,6 +67,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
     public static final int B2BMEETINGID = AttributesEnum.B2bMeetingId.index();
     public static final int B2BMEETINGTYPE = AttributesEnum.B2bMeetingType.index();
     public static final int EXHIBITORSID = AttributesEnum.ExhibitorsId.index();
+    public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int NAME = AttributesEnum.Name.index();
     public static final int INTLDELEGAPPMID = AttributesEnum.IntlDelegAppMId.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
@@ -320,30 +322,46 @@ public class TblB2bMeetingImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
+     * @return the value of ExpoSchId
+     */
+    public BigDecimal getExpoSchId() {
+        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExpoSchId.
+     * @param value value to set the ExpoSchId
+     */
+    public void setExpoSchId(BigDecimal value) {
+        setAttributeInternal(EXPOSCHID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblExhibitors() {
-        return (EntityImpl) getAttributeInternal(TBLEXHIBITORS);
+    public TblExhibitorsImpl getTblExhibitors() {
+        return (TblExhibitorsImpl) getAttributeInternal(TBLEXHIBITORS);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblExhibitors(EntityImpl value) {
+    public void setTblExhibitors(TblExhibitorsImpl value) {
         setAttributeInternal(TBLEXHIBITORS, value);
     }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblIntlDelegAppM() {
-        return (EntityImpl) getAttributeInternal(TBLINTLDELEGAPPM);
+    public TblIntlDelegAppMImpl getTblIntlDelegAppM() {
+        return (TblIntlDelegAppMImpl) getAttributeInternal(TBLINTLDELEGAPPM);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblIntlDelegAppM(EntityImpl value) {
+    public void setTblIntlDelegAppM(TblIntlDelegAppMImpl value) {
         setAttributeInternal(TBLINTLDELEGAPPM, value);
     }
 

@@ -39,6 +39,7 @@
           <Item Value="ExpDealAmt"/>
           <Item Value="FinalDeal"/>
           <Item Value="FinalDealAmt"/>
+          <Item Value="ExpoSchId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

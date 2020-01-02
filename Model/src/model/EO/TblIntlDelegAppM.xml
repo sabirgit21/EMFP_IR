@@ -27,7 +27,6 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="ExpoSetupId"
-    IsNotNull="true"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"

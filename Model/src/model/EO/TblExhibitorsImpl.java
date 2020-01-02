@@ -37,6 +37,7 @@ public class TblExhibitorsImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ExpoSchId,
         TblB2bMeeting,
         TblExpoSetup,
         TblStallsAlloc;
@@ -62,6 +63,7 @@ public class TblExhibitorsImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXHIBITORSID = AttributesEnum.ExhibitorsId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -76,6 +78,7 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
@@ -84,6 +87,13 @@ public class TblExhibitorsImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblExhibitorsImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExhibitors");
     }
 
     /**
@@ -295,6 +305,22 @@ public class TblExhibitorsImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
+     * @return the value of ExpoSchId
+     */
+    public BigDecimal getExpoSchId() {
+        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExpoSchId.
+     * @param value value to set the ExpoSchId
+     */
+    public void setExpoSchId(BigDecimal value) {
+        setAttributeInternal(EXPOSCHID, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getTblB2bMeeting() {
@@ -304,14 +330,14 @@ public class TblExhibitorsImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblExpoSetup() {
-        return (EntityImpl) getAttributeInternal(TBLEXPOSETUP);
+    public TblExpoSetupImpl getTblExpoSetup() {
+        return (TblExpoSetupImpl) getAttributeInternal(TBLEXPOSETUP);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblExpoSetup(EntityImpl value) {
+    public void setTblExpoSetup(TblExpoSetupImpl value) {
         setAttributeInternal(TBLEXPOSETUP, value);
     }
 
@@ -322,6 +348,7 @@ public class TblExhibitorsImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTALLSALLOC);
     }
 
+
     /**
      * @param exhibitorsId key constituent
 
@@ -329,13 +356,6 @@ public class TblExhibitorsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal exhibitorsId) {
         return new Key(new Object[] { exhibitorsId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExhibitors");
     }
 
     /**

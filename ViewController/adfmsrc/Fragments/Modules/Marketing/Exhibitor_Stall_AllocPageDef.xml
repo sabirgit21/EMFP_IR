@@ -42,6 +42,7 @@
           <Item Value="ExhibitorStatus"/>
           <Item Value="StallAllocType"/>
           <Item Value="FarmerRegId"/>
+          <Item Value="ExpoSchId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

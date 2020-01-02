@@ -27,7 +27,7 @@
     RetrievedOnUpdate="true"/>
   <Attribute
     Name="B2bMeetingType"
-    Precision="1"
+    Precision="3"
     ColumnName="B2B_MEETING_TYPE"
     SQLType="CHAR"
     Type="java.lang.String"
@@ -42,6 +42,13 @@
   <Attribute
     Name="ExhibitorsId"
     ColumnName="EXHIBITORS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_B2B_MEETING"/>
+  <Attribute
+    Name="ExpoSchId"
+    ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
