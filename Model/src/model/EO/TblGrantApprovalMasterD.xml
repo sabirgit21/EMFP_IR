@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_GRANT_APPROVAL_MASTER_D"
   AliasName="TblGrantApprovalMasterD"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblGrantApprovalMasterDImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="GrantApprovalMasterDId"
     IsNotNull="true"
@@ -33,6 +38,37 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_MASTER_D"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_MASTER_D"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRANT_APPROVAL_MASTER_D"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_MASTER_D"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRANT_APPROVAL_MASTER_D"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblGrantApprovalMaster"
     Association="model.EO.FKATblGrantApprovalMasterDFKAssoc"

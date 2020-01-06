@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TBL_GRANT_GROUP_DETAIL"
   AliasName="TblGrantGroupDetail"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.TblGrantGroupDetailImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="GrantGroupDetailId"
     ColumnName="GRANT_GROUP_DETAIL_ID"
@@ -34,6 +39,37 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_GROUP_DETAIL"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_GROUP_DETAIL"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRANT_GROUP_DETAIL"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_GROUP_DETAIL"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_GRANT_GROUP_DETAIL"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="TblGrantGroupMaster"
     Association="model.EO.FkTblGrantGroupDetailMasterIdAssoc"
