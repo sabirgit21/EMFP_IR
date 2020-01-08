@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkTblB2bMeetingComFkLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkTblB2bMeetingComFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.FkTblB2bMeetingComFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="TblB2bMeetingView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblB2bMeetingView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblB2bMeetingView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblB2bMeetingView.B2bMeetingId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblB2bMeetingComView"
+    Cardinality="-1"
+    Owner="model.VO.TblB2bMeetingComView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblB2bMeetingComView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblB2bMeetingComView.B2bMeetingId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

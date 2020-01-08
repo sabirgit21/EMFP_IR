@@ -235,10 +235,9 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblB2bMeeting"
     AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="Commodity"
-    PrecisionRule="true"
-    EntityAttrName="Commodity"
-    EntityUsage="TblB2bMeeting"
-    AliasName="COMMODITY"/>
+  <ViewLinkAccessor
+    Name="TblB2bMeetingComView"
+    ViewLink="model.VO.FkTblB2bMeetingComFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

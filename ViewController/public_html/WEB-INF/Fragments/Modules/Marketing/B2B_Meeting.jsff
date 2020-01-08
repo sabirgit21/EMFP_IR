@@ -215,16 +215,6 @@
                                         pattern="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblB2bMeetingView1.hints.Commodity.label}" id="c2">
-                    <af:inputText value="#{row.bindings.Commodity.inputValue}"
-                                  label="#{bindings.TblB2bMeetingView1.hints.Commodity.label}"
-                                  required="#{bindings.TblB2bMeetingView1.hints.Commodity.mandatory}"
-                                  columns="#{bindings.TblB2bMeetingView1.hints.Commodity.displayWidth}"
-                                  maximumLength="#{bindings.TblB2bMeetingView1.hints.Commodity.precision}"
-                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.Commodity.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.Commodity.validator}"/>
-                    </af:inputText>
-                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
@@ -247,6 +237,79 @@
           </af:gridCell>
         </af:gridRow>
         
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2">
+              <af:showDetailItem id="tab2" text="B2B Meeting Com">
+                <af:table value="#{bindings.TblB2bMeetingComView3.collectionModel}" var="row"
+                          rows="#{bindings.TblB2bMeetingComView3.rangeSize}"
+                          emptyText="#{bindings.TblB2bMeetingComView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblB2bMeetingComView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblB2bMeetingComView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblB2bMeetingComView3.rangeSize}"
+                          filterModel="#{bindings.TblB2bMeetingComView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblB2bMeetingComView3Query.processQuery}" varStatus="vs" id="t2">
+                  <af:column sortProperty="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.B2bMeetingId.inputValue}"
+                                  label="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.label}"
+                                  required="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.mandatory}"
+                                  columns="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.displayWidth}"
+                                  maximumLength="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.precision}"
+                                  shortDesc="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.B2bMeetingId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.label}" id="c4">
+                    <af:inputText value="#{row.bindings.B2bMeetingComId.inputValue}"
+                                  label="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.label}"
+                                  required="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.mandatory}"
+                                  columns="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.displayWidth}"
+                                  maximumLength="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.precision}"
+                                  shortDesc="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.B2bMeetingComId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblB2bMeetingComView3.hints.ComLibrDetailId.label}" id="c7">
+                    <af:selectOneChoice value="#{row.bindings.ComLibrDetailId.inputValue}"
+                                        label="#{row.bindings.ComLibrDetailId.label}"
+                                        required="#{bindings.TblB2bMeetingComView3.hints.ComLibrDetailId.mandatory}"
+                                        shortDesc="#{bindings.TblB2bMeetingComView3.hints.ComLibrDetailId.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.ComLibrDetailId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.ComLibrDetailId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+              <af:spacer width="190" height="10" id="s3"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
       </af:panelGridLayout>
     </af:showDetailItem>
   </af:panelAccordion>

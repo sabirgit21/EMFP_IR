@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblB2bMeetingComView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT TblB2bMeetingCom.B2B_MEETING_ID,
+       TblB2bMeetingCom.B2B_MEETING_COM_ID,
+       TblB2bMeetingCom.COM_LIBR_DETAIL_ID,
+       TblB2bMeetingCom.CREATED_DATE,
+       TblB2bMeetingCom.CREATED_BY,
+       TblB2bMeetingCom.UPDATED_DATE,
+       TblB2bMeetingCom.UPDATED_BY
+FROM TBL_B2B_MEETING_COM TblB2bMeetingCom]]></SQLQuery>
+  <ViewAttribute
+    Name="B2bMeetingId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="B2B_MEETING_ID"
+    Expression="B2B_MEETING_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="B2bMeetingComId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="B2B_MEETING_COM_ID"
+    Expression="B2B_MEETING_COM_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ComLibrDetailId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COM_LIBR_DETAIL_ID"
+    Expression="COM_LIBR_DETAIL_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="CREATED_DATE"
+    Expression="CREATED_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CREATED_BY"
+    Expression="CREATED_BY"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="UPDATED_DATE"
+    Expression="UPDATED_DATE"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="UPDATED_BY"
+    Expression="UPDATED_BY"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="B2bMeetingComId"/>
+  </AttrArray>
+</ViewObject>

@@ -518,7 +518,7 @@
                                                                             </af:column>
                                                                             <af:column sortProperty="#{bindings.TblExpoHallsView6.hints.HallArea.name}"
                                                                                        filterable="true" sortable="true"
-                                                                                       headerText="Hall Area (sq/m)"
+                                                                                       headerText="Hall Area (Sqm)"
                                                                                        id="c31">
                                                                                 <f:facet name="filter">
                                                                                     <af:inputText value="#{vs.filterCriteria.HallArea}"
@@ -814,13 +814,13 @@
                                                                                 </af:inputText>
                                                                                 <af:inputRangeSlider label="Label 1"
                                                                                                      id="irs1"
-                                                                                                     maximum="100"
+                                                                                                     maximum="10"
                                                                                                      value="#{row.bindings.StallDimension.inputValue}"
                                                                                                      minimum="1"/>
                                                                             </af:column>
                                                                             <af:column sortProperty="#{bindings.TblExpoStallsView7.hints.StallArea.name}"
                                                                                        filterable="true" sortable="true"
-                                                                                       headerText="Stall Area (sq/m)"
+                                                                                       headerText="Stall Area (Sqm)"
                                                                                        id="c38" width="100">
                                                                                 <f:facet name="filter">
                                                                                     <af:inputText value="#{vs.filterCriteria.StallArea}"
@@ -837,7 +837,7 @@
                                                                                     <f:validator binding="#{row.bindings.StallArea.validator}"/>
                                                                                 </af:inputText>
                                                                             </af:column>
-                                                                            <af:column headerText="Area Rate (sq/m)" id="c8"
+                                                                            <af:column headerText="Area Rate (Sqm)" id="c8"
                                                                                        width="93">
                                                                                 <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                                                                               label="#{bindings.TblExpoStallsView7.hints.AreaRate.label}"

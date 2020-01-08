@@ -1616,6 +1616,15 @@
   <ViewUsage
     Name="TblExpoStallsView7"
     ViewObjectName="model.VO.TblExpoStallsView"/>
+  <ViewUsage
+    Name="TblB2bMeetingComView1"
+    ViewObjectName="model.VO.TblB2bMeetingComView"/>
+  <ViewUsage
+    Name="TblB2bMeetingComView2"
+    ViewObjectName="model.queryBasedVO.TblB2bMeetingComView"/>
+  <ViewUsage
+    Name="TblB2bMeetingComView3"
+    ViewObjectName="model.VO.TblB2bMeetingComView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3193,5 +3202,11 @@
     ViewLinkObjectName="model.VO.FkExpoStallsExpoHallsLink"
     SrcViewUsageName="model.AppModule.TblExpoHallsView6"
     DstViewUsageName="model.AppModule.TblExpoStallsView7"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblB2bMeetingComFkLink1"
+    ViewLinkObjectName="model.VO.FkTblB2bMeetingComFkLink"
+    SrcViewUsageName="model.AppModule.TblB2bMeetingView1"
+    DstViewUsageName="model.AppModule.TblB2bMeetingComView3"
     Reversed="false"/>
 </AppModule>

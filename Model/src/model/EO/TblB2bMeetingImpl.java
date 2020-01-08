@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -38,9 +39,9 @@ public class TblB2bMeetingImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        Commodity,
         TblExhibitors,
-        TblIntlDelegAppM;
+        TblIntlDelegAppM,
+        TblB2bMeetingCom;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -81,9 +82,9 @@ public class TblB2bMeetingImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
-    public static final int COMMODITY = AttributesEnum.Commodity.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLINTLDELEGAPPM = AttributesEnum.TblIntlDelegAppM.index();
+    public static final int TBLB2BMEETINGCOM = AttributesEnum.TblB2bMeetingCom.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -323,21 +324,6 @@ public class TblB2bMeetingImpl extends EntityImpl {
         setAttributeInternal(UPDATEDBY, value);
     }
 
-    /**
-     * Gets the attribute value for Commodity, using the alias name Commodity.
-     * @return the value of Commodity
-     */
-    public String getCommodity() {
-        return (String) getAttributeInternal(COMMODITY);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for Commodity.
-     * @param value value to set the Commodity
-     */
-    public void setCommodity(String value) {
-        setAttributeInternal(COMMODITY, value);
-    }
 
     /**
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
@@ -381,6 +367,14 @@ public class TblB2bMeetingImpl extends EntityImpl {
      */
     public void setTblIntlDelegAppM(TblIntlDelegAppMImpl value) {
         setAttributeInternal(TBLINTLDELEGAPPM, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblB2bMeetingCom() {
+        return (RowIterator) getAttributeInternal(TBLB2BMEETINGCOM);
     }
 
 

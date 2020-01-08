@@ -322,7 +322,7 @@
                       <f:validator binding="#{row.bindings.StallDimension.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Area Rate (sq/m)" id="c20" width="120">
+                  <af:column headerText="Area Rate (Sqm)" id="c20" width="120">
                     <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                   label="#{bindings.TblStallsAllocView3.hints.AreaRate.label}"
                                   required="#{bindings.TblStallsAllocView3.hints.AreaRate.mandatory}"

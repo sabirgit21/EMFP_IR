@@ -10,6 +10,10 @@
               id="TblB2bMeetingView1Iterator"/>
     <searchRegion Binds="TblB2bMeetingView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblB2bMeetingView1Query"/>
+    <iterator Binds="TblB2bMeetingComView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblB2bMeetingComView3Iterator"/>
+    <searchRegion Binds="TblB2bMeetingComView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblB2bMeetingComView3Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -40,7 +44,6 @@
           <Item Value="FinalDeal"/>
           <Item Value="FinalDealAmt"/>
           <Item Value="ExpoSchId"/>
-          <Item Value="Commodity"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -48,5 +51,20 @@
             Action="createInsertRow"/>
     <action IterBinding="TblB2bMeetingView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="TblB2bMeetingView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="TblB2bMeetingComView3Iterator" id="TblB2bMeetingComView3">
+      <nodeDefinition DefName="model.VO.TblB2bMeetingComView" Name="TblB2bMeetingComView30">
+        <AttrNames>
+          <Item Value="B2bMeetingId"/>
+          <Item Value="B2bMeetingComId"/>
+          <Item Value="ComLibrDetailId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblB2bMeetingComView3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblB2bMeetingComView3Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblB2bMeetingComView3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
