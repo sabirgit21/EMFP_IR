@@ -235,4 +235,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblB2bMeeting"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Commodity"
+    PrecisionRule="true"
+    EntityAttrName="Commodity"
+    EntityUsage="TblB2bMeeting"
+    AliasName="COMMODITY"/>
 </ViewObject>

@@ -122,6 +122,12 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblExpoStalls"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AreaRate"
+    PrecisionRule="true"
+    EntityAttrName="AreaRate"
+    EntityUsage="TblExpoStalls"
+    AliasName="AREA_RATE"/>
   <ViewLinkAccessor
     Name="TblStallsAllocView"
     ViewLink="model.VO.FkStallsAllocExpoStallsLink"

@@ -150,6 +150,18 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
+  <Attribute
+    Name="Commodity"
+    Precision="150"
+    ColumnName="COMMODITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_B2B_MEETING">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblExhibitors"
     Association="model.EO.FkB2bMeetingExhibitorsAssoc"

@@ -142,26 +142,8 @@
                       <f:validator binding="#{row.bindings.Remarks.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.Linkages.name}" filterable="true"
-                             sortable="true" headerText="Linkages" id="c7">
-                              <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Linkages}"
-                                          id="it15" placeholder="Search Linkages">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.Linkages.inputValue}"
-                                  label="#{bindings.TblB2bMeetingView1.hints.Linkages.label}"
-                                  required="#{bindings.TblB2bMeetingView1.hints.Linkages.mandatory}"
-                                  columns="#{bindings.TblB2bMeetingView1.hints.Linkages.displayWidth}"
-                                  maximumLength="#{bindings.TblB2bMeetingView1.hints.Linkages.precision}"
-                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.Linkages.tooltip}" id="it7">
-                      <f:validator binding="#{row.bindings.Linkages.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblB2bMeetingView1.hints.Linkages.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExpDeal.name}" filterable="true"
-                             sortable="true" headerText="Expo Deal" id="c8">
+                             sortable="true" headerText="Exp. Deal Qty (Tons)" id="c8">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpDeal}"
                                           id="it16" placeholder="Search Expo Deal">
@@ -179,7 +161,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.ExpDealAmt.name}" filterable="true"
-                             sortable="true" headerText="Expo Deal Amount" id="c9" align="left" width="120">
+                             sortable="true" headerText="Exp. Deal Amount (Rs.)" id="c9" align="left" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpDealAmt}"
                                           id="it17" placeholder="Search Amount">
@@ -197,7 +179,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.FinalDeal.name}" filterable="true"
-                             sortable="true" headerText="Final Deal" id="c10" width="120">
+                             sortable="true" headerText="Final Deal Qty (Tons)" id="c10" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FinalDeal}"
                                           id="it18" placeholder="Search Final Deal">
@@ -215,7 +197,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.name}" filterable="true"
-                             sortable="true" headerText="Final Deal Amount"
+                             sortable="true" headerText="Final Deal Amount (Rs.)"
                              id="c11" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FinalDealAmt}"
@@ -231,6 +213,16 @@
                       <f:validator binding="#{row.bindings.FinalDealAmt.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblB2bMeetingView1.hints.FinalDealAmt.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblB2bMeetingView1.hints.Commodity.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Commodity.inputValue}"
+                                  label="#{bindings.TblB2bMeetingView1.hints.Commodity.label}"
+                                  required="#{bindings.TblB2bMeetingView1.hints.Commodity.mandatory}"
+                                  columns="#{bindings.TblB2bMeetingView1.hints.Commodity.displayWidth}"
+                                  maximumLength="#{bindings.TblB2bMeetingView1.hints.Commodity.precision}"
+                                  shortDesc="#{bindings.TblB2bMeetingView1.hints.Commodity.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Commodity.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>

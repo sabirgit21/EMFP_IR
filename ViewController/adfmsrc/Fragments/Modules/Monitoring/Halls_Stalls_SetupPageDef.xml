@@ -68,6 +68,7 @@
           <Item Value="StallDimension"/>
           <Item Value="StallArea"/>
           <Item Value="StallValue"/>
+          <Item Value="AreaRate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

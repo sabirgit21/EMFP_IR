@@ -62,6 +62,10 @@
           <Item Value="StallAmount"/>
           <Item Value="Representative"/>
           <Item Value="StallAllocStatus"/>
+          <Item Value="StallDimension"/>
+          <Item Value="AreaRate"/>
+          <Item Value="StallValue"/>
+          <Item Value="StallType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

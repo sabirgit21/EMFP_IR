@@ -38,6 +38,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        Commodity,
         TblExhibitors,
         TblIntlDelegAppM;
         private static AttributesEnum[] vals = null;
@@ -80,6 +81,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COMMODITY = AttributesEnum.Commodity.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLINTLDELEGAPPM = AttributesEnum.TblIntlDelegAppM.index();
 
@@ -319,6 +321,22 @@ public class TblB2bMeetingImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for Commodity, using the alias name Commodity.
+     * @return the value of Commodity
+     */
+    public String getCommodity() {
+        return (String) getAttributeInternal(COMMODITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Commodity.
+     * @param value value to set the Commodity
+     */
+    public void setCommodity(String value) {
+        setAttributeInternal(COMMODITY, value);
     }
 
     /**

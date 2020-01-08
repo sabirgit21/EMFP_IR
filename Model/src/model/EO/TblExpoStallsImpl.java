@@ -35,6 +35,7 @@ public class TblExpoStallsImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        AreaRate,
         TblExpoHalls,
         TblStallsAlloc;
         private static AttributesEnum[] vals = null;
@@ -59,6 +60,7 @@ public class TblExpoStallsImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int EXPOSTALLSID = AttributesEnum.ExpoStallsId.index();
     public static final int EXPOHALLSID = AttributesEnum.ExpoHallsId.index();
     public static final int STALLNO = AttributesEnum.StallNo.index();
@@ -71,6 +73,7 @@ public class TblExpoStallsImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int AREARATE = AttributesEnum.AreaRate.index();
     public static final int TBLEXPOHALLS = AttributesEnum.TblExpoHalls.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
 
@@ -78,6 +81,13 @@ public class TblExpoStallsImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblExpoStallsImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblExpoStalls");
     }
 
     /**
@@ -257,6 +267,22 @@ public class TblExpoStallsImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for AreaRate, using the alias name AreaRate.
+     * @return the value of AreaRate
+     */
+    public BigDecimal getAreaRate() {
+        return (BigDecimal) getAttributeInternal(AREARATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AreaRate.
+     * @param value value to set the AreaRate
+     */
+    public void setAreaRate(BigDecimal value) {
+        setAttributeInternal(AREARATE, value);
+    }
+
+    /**
      * @return the associated entity TblExpoHallsImpl.
      */
     public TblExpoHallsImpl getTblExpoHalls() {
@@ -277,6 +303,7 @@ public class TblExpoStallsImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(TBLSTALLSALLOC);
     }
 
+
     /**
      * @param expoStallsId key constituent
 
@@ -284,13 +311,6 @@ public class TblExpoStallsImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal expoStallsId) {
         return new Key(new Object[] { expoStallsId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblExpoStalls");
     }
 
     /**

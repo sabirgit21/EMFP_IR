@@ -288,7 +288,7 @@
                       <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Expo Stall Type" id="c13" sortable="true" filterable="true" width="120">
+                  <!--<af:column headerText="Expo Stall Type" id="c13" sortable="true" filterable="true" width="120">
                      <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoStallsType}"
                                           id="it30" placeholder="Search Type">
@@ -302,9 +302,52 @@
                       <f:selectItems value="#{row.bindings.ExpoStallsType.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.ExpoStallsType.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="Stall Type" id="c13">
+                    <af:selectOneChoice value="#{row.bindings.StallType.inputValue}"
+                                        label="#{row.bindings.StallType.label}" 
+                                        required="#{bindings.TblStallsAllocView3.hints.StallType.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.StallType.tooltip}" id="soc8">
+                      <f:selectItems value="#{row.bindings.StallType.items}" id="si8"/>
+                      <f:validator binding="#{row.bindings.StallType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Stall Dimensions" id="c19">
+                    <af:inputText value="#{row.bindings.StallDimension.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallDimension.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallDimension.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallDimension.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallDimension.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallDimension.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.StallDimension.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Area Rate (sq/m)" id="c20" width="120">
+                    <af:inputText value="#{row.bindings.AreaRate.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.AreaRate.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.AreaRate.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.AreaRate.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.AreaRate.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.AreaRate.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.AreaRate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.AreaRate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Stall Value (Rs.)" id="c21">
+                    <af:inputText value="#{row.bindings.StallValue.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallValue.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallValue.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallValue.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallValue.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallValue.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.StallValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.StallValue.format}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.name}" filterable="true"
-                             sortable="true" headerText="Stall Discount Amount"
+                             sortable="true" headerText="Discount Amount (Rs.)"
                              id="c16" align="center" width="140">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallDiscAmt}"
@@ -323,14 +366,14 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallAmount.name}" filterable="true"
-                             sortable="true" headerText="Stall Amount"
+                             sortable="true" headerText="Final Value (Rs.)" 
                              id="c17" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallAmount}"
                                           id="it32" placeholder="Search Stall Amount">
                            </af:inputText>
                              </f:facet>
-                    <af:inputText value="#{row.bindings.StallAmount.inputValue}"
+                    <af:inputText value="#{row.bindings.StallAmount.inputValue}" readOnly="true"
                                   label="#{bindings.TblStallsAllocView3.hints.StallAmount.label}"
                                   required="#{bindings.TblStallsAllocView3.hints.StallAmount.mandatory}"
                                   columns="#{bindings.TblStallsAllocView3.hints.StallAmount.displayWidth}"
@@ -358,7 +401,7 @@
                       <f:validator binding="#{row.bindings.Representative.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Stalls Allocation Status" id="c15" sortable="true" filterable="true"
+                  <af:column headerText="Stalls Status" id="c15" sortable="true" filterable="true"
                              width="150">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallAllocStatus}"

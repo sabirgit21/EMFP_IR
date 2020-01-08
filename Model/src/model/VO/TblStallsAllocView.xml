@@ -105,9 +105,46 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_StallType"
+    ListVOName="Stall_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StallType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblStallsAlloc"
     Entity="model.EO.TblStallsAlloc"/>
+  <EntityUsage
+    Name="TblExpoStalls"
+    Entity="model.EO.TblExpoStalls"
+    Association="model.EO.FkStallsAllocExpoStallsAssoc"
+    AssociationEnd="model.EO.FkStallsAllocExpoStallsAssoc.TblExpoStalls"
+    SourceUsage="model.VO.TblStallsAllocView.TblStallsAlloc"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblExpoStalls.ExpoStallsId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblStallsAlloc.ExpoStallsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="StallsAllocId"
     IsNotNull="true"
@@ -222,4 +259,45 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblStallsAlloc"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="StallDimension"
+    PrecisionRule="true"
+    EntityAttrName="StallDimension"
+    EntityUsage="TblExpoStalls"
+    AliasName="STALL_DIMENSION"/>
+  <ViewAttribute
+    Name="ExpoStallsId1"
+    PrecisionRule="true"
+    EntityAttrName="ExpoStallsId"
+    EntityUsage="TblExpoStalls"
+    AliasName="EXPO_STALLS_ID1"/>
+  <ViewAttribute
+    Name="AreaRate"
+    PrecisionRule="true"
+    EntityAttrName="AreaRate"
+    EntityUsage="TblExpoStalls"
+    AliasName="AREA_RATE"/>
+  <ViewAttribute
+    Name="StallValue"
+    PrecisionRule="true"
+    EntityAttrName="StallValue"
+    EntityUsage="TblExpoStalls"
+    AliasName="STALL_VALUE"/>
+  <ViewAttribute
+    Name="StallType"
+    PrecisionRule="true"
+    EntityAttrName="StallType"
+    EntityUsage="TblExpoStalls"
+    AliasName="STALL_TYPE"
+    LOVName="LOV_StallType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="StallsAllocId"/>
+  </AttrArray>
 </ViewObject>
