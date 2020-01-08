@@ -509,7 +509,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoHallsView6.hints.HallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="Hall Area"
+                                                 headerText="Hall Area (sq/m)"
                                                  id="c31">
                                                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.HallArea}"
@@ -795,8 +795,8 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView7.hints.StallArea.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="Stall Area"
-                                                 id="c38">
+                                                 headerText="Stall Area (sq/m)"
+                                                 id="c38" width="120">
                                                  <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallArea}"
                                           id="it59" placeholder="Search Stall Area">
@@ -814,7 +814,7 @@
                                       </af:column>
                                       <af:column sortProperty="#{bindings.TblExpoStallsView7.hints.StallValue.name}"
                                                  filterable="true" sortable="true"
-                                                 headerText="Stall Value"
+                                                 headerText="Stall Value (Rs.)"
                                                  id="c39" align="center">
                                                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.StallValue}"
