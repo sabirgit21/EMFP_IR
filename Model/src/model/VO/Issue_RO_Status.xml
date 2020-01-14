@@ -18,8 +18,12 @@
        TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
        TblFarmerReg.FATHER_NAME"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
-  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+) 
-AND TblGrantApprovalDetail.RO_STATUS = 'print'"
+  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)  
+AND (TblGrantApprovalDetail.RO_STATUS = 'print'  
+or TblGrantApprovalDetail.RO_STATUS = 'issued'  
+or TblGrantApprovalDetail.RO_STATUS = 'dlvrd'   
+or TblGrantApprovalDetail.RO_STATUS = 'insp ver' 
+or  TblGrantApprovalDetail.RO_STATUS = 'cncl')"
   OrderBy="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID">
   <Properties>
     <SchemaBasedProperties>

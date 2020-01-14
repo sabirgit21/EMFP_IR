@@ -1,0 +1,38 @@
+//Groovy Scripts for model.EO.TblExpoStalls
+
+package model.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="StallArea")
+def StallArea_ExpressionScript_Expression()
+{
+        String vv = StallDimension;
+        String[] res;
+        String getOne = "1";
+        String getTwo = "1";
+        
+        Number finalVal = 0;
+        res = vv.split(",",0);
+    
+        for(int i=0; i< res.length; i++)
+         {
+             getOne = res[i];
+             System.out.println(getOne);
+             i=1;
+         }
+         
+        for(int i=1; i < res.length; i++)
+         {
+             getTwo = res[i];
+             System.out.println(getTwo);
+         }
+         
+         int q = Integer.parseInt(getOne); 
+         int p = Integer.parseInt(getTwo); 
+         finalVal = q*p;
+         
+         System.out.println(finalVal);
+         return finalVal;
+}
+

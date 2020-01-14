@@ -73,10 +73,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="TBL_EXPO_STALLS">
+    TableName="TBL_EXPO_STALLS"
+    DefaultValue="1,5">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="StallArea"
@@ -89,6 +96,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <TransientExpression
+      Name="ExpressionScript"
+      CodeSourceName="TblExpoStallsRow"/>
+    <Dependencies>
+      <Item
+        Value="StallDimension"
+        Type="notify"/>
+    </Dependencies>
   </Attribute>
   <Attribute
     Name="StallValue"
