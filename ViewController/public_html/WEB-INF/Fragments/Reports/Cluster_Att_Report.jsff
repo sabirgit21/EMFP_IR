@@ -86,8 +86,10 @@
                             </af:inputDate>-->
                             <af:inputDate label="Select From date:" id="id1" autoSubmit="true"
                                       contentStyle="width:200px"
-                                      valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_from_date}">
+                                      
+                                          binding="#{backingBeanScope.cluster_att_report_bean.fromDateParam}">
                             </af:inputDate>
+
                             <af:spacer width="20" height="10" id="s14"/>
                             <!--<af:inputDate label="Select To date:" id="id2" autoSubmit="true"
                                           contentStyle="width:200px" value="11/11/1111"
@@ -95,8 +97,10 @@
                             </af:inputDate>-->
                             <af:inputDate label="Select To date:" id="id2" autoSubmit="true"
                                           contentStyle="width:200px"
-                                          valueChangeListener="#{backingBeanScope.cluster_att_report_bean.get_to_date}">
+                                          
+                                          binding="#{backingBeanScope.cluster_att_report_bean.toDateParam}">
                             </af:inputDate>
+
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s15"/>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">

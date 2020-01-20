@@ -27,20 +27,19 @@ public class cluster_att_report {
     private RichSelectOneChoice selected_crop;
     private RichSelectOneChoice selected_district;
     private RichSelectOneChoice selected_city;
-//    private RichInputDate from_date;
-//    private RichInputDate to_date;
     private RichSelectOneChoice format_type;
     private RichSelectOneChoice report_type;
+    private RichInputDate fromDateParam;
+    private RichInputDate toDateParam;
 
     public cluster_att_report() {
+        System.out.println("constructor caLLED");
     }
 
 
     private static Number gotCluster;
     private static Number gotTrainer;
     private static Number gotFarmer;
-    private static String gotFromDate="";
-    private static String gotToDate="";
     private static Number gotCity;
     private static Number gotCrop;
     private static Number gotDistrict;
@@ -61,13 +60,9 @@ public class cluster_att_report {
         gotTrainer = (Number)this.getSelected_trainer().getValue();
         gotCluster = (Number)this.getSelected_cluster().getValue();
         
-//        gotFromDate = (this.getFrom_date().getValue()).toString();
-//        gotToDate = (this.getTo_date().getValue()).toString();
-        
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
         
-
         
         DatabaseConnection dbconnect = new DatabaseConnection();
         OracleReportBean reportBean = new OracleReportBean(dbconnect.getUipReport(), dbconnect.getUportReport(), null);
@@ -100,41 +95,18 @@ public class cluster_att_report {
         if(gotCluster != null){
             reportBean.setReportParameter("P_Cluster_id", gotCluster.toString());
             System.out.println("lyy fir agiaaa eeeiiii");
-        }      
+        }     
         
-//        if(gotFromDate == "11-NOV-11"){
-//
-//            try {
-//                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-//                Date parsedDate = sdf.parse(gotFromDate);
-//                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-//                gotFromDate = (print.format(parsedDate));
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//            
-//            System.out.println("Selected From Date is : " + gotFromDate);
-//            reportBean.setReportParameter("P_Fdated", gotFromDate.toString());
-//            System.out.println("lyy fir agiaaa eeeiiii");
-//        }      
-//        
-//        
-//        
-//        if(gotToDate != "11/11/1111"){
-//            
-//            try {
-//                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-//                Date parsedDate = sdf.parse(gotToDate);
-//                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-//                gotToDate = (print.format(parsedDate));
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-//            
-//            System.out.println("Selected To Date is : " + gotToDate);
-//            reportBean.setReportParameter("P_Tdated", gotToDate.toString());
-//            System.out.println("lyy fir agiaaa eeeiiii");
-//        }
+        if(getFromDate() != ""){
+            reportBean.setReportParameter("P_Fdated", getFromDate());
+        }
+        
+        if(getToDate() != ""){
+            reportBean.setReportParameter("P_Tdated", getToDate());
+        }
+        
+        
+        
         
         
         
@@ -142,8 +114,8 @@ public class cluster_att_report {
 //        reportBean.setReportParameter("P_Cluster_id", gotCluster); 
 //        reportBean.setReportParameter("P_Module_id", gotModule);
 //        reportBean.setReportParameter("P_Farmer_reg_id", gotFarmer);
-        reportBean.setReportParameter("P_Fdated", gotFromDate);
-        reportBean.setReportParameter("P_Tdated", gotToDate);
+//        reportBean.setReportParameter("P_Fdated", getFromDate());
+//        reportBean.setReportParameter("P_Tdated", getToDate());
 //        reportBean.setReportParameter("P_City_id", gotCity);
 //        reportBean.setReportParameter("P_Crop_id", gotCrop);
 //        reportBean.setReportParameter("P_District_id", gotDistrict);
@@ -245,85 +217,35 @@ public class cluster_att_report {
         // Add event code here...
     }
 
-//    public void get_module(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotModule = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Module is : " + gotModule);
-//    }
 
-//    public void get_selected_cluster(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotCluster = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Cluster is : " + gotCluster);
-//    }
-//
-//    public void get_selected_trainer(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotTrainer = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Trainer is : " + gotTrainer);
-//    }
-//
-//    public void get_selected_farmer(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotFarmer = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Farmer is : " + gotFarmer);
-//    }
-//
-//    public void get_selected_city(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotCity = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected City is : " + gotCity);
-//    }
-//
-//    public void get_selected_crop(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotCrop = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Crop is : " + gotCrop);
-//    }
-//
-//    public void get_selected_district(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotDistrict = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected District is : " + gotDistrict);
-//    }
-
-    public void get_from_date(ValueChangeEvent valueChangeEvent) {
-        // Add event code here...
-        gotFromDate = (valueChangeEvent.getNewValue()).toString();
-
-        try {
-            DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-            Date parsedDate = sdf.parse(gotFromDate);
-            SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-            gotFromDate = (print.format(parsedDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
+    private String getFromDate() {
+        if(fromDateParam.getValue() != null && fromDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(fromDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
-
-        System.out.println("Selected From Date is : " + gotFromDate);
+        return "";
     }
-
-    public void get_to_date(ValueChangeEvent valueChangeEvent) {
-        // Add event code here...
-        gotToDate = (valueChangeEvent.getNewValue()).toString();
-
-        try {
-            DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
-            Date parsedDate = sdf.parse(gotToDate);
-            SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
-            gotToDate = (print.format(parsedDate));
-        } catch (ParseException e) {
-            e.printStackTrace();
+    
+    private String getToDate() {
+        if(toDateParam.getValue() != null && toDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(toDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
-
-        System.out.println("Selected To Date is : " + gotToDate);
+        return "";
     }
-
-//    public void get_format_type(ValueChangeEvent valueChangeEvent) {
-//        // Add event code here...
-//        gotFormat = (valueChangeEvent.getNewValue()).toString();
-//        System.out.println("Selected Format is : " + gotFormat);
-//    }
+    
 
     public void setselected_module(RichSelectOneChoice get_selected_module) {
         this.selected_module = get_selected_module;
@@ -381,22 +303,6 @@ public class cluster_att_report {
         return selected_city;
     }
 
-//    public void setFrom_date(RichInputDate from_date) {
-//        this.from_date = from_date;
-//    }
-//
-//    public RichInputDate getFrom_date() {
-//        return from_date;
-//    }
-//
-//    public void setTo_date(RichInputDate to_date) {
-//        this.to_date = to_date;
-//    }
-//
-//    public RichInputDate getTo_date() {
-//        return to_date;
-//    }
-
     public void setFormat_type(RichSelectOneChoice format_type) {
         this.format_type = format_type;
     }
@@ -411,5 +317,21 @@ public class cluster_att_report {
 
     public RichSelectOneChoice getReport_type() {
         return report_type;
+    }
+
+    public void setFromDateParam(RichInputDate fromDateParam) {
+        this.fromDateParam = fromDateParam;
+    }
+
+    public RichInputDate getFromDateParam() {
+        return fromDateParam;
+    }
+
+    public void setToDateParam(RichInputDate toDateParam) {
+        this.toDateParam = toDateParam;
+    }
+
+    public RichInputDate getToDateParam() {
+        return toDateParam;
     }
 }
