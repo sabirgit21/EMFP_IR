@@ -35,6 +35,7 @@
           <Item Value="FarmerRegId"/>
           <Item Value="Cnic"/>
           <Item Value="Mobile"/>
+          <Item Value="TrngCertNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

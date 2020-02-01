@@ -303,6 +303,32 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
+  <Attribute
+    Name="TrngEndDate"
+    ColumnName="TRNG_END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_CERT_APP_MASTER"/>
+  <Attribute
+    Name="TrngStDate"
+    ColumnName="TRNG_ST_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_CERT_APP_MASTER"/>
+  <Attribute
+    Name="TrngCertNo"
+    Precision="25"
+    ColumnName="TRNG_CERT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CERT_APP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblCertAppDetail"
     Association="model.EO.FkCertAppDetailCertAppAssoc"

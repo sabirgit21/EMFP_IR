@@ -336,11 +336,30 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="TrngEndDate"
+    PrecisionRule="true"
+    EntityAttrName="TrngEndDate"
+    EntityUsage="TblCertAppMaster"
+    AliasName="TRNG_END_DATE"/>
+  <ViewAttribute
+    Name="TrngStDate"
+    PrecisionRule="true"
+    EntityAttrName="TrngStDate"
+    EntityUsage="TblCertAppMaster"
+    AliasName="TRNG_ST_DATE"/>
+  <ViewAttribute
+    Name="TrngCertNo"
+    PrecisionRule="true"
+    EntityAttrName="TrngCertNo"
+    EntityUsage="TblCertAppMaster"
+    AliasName="TRNG_CERT_NO"/>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblCertAppMaster"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -352,7 +371,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblCertAppMaster"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

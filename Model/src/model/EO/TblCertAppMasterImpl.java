@@ -50,6 +50,9 @@ public class TblCertAppMasterImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        TrngEndDate,
+        TrngStDate,
+        TrngCertNo,
         TblCertAppDetail,
         TblCertApproval,
         TblCertification1;
@@ -104,6 +107,9 @@ public class TblCertAppMasterImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int TRNGENDDATE = AttributesEnum.TrngEndDate.index();
+    public static final int TRNGSTDATE = AttributesEnum.TrngStDate.index();
+    public static final int TRNGCERTNO = AttributesEnum.TrngCertNo.index();
     public static final int TBLCERTAPPDETAIL = AttributesEnum.TblCertAppDetail.index();
     public static final int TBLCERTAPPROVAL = AttributesEnum.TblCertApproval.index();
     public static final int TBLCERTIFICATION1 = AttributesEnum.TblCertification1.index();
@@ -536,6 +542,54 @@ public class TblCertAppMasterImpl extends EntityImpl {
      */
     public void setUpdatedBy(Number value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for TrngEndDate, using the alias name TrngEndDate.
+     * @return the value of TrngEndDate
+     */
+    public Timestamp getTrngEndDate() {
+        return (Timestamp) getAttributeInternal(TRNGENDDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TrngEndDate.
+     * @param value value to set the TrngEndDate
+     */
+    public void setTrngEndDate(Timestamp value) {
+        setAttributeInternal(TRNGENDDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for TrngStDate, using the alias name TrngStDate.
+     * @return the value of TrngStDate
+     */
+    public Timestamp getTrngStDate() {
+        return (Timestamp) getAttributeInternal(TRNGSTDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TrngStDate.
+     * @param value value to set the TrngStDate
+     */
+    public void setTrngStDate(Timestamp value) {
+        setAttributeInternal(TRNGSTDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for TrngCertNo, using the alias name TrngCertNo.
+     * @return the value of TrngCertNo
+     */
+    public String getTrngCertNo() {
+        return (String) getAttributeInternal(TRNGCERTNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TrngCertNo.
+     * @param value value to set the TrngCertNo
+     */
+    public void setTrngCertNo(String value) {
+        setAttributeInternal(TRNGCERTNO, value);
     }
 
     /**

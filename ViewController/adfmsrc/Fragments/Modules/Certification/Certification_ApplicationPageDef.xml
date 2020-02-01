@@ -59,6 +59,8 @@
           <Item Value="CreatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="UpdatedBy"/>
+          <Item Value="TrngStDate"/>
+          <Item Value="TrngEndDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

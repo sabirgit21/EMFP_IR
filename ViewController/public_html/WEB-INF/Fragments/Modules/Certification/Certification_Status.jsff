@@ -112,6 +112,16 @@
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.label}" id="c8">
+                    <af:inputText value="#{row.bindings.TrngCertNo.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.TrngCertNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
