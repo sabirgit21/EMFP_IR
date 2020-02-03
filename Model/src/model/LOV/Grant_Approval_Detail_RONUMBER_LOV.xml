@@ -13,7 +13,8 @@
        TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
        TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
-  Where="TblGrantApprovalDetail.RO_NUMBER > 0">
+  Where="TblGrantApprovalDetail.RO_NUMBER is not null  
+AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

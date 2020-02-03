@@ -23,104 +23,167 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Certification Status">
-                <af:table value="#{bindings.TblCertAppMasterView1.collectionModel}" var="row"
-                          rows="#{bindings.TblCertAppMasterView1.rangeSize}"
-                          emptyText="#{bindings.TblCertAppMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                <af:table value="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.collectionModel}" var="row"
+                          rows="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.rangeSize}"
+                          emptyText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.TblCertAppMasterView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.TblCertAppMasterView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.TblCertAppMasterView1.rangeSize}"
-                          filterModel="#{bindings.TblCertAppMasterView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.TblCertAppMasterView1Query.processQuery}" varStatus="vs" id="t1">
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.name}"
+                          selectedRowKeys="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.rangeSize}"
+                          filterModel="#{bindings.Tbl_Cert_Sts_Cert_App_Master1Query.queryDescriptor}"
+                          filterVisible="true"
+                          queryListener="#{bindings.Tbl_Cert_Sts_Cert_App_Master1Query.processQuery}" varStatus="vs"
+                          id="t1">
+                  <!--<af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.label}" id="c1">
-                    <af:inputText value="#{row.bindings.CertAppMasterId.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.tooltip}" id="it1">
-                      <f:validator binding="#{row.bindings.CertAppMasterId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.format}"/>
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c1">
+                    <af:inputText value="#{row.bindings.AppStatus.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.tooltip}"
+                                  id="it1">
+                      <f:validator binding="#{row.bindings.AppStatus.validator}"/>
+                    </af:inputText>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c1">
+                    <af:selectBooleanCheckbox value="#{row.bindings.AppStatus.inputValue}"
+                                              label="#{row.bindings.AppStatus.label}" autoSubmit="true"
+                                              shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppStatus.tooltip}"
+                                              id="sbc1"/>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.label}" id="c2">
+                    <af:inputText value="#{row.bindings.AppType.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.AppType.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.AppType.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CertificationId.name}"
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblCertAppMasterView1.hints.CertificationId.label}" id="c2">
-                    <af:selectOneChoice value="#{row.bindings.CertificationId.inputValue}"
-                                        label="#{row.bindings.CertificationId.label}"
-                                        required="#{bindings.TblCertAppMasterView1.hints.CertificationId.mandatory}"
-                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.CertificationId.tooltip}"
-                                        id="soc1">
-                      <f:selectItems value="#{row.bindings.CertificationId.items}" id="si1"/>
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.label}" id="c3">
+                    <af:inputText value="#{row.bindings.CertAppMasterId.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.tooltip}"
+                                  id="it3">
+                      <f:validator binding="#{row.bindings.CertAppMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertAppMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.label}" id="c4">
+                    <af:inputText value="#{row.bindings.CertificationId.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.tooltip}"
+                                  id="it4">
                       <f:validator binding="#{row.bindings.CertificationId.validator}"/>
-                    </af:selectOneChoice>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.CertificationId.format}"/>
+                    </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.AppStatus.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.AppStatus.label}"
-                             id="c3">
-                    <af:selectOneChoice value="#{row.bindings.AppStatus.inputValue}"
-                                        label="#{row.bindings.AppStatus.label}"
-                                        required="#{bindings.TblCertAppMasterView1.hints.AppStatus.mandatory}"
-                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.AppStatus.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.AppStatus.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.AppStatus.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.AppType.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.AppType.label}" id="c4">
-                    <af:selectOneChoice value="#{row.bindings.AppType.inputValue}" label="#{row.bindings.AppType.label}"
-                                        required="#{bindings.TblCertAppMasterView1.hints.AppType.mandatory}"
-                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.AppType.tooltip}" id="soc3">
-                      <f:selectItems value="#{row.bindings.AppType.items}" id="si3"/>
-                      <f:validator binding="#{row.bindings.AppType.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.label}"
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.label}"
                              id="c5">
-                    <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
-                                        label="#{row.bindings.FarmerRegId.label}"
-                                        required="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.mandatory}"
-                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.FarmerRegId.tooltip}"
-                                        id="soc4">
-                      <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Cnic.label}" id="c6">
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Cnic.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Cnic.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Cnic.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Cnic.tooltip}" id="it2">
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Cnic.tooltip}" id="it5">
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblCertAppMasterView1.hints.Mobile.label}" id="c7">
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.label}" id="c6">
+                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.tooltip}"
+                                  id="it6">
+                      <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.FarmerRegId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.label}" id="c7">
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.Mobile.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.Mobile.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.Mobile.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.Mobile.tooltip}" id="it3">
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Mobile.tooltip}" id="it7">
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.label}" id="c8">
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.label}" id="c8">
                     <af:inputText value="#{row.bindings.TrngCertNo.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.TrngCertNo.tooltip}" id="it4">
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngCertNo.tooltip}"
+                                  id="it8">
                       <f:validator binding="#{row.bindings.TrngCertNo.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.label}" id="c9">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Tbl_Cert_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrngEndDate.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.TrngEndDate.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.displayWidth}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.tooltip}"
+                                  id="id2">
+                      <f:validator binding="#{row.bindings.TrngEndDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngEndDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.label}" id="c10">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Tbl_Cert_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrngStDate.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.TrngStDate.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.displayWidth}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.tooltip}"
+                                  id="id4">
+                      <f:validator binding="#{row.bindings.TrngStDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.TrngStDate.format}"/>
+                    </af:inputDate>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

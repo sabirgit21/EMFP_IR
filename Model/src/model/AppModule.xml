@@ -1625,6 +1625,15 @@
   <ViewUsage
     Name="TblB2bMeetingComView3"
     ViewObjectName="model.VO.TblB2bMeetingComView"/>
+  <ViewUsage
+    Name="Tbl_Trng_Sts_Cert_App_Master1"
+    ViewObjectName="model.VO.Tbl_Trng_Sts_Cert_App_Master"/>
+  <ViewUsage
+    Name="Tbl_Audit_Sts_Cert_App_Master1"
+    ViewObjectName="model.VO.Tbl_Audit_Sts_Cert_App_Master"/>
+  <ViewUsage
+    Name="Tbl_Cert_Sts_Cert_App_Master1"
+    ViewObjectName="model.VO.Tbl_Cert_Sts_Cert_App_Master"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"

@@ -219,6 +219,13 @@
               usageId="view_Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Marketing/Halls_Stalls_Setup.jsff"
               usageId="view_Halls_Stalls_SetupPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Training_Status_TaskFlow.xml#Training_Status_TaskFlow@ExecuteWithParams"
+              usageId="view_Training_Status_TaskFlow_Training_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Certification/Audit_Status_TaskFlow.xml#Audit_Status_TaskFlow@ExecuteWithParams"
+              usageId="view_Audit_Status_TaskFlow_Audit_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Audit_Status.jsff" usageId="view_Audit_StatusPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Certification/Training_Status.jsff"
+              usageId="view_Training_StatusPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -424,6 +431,12 @@
         <page id="view_Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Marketing.Halls_Stalls_Setup_TaskFlow_Halls_Stalls_Setup_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Halls_Stalls_SetupPageDef" path="Fragments.Modules.Monitoring.Halls_Stalls_SetupPageDef"/>
+        <page id="view_Training_Status_TaskFlow_Training_Status_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Training_Status_TaskFlow_Training_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Audit_Status_TaskFlow_Audit_Status_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Certification.Audit_Status_TaskFlow_Audit_Status_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Audit_StatusPageDef" path="Fragments.Modules.Certification.Audit_StatusPageDef"/>
+        <page id="view_Training_StatusPageDef" path="Fragments.Modules.Certification.Training_StatusPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"

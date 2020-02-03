@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Certification_StatusPageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Audit_StatusPageDef"
                 Package="Fragments.Modules.Certification">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="Tbl_Cert_Sts_Cert_App_Master1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Tbl_Cert_Sts_Cert_App_Master1Iterator"/>
-    <searchRegion Binds="Tbl_Cert_Sts_Cert_App_Master1Iterator" Criteria=""
+    <iterator Binds="Tbl_Audit_Sts_Cert_App_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Tbl_Audit_Sts_Cert_App_Master1Iterator"/>
+    <searchRegion Binds="Tbl_Audit_Sts_Cert_App_Master1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  id="Tbl_Cert_Sts_Cert_App_Master1Query"/>
+                  id="Tbl_Audit_Sts_Cert_App_Master1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -26,8 +26,8 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="Tbl_Cert_Sts_Cert_App_Master1Iterator" id="Tbl_Cert_Sts_Cert_App_Master1">
-      <nodeDefinition DefName="model.VO.Tbl_Cert_Sts_Cert_App_Master" Name="Tbl_Cert_Sts_Cert_App_Master10">
+    <tree IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Tbl_Audit_Sts_Cert_App_Master1">
+      <nodeDefinition DefName="model.VO.Tbl_Audit_Sts_Cert_App_Master" Name="Tbl_Audit_Sts_Cert_App_Master10">
         <AttrNames>
           <Item Value="AppStatus" Binds="AppStatus"/>
           <Item Value="AppType"/>
@@ -42,19 +42,19 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="Tbl_Cert_Sts_Cert_App_Master1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="Tbl_Cert_Sts_Cert_App_Master1Iterator" id="Execute" RequiresUpdateModel="true"
+    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
-    <action IterBinding="Tbl_Cert_Sts_Cert_App_Master1Iterator" id="Delete" RequiresUpdateModel="false"
+    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <button IterBinding="Tbl_Cert_Sts_Cert_App_Master1Iterator" id="AppStatus" DTSupportsMRU="false" StaticList="true">
+    <button IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="AppStatus" DTSupportsMRU="false" StaticList="true">
       <AttrNames>
         <Item Value="AppStatus"/>
       </AttrNames>
       <ValueList>
-        <Item Value="CER"/>
         <Item Value="AUD"/>
+        <Item Value="TRA"/>
       </ValueList>
     </button>
   </bindings>
