@@ -65,6 +65,8 @@
           <Item Value="UpdatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="Website"/>
+          <Item Value="Ggn"/>
+          <Item Value="RegNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -38,7 +38,9 @@
        TblCertAppMaster.TRNG_ST_DATE, 
        TblCertAppMaster.UPDATED_BY, 
        TblCertAppMaster.UPDATED_DATE, 
-       TblCertAppMaster.WEBSITE"
+       TblCertAppMaster.WEBSITE, 
+       TblCertAppMaster.GGN, 
+       TblCertAppMaster.REG_NO"
   FromList="TBL_CERT_APP_MASTER TblCertAppMaster"
   Where="TblCertAppMaster.APP_STATUS = 'AUD'">
   <Properties>
@@ -232,6 +234,18 @@
     EntityAttrName="Website"
     EntityUsage="TblCertAppMaster"
     AliasName="WEBSITE"/>
+  <ViewAttribute
+    Name="Ggn"
+    PrecisionRule="true"
+    EntityAttrName="Ggn"
+    EntityUsage="TblCertAppMaster"
+    AliasName="GGN"/>
+  <ViewAttribute
+    Name="RegNo"
+    PrecisionRule="true"
+    EntityAttrName="RegNo"
+    EntityUsage="TblCertAppMaster"
+    AliasName="REG_NO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

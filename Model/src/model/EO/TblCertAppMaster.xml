@@ -329,6 +329,25 @@
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Ggn"
+    ColumnName="GGN"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_CERT_APP_MASTER"/>
+  <Attribute
+    Name="RegNo"
+    Precision="50"
+    ColumnName="REG_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CERT_APP_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblCertAppDetail"
     Association="model.EO.FkCertAppDetailCertAppAssoc"

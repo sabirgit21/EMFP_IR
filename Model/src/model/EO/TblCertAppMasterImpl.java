@@ -53,6 +53,8 @@ public class TblCertAppMasterImpl extends EntityImpl {
         TrngEndDate,
         TrngStDate,
         TrngCertNo,
+        Ggn,
+        RegNo,
         TblCertAppDetail,
         TblCertApproval,
         TblCertification1;
@@ -110,6 +112,8 @@ public class TblCertAppMasterImpl extends EntityImpl {
     public static final int TRNGENDDATE = AttributesEnum.TrngEndDate.index();
     public static final int TRNGSTDATE = AttributesEnum.TrngStDate.index();
     public static final int TRNGCERTNO = AttributesEnum.TrngCertNo.index();
+    public static final int GGN = AttributesEnum.Ggn.index();
+    public static final int REGNO = AttributesEnum.RegNo.index();
     public static final int TBLCERTAPPDETAIL = AttributesEnum.TblCertAppDetail.index();
     public static final int TBLCERTAPPROVAL = AttributesEnum.TblCertApproval.index();
     public static final int TBLCERTIFICATION1 = AttributesEnum.TblCertification1.index();
@@ -590,6 +594,38 @@ public class TblCertAppMasterImpl extends EntityImpl {
      */
     public void setTrngCertNo(String value) {
         setAttributeInternal(TRNGCERTNO, value);
+    }
+
+    /**
+     * Gets the attribute value for Ggn, using the alias name Ggn.
+     * @return the value of Ggn
+     */
+    public BigDecimal getGgn() {
+        return (BigDecimal) getAttributeInternal(GGN);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Ggn.
+     * @param value value to set the Ggn
+     */
+    public void setGgn(BigDecimal value) {
+        setAttributeInternal(GGN, value);
+    }
+
+    /**
+     * Gets the attribute value for RegNo, using the alias name RegNo.
+     * @return the value of RegNo
+     */
+    public String getRegNo() {
+        return (String) getAttributeInternal(REGNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RegNo.
+     * @param value value to set the RegNo
+     */
+    public void setRegNo(String value) {
+        setAttributeInternal(REGNO, value);
     }
 
     /**

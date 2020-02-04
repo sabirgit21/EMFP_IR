@@ -458,6 +458,28 @@
                       <f:validator binding="#{row.bindings.Website.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.label}" id="c31">
+                    <af:inputText value="#{row.bindings.Ggn.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.Ggn.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.Ggn.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.label}" id="c32">
+                    <af:inputText value="#{row.bindings.RegNo.inputValue}"
+                                  label="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.label}"
+                                  required="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.mandatory}"
+                                  columns="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.precision}"
+                                  shortDesc="#{bindings.Tbl_Cert_Sts_Cert_App_Master1.hints.RegNo.tooltip}" id="it27">
+                      <f:validator binding="#{row.bindings.RegNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
