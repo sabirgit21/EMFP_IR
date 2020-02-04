@@ -39,8 +39,10 @@
        TblCertAppMaster.UPDATED_BY, 
        TblCertAppMaster.UPDATED_DATE, 
        TblCertAppMaster.WEBSITE"
-  FromList="TBL_CERT_APP_MASTER TblCertAppMaster"
-  Where="TblCertAppMaster.APP_STATUS = 'NUL'">
+  FromList="TBL_CERT_APP_MASTER TblCertAppMaster, TBL_CERT_APPROVAL TblCertApproval"
+  Where="TblCertAppMaster.CERT_APP_MASTER_ID = TblCertApproval.CERT_APP_MASTER_ID        
+AND (TblCertAppMaster.APP_STATUS = 'NUL'         
+OR TblCertAppMaster.APP_STATUS is null)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -50,6 +52,25 @@
   <EntityUsage
     Name="TblCertAppMaster"
     Entity="model.EO.TblCertAppMaster"/>
+  <EntityUsage
+    Name="TblCertApproval"
+    Entity="model.EO.TblCertApproval"
+    Association="model.EO.FkCertApprovalCertAppAssoc"
+    AssociationEnd="model.EO.FkCertApprovalCertAppAssoc.TblCertApproval"
+    SourceUsage="model.VO.Tbl_Trng_Sts_Cert_App_Master.TblCertAppMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCertApproval.CertAppMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblCertAppMaster.CertAppMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="Acres"
     PrecisionRule="true"

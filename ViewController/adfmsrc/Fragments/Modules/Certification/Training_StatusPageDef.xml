@@ -26,28 +26,48 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <tree IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="Tbl_Trng_Sts_Cert_App_Master1">
-      <nodeDefinition DefName="model.VO.Tbl_Trng_Sts_Cert_App_Master" Name="Tbl_Trng_Sts_Cert_App_Master10">
-        <AttrNames>
-          <Item Value="AppStatus" Binds="AppStatus"/>
-          <Item Value="AppType"/>
-          <Item Value="CertAppMasterId"/>
-          <Item Value="CertificationId"/>
-          <Item Value="Cnic"/>
-          <Item Value="FarmerRegId"/>
-          <Item Value="Mobile"/>
-          <Item Value="TrngCertNo"/>
-          <Item Value="TrngEndDate"/>
-          <Item Value="TrngStDate"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <action IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <tree IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="Tbl_Trng_Sts_Cert_App_Master1">
+      <nodeDefinition DefName="model.VO.Tbl_Trng_Sts_Cert_App_Master" Name="Tbl_Trng_Sts_Cert_App_Master10">
+        <AttrNames>
+          <Item Value="Acres"/>
+          <Item Value="AppStatus" Binds="AppStatus"/>
+          <Item Value="AppType"/>
+          <Item Value="Ast"/>
+          <Item Value="BussNature"/>
+          <Item Value="CertAppMasterId"/>
+          <Item Value="CertificationId"/>
+          <Item Value="Cnic"/>
+          <Item Value="CoAddress"/>
+          <Item Value="CoName"/>
+          <Item Value="ContPerson"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="Designation"/>
+          <Item Value="Email"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="Fax"/>
+          <Item Value="Mobile"/>
+          <Item Value="NoOfEmpF"/>
+          <Item Value="NoOfEmpM"/>
+          <Item Value="Ntn"/>
+          <Item Value="OwnType"/>
+          <Item Value="OwnerName"/>
+          <Item Value="Tel"/>
+          <Item Value="TrngCertNo"/>
+          <Item Value="TrngEndDate"/>
+          <Item Value="TrngStDate"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="Website"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
     <button IterBinding="Tbl_Trng_Sts_Cert_App_Master1Iterator" id="AppStatus" DTSupportsMRU="false" StaticList="true">
       <AttrNames>
         <Item Value="AppStatus"/>

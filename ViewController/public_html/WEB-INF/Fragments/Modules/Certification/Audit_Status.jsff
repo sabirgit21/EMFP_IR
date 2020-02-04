@@ -34,20 +34,34 @@
                           filterVisible="true"
                           queryListener="#{bindings.Tbl_Audit_Sts_Cert_App_Master1Query.processQuery}" varStatus="vs"
                           id="t1">
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.label}" id="c1">
+                    <af:inputText value="#{row.bindings.Acres.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.Acres.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Acres.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <!--<af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c1">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c2">
                     <af:inputText value="#{row.bindings.AppStatus.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.precision}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.tooltip}"
-                                  id="it1">
+                                  id="it2">
                       <f:validator binding="#{row.bindings.AppStatus.validator}"/>
                     </af:inputText>
                   </af:column>-->
-                  <af:column headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c1">
+                  <af:column headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.label}" id="c2">
                     <af:selectBooleanCheckbox value="#{row.bindings.AppStatus.inputValue}"
                                               label="#{row.bindings.AppStatus.label}" autoSubmit="true"
                                               shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppStatus.tooltip}"
@@ -55,27 +69,52 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.label}" id="c2">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.label}" id="c3">
                     <af:inputText value="#{row.bindings.AppType.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.precision}"
-                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.tooltip}" id="it2">
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.AppType.tooltip}" id="it3">
                       <f:validator binding="#{row.bindings.AppType.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.label}"
+                             id="c4">
+                    <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ast.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.label}" id="c5">
+                    <af:inputText value="#{row.bindings.BussNature.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.BussNature.tooltip}"
+                                  id="it5">
+                      <f:validator binding="#{row.bindings.BussNature.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.label}"
-                             id="c3">
+                             id="c6">
                     <af:inputText value="#{row.bindings.CertAppMasterId.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.precision}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.tooltip}"
-                                  id="it3">
+                                  id="it6">
                       <f:validator binding="#{row.bindings.CertAppMasterId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertAppMasterId.format}"/>
@@ -84,14 +123,14 @@
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.label}"
-                             id="c4">
+                             id="c7">
                     <af:inputText value="#{row.bindings.CertificationId.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.precision}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.tooltip}"
-                                  id="it4">
+                                  id="it7">
                       <f:validator binding="#{row.bindings.CertificationId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CertificationId.format}"/>
@@ -99,62 +138,251 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.name}" filterable="true"
                              sortable="true" headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.label}"
-                             id="c5">
+                             id="c8">
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.tooltip}" id="it5">
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Cnic.tooltip}" id="it8">
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.label}" id="c9">
+                    <af:inputText value="#{row.bindings.CoAddress.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoAddress.tooltip}"
+                                  id="it9">
+                      <f:validator binding="#{row.bindings.CoAddress.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.label}" id="c10">
+                    <af:inputText value="#{row.bindings.CoName.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CoName.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.CoName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.label}" id="c11">
+                    <af:inputText value="#{row.bindings.ContPerson.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.ContPerson.tooltip}"
+                                  id="it11">
+                      <f:validator binding="#{row.bindings.ContPerson.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.label}" id="c12">
+                    <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.tooltip}"
+                                  id="it12">
+                      <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.label}" id="c13">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Tbl_Audit_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.displayWidth}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.tooltip}"
+                                  id="id2">
+                      <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.CreatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.label}" id="c14">
+                    <af:inputText value="#{row.bindings.Designation.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Designation.tooltip}"
+                                  id="it13">
+                      <f:validator binding="#{row.bindings.Designation.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.label}" id="c15">
+                    <af:inputText value="#{row.bindings.Email.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Email.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.Email.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.label}" id="c6">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.label}" id="c16">
                     <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.precision}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.tooltip}"
-                                  id="it6">
+                                  id="it15">
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.FarmerRegId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.label}"
+                             id="c17">
+                    <af:inputText value="#{row.bindings.Fax.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Fax.tooltip}" id="it16">
+                      <f:validator binding="#{row.bindings.Fax.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.label}" id="c7">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.label}" id="c18">
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.tooltip}" id="it7">
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Mobile.tooltip}" id="it17">
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.label}" id="c19">
+                    <af:inputText value="#{row.bindings.NoOfEmpF.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.tooltip}"
+                                  id="it18">
+                      <f:validator binding="#{row.bindings.NoOfEmpF.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpF.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.label}" id="c20">
+                    <af:inputText value="#{row.bindings.NoOfEmpM.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.tooltip}"
+                                  id="it19">
+                      <f:validator binding="#{row.bindings.NoOfEmpM.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.NoOfEmpM.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.label}"
+                             id="c21">
+                    <af:inputText value="#{row.bindings.Ntn.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Ntn.tooltip}" id="it20">
+                      <f:validator binding="#{row.bindings.Ntn.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.label}" id="c22">
+                    <af:inputText value="#{row.bindings.OwnType.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnType.tooltip}"
+                                  id="it21">
+                      <f:validator binding="#{row.bindings.OwnType.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.label}" id="c23">
+                    <af:inputText value="#{row.bindings.OwnerName.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.OwnerName.tooltip}"
+                                  id="it22">
+                      <f:validator binding="#{row.bindings.OwnerName.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.label}"
+                             id="c24">
+                    <af:inputText value="#{row.bindings.Tel.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Tel.tooltip}" id="it23">
+                      <f:validator binding="#{row.bindings.Tel.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.label}" id="c8">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.label}" id="c25">
                     <af:inputText value="#{row.bindings.TrngCertNo.inputValue}"
                                   label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.label}"
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.displayWidth}"
                                   maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.precision}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngCertNo.tooltip}"
-                                  id="it8">
+                                  id="it24">
                       <f:validator binding="#{row.bindings.TrngCertNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.label}" id="c9">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.label}" id="c26">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.Tbl_Audit_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrngEndDate.value}"
-                                    id="id1">
+                                    id="id3">
                         <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -163,17 +391,17 @@
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.displayWidth}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.tooltip}"
-                                  id="id2">
+                                  id="id4">
                       <f:validator binding="#{row.bindings.TrngEndDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngEndDate.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.label}" id="c10">
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.label}" id="c27">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.Tbl_Audit_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrngStDate.value}"
-                                    id="id3">
+                                    id="id5">
                         <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -182,10 +410,57 @@
                                   required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.mandatory}"
                                   columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.displayWidth}"
                                   shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.tooltip}"
-                                  id="id4">
+                                  id="id6">
                       <f:validator binding="#{row.bindings.TrngStDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.TrngStDate.format}"/>
                     </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.label}" id="c28">
+                    <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.tooltip}"
+                                  id="it25">
+                      <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedBy.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.label}" id="c29">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.Tbl_Audit_Sts_Cert_App_Master1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                    id="id7">
+                        <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.displayWidth}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.tooltip}"
+                                  id="id8">
+                      <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.UpdatedDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.label}" id="c30">
+                    <af:inputText value="#{row.bindings.Website.inputValue}"
+                                  label="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.label}"
+                                  required="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.mandatory}"
+                                  columns="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.displayWidth}"
+                                  maximumLength="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.precision}"
+                                  shortDesc="#{bindings.Tbl_Audit_Sts_Cert_App_Master1.hints.Website.tooltip}"
+                                  id="it26">
+                      <f:validator binding="#{row.bindings.Website.validator}"/>
+                    </af:inputText>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

@@ -174,7 +174,7 @@
                       <f:validator binding="#{row.bindings.OwnerName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblCertAppMasterView1.hints.TrngStDate.label}" id="c3">
+                  <!--<af:column headerText="#{bindings.TblCertAppMasterView1.hints.TrngStDate.label}" id="c3">
                     <af:inputDate value="#{row.bindings.TrngStDate.inputValue}"
                                   label="#{bindings.TblCertAppMasterView1.hints.TrngStDate.label}"
                                   required="#{bindings.TblCertAppMasterView1.hints.TrngStDate.mandatory}"
@@ -193,7 +193,7 @@
                       <f:validator binding="#{row.bindings.TrngEndDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCertAppMasterView1.hints.TrngEndDate.format}"/>
                     </af:inputDate>
-                  </af:column>
+                  </af:column>-->
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.Cnic.name}" filterable="true"
                              sortable="true" headerText="CNIC" id="c13" align="center">
                               <f:facet name="filter">
