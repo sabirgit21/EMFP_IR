@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="Tbl_Audit_Sts_Cert_App_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="Tbl_Audit_Sts_Cert_App_Master1" RangeSize="8" DataControl="AppModuleDataControl"
               id="Tbl_Audit_Sts_Cert_App_Master1Iterator"/>
     <searchRegion Binds="Tbl_Audit_Sts_Cert_App_Master1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
@@ -26,56 +26,37 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
-    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
-    <action IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Delete" RequiresUpdateModel="false"
-            Action="removeCurrentRow"/>
     <tree IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="Tbl_Audit_Sts_Cert_App_Master1">
       <nodeDefinition DefName="model.VO.Tbl_Audit_Sts_Cert_App_Master" Name="Tbl_Audit_Sts_Cert_App_Master10">
         <AttrNames>
-          <Item Value="Acres"/>
-          <Item Value="AppStatus" Binds="AppStatus"/>
-          <Item Value="AppType"/>
-          <Item Value="Ast"/>
-          <Item Value="BussNature"/>
           <Item Value="CertAppMasterId"/>
           <Item Value="CertificationId"/>
-          <Item Value="Cnic"/>
-          <Item Value="CoAddress"/>
-          <Item Value="CoName"/>
-          <Item Value="ContPerson"/>
-          <Item Value="CreatedBy"/>
-          <Item Value="CreatedDate"/>
-          <Item Value="Designation"/>
-          <Item Value="Email"/>
+          <Item Value="AppStatus"/>
+          <Item Value="AppType"/>
           <Item Value="FarmerRegId"/>
-          <Item Value="Fax"/>
-          <Item Value="Mobile"/>
-          <Item Value="NoOfEmpF"/>
-          <Item Value="NoOfEmpM"/>
-          <Item Value="Ntn"/>
+          <Item Value="Acres"/>
+          <Item Value="CoName"/>
+          <Item Value="BussNature"/>
           <Item Value="OwnType"/>
           <Item Value="OwnerName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
+          <Item Value="ContPerson"/>
+          <Item Value="Designation"/>
+          <Item Value="Ntn"/>
           <Item Value="Tel"/>
           <Item Value="TrngCertNo"/>
-          <Item Value="TrngEndDate"/>
           <Item Value="TrngStDate"/>
-          <Item Value="UpdatedBy"/>
-          <Item Value="UpdatedDate"/>
+          <Item Value="TrngEndDate"/>
+          <Item Value="NoOfEmpF"/>
+          <Item Value="NoOfEmpM"/>
+          <Item Value="Fax"/>
+          <Item Value="Email"/>
+          <Item Value="CoAddress"/>
           <Item Value="Website"/>
+          <Item Value="Ast"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <button IterBinding="Tbl_Audit_Sts_Cert_App_Master1Iterator" id="AppStatus" DTSupportsMRU="false" StaticList="true">
-      <AttrNames>
-        <Item Value="AppStatus"/>
-      </AttrNames>
-      <ValueList>
-        <Item Value="AUD"/>
-        <Item Value="TRA"/>
-      </ValueList>
-    </button>
   </bindings>
 </pageDefinition>
