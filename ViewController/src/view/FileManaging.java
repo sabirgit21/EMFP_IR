@@ -39,7 +39,7 @@ public class FileManaging {
         } else {
             // All uploaded files will be stored in below path
             UniFileName = (getRandomInteger(100000, 1000000)) + myfile.getFilename();
-            path = "D://Stable_EMFP//ViewController//src//META-INF//resources//user_data//farmerImages//" + UniFileName;
+            path = "E://Stable_EMFP//ViewController//src//META-INF//resources//user_data//farmerImages//" + UniFileName;
 
             db_Image_Value.setValue(UniFileName);
             

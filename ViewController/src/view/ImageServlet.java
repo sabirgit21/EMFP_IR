@@ -21,7 +21,7 @@ public class ImageServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            
             // File name is being passed by parameter on a servlet
-            String path = "D:\\Stable_EMFP\\ViewController\\src\\META-INF\\resources\\user_data\\farmerImages\\";
+            String path = "E:\\Stable_EMFP\\ViewController\\src\\META-INF\\resources\\user_data\\farmerImages\\";
             String var0 = "";
             try {
                 if(!request.getParameter("imageNameParam").isEmpty()){
