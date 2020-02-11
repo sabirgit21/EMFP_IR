@@ -351,6 +351,24 @@
                                         pattern="#{bindings.TblGrantDisburseDetailView4.hints.FAmount.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.label}" id="c17" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ChequeAmount}"
+                                          id="it28" placeholder="Search Cheque Amount">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.ChequeAmount.inputValue}"
+                                  label="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.label}"
+                                  required="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.tooltip}"
+                                  id="it27">
+                      <f:validator binding="#{row.bindings.ChequeAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantDisburseDetailView4.hints.ChequeAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column headerText="Grant Bases" id="c12" sortable="true" filterable="true">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.GrantBase}"

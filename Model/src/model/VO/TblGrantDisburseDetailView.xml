@@ -130,6 +130,17 @@
     EntityAttrName="GrantBase"
     EntityUsage="TblGrantDisburseDetail"
     AliasName="GRANT_BASE"/>
+  <ViewAttribute
+    Name="ChequeAmount"
+    PrecisionRule="true"
+    EntityAttrName="ChequeAmount"
+    EntityUsage="TblGrantDisburseDetail"
+    AliasName="CHEQUE_AMOUNT"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseDetailId"

@@ -20,12 +20,12 @@
     <af:panelFormLayout id="pfl3" maxColumns="3" rows="1" fieldWidth="500px;" inlineStyle=" padding-left: 2%;">
         <af:iterator id="i2" value="#{bindings.USERS_MODULE1.collectionModel}" var="item" varStatus="status">
             <af:panelGroupLayout id="pgl3" layout="horizontal" inlineStyle="padding: 4%;">
-                <af:link id="l6" destination="/faces/#{item.bindings.ModuleMenLink.inputValue}"
+                <af:link id="l6" destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
                          icon="/ViewController/faces/javax.faces.resource/#{item.bindings.ModuleMenuIcon.inputValue}?ln=images"/>
                 <af:spacer width="10" height="10" id="s1"/>
                 <af:panelGroupLayout id="pgl2" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
                     <af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
-                             destination="/faces/#{item.bindings.ModuleMenLink.inputValue}"
+                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
                              inlineStyle="font-size:x-large; color: #008442;font-weight: bold;"/>
                     <af:spacer width="10" height="1" id="s3"/>
                     <af:outputLabel value="#{item.bindings.ModuleMenuDesc.inputValue}" id="ol12"/>
