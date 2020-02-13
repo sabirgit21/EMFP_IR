@@ -50,12 +50,12 @@ public class FileManaging {
 
             db_Image_Value.setValue(UniFileName);
             
-            System.out.println("oooooooooooooooo");
-            System.out.println(UniFileName);
-            System.out.println("oooooooooooooooo");
-            System.out.println("oooooooooooooooo");
-            System.out.println(path);
-            System.out.println("oooooooooooooooo");
+//            System.out.println("oooooooooooooooo");
+//            System.out.println(UniFileName);
+//            System.out.println("oooooooooooooooo");
+//            System.out.println("oooooooooooooooo");
+//            System.out.println(path);
+//            System.out.println("oooooooooooooooo");
 
 
             InputStream inputStream = null;
