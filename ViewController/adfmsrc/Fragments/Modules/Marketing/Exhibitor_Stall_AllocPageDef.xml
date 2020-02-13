@@ -43,6 +43,8 @@
           <Item Value="StallAllocType"/>
           <Item Value="FarmerRegId"/>
           <Item Value="ExpoSchId"/>
+          <Item Value="PhaseId"/>
+          <Item Value="ClusterId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

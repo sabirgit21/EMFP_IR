@@ -189,7 +189,7 @@
                       <f:validator binding="#{row.bindings.StallAllocType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Farmer" id="c9" sortable="true" filterable="true" width="200">
+                  <!--<af:column headerText="Farmer" id="c9" sortable="true" filterable="true" width="200">
                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
                                           id="it25" placeholder="Search Framer">
@@ -200,6 +200,35 @@
                                         required="#{bindings.TblExhibitorsView1.hints.FarmerRegId.mandatory}"
                                         shortDesc="#{bindings.TblExhibitorsView1.hints.FarmerRegId.tooltip}" id="soc5">
                       <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.TblExhibitorsView1.hints.PhaseId.label}" id="c9">
+                    <af:selectOneChoice value="#{row.bindings.PhaseId.inputValue}" label="#{row.bindings.PhaseId.label}"
+                    autoSubmit="true"
+                                        required="#{bindings.TblExhibitorsView1.hints.PhaseId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.PhaseId.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.PhaseId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.PhaseId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblExhibitorsView1.hints.ClusterId.label}" id="c23">
+                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                     autoSubmit="true"
+                                        label="#{row.bindings.ClusterId.label}"
+                                        required="#{bindings.TblExhibitorsView1.hints.ClusterId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.ClusterId.tooltip}" id="soc12">
+                      <f:selectItems value="#{row.bindings.ClusterId.items}" id="si12"/>
+                      <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.TblExhibitorsView1.hints.FarmerRegId.label}" id="c24">
+                    <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
+                                        label="#{row.bindings.FarmerRegId.label}"
+                                         autoSubmit="true"
+                                        required="#{bindings.TblExhibitorsView1.hints.FarmerRegId.mandatory}"
+                                        shortDesc="#{bindings.TblExhibitorsView1.hints.FarmerRegId.tooltip}" id="soc13">
+                      <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si13"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>

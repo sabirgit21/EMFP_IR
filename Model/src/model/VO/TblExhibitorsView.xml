@@ -30,10 +30,6 @@
     ViewObjectName="model.LOV.Stall_Allocation_Type_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Farmer_Reg_id_LOV1"
-    ViewObjectName="model.LOV.Farmer_Reg_id_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Expo_Setup_Venue_LOV1"
     ViewObjectName="model.LOV.Expo_Setup_Venue_LOV"
     RowLevelBinds="true"/>
@@ -41,6 +37,32 @@
     Name="Expo_Sch_Name_App_Status_LOV1"
     ViewObjectName="model.LOV.Expo_Sch_Name_App_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Name_LOV1"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Depn_Cluster_LOV1"
+    ViewObjectName="model.LOV.Phase_Depn_Cluster_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="get_phase_IDD">
+        <TransientExpression
+          Name="ExpressionScript"><![CDATA[PhaseId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Cluster_ID_Depn_Farmer_No_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depn_Farmer_No_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getClstrID">
+        <TransientExpression
+          Name="ExpressionScript"><![CDATA[ClusterId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_ExhibitorType"
     ListVOName="Exhibitor_Type_LOV1"
@@ -114,24 +136,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_FarmerRegId"
-    ListVOName="Farmer_Reg_id_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FarmerRegId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="FarmerRegId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_ExpoSetupId"
     ListVOName="Expo_Setup_Venue_LOV1"
     ListRangeSize="-1"
@@ -164,6 +168,61 @@
       <Item Value="ExpoSchId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PhaseId"
+    ListVOName="Phase_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClusterId"
+    ListVOName="Phase_Depn_Cluster_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegId"
+    ListVOName="Cluster_ID_Depn_Farmer_No_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FarmerRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FarmerNo"/>
       <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -318,6 +377,34 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhaseId"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblExhibitors"
+    AliasName="PHASE_ID"
+    LOVName="LOV_PhaseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblExhibitors"
+    AliasName="CLUSTER_ID"
+    LOVName="LOV_ClusterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

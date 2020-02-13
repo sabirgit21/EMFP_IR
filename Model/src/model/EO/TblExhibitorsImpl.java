@@ -38,6 +38,8 @@ public class TblExhibitorsImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         ExpoSchId,
+        ClusterId,
+        PhaseId,
         TblB2bMeeting,
         TblExpoSetup,
         TblStallsAlloc;
@@ -64,6 +66,7 @@ public class TblExhibitorsImpl extends EntityImpl {
         }
     }
 
+
     public static final int EXHIBITORSID = AttributesEnum.ExhibitorsId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
     public static final int NAME = AttributesEnum.Name.index();
@@ -79,6 +82,8 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
+    public static final int CLUSTERID = AttributesEnum.ClusterId.index();
+    public static final int PHASEID = AttributesEnum.PhaseId.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
@@ -95,6 +100,7 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblExhibitors");
     }
+
 
     /**
      * Gets the attribute value for ExhibitorsId, using the alias name ExhibitorsId.
@@ -318,6 +324,38 @@ public class TblExhibitorsImpl extends EntityImpl {
      */
     public void setExpoSchId(BigDecimal value) {
         setAttributeInternal(EXPOSCHID, value);
+    }
+
+    /**
+     * Gets the attribute value for ClusterId, using the alias name ClusterId.
+     * @return the value of ClusterId
+     */
+    public BigDecimal getClusterId() {
+        return (BigDecimal) getAttributeInternal(CLUSTERID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ClusterId.
+     * @param value value to set the ClusterId
+     */
+    public void setClusterId(BigDecimal value) {
+        setAttributeInternal(CLUSTERID, value);
+    }
+
+    /**
+     * Gets the attribute value for PhaseId, using the alias name PhaseId.
+     * @return the value of PhaseId
+     */
+    public BigDecimal getPhaseId() {
+        return (BigDecimal) getAttributeInternal(PHASEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PhaseId.
+     * @param value value to set the PhaseId
+     */
+    public void setPhaseId(BigDecimal value) {
+        setAttributeInternal(PHASEID, value);
     }
 
     /**

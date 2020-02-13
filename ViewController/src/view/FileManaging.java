@@ -10,7 +10,14 @@ import javax.faces.event.ActionEvent;
 
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
+import oracle.dss.dataView.ViewController;
+
 import org.apache.myfaces.trinidad.model.UploadedFile;
+
+
+
+// farmer image uploading
+
 
 public class FileManaging {
     private RichInputText db_Image_Value;
@@ -39,7 +46,7 @@ public class FileManaging {
         } else {
             // All uploaded files will be stored in below path
             UniFileName = (getRandomInteger(100000, 1000000)) + myfile.getFilename();
-            path = "E://Stable_EMFP//ViewController//src//META-INF//resources//user_data//farmerImages//" + UniFileName;
+            path = "C://Meta_Data//CloudEMFP_Data//farmerImages//" + UniFileName;
 
             db_Image_Value.setValue(UniFileName);
             
