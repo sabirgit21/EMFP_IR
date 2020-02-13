@@ -470,7 +470,7 @@
                                                                                 </af:inputText>
                                                                                 <af:inputRangeSlider label="Label 1"
                                                                                                      id="irs1"
-                                                                                                     maximum="10"
+                                                                                                     maximum="15"
                                                                                                      value="#{row.bindings.StallDimension.inputValue}"
                                                                                                      minimum="1"/>
                                                                             </af:column>

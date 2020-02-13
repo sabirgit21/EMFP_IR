@@ -67,14 +67,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STALLS_ALLOC"/>
+    TableName="TBL_STALLS_ALLOC"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="StallAmount"
     ColumnName="STALL_AMOUNT"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TBL_STALLS_ALLOC"/>
+    TableName="TBL_STALLS_ALLOC"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Representative"
     Precision="150"

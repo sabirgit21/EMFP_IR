@@ -228,7 +228,7 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Stalls Allocation">
-                <af:table value="#{bindings.TblStallsAllocView3.collectionModel}" var="row"
+                <!--<af:table value="#{bindings.TblStallsAllocView3.collectionModel}" var="row"
                           rows="#{bindings.TblStallsAllocView3.rangeSize}"
                           emptyText="#{bindings.TblStallsAllocView3.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -288,7 +288,7 @@
                       <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column headerText="Expo Stall Type" id="c13" sortable="true" filterable="true" width="120">
+                  --><!--<af:column headerText="Expo Stall Type" id="c13" sortable="true" filterable="true" width="120">
                      <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExpoStallsType}"
                                           id="it30" placeholder="Search Type">
@@ -302,7 +302,7 @@
                       <f:selectItems value="#{row.bindings.ExpoStallsType.items}" id="si8"/>
                       <f:validator binding="#{row.bindings.ExpoStallsType.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>-->
+                  </af:column>--><!--
                   <af:column headerText="Stall Type" id="c13">
                     <af:selectOneChoice value="#{row.bindings.StallType.inputValue}"
                                         label="#{row.bindings.StallType.label}" 
@@ -415,6 +415,196 @@
                                         id="soc10">
                       <f:selectItems value="#{row.bindings.StallAllocStatus.items}" id="si10"/>
                       <f:validator binding="#{row.bindings.StallAllocStatus.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                </af:table>-->
+                <af:table value="#{bindings.TblStallsAllocView3.collectionModel}" var="row"
+                          rows="#{bindings.TblStallsAllocView3.rangeSize}"
+                          emptyText="#{bindings.TblStallsAllocView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.TblStallsAllocView3.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.TblStallsAllocView3.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.TblStallsAllocView3.rangeSize}"
+                          filterModel="#{bindings.TblStallsAllocView3Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.TblStallsAllocView3Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="::b2 ::b3 ::b4">
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallsAllocId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallsAllocId.label}"
+                             id="c10">
+                    <af:inputText value="#{row.bindings.StallsAllocId.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallsAllocId.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallsAllocId.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallsAllocId.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallsAllocId.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallsAllocId.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.StallsAllocId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.StallsAllocId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.label}"
+                             id="c11">
+                    <af:inputText value="#{row.bindings.ExhibitorsId.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.ExhibitorsId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.ExhibitorsId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.label}"
+                             id="c12">
+                    <af:selectOneChoice value="#{row.bindings.ExpoHallsId.inputValue}"
+                                        label="#{row.bindings.ExpoHallsId.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoHallsId.tooltip}" id="soc6">
+                      <f:selectItems value="#{row.bindings.ExpoHallsId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.ExpoHallsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.label}"
+                             id="c13">
+                    <af:selectOneChoice value="#{row.bindings.ExpoStallsId.inputValue}"
+                                        label="#{row.bindings.ExpoStallsId.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsId.tooltip}"
+                                        id="soc7">
+                      <f:selectItems value="#{row.bindings.ExpoStallsId.items}" id="si7"/>
+                      <f:validator binding="#{row.bindings.ExpoStallsId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.label}"
+                             id="c15">
+                    <af:selectOneChoice value="#{row.bindings.ExpoStallsType.inputValue}"
+                                        label="#{row.bindings.ExpoStallsType.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsType.tooltip}"
+                                        id="soc8">
+                      <f:selectItems value="#{row.bindings.ExpoStallsType.items}" id="si8"/>
+                      <f:validator binding="#{row.bindings.ExpoStallsType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.label}"
+                             id="c16">
+                    <af:inputText value="#{row.bindings.StallDiscAmt.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.StallDiscAmt.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.StallDiscAmt.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallAmount.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallAmount.label}"
+                             id="c17">
+                    <af:inputText value="#{row.bindings.StallAmount.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallAmount.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallAmount.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallAmount.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallAmount.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.StallAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.StallAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.Representative.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.Representative.label}"
+                             id="c18">
+                    <af:inputText value="#{row.bindings.Representative.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.Representative.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.Representative.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.Representative.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.Representative.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.Representative.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.Representative.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.label}" id="c19">
+                    <af:selectOneChoice value="#{row.bindings.StallAllocStatus.inputValue}"
+                                        label="#{row.bindings.StallAllocStatus.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.StallAllocStatus.tooltip}"
+                                        id="soc10">
+                      <f:selectItems value="#{row.bindings.StallAllocStatus.items}" id="si10"/>
+                      <f:validator binding="#{row.bindings.StallAllocStatus.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallDimension.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallDimension.label}"
+                             id="c20">
+                    <af:inputText value="#{row.bindings.StallDimension.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallDimension.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallDimension.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallDimension.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallDimension.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallDimension.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.StallDimension.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.label}"
+                             id="c21">
+                    <af:inputText value="#{row.bindings.ExpoStallsId1.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.ExpoStallsId1.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.ExpoStallsId1.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.AreaRate.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.AreaRate.label}" id="c22">
+                    <af:inputText value="#{row.bindings.AreaRate.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.AreaRate.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.AreaRate.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.AreaRate.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.AreaRate.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.AreaRate.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.AreaRate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.AreaRate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallValue.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallValue.label}"
+                             id="c23">
+                    <af:inputText value="#{row.bindings.StallValue.inputValue}"
+                                  label="#{bindings.TblStallsAllocView3.hints.StallValue.label}"
+                                  required="#{bindings.TblStallsAllocView3.hints.StallValue.mandatory}"
+                                  columns="#{bindings.TblStallsAllocView3.hints.StallValue.displayWidth}"
+                                  maximumLength="#{bindings.TblStallsAllocView3.hints.StallValue.precision}"
+                                  shortDesc="#{bindings.TblStallsAllocView3.hints.StallValue.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.StallValue.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblStallsAllocView3.hints.StallValue.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblStallsAllocView3.hints.StallType.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblStallsAllocView3.hints.StallType.label}"
+                             id="c24">
+                    <af:selectOneChoice value="#{row.bindings.StallType.inputValue}"
+                                        label="#{row.bindings.StallType.label}"
+                                        required="#{bindings.TblStallsAllocView3.hints.StallType.mandatory}"
+                                        shortDesc="#{bindings.TblStallsAllocView3.hints.StallType.tooltip}" id="soc11">
+                      <f:selectItems value="#{row.bindings.StallType.items}" id="si11"/>
+                      <f:validator binding="#{row.bindings.StallType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
