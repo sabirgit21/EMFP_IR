@@ -73,15 +73,15 @@ public class TblIntlDelegImportOthImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegImportOthId, using the alias name IntlDelegImportOthId.
      * @return the value of IntlDelegImportOthId
      */
-    public BigDecimal getIntlDelegImportOthId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGIMPORTOTHID);
+    public Number getIntlDelegImportOthId() {
+        return (Number) getAttributeInternal(INTLDELEGIMPORTOTHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegImportOthId.
      * @param value value to set the IntlDelegImportOthId
      */
-    public void setIntlDelegImportOthId(BigDecimal value) {
+    public void setIntlDelegImportOthId(Number value) {
         setAttributeInternal(INTLDELEGIMPORTOTHID, value);
     }
 
@@ -89,15 +89,15 @@ public class TblIntlDelegImportOthImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -105,15 +105,15 @@ public class TblIntlDelegImportOthImpl extends EntityImpl {
      * Gets the attribute value for LibrCountryId, using the alias name LibrCountryId.
      * @return the value of LibrCountryId
      */
-    public BigDecimal getLibrCountryId() {
-        return (BigDecimal) getAttributeInternal(LIBRCOUNTRYID);
+    public Number getLibrCountryId() {
+        return (Number) getAttributeInternal(LIBRCOUNTRYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrCountryId.
      * @param value value to set the LibrCountryId
      */
-    public void setLibrCountryId(BigDecimal value) {
+    public void setLibrCountryId(Number value) {
         setAttributeInternal(LIBRCOUNTRYID, value);
     }
 
@@ -200,7 +200,7 @@ public class TblIntlDelegImportOthImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegImportOthId) {
+    public static Key createPrimaryKey(Number intlDelegImportOthId) {
         return new Key(new Object[] { intlDelegImportOthId });
     }
 

@@ -73,15 +73,15 @@ public class TblIntlDelegImportPkImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegImportPkId, using the alias name IntlDelegImportPkId.
      * @return the value of IntlDelegImportPkId
      */
-    public BigDecimal getIntlDelegImportPkId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGIMPORTPKID);
+    public Number getIntlDelegImportPkId() {
+        return (Number) getAttributeInternal(INTLDELEGIMPORTPKID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegImportPkId.
      * @param value value to set the IntlDelegImportPkId
      */
-    public void setIntlDelegImportPkId(BigDecimal value) {
+    public void setIntlDelegImportPkId(Number value) {
         setAttributeInternal(INTLDELEGIMPORTPKID, value);
     }
 
@@ -89,15 +89,15 @@ public class TblIntlDelegImportPkImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -121,15 +121,15 @@ public class TblIntlDelegImportPkImpl extends EntityImpl {
      * Gets the attribute value for Qty, using the alias name Qty.
      * @return the value of Qty
      */
-    public BigDecimal getQty() {
-        return (BigDecimal) getAttributeInternal(QTY);
+    public Number getQty() {
+        return (Number) getAttributeInternal(QTY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Qty.
      * @param value value to set the Qty
      */
-    public void setQty(BigDecimal value) {
+    public void setQty(Number value) {
         setAttributeInternal(QTY, value);
     }
 
@@ -200,7 +200,7 @@ public class TblIntlDelegImportPkImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegImportPkId) {
+    public static Key createPrimaryKey(Number intlDelegImportPkId) {
         return new Key(new Object[] { intlDelegImportPkId });
     }
 

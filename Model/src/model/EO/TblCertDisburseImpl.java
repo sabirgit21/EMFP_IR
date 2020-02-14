@@ -79,15 +79,15 @@ public class TblCertDisburseImpl extends EntityImpl {
      * Gets the attribute value for CertApprovalId, using the alias name CertApprovalId.
      * @return the value of CertApprovalId
      */
-    public BigDecimal getCertApprovalId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPROVALID);
+    public Number getCertApprovalId() {
+        return (Number) getAttributeInternal(CERTAPPROVALID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertApprovalId.
      * @param value value to set the CertApprovalId
      */
-    public void setCertApprovalId(BigDecimal value) {
+    public void setCertApprovalId(Number value) {
         setAttributeInternal(CERTAPPROVALID, value);
     }
 
@@ -95,15 +95,15 @@ public class TblCertDisburseImpl extends EntityImpl {
      * Gets the attribute value for CertDisburseId, using the alias name CertDisburseId.
      * @return the value of CertDisburseId
      */
-    public BigDecimal getCertDisburseId() {
-        return (BigDecimal) getAttributeInternal(CERTDISBURSEID);
+    public Number getCertDisburseId() {
+        return (Number) getAttributeInternal(CERTDISBURSEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertDisburseId.
      * @param value value to set the CertDisburseId
      */
-    public void setCertDisburseId(BigDecimal value) {
+    public void setCertDisburseId(Number value) {
         setAttributeInternal(CERTDISBURSEID, value);
     }
 
@@ -127,15 +127,15 @@ public class TblCertDisburseImpl extends EntityImpl {
      * Gets the attribute value for FinalGrant, using the alias name FinalGrant.
      * @return the value of FinalGrant
      */
-    public BigDecimal getFinalGrant() {
-        return (BigDecimal) getAttributeInternal(FINALGRANT);
+    public Number getFinalGrant() {
+        return (Number) getAttributeInternal(FINALGRANT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FinalGrant.
      * @param value value to set the FinalGrant
      */
-    public void setFinalGrant(BigDecimal value) {
+    public void setFinalGrant(Number value) {
         setAttributeInternal(FINALGRANT, value);
     }
 
@@ -254,7 +254,7 @@ public class TblCertDisburseImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal certDisburseId) {
+    public static Key createPrimaryKey(Number certDisburseId) {
         return new Key(new Object[] { certDisburseId });
     }
 

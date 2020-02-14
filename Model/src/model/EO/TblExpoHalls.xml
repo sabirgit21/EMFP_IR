@@ -19,7 +19,7 @@
     Name="ExpoHallsId"
     ColumnName="EXPO_HALLS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"
     PrimaryKey="true"
@@ -30,14 +30,14 @@
     IsNotNull="true"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"/>
   <Attribute
     Name="HallNo"
     ColumnName="HALL_NO"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"/>
   <Attribute
@@ -56,14 +56,14 @@
     Name="TotalStalls"
     ColumnName="TOTAL_STALLS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"/>
   <Attribute
     Name="HallArea"
     ColumnName="HALL_AREA"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_HALLS"/>
   <Attribute

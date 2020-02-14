@@ -19,7 +19,7 @@
     Name="StallsAllocId"
     ColumnName="STALLS_ALLOC_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ExhibitorsId"
     ColumnName="EXHIBITORS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"/>
   <Attribute
@@ -37,14 +37,14 @@
     IsNotNull="true"
     ColumnName="EXPO_HALLS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"/>
   <Attribute
     Name="ExpoStallsId"
     ColumnName="EXPO_STALLS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"/>
   <Attribute
@@ -65,7 +65,7 @@
     Name="StallDiscAmt"
     ColumnName="STALL_DISC_AMT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"
     RetrievedOnInsert="true"
@@ -74,7 +74,7 @@
     Name="StallAmount"
     ColumnName="STALL_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_STALLS_ALLOC"
     RetrievedOnInsert="true"

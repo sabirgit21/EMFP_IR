@@ -275,15 +275,15 @@ public class TblGrantDisburseDetailImpl extends EntityImpl {
      * Gets the attribute value for ChequeAmount, using the alias name ChequeAmount.
      * @return the value of ChequeAmount
      */
-    public BigDecimal getChequeAmount() {
-        return (BigDecimal) getAttributeInternal(CHEQUEAMOUNT);
+    public Number getChequeAmount() {
+        return (Number) getAttributeInternal(CHEQUEAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ChequeAmount.
      * @param value value to set the ChequeAmount
      */
-    public void setChequeAmount(BigDecimal value) {
+    public void setChequeAmount(Number value) {
         setAttributeInternal(CHEQUEAMOUNT, value);
     }
 

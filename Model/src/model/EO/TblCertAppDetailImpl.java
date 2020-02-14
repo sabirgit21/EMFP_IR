@@ -89,15 +89,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for CertAppMasterId, using the alias name CertAppMasterId.
      * @return the value of CertAppMasterId
      */
-    public BigDecimal getCertAppMasterId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPMASTERID);
+    public Number getCertAppMasterId() {
+        return (Number) getAttributeInternal(CERTAPPMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertAppMasterId.
      * @param value value to set the CertAppMasterId
      */
-    public void setCertAppMasterId(BigDecimal value) {
+    public void setCertAppMasterId(Number value) {
         setAttributeInternal(CERTAPPMASTERID, value);
     }
 
@@ -105,15 +105,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for CertAppDetailId, using the alias name CertAppDetailId.
      * @return the value of CertAppDetailId
      */
-    public BigDecimal getCertAppDetailId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPDETAILID);
+    public Number getCertAppDetailId() {
+        return (Number) getAttributeInternal(CERTAPPDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertAppDetailId.
      * @param value value to set the CertAppDetailId
      */
-    public void setCertAppDetailId(BigDecimal value) {
+    public void setCertAppDetailId(Number value) {
         setAttributeInternal(CERTAPPDETAILID, value);
     }
 
@@ -121,15 +121,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for CropId, using the alias name CropId.
      * @return the value of CropId
      */
-    public BigDecimal getCropId() {
-        return (BigDecimal) getAttributeInternal(CROPID);
+    public Number getCropId() {
+        return (Number) getAttributeInternal(CROPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CropId.
      * @param value value to set the CropId
      */
-    public void setCropId(BigDecimal value) {
+    public void setCropId(Number value) {
         setAttributeInternal(CROPID, value);
     }
 
@@ -137,15 +137,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for ProdQty, using the alias name ProdQty.
      * @return the value of ProdQty
      */
-    public BigDecimal getProdQty() {
-        return (BigDecimal) getAttributeInternal(PRODQTY);
+    public Number getProdQty() {
+        return (Number) getAttributeInternal(PRODQTY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ProdQty.
      * @param value value to set the ProdQty
      */
-    public void setProdQty(BigDecimal value) {
+    public void setProdQty(Number value) {
         setAttributeInternal(PRODQTY, value);
     }
 
@@ -153,15 +153,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for ExportQty, using the alias name ExportQty.
      * @return the value of ExportQty
      */
-    public BigDecimal getExportQty() {
-        return (BigDecimal) getAttributeInternal(EXPORTQTY);
+    public Number getExportQty() {
+        return (Number) getAttributeInternal(EXPORTQTY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExportQty.
      * @param value value to set the ExportQty
      */
-    public void setExportQty(BigDecimal value) {
+    public void setExportQty(Number value) {
         setAttributeInternal(EXPORTQTY, value);
     }
 
@@ -169,15 +169,15 @@ public class TblCertAppDetailImpl extends EntityImpl {
      * Gets the attribute value for ExportAmount, using the alias name ExportAmount.
      * @return the value of ExportAmount
      */
-    public BigDecimal getExportAmount() {
-        return (BigDecimal) getAttributeInternal(EXPORTAMOUNT);
+    public Number getExportAmount() {
+        return (Number) getAttributeInternal(EXPORTAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExportAmount.
      * @param value value to set the ExportAmount
      */
-    public void setExportAmount(BigDecimal value) {
+    public void setExportAmount(Number value) {
         setAttributeInternal(EXPORTAMOUNT, value);
     }
 
@@ -265,7 +265,7 @@ public class TblCertAppDetailImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal certAppDetailId) {
+    public static Key createPrimaryKey(Number certAppDetailId) {
         return new Key(new Object[] { certAppDetailId });
     }
 

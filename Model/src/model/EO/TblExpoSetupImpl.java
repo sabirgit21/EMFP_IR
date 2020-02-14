@@ -144,15 +144,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -160,15 +160,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for ExpoSetupId, using the alias name ExpoSetupId.
      * @return the value of ExpoSetupId
      */
-    public BigDecimal getExpoSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOSETUPID);
+    public Number getExpoSetupId() {
+        return (Number) getAttributeInternal(EXPOSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSetupId.
      * @param value value to set the ExpoSetupId
      */
-    public void setExpoSetupId(BigDecimal value) {
+    public void setExpoSetupId(Number value) {
         setAttributeInternal(EXPOSETUPID, value);
     }
 
@@ -208,15 +208,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for NoOfDays, using the alias name NoOfDays.
      * @return the value of NoOfDays
      */
-    public BigDecimal getNoOfDays() {
-        return (BigDecimal) getAttributeInternal(NOOFDAYS);
+    public Number getNoOfDays() {
+        return (Number) getAttributeInternal(NOOFDAYS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfDays.
      * @param value value to set the NoOfDays
      */
-    public void setNoOfDays(BigDecimal value) {
+    public void setNoOfDays(Number value) {
         setAttributeInternal(NOOFDAYS, value);
     }
 
@@ -240,15 +240,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for TotalHalls, using the alias name TotalHalls.
      * @return the value of TotalHalls
      */
-    public BigDecimal getTotalHalls() {
-        return (BigDecimal) getAttributeInternal(TOTALHALLS);
+    public Number getTotalHalls() {
+        return (Number) getAttributeInternal(TOTALHALLS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TotalHalls.
      * @param value value to set the TotalHalls
      */
-    public void setTotalHalls(BigDecimal value) {
+    public void setTotalHalls(Number value) {
         setAttributeInternal(TOTALHALLS, value);
     }
 
@@ -288,15 +288,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for ExpoSetupArea, using the alias name ExpoSetupArea.
      * @return the value of ExpoSetupArea
      */
-    public BigDecimal getExpoSetupArea() {
-        return (BigDecimal) getAttributeInternal(EXPOSETUPAREA);
+    public Number getExpoSetupArea() {
+        return (Number) getAttributeInternal(EXPOSETUPAREA);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSetupArea.
      * @param value value to set the ExpoSetupArea
      */
-    public void setExpoSetupArea(BigDecimal value) {
+    public void setExpoSetupArea(Number value) {
         setAttributeInternal(EXPOSETUPAREA, value);
     }
 
@@ -304,15 +304,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for AreaRate, using the alias name AreaRate.
      * @return the value of AreaRate
      */
-    public BigDecimal getAreaRate() {
-        return (BigDecimal) getAttributeInternal(AREARATE);
+    public Number getAreaRate() {
+        return (Number) getAttributeInternal(AREARATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AreaRate.
      * @param value value to set the AreaRate
      */
-    public void setAreaRate(BigDecimal value) {
+    public void setAreaRate(Number value) {
         setAttributeInternal(AREARATE, value);
     }
 
@@ -320,15 +320,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MinExhibitors, using the alias name MinExhibitors.
      * @return the value of MinExhibitors
      */
-    public BigDecimal getMinExhibitors() {
-        return (BigDecimal) getAttributeInternal(MINEXHIBITORS);
+    public Number getMinExhibitors() {
+        return (Number) getAttributeInternal(MINEXHIBITORS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MinExhibitors.
      * @param value value to set the MinExhibitors
      */
-    public void setMinExhibitors(BigDecimal value) {
+    public void setMinExhibitors(Number value) {
         setAttributeInternal(MINEXHIBITORS, value);
     }
 
@@ -336,15 +336,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MaxExhibitors, using the alias name MaxExhibitors.
      * @return the value of MaxExhibitors
      */
-    public BigDecimal getMaxExhibitors() {
-        return (BigDecimal) getAttributeInternal(MAXEXHIBITORS);
+    public Number getMaxExhibitors() {
+        return (Number) getAttributeInternal(MAXEXHIBITORS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MaxExhibitors.
      * @param value value to set the MaxExhibitors
      */
-    public void setMaxExhibitors(BigDecimal value) {
+    public void setMaxExhibitors(Number value) {
         setAttributeInternal(MAXEXHIBITORS, value);
     }
 
@@ -352,15 +352,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MinStalls, using the alias name MinStalls.
      * @return the value of MinStalls
      */
-    public BigDecimal getMinStalls() {
-        return (BigDecimal) getAttributeInternal(MINSTALLS);
+    public Number getMinStalls() {
+        return (Number) getAttributeInternal(MINSTALLS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MinStalls.
      * @param value value to set the MinStalls
      */
-    public void setMinStalls(BigDecimal value) {
+    public void setMinStalls(Number value) {
         setAttributeInternal(MINSTALLS, value);
     }
 
@@ -368,15 +368,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MaxStalls, using the alias name MaxStalls.
      * @return the value of MaxStalls
      */
-    public BigDecimal getMaxStalls() {
-        return (BigDecimal) getAttributeInternal(MAXSTALLS);
+    public Number getMaxStalls() {
+        return (Number) getAttributeInternal(MAXSTALLS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MaxStalls.
      * @param value value to set the MaxStalls
      */
-    public void setMaxStalls(BigDecimal value) {
+    public void setMaxStalls(Number value) {
         setAttributeInternal(MAXSTALLS, value);
     }
 
@@ -384,15 +384,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MinB2b, using the alias name MinB2b.
      * @return the value of MinB2b
      */
-    public BigDecimal getMinB2b() {
-        return (BigDecimal) getAttributeInternal(MINB2B);
+    public Number getMinB2b() {
+        return (Number) getAttributeInternal(MINB2B);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MinB2b.
      * @param value value to set the MinB2b
      */
-    public void setMinB2b(BigDecimal value) {
+    public void setMinB2b(Number value) {
         setAttributeInternal(MINB2B, value);
     }
 
@@ -400,15 +400,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MaxB2b, using the alias name MaxB2b.
      * @return the value of MaxB2b
      */
-    public BigDecimal getMaxB2b() {
-        return (BigDecimal) getAttributeInternal(MAXB2B);
+    public Number getMaxB2b() {
+        return (Number) getAttributeInternal(MAXB2B);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MaxB2b.
      * @param value value to set the MaxB2b
      */
-    public void setMaxB2b(BigDecimal value) {
+    public void setMaxB2b(Number value) {
         setAttributeInternal(MAXB2B, value);
     }
 
@@ -416,15 +416,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MinLocalDeleg, using the alias name MinLocalDeleg.
      * @return the value of MinLocalDeleg
      */
-    public BigDecimal getMinLocalDeleg() {
-        return (BigDecimal) getAttributeInternal(MINLOCALDELEG);
+    public Number getMinLocalDeleg() {
+        return (Number) getAttributeInternal(MINLOCALDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MinLocalDeleg.
      * @param value value to set the MinLocalDeleg
      */
-    public void setMinLocalDeleg(BigDecimal value) {
+    public void setMinLocalDeleg(Number value) {
         setAttributeInternal(MINLOCALDELEG, value);
     }
 
@@ -432,15 +432,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MaxLocalDeleg, using the alias name MaxLocalDeleg.
      * @return the value of MaxLocalDeleg
      */
-    public BigDecimal getMaxLocalDeleg() {
-        return (BigDecimal) getAttributeInternal(MAXLOCALDELEG);
+    public Number getMaxLocalDeleg() {
+        return (Number) getAttributeInternal(MAXLOCALDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MaxLocalDeleg.
      * @param value value to set the MaxLocalDeleg
      */
-    public void setMaxLocalDeleg(BigDecimal value) {
+    public void setMaxLocalDeleg(Number value) {
         setAttributeInternal(MAXLOCALDELEG, value);
     }
 
@@ -448,15 +448,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MinIntlDeleg, using the alias name MinIntlDeleg.
      * @return the value of MinIntlDeleg
      */
-    public BigDecimal getMinIntlDeleg() {
-        return (BigDecimal) getAttributeInternal(MININTLDELEG);
+    public Number getMinIntlDeleg() {
+        return (Number) getAttributeInternal(MININTLDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MinIntlDeleg.
      * @param value value to set the MinIntlDeleg
      */
-    public void setMinIntlDeleg(BigDecimal value) {
+    public void setMinIntlDeleg(Number value) {
         setAttributeInternal(MININTLDELEG, value);
     }
 
@@ -464,15 +464,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for MaxIntlDeleg, using the alias name MaxIntlDeleg.
      * @return the value of MaxIntlDeleg
      */
-    public BigDecimal getMaxIntlDeleg() {
-        return (BigDecimal) getAttributeInternal(MAXINTLDELEG);
+    public Number getMaxIntlDeleg() {
+        return (Number) getAttributeInternal(MAXINTLDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for MaxIntlDeleg.
      * @param value value to set the MaxIntlDeleg
      */
-    public void setMaxIntlDeleg(BigDecimal value) {
+    public void setMaxIntlDeleg(Number value) {
         setAttributeInternal(MAXINTLDELEG, value);
     }
 
@@ -528,15 +528,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FB2b, using the alias name FB2b.
      * @return the value of FB2b
      */
-    public BigDecimal getFB2b() {
-        return (BigDecimal) getAttributeInternal(FB2B);
+    public Number getFB2b() {
+        return (Number) getAttributeInternal(FB2B);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FB2b.
      * @param value value to set the FB2b
      */
-    public void setFB2b(BigDecimal value) {
+    public void setFB2b(Number value) {
         setAttributeInternal(FB2B, value);
     }
 
@@ -544,15 +544,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FExhibitors, using the alias name FExhibitors.
      * @return the value of FExhibitors
      */
-    public BigDecimal getFExhibitors() {
-        return (BigDecimal) getAttributeInternal(FEXHIBITORS);
+    public Number getFExhibitors() {
+        return (Number) getAttributeInternal(FEXHIBITORS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FExhibitors.
      * @param value value to set the FExhibitors
      */
-    public void setFExhibitors(BigDecimal value) {
+    public void setFExhibitors(Number value) {
         setAttributeInternal(FEXHIBITORS, value);
     }
 
@@ -560,15 +560,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FIntlDeleg, using the alias name FIntlDeleg.
      * @return the value of FIntlDeleg
      */
-    public BigDecimal getFIntlDeleg() {
-        return (BigDecimal) getAttributeInternal(FINTLDELEG);
+    public Number getFIntlDeleg() {
+        return (Number) getAttributeInternal(FINTLDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FIntlDeleg.
      * @param value value to set the FIntlDeleg
      */
-    public void setFIntlDeleg(BigDecimal value) {
+    public void setFIntlDeleg(Number value) {
         setAttributeInternal(FINTLDELEG, value);
     }
 
@@ -576,15 +576,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FLocalDeleg, using the alias name FLocalDeleg.
      * @return the value of FLocalDeleg
      */
-    public BigDecimal getFLocalDeleg() {
-        return (BigDecimal) getAttributeInternal(FLOCALDELEG);
+    public Number getFLocalDeleg() {
+        return (Number) getAttributeInternal(FLOCALDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FLocalDeleg.
      * @param value value to set the FLocalDeleg
      */
-    public void setFLocalDeleg(BigDecimal value) {
+    public void setFLocalDeleg(Number value) {
         setAttributeInternal(FLOCALDELEG, value);
     }
 
@@ -592,15 +592,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FStalls, using the alias name FStalls.
      * @return the value of FStalls
      */
-    public BigDecimal getFStalls() {
-        return (BigDecimal) getAttributeInternal(FSTALLS);
+    public Number getFStalls() {
+        return (Number) getAttributeInternal(FSTALLS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FStalls.
      * @param value value to set the FStalls
      */
-    public void setFStalls(BigDecimal value) {
+    public void setFStalls(Number value) {
         setAttributeInternal(FSTALLS, value);
     }
 
@@ -640,15 +640,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for BusLeads, using the alias name BusLeads.
      * @return the value of BusLeads
      */
-    public BigDecimal getBusLeads() {
-        return (BigDecimal) getAttributeInternal(BUSLEADS);
+    public Number getBusLeads() {
+        return (Number) getAttributeInternal(BUSLEADS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for BusLeads.
      * @param value value to set the BusLeads
      */
-    public void setBusLeads(BigDecimal value) {
+    public void setBusLeads(Number value) {
         setAttributeInternal(BUSLEADS, value);
     }
 
@@ -656,15 +656,15 @@ public class TblExpoSetupImpl extends EntityImpl {
      * Gets the attribute value for FLeads, using the alias name FLeads.
      * @return the value of FLeads
      */
-    public BigDecimal getFLeads() {
-        return (BigDecimal) getAttributeInternal(FLEADS);
+    public Number getFLeads() {
+        return (Number) getAttributeInternal(FLEADS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FLeads.
      * @param value value to set the FLeads
      */
-    public void setFLeads(BigDecimal value) {
+    public void setFLeads(Number value) {
         setAttributeInternal(FLEADS, value);
     }
 
@@ -716,7 +716,7 @@ public class TblExpoSetupImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoSetupId) {
+    public static Key createPrimaryKey(Number expoSetupId) {
         return new Key(new Object[] { expoSetupId });
     }
 

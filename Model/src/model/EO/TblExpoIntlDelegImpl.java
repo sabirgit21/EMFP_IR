@@ -83,15 +83,15 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      * Gets the attribute value for ExpoIntlDelegId, using the alias name ExpoIntlDelegId.
      * @return the value of ExpoIntlDelegId
      */
-    public BigDecimal getExpoIntlDelegId() {
-        return (BigDecimal) getAttributeInternal(EXPOINTLDELEGID);
+    public Number getExpoIntlDelegId() {
+        return (Number) getAttributeInternal(EXPOINTLDELEGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoIntlDelegId.
      * @param value value to set the ExpoIntlDelegId
      */
-    public void setExpoIntlDelegId(BigDecimal value) {
+    public void setExpoIntlDelegId(Number value) {
         setAttributeInternal(EXPOINTLDELEGID, value);
     }
 
@@ -99,15 +99,15 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      * Gets the attribute value for ExpoSetupId, using the alias name ExpoSetupId.
      * @return the value of ExpoSetupId
      */
-    public BigDecimal getExpoSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOSETUPID);
+    public Number getExpoSetupId() {
+        return (Number) getAttributeInternal(EXPOSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSetupId.
      * @param value value to set the ExpoSetupId
      */
-    public void setExpoSetupId(BigDecimal value) {
+    public void setExpoSetupId(Number value) {
         setAttributeInternal(EXPOSETUPID, value);
     }
 
@@ -115,15 +115,15 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      * Gets the attribute value for TotalDeleg, using the alias name TotalDeleg.
      * @return the value of TotalDeleg
      */
-    public BigDecimal getTotalDeleg() {
-        return (BigDecimal) getAttributeInternal(TOTALDELEG);
+    public Number getTotalDeleg() {
+        return (Number) getAttributeInternal(TOTALDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TotalDeleg.
      * @param value value to set the TotalDeleg
      */
-    public void setTotalDeleg(BigDecimal value) {
+    public void setTotalDeleg(Number value) {
         setAttributeInternal(TOTALDELEG, value);
     }
 
@@ -131,15 +131,15 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      * Gets the attribute value for LibrCountryId, using the alias name LibrCountryId.
      * @return the value of LibrCountryId
      */
-    public BigDecimal getLibrCountryId() {
-        return (BigDecimal) getAttributeInternal(LIBRCOUNTRYID);
+    public Number getLibrCountryId() {
+        return (Number) getAttributeInternal(LIBRCOUNTRYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrCountryId.
      * @param value value to set the LibrCountryId
      */
-    public void setLibrCountryId(BigDecimal value) {
+    public void setLibrCountryId(Number value) {
         setAttributeInternal(LIBRCOUNTRYID, value);
     }
 
@@ -195,15 +195,15 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
      * Gets the attribute value for FDeleg, using the alias name FDeleg.
      * @return the value of FDeleg
      */
-    public BigDecimal getFDeleg() {
-        return (BigDecimal) getAttributeInternal(FDELEG);
+    public Number getFDeleg() {
+        return (Number) getAttributeInternal(FDELEG);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FDeleg.
      * @param value value to set the FDeleg
      */
-    public void setFDeleg(BigDecimal value) {
+    public void setFDeleg(Number value) {
         setAttributeInternal(FDELEG, value);
     }
 
@@ -227,7 +227,7 @@ public class TblExpoIntlDelegImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoIntlDelegId) {
+    public static Key createPrimaryKey(Number expoIntlDelegId) {
         return new Key(new Object[] { expoIntlDelegId });
     }
 

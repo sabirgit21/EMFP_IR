@@ -157,15 +157,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -173,15 +173,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for ExpoSetupId, using the alias name ExpoSetupId.
      * @return the value of ExpoSetupId
      */
-    public BigDecimal getExpoSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOSETUPID);
+    public Number getExpoSetupId() {
+        return (Number) getAttributeInternal(EXPOSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSetupId.
      * @param value value to set the ExpoSetupId
      */
-    public void setExpoSetupId(BigDecimal value) {
+    public void setExpoSetupId(Number value) {
         setAttributeInternal(EXPOSETUPID, value);
     }
 
@@ -413,15 +413,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for AnnTurnSale, using the alias name AnnTurnSale.
      * @return the value of AnnTurnSale
      */
-    public BigDecimal getAnnTurnSale() {
-        return (BigDecimal) getAttributeInternal(ANNTURNSALE);
+    public Number getAnnTurnSale() {
+        return (Number) getAttributeInternal(ANNTURNSALE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AnnTurnSale.
      * @param value value to set the AnnTurnSale
      */
-    public void setAnnTurnSale(BigDecimal value) {
+    public void setAnnTurnSale(Number value) {
         setAttributeInternal(ANNTURNSALE, value);
     }
 
@@ -429,15 +429,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for AnnImports, using the alias name AnnImports.
      * @return the value of AnnImports
      */
-    public BigDecimal getAnnImports() {
-        return (BigDecimal) getAttributeInternal(ANNIMPORTS);
+    public Number getAnnImports() {
+        return (Number) getAttributeInternal(ANNIMPORTS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AnnImports.
      * @param value value to set the AnnImports
      */
-    public void setAnnImports(BigDecimal value) {
+    public void setAnnImports(Number value) {
         setAttributeInternal(ANNIMPORTS, value);
     }
 
@@ -509,15 +509,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for LibrInterpretReq, using the alias name LibrInterpretReq.
      * @return the value of LibrInterpretReq
      */
-    public BigDecimal getLibrInterpretReq() {
-        return (BigDecimal) getAttributeInternal(LIBRINTERPRETREQ);
+    public Number getLibrInterpretReq() {
+        return (Number) getAttributeInternal(LIBRINTERPRETREQ);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrInterpretReq.
      * @param value value to set the LibrInterpretReq
      */
-    public void setLibrInterpretReq(BigDecimal value) {
+    public void setLibrInterpretReq(Number value) {
         setAttributeInternal(LIBRINTERPRETREQ, value);
     }
 
@@ -653,15 +653,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -701,15 +701,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for LibrCitizen, using the alias name LibrCitizen.
      * @return the value of LibrCitizen
      */
-    public BigDecimal getLibrCitizen() {
-        return (BigDecimal) getAttributeInternal(LIBRCITIZEN);
+    public Number getLibrCitizen() {
+        return (Number) getAttributeInternal(LIBRCITIZEN);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrCitizen.
      * @param value value to set the LibrCitizen
      */
-    public void setLibrCitizen(BigDecimal value) {
+    public void setLibrCitizen(Number value) {
         setAttributeInternal(LIBRCITIZEN, value);
     }
 
@@ -733,15 +733,15 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      * Gets the attribute value for LibrTrvFromCntry, using the alias name LibrTrvFromCntry.
      * @return the value of LibrTrvFromCntry
      */
-    public BigDecimal getLibrTrvFromCntry() {
-        return (BigDecimal) getAttributeInternal(LIBRTRVFROMCNTRY);
+    public Number getLibrTrvFromCntry() {
+        return (Number) getAttributeInternal(LIBRTRVFROMCNTRY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrTrvFromCntry.
      * @param value value to set the LibrTrvFromCntry
      */
-    public void setLibrTrvFromCntry(BigDecimal value) {
+    public void setLibrTrvFromCntry(Number value) {
         setAttributeInternal(LIBRTRVFROMCNTRY, value);
     }
 
@@ -807,7 +807,7 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegAppMId) {
+    public static Key createPrimaryKey(Number intlDelegAppMId) {
         return new Key(new Object[] { intlDelegAppMId });
     }
 

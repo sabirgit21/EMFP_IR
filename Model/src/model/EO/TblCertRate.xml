@@ -19,7 +19,7 @@
     Name="CertRateId"
     ColumnName="CERT_RATE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_RATE"
     PrimaryKey="true"
@@ -29,21 +29,21 @@
     Name="CertificationId"
     ColumnName="CERTIFICATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_RATE"/>
   <Attribute
     Name="CertAmount"
     ColumnName="CERT_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_RATE"/>
   <Attribute
     Name="CertGrant"
     ColumnName="CERT_GRANT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_RATE"/>
   <Attribute

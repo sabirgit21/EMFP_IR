@@ -94,15 +94,15 @@ public class TblExpoSchImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -142,15 +142,15 @@ public class TblExpoSchImpl extends EntityImpl {
      * Gets the attribute value for CropId, using the alias name CropId.
      * @return the value of CropId
      */
-    public BigDecimal getCropId() {
-        return (BigDecimal) getAttributeInternal(CROPID);
+    public Number getCropId() {
+        return (Number) getAttributeInternal(CROPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CropId.
      * @param value value to set the CropId
      */
-    public void setCropId(BigDecimal value) {
+    public void setCropId(Number value) {
         setAttributeInternal(CROPID, value);
     }
 
@@ -158,15 +158,15 @@ public class TblExpoSchImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -254,15 +254,15 @@ public class TblExpoSchImpl extends EntityImpl {
      * Gets the attribute value for SchYear, using the alias name SchYear.
      * @return the value of SchYear
      */
-    public BigDecimal getSchYear() {
-        return (BigDecimal) getAttributeInternal(SCHYEAR);
+    public Number getSchYear() {
+        return (Number) getAttributeInternal(SCHYEAR);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SchYear.
      * @param value value to set the SchYear
      */
-    public void setSchYear(BigDecimal value) {
+    public void setSchYear(Number value) {
         setAttributeInternal(SCHYEAR, value);
     }
 
@@ -287,7 +287,7 @@ public class TblExpoSchImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoSchId) {
+    public static Key createPrimaryKey(Number expoSchId) {
         return new Key(new Object[] { expoSchId });
     }
 

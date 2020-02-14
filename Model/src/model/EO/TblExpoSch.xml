@@ -19,7 +19,7 @@
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SCH"
     PrimaryKey="true"
@@ -56,14 +56,14 @@
     Name="CropId"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SCH"/>
   <Attribute
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SCH"/>
   <Attribute
@@ -129,7 +129,7 @@
     Name="SchYear"
     ColumnName="SCH_YEAR"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SCH"/>
   <AccessorAttribute

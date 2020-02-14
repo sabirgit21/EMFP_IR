@@ -78,15 +78,15 @@ public class TblCertApprovalImpl extends EntityImpl {
      * Gets the attribute value for CertAppMasterId, using the alias name CertAppMasterId.
      * @return the value of CertAppMasterId
      */
-    public BigDecimal getCertAppMasterId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPMASTERID);
+    public Number getCertAppMasterId() {
+        return (Number) getAttributeInternal(CERTAPPMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertAppMasterId.
      * @param value value to set the CertAppMasterId
      */
-    public void setCertAppMasterId(BigDecimal value) {
+    public void setCertAppMasterId(Number value) {
         setAttributeInternal(CERTAPPMASTERID, value);
     }
 
@@ -94,15 +94,15 @@ public class TblCertApprovalImpl extends EntityImpl {
      * Gets the attribute value for CertApprovalId, using the alias name CertApprovalId.
      * @return the value of CertApprovalId
      */
-    public BigDecimal getCertApprovalId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPROVALID);
+    public Number getCertApprovalId() {
+        return (Number) getAttributeInternal(CERTAPPROVALID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertApprovalId.
      * @param value value to set the CertApprovalId
      */
-    public void setCertApprovalId(BigDecimal value) {
+    public void setCertApprovalId(Number value) {
         setAttributeInternal(CERTAPPROVALID, value);
     }
 
@@ -126,15 +126,15 @@ public class TblCertApprovalImpl extends EntityImpl {
      * Gets the attribute value for CertRateId, using the alias name CertRateId.
      * @return the value of CertRateId
      */
-    public BigDecimal getCertRateId() {
-        return (BigDecimal) getAttributeInternal(CERTRATEID);
+    public Number getCertRateId() {
+        return (Number) getAttributeInternal(CERTRATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertRateId.
      * @param value value to set the CertRateId
      */
-    public void setCertRateId(BigDecimal value) {
+    public void setCertRateId(Number value) {
         setAttributeInternal(CERTRATEID, value);
     }
 
@@ -226,7 +226,7 @@ public class TblCertApprovalImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal certApprovalId) {
+    public static Key createPrimaryKey(Number certApprovalId) {
         return new Key(new Object[] { certApprovalId });
     }
 

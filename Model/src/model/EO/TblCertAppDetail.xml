@@ -19,14 +19,14 @@
     Name="CertAppMasterId"
     ColumnName="CERT_APP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"/>
   <Attribute
     Name="CertAppDetailId"
     ColumnName="CERT_APP_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"
     PrimaryKey="true"
@@ -36,28 +36,28 @@
     Name="CropId"
     ColumnName="CROP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"/>
   <Attribute
     Name="ProdQty"
     ColumnName="PROD_QTY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"/>
   <Attribute
     Name="ExportQty"
     ColumnName="EXPORT_QTY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"/>
   <Attribute
     Name="ExportAmount"
     ColumnName="EXPORT_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_DETAIL"/>
   <Attribute

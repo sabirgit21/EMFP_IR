@@ -19,7 +19,7 @@
     Name="B2bMeetingId"
     ColumnName="B2B_MEETING_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"
     PrimaryKey="true"
@@ -43,14 +43,14 @@
     Name="ExhibitorsId"
     ColumnName="EXHIBITORS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
@@ -69,7 +69,7 @@
     Name="IntlDelegAppMId"
     ColumnName="INTL_DELEG_APP_M_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
@@ -88,35 +88,35 @@
     Name="Linkages"
     ColumnName="LINKAGES"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
     Name="ExpDeal"
     ColumnName="EXP_DEAL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
     Name="ExpDealAmt"
     ColumnName="EXP_DEAL_AMT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
     Name="FinalDeal"
     ColumnName="FINAL_DEAL"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute
     Name="FinalDealAmt"
     ColumnName="FINAL_DEAL_AMT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING"/>
   <Attribute

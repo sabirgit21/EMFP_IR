@@ -71,15 +71,15 @@ public class TblIntlDelegImportIntrImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegImportIntrId, using the alias name IntlDelegImportIntrId.
      * @return the value of IntlDelegImportIntrId
      */
-    public BigDecimal getIntlDelegImportIntrId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGIMPORTINTRID);
+    public Number getIntlDelegImportIntrId() {
+        return (Number) getAttributeInternal(INTLDELEGIMPORTINTRID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegImportIntrId.
      * @param value value to set the IntlDelegImportIntrId
      */
-    public void setIntlDelegImportIntrId(BigDecimal value) {
+    public void setIntlDelegImportIntrId(Number value) {
         setAttributeInternal(INTLDELEGIMPORTINTRID, value);
     }
 
@@ -87,15 +87,15 @@ public class TblIntlDelegImportIntrImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -182,7 +182,7 @@ public class TblIntlDelegImportIntrImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegImportIntrId) {
+    public static Key createPrimaryKey(Number intlDelegImportIntrId) {
         return new Key(new Object[] { intlDelegImportIntrId });
     }
 

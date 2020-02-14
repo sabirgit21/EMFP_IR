@@ -19,14 +19,14 @@
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_SETUP"/>
   <Attribute
     Name="ExpoPromSetupId"
     ColumnName="EXPO_PROM_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_SETUP"
     PrimaryKey="true"
@@ -50,7 +50,7 @@
     Name="NoOfDays"
     ColumnName="NO_OF_DAYS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_SETUP"/>
   <Attribute

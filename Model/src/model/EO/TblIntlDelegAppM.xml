@@ -19,7 +19,7 @@
     Name="IntlDelegAppMId"
     ColumnName="INTL_DELEG_APP_M_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ExpoSetupId"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
@@ -189,14 +189,14 @@
     Name="AnnTurnSale"
     ColumnName="ANN_TURN_SALE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
     Name="AnnImports"
     ColumnName="ANN_IMPORTS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
@@ -251,7 +251,7 @@
     Name="LibrInterpretReq"
     ColumnName="LIBR_INTERPRET_REQ"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
@@ -344,7 +344,7 @@
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
@@ -370,7 +370,7 @@
     Name="LibrCitizen"
     ColumnName="LIBR_CITIZEN"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <Attribute
@@ -384,7 +384,7 @@
     Name="LibrTrvFromCntry"
     ColumnName="LIBR_TRV_FROM_CNTRY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
   <AccessorAttribute

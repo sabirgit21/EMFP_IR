@@ -106,15 +106,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for ExhibitorsId, using the alias name ExhibitorsId.
      * @return the value of ExhibitorsId
      */
-    public BigDecimal getExhibitorsId() {
-        return (BigDecimal) getAttributeInternal(EXHIBITORSID);
+    public Number getExhibitorsId() {
+        return (Number) getAttributeInternal(EXHIBITORSID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExhibitorsId.
      * @param value value to set the ExhibitorsId
      */
-    public void setExhibitorsId(BigDecimal value) {
+    public void setExhibitorsId(Number value) {
         setAttributeInternal(EXHIBITORSID, value);
     }
 
@@ -122,15 +122,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for ExpoSetupId, using the alias name ExpoSetupId.
      * @return the value of ExpoSetupId
      */
-    public BigDecimal getExpoSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOSETUPID);
+    public Number getExpoSetupId() {
+        return (Number) getAttributeInternal(EXPOSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSetupId.
      * @param value value to set the ExpoSetupId
      */
-    public void setExpoSetupId(BigDecimal value) {
+    public void setExpoSetupId(Number value) {
         setAttributeInternal(EXPOSETUPID, value);
     }
 
@@ -202,15 +202,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for LibrCountryId, using the alias name LibrCountryId.
      * @return the value of LibrCountryId
      */
-    public BigDecimal getLibrCountryId() {
-        return (BigDecimal) getAttributeInternal(LIBRCOUNTRYID);
+    public Number getLibrCountryId() {
+        return (Number) getAttributeInternal(LIBRCOUNTRYID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrCountryId.
      * @param value value to set the LibrCountryId
      */
-    public void setLibrCountryId(BigDecimal value) {
+    public void setLibrCountryId(Number value) {
         setAttributeInternal(LIBRCOUNTRYID, value);
     }
 
@@ -250,15 +250,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -314,15 +314,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -330,15 +330,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for ClusterId, using the alias name ClusterId.
      * @return the value of ClusterId
      */
-    public BigDecimal getClusterId() {
-        return (BigDecimal) getAttributeInternal(CLUSTERID);
+    public Number getClusterId() {
+        return (Number) getAttributeInternal(CLUSTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ClusterId.
      * @param value value to set the ClusterId
      */
-    public void setClusterId(BigDecimal value) {
+    public void setClusterId(Number value) {
         setAttributeInternal(CLUSTERID, value);
     }
 
@@ -346,15 +346,15 @@ public class TblExhibitorsImpl extends EntityImpl {
      * Gets the attribute value for PhaseId, using the alias name PhaseId.
      * @return the value of PhaseId
      */
-    public BigDecimal getPhaseId() {
-        return (BigDecimal) getAttributeInternal(PHASEID);
+    public Number getPhaseId() {
+        return (Number) getAttributeInternal(PHASEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for PhaseId.
      * @param value value to set the PhaseId
      */
-    public void setPhaseId(BigDecimal value) {
+    public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
     }
 
@@ -392,7 +392,7 @@ public class TblExhibitorsImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal exhibitorsId) {
+    public static Key createPrimaryKey(Number exhibitorsId) {
         return new Key(new Object[] { exhibitorsId });
     }
 

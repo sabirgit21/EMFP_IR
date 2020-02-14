@@ -79,15 +79,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for ExpoPromDetailId, using the alias name ExpoPromDetailId.
      * @return the value of ExpoPromDetailId
      */
-    public BigDecimal getExpoPromDetailId() {
-        return (BigDecimal) getAttributeInternal(EXPOPROMDETAILID);
+    public Number getExpoPromDetailId() {
+        return (Number) getAttributeInternal(EXPOPROMDETAILID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoPromDetailId.
      * @param value value to set the ExpoPromDetailId
      */
-    public void setExpoPromDetailId(BigDecimal value) {
+    public void setExpoPromDetailId(Number value) {
         setAttributeInternal(EXPOPROMDETAILID, value);
     }
 
@@ -95,15 +95,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for ExpoPromSetupId, using the alias name ExpoPromSetupId.
      * @return the value of ExpoPromSetupId
      */
-    public BigDecimal getExpoPromSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOPROMSETUPID);
+    public Number getExpoPromSetupId() {
+        return (Number) getAttributeInternal(EXPOPROMSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoPromSetupId.
      * @param value value to set the ExpoPromSetupId
      */
-    public void setExpoPromSetupId(BigDecimal value) {
+    public void setExpoPromSetupId(Number value) {
         setAttributeInternal(EXPOPROMSETUPID, value);
     }
 
@@ -111,15 +111,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for StallArea, using the alias name StallArea.
      * @return the value of StallArea
      */
-    public BigDecimal getStallArea() {
-        return (BigDecimal) getAttributeInternal(STALLAREA);
+    public Number getStallArea() {
+        return (Number) getAttributeInternal(STALLAREA);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for StallArea.
      * @param value value to set the StallArea
      */
-    public void setStallArea(BigDecimal value) {
+    public void setStallArea(Number value) {
         setAttributeInternal(STALLAREA, value);
     }
 
@@ -127,15 +127,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for AreaRate, using the alias name AreaRate.
      * @return the value of AreaRate
      */
-    public BigDecimal getAreaRate() {
-        return (BigDecimal) getAttributeInternal(AREARATE);
+    public Number getAreaRate() {
+        return (Number) getAttributeInternal(AREARATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AreaRate.
      * @param value value to set the AreaRate
      */
-    public void setAreaRate(BigDecimal value) {
+    public void setAreaRate(Number value) {
         setAttributeInternal(AREARATE, value);
     }
 
@@ -143,15 +143,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for StallAmount, using the alias name StallAmount.
      * @return the value of StallAmount
      */
-    public BigDecimal getStallAmount() {
-        return (BigDecimal) getAttributeInternal(STALLAMOUNT);
+    public Number getStallAmount() {
+        return (Number) getAttributeInternal(STALLAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for StallAmount.
      * @param value value to set the StallAmount
      */
-    public void setStallAmount(BigDecimal value) {
+    public void setStallAmount(Number value) {
         setAttributeInternal(STALLAMOUNT, value);
     }
 
@@ -159,15 +159,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for TastingAmt, using the alias name TastingAmt.
      * @return the value of TastingAmt
      */
-    public BigDecimal getTastingAmt() {
-        return (BigDecimal) getAttributeInternal(TASTINGAMT);
+    public Number getTastingAmt() {
+        return (Number) getAttributeInternal(TASTINGAMT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TastingAmt.
      * @param value value to set the TastingAmt
      */
-    public void setTastingAmt(BigDecimal value) {
+    public void setTastingAmt(Number value) {
         setAttributeInternal(TASTINGAMT, value);
     }
 
@@ -175,15 +175,15 @@ public class TblExpoPromDetailImpl extends EntityImpl {
      * Gets the attribute value for SalesAmt, using the alias name SalesAmt.
      * @return the value of SalesAmt
      */
-    public BigDecimal getSalesAmt() {
-        return (BigDecimal) getAttributeInternal(SALESAMT);
+    public Number getSalesAmt() {
+        return (Number) getAttributeInternal(SALESAMT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for SalesAmt.
      * @param value value to set the SalesAmt
      */
-    public void setSalesAmt(BigDecimal value) {
+    public void setSalesAmt(Number value) {
         setAttributeInternal(SALESAMT, value);
     }
 
@@ -254,7 +254,7 @@ public class TblExpoPromDetailImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoPromSetupId) {
+    public static Key createPrimaryKey(Number expoPromSetupId) {
         return new Key(new Object[] { expoPromSetupId });
     }
 

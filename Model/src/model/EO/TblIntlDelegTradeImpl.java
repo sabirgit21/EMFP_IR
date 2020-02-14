@@ -73,15 +73,15 @@ public class TblIntlDelegTradeImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegTradeId, using the alias name IntlDelegTradeId.
      * @return the value of IntlDelegTradeId
      */
-    public BigDecimal getIntlDelegTradeId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGTRADEID);
+    public Number getIntlDelegTradeId() {
+        return (Number) getAttributeInternal(INTLDELEGTRADEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegTradeId.
      * @param value value to set the IntlDelegTradeId
      */
-    public void setIntlDelegTradeId(BigDecimal value) {
+    public void setIntlDelegTradeId(Number value) {
         setAttributeInternal(INTLDELEGTRADEID, value);
     }
 
@@ -89,15 +89,15 @@ public class TblIntlDelegTradeImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -105,15 +105,15 @@ public class TblIntlDelegTradeImpl extends EntityImpl {
      * Gets the attribute value for LibrTradeTypesId, using the alias name LibrTradeTypesId.
      * @return the value of LibrTradeTypesId
      */
-    public BigDecimal getLibrTradeTypesId() {
-        return (BigDecimal) getAttributeInternal(LIBRTRADETYPESID);
+    public Number getLibrTradeTypesId() {
+        return (Number) getAttributeInternal(LIBRTRADETYPESID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrTradeTypesId.
      * @param value value to set the LibrTradeTypesId
      */
-    public void setLibrTradeTypesId(BigDecimal value) {
+    public void setLibrTradeTypesId(Number value) {
         setAttributeInternal(LIBRTRADETYPESID, value);
     }
 
@@ -200,7 +200,7 @@ public class TblIntlDelegTradeImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegTradeId) {
+    public static Key createPrimaryKey(Number intlDelegTradeId) {
         return new Key(new Object[] { intlDelegTradeId });
     }
 

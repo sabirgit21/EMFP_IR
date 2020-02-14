@@ -19,7 +19,7 @@
     Name="ExpoIntlDelegId"
     ColumnName="EXPO_INTL_DELEG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"
     PrimaryKey="true"
@@ -30,21 +30,21 @@
     IsNotNull="true"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"/>
   <Attribute
     Name="TotalDeleg"
     ColumnName="TOTAL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"/>
   <Attribute
     Name="LibrCountryId"
     ColumnName="LIBR_COUNTRY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"/>
   <Attribute
@@ -82,7 +82,7 @@
     Name="FDeleg"
     ColumnName="F_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"/>
   <AccessorAttribute

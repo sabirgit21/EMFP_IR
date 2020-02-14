@@ -73,15 +73,15 @@ public class TblIntlDelegAccomImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAccomId, using the alias name IntlDelegAccomId.
      * @return the value of IntlDelegAccomId
      */
-    public BigDecimal getIntlDelegAccomId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGACCOMID);
+    public Number getIntlDelegAccomId() {
+        return (Number) getAttributeInternal(INTLDELEGACCOMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAccomId.
      * @param value value to set the IntlDelegAccomId
      */
-    public void setIntlDelegAccomId(BigDecimal value) {
+    public void setIntlDelegAccomId(Number value) {
         setAttributeInternal(INTLDELEGACCOMID, value);
     }
 
@@ -89,15 +89,15 @@ public class TblIntlDelegAccomImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -105,15 +105,15 @@ public class TblIntlDelegAccomImpl extends EntityImpl {
      * Gets the attribute value for LibrAccomTypesId, using the alias name LibrAccomTypesId.
      * @return the value of LibrAccomTypesId
      */
-    public BigDecimal getLibrAccomTypesId() {
-        return (BigDecimal) getAttributeInternal(LIBRACCOMTYPESID);
+    public Number getLibrAccomTypesId() {
+        return (Number) getAttributeInternal(LIBRACCOMTYPESID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for LibrAccomTypesId.
      * @param value value to set the LibrAccomTypesId
      */
-    public void setLibrAccomTypesId(BigDecimal value) {
+    public void setLibrAccomTypesId(Number value) {
         setAttributeInternal(LIBRACCOMTYPESID, value);
     }
 
@@ -200,7 +200,7 @@ public class TblIntlDelegAccomImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal intlDelegAccomId) {
+    public static Key createPrimaryKey(Number intlDelegAccomId) {
         return new Key(new Object[] { intlDelegAccomId });
     }
 

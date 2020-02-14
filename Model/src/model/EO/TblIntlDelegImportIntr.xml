@@ -19,7 +19,7 @@
     Name="IntlDelegImportIntrId"
     ColumnName="INTL_DELEG_IMPORT_INTR_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_IMPORT_INTR"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="IntlDelegAppMId"
     ColumnName="INTL_DELEG_APP_M_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_IMPORT_INTR"/>
   <Attribute

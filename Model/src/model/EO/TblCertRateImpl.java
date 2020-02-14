@@ -80,15 +80,15 @@ public class TblCertRateImpl extends EntityImpl {
      * Gets the attribute value for CertRateId, using the alias name CertRateId.
      * @return the value of CertRateId
      */
-    public BigDecimal getCertRateId() {
-        return (BigDecimal) getAttributeInternal(CERTRATEID);
+    public Number getCertRateId() {
+        return (Number) getAttributeInternal(CERTRATEID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertRateId.
      * @param value value to set the CertRateId
      */
-    public void setCertRateId(BigDecimal value) {
+    public void setCertRateId(Number value) {
         setAttributeInternal(CERTRATEID, value);
     }
 
@@ -96,15 +96,15 @@ public class TblCertRateImpl extends EntityImpl {
      * Gets the attribute value for CertificationId, using the alias name CertificationId.
      * @return the value of CertificationId
      */
-    public BigDecimal getCertificationId() {
-        return (BigDecimal) getAttributeInternal(CERTIFICATIONID);
+    public Number getCertificationId() {
+        return (Number) getAttributeInternal(CERTIFICATIONID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertificationId.
      * @param value value to set the CertificationId
      */
-    public void setCertificationId(BigDecimal value) {
+    public void setCertificationId(Number value) {
         setAttributeInternal(CERTIFICATIONID, value);
     }
 
@@ -112,15 +112,15 @@ public class TblCertRateImpl extends EntityImpl {
      * Gets the attribute value for CertAmount, using the alias name CertAmount.
      * @return the value of CertAmount
      */
-    public BigDecimal getCertAmount() {
-        return (BigDecimal) getAttributeInternal(CERTAMOUNT);
+    public Number getCertAmount() {
+        return (Number) getAttributeInternal(CERTAMOUNT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertAmount.
      * @param value value to set the CertAmount
      */
-    public void setCertAmount(BigDecimal value) {
+    public void setCertAmount(Number value) {
         setAttributeInternal(CERTAMOUNT, value);
     }
 
@@ -128,15 +128,15 @@ public class TblCertRateImpl extends EntityImpl {
      * Gets the attribute value for CertGrant, using the alias name CertGrant.
      * @return the value of CertGrant
      */
-    public BigDecimal getCertGrant() {
-        return (BigDecimal) getAttributeInternal(CERTGRANT);
+    public Number getCertGrant() {
+        return (Number) getAttributeInternal(CERTGRANT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertGrant.
      * @param value value to set the CertGrant
      */
-    public void setCertGrant(BigDecimal value) {
+    public void setCertGrant(Number value) {
         setAttributeInternal(CERTGRANT, value);
     }
 
@@ -246,7 +246,7 @@ public class TblCertRateImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal certRateId) {
+    public static Key createPrimaryKey(Number certRateId) {
         return new Key(new Object[] { certRateId });
     }
 

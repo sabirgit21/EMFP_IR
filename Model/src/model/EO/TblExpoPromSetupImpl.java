@@ -82,15 +82,15 @@ public class TblExpoPromSetupImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -98,15 +98,15 @@ public class TblExpoPromSetupImpl extends EntityImpl {
      * Gets the attribute value for ExpoPromSetupId, using the alias name ExpoPromSetupId.
      * @return the value of ExpoPromSetupId
      */
-    public BigDecimal getExpoPromSetupId() {
-        return (BigDecimal) getAttributeInternal(EXPOPROMSETUPID);
+    public Number getExpoPromSetupId() {
+        return (Number) getAttributeInternal(EXPOPROMSETUPID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoPromSetupId.
      * @param value value to set the ExpoPromSetupId
      */
-    public void setExpoPromSetupId(BigDecimal value) {
+    public void setExpoPromSetupId(Number value) {
         setAttributeInternal(EXPOPROMSETUPID, value);
     }
 
@@ -146,15 +146,15 @@ public class TblExpoPromSetupImpl extends EntityImpl {
      * Gets the attribute value for NoOfDays, using the alias name NoOfDays.
      * @return the value of NoOfDays
      */
-    public BigDecimal getNoOfDays() {
-        return (BigDecimal) getAttributeInternal(NOOFDAYS);
+    public Number getNoOfDays() {
+        return (Number) getAttributeInternal(NOOFDAYS);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfDays.
      * @param value value to set the NoOfDays
      */
-    public void setNoOfDays(BigDecimal value) {
+    public void setNoOfDays(Number value) {
         setAttributeInternal(NOOFDAYS, value);
     }
 
@@ -266,7 +266,7 @@ public class TblExpoPromSetupImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoPromSetupId) {
+    public static Key createPrimaryKey(Number expoPromSetupId) {
         return new Key(new Object[] { expoPromSetupId });
     }
 

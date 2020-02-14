@@ -19,7 +19,7 @@
     Name="CertAppMasterId"
     ColumnName="CERT_APP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="CertificationId"
     ColumnName="CERTIFICATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute
@@ -64,7 +64,7 @@
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute
@@ -169,7 +169,7 @@
     Name="Acres"
     ColumnName="ACRES"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute
@@ -248,14 +248,14 @@
     Name="NoOfEmpM"
     ColumnName="NO_OF_EMP_M"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute
     Name="NoOfEmpF"
     ColumnName="NO_OF_EMP_F"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute
@@ -333,7 +333,7 @@
     Name="Ggn"
     ColumnName="GGN"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APP_MASTER"/>
   <Attribute

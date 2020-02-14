@@ -104,15 +104,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for B2bMeetingId, using the alias name B2bMeetingId.
      * @return the value of B2bMeetingId
      */
-    public BigDecimal getB2bMeetingId() {
-        return (BigDecimal) getAttributeInternal(B2BMEETINGID);
+    public Number getB2bMeetingId() {
+        return (Number) getAttributeInternal(B2BMEETINGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for B2bMeetingId.
      * @param value value to set the B2bMeetingId
      */
-    public void setB2bMeetingId(BigDecimal value) {
+    public void setB2bMeetingId(Number value) {
         setAttributeInternal(B2BMEETINGID, value);
     }
 
@@ -136,15 +136,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for ExhibitorsId, using the alias name ExhibitorsId.
      * @return the value of ExhibitorsId
      */
-    public BigDecimal getExhibitorsId() {
-        return (BigDecimal) getAttributeInternal(EXHIBITORSID);
+    public Number getExhibitorsId() {
+        return (Number) getAttributeInternal(EXHIBITORSID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExhibitorsId.
      * @param value value to set the ExhibitorsId
      */
-    public void setExhibitorsId(BigDecimal value) {
+    public void setExhibitorsId(Number value) {
         setAttributeInternal(EXHIBITORSID, value);
     }
 
@@ -168,15 +168,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
      * @return the value of IntlDelegAppMId
      */
-    public BigDecimal getIntlDelegAppMId() {
-        return (BigDecimal) getAttributeInternal(INTLDELEGAPPMID);
+    public Number getIntlDelegAppMId() {
+        return (Number) getAttributeInternal(INTLDELEGAPPMID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for IntlDelegAppMId.
      * @param value value to set the IntlDelegAppMId
      */
-    public void setIntlDelegAppMId(BigDecimal value) {
+    public void setIntlDelegAppMId(Number value) {
         setAttributeInternal(INTLDELEGAPPMID, value);
     }
 
@@ -200,15 +200,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for Linkages, using the alias name Linkages.
      * @return the value of Linkages
      */
-    public BigDecimal getLinkages() {
-        return (BigDecimal) getAttributeInternal(LINKAGES);
+    public Number getLinkages() {
+        return (Number) getAttributeInternal(LINKAGES);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Linkages.
      * @param value value to set the Linkages
      */
-    public void setLinkages(BigDecimal value) {
+    public void setLinkages(Number value) {
         setAttributeInternal(LINKAGES, value);
     }
 
@@ -216,15 +216,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for ExpDeal, using the alias name ExpDeal.
      * @return the value of ExpDeal
      */
-    public BigDecimal getExpDeal() {
-        return (BigDecimal) getAttributeInternal(EXPDEAL);
+    public Number getExpDeal() {
+        return (Number) getAttributeInternal(EXPDEAL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpDeal.
      * @param value value to set the ExpDeal
      */
-    public void setExpDeal(BigDecimal value) {
+    public void setExpDeal(Number value) {
         setAttributeInternal(EXPDEAL, value);
     }
 
@@ -232,15 +232,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for ExpDealAmt, using the alias name ExpDealAmt.
      * @return the value of ExpDealAmt
      */
-    public BigDecimal getExpDealAmt() {
-        return (BigDecimal) getAttributeInternal(EXPDEALAMT);
+    public Number getExpDealAmt() {
+        return (Number) getAttributeInternal(EXPDEALAMT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpDealAmt.
      * @param value value to set the ExpDealAmt
      */
-    public void setExpDealAmt(BigDecimal value) {
+    public void setExpDealAmt(Number value) {
         setAttributeInternal(EXPDEALAMT, value);
     }
 
@@ -248,15 +248,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for FinalDeal, using the alias name FinalDeal.
      * @return the value of FinalDeal
      */
-    public BigDecimal getFinalDeal() {
-        return (BigDecimal) getAttributeInternal(FINALDEAL);
+    public Number getFinalDeal() {
+        return (Number) getAttributeInternal(FINALDEAL);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FinalDeal.
      * @param value value to set the FinalDeal
      */
-    public void setFinalDeal(BigDecimal value) {
+    public void setFinalDeal(Number value) {
         setAttributeInternal(FINALDEAL, value);
     }
 
@@ -264,15 +264,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for FinalDealAmt, using the alias name FinalDealAmt.
      * @return the value of FinalDealAmt
      */
-    public BigDecimal getFinalDealAmt() {
-        return (BigDecimal) getAttributeInternal(FINALDEALAMT);
+    public Number getFinalDealAmt() {
+        return (Number) getAttributeInternal(FINALDEALAMT);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FinalDealAmt.
      * @param value value to set the FinalDealAmt
      */
-    public void setFinalDealAmt(BigDecimal value) {
+    public void setFinalDealAmt(Number value) {
         setAttributeInternal(FINALDEALAMT, value);
     }
 
@@ -329,15 +329,15 @@ public class TblB2bMeetingImpl extends EntityImpl {
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.
      * @return the value of ExpoSchId
      */
-    public BigDecimal getExpoSchId() {
-        return (BigDecimal) getAttributeInternal(EXPOSCHID);
+    public Number getExpoSchId() {
+        return (Number) getAttributeInternal(EXPOSCHID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoSchId.
      * @param value value to set the ExpoSchId
      */
-    public void setExpoSchId(BigDecimal value) {
+    public void setExpoSchId(Number value) {
         setAttributeInternal(EXPOSCHID, value);
     }
 
@@ -383,7 +383,7 @@ public class TblB2bMeetingImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal b2bMeetingId) {
+    public static Key createPrimaryKey(Number b2bMeetingId) {
         return new Key(new Object[] { b2bMeetingId });
     }
 

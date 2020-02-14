@@ -19,14 +19,14 @@
     Name="CertApprovalId"
     ColumnName="CERT_APPROVAL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"/>
   <Attribute
     Name="CertDisburseId"
     ColumnName="CERT_DISBURSE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"
     PrimaryKey="true"
@@ -43,7 +43,7 @@
     Name="FinalGrant"
     ColumnName="FINAL_GRANT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"/>
   <Attribute

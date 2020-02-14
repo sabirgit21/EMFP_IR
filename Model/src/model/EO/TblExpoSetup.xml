@@ -19,14 +19,14 @@
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="ExpoSetupId"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"
     PrimaryKey="true"
@@ -50,7 +50,7 @@
     Name="NoOfDays"
     ColumnName="NO_OF_DAYS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
@@ -69,7 +69,7 @@
     Name="TotalHalls"
     ColumnName="TOTAL_HALLS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
@@ -90,84 +90,84 @@
     Name="ExpoSetupArea"
     ColumnName="EXPO_SETUP_AREA"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="AreaRate"
     ColumnName="AREA_RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MinExhibitors"
     ColumnName="MIN_EXHIBITORS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MaxExhibitors"
     ColumnName="MAX_EXHIBITORS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MinStalls"
     ColumnName="MIN_STALLS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MaxStalls"
     ColumnName="MAX_STALLS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MinB2b"
     ColumnName="MIN_B2B"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MaxB2b"
     ColumnName="MAX_B2B"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MinLocalDeleg"
     ColumnName="MIN_LOCAL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MaxLocalDeleg"
     ColumnName="MAX_LOCAL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MinIntlDeleg"
     ColumnName="MIN_INTL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="MaxIntlDeleg"
     ColumnName="MAX_INTL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
@@ -205,35 +205,35 @@
     Name="FB2b"
     ColumnName="F_B2B"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="FExhibitors"
     ColumnName="F_EXHIBITORS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="FIntlDeleg"
     ColumnName="F_INTL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="FLocalDeleg"
     ColumnName="F_LOCAL_DELEG"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="FStalls"
     ColumnName="F_STALLS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
@@ -266,14 +266,14 @@
     Name="BusLeads"
     ColumnName="BUS_LEADS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <Attribute
     Name="FLeads"
     ColumnName="F_LEADS"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_SETUP"/>
   <AccessorAttribute

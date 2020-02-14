@@ -19,7 +19,7 @@
     Name="ExhibitorsId"
     ColumnName="EXHIBITORS_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"
     PrimaryKey="true"
@@ -29,7 +29,7 @@
     Name="ExpoSetupId"
     ColumnName="EXPO_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <Attribute
@@ -86,7 +86,7 @@
     Name="LibrCountryId"
     ColumnName="LIBR_COUNTRY_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <Attribute
@@ -121,7 +121,7 @@
     Name="FarmerRegId"
     ColumnName="FARMER_REG_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <Attribute
@@ -159,21 +159,21 @@
     Name="ExpoSchId"
     ColumnName="EXPO_SCH_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <Attribute
     Name="ClusterId"
     ColumnName="CLUSTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <Attribute
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
   <AccessorAttribute

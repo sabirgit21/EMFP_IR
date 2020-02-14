@@ -119,7 +119,7 @@
     Name="ChequeAmount"
     ColumnName="CHEQUE_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_DISBURSE_DETAIL"/>
   <AccessorAttribute

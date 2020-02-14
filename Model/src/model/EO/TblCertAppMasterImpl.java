@@ -136,15 +136,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for CertAppMasterId, using the alias name CertAppMasterId.
      * @return the value of CertAppMasterId
      */
-    public BigDecimal getCertAppMasterId() {
-        return (BigDecimal) getAttributeInternal(CERTAPPMASTERID);
+    public Number getCertAppMasterId() {
+        return (Number) getAttributeInternal(CERTAPPMASTERID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertAppMasterId.
      * @param value value to set the CertAppMasterId
      */
-    public void setCertAppMasterId(BigDecimal value) {
+    public void setCertAppMasterId(Number value) {
         setAttributeInternal(CERTAPPMASTERID, value);
     }
 
@@ -152,15 +152,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for CertificationId, using the alias name CertificationId.
      * @return the value of CertificationId
      */
-    public BigDecimal getCertificationId() {
-        return (BigDecimal) getAttributeInternal(CERTIFICATIONID);
+    public Number getCertificationId() {
+        return (Number) getAttributeInternal(CERTIFICATIONID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for CertificationId.
      * @param value value to set the CertificationId
      */
-    public void setCertificationId(BigDecimal value) {
+    public void setCertificationId(Number value) {
         setAttributeInternal(CERTIFICATIONID, value);
     }
 
@@ -200,15 +200,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for FarmerRegId, using the alias name FarmerRegId.
      * @return the value of FarmerRegId
      */
-    public BigDecimal getFarmerRegId() {
-        return (BigDecimal) getAttributeInternal(FARMERREGID);
+    public Number getFarmerRegId() {
+        return (Number) getAttributeInternal(FARMERREGID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for FarmerRegId.
      * @param value value to set the FarmerRegId
      */
-    public void setFarmerRegId(BigDecimal value) {
+    public void setFarmerRegId(Number value) {
         setAttributeInternal(FARMERREGID, value);
     }
 
@@ -344,15 +344,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for Acres, using the alias name Acres.
      * @return the value of Acres
      */
-    public BigDecimal getAcres() {
-        return (BigDecimal) getAttributeInternal(ACRES);
+    public Number getAcres() {
+        return (Number) getAttributeInternal(ACRES);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Acres.
      * @param value value to set the Acres
      */
-    public void setAcres(BigDecimal value) {
+    public void setAcres(Number value) {
         setAttributeInternal(ACRES, value);
     }
 
@@ -456,15 +456,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for NoOfEmpM, using the alias name NoOfEmpM.
      * @return the value of NoOfEmpM
      */
-    public BigDecimal getNoOfEmpM() {
-        return (BigDecimal) getAttributeInternal(NOOFEMPM);
+    public Number getNoOfEmpM() {
+        return (Number) getAttributeInternal(NOOFEMPM);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfEmpM.
      * @param value value to set the NoOfEmpM
      */
-    public void setNoOfEmpM(BigDecimal value) {
+    public void setNoOfEmpM(Number value) {
         setAttributeInternal(NOOFEMPM, value);
     }
 
@@ -472,15 +472,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for NoOfEmpF, using the alias name NoOfEmpF.
      * @return the value of NoOfEmpF
      */
-    public BigDecimal getNoOfEmpF() {
-        return (BigDecimal) getAttributeInternal(NOOFEMPF);
+    public Number getNoOfEmpF() {
+        return (Number) getAttributeInternal(NOOFEMPF);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfEmpF.
      * @param value value to set the NoOfEmpF
      */
-    public void setNoOfEmpF(BigDecimal value) {
+    public void setNoOfEmpF(Number value) {
         setAttributeInternal(NOOFEMPF, value);
     }
 
@@ -600,15 +600,15 @@ public class TblCertAppMasterImpl extends EntityImpl {
      * Gets the attribute value for Ggn, using the alias name Ggn.
      * @return the value of Ggn
      */
-    public BigDecimal getGgn() {
-        return (BigDecimal) getAttributeInternal(GGN);
+    public Number getGgn() {
+        return (Number) getAttributeInternal(GGN);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Ggn.
      * @param value value to set the Ggn
      */
-    public void setGgn(BigDecimal value) {
+    public void setGgn(Number value) {
         setAttributeInternal(GGN, value);
     }
 
@@ -662,7 +662,7 @@ public class TblCertAppMasterImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal certAppMasterId) {
+    public static Key createPrimaryKey(Number certAppMasterId) {
         return new Key(new Object[] { certAppMasterId });
     }
 

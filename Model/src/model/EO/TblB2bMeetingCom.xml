@@ -14,14 +14,14 @@
     Name="B2bMeetingId"
     ColumnName="B2B_MEETING_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING_COM"/>
   <Attribute
     Name="B2bMeetingComId"
     ColumnName="B2B_MEETING_COM_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING_COM"
     PrimaryKey="true"
@@ -31,7 +31,7 @@
     Name="ComLibrDetailId"
     ColumnName="COM_LIBR_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING_COM"/>
   <Attribute
@@ -45,7 +45,7 @@
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING_COM"/>
   <Attribute
@@ -59,7 +59,7 @@
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_B2B_MEETING_COM"/>
   <AccessorAttribute

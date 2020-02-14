@@ -27,7 +27,7 @@ AND TblPhase.PHASE_ID = :get_phase_IDD">
   <Variable
     Name="get_phase_IDD"
     Kind="where"
-    Type="java.math.BigDecimal"/>
+    Type="oracle.jbo.domain.Number"/>
   <EntityUsage
     Name="TblCluster"
     Entity="model.EO.TblCluster"/>

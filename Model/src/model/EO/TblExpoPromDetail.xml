@@ -19,7 +19,7 @@
     Name="ExpoPromDetailId"
     ColumnName="EXPO_PROM_DETAIL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"
     RetrievedOnInsert="true"
@@ -28,7 +28,7 @@
     Name="ExpoPromSetupId"
     ColumnName="EXPO_PROM_SETUP_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"
     PrimaryKey="true"
@@ -38,35 +38,35 @@
     Name="StallArea"
     ColumnName="STALL_AREA"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute
     Name="AreaRate"
     ColumnName="AREA_RATE"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute
     Name="StallAmount"
     ColumnName="STALL_AMOUNT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute
     Name="TastingAmt"
     ColumnName="TASTING_AMT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute
     Name="SalesAmt"
     ColumnName="SALES_AMT"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_EXPO_PROM_DETAIL"/>
   <Attribute

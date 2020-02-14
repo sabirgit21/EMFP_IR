@@ -19,14 +19,14 @@
     Name="CertAppMasterId"
     ColumnName="CERT_APP_MASTER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"/>
   <Attribute
     Name="CertApprovalId"
     ColumnName="CERT_APPROVAL_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"
     PrimaryKey="true"
@@ -43,7 +43,7 @@
     Name="CertRateId"
     ColumnName="CERT_RATE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"/>
   <Attribute

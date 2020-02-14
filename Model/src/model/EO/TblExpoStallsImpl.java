@@ -94,15 +94,15 @@ public class TblExpoStallsImpl extends EntityImpl {
      * Gets the attribute value for ExpoStallsId, using the alias name ExpoStallsId.
      * @return the value of ExpoStallsId
      */
-    public BigDecimal getExpoStallsId() {
-        return (BigDecimal) getAttributeInternal(EXPOSTALLSID);
+    public Number getExpoStallsId() {
+        return (Number) getAttributeInternal(EXPOSTALLSID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoStallsId.
      * @param value value to set the ExpoStallsId
      */
-    public void setExpoStallsId(BigDecimal value) {
+    public void setExpoStallsId(Number value) {
         setAttributeInternal(EXPOSTALLSID, value);
     }
 
@@ -110,15 +110,15 @@ public class TblExpoStallsImpl extends EntityImpl {
      * Gets the attribute value for ExpoHallsId, using the alias name ExpoHallsId.
      * @return the value of ExpoHallsId
      */
-    public BigDecimal getExpoHallsId() {
-        return (BigDecimal) getAttributeInternal(EXPOHALLSID);
+    public Number getExpoHallsId() {
+        return (Number) getAttributeInternal(EXPOHALLSID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for ExpoHallsId.
      * @param value value to set the ExpoHallsId
      */
-    public void setExpoHallsId(BigDecimal value) {
+    public void setExpoHallsId(Number value) {
         setAttributeInternal(EXPOHALLSID, value);
     }
 
@@ -126,15 +126,15 @@ public class TblExpoStallsImpl extends EntityImpl {
      * Gets the attribute value for StallNo, using the alias name StallNo.
      * @return the value of StallNo
      */
-    public BigDecimal getStallNo() {
-        return (BigDecimal) getAttributeInternal(STALLNO);
+    public Number getStallNo() {
+        return (Number) getAttributeInternal(STALLNO);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for StallNo.
      * @param value value to set the StallNo
      */
-    public void setStallNo(BigDecimal value) {
+    public void setStallNo(Number value) {
         setAttributeInternal(STALLNO, value);
     }
 
@@ -206,15 +206,15 @@ public class TblExpoStallsImpl extends EntityImpl {
      * Gets the attribute value for StallValue, using the alias name StallValue.
      * @return the value of StallValue
      */
-    public BigDecimal getStallValue() {
-        return (BigDecimal) getAttributeInternal(STALLVALUE);
+    public Number getStallValue() {
+        return (Number) getAttributeInternal(STALLVALUE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for StallValue.
      * @param value value to set the StallValue
      */
-    public void setStallValue(BigDecimal value) {
+    public void setStallValue(Number value) {
         setAttributeInternal(STALLVALUE, value);
     }
 
@@ -270,15 +270,15 @@ public class TblExpoStallsImpl extends EntityImpl {
      * Gets the attribute value for AreaRate, using the alias name AreaRate.
      * @return the value of AreaRate
      */
-    public BigDecimal getAreaRate() {
-        return (BigDecimal) getAttributeInternal(AREARATE);
+    public Number getAreaRate() {
+        return (Number) getAttributeInternal(AREARATE);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for AreaRate.
      * @param value value to set the AreaRate
      */
-    public void setAreaRate(BigDecimal value) {
+    public void setAreaRate(Number value) {
         setAttributeInternal(AREARATE, value);
     }
 
@@ -309,7 +309,7 @@ public class TblExpoStallsImpl extends EntityImpl {
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal expoStallsId) {
+    public static Key createPrimaryKey(Number expoStallsId) {
         return new Key(new Object[] { expoStallsId });
     }
 
