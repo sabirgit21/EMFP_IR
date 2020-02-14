@@ -250,5 +250,18 @@
             Action="iteratorExecute"/>
     <action IterBinding="TblIntlDelegAccomView3Iterator" id="Delete5" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="TblIntlDelegAppMView1Iterator" StaticList="false" Uses="LOV_LibrTrvFromCity"
+          id="LibrTrvFromCity" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblIntlDelegAppMView1Iterator" StaticList="false" Uses="LOV_LibrTrvFromCntry"
+          id="LibrTrvFromCntry" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblIntlDelegAppMView1Iterator" StaticList="false" Uses="LOV_AnyOthCitizen" id="AnyOthCitizen"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblIntlDelegAppMView1Iterator" StaticList="false" Uses="LOV_LibrCitizen" id="LibrCitizen"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

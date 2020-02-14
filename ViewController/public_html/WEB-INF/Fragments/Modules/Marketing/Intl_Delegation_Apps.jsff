@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
+  <jsp:directive.taglib uri="http://xmlns.oracle.com/adf/faces/rich" prefix="af"/>
+  <jsp:directive.taglib uri="http://java.sun.com/jsf/core" prefix="f"/>
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Intl. Delegation Application">
          <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -197,10 +199,10 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Delegation Application Detail">
-                <af:panelFormLayout id="pfl1" maxColumns="3" rows="5">
+                <af:panelFormLayout id="pfl1" maxColumns="2" rows="12">
                   <af:inputText value="#{bindings.Address.inputValue}" label="Address"
                                 required="#{bindings.Address.hints.mandatory}"
-                                columns="#{bindings.Address.hints.displayWidth}"
+                                columns="50"
                                 maximumLength="#{bindings.Address.hints.precision}"
                                 shortDesc="#{bindings.Address.hints.tooltip}" id="it8" rows="1">
                     <f:validator binding="#{bindings.Address.validator}"/>
@@ -221,7 +223,7 @@
                   </af:inputText>
                   <af:inputText value="#{bindings.WebsiteAddr.inputValue}" label="Web Address"
                                 required="#{bindings.WebsiteAddr.hints.mandatory}"
-                                columns="#{bindings.WebsiteAddr.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.WebsiteAddr.hints.precision}"
                                 shortDesc="#{bindings.WebsiteAddr.hints.tooltip}" id="it11">
                     <f:validator binding="#{bindings.WebsiteAddr.validator}"/>
@@ -251,7 +253,7 @@
                   </af:inputDate>
                   <af:inputText value="#{bindings.BizNature.inputValue}" label="Business Nature"
                                 required="#{bindings.BizNature.hints.mandatory}"
-                                columns="#{bindings.BizNature.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.BizNature.hints.precision}"
                                 shortDesc="#{bindings.BizNature.hints.tooltip}" id="it13">
                     <f:validator binding="#{bindings.BizNature.validator}"/>
@@ -274,28 +276,28 @@
                   </af:inputText>
                   <af:inputText value="#{bindings.ProIntrExpo.inputValue}" label="Product International Expo"
                                 required="#{bindings.ProIntrExpo.hints.mandatory}"
-                                columns="#{bindings.ProIntrExpo.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.ProIntrExpo.hints.precision}"
                                 shortDesc="#{bindings.ProIntrExpo.hints.tooltip}" id="it16">
                     <f:validator binding="#{bindings.ProIntrExpo.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.TradeProfile.inputValue}" label="Trade Profile"
                                 required="#{bindings.TradeProfile.hints.mandatory}"
-                                columns="#{bindings.TradeProfile.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.TradeProfile.hints.precision}"
                                 shortDesc="#{bindings.TradeProfile.hints.tooltip}" id="it17">
                     <f:validator binding="#{bindings.TradeProfile.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.ChamberName.inputValue}" label="Chamber Name"
                                 required="#{bindings.ChamberName.hints.mandatory}"
-                                columns="#{bindings.ChamberName.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.ChamberName.hints.precision}"
                                 shortDesc="#{bindings.ChamberName.hints.tooltip}" id="it18">
                     <f:validator binding="#{bindings.ChamberName.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.GovtRepres.inputValue}" label="Government Representative"
                                 required="#{bindings.GovtRepres.hints.mandatory}"
-                                columns="#{bindings.GovtRepres.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.GovtRepres.hints.precision}"
                                 shortDesc="#{bindings.GovtRepres.hints.tooltip}" id="it19">
                     <f:validator binding="#{bindings.GovtRepres.validator}"/>
@@ -318,18 +320,51 @@
                   </af:inputDate>
                   <af:inputText value="#{bindings.TrvFrom.inputValue}" label="Traveling From"
                                 required="#{bindings.TrvFrom.hints.mandatory}"
-                                columns="#{bindings.TrvFrom.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.TrvFrom.hints.precision}"
                                 shortDesc="#{bindings.TrvFrom.hints.tooltip}" id="it21">
                     <f:validator binding="#{bindings.TrvFrom.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.TrvTo.inputValue}" label="Traveling To"
                                 required="#{bindings.TrvTo.hints.mandatory}"
-                                columns="#{bindings.TrvTo.hints.displayWidth}"
+                                columns="30"
                                 maximumLength="#{bindings.TrvTo.hints.precision}"
                                 shortDesc="#{bindings.TrvTo.hints.tooltip}" id="it22">
                     <f:validator binding="#{bindings.TrvTo.validator}"/>
                   </af:inputText>
+                  <af:inputDate value="#{bindings.Dob.inputValue}" label="#{bindings.Dob.hints.label}"
+                                required="#{bindings.Dob.hints.mandatory}" columns="#{bindings.Dob.hints.displayWidth}"
+                                shortDesc="#{bindings.Dob.hints.tooltip}" id="id7">
+                    <f:validator binding="#{bindings.Dob.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.Dob.format}"/>
+                  </af:inputDate>
+                  <af:selectOneChoice value="#{bindings.LibrCitizen.inputValue}" label="#{bindings.LibrCitizen.label}"
+                                      required="#{bindings.LibrCitizen.hints.mandatory}"
+                                      shortDesc="#{bindings.LibrCitizen.hints.tooltip}" id="soc10">
+                    <f:selectItems value="#{bindings.LibrCitizen.items}" id="si10"/>
+                    <f:validator binding="#{bindings.LibrCitizen.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.AnyOthCitizen.inputValue}"
+                                      label="#{bindings.AnyOthCitizen.label}"
+                                      required="#{bindings.AnyOthCitizen.hints.mandatory}"
+                                      shortDesc="#{bindings.AnyOthCitizen.hints.tooltip}" id="soc9">
+                    <f:selectItems value="#{bindings.AnyOthCitizen.items}" id="si9"/>
+                    <f:validator binding="#{bindings.AnyOthCitizen.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.LibrTrvFromCntry.inputValue}"
+                                      label="#{bindings.LibrTrvFromCntry.label}"
+                                      required="#{bindings.LibrTrvFromCntry.hints.mandatory}"
+                                      shortDesc="#{bindings.LibrTrvFromCntry.hints.tooltip}" id="soc8">
+                    <f:selectItems value="#{bindings.LibrTrvFromCntry.items}" id="si8"/>
+                    <f:validator binding="#{bindings.LibrTrvFromCntry.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.LibrTrvFromCity.inputValue}"
+                                      label="#{bindings.LibrTrvFromCity.label}"
+                                      required="#{bindings.LibrTrvFromCity.hints.mandatory}"
+                                      shortDesc="#{bindings.LibrTrvFromCity.hints.tooltip}" id="soc7">
+                    <f:selectItems value="#{bindings.LibrTrvFromCity.items}" id="si7"/>
+                    <f:validator binding="#{bindings.LibrTrvFromCity.validator}"/>
+                  </af:selectOneChoice>
                   <af:inputText value="#{bindings.Status.inputValue}" label="Status"
                                 required="#{bindings.Status.hints.mandatory}"
                                 columns="#{bindings.Status.hints.displayWidth}"
@@ -339,9 +374,9 @@
                   </af:inputText>
                   <af:inputText value="#{bindings.Remarks.inputValue}" label="Remarks"
                                 required="#{bindings.Remarks.hints.mandatory}"
-                                columns="#{bindings.Remarks.hints.displayWidth}"
+                                columns="50"
                                 maximumLength="#{bindings.Remarks.hints.precision}"
-                                shortDesc="#{bindings.Remarks.hints.tooltip}" id="it24">
+                                shortDesc="#{bindings.Remarks.hints.tooltip}" id="it24" rows="3">
                     <f:validator binding="#{bindings.Remarks.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">

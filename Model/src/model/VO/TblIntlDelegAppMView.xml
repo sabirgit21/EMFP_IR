@@ -17,6 +17,18 @@
     Name="Expo_Sch_Name_App_Status_LOV1"
     ViewObjectName="model.LOV.Expo_Sch_Name_App_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Country_Name_LOV1"
+    ViewObjectName="model.LOV.Country_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="City_Name_LOV1"
+    ViewObjectName="model.LOV.City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_Status1"
+    ViewObjectName="model.LOV.Active_Status"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ExpoSchId"
     ListVOName="Expo_Sch_Name_App_Status_LOV1"
@@ -32,6 +44,78 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LibrCitizen"
+    ListVOName="Country_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LibrCitizen"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LibrTrvFromCntry"
+    ListVOName="Country_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LibrTrvFromCntry"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LibrTrvFromCity"
+    ListVOName="City_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LibrTrvFromCity"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AnyOthCitizen"
+    ListVOName="Active_Status1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AnyOthCitizen"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="astDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="astView"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -248,6 +332,68 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblIntlDelegAppM"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Dob"
+    PrecisionRule="true"
+    EntityAttrName="Dob"
+    EntityUsage="TblIntlDelegAppM"
+    AliasName="DOB"/>
+  <ViewAttribute
+    Name="AnyOthCitizen"
+    PrecisionRule="true"
+    EntityAttrName="AnyOthCitizen"
+    EntityUsage="TblIntlDelegAppM"
+    AliasName="ANY_OTH_CITIZEN"
+    LOVName="LOV_AnyOthCitizen">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LibrCitizen"
+    PrecisionRule="true"
+    EntityAttrName="LibrCitizen"
+    EntityUsage="TblIntlDelegAppM"
+    AliasName="LIBR_CITIZEN"
+    LOVName="LOV_LibrCitizen">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LibrTrvFromCity"
+    PrecisionRule="true"
+    EntityAttrName="LibrTrvFromCity"
+    EntityUsage="TblIntlDelegAppM"
+    AliasName="LIBR_TRV_FROM_CITY"
+    LOVName="LOV_LibrTrvFromCity">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LibrTrvFromCntry"
+    PrecisionRule="true"
+    EntityAttrName="LibrTrvFromCntry"
+    EntityUsage="TblIntlDelegAppM"
+    AliasName="LIBR_TRV_FROM_CNTRY"
+    LOVName="LOV_LibrTrvFromCntry">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblB2bMeetingView"
     ViewLink="model.VO.FkB2bMeetingIntlDelegMLink"

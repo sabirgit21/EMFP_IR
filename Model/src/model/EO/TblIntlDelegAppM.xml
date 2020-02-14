@@ -347,6 +347,46 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="AnyOthCitizen"
+    Precision="1"
+    ColumnName="ANY_OTH_CITIZEN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_INTL_DELEG_APP_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dob"
+    ColumnName="DOB"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="LibrCitizen"
+    ColumnName="LIBR_CITIZEN"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="LibrTrvFromCity"
+    ColumnName="LIBR_TRV_FROM_CITY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="LibrTrvFromCntry"
+    ColumnName="LIBR_TRV_FROM_CNTRY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
   <AccessorAttribute
     Name="TblB2bMeeting"
     Association="model.EO.FkB2bMeetingIntlDelegMAssoc"

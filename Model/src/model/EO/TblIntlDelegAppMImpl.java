@@ -8,6 +8,7 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -56,6 +57,11 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         ExpoSchId,
+        AnyOthCitizen,
+        Dob,
+        LibrCitizen,
+        LibrTrvFromCity,
+        LibrTrvFromCntry,
         TblB2bMeeting,
         TblIntlDelegAccom,
         TblExpoSetup,
@@ -85,6 +91,7 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int INTLDELEGAPPMID = AttributesEnum.IntlDelegAppMId.index();
     public static final int EXPOSETUPID = AttributesEnum.ExpoSetupId.index();
@@ -119,6 +126,11 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
+    public static final int ANYOTHCITIZEN = AttributesEnum.AnyOthCitizen.index();
+    public static final int DOB = AttributesEnum.Dob.index();
+    public static final int LIBRCITIZEN = AttributesEnum.LibrCitizen.index();
+    public static final int LIBRTRVFROMCITY = AttributesEnum.LibrTrvFromCity.index();
+    public static final int LIBRTRVFROMCNTRY = AttributesEnum.LibrTrvFromCntry.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLINTLDELEGACCOM = AttributesEnum.TblIntlDelegAccom.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
@@ -139,6 +151,7 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblIntlDelegAppM");
     }
+
 
     /**
      * Gets the attribute value for IntlDelegAppMId, using the alias name IntlDelegAppMId.
@@ -650,6 +663,86 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      */
     public void setExpoSchId(BigDecimal value) {
         setAttributeInternal(EXPOSCHID, value);
+    }
+
+    /**
+     * Gets the attribute value for AnyOthCitizen, using the alias name AnyOthCitizen.
+     * @return the value of AnyOthCitizen
+     */
+    public String getAnyOthCitizen() {
+        return (String) getAttributeInternal(ANYOTHCITIZEN);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for AnyOthCitizen.
+     * @param value value to set the AnyOthCitizen
+     */
+    public void setAnyOthCitizen(String value) {
+        setAttributeInternal(ANYOTHCITIZEN, value);
+    }
+
+    /**
+     * Gets the attribute value for Dob, using the alias name Dob.
+     * @return the value of Dob
+     */
+    public Timestamp getDob() {
+        return (Timestamp) getAttributeInternal(DOB);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Dob.
+     * @param value value to set the Dob
+     */
+    public void setDob(Timestamp value) {
+        setAttributeInternal(DOB, value);
+    }
+
+    /**
+     * Gets the attribute value for LibrCitizen, using the alias name LibrCitizen.
+     * @return the value of LibrCitizen
+     */
+    public BigDecimal getLibrCitizen() {
+        return (BigDecimal) getAttributeInternal(LIBRCITIZEN);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LibrCitizen.
+     * @param value value to set the LibrCitizen
+     */
+    public void setLibrCitizen(BigDecimal value) {
+        setAttributeInternal(LIBRCITIZEN, value);
+    }
+
+    /**
+     * Gets the attribute value for LibrTrvFromCity, using the alias name LibrTrvFromCity.
+     * @return the value of LibrTrvFromCity
+     */
+    public Number getLibrTrvFromCity() {
+        return (Number) getAttributeInternal(LIBRTRVFROMCITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LibrTrvFromCity.
+     * @param value value to set the LibrTrvFromCity
+     */
+    public void setLibrTrvFromCity(Number value) {
+        setAttributeInternal(LIBRTRVFROMCITY, value);
+    }
+
+    /**
+     * Gets the attribute value for LibrTrvFromCntry, using the alias name LibrTrvFromCntry.
+     * @return the value of LibrTrvFromCntry
+     */
+    public BigDecimal getLibrTrvFromCntry() {
+        return (BigDecimal) getAttributeInternal(LIBRTRVFROMCNTRY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LibrTrvFromCntry.
+     * @param value value to set the LibrTrvFromCntry
+     */
+    public void setLibrTrvFromCntry(BigDecimal value) {
+        setAttributeInternal(LIBRTRVFROMCNTRY, value);
     }
 
     /**
