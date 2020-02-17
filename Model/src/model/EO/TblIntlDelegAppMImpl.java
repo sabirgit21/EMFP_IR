@@ -62,6 +62,19 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
         LibrCitizen,
         LibrTrvFromCity,
         LibrTrvFromCntry,
+        ArrTime,
+        CheckIn,
+        CheckOut,
+        DepTime,
+        FlightDate,
+        FlightNo,
+        HotelAmount,
+        HotelName,
+        NoOfDays,
+        RoomNo,
+        RoomType,
+        TicketPrice,
+        TicketRemarks,
         TblB2bMeeting,
         TblIntlDelegAccom,
         TblExpoSetup,
@@ -131,6 +144,19 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
     public static final int LIBRCITIZEN = AttributesEnum.LibrCitizen.index();
     public static final int LIBRTRVFROMCITY = AttributesEnum.LibrTrvFromCity.index();
     public static final int LIBRTRVFROMCNTRY = AttributesEnum.LibrTrvFromCntry.index();
+    public static final int ARRTIME = AttributesEnum.ArrTime.index();
+    public static final int CHECKIN = AttributesEnum.CheckIn.index();
+    public static final int CHECKOUT = AttributesEnum.CheckOut.index();
+    public static final int DEPTIME = AttributesEnum.DepTime.index();
+    public static final int FLIGHTDATE = AttributesEnum.FlightDate.index();
+    public static final int FLIGHTNO = AttributesEnum.FlightNo.index();
+    public static final int HOTELAMOUNT = AttributesEnum.HotelAmount.index();
+    public static final int HOTELNAME = AttributesEnum.HotelName.index();
+    public static final int NOOFDAYS = AttributesEnum.NoOfDays.index();
+    public static final int ROOMNO = AttributesEnum.RoomNo.index();
+    public static final int ROOMTYPE = AttributesEnum.RoomType.index();
+    public static final int TICKETPRICE = AttributesEnum.TicketPrice.index();
+    public static final int TICKETREMARKS = AttributesEnum.TicketRemarks.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLINTLDELEGACCOM = AttributesEnum.TblIntlDelegAccom.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
@@ -743,6 +769,214 @@ public class TblIntlDelegAppMImpl extends EntityImpl {
      */
     public void setLibrTrvFromCntry(Number value) {
         setAttributeInternal(LIBRTRVFROMCNTRY, value);
+    }
+
+    /**
+     * Gets the attribute value for ArrTime, using the alias name ArrTime.
+     * @return the value of ArrTime
+     */
+    public Timestamp getArrTime() {
+        return (Timestamp) getAttributeInternal(ARRTIME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ArrTime.
+     * @param value value to set the ArrTime
+     */
+    public void setArrTime(Timestamp value) {
+        setAttributeInternal(ARRTIME, value);
+    }
+
+    /**
+     * Gets the attribute value for CheckIn, using the alias name CheckIn.
+     * @return the value of CheckIn
+     */
+    public Timestamp getCheckIn() {
+        return (Timestamp) getAttributeInternal(CHECKIN);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CheckIn.
+     * @param value value to set the CheckIn
+     */
+    public void setCheckIn(Timestamp value) {
+        setAttributeInternal(CHECKIN, value);
+    }
+
+    /**
+     * Gets the attribute value for CheckOut, using the alias name CheckOut.
+     * @return the value of CheckOut
+     */
+    public Timestamp getCheckOut() {
+        return (Timestamp) getAttributeInternal(CHECKOUT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CheckOut.
+     * @param value value to set the CheckOut
+     */
+    public void setCheckOut(Timestamp value) {
+        setAttributeInternal(CHECKOUT, value);
+    }
+
+    /**
+     * Gets the attribute value for DepTime, using the alias name DepTime.
+     * @return the value of DepTime
+     */
+    public Timestamp getDepTime() {
+        return (Timestamp) getAttributeInternal(DEPTIME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepTime.
+     * @param value value to set the DepTime
+     */
+    public void setDepTime(Timestamp value) {
+        setAttributeInternal(DEPTIME, value);
+    }
+
+    /**
+     * Gets the attribute value for FlightDate, using the alias name FlightDate.
+     * @return the value of FlightDate
+     */
+    public Timestamp getFlightDate() {
+        return (Timestamp) getAttributeInternal(FLIGHTDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FlightDate.
+     * @param value value to set the FlightDate
+     */
+    public void setFlightDate(Timestamp value) {
+        setAttributeInternal(FLIGHTDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for FlightNo, using the alias name FlightNo.
+     * @return the value of FlightNo
+     */
+    public String getFlightNo() {
+        return (String) getAttributeInternal(FLIGHTNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FlightNo.
+     * @param value value to set the FlightNo
+     */
+    public void setFlightNo(String value) {
+        setAttributeInternal(FLIGHTNO, value);
+    }
+
+    /**
+     * Gets the attribute value for HotelAmount, using the alias name HotelAmount.
+     * @return the value of HotelAmount
+     */
+    public BigDecimal getHotelAmount() {
+        return (BigDecimal) getAttributeInternal(HOTELAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for HotelAmount.
+     * @param value value to set the HotelAmount
+     */
+    public void setHotelAmount(BigDecimal value) {
+        setAttributeInternal(HOTELAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for HotelName, using the alias name HotelName.
+     * @return the value of HotelName
+     */
+    public String getHotelName() {
+        return (String) getAttributeInternal(HOTELNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for HotelName.
+     * @param value value to set the HotelName
+     */
+    public void setHotelName(String value) {
+        setAttributeInternal(HOTELNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for NoOfDays, using the alias name NoOfDays.
+     * @return the value of NoOfDays
+     */
+    public BigDecimal getNoOfDays() {
+        return (BigDecimal) getAttributeInternal(NOOFDAYS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NoOfDays.
+     * @param value value to set the NoOfDays
+     */
+    public void setNoOfDays(BigDecimal value) {
+        setAttributeInternal(NOOFDAYS, value);
+    }
+
+    /**
+     * Gets the attribute value for RoomNo, using the alias name RoomNo.
+     * @return the value of RoomNo
+     */
+    public String getRoomNo() {
+        return (String) getAttributeInternal(ROOMNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoomNo.
+     * @param value value to set the RoomNo
+     */
+    public void setRoomNo(String value) {
+        setAttributeInternal(ROOMNO, value);
+    }
+
+    /**
+     * Gets the attribute value for RoomType, using the alias name RoomType.
+     * @return the value of RoomType
+     */
+    public String getRoomType() {
+        return (String) getAttributeInternal(ROOMTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoomType.
+     * @param value value to set the RoomType
+     */
+    public void setRoomType(String value) {
+        setAttributeInternal(ROOMTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for TicketPrice, using the alias name TicketPrice.
+     * @return the value of TicketPrice
+     */
+    public BigDecimal getTicketPrice() {
+        return (BigDecimal) getAttributeInternal(TICKETPRICE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TicketPrice.
+     * @param value value to set the TicketPrice
+     */
+    public void setTicketPrice(BigDecimal value) {
+        setAttributeInternal(TICKETPRICE, value);
+    }
+
+    /**
+     * Gets the attribute value for TicketRemarks, using the alias name TicketRemarks.
+     * @return the value of TicketRemarks
+     */
+    public String getTicketRemarks() {
+        return (String) getAttributeInternal(TICKETREMARKS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TicketRemarks.
+     * @param value value to set the TicketRemarks
+     */
+    public void setTicketRemarks(String value) {
+        setAttributeInternal(TICKETREMARKS, value);
     }
 
     /**

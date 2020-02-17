@@ -387,6 +387,124 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="ArrTime"
+    ColumnName="ARR_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="CheckIn"
+    ColumnName="CHECK_IN"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="CheckOut"
+    ColumnName="CHECK_OUT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="DepTime"
+    ColumnName="DEP_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="FlightDate"
+    ColumnName="FLIGHT_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="FlightNo"
+    Precision="25"
+    ColumnName="FLIGHT_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_INTL_DELEG_APP_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HotelAmount"
+    ColumnName="HOTEL_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="HotelName"
+    Precision="150"
+    ColumnName="HOTEL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_INTL_DELEG_APP_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NoOfDays"
+    ColumnName="NO_OF_DAYS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="RoomNo"
+    Precision="25"
+    ColumnName="ROOM_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_INTL_DELEG_APP_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RoomType"
+    Precision="3"
+    ColumnName="ROOM_TYPE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_INTL_DELEG_APP_M"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TicketPrice"
+    ColumnName="TICKET_PRICE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_INTL_DELEG_APP_M"/>
+  <Attribute
+    Name="TicketRemarks"
+    Precision="150"
+    ColumnName="TICKET_REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_INTL_DELEG_APP_M">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblB2bMeeting"
     Association="model.EO.FkB2bMeetingIntlDelegMAssoc"

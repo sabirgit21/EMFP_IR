@@ -263,5 +263,70 @@
     </attributeValues>
     <list IterBinding="TblIntlDelegAppMView1Iterator" StaticList="false" Uses="LOV_LibrCitizen" id="LibrCitizen"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="ArrTime">
+      <AttrNames>
+        <Item Value="ArrTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="CheckIn">
+      <AttrNames>
+        <Item Value="CheckIn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="CheckOut">
+      <AttrNames>
+        <Item Value="CheckOut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="DepTime">
+      <AttrNames>
+        <Item Value="DepTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="FlightDate">
+      <AttrNames>
+        <Item Value="FlightDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="FlightNo">
+      <AttrNames>
+        <Item Value="FlightNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="HotelAmount">
+      <AttrNames>
+        <Item Value="HotelAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="HotelName">
+      <AttrNames>
+        <Item Value="HotelName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="NoOfDays">
+      <AttrNames>
+        <Item Value="NoOfDays"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="RoomNo">
+      <AttrNames>
+        <Item Value="RoomNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="RoomType">
+      <AttrNames>
+        <Item Value="RoomType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TicketPrice">
+      <AttrNames>
+        <Item Value="TicketPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblIntlDelegAppMView1Iterator" id="TicketRemarks">
+      <AttrNames>
+        <Item Value="TicketRemarks"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
