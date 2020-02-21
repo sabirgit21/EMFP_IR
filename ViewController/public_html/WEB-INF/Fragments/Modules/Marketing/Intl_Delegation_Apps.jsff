@@ -349,20 +349,7 @@
                     <f:selectItems value="#{bindings.AnyOthCitizen.items}" id="si9"/>
                     <f:validator binding="#{bindings.AnyOthCitizen.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.LibrTrvFromCntry.inputValue}"
-                                      label="#{bindings.LibrTrvFromCntry.label}"
-                                      required="#{bindings.LibrTrvFromCntry.hints.mandatory}"
-                                      shortDesc="#{bindings.LibrTrvFromCntry.hints.tooltip}" id="soc8">
-                    <f:selectItems value="#{bindings.LibrTrvFromCntry.items}" id="si8"/>
-                    <f:validator binding="#{bindings.LibrTrvFromCntry.validator}"/>
-                  </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.LibrTrvFromCity.inputValue}"
-                                      label="#{bindings.LibrTrvFromCity.label}"
-                                      required="#{bindings.LibrTrvFromCity.hints.mandatory}"
-                                      shortDesc="#{bindings.LibrTrvFromCity.hints.tooltip}" id="soc7">
-                    <f:selectItems value="#{bindings.LibrTrvFromCity.items}" id="si7"/>
-                    <f:validator binding="#{bindings.LibrTrvFromCity.validator}"/>
-                  </af:selectOneChoice>
+                  
                   <af:inputText value="#{bindings.Status.inputValue}" label="Status"
                                 required="#{bindings.Status.hints.mandatory}"
                                 columns="#{bindings.Status.hints.displayWidth}"
@@ -821,15 +808,28 @@
                         <f:validator binding="#{bindings.TicketPrice.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.TicketPrice.format}"/>
                       </af:inputText>
+                      <af:selectOneChoice value="#{bindings.LibrTrvFromCntry.inputValue}"
+                                      label="#{bindings.LibrTrvFromCntry.label}"
+                                      required="#{bindings.LibrTrvFromCntry.hints.mandatory}"
+                                      shortDesc="#{bindings.LibrTrvFromCntry.hints.tooltip}" id="soc8">
+                    <f:selectItems value="#{bindings.LibrTrvFromCntry.items}" id="si8"/>
+                    <f:validator binding="#{bindings.LibrTrvFromCntry.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.LibrTrvFromCity.inputValue}"
+                                      label="#{bindings.LibrTrvFromCity.label}"
+                                      required="#{bindings.LibrTrvFromCity.hints.mandatory}"
+                                      shortDesc="#{bindings.LibrTrvFromCity.hints.tooltip}" id="soc7">
+                    <f:selectItems value="#{bindings.LibrTrvFromCity.items}" id="si7"/>
+                    <f:validator binding="#{bindings.LibrTrvFromCity.validator}"/>
+                  </af:selectOneChoice>
                       <af:inputText value="#{bindings.TicketRemarks.inputValue}"
                                     label="#{bindings.TicketRemarks.hints.label}"
                                     required="#{bindings.TicketRemarks.hints.mandatory}"
-                                    columns="#{bindings.TicketRemarks.hints.displayWidth}"
+                                    columns="30"
                                     maximumLength="#{bindings.TicketRemarks.hints.precision}"
-                                    shortDesc="#{bindings.TicketRemarks.hints.tooltip}" id="it60">
+                                    shortDesc="#{bindings.TicketRemarks.hints.tooltip}" id="it60" rows="3">
                         <f:validator binding="#{bindings.TicketRemarks.validator}"/>
                       </af:inputText>
-                     
                     </af:panelFormLayout>
                   </af:panelGroupLayout>
                   <af:spacer width="100" height="10" id="s15"/>
@@ -847,7 +847,7 @@
                       </af:inputText>
                       <af:inputText value="#{bindings.HotelName.inputValue}" label="#{bindings.HotelName.hints.label}"
                                     required="#{bindings.HotelName.hints.mandatory}"
-                                    columns="#{bindings.HotelName.hints.displayWidth}"
+                                    columns="30"
                                     maximumLength="#{bindings.HotelName.hints.precision}"
                                     shortDesc="#{bindings.HotelName.hints.tooltip}" id="it55">
                         <f:validator binding="#{bindings.HotelName.validator}"/>
