@@ -238,6 +238,13 @@
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ContactNo"
+    ColumnName="CONTACT_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_EXHIBITORS"/>
   <AccessorAttribute
     Name="TblB2bMeeting"
     Association="model.EO.FkB2bMeetingExhibitorsAssoc"

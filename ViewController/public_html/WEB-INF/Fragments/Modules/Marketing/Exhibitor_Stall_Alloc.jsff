@@ -349,6 +349,24 @@
                       <f:validator binding="#{row.bindings.BankName.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Contact No." id="c31" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ContactNo}"
+                                          id="it46" placeholder="Search Contact">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.ContactNo.inputValue}"
+                                  label="#{bindings.TblExhibitorsView1.hints.ContactNo.label}"
+                                  required="#{bindings.TblExhibitorsView1.hints.ContactNo.mandatory}"
+                                  columns="#{bindings.TblExhibitorsView1.hints.ContactNo.displayWidth}"
+                                  maximumLength="#{bindings.TblExhibitorsView1.hints.ContactNo.precision}"
+                                  shortDesc="#{bindings.TblExhibitorsView1.hints.ContactNo.tooltip}" id="it45"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ContactNo.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblExhibitorsView1.hints.ContactNo.format}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
                 
               </af:showDetailItem>

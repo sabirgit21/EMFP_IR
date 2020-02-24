@@ -474,6 +474,12 @@
     EntityAttrName="InvoiceNo"
     EntityUsage="TblExhibitors"
     AliasName="INVOICE_NO"/>
+  <ViewAttribute
+    Name="ContactNo"
+    PrecisionRule="true"
+    EntityAttrName="ContactNo"
+    EntityUsage="TblExhibitors"
+    AliasName="CONTACT_NO"/>
   <ViewLinkAccessor
     Name="TblB2bMeetingView"
     ViewLink="model.VO.FkB2bMeetingExhibitorsLink"

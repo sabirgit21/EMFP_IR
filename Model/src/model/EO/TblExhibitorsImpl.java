@@ -46,6 +46,7 @@ public class TblExhibitorsImpl extends EntityImpl {
         InvoiceNo,
         RecvdAmount,
         RecvdType,
+        ContactNo,
         TblB2bMeeting,
         TblExpoSetup,
         TblStallsAlloc;
@@ -96,6 +97,7 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static final int INVOICENO = AttributesEnum.InvoiceNo.index();
     public static final int RECVDAMOUNT = AttributesEnum.RecvdAmount.index();
     public static final int RECVDTYPE = AttributesEnum.RecvdType.index();
+    public static final int CONTACTNO = AttributesEnum.ContactNo.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
@@ -464,6 +466,22 @@ public class TblExhibitorsImpl extends EntityImpl {
      */
     public void setRecvdType(String value) {
         setAttributeInternal(RECVDTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for ContactNo, using the alias name ContactNo.
+     * @return the value of ContactNo
+     */
+    public BigDecimal getContactNo() {
+        return (BigDecimal) getAttributeInternal(CONTACTNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ContactNo.
+     * @param value value to set the ContactNo
+     */
+    public void setContactNo(BigDecimal value) {
+        setAttributeInternal(CONTACTNO, value);
     }
 
     /**

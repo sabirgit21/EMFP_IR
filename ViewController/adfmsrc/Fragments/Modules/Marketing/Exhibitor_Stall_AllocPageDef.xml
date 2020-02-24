@@ -51,6 +51,7 @@
           <Item Value="ChequeDate"/>
           <Item Value="ChequeNo"/>
           <Item Value="BankName"/>
+          <Item Value="ContactNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
