@@ -63,6 +63,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Bank_Recevied_Type_LOV1"
+    ViewObjectName="model.LOV.Bank_Recevied_Type_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ExhibitorType"
     ListVOName="Exhibitor_Type_LOV1"
@@ -224,6 +228,24 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="FarmerNo"/>
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RecvdType"
+    ListVOName="Bank_Recevied_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RecvdType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -408,6 +430,50 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="BankName"
+    PrecisionRule="true"
+    EntityAttrName="BankName"
+    EntityUsage="TblExhibitors"
+    AliasName="BANK_NAME"/>
+  <ViewAttribute
+    Name="ChequeDate"
+    PrecisionRule="true"
+    EntityAttrName="ChequeDate"
+    EntityUsage="TblExhibitors"
+    AliasName="CHEQUE_DATE"/>
+  <ViewAttribute
+    Name="ChequeNo"
+    PrecisionRule="true"
+    EntityAttrName="ChequeNo"
+    EntityUsage="TblExhibitors"
+    AliasName="CHEQUE_NO"/>
+  <ViewAttribute
+    Name="RecvdType"
+    PrecisionRule="true"
+    EntityAttrName="RecvdType"
+    EntityUsage="TblExhibitors"
+    AliasName="RECVD_TYPE"
+    LOVName="LOV_RecvdType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RecvdAmount"
+    PrecisionRule="true"
+    EntityAttrName="RecvdAmount"
+    EntityUsage="TblExhibitors"
+    AliasName="RECVD_AMOUNT"/>
+  <ViewAttribute
+    Name="InvoiceNo"
+    PrecisionRule="true"
+    EntityAttrName="InvoiceNo"
+    EntityUsage="TblExhibitors"
+    AliasName="INVOICE_NO"/>
   <ViewLinkAccessor
     Name="TblB2bMeetingView"
     ViewLink="model.VO.FkB2bMeetingExhibitorsLink"

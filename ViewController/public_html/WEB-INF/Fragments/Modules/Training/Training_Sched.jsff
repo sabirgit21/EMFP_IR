@@ -357,7 +357,12 @@
                                                                     </af:inputDate>
                                                                 </af:column>
                                     <af:column headerText="Actual Date"
-                                               id="c4">
+                                               id="c4" sortable="true" filterable="true" align="center">
+                                               <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.DatedA}"
+                                                                                     id="it1" placeholder="Search Actual Date">
+                                                                       </af:inputText>
+                                                                            </f:facet>
                                         <af:inputDate value="#{row.bindings.DatedA.inputValue}" readOnly="true"
                                                       label="#{bindings.TblTrainingSchDetailView4.hints.DatedA.label}"
                                                       required="#{bindings.TblTrainingSchDetailView4.hints.DatedA.mandatory}"

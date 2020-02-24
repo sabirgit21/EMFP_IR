@@ -257,7 +257,7 @@
                                                                                               columns="#{bindings.TblExpoHallsView6.hints.HallNo.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoHallsView6.hints.HallNo.precision}"
                                                                                               shortDesc="#{bindings.TblExpoHallsView6.hints.HallNo.tooltip}"
-                                                                                              id="it24">
+                                                                                              id="it24" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.HallNo.validator}"/>
                                                                                     <af:convertNumber groupingUsed="false"
                                                                                                       pattern="#{bindings.TblExpoHallsView6.hints.HallNo.format}"/>
@@ -296,7 +296,7 @@
                                                                                               columns="#{bindings.TblExpoHallsView6.hints.TotalStalls.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoHallsView6.hints.TotalStalls.precision}"
                                                                                               shortDesc="#{bindings.TblExpoHallsView6.hints.TotalStalls.tooltip}"
-                                                                                              id="it26">
+                                                                                              id="it26" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.TotalStalls.validator}"/>
                                                                                     <af:convertNumber groupingUsed="false"
                                                                                                       pattern="#{bindings.TblExpoHallsView6.hints.TotalStalls.format}"/>
@@ -317,7 +317,7 @@
                                                                                               columns="#{bindings.TblExpoHallsView6.hints.HallArea.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoHallsView6.hints.HallArea.precision}"
                                                                                               shortDesc="#{bindings.TblExpoHallsView6.hints.HallArea.tooltip}"
-                                                                                              id="it27">
+                                                                                              id="it27" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.HallArea.validator}"/>
                                                                                     <af:convertNumber groupingUsed="false"
                                                                                                       pattern="#{bindings.TblExpoHallsView6.hints.HallArea.format}"/>
@@ -407,7 +407,7 @@
                                                                                               columns="#{bindings.TblExpoStallsView7.hints.StallNo.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoStallsView7.hints.StallNo.precision}"
                                                                                               shortDesc="#{bindings.TblExpoStallsView7.hints.StallNo.tooltip}"
-                                                                                              id="it30">
+                                                                                              id="it30" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.StallNo.validator}"/>
                                                                                     <af:convertNumber groupingUsed="false"
                                                                                                       pattern="#{bindings.TblExpoStallsView7.hints.StallNo.format}"/>
@@ -477,7 +477,8 @@
                                                                             <af:column sortProperty="#{bindings.TblExpoStallsView7.hints.StallArea.name}"
                                                                                        filterable="true" sortable="true"
                                                                                        headerText="Stall Area (Sqm)"
-                                                                                       id="c38" width="100">
+                                                                                       id="c38" width="100"
+                                                                                       align="center">
                                                                                 <f:facet name="filter">
                                                                                     <af:inputText value="#{vs.filterCriteria.StallArea}"
                                                                                                   id="it59"
@@ -489,19 +490,25 @@
                                                                                               columns="#{bindings.TblExpoStallsView7.hints.StallArea.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoStallsView7.hints.StallArea.precision}"
                                                                                               shortDesc="#{bindings.TblExpoStallsView7.hints.StallArea.tooltip}"
-                                                                                              id="it34">
+                                                                                              id="it34" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.StallArea.validator}"/>
                                                                                 </af:inputText>
                                                                             </af:column>
                                                                             <af:column headerText="Area Rate (Sqm)" id="c8"
-                                                                                       width="93">
+                                                                                       width="120" sortable="true"
+                                                                                       filterable="true" align="center">
+                                                                                        <f:facet name="filter">
+                                                                                    <af:inputText value="#{vs.filterCriteria.AreaRate}"
+                                                                                                  id="it7"
+                                                                                                  placeholder="Search Area Rate"></af:inputText>
+                                                                                </f:facet>
                                                                                 <af:inputText value="#{row.bindings.AreaRate.inputValue}"
                                                                                               label="#{bindings.TblExpoStallsView7.hints.AreaRate.label}"
                                                                                               required="#{bindings.TblExpoStallsView7.hints.AreaRate.mandatory}"
                                                                                               columns="#{bindings.TblExpoStallsView7.hints.AreaRate.displayWidth}"
                                                                                               maximumLength="#{bindings.TblExpoStallsView7.hints.AreaRate.precision}"
                                                                                               shortDesc="#{bindings.TblExpoStallsView7.hints.AreaRate.tooltip}"
-                                                                                              id="it6">
+                                                                                              id="it6" contentStyle='text-align: center'>
                                                                                     <f:validator binding="#{row.bindings.AreaRate.validator}"/>
                                                                                     <af:convertNumber groupingUsed="false"
                                                                                                       pattern="#{bindings.TblExpoStallsView7.hints.AreaRate.format}"/>

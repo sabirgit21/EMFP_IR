@@ -40,6 +40,12 @@ public class TblExhibitorsImpl extends EntityImpl {
         ExpoSchId,
         ClusterId,
         PhaseId,
+        BankName,
+        ChequeDate,
+        ChequeNo,
+        InvoiceNo,
+        RecvdAmount,
+        RecvdType,
         TblB2bMeeting,
         TblExpoSetup,
         TblStallsAlloc;
@@ -84,6 +90,12 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static final int EXPOSCHID = AttributesEnum.ExpoSchId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
     public static final int PHASEID = AttributesEnum.PhaseId.index();
+    public static final int BANKNAME = AttributesEnum.BankName.index();
+    public static final int CHEQUEDATE = AttributesEnum.ChequeDate.index();
+    public static final int CHEQUENO = AttributesEnum.ChequeNo.index();
+    public static final int INVOICENO = AttributesEnum.InvoiceNo.index();
+    public static final int RECVDAMOUNT = AttributesEnum.RecvdAmount.index();
+    public static final int RECVDTYPE = AttributesEnum.RecvdType.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
@@ -356,6 +368,102 @@ public class TblExhibitorsImpl extends EntityImpl {
      */
     public void setPhaseId(Number value) {
         setAttributeInternal(PHASEID, value);
+    }
+
+    /**
+     * Gets the attribute value for BankName, using the alias name BankName.
+     * @return the value of BankName
+     */
+    public String getBankName() {
+        return (String) getAttributeInternal(BANKNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BankName.
+     * @param value value to set the BankName
+     */
+    public void setBankName(String value) {
+        setAttributeInternal(BANKNAME, value);
+    }
+
+    /**
+     * Gets the attribute value for ChequeDate, using the alias name ChequeDate.
+     * @return the value of ChequeDate
+     */
+    public Timestamp getChequeDate() {
+        return (Timestamp) getAttributeInternal(CHEQUEDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ChequeDate.
+     * @param value value to set the ChequeDate
+     */
+    public void setChequeDate(Timestamp value) {
+        setAttributeInternal(CHEQUEDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for ChequeNo, using the alias name ChequeNo.
+     * @return the value of ChequeNo
+     */
+    public String getChequeNo() {
+        return (String) getAttributeInternal(CHEQUENO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ChequeNo.
+     * @param value value to set the ChequeNo
+     */
+    public void setChequeNo(String value) {
+        setAttributeInternal(CHEQUENO, value);
+    }
+
+    /**
+     * Gets the attribute value for InvoiceNo, using the alias name InvoiceNo.
+     * @return the value of InvoiceNo
+     */
+    public String getInvoiceNo() {
+        return (String) getAttributeInternal(INVOICENO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for InvoiceNo.
+     * @param value value to set the InvoiceNo
+     */
+    public void setInvoiceNo(String value) {
+        setAttributeInternal(INVOICENO, value);
+    }
+
+    /**
+     * Gets the attribute value for RecvdAmount, using the alias name RecvdAmount.
+     * @return the value of RecvdAmount
+     */
+    public BigDecimal getRecvdAmount() {
+        return (BigDecimal) getAttributeInternal(RECVDAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RecvdAmount.
+     * @param value value to set the RecvdAmount
+     */
+    public void setRecvdAmount(BigDecimal value) {
+        setAttributeInternal(RECVDAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for RecvdType, using the alias name RecvdType.
+     * @return the value of RecvdType
+     */
+    public String getRecvdType() {
+        return (String) getAttributeInternal(RECVDTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RecvdType.
+     * @param value value to set the RecvdType
+     */
+    public void setRecvdType(String value) {
+        setAttributeInternal(RECVDTYPE, value);
     }
 
     /**

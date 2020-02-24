@@ -39,6 +39,11 @@
                                           varStatus="vs" id="t1" partialTriggers="" scrollPolicy="page" autoHeightRows="0">
                                     <af:column headerText="Date"
                                                id="c1" width="150" sortable="true" filterable="true">
+                                               <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Dated}"
+                                          id="id4" placeholder="Search Date">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputDate value="#{row.bindings.Dated.inputValue}"
                                                       label="#{bindings.TblGrantAppMasterView1.hints.Dated.label}"
                                                       required="#{bindings.TblGrantAppMasterView1.hints.Dated.mandatory}"
@@ -55,7 +60,7 @@
                                                id="c2" width="150">
                                                <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.PhaseId}"
-                                          id="id4" placeholder="Search Phase">
+                                          id="it12" placeholder="Search Phase">
                            </af:inputText>
                              </f:facet>
 

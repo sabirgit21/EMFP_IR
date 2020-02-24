@@ -168,8 +168,13 @@
                                                               pattern="#{bindings.TblTrainingReschView1.hints.Longitude.format}"/>
                                         </af:inputText>
                                     </af:column>
-                                    <af:column headerText="#{bindings.TblTrainingReschView1.hints.Remarks.label}"
-                                               id="c8">
+                                    <af:column headerText="Remarks"
+                                               id="c8" sortable="true" filterable="true" width="150">
+                                                <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it8" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                                         <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                                       label="#{bindings.TblTrainingReschView1.hints.Remarks.label}"
                                                       required="#{bindings.TblTrainingReschView1.hints.Remarks.mandatory}"

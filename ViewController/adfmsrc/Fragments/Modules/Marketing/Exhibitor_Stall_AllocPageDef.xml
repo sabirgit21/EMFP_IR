@@ -45,6 +45,12 @@
           <Item Value="ExpoSchId"/>
           <Item Value="PhaseId"/>
           <Item Value="ClusterId"/>
+          <Item Value="InvoiceNo"/>
+          <Item Value="RecvdAmount"/>
+          <Item Value="RecvdType"/>
+          <Item Value="ChequeDate"/>
+          <Item Value="ChequeNo"/>
+          <Item Value="BankName"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

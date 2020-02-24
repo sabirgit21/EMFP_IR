@@ -54,7 +54,13 @@
                                         pattern="#{bindings.TblB2bMeetingView1.hints.B2bMeetingId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblB2bMeetingView1.hints.ExpoSchId.label}" id="c12">
+                  <af:column headerText="Event" id="c12" sortable="true"
+                             filterable="true" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpoSchId}"
+                                          id="it7" placeholder="Search Event">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ExpoSchId.inputValue}"
                                         label="#{row.bindings.ExpoSchId.label}"
                                         required="#{bindings.TblB2bMeetingView1.hints.ExpoSchId.mandatory}"
@@ -251,8 +257,8 @@
                           filterModel="#{bindings.TblB2bMeetingComView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblB2bMeetingComView3Query.processQuery}" varStatus="vs" id="t2">
                   <af:column sortProperty="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.label}"
-                             id="c2">
+                             sortable="true" headerText="B2B Meeting ID"
+                             id="c2" align="center">
                     <af:inputText value="#{row.bindings.B2bMeetingId.inputValue}"
                                   label="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.label}"
                                   required="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingId.mandatory}"
@@ -266,7 +272,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.label}" id="c4">
+                             headerText="B2B Component" id="c4">
                     <af:inputText value="#{row.bindings.B2bMeetingComId.inputValue}"
                                   label="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.label}"
                                   required="#{bindings.TblB2bMeetingComView3.hints.B2bMeetingComId.mandatory}"

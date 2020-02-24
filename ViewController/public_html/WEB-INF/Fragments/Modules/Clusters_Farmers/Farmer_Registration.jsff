@@ -45,11 +45,11 @@
                                                       width="765" scrollPolicy="page" autoHeightRows="0">
                                                 <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.ClusterId.name}"
                                                            headerText="Cluster"
-                                                           id="c20" width="150">
-                                                    <!--<f:facet name="filter">
+                                                           id="c20" width="150" sortable="true" filterable="true">
+                                                    <f:facet name="filter">
                                                         <af:inputText value="#{vs.filterCriteria.ClusterId}" id="it18"
                                                                       placeholder="Search Cluster"></af:inputText>
-                                                    </f:facet>-->
+                                                    </f:facet>
                                                     <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                                                         label="#{row.bindings.ClusterId.label}"
                                                                         required="#{bindings.TblFarmerRegView1.hints.ClusterId.mandatory}"
