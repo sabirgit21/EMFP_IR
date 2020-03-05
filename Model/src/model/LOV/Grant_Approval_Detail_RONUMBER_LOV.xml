@@ -11,7 +11,8 @@
   PageIterMode="Full"
   SelectList="TblGrantApprovalDetail.RO_NUMBER, 
        TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
-       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID"
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
+       TblGrantApprovalDetail.RO_VNO"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
   Where="TblGrantApprovalDetail.RO_NUMBER is not null  
 AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
@@ -43,6 +44,12 @@ AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
     EntityAttrName="GrantApprovalMasterId"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="GRANT_APPROVAL_MASTER_ID"/>
+  <ViewAttribute
+    Name="RoVno"
+    PrecisionRule="true"
+    EntityAttrName="RoVno"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="RO_VNO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

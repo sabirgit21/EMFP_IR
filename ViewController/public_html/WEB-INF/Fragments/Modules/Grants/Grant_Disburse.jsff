@@ -35,7 +35,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGrantDisburseMasterView1.rangeSize}"
                           filterModel="#{bindings.TblGrantDisburseMasterView1Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.TblGrantDisburseMasterView1Query.processQuery}"
-                          varStatus="vs" id="t1" partialTriggers=" ::b8" width="990"
+                          varStatus="vs" id="t1" partialTriggers=" ::b8"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGrantDisburseMasterView1.hints.GrantDisburseMasterId.name}"
                              filterable="true" sortable="true"
@@ -79,7 +79,7 @@
                       <af:convertDateTime pattern="#{bindings.TblGrantDisburseMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="RO Number" id="c6" align="center" filterable="true" sortable="true">
+                  <af:column headerText="RO Number" id="c6" align="center" filterable="true" sortable="true" width="200">
                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.RoNumber}"
                                           id="it11" placeholder="Search RO Number">

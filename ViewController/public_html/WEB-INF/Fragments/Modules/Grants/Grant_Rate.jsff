@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelAccordion discloseMany="false" id="pa1" inlineStyle="height:445px; width:1050px;">
+  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
     <af:showDetailItem id="pane1" text="Grant Rate">
      
       <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
@@ -25,7 +25,7 @@
                 </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" inlineStyle="width:1023px;">
+            <af:panelTabbed position="above" id="pt1"  styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1"  text="Grant Rate">
                 <af:table value="#{bindings.TblGrantRateView1.collectionModel}" var="row"
                           rows="#{bindings.TblGrantRateView1.rangeSize}"
@@ -36,7 +36,6 @@
                           rowSelection="single" fetchSize="#{bindings.TblGrantRateView1.rangeSize}"
                           filterModel="#{bindings.TblGrantRateView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrantRateView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers=" " width="881"
                           scrollPolicy="page" autoHeightRows="0" >
                   <!--<af:column sortProperty="#{bindings.TblGrantRateView1.hints.GrantRateId.name}" 
                              filterable="true" sortable="true" 

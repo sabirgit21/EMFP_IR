@@ -1,5 +1,7 @@
 package model.EO;
 
+import java.math.BigDecimal;
+
 import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
@@ -39,7 +41,8 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
         RoNumber,
         TblGrantDisburseDetail,
         TblGrantApprovalMaster;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -61,6 +64,7 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int GRANTDISBURSEMASTERID = AttributesEnum.GrantDisburseMasterId.index();
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
@@ -92,6 +96,7 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.TblGrantDisburseMaster");
     }
+
 
     /**
      * Gets the attribute value for GrantDisburseMasterId, using the alias name GrantDisburseMasterId.
@@ -316,6 +321,7 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
     public void setRoNumber(String value) {
         setAttributeInternal(RONUMBER, value);
     }
+
 
     /**
      * @return the associated entity oracle.jbo.RowIterator.

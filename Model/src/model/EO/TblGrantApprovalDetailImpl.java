@@ -1,5 +1,7 @@
 package model.EO;
 
+import java.math.BigDecimal;
+
 import oracle.jbo.domain.Number;
 
 import java.sql.Timestamp;
@@ -46,6 +48,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         LandUnderOrch,
         OldRoNumber,
         GrantBase,
+        RoVno,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -100,6 +103,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int LANDUNDERORCH = AttributesEnum.LandUnderOrch.index();
     public static final int OLDRONUMBER = AttributesEnum.OldRoNumber.index();
     public static final int GRANTBASE = AttributesEnum.GrantBase.index();
+    public static final int ROVNO = AttributesEnum.RoVno.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -490,6 +494,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for RoVno, using the alias name RoVno.
+     * @return the value of RoVno
+     */
+    public BigDecimal getRoVno() {
+        return (BigDecimal) getAttributeInternal(ROVNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RoVno.
+     * @param value value to set the RoVno
+     */
+    public void setRoVno(BigDecimal value) {
+        setAttributeInternal(ROVNO, value);
+    }
+
+    /**
      * @return the associated entity TblFarmerRegImpl.
      */
     public TblFarmerRegImpl getTblFarmerReg() {
@@ -558,14 +578,14 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getMap_Farmer_Detail() {
-        return (EntityImpl) getAttributeInternal(MAP_FARMER_DETAIL);
+    public Map_Farmer_DetailImpl getMap_Farmer_Detail() {
+        return (Map_Farmer_DetailImpl) getAttributeInternal(MAP_FARMER_DETAIL);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setMap_Farmer_Detail(EntityImpl value) {
+    public void setMap_Farmer_Detail(Map_Farmer_DetailImpl value) {
         setAttributeInternal(MAP_FARMER_DETAIL, value);
     }
 

@@ -37,7 +37,7 @@
       <Item Value="GrantApprovalDetailId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RoNumber"/>
+      <Item Value="RoVno"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -126,6 +126,11 @@
     ViewLink="model.VO.FkTblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseMasterId"
