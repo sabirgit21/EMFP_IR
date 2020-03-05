@@ -51,7 +51,15 @@
   <ViewAccessor
     Name="Grant_Group_Name_LOV1"
     ViewObjectName="model.LOV.Grant_Group_Name_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getClstrID">
+        <TransientExpression
+          trustMode="trusted"
+          Name="ExpressionScript"><![CDATA[ClusterId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_PhaseId"
     ListVOName="Phase_Name_LOV1"

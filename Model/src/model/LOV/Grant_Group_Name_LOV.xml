@@ -9,16 +9,25 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectList="TblGrantGroupMaster.GRANT_GROUP_MASTER_ID, 
+       TblGrantGroupMaster.GRANT_GROUP_MASTER_NOMINEE, 
+       TblFarmerReg.FARMER_NO, 
+       TblFarmerReg.FARMER_REG_ID, 
+       TblFarmerReg.NAME, 
+       TblFarmerReg.CLUSTER_ID"
+  FromList="TBL_GRANT_GROUP_MASTER TblGrantGroupMaster, TBL_FARMER_REG TblFarmerReg"
+  Where="TblGrantGroupMaster.GRANT_GROUP_MASTER_NOMINEE = TblFarmerReg.FARMER_REG_ID(+)   
+and TblFarmerReg.CLUSTER_ID=:getClstrID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Grant_Group_Name_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="getClstrID"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblGrantGroupMaster"
     Entity="model.EO.TblGrantGroupMaster"/>
@@ -71,6 +80,13 @@
     EntityAttrName="Name"
     EntityUsage="TblFarmerReg"
     AliasName="NAME"/>
+  <ViewAttribute
+    Name="ClusterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblFarmerReg"
+    AliasName="CLUSTER_ID"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
