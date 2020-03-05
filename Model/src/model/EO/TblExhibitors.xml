@@ -245,6 +245,25 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_EXHIBITORS"/>
+  <Attribute
+    Name="InvoiceDate"
+    ColumnName="INVOICE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_EXHIBITORS"/>
+  <Attribute
+    Name="Email"
+    Precision="50"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_EXHIBITORS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblB2bMeeting"
     Association="model.EO.FkB2bMeetingExhibitorsAssoc"

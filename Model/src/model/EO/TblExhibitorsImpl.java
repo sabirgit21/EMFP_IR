@@ -47,6 +47,8 @@ public class TblExhibitorsImpl extends EntityImpl {
         RecvdAmount,
         RecvdType,
         ContactNo,
+        InvoiceDate,
+        Email,
         TblB2bMeeting,
         TblExpoSetup,
         TblStallsAlloc;
@@ -98,6 +100,8 @@ public class TblExhibitorsImpl extends EntityImpl {
     public static final int RECVDAMOUNT = AttributesEnum.RecvdAmount.index();
     public static final int RECVDTYPE = AttributesEnum.RecvdType.index();
     public static final int CONTACTNO = AttributesEnum.ContactNo.index();
+    public static final int INVOICEDATE = AttributesEnum.InvoiceDate.index();
+    public static final int EMAIL = AttributesEnum.Email.index();
     public static final int TBLB2BMEETING = AttributesEnum.TblB2bMeeting.index();
     public static final int TBLEXPOSETUP = AttributesEnum.TblExpoSetup.index();
     public static final int TBLSTALLSALLOC = AttributesEnum.TblStallsAlloc.index();
@@ -482,6 +486,38 @@ public class TblExhibitorsImpl extends EntityImpl {
      */
     public void setContactNo(BigDecimal value) {
         setAttributeInternal(CONTACTNO, value);
+    }
+
+    /**
+     * Gets the attribute value for InvoiceDate, using the alias name InvoiceDate.
+     * @return the value of InvoiceDate
+     */
+    public Timestamp getInvoiceDate() {
+        return (Timestamp) getAttributeInternal(INVOICEDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for InvoiceDate.
+     * @param value value to set the InvoiceDate
+     */
+    public void setInvoiceDate(Timestamp value) {
+        setAttributeInternal(INVOICEDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for Email, using the alias name Email.
+     * @return the value of Email
+     */
+    public String getEmail() {
+        return (String) getAttributeInternal(EMAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Email.
+     * @param value value to set the Email
+     */
+    public void setEmail(String value) {
+        setAttributeInternal(EMAIL, value);
     }
 
     /**
