@@ -39,8 +39,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTrainerView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b7 ::b8 ::b9 ::b24 ::b25 ::b26"
-                                                                      width="963"
+                                                                      partialTriggers="::b7 ::b8 ::b9 ::b24 ::b25 ::b26" 
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblTrainerView1.hints.TrainerId.name}"
                                                                            filterable="true" sortable="true"
@@ -381,8 +380,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTrainerAcaView3Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers="::b26"
-                                                                      width="990"
+                                                                      partialTriggers="::b26" 
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTrainerAcaView3.hints.TrainerAcaId.name}"
                                                                            filterable="true" sortable="true"
@@ -595,8 +593,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTrainerPercView3Query.processQuery}"
                                                                       varStatus="vs" id="t3"
-                                                                      partialTriggers="::b27"
-                                                                      width="969"
+                                                                      partialTriggers="::b27" 
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTrainerPercView3.hints.TrainerPercId.name}"
                                                                            filterable="true" sortable="true"

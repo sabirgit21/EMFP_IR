@@ -39,9 +39,8 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTeamFormationView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b7 ::b8 ::b9 ::b13"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="988">
+                                                                      partialTriggers=" ::b13"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTeamFormationView1.hints.TeamFormationId.name}"
                                                                            filterable="true" sortable="true"
                                                                            headerText="Team Formation ID"

@@ -37,7 +37,7 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblSupplierView1Query.processQuery}" varStatus="vs"
                                           id="t1" partialTriggers="::b9 ::b10 ::b13 ::b14 ::b16 ::b1"
-                                          scrollPolicy="page" autoHeightRows="0" width="678">
+                                          scrollPolicy="page" autoHeightRows="0" >
                                     <af:column sortProperty="#{bindings.TblSupplierView1.hints.SupplierId.name}"
                                                filterable="true" sortable="true" align="center" headerText="Supplier ID"
                                                id="c1" width="60">
@@ -324,8 +324,8 @@
                                           filterModel="#{bindings.TblSupplierPartView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblSupplierPartView3Query.processQuery}"
-                                          varStatus="vs" id="t2" partialTriggers="::b18 ::b19 ::b20 ::b22"
-                                          scrollPolicy="page" autoHeightRows="0" width="557">
+                                          varStatus="vs" id="t2" partialTriggers=" ::b22"
+                                          scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblSupplierPartView3.hints.SupplierPartId.name}"
                                                filterable="true" sortable="true" headerText="Partner/Director ID"
                                                id="c5" align="center" width="100">

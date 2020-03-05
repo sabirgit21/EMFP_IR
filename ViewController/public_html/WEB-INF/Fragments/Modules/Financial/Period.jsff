@@ -35,7 +35,7 @@
                                           filterModel="#{bindings.TblPeriodView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblPeriodView1Query.processQuery}" varStatus="vs"
-                                          id="t1" partialTriggers="::b1 ::b2 ::b3" width="458">
+                                          id="t1" partialTriggers="::b1" >
                                     <af:column sortProperty="#{bindings.TblPeriodView1.hints.PeriodId.name}"
                                                filterable="true" sortable="true"
                                                headerText="#{bindings.TblPeriodView1.hints.PeriodId.label}" id="c1">

@@ -35,7 +35,7 @@
                                           filterModel="#{bindings.TblCompanyprofileView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblCompanyprofileView1Query.processQuery}"
-                                          varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4">
+                                          varStatus="vs" id="t1" partialTriggers=" ">
                                     <af:column sortProperty="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.name}"
                                                filterable="true" sortable="true"
                                                headerText="#{bindings.TblCompanyprofileView1.hints.CompanyprofileId.label}"

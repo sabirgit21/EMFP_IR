@@ -33,7 +33,7 @@
                                           filterModel="#{bindings.TblProjView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProjView1Query.processQuery}" varStatus="vs"
-                                          id="t1" partialTriggers=" ::b16" width="669" scrollPolicy="page"
+                                          id="t1" partialTriggers=" ::b16" scrollPolicy="page"
                                           autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblProjView1.hints.ProgId.name}"
                                                headerText="Program" filterable="true" sortable="true" id="c16"
@@ -160,7 +160,7 @@
                                           filterModel="#{bindings.TblProjOffView3Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProjOffView3Query.processQuery}" varStatus="vs"
-                                          id="t2" partialTriggers=" ::b17" width="1023" scrollPolicy="page"
+                                          id="t2" partialTriggers=" ::b17" scrollPolicy="page"
                                           autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblProjOffView3.hints.ProjOffId.name}"
                                                filterable="true" sortable="true" headerText="Office ID" id="c5"

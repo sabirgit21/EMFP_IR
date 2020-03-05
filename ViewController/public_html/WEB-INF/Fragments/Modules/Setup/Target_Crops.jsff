@@ -48,8 +48,7 @@
                                           filterModel="#{bindings.TblProjOffView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProjOffView1Query.processQuery}" varStatus="vs"
-                                          id="t1" partialTriggers="::b9 ::b2" scrollPolicy="page" autoHeightRows="0"
-                                          width="999">
+                                          id="t1" partialTriggers="::b9 ::b2" scrollPolicy="page" autoHeightRows="0"  >
                                     <af:column sortProperty="#{bindings.TblProjOffView1.hints.Project_Name.name}"
                                                filterable="true" headerText="Project" id="c16" width="150">
                                         <f:facet name="filter">
@@ -178,7 +177,7 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblTargetCropsView4Query.processQuery}"
                                           varStatus="vs" id="t2" partialTriggers="::b10"
-                                          scrollPolicy="page" autoHeightRows="0" width="723">
+                                          scrollPolicy="page" autoHeightRows="0" >
                                     <af:column sortProperty="#{bindings.TblTargetCropsView4.hints.CropId.name}"
                                                filterable="true" sortable="true" headerText="Crop" id="c19" width="200">
                                         <f:facet name="filter">

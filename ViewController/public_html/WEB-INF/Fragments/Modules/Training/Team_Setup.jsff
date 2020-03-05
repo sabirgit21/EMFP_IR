@@ -39,7 +39,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTeamView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b7 ::b8 ::b13" width="808"
+                                                                      partialTriggers= ::b13" 
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTeamView1.hints.TeamId.name}"
                                                                            filterable="true" sortable="true"

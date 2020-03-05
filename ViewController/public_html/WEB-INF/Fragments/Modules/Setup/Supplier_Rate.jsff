@@ -39,9 +39,8 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblSupplierRateMasterView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b9 ::b10 ::b11"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="908">
+                                                                      partialTriggers=" ::b10 "
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblSupplierRateMasterView1.hints.SupplierId.name}"
                                                                            filterable="true" sortable="true"
                                                                            headerText="Supplier" id="c13" width="250">
@@ -205,8 +204,7 @@
                                                                       queryListener="#{bindings.TblSupplierRateDetailView4Query.processQuery}"
                                                                       varStatus="vs" id="t2"
                                                                       partialTriggers="::b13 ::b14 ::b15 ::b17"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="572">
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblSupplierRateDetailView4.hints.SupplierRateDetailId.name}"
                                                                            filterable="true" sortable="true"
                                                                            align="center"

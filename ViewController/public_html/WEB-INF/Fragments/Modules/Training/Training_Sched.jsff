@@ -228,8 +228,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblTrainingSchDetailView4Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers=" ::b22"
-                                                                      width="694"
+                                                                      partialTriggers=" ::b22" 
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblTrainingSchDetailView4.hints.ClusterId.name}"
                                                                            filterable="true" sortable="true"

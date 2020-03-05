@@ -37,7 +37,6 @@
                                           filterVisible="true"
                                           queryListener="#{bindings.TblCourseView11Query.processQuery}" varStatus="vs"
                                           id="t3" partialTriggers="::b13" 
-                                           width="663"
                                            scrollPolicy="page" autoHeightRows="0">
                                           <af:column sortProperty="#{bindings.TblCourseView11.hints.PhaseId.name}"
                                                filterable="true" sortable="true"
@@ -134,7 +133,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblModuleView3Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers=" ::b14" width="597"
+                                                                      partialTriggers=" ::b14" 
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblModuleView3.hints.ModuleId.name}"
                                                                            filterable="true" sortable="true"

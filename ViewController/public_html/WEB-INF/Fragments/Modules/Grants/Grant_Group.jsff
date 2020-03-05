@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblGrantGroupMasterView1.rangeSize}"
                           filterModel="#{bindings.TblGrantGroupMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblGrantGroupMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers=" " scrollPolicy="page" autoHeightRows="0">
+                          partialTriggers=" " scrollPolicy="page" autoHeightRows="0" >
                   <!--<af:column sortProperty="#{bindings.TblGrantGroupMasterView1.hints.GrantGroupMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="Master ID" id="c1"

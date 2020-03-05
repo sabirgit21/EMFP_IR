@@ -42,7 +42,7 @@
                                                               filterVisible="true"
                                                               queryListener="#{bindings.TblItemL1View1Query.processQuery}"
                                                               varStatus="vs" id="t2"
-                                                              partialTriggers="::b9 ::b10 ::b11 ::b25"
+                                                              partialTriggers=" ::b10  ::b25"
                                                               scrollPolicy="page" autoHeightRows="0" width="473">
                                                         <af:column sortProperty="#{bindings.TblItemL1View1.hints.ItemL1Id.name}"
                                                                    filterable="true" sortable="true"

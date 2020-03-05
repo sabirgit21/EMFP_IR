@@ -39,7 +39,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblCropView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b12 ::b19 ::b2" width="748"
+                                                                      partialTriggers="::b12 "  
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblCropView1.hints.CropId.name}"
                                                                            filterable="true" sortable="true"
@@ -225,9 +225,8 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblCropTypeView3Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers="::b13 ::b14 ::b15 ::b17"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="461">
+                                                                      partialTriggers=" ::b17"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblCropTypeView3.hints.CropTypeId.name}"
                                                                            filterable="true" sortable="true"
                                                                            headerText="Crop type ID"

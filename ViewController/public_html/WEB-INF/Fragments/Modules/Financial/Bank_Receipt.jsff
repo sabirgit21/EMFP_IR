@@ -34,7 +34,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblBRVVoucherMView1.rangeSize}"
                           filterModel="#{bindings.TblBRVVoucherMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblBRVVoucherMView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          partialTriggers="::b3">
                   <af:column sortProperty="#{bindings.TblBRVVoucherMView1.hints.VoucherMId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblBRVVoucherMView1.hints.VoucherMId.label}"
                              id="c1">
@@ -245,7 +245,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblBRVVoucherDView3.rangeSize}"
                           filterModel="#{bindings.TblBRVVoucherDView3Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblBRVVoucherDView3Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="::b5 ::b6 ::b7">
+                          partialTriggers="::b6">
                   <af:column sortProperty="#{bindings.TblBRVVoucherDView3.hints.VoucherDId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblBRVVoucherDView3.hints.VoucherDId.label}"
                              id="c12">

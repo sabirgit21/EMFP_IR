@@ -40,8 +40,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblLibrMasterView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers=""
-                                                                      width="450"
+                                                                      partialTriggers="" 
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblLibrMasterView1.hints.LibrMasterId.name}"
                                                                            filterable="true" sortable="true"
@@ -140,8 +139,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblLibrDetailView3Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers="::b13 ::b14 ::b15 ::b9"
-                                                                      width="609"
+                                                                      partialTriggers=" ::b9" 
                                                                       scrollPolicy="page" autoHeightRows="0">
                                                                 <af:column sortProperty="#{bindings.TblLibrDetailView3.hints.LibrDetailId.name}"
                                                                            filterable="true" sortable="true"

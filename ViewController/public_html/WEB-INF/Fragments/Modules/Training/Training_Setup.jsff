@@ -35,8 +35,8 @@
                                           filterModel="#{bindings.TblCourseView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblCourseView1Query.processQuery}" varStatus="vs"
-                                          id="t2" partialTriggers="::b7 ::b8 ::b9 ::b13" scrollPolicy="page"
-                                          autoHeightRows="0" width="810">
+                                          id="t2" partialTriggers=" ::b13" scrollPolicy="page"
+                                          autoHeightRows="0" >
                                     <af:column sortProperty="#{bindings.TblCourseView1.hints.CourseId.name}"
                                                filterable="true" sortable="true" headerText="Training ID" id="c8"
                                                width="80" align="center">

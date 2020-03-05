@@ -40,9 +40,8 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblOutputIndView1Query.processQuery}"
                                                                       varStatus="vs" id="t2"
-                                                                      partialTriggers="::b4 ::b6 ::b7 ::b9"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="827">
+                                                                      partialTriggers=" "
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblOutputIndView1.hints.OutputIndId.name}"
                                                                            filterable="true" sortable="true"
                                                                            headerText="Output Indicators ID"

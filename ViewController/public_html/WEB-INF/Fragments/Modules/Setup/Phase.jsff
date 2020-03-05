@@ -36,8 +36,8 @@
                                           filterModel="#{bindings.TblPhaseView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblPhaseView1Query.processQuery}" varStatus="vs"
-                                          id="t1" partialTriggers="::b10 ::b11 ::b12 ::b14 ::b1 ::b2 ::b3 ::b4"
-                                          width="729" scrollPolicy="page" autoHeightRows="0">
+                                          id="t1" partialTriggers="::b10 ::b14 ::b1 ::b2 ::b3 ::b4"
+                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblPhaseView1.hints.PhaseId.name}"
                                                filterable="true" sortable="true" headerText="Phase ID" id="c1"
                                                align="center" width="80">
@@ -270,7 +270,7 @@
                                           filterModel="#{bindings.TblPhasePlanView3Query.queryDescriptor}"
                                           queryListener="#{bindings.TblPhasePlanView3Query.processQuery}"
                                           filterVisible="true" varStatus="vs" id="t2"
-                                          partialTriggers="::b6 ::b7 ::b8 ::b5" width="1006" scrollPolicy="page"
+                                          partialTriggers=" ::b5" width="1006" scrollPolicy="page"
                                           autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblPhasePlanView3.hints.PhasePlanId.name}"
                                                filterable="true" sortable="true" headerText="Phase Plan ID" id="c6"

@@ -245,7 +245,7 @@
         
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt2">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="B2B Meeting Com">
                 <af:table value="#{bindings.TblB2bMeetingComView3.collectionModel}" var="row"
                           rows="#{bindings.TblB2bMeetingComView3.rangeSize}"

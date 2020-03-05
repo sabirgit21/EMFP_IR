@@ -33,7 +33,7 @@
                                           filterModel="#{bindings.TblProgView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblProgView1Query.processQuery}" varStatus="vs"
-                                          id="t1" inlineStyle="height:242px;" partialTriggers=" ::b16" width="637"
+                                          id="t1"  partialTriggers=" ::b16" 
                                           scrollPolicy="page" autoHeightRows="0">
                                     <af:column sortProperty="#{bindings.TblProgView1.hints.ProgId.name}"
                                                filterable="true" sortable="true" headerText="Program ID" align="center"

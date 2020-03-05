@@ -33,7 +33,7 @@
                                           filterModel="#{bindings.TblTrainingReschView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblTrainingReschView1Query.processQuery}"
-                                          varStatus="vs" id="t1">
+                                          varStatus="vs" id="t1" scrollPolicy="page">
                                     <af:column sortProperty="#{bindings.TblTrainingReschView1.hints.TrainingReschId.name}"
                                                filterable="true" sortable="true"
                                                headerText="Training Reschedule ID"

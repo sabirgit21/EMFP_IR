@@ -19,7 +19,7 @@
       <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-            <af:panelTabbed position="above" id="pt2">
+            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="MMP RO Approval">
                 <af:selectOneChoice value="#{bindings.MMP_RO_Approval_Grant_Approval_Master1.inputValue}"
                                     label="#{bindings.MMP_RO_Approval_Grant_Approval_Master1.label}" autoSubmit="true"

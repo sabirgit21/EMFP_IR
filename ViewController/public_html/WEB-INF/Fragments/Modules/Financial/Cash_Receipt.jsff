@@ -34,7 +34,7 @@
                           rowSelection="single" fetchSize="#{bindings.TblCRVVoucherMView1.rangeSize}"
                           filterModel="#{bindings.TblCRVVoucherMView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.TblCRVVoucherMView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4">
+                          partialTriggers="">
                   <af:column sortProperty="#{bindings.TblCRVVoucherMView1.hints.VoucherMId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblCRVVoucherMView1.hints.VoucherMId.label}"
                              id="c1">

@@ -46,7 +46,7 @@
                                                   filterModel="#{bindings.TblRoleMasterView1Query.queryDescriptor}"
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
-                                                  varStatus="vs" id="t1" partialTriggers="::b1 ::b2 ::b3" width="957"
+                                                  varStatus="vs" id="t1" partialTriggers="::b1 ::b2 ::b3" 
                                                   scrollPolicy="page" autoHeightRows="0">
                                             <af:column sortProperty="#{bindings.TblRoleMasterView1.hints.RoleMasterId.name}"
                                                        filterable="true" sortable="true"
@@ -164,7 +164,7 @@
                                                   filterModel="#{bindings.TblUserMasterView3Query.queryDescriptor}"
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblUserMasterView3Query.processQuery}"
-                                                  varStatus="vs" id="t2" partialTriggers="::b4 ::b5 ::b6" width="564"
+                                                  varStatus="vs" id="t2" partialTriggers="::b4 ::b5 ::b6"
                                                   scrollPolicy="page" autoHeightRows="0">
                                             <!--<af:column sortProperty="#{bindings.TblUserMasterView3.hints.UserMasterId.name}"
                                                        filterable="true" sortable="true"
@@ -312,7 +312,7 @@
                                                   filterModel="#{bindings.TblRoleMasterView1Query.queryDescriptor}"
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleMasterView1Query.processQuery}"
-                                                  varStatus="vs" id="t3" partialTriggers="::b1 ::b2 ::b3" width="446"
+                                                  varStatus="vs" id="t3" partialTriggers="::b1 ::b2 ::b3"
                                                   scrollPolicy="page" autoHeightRows="0">
                                             <af:column sortProperty="#{bindings.TblRoleMasterView11.hints.RoleMasterId.name}"
                                                        filterable="true" sortable="true"
@@ -380,7 +380,7 @@
                                                   rowSelection="single"
                                                   fetchSize="#{bindings.TblRoleDetailModulesView4.rangeSize}"
                                                   filterModel="#{bindings.TblRoleDetailModulesView4Query.queryDescriptor}"
-                                                  filterVisible="true" width="446"
+                                                  filterVisible="true"
                                                   queryListener="#{bindings.TblRoleDetailModulesView4Query.processQuery}"
                                                   varStatus="vs" id="t4" partialTriggers=" ::b8 "
                                                   scrollPolicy="page" autoHeightRows="0">
@@ -482,7 +482,7 @@
                                                   rowSelection="single"
                                                   fetchSize="#{bindings.TblRoleDetailPagesView4.rangeSize}"
                                                   filterModel="#{bindings.TblRoleDetailPagesView4Query.queryDescriptor}"
-                                                  filterVisible="true" width="846"
+                                                  filterVisible="true"
                                                   queryListener="#{bindings.TblRoleDetailPagesView4Query.processQuery}"
                                                   varStatus="vs" id="t5" partialTriggers="::b10 ::b11 "
                                                   scrollPolicy="page" autoHeightRows="0">
@@ -677,7 +677,7 @@
                                                   filterVisible="true"
                                                   queryListener="#{bindings.TblRoleDetailReportsView4Query.processQuery}"
                                                   varStatus="vs" id="t6" partialTriggers="::b14 "
-                                                  width="524" scrollPolicy="page" autoHeightRows="0">
+                                                  scrollPolicy="page" autoHeightRows="0">
                                             <!--<af:column sortProperty="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.name}"
                                                        filterable="true" sortable="true"
                                                        headerText="#{bindings.TblRoleDetailReportsView4.hints.RoleDetailReportsId.label}"

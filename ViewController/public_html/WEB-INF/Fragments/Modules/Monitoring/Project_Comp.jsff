@@ -39,8 +39,7 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblProjCompView1Query.processQuery}"
                                                                       varStatus="vs" id="t1"
-                                                                      partialTriggers="::b13 ::b14 ::b15 ::b2"
-                                                                      width="992"
+                                                                      partialTriggers=" ::b2"
                                                                       scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblProjCompView1.hints.ProjId.name}"
                                                                            filterable="true" sortable="true"
@@ -223,9 +222,8 @@
                                                                       filterVisible="true"
                                                                       queryListener="#{bindings.TblBeneficiaryView1Query.processQuery}"
                                                                       varStatus="vs" id="t4"
-                                                                      partialTriggers="::b4 ::b12 ::b19 ::b6"
-                                                                      scrollPolicy="page" autoHeightRows="0"
-                                                                      width="577">
+                                                                      partialTriggers=" ::b6"
+                                                                      scrollPolicy="page" autoHeightRows="0" >
                                                                 <af:column sortProperty="#{bindings.TblBeneficiaryView1.hints.BeneficiaryId.name}"
                                                                            filterable="true" sortable="true" align="center"
                                                                            headerText=" Beneficiary ID"

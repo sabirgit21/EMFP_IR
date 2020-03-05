@@ -35,8 +35,8 @@
                                           filterModel="#{bindings.TblClusterView1Query.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.TblClusterView1Query.processQuery}" varStatus="vs"
-                                          id="t2" partialTriggers="::b7 ::b8 ::b9 ::b2" scrollPolicy="page"
-                                          autoHeightRows="0" width="995">
+                                          id="t2" partialTriggers=" ::b2" scrollPolicy="page"
+                                          autoHeightRows="0" >
                                     <af:column sortProperty="#{bindings.TblClusterView1.hints.ClusterId.name}"
                                                filterable="true" sortable="true" headerText="Cluster ID" id="c8"
                                                align="center" width="50">
