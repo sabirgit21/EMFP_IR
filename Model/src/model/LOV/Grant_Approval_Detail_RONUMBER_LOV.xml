@@ -14,8 +14,8 @@
        TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
        TblGrantApprovalDetail.RO_VNO"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
-  Where="TblGrantApprovalDetail.RO_NUMBER is not null  
-AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'"
+  Where="TblGrantApprovalDetail.RO_NUMBER is not null   
+AND TblGrantApprovalDetail.RO_STATUS = 'insp ver'"
   OrderBy="TblGrantApprovalDetail.RO_VNO">
   <Properties>
     <SchemaBasedProperties>
