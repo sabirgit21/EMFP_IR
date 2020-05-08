@@ -291,6 +291,13 @@
     AssociationOtherEnd="model.EO.Fk2TblGrantApprovalDetailFkAssoc1.TblGrantApprovalDetail"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalDetailDD"
+    Association="model.EO.FkTblGrantApprovalDetailDDFKAssoc"
+    AssociationEnd="model.EO.FkTblGrantApprovalDetailDDFKAssoc.TblGrantApprovalDetailDD"
+    AssociationOtherEnd="model.EO.FkTblGrantApprovalDetailDDFKAssoc.TblGrantApprovalDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblGrantApprovalDetailPk"
     PrimaryKey="true">

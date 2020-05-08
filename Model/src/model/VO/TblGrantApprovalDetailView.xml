@@ -416,6 +416,11 @@
     ViewLink="model.VO.FKATblGrantApprovalDetailDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDDView"
+    ViewLink="model.VO.FkTblGrantApprovalDetailDDFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

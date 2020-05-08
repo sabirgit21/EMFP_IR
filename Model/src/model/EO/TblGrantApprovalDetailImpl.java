@@ -54,7 +54,8 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         TblGrantAppMaster,
         TblGrantRate,
         TblGrantApprovalDetailD,
-        Map_Farmer_Detail;
+        Map_Farmer_Detail,
+        TblGrantApprovalDetailDD;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -110,6 +111,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int TBLGRANTRATE = AttributesEnum.TblGrantRate.index();
     public static final int TBLGRANTAPPROVALDETAILD = AttributesEnum.TblGrantApprovalDetailD.index();
     public static final int MAP_FARMER_DETAIL = AttributesEnum.Map_Farmer_Detail.index();
+    public static final int TBLGRANTAPPROVALDETAILDD = AttributesEnum.TblGrantApprovalDetailDD.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -587,6 +589,14 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setMap_Farmer_Detail(Map_Farmer_DetailImpl value) {
         setAttributeInternal(MAP_FARMER_DETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTblGrantApprovalDetailDD() {
+        return (RowIterator) getAttributeInternal(TBLGRANTAPPROVALDETAILDD);
     }
 
 

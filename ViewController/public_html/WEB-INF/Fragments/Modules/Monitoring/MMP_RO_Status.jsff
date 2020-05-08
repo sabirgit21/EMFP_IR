@@ -16,7 +16,9 @@
                         <af:spacer width="10" height="10" id="s1"/>
        
       </af:panelGroupLayout>
-      <af:panelGridLayout id="pgl1">
+      <af:panelTabbed position="above" id="pt4">
+        <af:showDetailItem id="tab4" text="MMP RO Status">
+           <af:panelGridLayout id="pgl1">
         <af:gridRow marginTop="5px" height="auto" id="gr1">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
@@ -356,6 +358,180 @@
         </af:gridRow>
        
       </af:panelGridLayout>
-    </af:showDetailItem>
+   
+        </af:showDetailItem>
+         <af:showDetailItem id="sdi2" text="Farmer's Detail">
+          <af:panelGridLayout id="pgl2">
+            <af:gridRow marginTop="5px" height="auto" id="gr5">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                <af:panelTabbed position="above" id="pt5">
+                  <af:showDetailItem id="tab5" text="Farmer's Detail">
+                    <af:table value="#{bindings.TblGrantApprovalMasterDView5.collectionModel}" var="row"
+                              rows="#{bindings.TblGrantApprovalMasterDView5.rangeSize}"
+                              emptyText="#{bindings.TblGrantApprovalMasterDView5.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" fetchSize="#{bindings.TblGrantApprovalMasterDView5.rangeSize}"
+                              id="t4">
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.label}"
+                                 id="c14">
+                        <af:inputText value="#{row.bindings.GrantApprovalMasterDId.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.tooltip}"
+                                      id="it5">
+                          <f:validator binding="#{row.bindings.GrantApprovalMasterDId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterDId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.label}"
+                                 id="c16">
+                        <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.tooltip}"
+                                      id="it13">
+                          <f:validator binding="#{row.bindings.GrantApprovalMasterId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.GrantApprovalMasterId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.label}" id="c17">
+                        <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.tooltip}"
+                                      id="it15">
+                          <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.Name.label}" id="c23">
+                        <af:inputText value="#{row.bindings.Name.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.Name.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.Name.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.Name.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.Name.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.Name.tooltip}" id="it16">
+                          <f:validator binding="#{row.bindings.Name.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.label}"
+                                 id="c24">
+                        <af:inputText value="#{row.bindings.FarmerRegId1.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.tooltip}"
+                                      id="it21">
+                          <f:validator binding="#{row.bindings.FarmerRegId1.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegId1.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.label}" id="c25">
+                        <af:inputText value="#{row.bindings.FatherName.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.FatherName.tooltip}"
+                                      id="it22">
+                          <f:validator binding="#{row.bindings.FatherName.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.label}" id="c26">
+                        <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.Mobile.tooltip}"
+                                      id="it23">
+                          <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.label}" id="c27">
+                        <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.Cnic.tooltip}" id="it24">
+                          <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.label}"
+                                 id="c28">
+                        <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.tooltip}"
+                                      id="it25">
+                          <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.LandUnderOrch.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.label}"
+                                 id="c29">
+                        <af:inputText value="#{row.bindings.FarmerRegLandId.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.tooltip}"
+                                      id="it26">
+                          <f:validator binding="#{row.bindings.FarmerRegLandId.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerRegLandId.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.label}" id="c30">
+                        <af:inputText value="#{row.bindings.LandAcre.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.tooltip}"
+                                      id="it27">
+                          <f:validator binding="#{row.bindings.LandAcre.validator}"/>
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.TblGrantApprovalMasterDView5.hints.LandAcre.format}"/>
+                        </af:inputText>
+                      </af:column>
+                      <af:column headerText="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.label}" id="c31">
+                        <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                      label="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.label}"
+                                      required="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.mandatory}"
+                                      columns="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.displayWidth}"
+                                      maximumLength="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.precision}"
+                                      shortDesc="#{bindings.TblGrantApprovalMasterDView5.hints.FarmerNo.tooltip}"
+                                      id="it28">
+                          <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+                        </af:inputText>
+                      </af:column>
+                    </af:table>
+                  </af:showDetailItem>
+                </af:panelTabbed>
+              </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" id="gr6">
+              <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
+            </af:gridRow>
+            
+          </af:panelGridLayout>
+        </af:showDetailItem>
+      </af:panelTabbed>
+      </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>

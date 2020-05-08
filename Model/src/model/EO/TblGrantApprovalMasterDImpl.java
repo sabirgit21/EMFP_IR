@@ -53,6 +53,8 @@ public class TblGrantApprovalMasterDImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int GRANTAPPROVALMASTERDID = AttributesEnum.GrantApprovalMasterDId.index();
     public static final int GRANTAPPROVALMASTERID = AttributesEnum.GrantApprovalMasterId.index();
     public static final int FARMERREGID = AttributesEnum.FarmerRegId.index();
@@ -70,6 +72,14 @@ public class TblGrantApprovalMasterDImpl extends EntityImpl {
      */
     public TblGrantApprovalMasterDImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalMasterD");
+    }
+
 
     /**
      * Gets the attribute value for GrantApprovalMasterDId, using the alias name GrantApprovalMasterDId.
@@ -223,6 +233,7 @@ public class TblGrantApprovalMasterDImpl extends EntityImpl {
         setAttributeInternal(MAP_FARMER_DETAIL1, value);
     }
 
+
     /**
      * @param grantApprovalMasterDId key constituent
 
@@ -230,13 +241,6 @@ public class TblGrantApprovalMasterDImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number grantApprovalMasterDId) {
         return new Key(new Object[] { grantApprovalMasterDId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblGrantApprovalMasterD");
     }
 
     /**

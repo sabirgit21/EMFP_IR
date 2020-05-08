@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Vctat_InspectionPageDef"
+                Package="Fragments.Modules.Grants">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Vctat_Inspection_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Vctat_Inspection_Grant_Approval_Master1Iterator"/>
+    <iterator Binds="Vctat_Inspection2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Vctat_Inspection2Iterator"/>
+    <iterator Binds="MMP_RO_Status_Grant_Land8" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MMP_RO_Status_Grant_Land8Iterator"/>
+    <iterator Binds="TblGrantApprovalDetailDView11" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDView11Iterator"/>
+    <iterator Binds="TblGrantApprovalDetailDDView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDDView4Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDDView4Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDDView4Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="Vctat_Inspection_Grant_Approval_Master1Iterator" ListOperMode="navigation"
+          ListIter="Vctat_Inspection_Grant_Approval_Master1Iterator" id="Vctat_Inspection_Grant_Approval_Master1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="GrantApprovalMasterId"/>
+        <Item Value="Name"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="Vctat_Inspection2Iterator" id="Vctat_Inspection2">
+      <nodeDefinition DefName="model.VO.Vctat_Inspection" Name="Vctat_Inspection20">
+        <AttrNames>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="RoStatus" Binds="RoStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MMP_RO_Status_Grant_Land8Iterator" id="MMP_RO_Status_Grant_Land8">
+      <nodeDefinition DefName="model.VO.MMP_RO_Status_Grant_Land" Name="MMP_RO_Status_Grant_Land80">
+        <AttrNames>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="Amount"/>
+          <Item Value="FAcre"/>
+          <Item Value="FAmount"/>
+          <Item Value="GrantAmount"/>
+          <Item Value="GrantBase"/>
+          <Item Value="Cnic"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDView11Iterator" id="TblGrantApprovalDetailDView11">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDView" Name="TblGrantApprovalDetailDView110">
+        <AttrNames>
+          <Item Value="ItemL4Id"/>
+          <Item Value="Qty"/>
+          <Item Value="Rate"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalDetailDDView4Iterator" id="TblGrantApprovalDetailDDView4">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDDView" Name="TblGrantApprovalDetailDDView40">
+        <AttrNames>
+          <Item Value="MmpVisitDate"/>
+          <Item Value="MmpMembers"/>
+          <Item Value="SupplierId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="InvNo"/>
+          <Item Value="InvPrice"/>
+          <Item Value="HalfInv"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="Vctat_Inspection2Iterator" id="RoStatus" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="RoStatus"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="vctat insp"/>
+        <Item Value="dlvrd"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

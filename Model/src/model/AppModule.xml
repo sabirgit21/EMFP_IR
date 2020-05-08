@@ -1634,6 +1634,45 @@
   <ViewUsage
     Name="Tbl_Cert_Sts_Cert_App_Master1"
     ViewObjectName="model.VO.Tbl_Cert_Sts_Cert_App_Master"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterDView4"
+    ViewObjectName="model.VO.TblGrantApprovalMasterDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterDView5"
+    ViewObjectName="model.VO.TblGrantApprovalMasterDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView2"
+    ViewObjectName="model.queryBasedVO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView3"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDD1View1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDD1View"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView1_1"
+    ViewObjectName="model.queryBasedVO.TblGrantApprovalDetailDDView1"/>
+  <ViewUsage
+    Name="Vctat_Inspection_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Vctat_Inspection_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="Vctat_Inspection1"
+    ViewObjectName="model.VO.Vctat_Inspection"/>
+  <ViewUsage
+    Name="Vctat_Inspection2"
+    ViewObjectName="model.VO.Vctat_Inspection"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView11"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="MMP_RO_Status_Grant_Land8"
+    ViewObjectName="model.VO.MMP_RO_Status_Grant_Land"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView4"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3217,5 +3256,47 @@
     ViewLinkObjectName="model.VO.FkTblB2bMeetingComFkLink"
     SrcViewUsageName="model.AppModule.TblB2bMeetingView1"
     DstViewUsageName="model.AppModule.TblB2bMeetingComView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblGrantApprovalMasterDMMPApprFKLink1"
+    ViewLinkObjectName="model.VO.FKTblGrantApprovalMasterDMMPApprFKLink"
+    SrcViewUsageName="model.AppModule.MMP_RO_Approval_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalMasterDView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblGrantApprovalMasterDMMPStatusFKLink1"
+    ViewLinkObjectName="model.VO.FKTblGrantApprovalMasterDMMPStatusFKLink"
+    SrcViewUsageName="model.AppModule.MMP_RO_Status_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalMasterDView5"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblGrantApprovalDetailDDFKLink1"
+    ViewLinkObjectName="model.VO.FkTblGrantApprovalDetailDDFKLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Fk_Vctat_Inspection_FKLink1"
+    ViewLinkObjectName="model.VO.Fk_Vctat_Inspection_FKLink"
+    SrcViewUsageName="model.AppModule.Vctat_Inspection_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.Vctat_Inspection2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="VCTAT_Inspection_Detail_D_FKlink1"
+    ViewLinkObjectName="model.VO.VCTAT_Inspection_Detail_D_FKlink"
+    SrcViewUsageName="model.AppModule.Vctat_Inspection2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView11"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="VCTAT_Inspection_Grant_Land_FKLink1"
+    ViewLinkObjectName="model.VO.VCTAT_Inspection_Grant_Land_FKLink"
+    SrcViewUsageName="model.AppModule.Vctat_Inspection2"
+    DstViewUsageName="model.AppModule.MMP_RO_Status_Grant_Land8"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="Vctat_Inspection_Detail_D_D_FKLink1"
+    ViewLinkObjectName="model.VO.Vctat_Inspection_Detail_D_D_FKLink"
+    SrcViewUsageName="model.AppModule.Vctat_Inspection2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDDView4"
     Reversed="false"/>
 </AppModule>

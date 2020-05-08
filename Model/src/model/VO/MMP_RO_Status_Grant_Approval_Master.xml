@@ -94,6 +94,11 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     ViewLink="model.VO.MMP_RO_Status_FkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalMasterDView"
+    ViewLink="model.VO.FKTblGrantApprovalMasterDMMPStatusFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

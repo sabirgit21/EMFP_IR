@@ -3,26 +3,27 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="MMP_RO_Approval_Grant_Approval_Master"
+  Name="Vctat_Inspection_Grant_Approval_Master"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectList="TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_TYPE, 
+  SelectList="TblGrantApprovalMaster.CLUSTER_ID, 
        TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID, 
+       TblGrantApprovalMaster.GRANT_APP_DETAIL_ID, 
        TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_GROUP_ID, 
+       TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_TYPE, 
        TblCluster.CLUSTER_NO, 
-       TblCluster.CLUSTER_ID, 
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        TblCluster.NAME"
   FromList="TBL_GRANT_APPROVAL_MASTER TblGrantApprovalMaster, TBL_CLUSTER TblCluster"
-  Where="TblGrantApprovalMaster.CLUSTER_ID = TblCluster.CLUSTER_ID(+)         
-AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRANT_APPROVAL_MASTER_ID from Tbl_Grant_Approval_Detail TGAD where TGAD.RO_STATUS='mmp ver')"
-  OrderBy="TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID">
+  Where="TblGrantApprovalMaster.CLUSTER_ID = TblCluster.CLUSTER_ID(+)       
+AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRANT_APPROVAL_MASTER_ID from Tbl_Grant_Approval_Detail TGAD where TGAD.RO_STATUS='dlvrd')">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.VO.MMP_RO_Approval_Grant_Approval_Master_LABEL"/>
+        ResId="model.VO.Vctat_Inspection_Grant_Approval_Master_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <EntityUsage
@@ -33,7 +34,7 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     Entity="model.EO.TblCluster"
     Association="model.EO.FkTblGrantApprovalMasterFkAssoc"
     AssociationEnd="model.EO.FkTblGrantApprovalMasterFkAssoc.TblCluster"
-    SourceUsage="model.VO.MMP_RO_Approval_Grant_Approval_Master.TblGrantApprovalMaster"
+    SourceUsage="model.VO.Vctat_Inspection_Grant_Approval_Master.TblGrantApprovalMaster"
     ReadOnly="true"
     Reference="true"
     DeleteParticipant="false"
@@ -48,11 +49,12 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     </DesignTime>
   </EntityUsage>
   <ViewAttribute
-    Name="GrantApprovalMasterType"
+    Name="ClusterId"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="GrantApprovalMasterType"
+    EntityAttrName="ClusterId"
     EntityUsage="TblGrantApprovalMaster"
-    AliasName="GRANT_APPROVAL_MASTER_TYPE"/>
+    AliasName="CLUSTER_ID"/>
   <ViewAttribute
     Name="GrantApprovalMasterId"
     PrecisionRule="true"
@@ -60,11 +62,23 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     EntityUsage="TblGrantApprovalMaster"
     AliasName="GRANT_APPROVAL_MASTER_ID"/>
   <ViewAttribute
+    Name="GrantAppDetailId"
+    PrecisionRule="true"
+    EntityAttrName="GrantAppDetailId"
+    EntityUsage="TblGrantApprovalMaster"
+    AliasName="GRANT_APP_DETAIL_ID"/>
+  <ViewAttribute
     Name="GrantApprovalMasterGroupId"
     PrecisionRule="true"
     EntityAttrName="GrantApprovalMasterGroupId"
     EntityUsage="TblGrantApprovalMaster"
     AliasName="GRANT_APPROVAL_MASTER_GROUP_ID"/>
+  <ViewAttribute
+    Name="GrantApprovalMasterType"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterType"
+    EntityUsage="TblGrantApprovalMaster"
+    AliasName="GRANT_APPROVAL_MASTER_TYPE"/>
   <ViewAttribute
     Name="ClusterNo"
     IsNotNull="true"
@@ -73,11 +87,11 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     EntityUsage="TblCluster"
     AliasName="CLUSTER_NO"/>
   <ViewAttribute
-    Name="ClusterId"
+    Name="ClusterId1"
     PrecisionRule="true"
     EntityAttrName="ClusterId"
     EntityUsage="TblCluster"
-    AliasName="CLUSTER_ID"/>
+    AliasName="CLUSTER_ID1"/>
   <ViewAttribute
     Name="Name"
     IsUnique="true"
@@ -90,13 +104,8 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
     <Item Value="GrantApprovalMasterId"/>
   </AttrArray>
   <ViewLinkAccessor
-    Name="MMP_RO_Approval"
-    ViewLink="model.VO.MMPROApprovalFKLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblGrantApprovalMasterDView"
-    ViewLink="model.VO.FKTblGrantApprovalMasterDMMPApprFKLink"
+    Name="Vctat_Inspection"
+    ViewLink="model.VO.Fk_Vctat_Inspection_FKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

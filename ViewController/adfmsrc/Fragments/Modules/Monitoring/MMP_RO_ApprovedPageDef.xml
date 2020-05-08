@@ -18,6 +18,8 @@
     <searchRegion Binds="TblGrantApprovalDetailDView5Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView5Query"/>
+    <iterator Binds="TblGrantApprovalMasterDView4" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalMasterDView4Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
@@ -29,6 +31,7 @@
         <Item Value="GrantApprovalMasterId"/>
         <Item Value="Name"/>
         <Item Value="ClusterNo"/>
+        <Item Value="GrantApprovalMasterType"/>
       </AttrNames>
     </list>
     <tree IterBinding="MMP_RO_Approval1Iterator" id="MMP_RO_Approval1">
@@ -78,6 +81,24 @@
           <Item Value="Rate"/>
           <Item Value="Amount"/>
           <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblGrantApprovalMasterDView4Iterator" id="TblGrantApprovalMasterDView4">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalMasterDView" Name="TblGrantApprovalMasterDView40">
+        <AttrNames>
+          <Item Value="GrantApprovalMasterDId"/>
+          <Item Value="GrantApprovalMasterId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="Name"/>
+          <Item Value="FarmerRegId1"/>
+          <Item Value="FatherName"/>
+          <Item Value="Mobile"/>
+          <Item Value="Cnic"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="FarmerRegLandId"/>
+          <Item Value="LandAcre"/>
+          <Item Value="FarmerNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -226,6 +226,9 @@
         <page path="/WEB-INF/Fragments/Modules/Certification/Audit_Status.jsff" usageId="view_Audit_StatusPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Certification/Training_Status.jsff"
               usageId="view_Training_StatusPageDef"/>
+        <page path="/WEB-INF/Task_Flows/Modules/Grants/Vctat_Inspection_TaskFlow.xml#Vctat_Inspection_TaskFlow@ExecuteWithParams"
+              usageId="view_Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page path="/WEB-INF/Fragments/Modules/Grants/Vctat_Inspection.jsff" usageId="view_Vctat_InspectionPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -437,6 +440,9 @@
               path="Task_Flows.Modules.Certification.Audit_Status_TaskFlow_Audit_Status_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Audit_StatusPageDef" path="Fragments.Modules.Certification.Audit_StatusPageDef"/>
         <page id="view_Training_StatusPageDef" path="Fragments.Modules.Certification.Training_StatusPageDef"/>
+        <page id="view_Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"
+              path="Task_Flows.Modules.Grants.Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+        <page id="view_Vctat_InspectionPageDef" path="Fragments.Modules.Grants.Vctat_InspectionPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
