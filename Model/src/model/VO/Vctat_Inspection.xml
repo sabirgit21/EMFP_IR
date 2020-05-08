@@ -18,9 +18,9 @@
        TblFarmerReg.FARMER_NO, 
        TblFarmerReg.FATHER_NAME"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
-  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)  
-And TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID in (Select distinct TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID from Tbl_Grant_Approval_Detail_D TblGrantApprovalDetailD)     
-AND TblGrantApprovalDetail.RO_STATUS = 'null'">
+  Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)   
+And TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID in (Select distinct TblGrantApprovalDetailD.GRANT_APPROVAL_DETAIL_ID from Tbl_Grant_Approval_Detail_D TblGrantApprovalDetailD)      
+AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
