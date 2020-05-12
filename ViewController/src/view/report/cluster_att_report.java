@@ -33,7 +33,7 @@ public class cluster_att_report {
     private RichInputDate toDateParam;
 
     public cluster_att_report() {
-        System.out.println("constructor caLLED");
+        System.out.println("cluster att report constructor called");
     }
 
 
@@ -70,31 +70,24 @@ public class cluster_att_report {
         
         if(gotModule != null){
             reportBean.setReportParameter("P_Module_id", gotModule.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotDistrict != null){
             reportBean.setReportParameter("P_District_id", gotDistrict.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotCrop != null){
             reportBean.setReportParameter("P_Crop_id", gotCrop.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotCity != null){
             reportBean.setReportParameter("P_City_id", gotCity.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotFarmer != null){
             reportBean.setReportParameter("P_Farmer_reg_id", gotFarmer.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotTrainer != null){
             reportBean.setReportParameter("P_Trainer_id", gotTrainer.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }        
         if(gotCluster != null){
             reportBean.setReportParameter("P_Cluster_id", gotCluster.toString());
-            System.out.println("lyy fir agiaaa eeeiiii");
         }     
         
         if(getFromDate() != ""){

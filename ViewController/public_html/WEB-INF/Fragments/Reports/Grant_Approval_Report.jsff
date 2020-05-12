@@ -10,7 +10,7 @@
                             <af:spacer width="30" height="80" id="s3"/>
                             <af:selectOneChoice label="Phase" autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_phase}"
+                                                binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_phase}"
                                                 contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
@@ -18,7 +18,7 @@
                             <af:spacer width="30" height="10" id="s1"/>
                             <af:selectOneChoice label="Cluster" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc2"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_cluster}"
+                                                binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_cluster}"
                                                 contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
@@ -33,7 +33,7 @@
                             </af:selectOneChoice>-->
                             <af:selectOneChoice label="Farmer"
                                                 shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="soc3"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_farmer}"
+                                                binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_farmer}"
                                                 contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.FarmerRegId.items}" id="si4"/>
                                 <f:validator binding="#{bindings.FarmerRegId.validator}"/>
@@ -42,21 +42,21 @@
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                          <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
-                                             valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_report_format}">
+                                             binding="#{backingBeanScope.Grant_Approval_Report_BackBean.report_format}">
                                                  <af:selectItem label="PDF" value="PDF" id="si55"/>
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
                         <af:spacer width="30" height="30" id="s22"/>
                         <af:selectOneChoice label="Select Grant Type" id="soc5" autoSubmit="true"
                                                 unselectedLabel="--Select--"
-                                            valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_grant_type}">
+                                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_grant_type}">
                                 <af:selectItem label="Group" value="grp" id="si5"/>
                                 <af:selectItem label="Individual" value="ind" id="si10"/>
                             </af:selectOneChoice>
                         <af:spacer width="30" height="30" id="s7"/>
                             <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
-                                                valueChangeListener="#{backingBeanScope.Grant_Approval_Report_BackBean.get_selected_report_type}">
+                                                binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_report_type}">
                                 <af:selectItem label="Grant Approval Detail" value="detailWise" id="si9"/>
                                 <af:selectItem label="Grant Approval Machinery Wise" value="machineryWise" id="si8"/>
                                 <af:selectItem label="Grant Approval Machinery Phase Wise" value="machineryPhaseWise"
