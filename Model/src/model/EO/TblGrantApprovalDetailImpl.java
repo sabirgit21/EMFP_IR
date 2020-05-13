@@ -49,6 +49,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         OldRoNumber,
         GrantBase,
         RoVno,
+        SubsidyAmount,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -105,6 +106,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int OLDRONUMBER = AttributesEnum.OldRoNumber.index();
     public static final int GRANTBASE = AttributesEnum.GrantBase.index();
     public static final int ROVNO = AttributesEnum.RoVno.index();
+    public static final int SUBSIDYAMOUNT = AttributesEnum.SubsidyAmount.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -509,6 +511,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setRoVno(BigDecimal value) {
         setAttributeInternal(ROVNO, value);
+    }
+
+    /**
+     * Gets the attribute value for SubsidyAmount, using the alias name SubsidyAmount.
+     * @return the value of SubsidyAmount
+     */
+    public BigDecimal getSubsidyAmount() {
+        return (BigDecimal) getAttributeInternal(SUBSIDYAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SubsidyAmount.
+     * @param value value to set the SubsidyAmount
+     */
+    public void setSubsidyAmount(BigDecimal value) {
+        setAttributeInternal(SUBSIDYAMOUNT, value);
     }
 
     /**

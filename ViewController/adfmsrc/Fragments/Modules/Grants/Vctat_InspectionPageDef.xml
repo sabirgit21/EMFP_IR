@@ -17,6 +17,8 @@
     <searchRegion Binds="TblGrantApprovalDetailDDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDDView4Query"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
@@ -54,6 +56,7 @@
           <Item Value="GrantAmount"/>
           <Item Value="GrantBase"/>
           <Item Value="Cnic"/>
+          <Item Value="SubsidyAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -78,6 +81,9 @@
           <Item Value="InvPrice"/>
           <Item Value="HalfInv"/>
           <Item Value="Qty"/>
+          <Item Value="AppRate"/>
+          <Item Value="AppAmount"/>
+          <Item Value="SubsidyAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -90,5 +96,23 @@
         <Item Value="dlvrd"/>
       </ValueList>
     </button>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.VO.USERS_ROLES.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="Crudid"/>
+          <Item Value="Operation"/>
+          <Item Value="Icon"/>
+          <Item Value="Bindingname"/>
+          <Item Value="Btndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TblGrantApprovalDetailDDView4Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="TblGrantApprovalDetailDDView4Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="TblGrantApprovalDetailDDView4Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="Vctat_Inspection2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

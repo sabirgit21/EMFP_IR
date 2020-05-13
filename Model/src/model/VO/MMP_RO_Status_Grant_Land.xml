@@ -134,6 +134,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="SubsidyAmount"
+    PrecisionRule="true"
+    EntityAttrName="SubsidyAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="SUBSIDY_AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>

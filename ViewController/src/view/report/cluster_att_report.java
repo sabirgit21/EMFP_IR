@@ -20,6 +20,11 @@ import view.DatabaseConnection.DatabaseConnection;
 import oracle.jbo.domain.Number;
 
 public class cluster_att_report {
+
+    public cluster_att_report() {
+        System.out.println("cluster att report constructor called");
+    }
+    
     private RichSelectOneChoice selected_module;
     private RichSelectOneChoice selected_cluster;
     private RichSelectOneChoice selected_trainer;
@@ -32,9 +37,6 @@ public class cluster_att_report {
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
 
-    public cluster_att_report() {
-        System.out.println("cluster att report constructor called");
-    }
 
 
     private static Number gotCluster;

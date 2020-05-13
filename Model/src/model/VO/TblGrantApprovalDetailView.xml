@@ -407,6 +407,12 @@
     EntityAttrName="GrantBase"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="GRANT_BASE"/>
+  <ViewAttribute
+    Name="SubsidyAmount"
+    PrecisionRule="true"
+    EntityAttrName="SubsidyAmount"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="SUBSIDY_AMOUNT"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
     <Item Value="FarmerRegId1"/>
@@ -421,6 +427,11 @@
     ViewLink="model.VO.FkTblGrantApprovalDetailDDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

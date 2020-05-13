@@ -249,6 +249,13 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="SubsidyAmount"
+    ColumnName="SUBSIDY_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
   <AccessorAttribute
     Name="TblFarmerReg"
     Association="model.EO.Fk2TblGrantApprovalDetailFkAssoc"
