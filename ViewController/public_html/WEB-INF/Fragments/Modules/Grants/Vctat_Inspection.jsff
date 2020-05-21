@@ -50,7 +50,7 @@
                           partialTriggers="::b2">
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.FarmerRegId.name}" filterable="true"
                              sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.FarmerRegId.label}" id="c1">
-                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                    <af:inputText value="#{row.bindings.FarmerRegId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.FarmerRegId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.FarmerRegId.mandatory}"
                                   columns="#{bindings.Vctat_Inspection2.hints.FarmerRegId.displayWidth}"
@@ -64,7 +64,7 @@
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.label}" id="c2">
-                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.mandatory}"
                                   columns="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.displayWidth}"
@@ -79,7 +79,7 @@
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.label}" id="c4">
-                    <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}"
+                    <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.mandatory}"
                                   columns="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.displayWidth}"

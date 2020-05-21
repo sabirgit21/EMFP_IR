@@ -5,20 +5,20 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="MMP_RO_Status_Grant_Land8" DataControl="AppModuleDataControl"
-              id="MMP_RO_Status_Grant_Land8Iterator" Refresh="always" CacheResults="false"/>
+              id="MMP_RO_Status_Grant_Land8Iterator" RangeSize="25"/>
     <iterator Binds="TblGrantApprovalDetailDView11" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDView11Iterator" Refresh="always" CacheResults="false"/>
+              id="TblGrantApprovalDetailDView11Iterator" RangeSize="25"/>
     <iterator Binds="TblGrantApprovalDetailDDView4" DataControl="AppModuleDataControl"
-              id="TblGrantApprovalDetailDDView4Iterator" Refresh="always" CacheResults="false"/>
+              id="TblGrantApprovalDetailDDView4Iterator" RangeSize="25"/>
     <searchRegion Binds="TblGrantApprovalDetailDDView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDDView4Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="Vctat_Inspection_Grant_Approval_Master1" DataControl="AppModuleDataControl"
-              id="Vctat_Inspection_Grant_Approval_Master1Iterator" Refresh="always" CacheResults="false"/>
+              id="Vctat_Inspection_Grant_Approval_Master1Iterator"/>
     <iterator Binds="Vctat_Inspection2" DataControl="AppModuleDataControl"
-              id="Vctat_Inspection2Iterator" CacheResults="false" Refresh="always"/>
+              id="Vctat_Inspection2Iterator" RangeSize="25"/>
     <searchRegion Binds="Vctat_Inspection2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Vctat_Inspection2Query"/>
   </executables>
