@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="GrantApprovalDetailDDId"
-    IsNotNull="true"
     ColumnName="GRANT_APPROVAL_DETAIL_D_D_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D_D"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="GrantApprovalDetailId"
     IsNotNull="true"
