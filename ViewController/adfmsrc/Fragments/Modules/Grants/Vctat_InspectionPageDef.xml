@@ -15,10 +15,10 @@
                   id="TblGrantApprovalDetailDDView4Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator" Refresh="always" CacheResults="false"/>
-    <iterator Binds="Vctat_Inspection_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Vctat_Inspection_Grant_Approval_Master1Iterator"/>
-    <iterator Binds="Vctat_Inspection2" RangeSize="25" DataControl="AppModuleDataControl"
-              id="Vctat_Inspection2Iterator"/>
+    <iterator Binds="Vctat_Inspection_Grant_Approval_Master1" DataControl="AppModuleDataControl"
+              id="Vctat_Inspection_Grant_Approval_Master1Iterator" Refresh="always" CacheResults="false"/>
+    <iterator Binds="Vctat_Inspection2" DataControl="AppModuleDataControl"
+              id="Vctat_Inspection2Iterator" CacheResults="false" Refresh="always"/>
     <searchRegion Binds="Vctat_Inspection2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Vctat_Inspection2Query"/>
   </executables>

@@ -18,8 +18,9 @@
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        TblCluster.NAME"
   FromList="TBL_GRANT_APPROVAL_MASTER TblGrantApprovalMaster, TBL_CLUSTER TblCluster"
-  Where="TblGrantApprovalMaster.CLUSTER_ID = TblCluster.CLUSTER_ID(+)       
-AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRANT_APPROVAL_MASTER_ID from Tbl_Grant_Approval_Detail TGAD where TGAD.RO_STATUS='dlvrd')">
+  Where="TblGrantApprovalMaster.CLUSTER_ID = TblCluster.CLUSTER_ID(+)         
+AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRANT_APPROVAL_MASTER_ID from Tbl_Grant_Approval_Detail TGAD where TGAD.RO_STATUS='dlvrd')  
+order by TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID ASC">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
