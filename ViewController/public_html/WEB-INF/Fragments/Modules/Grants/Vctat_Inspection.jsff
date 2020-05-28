@@ -23,7 +23,7 @@
               <af:showDetailItem id="tab2" text="VCTAT Inspection">
                 <af:selectOneChoice value="#{bindings.Vctat_Inspection_Grant_Approval_Master1.inputValue}"
                 autoSubmit="true"
-                                    label="#{bindings.Vctat_Inspection_Grant_Approval_Master1.label}"
+                                    label="Vctat Inspection Grant Approval Master"
                                     required="#{bindings.Vctat_Inspection_Grant_Approval_Master1.hints.mandatory}"
                                     shortDesc="#{bindings.Vctat_Inspection_Grant_Approval_Master1.hints.tooltip}"
                                     id="soc1">
@@ -47,9 +47,16 @@
                           rowSelection="single" fetchSize="#{bindings.Vctat_Inspection2.rangeSize}"
                           filterModel="#{bindings.Vctat_Inspection2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.Vctat_Inspection2Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2">
+                          partialTriggers="::b2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.FarmerRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.FarmerRegId.label}" id="c1">
+                             sortable="true" headerText="Farmer Reg ID" id="c1"
+                             align="center">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
+       id="id4" placeholder="Search ID ">
+      </af:inputText>
+</f:facet>
+
                     <af:inputText value="#{row.bindings.FarmerRegId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.FarmerRegId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.FarmerRegId.mandatory}"
@@ -63,7 +70,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.label}" id="c2">
+                             headerText="Grant Approval Detail ID" id="c2" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrantApprovalDetailId}"
+       id="it28" placeholder="Search ID ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.GrantApprovalDetailId.mandatory}"
@@ -78,7 +90,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.label}" id="c4">
+                             headerText="Grant Approval Master ID" id="c4" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrantApprovalMasterId}"
+       id="it29" placeholder="Search ID ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.GrantApprovalMasterId.inputValue}" readOnly="true"
                                   label="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.GrantApprovalMasterId.mandatory}"
@@ -92,7 +109,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.Name.label}" id="c5">
+                             sortable="true" headerText="Farmer" id="c5" width="200">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Name}"
+       id="it30" placeholder="Search Farmer ">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.Vctat_Inspection2.hints.Name.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.Name.mandatory}"
@@ -103,7 +125,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.FarmerNo.label}" id="c7">
+                             sortable="true" headerText="Farmer No." id="c7" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+       id="it31" placeholder="Search Farmer No.">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                   label="#{bindings.Vctat_Inspection2.hints.FarmerNo.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.FarmerNo.mandatory}"
@@ -114,7 +141,12 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.FatherName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.FatherName.label}" id="c8">
+                             sortable="true" headerText="Father" id="c8">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FatherName}"
+       id="it32" placeholder="Search Father">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                   label="#{bindings.Vctat_Inspection2.hints.FatherName.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.FatherName.mandatory}"
@@ -125,20 +157,31 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.label}"
-                             id="c9">
+                             sortable="true" headerText="Subsidy Amount"
+                             id="c9" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubsidyAmount}"
+       id="it33" placeholder="Search Subsid">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}"
                                   label="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.label}"
                                   required="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.mandatory}"
                                   columns="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.displayWidth}"
                                   maximumLength="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.precision}"
-                                  shortDesc="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.tooltip}" id="it9">
+                                  shortDesc="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.tooltip}" id="it9"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.SubsidyAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.Vctat_Inspection2.hints.SubsidyAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.Vctat_Inspection2.hints.RoStatus.label}" id="c3">
+                  <af:column headerText="RO Status" id="c3" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.RoStatus}"
+       id="it34" placeholder="Search Status">
+      </af:inputText>
+</f:facet>
                     <af:selectBooleanCheckbox value="#{row.bindings.RoStatus.inputValue}"
                     autoSubmit="true"
                                               label="#{row.bindings.RoStatus.label}"
@@ -164,9 +207,15 @@
                 <af:table value="#{bindings.MMP_RO_Status_Grant_Land8.collectionModel}" var="row"
                           rows="#{bindings.MMP_RO_Status_Grant_Land8.rangeSize}"
                           emptyText="#{bindings.MMP_RO_Status_Grant_Land8.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" fetchSize="#{bindings.MMP_RO_Status_Grant_Land8.rangeSize}" id="t2">
+                          rowBandingInterval="0" fetchSize="#{bindings.MMP_RO_Status_Grant_Land8.rangeSize}" id="t2"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column headerText="Detail ID"
-                             id="c6">
+                             id="c6" align="center" sortable="true" filterable="true">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrantApprovalDetailId}"
+       id="it35" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.GrantApprovalDetailId.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantApprovalDetailId.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantApprovalDetailId.mandatory}"
@@ -179,7 +228,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantApprovalDetailId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Farmer" id="c27">
+                  <af:column headerText="Farmer" id="c27" sortable="true" filterable="true" width="200">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FarmerRegId}"
+       id="it36" placeholder="Search Farmer">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.FarmerRegId.inputValue}"
                                         label="#{row.bindings.FarmerRegId.label}" readOnly="true"
                                         required="#{bindings.MMP_RO_Status_Grant_Land8.hints.FarmerRegId.mandatory}"
@@ -189,7 +243,12 @@
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Land Under Orchard" id="c32">
+                  <af:column headerText="Land Under Orchard" id="c32" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.LandUnderOrch}"
+       id="it37" placeholder="Search Land">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.LandUnderOrch.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.LandUnderOrch.mandatory}"
@@ -202,7 +261,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Amount" id="c33">
+                  <af:column headerText="Amount" id="c33" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it38" placeholder="Search Amount">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.Amount.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.Amount.mandatory}"
@@ -214,7 +278,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.Amount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Final Acre" id="c10">
+                  <af:column headerText="Final Acre" id="c10" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FAcre}"
+       id="it39" placeholder="Search Acre">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.FAcre.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAcre.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAcre.mandatory}"
@@ -226,7 +295,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAcre.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Final Amount" id="c11">
+                  <af:column headerText="Final Amount" id="c11" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.FAmount}"
+       id="it40" placeholder="Search Amount">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.FAmount.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAmount.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAmount.mandatory}"
@@ -238,7 +312,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.FAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grant Amount" id="c12">
+                  <af:column headerText="Grant Amount" id="c12" align="center" sortable="true" filterable="true">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrantAmount}"
+       id="it41" placeholder="Search Grant Amount">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.GrantAmount.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantAmount.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantAmount.mandatory}"
@@ -250,7 +329,12 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Grant Base" id="c13">
+                  <af:column headerText="Grant Base" id="c13" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.GrantBase}"
+       id="it42" placeholder="Search Grant Base">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.GrantBase.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantBase.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.GrantBase.mandatory}"
@@ -260,7 +344,12 @@
                       <f:validator binding="#{row.bindings.GrantBase.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Subsidy Amount" id="c28">
+                  <af:column headerText="Subsidy Amount" id="c28" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubsidyAmount}"
+       id="it43" placeholder="Search Subsidy">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.SubsidyAmount.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.SubsidyAmount.mandatory}"
@@ -273,13 +362,19 @@
                                         pattern="#{bindings.MMP_RO_Status_Grant_Land8.hints.SubsidyAmount.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="CNIC" id="c14">
+                  <af:column headerText="CNIC" id="c14" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Cnic}"
+       id="it44" placeholder="Search CNIC">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Cnic.inputValue}" readOnly="true"
                                   label="#{bindings.MMP_RO_Status_Grant_Land8.hints.Cnic.label}"
                                   required="#{bindings.MMP_RO_Status_Grant_Land8.hints.Cnic.mandatory}"
                                   columns="#{bindings.MMP_RO_Status_Grant_Land8.hints.Cnic.displayWidth}"
                                   maximumLength="#{bindings.MMP_RO_Status_Grant_Land8.hints.Cnic.precision}"
                                   shortDesc="#{bindings.MMP_RO_Status_Grant_Land8.hints.Cnic.tooltip}" id="it13">
+                     
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -290,8 +385,13 @@
                           rows="#{bindings.TblGrantApprovalDetailDView11.rangeSize}"
                           emptyText="#{bindings.TblGrantApprovalDetailDView11.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.TblGrantApprovalDetailDView11.rangeSize}"
-                          id="t3">
-                  <af:column headerText="Machinery" id="c15">
+                          id="t3" scrollPolicy="page" autoHeightRows="0">
+                  <af:column headerText="Machinery" id="c15" sortable="true" filterable="true" width="200">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it45" placeholder="Search Machinery">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                         label="#{row.bindings.ItemL4Id.label}" readOnly="true"
                                         required="#{bindings.TblGrantApprovalDetailDView11.hints.ItemL4Id.mandatory}"
@@ -301,7 +401,12 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.TblGrantApprovalDetailDView11.hints.Qty.label}" id="c16">
+                  <af:column headerText="Quantity" id="c16" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it46" placeholder="Search Quantity">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Qty.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView11.hints.Qty.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView11.hints.Qty.mandatory}"
@@ -313,7 +418,12 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDView11.hints.Qty.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblGrantApprovalDetailDView11.hints.Rate.label}" id="c17">
+                  <af:column headerText="Rate" id="c17" align="center" sortable="true" filterable="true">
+                  <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Rate}"
+       id="it47" placeholder="Search Rate">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Rate.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView11.hints.Rate.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView11.hints.Rate.mandatory}"
@@ -325,7 +435,12 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDView11.hints.Rate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblGrantApprovalDetailDView11.hints.Amount.label}" id="c18">
+                  <af:column headerText="Amount" id="c18" sortable="true" filterable="true" align="center">
+                  <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Amount}"
+       id="it48" placeholder="Search Amount">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Amount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDView11.hints.Amount.label}"
                                   required="#{bindings.TblGrantApprovalDetailDView11.hints.Amount.mandatory}"
@@ -347,10 +462,10 @@
                           filterModel="#{bindings.TblGrantApprovalDetailDDView4Query.queryDescriptor}"
                           filterVisible="true"
                           queryListener="#{bindings.TblGrantApprovalDetailDDView4Query.processQuery}" varStatus="vs"
-                          id="t4">
+                          id="t4" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.MmpVisitDate.name}"
                              filterable="true" sortable="true"
-                             headerText="Visit Date" id="c19">
+                             headerText="Visit Date" id="c19" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblGrantApprovalDetailDDView4Query.queryDescriptor.filterConjunctionCriterion.criterionMap.MmpVisitDate.value}"
                                     id="id1">
@@ -369,7 +484,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.MmpMembers.name}"
                              filterable="true" sortable="true"
-                             headerText="Members" id="c20">
+                             headerText="Members" id="c20" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MmpMembers}"
+       id="it49" placeholder="Search Members">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.MmpMembers.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.MmpMembers.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.MmpMembers.mandatory}"
@@ -382,7 +502,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.SupplierId.name}"
                              filterable="true" sortable="true"
-                             headerText="Supplier" id="c21">
+                             headerText="Supplier" id="c21" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SupplierId}"
+       id="it50" placeholder="Search Supplier">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.SupplierId.inputValue}"
                                         label="#{row.bindings.SupplierId.label}"
                                         required="#{bindings.TblGrantApprovalDetailDDView4.hints.SupplierId.mandatory}"
@@ -394,7 +519,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.ItemL4Id.name}"
                              filterable="true" sortable="true"
-                             headerText="Item" id="c22">
+                             headerText="Item" id="c22" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it51" placeholder="Search Item">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
                                         label="#{row.bindings.ItemL4Id.label}" autoSubmit="true"
                                         required="#{bindings.TblGrantApprovalDetailDDView4.hints.ItemL4Id.mandatory}"
@@ -406,7 +536,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.Qty.name}" filterable="true"
                              sortable="true" headerText="Quantity"
-                             id="c26">
+                             id="c26" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it52" placeholder="Search Quantity">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Qty.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.Qty.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.Qty.mandatory}"
@@ -418,7 +553,12 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDDView4.hints.Qty.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Approved Rate" id="c29">
+                  <af:column headerText="Approved Rate" id="c29" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AppRate}"
+       id="it53" placeholder="Search Approved Rate">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.AppRate.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.AppRate.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.AppRate.mandatory}"
@@ -430,7 +570,12 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDDView4.hints.AppRate.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Approved Amount" id="c30">
+                  <af:column headerText="Approved Amount" id="c30" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AppAmount}"
+       id="it54" placeholder="Search Approved Amount">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.AppAmount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.AppAmount.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.AppAmount.mandatory}"
@@ -446,6 +591,11 @@
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.InvNo.name}" filterable="true"
                              sortable="true" headerText="Invoice Number"
                              id="c23">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvNo}"
+       id="it55" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.InvNo.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.InvNo.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.InvNo.mandatory}"
@@ -457,7 +607,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.InvPrice.name}"
                              filterable="true" sortable="true"
-                             headerText="Invoice Price" id="c24">
+                             headerText="Invoice Price" id="c24" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvPrice}"
+       id="it56" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.InvPrice.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.InvPrice.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.InvPrice.mandatory}"
@@ -473,6 +628,11 @@
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView4.hints.HalfInv.name}"
                              filterable="true" sortable="true"
                              headerText="Half Invoice" id="c25">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.HalfInv}"
+       id="it57" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.HalfInv.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.HalfInv.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.HalfInv.mandatory}"
@@ -484,7 +644,12 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDDView4.hints.HalfInv.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Subsidy Amount" id="c31">
+                  <af:column headerText="Subsidy Amount" id="c31" align="center" sortable="true" filterable="true">
+                    <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SubsidyAmount}"
+       id="it58" placeholder="Search Subsidy">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailDDView4.hints.SubsidyAmount.label}"
                                   required="#{bindings.TblGrantApprovalDetailDDView4.hints.SubsidyAmount.mandatory}"
