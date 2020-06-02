@@ -50,6 +50,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
         GrantBase,
         RoVno,
         SubsidyAmount,
+        PaymentAcre,
         TblFarmerReg,
         TblGrantApprovalMaster,
         TblGrantAppMaster,
@@ -107,6 +108,7 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
     public static final int GRANTBASE = AttributesEnum.GrantBase.index();
     public static final int ROVNO = AttributesEnum.RoVno.index();
     public static final int SUBSIDYAMOUNT = AttributesEnum.SubsidyAmount.index();
+    public static final int PAYMENTACRE = AttributesEnum.PaymentAcre.index();
     public static final int TBLFARMERREG = AttributesEnum.TblFarmerReg.index();
     public static final int TBLGRANTAPPROVALMASTER = AttributesEnum.TblGrantApprovalMaster.index();
     public static final int TBLGRANTAPPMASTER = AttributesEnum.TblGrantAppMaster.index();
@@ -527,6 +529,22 @@ public class TblGrantApprovalDetailImpl extends EntityImpl {
      */
     public void setSubsidyAmount(BigDecimal value) {
         setAttributeInternal(SUBSIDYAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for PaymentAcre, using the alias name PaymentAcre.
+     * @return the value of PaymentAcre
+     */
+    public BigDecimal getPaymentAcre() {
+        return (BigDecimal) getAttributeInternal(PAYMENTACRE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PaymentAcre.
+     * @param value value to set the PaymentAcre
+     */
+    public void setPaymentAcre(BigDecimal value) {
+        setAttributeInternal(PAYMENTACRE, value);
     }
 
     /**

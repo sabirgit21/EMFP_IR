@@ -17,7 +17,8 @@
        TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
        TblFarmerReg.FARMER_NO, 
        TblFarmerReg.FATHER_NAME, 
-       TblGrantApprovalDetail.SUBSIDY_AMOUNT"
+       TblGrantApprovalDetail.SUBSIDY_AMOUNT, 
+       TblGrantApprovalDetail.PAYMENT_ACRE"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg"
   Where="TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)        
 AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
@@ -107,6 +108,12 @@ AND TblGrantApprovalDetail.RO_STATUS = 'dlvrd'">
     EntityAttrName="SubsidyAmount"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="SUBSIDY_AMOUNT"/>
+  <ViewAttribute
+    Name="PaymentAcre"
+    PrecisionRule="true"
+    EntityAttrName="PaymentAcre"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="PAYMENT_ACRE"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalDetailId"/>
   </AttrArray>
