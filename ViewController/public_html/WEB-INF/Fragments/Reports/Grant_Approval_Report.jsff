@@ -63,6 +63,8 @@
                                                id="si7"/>
                                 <af:selectItem label="Grant Consolidated Detail" value="consolidatedDetail" id="si3"/>
                                 <af:selectItem label="Grant Farmer Eligibility Detail" value="grantFarmerEligibilty" id="si6"/>
+                                <af:selectItem label="Grant_Approval_Disbursement_Detail" value="grantApprovalDisbursementDetail"
+                                               id="si11"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"

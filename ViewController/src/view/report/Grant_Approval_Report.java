@@ -104,6 +104,13 @@ public class Grant_Approval_Report {
 
                 System.out.println("consolidated detail");
                 break;
+            
+                case "grantApprovalDisbursementDetail":
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Disbursement_Detail&");
+
+                    System.out.println("Grant Approval Disbursement Detail");
+                    break;
 
             case "grantFarmerEligibilty":
 
@@ -117,6 +124,10 @@ public class Grant_Approval_Report {
                 break;
 
             }
+            
+            
+
+           
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                             "CACHE"); // which will be one of the [cashe - file - mail - printer]
             reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
