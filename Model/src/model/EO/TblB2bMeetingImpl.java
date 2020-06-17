@@ -39,6 +39,8 @@ public class TblB2bMeetingImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        FocalPerson,
+        ExpoStallId,
         TblExhibitors,
         TblIntlDelegAppM,
         TblB2bMeetingCom;
@@ -82,6 +84,8 @@ public class TblB2bMeetingImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int FOCALPERSON = AttributesEnum.FocalPerson.index();
+    public static final int EXPOSTALLID = AttributesEnum.ExpoStallId.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLINTLDELEGAPPM = AttributesEnum.TblIntlDelegAppM.index();
     public static final int TBLB2BMEETINGCOM = AttributesEnum.TblB2bMeetingCom.index();
@@ -324,6 +328,38 @@ public class TblB2bMeetingImpl extends EntityImpl {
         setAttributeInternal(UPDATEDBY, value);
     }
 
+
+    /**
+     * Gets the attribute value for FocalPerson, using the alias name FocalPerson.
+     * @return the value of FocalPerson
+     */
+    public String getFocalPerson() {
+        return (String) getAttributeInternal(FOCALPERSON);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FocalPerson.
+     * @param value value to set the FocalPerson
+     */
+    public void setFocalPerson(String value) {
+        setAttributeInternal(FOCALPERSON, value);
+    }
+
+    /**
+     * Gets the attribute value for ExpoStallId, using the alias name ExpoStallId.
+     * @return the value of ExpoStallId
+     */
+    public BigDecimal getExpoStallId() {
+        return (BigDecimal) getAttributeInternal(EXPOSTALLID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExpoStallId.
+     * @param value value to set the ExpoStallId
+     */
+    public void setExpoStallId(BigDecimal value) {
+        setAttributeInternal(EXPOSTALLID, value);
+    }
 
     /**
      * Gets the attribute value for ExpoSchId, using the alias name ExpoSchId.

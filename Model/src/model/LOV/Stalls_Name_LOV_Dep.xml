@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Stalls_Name_LOV_Dep"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Stalls_Name_LOV_Dep_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getexibitorID"
+    Kind="where"
+    Type="java.lang.String"/>
+  <SQLQuery><![CDATA[Select   
+TBL_STALLS_ALLOC.STALLS_ALLOC_ID,  
+TBL_STALLS_ALLOC.EXHIBITORS_ID,  
+  
+TBL_STALLS_ALLOC.EXPO_STALLS_ID,  
+TBL_EXPO_STALLS.STALL_NAME  
+From TBL_STALLS_ALLOC ,TBL_EXPO_STALLS  
+Where TBL_STALLS_ALLOC.EXPO_STALLS_ID=TBL_EXPO_STALLS.EXPO_STALLS_ID  
+And TBL_STALLS_ALLOC.EXHIBITORS_ID=:getexibitorID 
+order by TBL_STALLS_ALLOC.STALLS_ALLOC_ID]]></SQLQuery>
+  <ViewAttribute
+    Name="StallsAllocId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="STALLS_ALLOC_ID"
+    Expression="STALLS_ALLOC_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ExhibitorsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EXHIBITORS_ID"
+    Expression="EXHIBITORS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ExpoStallsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="EXPO_STALLS_ID"
+    Expression="EXPO_STALLS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="StallName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STALL_NAME"
+    Expression="STALL_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="StallsAllocId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

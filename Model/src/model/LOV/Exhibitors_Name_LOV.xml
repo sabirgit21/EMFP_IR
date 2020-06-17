@@ -6,12 +6,12 @@
   Name="Exhibitors_Name_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectList="TblExhibitors.EXHIBITORS_ID, 
-       TblExhibitors.NAME"
-  FromList="TBL_EXHIBITORS TblExhibitors"
   BindingStyle="OracleName"
   CustomQuery="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblExhibitors.EXHIBITORS_ID, 
+       TblExhibitors.NAME"
+  FromList="TBL_EXHIBITORS TblExhibitors">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

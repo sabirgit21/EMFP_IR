@@ -29,6 +29,18 @@
     Name="Expo_Sch_Name_App_Status_LOV1"
     ViewObjectName="model.LOV.Expo_Sch_Name_App_Status_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Stalls_Name_LOV_Dep1"
+    ViewObjectName="model.LOV.Stalls_Name_LOV_Dep"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getexibitorID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[ExhibitorsId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_B2bMeetingType"
     ListVOName="B2B_Meeting_Type_LOV1"
@@ -98,6 +110,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoStallId"
+    ListVOName="Stalls_Name_LOV_Dep1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoStallId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoStallsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StallName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -235,6 +265,26 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblB2bMeeting"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="FocalPerson"
+    PrecisionRule="true"
+    EntityAttrName="FocalPerson"
+    EntityUsage="TblB2bMeeting"
+    AliasName="FOCAL_PERSON"/>
+  <ViewAttribute
+    Name="ExpoStallId"
+    PrecisionRule="true"
+    EntityAttrName="ExpoStallId"
+    EntityUsage="TblB2bMeeting"
+    AliasName="EXPO_STALL_ID"
+    LOVName="LOV_ExpoStallId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblB2bMeetingComView"
     ViewLink="model.VO.FkTblB2bMeetingComFkLink"
