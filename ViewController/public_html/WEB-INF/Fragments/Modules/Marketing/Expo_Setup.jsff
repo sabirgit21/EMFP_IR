@@ -423,7 +423,7 @@
                             </f:facet>
                           </af:panelFormLayout>
                         </af:showDetailItem>
-              <af:showDetailItem id="sdi4" text="Expo Intl. Delegation">
+              <af:showDetailItem id="sdi4" text="Expo International Delegation">
                           <af:table value="#{bindings.TblExpoIntlDelegView3.collectionModel}" var="row"
                                     rows="#{bindings.TblExpoIntlDelegView3.rangeSize}"
                                     emptyText="#{bindings.TblExpoIntlDelegView3.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -475,7 +475,7 @@
                             </af:column>
                             <af:column sortProperty="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.name}"
                                        filterable="true" sortable="true"
-                                       headerText="Total Delegation" id="c24" align="center">
+                                       headerText="Total Delegation" id="c24" align="center" width="120">
                                         <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.TotalDeleg}"
                                           id="it19" placeholder="Search Total Delegation">
@@ -487,14 +487,90 @@
                                             columns="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.displayWidth}"
                                             maximumLength="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.precision}"
                                             shortDesc="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.tooltip}"
-                                            id="it20">
+                                            id="it20" contentStyle='text-align: center'>
                                 <f:validator binding="#{row.bindings.TotalDeleg.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.TotalDeleg.format}"/>
                               </af:inputText>
                             </af:column>
+                            <af:column headerText="No. of Days" id="c10"
+                                       align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Nod}"
+                                          id="it16" placeholder="Search No. of Days">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.Nod.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView3.hints.Nod.label}"
+                                            required="#{bindings.TblExpoIntlDelegView3.hints.Nod.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView3.hints.Nod.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.Nod.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.Nod.tooltip}" id="it12"
+                                            contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Nod.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.Nod.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Day Rate" id="c11"
+                                       align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.DayRate}"
+                                          id="it17" placeholder="Search Days Rate">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.DayRate.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView3.hints.DayRate.label}"
+                                            required="#{bindings.TblExpoIntlDelegView3.hints.DayRate.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView3.hints.DayRate.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.DayRate.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.DayRate.tooltip}"
+                                            id="it13" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.DayRate.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.DayRate.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Ticket Amount" id="c13"
+                                       align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TicketAmount}"
+                                          id="it22" placeholder="Search Ticket Amount">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.TicketAmount.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.label}"
+                                            required="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.tooltip}"
+                                            id="it15" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.TicketAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.TicketAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Total Cost" id="c12"
+                                       align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TotalCost}"
+                                          id="it23" placeholder="Search Total Cost">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.TotalCost.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.label}"
+                                            required="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.tooltip}"
+                                            id="it14" readOnly="true" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.TotalCost.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView3.hints.TotalCost.format}"/>
+                              </af:inputText>
+                            </af:column>
                             <af:column headerText="Final Delegation" id="c8" sortable="true" filterable="true"
-                                       width="150">
+                                       width="110" align="center">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FDeleg}"
                                           id="it7" placeholder="Search Final Delegation">
@@ -506,7 +582,7 @@
                                             columns="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.displayWidth}"
                                             maximumLength="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.precision}"
                                             shortDesc="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.tooltip}" 
-                                            id="it6" disabled="true">
+                                            id="it6" contentStyle='text-align: center' disabled="true">
                                 <f:validator binding="#{row.bindings.FDeleg.validator}"/>
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.TblExpoIntlDelegView3.hints.FDeleg.format}"/>
@@ -526,7 +602,310 @@
                             </af:iterator>
                         </af:panelGroupLayout>
                         </af:showDetailItem>
-              <!--<af:showDetailItem id="sdi2" text="Expo Halls">
+                        <af:showDetailItem text="Budget Expense" id="sdi2">
+                          <af:table value="#{bindings.TblExpoIntlDelegView31.collectionModel}" var="row"
+                                    rows="#{bindings.TblExpoIntlDelegView31.rangeSize}"
+                                    emptyText="#{bindings.TblExpoIntlDelegView31.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.TblExpoIntlDelegView31.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.TblExpoIntlDelegView31.collectionModel.makeCurrent}"
+                                    rowSelection="single" fetchSize="#{bindings.TblExpoIntlDelegView31.rangeSize}"
+                                    filterModel="#{bindings.TblExpoIntlDelegView3Query.queryDescriptor}"
+                                    filterVisible="true"
+                                    queryListener="#{bindings.TblExpoIntlDelegView3Query.processQuery}" varStatus="vs"
+                                    id="t3" scrollPolicy="page" autoHeightRows="0">
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Febrication" id="c14" align="center">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Fabrication}"
+                                          id="it28" placeholder="Search Fabrication">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.Fabrication.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.tooltip}"
+                                            id="it24" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.Fabrication.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.Fabrication.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Stalls Fruits / Vegetables"
+                                       id="c15" width="160">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.StallFruitVeg}"
+                                          id="it29" placeholder="Search Stalls">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.StallFruitVeg.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.tooltip}"
+                                            id="it25" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.StallFruitVeg.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.StallFruitVeg.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Social Media" id="c16" align="center">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.SocialMedia}"
+                                          id="it30" placeholder="Search Social Media">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.SocialMedia.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.tooltip}"
+                                            id="it26" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.SocialMedia.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.SocialMedia.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.name}"
+                                       filterable="true" sortable="true"
+                                       headerText="Misc Protocol"
+                                       id="c17" align="center">
+                                         <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MiscProtocol}"
+                                          id="it31" placeholder="Search Misc Protocol">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.MiscProtocol.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.tooltip}"
+                                            id="it27" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.MiscProtocol.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.MiscProtocol.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Dinner Person"
+                                       id="c18" align="center" sortable="true" filterable="true">
+                                         <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.DinnerPerson}"
+                                          id="it41" placeholder="Search Dinner Person">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.DinnerPerson.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.tooltip}"
+                                            id="it32" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.DinnerPerson.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.DinnerPerson.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Dinner Amount"
+                                       id="c19" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.DinnerAmount}"
+                                          id="it42" placeholder="Search Dinner Amount">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.DinnerAmount.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.tooltip}"
+                                            id="it33" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.DinnerAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.DinnerAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Days Exhibitors Farmers"
+                                       id="c20" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.DaysExhFarmer}"
+                                          id="it43" placeholder="Search Days">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.DaysExhFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.tooltip}"
+                                            id="it34" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.DaysExhFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.DaysExhFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Exhibitors Farmers Meal Amount"
+                                       id="c21" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExhFarmerMealAmount}"
+                                          id="it44" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.ExhFarmerMealAmount.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.tooltip}"
+                                            id="it35" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.ExhFarmerMealAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.ExhFarmerMealAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Exhibitors Farmers Hotel Rate"
+                                       id="c25" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.HotelRateExhFarmer}"
+                                          id="it45" placeholder="Search Hotel Rate">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.HotelRateExhFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.tooltip}"
+                                            id="it38" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.HotelRateExhFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.HotelRateExhFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Total Exhibitors Farmers"
+                                       id="c26" align="center" sortable="true" filterable="true">
+                                       <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TotExhFarmer}"
+                                          id="it46" placeholder="Search Total Farmers">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.TotExhFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.tooltip}"
+                                            id="it39" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.TotExhFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.TotExhFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="VIP Guest Accomodation Amount"
+                                       id="c27" align="center" sortable="true" filterable="true">
+                                         <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VipGuestAccomAmount}"
+                                          id="it47" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.VipGuestAccomAmount.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.tooltip}"
+                                            id="it40" contentStyle='text-align: center'>
+                                <f:validator binding="#{row.bindings.VipGuestAccomAmount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.VipGuestAccomAmount.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Farmer Vegetable"
+                                       id="c28" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ArrVegFarmer}"
+                                          id="it53" placeholder="Search Vegetable">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.ArrVegFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.tooltip}"
+                                            id="it48">
+                                <f:validator binding="#{row.bindings.ArrVegFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.ArrVegFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            
+                            <af:column headerText="Farmer Citrus"
+                                       id="c29" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ArrCitFarmer}"
+                                          id="it54" placeholder="Search Citrus">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.ArrCitFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.tooltip}"
+                                            id="it49">
+                                <f:validator binding="#{row.bindings.ArrCitFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.ArrCitFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Farmer Mango"
+                                       id="c31" align="center" sortable="true" filterable="true">
+                                      
+                              <af:inputText value="#{row.bindings.ArrManFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.tooltip}"
+                                            id="it52">
+                                <f:validator binding="#{row.bindings.ArrManFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.ArrManFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                            <af:column headerText="Farmer Govt."
+                                       id="c30" align="center" sortable="true" filterable="true">
+                                        <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ArrGovFarmer}"
+                                          id="it56" placeholder="Search Govt.">
+                           </af:inputText>
+                             </f:facet>
+                              <af:inputText value="#{row.bindings.ArrGovFarmer.inputValue}"
+                                            label="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.label}"
+                                            required="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.mandatory}"
+                                            columns="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.displayWidth}"
+                                            maximumLength="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.precision}"
+                                            shortDesc="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.tooltip}"
+                                            id="it50">
+                                <f:validator binding="#{row.bindings.ArrGovFarmer.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.TblExpoIntlDelegView31.hints.ArrGovFarmer.format}"/>
+                              </af:inputText>
+                            </af:column>
+                          </af:table>
+                          
+                        </af:showDetailItem>
+                        <!--<af:showDetailItem id="sdi2" text="Expo Halls">
                           <af:panelGridLayout id="pgl5">
                             <af:gridRow marginTop="5px" height="auto" id="gr11">
                               <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11">

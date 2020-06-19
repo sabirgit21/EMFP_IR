@@ -78,6 +78,10 @@
           <Item Value="TotalDeleg"/>
           <Item Value="LibrCountryId"/>
           <Item Value="FDeleg"/>
+          <Item Value="Nod"/>
+          <Item Value="DayRate"/>
+          <Item Value="TotalCost"/>
+          <Item Value="TicketAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -241,5 +245,26 @@
         <Item Value="BusLeads"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="TblExpoIntlDelegView3Iterator" id="TblExpoIntlDelegView31">
+      <nodeDefinition DefName="model.VO.TblExpoIntlDelegView" Name="TblExpoIntlDelegView310">
+        <AttrNames>
+          <Item Value="Fabrication"/>
+          <Item Value="StallFruitVeg"/>
+          <Item Value="SocialMedia"/>
+          <Item Value="MiscProtocol"/>
+          <Item Value="DinnerPerson"/>
+          <Item Value="DinnerAmount"/>
+          <Item Value="DaysExhFarmer"/>
+          <Item Value="ExhFarmerMealAmount"/>
+          <Item Value="HotelRateExhFarmer"/>
+          <Item Value="TotExhFarmer"/>
+          <Item Value="VipGuestAccomAmount"/>
+          <Item Value="ArrVegFarmer"/>
+          <Item Value="ArrCitFarmer"/>
+          <Item Value="ArrGovFarmer"/>
+          <Item Value="ArrManFarmer"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
