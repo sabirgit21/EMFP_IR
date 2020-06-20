@@ -245,26 +245,80 @@
         <Item Value="BusLeads"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="TblExpoIntlDelegView3Iterator" id="TblExpoIntlDelegView31">
-      <nodeDefinition DefName="model.VO.TblExpoIntlDelegView" Name="TblExpoIntlDelegView310">
-        <AttrNames>
-          <Item Value="Fabrication"/>
-          <Item Value="StallFruitVeg"/>
-          <Item Value="SocialMedia"/>
-          <Item Value="MiscProtocol"/>
-          <Item Value="DinnerPerson"/>
-          <Item Value="DinnerAmount"/>
-          <Item Value="DaysExhFarmer"/>
-          <Item Value="ExhFarmerMealAmount"/>
-          <Item Value="HotelRateExhFarmer"/>
-          <Item Value="TotExhFarmer"/>
-          <Item Value="VipGuestAccomAmount"/>
-          <Item Value="ArrVegFarmer"/>
-          <Item Value="ArrCitFarmer"/>
-          <Item Value="ArrGovFarmer"/>
-          <Item Value="ArrManFarmer"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="Fabrication">
+      <AttrNames>
+        <Item Value="Fabrication"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="DinnerPerson">
+      <AttrNames>
+        <Item Value="DinnerPerson"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="DinnerAmount">
+      <AttrNames>
+        <Item Value="DinnerAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="TotExhFarmer">
+      <AttrNames>
+        <Item Value="TotExhFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="DaysExhFarmer">
+      <AttrNames>
+        <Item Value="DaysExhFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="HotelRateExhFarmer">
+      <AttrNames>
+        <Item Value="HotelRateExhFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ExhFarmerMealAmount">
+      <AttrNames>
+        <Item Value="ExhFarmerMealAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="VipGuestAccomAmount">
+      <AttrNames>
+        <Item Value="VipGuestAccomAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ArrVegFarmer">
+      <AttrNames>
+        <Item Value="ArrVegFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ArrCitFarmer">
+      <AttrNames>
+        <Item Value="ArrCitFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ArrManFarmer">
+      <AttrNames>
+        <Item Value="ArrManFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="ArrGovFarmer">
+      <AttrNames>
+        <Item Value="ArrGovFarmer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="StallFruitVeg">
+      <AttrNames>
+        <Item Value="StallFruitVeg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="SocialMedia">
+      <AttrNames>
+        <Item Value="SocialMedia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblExpoSetupView1Iterator" id="MiscProtocol">
+      <AttrNames>
+        <Item Value="MiscProtocol"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

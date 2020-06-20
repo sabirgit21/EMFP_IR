@@ -57,6 +57,21 @@ public class TblExpoSetupImpl extends EntityImpl {
         Remarks,
         BusLeads,
         FLeads,
+        ArrCitFarmer,
+        ArrGovFarmer,
+        ArrManFarmer,
+        ArrVegFarmer,
+        DaysExhFarmer,
+        DinnerAmount,
+        DinnerPerson,
+        ExhFarmerMealAmount,
+        Fabrication,
+        HotelRateExhFarmer,
+        MiscProtocol,
+        SocialMedia,
+        StallFruitVeg,
+        TotExhFarmer,
+        VipGuestAccomAmount,
         TblExpoHalls,
         TblExhibitors,
         TblExpoIntlDeleg,
@@ -120,6 +135,21 @@ public class TblExpoSetupImpl extends EntityImpl {
     public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int BUSLEADS = AttributesEnum.BusLeads.index();
     public static final int FLEADS = AttributesEnum.FLeads.index();
+    public static final int ARRCITFARMER = AttributesEnum.ArrCitFarmer.index();
+    public static final int ARRGOVFARMER = AttributesEnum.ArrGovFarmer.index();
+    public static final int ARRMANFARMER = AttributesEnum.ArrManFarmer.index();
+    public static final int ARRVEGFARMER = AttributesEnum.ArrVegFarmer.index();
+    public static final int DAYSEXHFARMER = AttributesEnum.DaysExhFarmer.index();
+    public static final int DINNERAMOUNT = AttributesEnum.DinnerAmount.index();
+    public static final int DINNERPERSON = AttributesEnum.DinnerPerson.index();
+    public static final int EXHFARMERMEALAMOUNT = AttributesEnum.ExhFarmerMealAmount.index();
+    public static final int FABRICATION = AttributesEnum.Fabrication.index();
+    public static final int HOTELRATEEXHFARMER = AttributesEnum.HotelRateExhFarmer.index();
+    public static final int MISCPROTOCOL = AttributesEnum.MiscProtocol.index();
+    public static final int SOCIALMEDIA = AttributesEnum.SocialMedia.index();
+    public static final int STALLFRUITVEG = AttributesEnum.StallFruitVeg.index();
+    public static final int TOTEXHFARMER = AttributesEnum.TotExhFarmer.index();
+    public static final int VIPGUESTACCOMAMOUNT = AttributesEnum.VipGuestAccomAmount.index();
     public static final int TBLEXPOHALLS = AttributesEnum.TblExpoHalls.index();
     public static final int TBLEXHIBITORS = AttributesEnum.TblExhibitors.index();
     public static final int TBLEXPOINTLDELEG = AttributesEnum.TblExpoIntlDeleg.index();
@@ -666,6 +696,246 @@ public class TblExpoSetupImpl extends EntityImpl {
      */
     public void setFLeads(Number value) {
         setAttributeInternal(FLEADS, value);
+    }
+
+    /**
+     * Gets the attribute value for ArrCitFarmer, using the alias name ArrCitFarmer.
+     * @return the value of ArrCitFarmer
+     */
+    public BigDecimal getArrCitFarmer() {
+        return (BigDecimal) getAttributeInternal(ARRCITFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ArrCitFarmer.
+     * @param value value to set the ArrCitFarmer
+     */
+    public void setArrCitFarmer(BigDecimal value) {
+        setAttributeInternal(ARRCITFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for ArrGovFarmer, using the alias name ArrGovFarmer.
+     * @return the value of ArrGovFarmer
+     */
+    public BigDecimal getArrGovFarmer() {
+        return (BigDecimal) getAttributeInternal(ARRGOVFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ArrGovFarmer.
+     * @param value value to set the ArrGovFarmer
+     */
+    public void setArrGovFarmer(BigDecimal value) {
+        setAttributeInternal(ARRGOVFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for ArrManFarmer, using the alias name ArrManFarmer.
+     * @return the value of ArrManFarmer
+     */
+    public BigDecimal getArrManFarmer() {
+        return (BigDecimal) getAttributeInternal(ARRMANFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ArrManFarmer.
+     * @param value value to set the ArrManFarmer
+     */
+    public void setArrManFarmer(BigDecimal value) {
+        setAttributeInternal(ARRMANFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for ArrVegFarmer, using the alias name ArrVegFarmer.
+     * @return the value of ArrVegFarmer
+     */
+    public BigDecimal getArrVegFarmer() {
+        return (BigDecimal) getAttributeInternal(ARRVEGFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ArrVegFarmer.
+     * @param value value to set the ArrVegFarmer
+     */
+    public void setArrVegFarmer(BigDecimal value) {
+        setAttributeInternal(ARRVEGFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for DaysExhFarmer, using the alias name DaysExhFarmer.
+     * @return the value of DaysExhFarmer
+     */
+    public BigDecimal getDaysExhFarmer() {
+        return (BigDecimal) getAttributeInternal(DAYSEXHFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DaysExhFarmer.
+     * @param value value to set the DaysExhFarmer
+     */
+    public void setDaysExhFarmer(BigDecimal value) {
+        setAttributeInternal(DAYSEXHFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for DinnerAmount, using the alias name DinnerAmount.
+     * @return the value of DinnerAmount
+     */
+    public BigDecimal getDinnerAmount() {
+        return (BigDecimal) getAttributeInternal(DINNERAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DinnerAmount.
+     * @param value value to set the DinnerAmount
+     */
+    public void setDinnerAmount(BigDecimal value) {
+        setAttributeInternal(DINNERAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for DinnerPerson, using the alias name DinnerPerson.
+     * @return the value of DinnerPerson
+     */
+    public BigDecimal getDinnerPerson() {
+        return (BigDecimal) getAttributeInternal(DINNERPERSON);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DinnerPerson.
+     * @param value value to set the DinnerPerson
+     */
+    public void setDinnerPerson(BigDecimal value) {
+        setAttributeInternal(DINNERPERSON, value);
+    }
+
+    /**
+     * Gets the attribute value for ExhFarmerMealAmount, using the alias name ExhFarmerMealAmount.
+     * @return the value of ExhFarmerMealAmount
+     */
+    public BigDecimal getExhFarmerMealAmount() {
+        return (BigDecimal) getAttributeInternal(EXHFARMERMEALAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExhFarmerMealAmount.
+     * @param value value to set the ExhFarmerMealAmount
+     */
+    public void setExhFarmerMealAmount(BigDecimal value) {
+        setAttributeInternal(EXHFARMERMEALAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for Fabrication, using the alias name Fabrication.
+     * @return the value of Fabrication
+     */
+    public BigDecimal getFabrication() {
+        return (BigDecimal) getAttributeInternal(FABRICATION);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Fabrication.
+     * @param value value to set the Fabrication
+     */
+    public void setFabrication(BigDecimal value) {
+        setAttributeInternal(FABRICATION, value);
+    }
+
+    /**
+     * Gets the attribute value for HotelRateExhFarmer, using the alias name HotelRateExhFarmer.
+     * @return the value of HotelRateExhFarmer
+     */
+    public BigDecimal getHotelRateExhFarmer() {
+        return (BigDecimal) getAttributeInternal(HOTELRATEEXHFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for HotelRateExhFarmer.
+     * @param value value to set the HotelRateExhFarmer
+     */
+    public void setHotelRateExhFarmer(BigDecimal value) {
+        setAttributeInternal(HOTELRATEEXHFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for MiscProtocol, using the alias name MiscProtocol.
+     * @return the value of MiscProtocol
+     */
+    public BigDecimal getMiscProtocol() {
+        return (BigDecimal) getAttributeInternal(MISCPROTOCOL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MiscProtocol.
+     * @param value value to set the MiscProtocol
+     */
+    public void setMiscProtocol(BigDecimal value) {
+        setAttributeInternal(MISCPROTOCOL, value);
+    }
+
+    /**
+     * Gets the attribute value for SocialMedia, using the alias name SocialMedia.
+     * @return the value of SocialMedia
+     */
+    public BigDecimal getSocialMedia() {
+        return (BigDecimal) getAttributeInternal(SOCIALMEDIA);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SocialMedia.
+     * @param value value to set the SocialMedia
+     */
+    public void setSocialMedia(BigDecimal value) {
+        setAttributeInternal(SOCIALMEDIA, value);
+    }
+
+    /**
+     * Gets the attribute value for StallFruitVeg, using the alias name StallFruitVeg.
+     * @return the value of StallFruitVeg
+     */
+    public BigDecimal getStallFruitVeg() {
+        return (BigDecimal) getAttributeInternal(STALLFRUITVEG);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for StallFruitVeg.
+     * @param value value to set the StallFruitVeg
+     */
+    public void setStallFruitVeg(BigDecimal value) {
+        setAttributeInternal(STALLFRUITVEG, value);
+    }
+
+    /**
+     * Gets the attribute value for TotExhFarmer, using the alias name TotExhFarmer.
+     * @return the value of TotExhFarmer
+     */
+    public BigDecimal getTotExhFarmer() {
+        return (BigDecimal) getAttributeInternal(TOTEXHFARMER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TotExhFarmer.
+     * @param value value to set the TotExhFarmer
+     */
+    public void setTotExhFarmer(BigDecimal value) {
+        setAttributeInternal(TOTEXHFARMER, value);
+    }
+
+    /**
+     * Gets the attribute value for VipGuestAccomAmount, using the alias name VipGuestAccomAmount.
+     * @return the value of VipGuestAccomAmount
+     */
+    public BigDecimal getVipGuestAccomAmount() {
+        return (BigDecimal) getAttributeInternal(VIPGUESTACCOMAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VipGuestAccomAmount.
+     * @param value value to set the VipGuestAccomAmount
+     */
+    public void setVipGuestAccomAmount(BigDecimal value) {
+        setAttributeInternal(VIPGUESTACCOMAMOUNT, value);
     }
 
     /**
