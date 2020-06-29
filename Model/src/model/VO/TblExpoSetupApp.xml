@@ -16,8 +16,7 @@
        TblExpoSetup.NO_OF_DAYS, 
        TblExpoSetup.EXPO_SETUP_VENUE, 
        TblExpoSetup.STATUS"
-  FromList="TBL_EXPO_SETUP TblExpoSetup"
-  Where="TblExpoSetup.STATUS = 'app'">
+  FromList="TBL_EXPO_SETUP TblExpoSetup">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -25,31 +24,13 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewAccessor
-    Name="Expo_Schedule_LOV1"
-    ViewObjectName="model.LOV.Expo_Schedule_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Approve_NtApprove_LOV1"
     ViewObjectName="model.LOV.Approve_NtApprove_LOV"
     RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_ExpoSchId"
-    ListVOName="Expo_Schedule_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ExpoSchId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ExpoSchId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="Expo_Schedule_Unaproved_LOV1"
+    ViewObjectName="model.LOV.Expo_Schedule_Unaproved_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Status"
     ListVOName="Approve_NtApprove_LOV1"
@@ -65,6 +46,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewValue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExpoSchId"
+    ListVOName="Expo_Schedule_Unaproved_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoSchId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoSchId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
