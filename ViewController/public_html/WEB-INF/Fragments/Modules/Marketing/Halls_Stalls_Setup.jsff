@@ -165,7 +165,7 @@
                                                                                 label="#{row.bindings.Status.label}"
                                                                                 required="#{bindings.TblExpoSetupApp1.hints.Status.mandatory}"
                                                                                 shortDesc="#{bindings.TblExpoSetupApp1.hints.Status.tooltip}"
-                                                                                id="soc2">
+                                                                                id="soc2" readOnly="true">
                                                                 <f:selectItems value="#{row.bindings.Status.items}"
                                                                                id="si2"/>
                                                                 <f:validator binding="#{row.bindings.Status.validator}"/>

@@ -93,36 +93,8 @@
     ColumnType="NUMBER"
     TableName="TBL_EXPO_INTL_DELEG"/>
   <Attribute
-    Name="Fabrication"
-    ColumnName="FABRICATION"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="MiscProtocol"
-    ColumnName="MISC_PROTOCOL"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
     Name="Nod"
     ColumnName="NOD"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="SocialMedia"
-    ColumnName="SOCIAL_MEDIA"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="StallFruitVeg"
-    ColumnName="STALL_FRUIT_VEG"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
@@ -137,83 +109,6 @@
   <Attribute
     Name="TotalCost"
     ColumnName="TOTAL_COST"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="DaysExhFarmer"
-    ColumnName="DAYS_EXH_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="DinnerAmount"
-    ColumnName="DINNER_AMOUNT"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="DinnerPerson"
-    ColumnName="DINNER_PERSON"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="ExhFarmerMealAmount"
-    ColumnName="EXH_FARMER_MEAL_AMOUNT"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="HotelRateExhFarmer"
-    ColumnName="HOTEL_RATE_EXH_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="TotExhFarmer"
-    ColumnName="TOT_EXH_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="VipGuestAccomAmount"
-    ColumnName="VIP_GUEST_ACCOM_AMOUNT"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="ArrCitFarmer"
-    ColumnName="ARR_CIT_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="ArrGovFarmer"
-    ColumnName="ARR_GOV_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="ArrManFarmer"
-    ColumnName="ARR_MAN_FARMER"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="TBL_EXPO_INTL_DELEG"/>
-  <Attribute
-    Name="ArrVegFarmer"
-    ColumnName="ARR_VEG_FARMER"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
