@@ -13,6 +13,29 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Expo_Setup_Venue_LOV1"
+    ViewObjectName="model.LOV.Expo_Setup_Venue_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ExpoSetupId"
+    ListVOName="Expo_Setup_Venue_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExpoSetupId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ExpoSetupId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ExpoSetupId"/>
+      <Item Value="ExpoSetupVenue"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblExpoHalls"
     Entity="model.EO.TblExpoHalls"/>
@@ -29,7 +52,15 @@
     PrecisionRule="true"
     EntityAttrName="ExpoSetupId"
     EntityUsage="TblExpoHalls"
-    AliasName="EXPO_SETUP_ID"/>
+    AliasName="EXPO_SETUP_ID"
+    LOVName="LOV_ExpoSetupId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="HallNo"
     PrecisionRule="true"

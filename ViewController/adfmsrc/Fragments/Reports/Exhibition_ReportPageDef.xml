@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Exhibition_ReportPageDef"
+                Package="Fragments.Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblExpoHallsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblExpoHallsView1Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblExpoHallsView1Iterator" StaticList="false" Uses="LOV_ExpoSetupId" id="ExpoSetupId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

@@ -229,6 +229,7 @@
         <page path="/WEB-INF/Task_Flows/Modules/Grants/Vctat_Inspection_TaskFlow.xml#Vctat_Inspection_TaskFlow@ExecuteWithParams"
               usageId="view_Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
         <page path="/WEB-INF/Fragments/Modules/Grants/Vctat_Inspection.jsff" usageId="view_Vctat_InspectionPageDef"/>
+        <page path="/WEB-INF/Fragments/Reports/Exhibition_Report.jsff" usageId="view_Exhibition_ReportPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="view_Farmer_RegistrationPageDef"
@@ -443,6 +444,7 @@
         <page id="view_Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"
               path="Task_Flows.Modules.Grants.Vctat_Inspection_TaskFlow_Vctat_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
         <page id="view_Vctat_InspectionPageDef" path="Fragments.Modules.Grants.Vctat_InspectionPageDef"/>
+        <page id="view_Exhibition_ReportPageDef" path="Fragments.Reports.Exhibition_ReportPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="AppModuleDataControl" Package="model"
