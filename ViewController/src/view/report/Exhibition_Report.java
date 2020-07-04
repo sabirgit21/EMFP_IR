@@ -44,7 +44,7 @@ public class Exhibition_Report {
             
             case "exhibitionBudgetDetail":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_budget_Detail_Report&");
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_Budget_Detail_Report&");
                 System.out.println("Exhibition Budget Detail Report");
                 break;
 

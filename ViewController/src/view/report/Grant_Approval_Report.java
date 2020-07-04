@@ -16,7 +16,7 @@ public class Grant_Approval_Report {
     private static Number gotCluster;
     private static Number gotFarmer;
     
-    private static String selectedgrantType;   
+//    private static String selectedgrantType;   
     
     private static String selectedReportType = "";
     private static String gotFormat = "";
@@ -26,7 +26,7 @@ public class Grant_Approval_Report {
     private RichSelectOneChoice selected_cluster;
     private RichSelectOneChoice selected_farmer;
     private RichSelectOneChoice report_format;
-    private RichSelectOneChoice selected_grant_type;
+//    private RichSelectOneChoice selected_grant_type;
     private RichSelectOneChoice selected_report_type;
     
         
@@ -48,7 +48,7 @@ public class Grant_Approval_Report {
             gotPhase = (Number)this.getselected_phase().getValue(); // To recieve value from UI InputText Component
             gotCluster = (Number)this.getselected_cluster().getValue();    
             gotFarmer = (Number)this.getselected_farmer().getValue();
-            selectedgrantType = (this.getselected_grant_type().getValue()).toString();
+//            selectedgrantType = (this.getselected_grant_type().getValue()).toString();
             
             
         gotFormat = (String)this.getreport_format().getValue();
@@ -67,16 +67,13 @@ public class Grant_Approval_Report {
         if(gotFarmer != null){
             reportBean.setReportParameter("P_farmer_reg_id", gotFarmer.toString());
         }           
-        if(selectedgrantType != null){
-            reportBean.setReportParameter("P_Grant_Type", selectedgrantType.toString());
-        } 
-
+//        if(selectedgrantType != null){
+//            reportBean.setReportParameter("P_Grant_Type", selectedgrantType.toString());
+//        } 
 
         if (gotFormat == "") {
             showMessage("Please Select Report Format");
         } else {
-
-
 
             switch (selectedReportType) {
             case "detailWise":
@@ -219,13 +216,13 @@ public class Grant_Approval_Report {
     
     
     
-    public void setselected_grant_type(RichSelectOneChoice get_selected_grant_type) {
-        this.selected_grant_type = get_selected_grant_type;
-    }
-
-    public RichSelectOneChoice getselected_grant_type() {
-        return selected_grant_type;
-    }    
+//    public void setselected_grant_type(RichSelectOneChoice get_selected_grant_type) {
+//        this.selected_grant_type = get_selected_grant_type;
+//    }
+//
+//    public RichSelectOneChoice getselected_grant_type() {
+//        return selected_grant_type;
+//    }    
     
     
     

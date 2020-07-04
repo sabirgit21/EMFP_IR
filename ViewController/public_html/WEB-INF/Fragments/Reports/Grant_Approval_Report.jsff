@@ -47,12 +47,12 @@
                                                  <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si66"/>
                             </af:selectOneChoice>
                         <af:spacer width="30" height="30" id="s22"/>
-                        <af:selectOneChoice label="Select Grant Type" id="soc5" autoSubmit="true"
-                                                unselectedLabel="--Select--"
+                        <!--<af:selectOneChoice label="Select Grant Type" id="soc5" autoSubmit="true"
+                                                unselectedLabel="Select"
                                             binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_grant_type}">
                                 <af:selectItem label="Group" value="grp" id="si5"/>
                                 <af:selectItem label="Individual" value="ind" id="si10"/>
-                            </af:selectOneChoice>
+                            </af:selectOneChoice>-->
                         <af:spacer width="30" height="30" id="s7"/>
                             <af:selectOneChoice label="Select Report Type" id="soc4" autoSubmit="true"
                                                 unselectedLabel="--Select--"
