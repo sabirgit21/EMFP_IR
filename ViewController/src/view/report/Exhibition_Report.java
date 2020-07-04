@@ -9,10 +9,8 @@ import oracle.jbo.domain.Number;
 
 import view.DatabaseConnection.DatabaseConnection;
 
+
 public class Exhibition_Report {
-    public Exhibition_Report() {
-    }
-    
 
     private static String gotFormat = "";    
     private static String selectedReportType = "";
@@ -21,6 +19,12 @@ public class Exhibition_Report {
     private RichSelectOneChoice report_format;
     private RichSelectOneChoice selected_report_type;
     private RichSelectOneChoice selected_expoSetup;
+    
+    public Exhibition_Report() {
+        System.out.println("exhibition report");
+    }
+    
+
 
     public String gen_report() {
         // Add event code here...
@@ -30,6 +34,7 @@ public class Exhibition_Report {
         gotFormat = (String)this.getreport_format().getValue();
         gotExpoSetup = (Number)this.getselected_expoSetup().getValue();
         
+        selectedReportType = (String)this.getselected_report_type().getValue();
         String url = "";
         
         if(gotExpoSetup != null){
@@ -54,16 +59,17 @@ public class Exhibition_Report {
 
             }
             
-        }
-        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
-                                        "CACHE"); // which will be one of the [cashe - file - mail - printer]
-        reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
-                                        gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
-        reportBean.setReportParameter("paramform", "no");
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
+                                            "CACHE"); // which will be one of the [cashe - file - mail - printer]
+            reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESFORMAT,
+                                            gotFormat); // Which will be onr of the [HTML - HTML CSS - PDF - SPREADSHEET- RTF].
+            reportBean.setReportParameter("paramform", "no");
 
-        url = reportBean.getReportServerURL();
-        System.out.println("Url => " + url);
-        reportBean.openUrlInNewWindow(url);
+            url = reportBean.getReportServerURL();
+            System.out.println("Url => " + url);
+            reportBean.openUrlInNewWindow(url);
+        }
+        
         
         return null;
     }
