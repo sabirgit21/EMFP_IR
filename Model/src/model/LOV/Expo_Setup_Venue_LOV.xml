@@ -6,13 +6,12 @@
   Name="Expo_Setup_Venue_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblExpoSetup.EXPO_SETUP_VENUE, 
+       TblExpoSetup.EXPO_SETUP_ID"
+  FromList="TBL_EXPO_SETUP TblExpoSetup">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
