@@ -99,7 +99,7 @@
                                                 <af:column headerText="#{bindings.TblFarmerRegView1.hints.ClusterNo.label}"
                                                            id="c44" filterable="true" sortable="true" >
                                                            <f:facet name="filter">
-                                                        <af:inputText value="#{vs.filterCriteria.ClusterNo}" id="it18"
+                                                        <af:inputText value="#{vs.filterCriteria.ClusterNo}" id="it89"
                                                                       placeholder="Search Cluster"></af:inputText>
                                                     </f:facet>
                                                     <af:inputText value="#{row.bindings.ClusterNo.inputValue}" readOnly="true"
