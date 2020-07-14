@@ -7,8 +7,6 @@
     <iterator Binds="TblClusterView1" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
     <iterator Binds="TblFarmerRegView4" DataControl="AppModuleDataControl"
               id="TblFarmerRegView4Iterator" RangeSize="-1"/>
-    <iterator Binds="TblFarmerRegLandView6" RangeSize="-1" DataControl="AppModuleDataControl"
-              id="TblFarmerRegLandView6Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="TblClusterView1Iterator" ListOperMode="navigation" ListIter="TblClusterView1Iterator"
@@ -37,23 +35,6 @@
           <Item Value="ClusterNo"/>
           <Item Value="Name"/>
           <Item Value="PhaseName"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblFarmerRegLandView6Iterator" id="TblFarmerRegLandView6" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView6">
-        <AttrNames>
-          <Item Value="LandUnderOrch"/>
-          <Item Value="FarmerRegId"/>
-          <Item Value="FarmerRegLandId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <tree IterBinding="TblFarmerRegLandView6Iterator" id="TblFarmerRegLandView61" ChangeEventPolicy="ppr">
-      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView61">
-        <AttrNames>
-          <Item Value="LandUnderOrch"/>
-          <Item Value="FarmerRegId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -27,25 +27,7 @@
                              group="#{row.ClusterId}"/>
         </f:facet>
       </dvt:barChart>
-      <dvt:barChart orientation="vertical" id="barChart3" var="row"
-                    value="#{bindings.TblFarmerRegLandView6.collectionModel}">
-        <dvt:chartLegend id="cl3"/>
-        <f:facet name="dataStamp">
-          <dvt:chartDataItem id="di3" series="#{row.FarmerRegLandId}" value="#{row.LandUnderOrch}"
-                             group="#{row.FarmerRegId}"/>
-        </f:facet>
-      </dvt:barChart>
-      <dvt:barChart orientation="vertical"
-                    selectionListener="#{bindings.TblFarmerRegLandView61.collectionModel.makeCurrent}"
-                    id="barChart4" var="row"
-                    value="#{bindings.TblFarmerRegLandView61.collectionModel}">
-        <dvt:chartLegend id="cl4"/>
-        <dvt:chartY2Axis id="cya1"/>
-        <f:facet name="dataStamp">
-          <dvt:chartDataItem id="di4" series="#{bindings.TblFarmerRegLandView61.hints.LandUnderOrch.label}"
-                             value="#{row.LandUnderOrch}" group="#{row.FarmerRegId}"/>
-        </f:facet>
-      </dvt:barChart>
+      
     </af:showDetailItem>
   </af:panelAccordion>
 </ui:composition>
