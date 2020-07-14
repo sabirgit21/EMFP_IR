@@ -1,3 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces" xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelAccordion discloseMany="false" id="pa1">
+    <af:showDetailItem id="pane1" text="Panel Label 1">
+      <af:selectOneChoice value="#{bindings.TblClusterView1.inputValue}" label="#{bindings.TblClusterView1.label}"
+                          required="#{bindings.TblClusterView1.hints.mandatory}" autoSubmit="true"
+                          shortDesc="#{bindings.TblClusterView1.hints.tooltip}" id="soc1">
+        <f:selectItems value="#{bindings.TblClusterView1.items}" id="si1"/>
+        <f:validator binding="#{bindings.TblClusterView1.validator}"/>
+      </af:selectOneChoice>
+      <dvt:barChart orientation="vertical" id="barChart1" var="row"
+                    value="#{bindings.TblFarmerRegView4.collectionModel}" coordinateSystem="polar">
+        <dvt:chartLegend id="cl1"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di1" series="#{row.FarmerNo} #{row.Name} #{row.ClusterNo}" value="#{row.FarmerRegId}"
+                             group="#{row.ClusterId}"/>
+        </f:facet>
+      </dvt:barChart>
+      <dvt:barChart orientation="vertical" id="barChart2" var="row"
+                    value="#{bindings.TblFarmerRegView41.collectionModel}" zoomAndScroll="live"
+                    dataLabelPosition="center" dataSelection="single" dataCursor="on" 
+                    dataCursorBehavior="smooth">
+        <dvt:chartLegend id="cl2"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di2" series="#{row.ClusterNo} #{row.Name} #{row.PhaseName}" value="#{row.FarmerRegId}" 
+                             group="#{row.ClusterId}"/>
+        </f:facet>
+      </dvt:barChart>
+      <dvt:barChart orientation="vertical" id="barChart3" var="row"
+                    value="#{bindings.TblFarmerRegLandView6.collectionModel}">
+        <dvt:chartLegend id="cl3"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di3" series="#{row.FarmerRegLandId}" value="#{row.LandUnderOrch}"
+                             group="#{row.FarmerRegId}"/>
+        </f:facet>
+      </dvt:barChart>
+      <dvt:barChart orientation="vertical"
+                    selectionListener="#{bindings.TblFarmerRegLandView61.collectionModel.makeCurrent}"
+                    id="barChart4" var="row"
+                    value="#{bindings.TblFarmerRegLandView61.collectionModel}">
+        <dvt:chartLegend id="cl4"/>
+        <dvt:chartY2Axis id="cya1"/>
+        <f:facet name="dataStamp">
+          <dvt:chartDataItem id="di4" series="#{bindings.TblFarmerRegLandView61.hints.LandUnderOrch.label}"
+                             value="#{row.LandUnderOrch}" group="#{row.FarmerRegId}"/>
+        </f:facet>
+      </dvt:barChart>
+    </af:showDetailItem>
+  </af:panelAccordion>
 </ui:composition>

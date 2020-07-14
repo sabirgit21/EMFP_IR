@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Main_Cluster_FarmerPageDef"
+                Package="Fragments.Modules.Clusters_Farmers">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TblClusterView1" DataControl="AppModuleDataControl" id="TblClusterView1Iterator"/>
+    <iterator Binds="TblFarmerRegView4" DataControl="AppModuleDataControl"
+              id="TblFarmerRegView4Iterator" RangeSize="-1"/>
+    <iterator Binds="TblFarmerRegLandView6" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="TblFarmerRegLandView6Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="TblClusterView1Iterator" ListOperMode="navigation" ListIter="TblClusterView1Iterator"
+          id="TblClusterView1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="PhaseId"/>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="TblFarmerRegView4Iterator" id="TblFarmerRegView4" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.TblFarmerRegView" Name="TblFarmerRegView4">
+        <AttrNames>
+          <Item Value="FarmerRegId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="Name"/>
+          <Item Value="ClusterNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFarmerRegView4Iterator" id="TblFarmerRegView41" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.TblFarmerRegView" Name="TblFarmerRegView41">
+        <AttrNames>
+          <Item Value="FarmerRegId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="ClusterNo"/>
+          <Item Value="Name"/>
+          <Item Value="PhaseName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFarmerRegLandView6Iterator" id="TblFarmerRegLandView6" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView6">
+        <AttrNames>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="FarmerRegLandId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFarmerRegLandView6Iterator" id="TblFarmerRegLandView61" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView61">
+        <AttrNames>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="FarmerRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

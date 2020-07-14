@@ -95,8 +95,9 @@
     Name="LOV_FarmerRegId"
     ListVOName="Farmer_Reg_id_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="LOV_FarmerRegId_LOVUIHints_NullValueId">
     <AttrArray Name="AttrNames">
       <Item Value="FarmerRegId"/>
     </AttrArray>
@@ -389,4 +390,12 @@
     ViewLink="model.VO.FkCertApprovalCertAppLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="CertAppMasterId"/>
+  </SortCriteria>
 </ViewObject>

@@ -54,6 +54,20 @@
                                         pattern="#{bindings.TblCertAppMasterView1.hints.CertAppMasterId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CoName.name}" filterable="true"
+                             sortable="true" headerText="Company" id="c6" width="200">
+                    <f:facet name="filter">
+                      <af:inputText value="#{vs.filterCriteria.CoName}" id="it35" placeholder="Search Company"/>
+                    </f:facet>
+                    <af:inputText value="#{row.bindings.CoName.inputValue}"
+                                  label="#{bindings.TblCertAppMasterView1.hints.CoName.label}"
+                                  required="#{bindings.TblCertAppMasterView1.hints.CoName.mandatory}"
+                                  columns="#{bindings.TblCertAppMasterView1.hints.CoName.displayWidth}"
+                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CoName.precision}"
+                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoName.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.CoName.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column headerText="Certification" id="c2" sortable="true" filterable="true" width="200">
                      <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.CertificationId}"
@@ -110,22 +124,6 @@
                       <f:selectItems value="#{row.bindings.FarmerRegId.items}" id="si4"/>
                       <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.CoName.name}" filterable="true"
-                             sortable="true" headerText="Company" id="c6" width="200">
-                              <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.CoName}"
-                                          id="it35" placeholder="Search Company">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputText value="#{row.bindings.CoName.inputValue}"
-                                  label="#{bindings.TblCertAppMasterView1.hints.CoName.label}"
-                                  required="#{bindings.TblCertAppMasterView1.hints.CoName.mandatory}"
-                                  columns="#{bindings.TblCertAppMasterView1.hints.CoName.displayWidth}"
-                                  maximumLength="#{bindings.TblCertAppMasterView1.hints.CoName.precision}"
-                                  shortDesc="#{bindings.TblCertAppMasterView1.hints.CoName.tooltip}" id="it6">
-                      <f:validator binding="#{row.bindings.CoName.validator}"/>
-                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.BussNature.name}" filterable="true"
                              sortable="true" headerText="Business Nature"

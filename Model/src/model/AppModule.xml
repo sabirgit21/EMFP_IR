@@ -1673,6 +1673,9 @@
   <ViewUsage
     Name="TblGrantApprovalDetailDDView4"
     ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="TblFarmerRegLandView6"
+    ViewObjectName="model.VO.TblFarmerRegLandView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3298,5 +3301,11 @@
     ViewLinkObjectName="model.VO.Vctat_Inspection_Detail_D_D_FKLink"
     SrcViewUsageName="model.AppModule.Vctat_Inspection2"
     DstViewUsageName="model.AppModule.TblGrantApprovalDetailDDView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblFarmerRegLandFkLink3"
+    ViewLinkObjectName="model.VO.FkTblFarmerRegLandFkLink"
+    SrcViewUsageName="model.AppModule.TblFarmerRegView4"
+    DstViewUsageName="model.AppModule.TblFarmerRegLandView6"
     Reversed="false"/>
 </AppModule>
