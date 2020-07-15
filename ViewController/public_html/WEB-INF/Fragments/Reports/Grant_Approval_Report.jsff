@@ -8,14 +8,22 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer width="30" height="80" id="s3"/>
-                            <af:selectOneChoice label="Phase" autoSubmit="true"
+                            <af:selectOneChoice label="Phase / From Phase" autoSubmit="true"
                                                 shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1"
                                                 binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_phase}"
                                                 contentStyle="width:200px">
                                 <f:selectItems value="#{bindings.PhaseId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.PhaseId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="10" id="s1"/>
+                             <af:spacer width="30" height="10" id="s1"/>
+                            <af:selectOneChoice label="To Phase"
+                                                required="#{bindings.PhaseId.hints.mandatory}"
+                                                binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_to_phase}"
+                                                shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc6">
+                                <f:selectItems value="#{bindings.PhaseId.items}" id="si12"/>
+                                <f:validator binding="#{bindings.PhaseId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="30" height="10" id="s10"/>
                             <af:selectOneChoice label="Cluster" autoSubmit="true"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc2"
                                                 binding="#{backingBeanScope.Grant_Approval_Report_BackBean.selected_cluster}"
@@ -63,8 +71,10 @@
                                                id="si7"/>
                                 <af:selectItem label="Grant Consolidated Detail" value="consolidatedDetail" id="si3"/>
                                 <af:selectItem label="Grant Farmer Eligibility Detail" value="grantFarmerEligibilty" id="si6"/>
-                                <af:selectItem label="Grant_Approval_Disbursement_Detail" value="grantApprovalDisbursementDetail"
+                                <af:selectItem label="Grant Approval Disbursement Detail" value="grantApprovalDisbursementDetail"
                                                id="si11"/>
+                                <af:selectItem label="Grant Summary" value="grantsummary"
+                                               id="si5"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"

@@ -13,6 +13,7 @@ import view.DatabaseConnection.DatabaseConnection;
 public class Grant_Approval_Report {
 
     private static Number gotPhase;
+    private static Number gotToPhase;
     private static Number gotCluster;
     private static Number gotFarmer;
     
@@ -23,6 +24,7 @@ public class Grant_Approval_Report {
     
 
     private RichSelectOneChoice selected_phase;
+    private RichSelectOneChoice selected_to_phase;
     private RichSelectOneChoice selected_cluster;
     private RichSelectOneChoice selected_farmer;
     private RichSelectOneChoice report_format;
@@ -46,6 +48,7 @@ public class Grant_Approval_Report {
 
         
             gotPhase = (Number)this.getselected_phase().getValue(); // To recieve value from UI InputText Component
+            gotToPhase = (Number)this.getselected_to_phase().getValue();
             gotCluster = (Number)this.getselected_cluster().getValue();    
             gotFarmer = (Number)this.getselected_farmer().getValue();
 //            selectedgrantType = (this.getselected_grant_type().getValue()).toString();
@@ -60,6 +63,9 @@ public class Grant_Approval_Report {
         
         if(gotPhase != null){
             reportBean.setReportParameter("P_Phase_id", gotPhase.toString());
+        }         
+        if(gotToPhase != null){
+            reportBean.setReportParameter("P_To_Phase", gotToPhase.toString());
         }         
         if(gotCluster != null){
             reportBean.setReportParameter("P_Cluster_id", gotCluster.toString());
@@ -116,6 +122,13 @@ public class Grant_Approval_Report {
                 System.out.println("Grant Farmer Eligibility Detail");
                 break;
 
+            case "grantsummary":
+
+                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Grant_Summary&");
+
+                System.out.println("RO Grant Summary");
+                break;
+
             default:
                 showMessage("Please Select Report Type");
                 break;
@@ -170,7 +183,7 @@ public class Grant_Approval_Report {
     
     
     
-    
+        
     
     public void setselected_phase(RichSelectOneChoice get_selected_phase) {
         this.selected_phase = get_selected_phase;
@@ -178,6 +191,14 @@ public class Grant_Approval_Report {
 
     public RichSelectOneChoice getselected_phase() {
         return selected_phase;
+    }       
+    
+    public void setselected_to_phase(RichSelectOneChoice get_selected_to_phase) {
+        this.selected_to_phase = get_selected_to_phase;
+    }
+
+    public RichSelectOneChoice getselected_to_phase() {
+        return selected_to_phase;
     }    
     
     
