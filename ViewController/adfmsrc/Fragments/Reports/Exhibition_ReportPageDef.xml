@@ -6,9 +6,13 @@
     <variableIterator id="variables"/>
     <iterator Binds="TblExpoHallsView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="TblExpoHallsView1Iterator"/>
+    <iterator Binds="TblB2bMeetingView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblB2bMeetingView1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="TblExpoHallsView1Iterator" StaticList="false" Uses="LOV_ExpoSetupId" id="ExpoSetupId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblB2bMeetingView1Iterator" StaticList="false" Uses="LOV_ExhibitorsId" id="ExhibitorsId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -15,10 +15,12 @@ public class Exhibition_Report {
     private static String gotFormat = "";    
     private static String selectedReportType = "";
     private static Number gotExpoSetup;
+    private static Number gotExhibitors;
     
     private RichSelectOneChoice report_format;
     private RichSelectOneChoice selected_report_type;
     private RichSelectOneChoice selected_expoSetup;
+    private RichSelectOneChoice selected_Exhibitors;
     
     public Exhibition_Report() {
         System.out.println("exhibition report");
@@ -33,12 +35,14 @@ public class Exhibition_Report {
         
         gotFormat = (String)this.getreport_format().getValue();
         gotExpoSetup = (Number)this.getselected_expoSetup().getValue();
+        gotExhibitors = (Number)this.getselected_Exhibitors().getValue();
         
         selectedReportType = (String)this.getselected_report_type().getValue();
         String url = "";
         
         if(gotExpoSetup != null){
             reportBean.setReportParameter("P_Expo_Setup_Id", gotExpoSetup.toString());
+            reportBean.setReportParameter("P_Exhibitors_Id", gotExhibitors.toString());
         } 
         
         if (gotFormat == "") {
@@ -52,6 +56,18 @@ public class Exhibition_Report {
                 reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_Budget_Detail_Report&");
                 System.out.println("Exhibition Budget Detail Report");
                 break;
+            
+                case "exhibitorStallAllocationDetail":
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibitor_Stall_Allocation_Detail&");
+                    System.out.println("Exhibitor Stall Allocation Detail");
+                    break;
+            
+                case "exhibitionB2bMeetings":
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_B2B_Meetings&");
+                    System.out.println("Exhibition B2B Meetings");
+                    break;
 
             default:
                 showMessage("Please Select Report Type");
@@ -110,5 +126,12 @@ public class Exhibition_Report {
 
     public RichSelectOneChoice getselected_expoSetup() {
         return selected_expoSetup;
+    }
+    public void setselected_Exhibitors(RichSelectOneChoice get_selected_Exhibitors) {
+        this.selected_Exhibitors = get_selected_Exhibitors;
+    }
+
+    public RichSelectOneChoice getselected_Exhibitors() {
+        return selected_Exhibitors;
     }
 }

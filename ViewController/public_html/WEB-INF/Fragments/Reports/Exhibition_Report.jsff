@@ -8,12 +8,20 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer width="30" height="80" id="s3"/>
-                            <af:selectOneChoice label="#{bindings.ExpoSetupId.label}" autoSubmit="true"
+                            <af:selectOneChoice label="Expo Venu" autoSubmit="true"
                                                 binding="#{backingBeanScope.Exhibition_Report_BackBean.selected_expoSetup}"
                                                 shortDesc="#{bindings.ExpoSetupId.hints.tooltip}" id="soc1">
                                 <f:selectItems value="#{bindings.ExpoSetupId.items}" id="si1"/>
                                 <f:validator binding="#{bindings.ExpoSetupId.validator}"/>
                             </af:selectOneChoice>
+                             <af:spacer width="40" height="10" id="s1"/>
+                            <af:selectOneChoice label="Exhibitors" autoSubmit="true"
+                            binding="#{backingBeanScope.Exhibition_Report_BackBean.selected_Exhibitors}"
+                                                shortDesc="#{bindings.ExhibitorsId.hints.tooltip}" id="soc2">
+                                <f:selectItems value="#{bindings.ExhibitorsId.items}" id="si4"/>
+                                <f:validator binding="#{bindings.ExhibitorsId.validator}"/>
+                            </af:selectOneChoice>
+                           
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
                          <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
@@ -27,6 +35,10 @@
                                                 unselectedLabel="--Select--"
                                                 binding="#{backingBeanScope.Exhibition_Report_BackBean.selected_report_type}">
                                 <af:selectItem label="Exhibition Budget Detail" value="exhibitionBudgetDetail" id="si9"/>
+                                <af:selectItem label="Exhibitor Stall Allocation Detail" value="exhibitorStallAllocationDetail"
+                                               id="si2"/>
+                                <af:selectItem label="Exhibition B2B Meetings" value="exhibitionB2bMeetings"
+                                               id="si3"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
