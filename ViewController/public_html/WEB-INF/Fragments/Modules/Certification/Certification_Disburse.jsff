@@ -54,6 +54,22 @@
                                         pattern="#{bindings.TblCertApprovalView1.hints.CertApprovalId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Certification" id="c4" sortable="true" filterable="true" width="200">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it12" placeholder="Search Certification">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Name.inputValue}"
+                                  label="#{bindings.TblCertApprovalView1.hints.Name.label}"
+                                  required="#{bindings.TblCertApprovalView1.hints.Name.mandatory}"
+                                  columns="#{bindings.TblCertApprovalView1.hints.Name.displayWidth}"
+                                  maximumLength="#{bindings.TblCertApprovalView1.hints.Name.precision}"
+                                  shortDesc="#{bindings.TblCertApprovalView1.hints.Name.tooltip}" id="it11"
+                                  readOnly="true">
+                      <f:validator binding="#{row.bindings.Name.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblCertApprovalView1.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Dated" id="c3">
                     <f:facet name="filter">
@@ -133,7 +149,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertDisburseView3.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Dated" id="c11">
+                             sortable="true" headerText="Dated" id="c11" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCertDisburseView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id7">
@@ -144,7 +160,8 @@
                                   label="#{bindings.TblCertDisburseView3.hints.Dated.label}"
                                   required="#{bindings.TblCertDisburseView3.hints.Dated.mandatory}"
                                   columns="#{bindings.TblCertDisburseView3.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblCertDisburseView3.hints.Dated.tooltip}" id="id8">
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.Dated.tooltip}" id="id8"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCertDisburseView3.hints.Dated.format}"/>
                     </af:inputDate>
@@ -162,7 +179,8 @@
                                   required="#{bindings.TblCertDisburseView3.hints.FinalGrant.mandatory}"
                                   columns="#{bindings.TblCertDisburseView3.hints.FinalGrant.displayWidth}"
                                   maximumLength="#{bindings.TblCertDisburseView3.hints.FinalGrant.precision}"
-                                  shortDesc="#{bindings.TblCertDisburseView3.hints.FinalGrant.tooltip}" id="it8">
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.FinalGrant.tooltip}" id="it8"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FinalGrant.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblCertDisburseView3.hints.FinalGrant.format}"/>
@@ -180,7 +198,8 @@
                                   required="#{bindings.TblCertDisburseView3.hints.ChqNo.mandatory}"
                                   columns="#{bindings.TblCertDisburseView3.hints.ChqNo.displayWidth}"
                                   maximumLength="#{bindings.TblCertDisburseView3.hints.ChqNo.precision}"
-                                  shortDesc="#{bindings.TblCertDisburseView3.hints.ChqNo.tooltip}" id="it9">
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.ChqNo.tooltip}" id="it9"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ChqNo.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -196,7 +215,8 @@
                                   label="#{bindings.TblCertDisburseView3.hints.ChqDate.label}"
                                   required="#{bindings.TblCertDisburseView3.hints.ChqDate.mandatory}"
                                   columns="#{bindings.TblCertDisburseView3.hints.ChqDate.displayWidth}"
-                                  shortDesc="#{bindings.TblCertDisburseView3.hints.ChqDate.tooltip}" id="id10">
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.ChqDate.tooltip}" id="id10"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ChqDate.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCertDisburseView3.hints.ChqDate.format}"/>
                     </af:inputDate>
@@ -213,9 +233,58 @@
                                   required="#{bindings.TblCertDisburseView3.hints.Payee.mandatory}"
                                   columns="#{bindings.TblCertDisburseView3.hints.Payee.displayWidth}"
                                   maximumLength="#{bindings.TblCertDisburseView3.hints.Payee.precision}"
-                                  shortDesc="#{bindings.TblCertDisburseView3.hints.Payee.tooltip}" id="it10">
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.Payee.tooltip}" id="it10"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Payee.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="GGN No." id="c5" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GgnNo}"
+                                          id="it14" placeholder="Search No.">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.GgnNo.inputValue}"
+                                  label="#{bindings.TblCertDisburseView3.hints.GgnNo.label}"
+                                  required="#{bindings.TblCertDisburseView3.hints.GgnNo.mandatory}"
+                                  columns="#{bindings.TblCertDisburseView3.hints.GgnNo.displayWidth}"
+                                  maximumLength="#{bindings.TblCertDisburseView3.hints.GgnNo.precision}"
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.GgnNo.tooltip}" id="it13"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.GgnNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Issue Date" id="c6" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.IssueDate}"
+                                          id="it15" placeholder="Search Date">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputDate value="#{row.bindings.IssueDate.inputValue}"
+                                  label="#{bindings.TblCertDisburseView3.hints.IssueDate.label}"
+                                  required="#{bindings.TblCertDisburseView3.hints.IssueDate.mandatory}"
+                                  columns="#{bindings.TblCertDisburseView3.hints.IssueDate.displayWidth}"
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.IssueDate.tooltip}" id="id3"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.IssueDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCertDisburseView3.hints.IssueDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="Expiry Date" id="c7" align="center" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ExpDate}"
+                                          id="it16" placeholder="Search Date">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputDate value="#{row.bindings.ExpDate.inputValue}"
+                                  label="#{bindings.TblCertDisburseView3.hints.ExpDate.label}"
+                                  required="#{bindings.TblCertDisburseView3.hints.ExpDate.mandatory}"
+                                  columns="#{bindings.TblCertDisburseView3.hints.ExpDate.displayWidth}"
+                                  shortDesc="#{bindings.TblCertDisburseView3.hints.ExpDate.tooltip}" id="id5"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ExpDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblCertDisburseView3.hints.ExpDate.format}"/>
+                    </af:inputDate>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

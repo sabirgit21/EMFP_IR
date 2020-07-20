@@ -64,7 +64,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblCertDisburse"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -76,11 +77,30 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblCertDisburse"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCertDisburse"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="GgnNo"
+    PrecisionRule="true"
+    EntityAttrName="GgnNo"
+    EntityUsage="TblCertDisburse"
+    AliasName="GGN_NO"/>
+  <ViewAttribute
+    Name="IssueDate"
+    PrecisionRule="true"
+    EntityAttrName="IssueDate"
+    EntityUsage="TblCertDisburse"
+    AliasName="ISSUE_DATE"/>
+  <ViewAttribute
+    Name="ExpDate"
+    PrecisionRule="true"
+    EntityAttrName="ExpDate"
+    EntityUsage="TblCertDisburse"
+    AliasName="EXP_DATE"/>
 </ViewObject>

@@ -40,6 +40,7 @@
           <Item Value="CreatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="UpdatedBy"/>
+          <Item Value="Name"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -57,6 +58,9 @@
           <Item Value="CreatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="UpdatedBy"/>
+          <Item Value="GgnNo"/>
+          <Item Value="IssueDate"/>
+          <Item Value="ExpDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

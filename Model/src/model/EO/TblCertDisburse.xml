@@ -108,6 +108,32 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_DISBURSE"/>
+  <Attribute
+    Name="ExpDate"
+    ColumnName="EXP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_CERT_DISBURSE"/>
+  <Attribute
+    Name="GgnNo"
+    Precision="50"
+    ColumnName="GGN_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CERT_DISBURSE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IssueDate"
+    ColumnName="ISSUE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_CERT_DISBURSE"/>
   <AccessorAttribute
     Name="TblCertApproval"
     Association="model.EO.FkCertDisburseCertApprovalAssoc"

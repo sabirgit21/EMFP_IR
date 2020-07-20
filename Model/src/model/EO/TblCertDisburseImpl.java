@@ -33,6 +33,9 @@ public class TblCertDisburseImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        ExpDate,
+        GgnNo,
+        IssueDate,
         TblCertApproval;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -56,6 +59,7 @@ public class TblCertDisburseImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int CERTAPPROVALID = AttributesEnum.CertApprovalId.index();
     public static final int CERTDISBURSEID = AttributesEnum.CertDisburseId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -67,12 +71,22 @@ public class TblCertDisburseImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int EXPDATE = AttributesEnum.ExpDate.index();
+    public static final int GGNNO = AttributesEnum.GgnNo.index();
+    public static final int ISSUEDATE = AttributesEnum.IssueDate.index();
     public static final int TBLCERTAPPROVAL = AttributesEnum.TblCertApproval.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public TblCertDisburseImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblCertDisburse");
     }
 
     /**
@@ -236,6 +250,54 @@ public class TblCertDisburseImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ExpDate, using the alias name ExpDate.
+     * @return the value of ExpDate
+     */
+    public Timestamp getExpDate() {
+        return (Timestamp) getAttributeInternal(EXPDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ExpDate.
+     * @param value value to set the ExpDate
+     */
+    public void setExpDate(Timestamp value) {
+        setAttributeInternal(EXPDATE, value);
+    }
+
+    /**
+     * Gets the attribute value for GgnNo, using the alias name GgnNo.
+     * @return the value of GgnNo
+     */
+    public String getGgnNo() {
+        return (String) getAttributeInternal(GGNNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GgnNo.
+     * @param value value to set the GgnNo
+     */
+    public void setGgnNo(String value) {
+        setAttributeInternal(GGNNO, value);
+    }
+
+    /**
+     * Gets the attribute value for IssueDate, using the alias name IssueDate.
+     * @return the value of IssueDate
+     */
+    public Timestamp getIssueDate() {
+        return (Timestamp) getAttributeInternal(ISSUEDATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IssueDate.
+     * @param value value to set the IssueDate
+     */
+    public void setIssueDate(Timestamp value) {
+        setAttributeInternal(ISSUEDATE, value);
+    }
+
+    /**
      * @return the associated entity TblCertApprovalImpl.
      */
     public TblCertApprovalImpl getTblCertApproval() {
@@ -249,6 +311,7 @@ public class TblCertDisburseImpl extends EntityImpl {
         setAttributeInternal(TBLCERTAPPROVAL, value);
     }
 
+
     /**
      * @param certDisburseId key constituent
 
@@ -256,13 +319,6 @@ public class TblCertDisburseImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number certDisburseId) {
         return new Key(new Object[] { certDisburseId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblCertDisburse");
     }
 
     /**
