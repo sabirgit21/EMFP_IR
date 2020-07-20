@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Financial_Year"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="Financialyear.FINANCIALYEAR_ID, 
+       Financialyear.FINANCIALYEAR_FDATE, 
+       Financialyear.FINANCIALYEAR_TDATE"
+  FromList="FINANCIALYEAR Financialyear"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Financial_Year_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="Financialyear"
+    Entity="model.EO.Financialyear"/>
+  <ViewAttribute
+    Name="FinancialyearId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FinancialyearId"
+    EntityUsage="Financialyear"
+    AliasName="FINANCIALYEAR_ID"/>
+  <ViewAttribute
+    Name="FinancialyearFdate"
+    PrecisionRule="true"
+    EntityAttrName="FinancialyearFdate"
+    EntityUsage="Financialyear"
+    AliasName="FINANCIALYEAR_FDATE"/>
+  <ViewAttribute
+    Name="FinancialyearTdate"
+    PrecisionRule="true"
+    EntityAttrName="FinancialyearTdate"
+    EntityUsage="Financialyear"
+    AliasName="FINANCIALYEAR_TDATE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

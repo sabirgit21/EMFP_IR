@@ -31,6 +31,8 @@ public class TblCertApprovalImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        GmcNo,
+        LetterNo,
         TblCertAppMaster,
         TblCertDisburse,
         TblCertRate;
@@ -56,6 +58,7 @@ public class TblCertApprovalImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int CERTAPPMASTERID = AttributesEnum.CertAppMasterId.index();
     public static final int CERTAPPROVALID = AttributesEnum.CertApprovalId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -64,6 +67,8 @@ public class TblCertApprovalImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int GMCNO = AttributesEnum.GmcNo.index();
+    public static final int LETTERNO = AttributesEnum.LetterNo.index();
     public static final int TBLCERTAPPMASTER = AttributesEnum.TblCertAppMaster.index();
     public static final int TBLCERTDISBURSE = AttributesEnum.TblCertDisburse.index();
     public static final int TBLCERTRATE = AttributesEnum.TblCertRate.index();
@@ -72,6 +77,13 @@ public class TblCertApprovalImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public TblCertApprovalImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.TblCertApproval");
     }
 
     /**
@@ -187,6 +199,38 @@ public class TblCertApprovalImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for GmcNo, using the alias name GmcNo.
+     * @return the value of GmcNo
+     */
+    public String getGmcNo() {
+        return (String) getAttributeInternal(GMCNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for GmcNo.
+     * @param value value to set the GmcNo
+     */
+    public void setGmcNo(String value) {
+        setAttributeInternal(GMCNO, value);
+    }
+
+    /**
+     * Gets the attribute value for LetterNo, using the alias name LetterNo.
+     * @return the value of LetterNo
+     */
+    public String getLetterNo() {
+        return (String) getAttributeInternal(LETTERNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for LetterNo.
+     * @param value value to set the LetterNo
+     */
+    public void setLetterNo(String value) {
+        setAttributeInternal(LETTERNO, value);
+    }
+
+    /**
      * @return the associated entity TblCertAppMasterImpl.
      */
     public TblCertAppMasterImpl getTblCertAppMaster() {
@@ -210,16 +254,17 @@ public class TblCertApprovalImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTblCertRate() {
-        return (EntityImpl) getAttributeInternal(TBLCERTRATE);
+    public TblCertRateImpl getTblCertRate() {
+        return (TblCertRateImpl) getAttributeInternal(TBLCERTRATE);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTblCertRate(EntityImpl value) {
+    public void setTblCertRate(TblCertRateImpl value) {
         setAttributeInternal(TBLCERTRATE, value);
     }
+
 
     /**
      * @param certApprovalId key constituent
@@ -228,13 +273,6 @@ public class TblCertApprovalImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Number certApprovalId) {
         return new Key(new Object[] { certApprovalId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.TblCertApproval");
     }
 
     /**

@@ -127,7 +127,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppMasterView1.hints.BussNature.name}" filterable="true"
                              sortable="true" headerText="Business Nature"
-                             id="c7">
+                             id="c7" width="120">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.BussNature}"
                                           id="it36" placeholder="Search Business">
@@ -141,6 +141,21 @@
                                   shortDesc="#{bindings.TblCertAppMasterView1.hints.BussNature.tooltip}" id="it7">
                       <f:validator binding="#{row.bindings.BussNature.validator}"/>
                     </af:inputText>
+                  </af:column>
+                  <af:column headerText="Financial Year" id="c3" sortable="true" filterable="true">
+                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FinancialyearId}"
+                                          id="it3" placeholder="Search Year">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FinancialyearId.inputValue}"
+                                        label="#{row.bindings.FinancialyearId.label}"
+                                        required="#{bindings.TblCertAppMasterView1.hints.FinancialyearId.mandatory}"
+                                        shortDesc="#{bindings.TblCertAppMasterView1.hints.FinancialyearId.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.FinancialyearId.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.FinancialyearId.validator}"/>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Owner Type" id="c8" sortable="true" filterable="true">
                      <f:facet name="filter">
@@ -501,7 +516,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppDetailView3.hints.ProdQty.name}" filterable="true"
-                             sortable="true" headerText="Product Quantity"
+                             sortable="true" headerText="Product Quantity (Ton)"
                              id="c31" align="center" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ProdQty}"
@@ -520,7 +535,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppDetailView3.hints.ExportQty.name}" filterable="true"
-                             sortable="true" headerText="Export Quantity"
+                             sortable="true" headerText="Export Quantity (Ton)"
                              id="c32" align="center">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExportQty}"
@@ -539,7 +554,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertAppDetailView3.hints.ExportAmount.name}" filterable="true"
-                             sortable="true" headerText="Export Amount"
+                             sortable="true" headerText="Export Amount (PKR)"
                              id="c33" align="center" width="120">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ExportAmount}"

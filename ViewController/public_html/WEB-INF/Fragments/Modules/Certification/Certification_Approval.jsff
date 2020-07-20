@@ -484,7 +484,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.TblCertApprovalView3.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Dated" id="c30">
+                             sortable="true" headerText="Dated" id="c30" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.TblCertApprovalView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id5">
@@ -495,12 +495,13 @@
                                   label="#{bindings.TblCertApprovalView3.hints.Dated.label}"
                                   required="#{bindings.TblCertApprovalView3.hints.Dated.mandatory}"
                                   columns="#{bindings.TblCertApprovalView3.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.TblCertApprovalView3.hints.Dated.tooltip}" id="id6">
+                                  shortDesc="#{bindings.TblCertApprovalView3.hints.Dated.tooltip}" id="id6"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.TblCertApprovalView3.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Rate" id="c28" sortable="true" filterable="true">
+                  <af:column headerText="Rate" id="c28" sortable="true" filterable="true" align="center">
                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.CertRateId}"
                                           id="it28" placeholder="Search Rate">
@@ -513,6 +514,38 @@
                       <f:selectItems value="#{row.bindings.CertRateId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.CertRateId.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="GMC No." id="c24" sortable="true" filterable="true" align="center">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.GmcNo}"
+                                          id="it45" placeholder="Search GMC No.">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.GmcNo.inputValue}"
+                                  label="#{bindings.TblCertApprovalView3.hints.GmcNo.label}"
+                                  required="#{bindings.TblCertApprovalView3.hints.GmcNo.mandatory}"
+                                  columns="#{bindings.TblCertApprovalView3.hints.GmcNo.displayWidth}"
+                                  maximumLength="#{bindings.TblCertApprovalView3.hints.GmcNo.precision}"
+                                  shortDesc="#{bindings.TblCertApprovalView3.hints.GmcNo.tooltip}" id="it43"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.GmcNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Letter No." id="c25" sortable="true" filterable="true" align="center">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LetterNo}"
+                                          id="it46" placeholder="Search Letter No.">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.LetterNo.inputValue}"
+                                  label="#{bindings.TblCertApprovalView3.hints.LetterNo.label}"
+                                  required="#{bindings.TblCertApprovalView3.hints.LetterNo.mandatory}"
+                                  columns="#{bindings.TblCertApprovalView3.hints.LetterNo.displayWidth}"
+                                  maximumLength="#{bindings.TblCertApprovalView3.hints.LetterNo.precision}"
+                                  shortDesc="#{bindings.TblCertApprovalView3.hints.LetterNo.tooltip}" id="it44"
+                                  contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.LetterNo.validator}"/>
+                    </af:inputText>
                   </af:column>
                 </af:table>
               </af:showDetailItem>

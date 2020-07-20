@@ -61,6 +61,7 @@
           <Item Value="UpdatedBy"/>
           <Item Value="TrngStDate"/>
           <Item Value="TrngEndDate"/>
+          <Item Value="FinancialyearId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

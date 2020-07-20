@@ -40,6 +40,8 @@
           <Item Value="CreatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="UpdatedBy"/>
+          <Item Value="GmcNo"/>
+          <Item Value="LetterNo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

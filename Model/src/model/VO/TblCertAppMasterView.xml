@@ -37,6 +37,10 @@
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Financial_Year1"
+    ViewObjectName="model.LOV.Financial_Year"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_CertificationId"
     ListVOName="Certification_Name_LOV1"
@@ -143,6 +147,25 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="astView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FinancialyearId"
+    ListVOName="Financial_Year1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FinancialyearId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FinancialyearId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FinancialyearFdate"/>
+      <Item Value="FinancialyearTdate"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -380,6 +403,20 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCertAppMaster"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="FinancialyearId"
+    PrecisionRule="true"
+    EntityAttrName="FinancialyearId"
+    EntityUsage="TblCertAppMaster"
+    AliasName="FINANCIALYEAR_ID"
+    LOVName="LOV_FinancialyearId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="TblCertAppDetailView"
     ViewLink="model.VO.FkCertAppDetailCertAppLink"
@@ -394,6 +431,10 @@
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
   </ResourceBundle>
+  <SortCriteria>
+    <Sort
+      Attribute="CertAppMasterId"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="CertAppMasterId"/>

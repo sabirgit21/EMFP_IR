@@ -55,6 +55,7 @@ public class TblCertAppMasterImpl extends EntityImpl {
         TrngCertNo,
         Ggn,
         RegNo,
+        FinancialyearId,
         TblCertAppDetail,
         TblCertApproval,
         TblCertification1;
@@ -114,6 +115,7 @@ public class TblCertAppMasterImpl extends EntityImpl {
     public static final int TRNGCERTNO = AttributesEnum.TrngCertNo.index();
     public static final int GGN = AttributesEnum.Ggn.index();
     public static final int REGNO = AttributesEnum.RegNo.index();
+    public static final int FINANCIALYEARID = AttributesEnum.FinancialyearId.index();
     public static final int TBLCERTAPPDETAIL = AttributesEnum.TblCertAppDetail.index();
     public static final int TBLCERTAPPROVAL = AttributesEnum.TblCertApproval.index();
     public static final int TBLCERTIFICATION1 = AttributesEnum.TblCertification1.index();
@@ -626,6 +628,22 @@ public class TblCertAppMasterImpl extends EntityImpl {
      */
     public void setRegNo(String value) {
         setAttributeInternal(REGNO, value);
+    }
+
+    /**
+     * Gets the attribute value for FinancialyearId, using the alias name FinancialyearId.
+     * @return the value of FinancialyearId
+     */
+    public BigDecimal getFinancialyearId() {
+        return (BigDecimal) getAttributeInternal(FINANCIALYEARID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FinancialyearId.
+     * @param value value to set the FinancialyearId
+     */
+    public void setFinancialyearId(BigDecimal value) {
+        setAttributeInternal(FINANCIALYEARID, value);
     }
 
     /**

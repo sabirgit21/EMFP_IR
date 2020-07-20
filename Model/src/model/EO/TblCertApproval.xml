@@ -77,6 +77,30 @@
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_CERT_APPROVAL"/>
+  <Attribute
+    Name="GmcNo"
+    Precision="50"
+    ColumnName="GMC_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CERT_APPROVAL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LetterNo"
+    Precision="50"
+    ColumnName="LETTER_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_CERT_APPROVAL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblCertAppMaster"
     Association="model.EO.FkCertApprovalCertAppAssoc"

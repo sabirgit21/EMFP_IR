@@ -1676,6 +1676,9 @@
   <ViewUsage
     Name="TblFarmerRegLandView6"
     ViewObjectName="model.VO.TblFarmerRegLandView"/>
+  <ViewUsage
+    Name="FinancialyearView1"
+    ViewObjectName="model.VO.FinancialyearView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"

@@ -184,4 +184,7 @@
   <ViewUsage
     Name="Map_Cluster_Detail_Cluster_No1"
     ViewObjectName="model.LOV.Map_Cluster_Detail_Cluster_No"/>
+  <ViewUsage
+    Name="Financial_Year1"
+    ViewObjectName="model.LOV.Financial_Year"/>
 </AppModule>

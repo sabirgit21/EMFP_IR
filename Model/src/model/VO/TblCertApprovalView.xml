@@ -76,7 +76,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="TblCertApproval"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -88,13 +89,26 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="TblCertApproval"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="TblCertApproval"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="GmcNo"
+    PrecisionRule="true"
+    EntityAttrName="GmcNo"
+    EntityUsage="TblCertApproval"
+    AliasName="GMC_NO"/>
+  <ViewAttribute
+    Name="LetterNo"
+    PrecisionRule="true"
+    EntityAttrName="LetterNo"
+    EntityUsage="TblCertApproval"
+    AliasName="LETTER_NO"/>
   <ViewLinkAccessor
     Name="TblCertDisburseView"
     ViewLink="model.VO.FkCertDisburseCertApprovalLink"
