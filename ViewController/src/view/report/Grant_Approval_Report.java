@@ -1,9 +1,17 @@
 package view.report;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+import java.util.Locale;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 import oracle.adf.view.rich.component.rich.input.RichSelectOneChoice;
 
 import oracle.jbo.domain.Number;
@@ -16,6 +24,8 @@ public class Grant_Approval_Report {
     private static Number gotToPhase;
     private static Number gotCluster;
     private static Number gotFarmer;
+    private RichInputDate fromDateParam;
+    private RichInputDate toDateParam;
     
 //    private static String selectedgrantType;   
     
@@ -72,7 +82,13 @@ public class Grant_Approval_Report {
         }         
         if(gotFarmer != null){
             reportBean.setReportParameter("P_farmer_reg_id", gotFarmer.toString());
-        }           
+        } 
+        if(getFromDate() != ""){
+        reportBean.setReportParameter("P_STDT", getFromDate());
+        }
+        if(getToDate() != ""){
+        reportBean.setReportParameter("P_ENDT", getToDate());
+        }          
 //        if(selectedgrantType != null){
 //            reportBean.setReportParameter("P_Grant_Type", selectedgrantType.toString());
 //        } 
@@ -165,6 +181,35 @@ public class Grant_Approval_Report {
         context.addMessage(null, fm);
         return null;
     }
+    
+    private String getFromDate() {
+        if(fromDateParam.getValue() != null && fromDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(fromDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+    
+    private String getToDate() {
+        if(toDateParam.getValue() != null && toDateParam.getValue() != "") {
+            try {
+                DateFormat sdf = new SimpleDateFormat("EE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+                Date parsedDate = sdf.parse(toDateParam.getValue().toString());
+                SimpleDateFormat print = new SimpleDateFormat("dd-MMM-yy");
+                return (print.format(parsedDate));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+
 
     
 //
@@ -234,6 +279,21 @@ public class Grant_Approval_Report {
         return report_format;
     }    
     
+    public void setFromDateParam(RichInputDate fromDateParam) {
+        this.fromDateParam = fromDateParam;
+    }
+
+    public RichInputDate getFromDateParam() {
+        return fromDateParam;
+    }
+
+    public void setToDateParam(RichInputDate toDateParam) {
+        this.toDateParam = toDateParam;
+    }
+
+    public RichInputDate getToDateParam() {
+        return toDateParam;
+    }
     
     
     
