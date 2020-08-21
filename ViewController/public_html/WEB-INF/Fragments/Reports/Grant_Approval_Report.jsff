@@ -31,7 +31,8 @@
                                 <f:selectItems value="#{bindings.ClusterId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ClusterId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer width="30" height="10" id="s2"/>
+                           
+                         <af:spacer width="30" height="10" id="s2"/>
                             <!--<af:selectOneChoice label="Famer No." autoSubmit="true"
                                                 shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.tooltip}"
                                                 id="soc4"
@@ -48,6 +49,22 @@
                             </af:selectOneChoice>
                         </af:panelGroupLayout>
                         <af:panelGroupLayout id="pgl4" layout="horizontal">
+                            <af:inputDate label="From Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.fromDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>
+                            <af:spacer width="30" height="10" id="s11"/>
+                            <af:inputDate label="To Date"
+                            binding="#{backingBeanScope.Grant_Approval_Report_BackBean.toDateParam}"
+                                          columns="#{bindings.Dated.hints.displayWidth}"
+                                          shortDesc="#{bindings.Dated.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.Dated.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.Dated.format}"/>
+                            </af:inputDate>
+                         <af:spacer width="30" height="10" id="s12"/>
                          <af:selectOneChoice label="Select Format Type" id="soc55" autoSubmit="true"
                                                 unselectedLabel="--Select--"
                                              binding="#{backingBeanScope.Grant_Approval_Report_BackBean.report_format}">
