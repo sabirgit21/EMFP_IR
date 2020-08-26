@@ -24,8 +24,11 @@ public class Grant_Approval_Report {
     private static Number gotToPhase;
     private static Number gotCluster;
     private static Number gotFarmer;
+    private static Number gotGrantappD;
     private RichInputDate fromDateParam;
     private RichInputDate toDateParam;
+    
+    
     
 //    private static String selectedgrantType;   
     
@@ -37,6 +40,7 @@ public class Grant_Approval_Report {
     private RichSelectOneChoice selected_to_phase;
     private RichSelectOneChoice selected_cluster;
     private RichSelectOneChoice selected_farmer;
+    private RichSelectOneChoice selected_grantappid;
     private RichSelectOneChoice report_format;
 //    private RichSelectOneChoice selected_grant_type;
     private RichSelectOneChoice selected_report_type;
@@ -61,6 +65,7 @@ public class Grant_Approval_Report {
             gotToPhase = (Number)this.getselected_to_phase().getValue();
             gotCluster = (Number)this.getselected_cluster().getValue();    
             gotFarmer = (Number)this.getselected_farmer().getValue();
+            gotGrantappD = (Number)this.getselected_grantappid().getValue();
 //            selectedgrantType = (this.getselected_grant_type().getValue()).toString();
             
             
@@ -83,12 +88,16 @@ public class Grant_Approval_Report {
         if(gotFarmer != null){
             reportBean.setReportParameter("P_farmer_reg_id", gotFarmer.toString());
         } 
+        if(gotGrantappD != null){
+        reportBean.setReportParameter("P_Grant_Approval_Detail_id", gotGrantappD.toString());
+        }  
         if(getFromDate() != ""){
         reportBean.setReportParameter("P_STDT", getFromDate());
         }
         if(getToDate() != ""){
         reportBean.setReportParameter("P_ENDT", getToDate());
-        }          
+        }   
+       
 //        if(selectedgrantType != null){
 //            reportBean.setReportParameter("P_Grant_Type", selectedgrantType.toString());
 //        } 
@@ -144,6 +153,13 @@ public class Grant_Approval_Report {
 
                 System.out.println("RO Grant Summary");
                 break;
+            
+                case "grantVoucherDetail":
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Voucher_Detail&");
+
+                    System.out.println("Grant Voucher Detail");
+                    break;
 
             default:
                 showMessage("Please Select Report Type");
@@ -266,7 +282,14 @@ public class Grant_Approval_Report {
 
     public RichSelectOneChoice getselected_farmer() {
         return selected_farmer;
-    }    
+    } 
+    public void setselected_grantappid(RichSelectOneChoice get_selected_grantappid) {
+        this.selected_grantappid = get_selected_grantappid;
+    }
+
+    public RichSelectOneChoice getselected_grantappid() {
+        return selected_grantappid;
+    } 
     
     
     
@@ -294,6 +317,7 @@ public class Grant_Approval_Report {
     public RichInputDate getToDateParam() {
         return toDateParam;
     }
+   
     
     
     
