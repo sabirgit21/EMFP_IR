@@ -14,8 +14,9 @@
        TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
        TblGrantApprovalDetail.RO_VNO"
   FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
-  Where="TblGrantApprovalDetail.RO_NUMBER is not null   
-AND TblGrantApprovalDetail.RO_STATUS = 'insp ver'"
+  Where="TblGrantApprovalDetail.RO_NUMBER is not null    
+AND TblGrantApprovalDetail.RO_STATUS = 'insp ver' 
+AND TblGrantApprovalDetail.RO_NUMBER not in (select Ro_Number from tbl_grant_Disburse_master where ro_number is not null)"
   OrderBy="TblGrantApprovalDetail.RO_VNO">
   <Properties>
     <SchemaBasedProperties>
