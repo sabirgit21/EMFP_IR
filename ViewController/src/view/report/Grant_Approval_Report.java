@@ -160,6 +160,13 @@ public class Grant_Approval_Report {
 
                     System.out.println("Grant Voucher Detail");
                     break;
+            
+                case "grantMachineryInspection":
+
+                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail_Machinery_Inspection&");
+
+                    System.out.println("Grant Machinery Inspection");
+                    break;
 
             default:
                 showMessage("Please Select Report Type");

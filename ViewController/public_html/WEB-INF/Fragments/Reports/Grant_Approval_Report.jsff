@@ -102,6 +102,8 @@
                                                id="si11"/>
                                 <af:selectItem label="Grant Summary" value="grantsummary" id="si5"/>
                                 <af:selectItem label="Grant Voucher Detail" value="grantVoucherDetail" id="si10"/>
+                                <af:selectItem label="Grant Machinery Inspection" value="grantMachineryInspection"
+                                               id="si14"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
