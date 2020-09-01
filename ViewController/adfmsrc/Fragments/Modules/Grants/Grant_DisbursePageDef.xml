@@ -16,6 +16,11 @@
                   id="TblGrantDisburseDetailView4Query"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblGrantApprovalDetailDDDisburseView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDDDisburseView1Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDDDisburseView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDDDisburseView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="TblGrantDisburseMasterView1Iterator" id="TblGrantDisburseMasterView1">
@@ -75,5 +80,29 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="TblGrantApprovalDetailDDDisburseView1Iterator" id="TblGrantApprovalDetailDDDisburseView1">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDDDisburseView"
+                      Name="TblGrantApprovalDetailDDDisburseView10">
+        <AttrNames>
+          <Item Value="AppAmount"/>
+          <Item Value="AppRate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="GrantApprovalDetailDDId"/>
+          <Item Value="GrantApprovalDetailId"/>
+          <Item Value="HalfInv"/>
+          <Item Value="InvNo"/>
+          <Item Value="InvPrice"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="MmpMembers"/>
+          <Item Value="MmpVisitDate"/>
+          <Item Value="Qty"/>
+          <Item Value="SubsidyAmount"/>
+          <Item Value="SupplierId"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

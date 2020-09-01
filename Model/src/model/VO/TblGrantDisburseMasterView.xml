@@ -126,6 +126,11 @@
     ViewLink="model.VO.FkTblGrantDisburseDetailFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDDDisburseView"
+    ViewLink="model.VO.FkGrantApprovalDetailDDDisburseFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseMasterId"

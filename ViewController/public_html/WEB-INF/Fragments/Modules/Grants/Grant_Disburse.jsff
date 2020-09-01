@@ -388,6 +388,205 @@
                 <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
                            disabled="#{!bindings.Execute.enabled}" id="b4" icon="#{resource['images:refresh.png']}"/>
               </af:showDetailItem>
+              <af:showDetailItem text="Inspected Machinery" id="sdi1">
+                
+                 <af:table value="#{bindings.TblGrantApprovalDetailDDDisburseView1.collectionModel}" var="row"
+                          rows="#{bindings.TblGrantApprovalDetailDDDisburseView1.rangeSize}"
+                          emptyText="#{bindings.TblGrantApprovalDetailDDDisburseView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.TblGrantApprovalDetailDDDisburseView1.rangeSize}"
+                          filterModel="#{bindings.TblGrantApprovalDetailDDDisburseView1Query.queryDescriptor}"
+                          filterVisible="true"
+                          queryListener="#{bindings.TblGrantApprovalDetailDDDisburseView1Query.processQuery}" varStatus="vs"
+                          id="t4" scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.name}"
+                             filterable="true" sortable="true"
+                             headerText="Visit Date" id="c19" align="center">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.TblGrantApprovalDetailDDDisburseView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.MmpVisitDate.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.MmpVisitDate.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.displayWidth}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.tooltip}"
+                                  id="id5">
+                      <f:validator binding="#{row.bindings.MmpVisitDate.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpVisitDate.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.name}"
+                             filterable="true" sortable="true"
+                             headerText="Members" id="c20" width="200">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MmpMembers}"
+       id="it49" placeholder="Search Members">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.MmpMembers.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.MmpMembers.tooltip}"
+                                  id="it29">
+                      <f:validator binding="#{row.bindings.MmpMembers.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.SupplierId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Supplier" id="c21" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.SupplierId}"
+       id="it50" placeholder="Search Supplier">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.SupplierId.inputValue}" readOnly="true"
+                                        label="#{row.bindings.SupplierId.label}"
+                                        required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.SupplierId.mandatory}"
+                                        shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.SupplierId.tooltip}"
+                                        id="soc4">
+                      <f:selectItems value="#{row.bindings.SupplierId.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.SupplierId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.ItemL4Id.name}"
+                             filterable="true" sortable="true"
+                             headerText="Item" id="c22" width="200">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ItemL4Id}"
+       id="it51" placeholder="Search Item">
+      </af:inputText>
+</f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}" readOnly="true"
+                                        label="#{row.bindings.ItemL4Id.label}" autoSubmit="true"
+                                        required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.ItemL4Id.mandatory}"
+                                        shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.ItemL4Id.tooltip}"
+                                        id="soc5">
+                      <f:selectItems value="#{row.bindings.ItemL4Id.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="Quantity"
+                             id="c26" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Qty}"
+       id="it52" placeholder="Search Quantity">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.Qty.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.tooltip}"
+                                  id="it30">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Approved Rate" id="c29" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AppRate}"
+       id="it53" placeholder="Search Approved Rate">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.AppRate.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.tooltip}"
+                                  id="it31">
+                      <f:validator binding="#{row.bindings.AppRate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppRate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Approved Amount" id="c30" align="center" sortable="true" filterable="true">
+                   <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.AppAmount}"
+       id="it54" placeholder="Search Approved Amount">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.AppAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.tooltip}"
+                                  id="it35">
+                      <f:validator binding="#{row.bindings.AppAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.AppAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.name}" filterable="true"
+                             sortable="true" headerText="Invoice Number"
+                             id="c23">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvNo}"
+       id="it55" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.InvNo.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvNo.tooltip}"
+                                  id="it32">
+                      <f:validator binding="#{row.bindings.InvNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.name}"
+                             filterable="true" sortable="true"
+                             headerText="Invoice Price" id="c24" align="center">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.InvPrice}"
+       id="it56" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.InvPrice.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.tooltip}"
+                                  id="it33">
+                      <f:validator binding="#{row.bindings.InvPrice.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.InvPrice.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.name}"
+                             filterable="true" sortable="true"
+                             headerText="Half Invoice" id="c25">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.HalfInv}"
+       id="it57" placeholder="Search Invoice">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.HalfInv.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.tooltip}"
+                                  id="it34">
+                      <f:validator binding="#{row.bindings.HalfInv.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDDisburseView1.hints.HalfInv.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  
+                </af:table>
+               
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>

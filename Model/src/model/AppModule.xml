@@ -1679,6 +1679,9 @@
   <ViewUsage
     Name="FinancialyearView1"
     ViewObjectName="model.VO.FinancialyearView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDDisburseView1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDDisburseView"/>
   <ViewLinkUsage
     Name="FkTblClusterAttDetailFkLink1"
     ViewLinkObjectName="model.VO.FkTblClusterAttDetailFkLink"
@@ -3310,5 +3313,11 @@
     ViewLinkObjectName="model.VO.FkTblFarmerRegLandFkLink"
     SrcViewUsageName="model.AppModule.TblFarmerRegView4"
     DstViewUsageName="model.AppModule.TblFarmerRegLandView6"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkGrantApprovalDetailDDDisburseFkLink1"
+    ViewLinkObjectName="model.VO.FkGrantApprovalDetailDDDisburseFkLink"
+    SrcViewUsageName="model.AppModule.TblGrantDisburseMasterView1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDDDisburseView1"
     Reversed="false"/>
 </AppModule>

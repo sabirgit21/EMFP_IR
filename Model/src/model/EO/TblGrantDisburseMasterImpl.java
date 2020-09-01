@@ -41,8 +41,7 @@ public class TblGrantDisburseMasterImpl extends EntityImpl {
         RoNumber,
         TblGrantDisburseDetail,
         TblGrantApprovalMaster;
-        static AttributesEnum[] vals = null;
-        ;
+        private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
         public int index() {

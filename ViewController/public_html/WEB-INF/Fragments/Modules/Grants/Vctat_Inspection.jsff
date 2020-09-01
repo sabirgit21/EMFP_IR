@@ -220,7 +220,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-            <af:panelTabbed position="above" id="pt3" inlineStyle="width:1002px;">
+            <af:panelTabbed position="above" id="pt3">
               <af:showDetailItem id="tab3" text="Farmer's Grant Detail">
                 <af:table value="#{bindings.MMP_RO_Status_Grant_Land8.collectionModel}" var="row"
                           rows="#{bindings.MMP_RO_Status_Grant_Land8.rangeSize}"
