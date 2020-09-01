@@ -28,5 +28,7 @@
         <Item Value="Dated"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="TblGrantApprovalDetailView4Iterator" StaticList="false" Uses="LOV_GrantApprovalDetailId"
+          id="GrantApprovalDetailId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

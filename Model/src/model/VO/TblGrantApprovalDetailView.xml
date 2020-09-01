@@ -37,6 +37,10 @@
     Name="Farmer_No_LOV1"
     ViewObjectName="model.LOV.Farmer_No_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Grant_Approval_Detail_LOV1"
+    ViewObjectName="model.LOV.Grant_Approval_Detail_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
     ListVOName="Active_Status1"
@@ -146,6 +150,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_GrantApprovalDetailId"
+    ListVOName="Grant_Approval_Detail_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GrantApprovalDetailId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GrantApprovalDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GrantApprovalDetailId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantApprovalDetail"
     Entity="model.EO.TblGrantApprovalDetail"/>
@@ -192,7 +214,15 @@
     PrecisionRule="true"
     EntityAttrName="GrantApprovalDetailId"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="GRANT_APPROVAL_DETAIL_ID"/>
+    AliasName="GRANT_APPROVAL_DETAIL_ID"
+    LOVName="LOV_GrantApprovalDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GrantApprovalMasterId"
     IsNotNull="true"
@@ -427,6 +457,11 @@
     ViewLink="model.VO.FkTblGrantApprovalDetailDDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantApprovalDetailId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantApprovalDetailId"

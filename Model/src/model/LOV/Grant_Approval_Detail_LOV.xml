@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Grant_Approval_Detail_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
+       TblGrantApprovalDetail.AST"
+  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  OrderBy="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID desc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Grant_Approval_Detail_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblGrantApprovalDetail"
+    Entity="model.EO.TblGrantApprovalDetail"/>
+  <ViewAttribute
+    Name="GrantApprovalDetailId"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalDetailId"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_APPROVAL_DETAIL_ID"/>
+  <ViewAttribute
+    Name="GrantApprovalMasterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalMasterId"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="GRANT_APPROVAL_MASTER_ID"/>
+  <ViewAttribute
+    Name="Ast"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
