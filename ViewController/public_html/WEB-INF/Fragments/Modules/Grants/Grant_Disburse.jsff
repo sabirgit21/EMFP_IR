@@ -96,14 +96,14 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Ro Number" id="c18">
-                    <af:selectOneChoice value="#{row.bindings.RoNumber.inputValue}"
-                                        label="#{row.bindings.RoNumber.label}" readOnly="true"
-                                        required="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber.mandatory}"
-                                        shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber.tooltip}"
-                                        id="soc6">
-                      <f:selectItems value="#{row.bindings.RoNumber.items}" id="si6"/>
-                      <f:validator binding="#{row.bindings.RoNumber.validator}"/>
-                    </af:selectOneChoice>
+                    <af:inputText value="#{row.bindings.RoNumber1.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber1.label}"
+                                  required="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber1.mandatory}"
+                                  columns="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber1.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber1.precision}"
+                                  shortDesc="#{bindings.TblGrantDisburseMasterView1.hints.RoNumber1.tooltip}" id="it36">
+                      <f:validator binding="#{row.bindings.RoNumber1.validator}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column headerText="Cheque No." id="c7" sortable="true" filterable="true" width="200" align="center">
                   <f:facet name="filter">

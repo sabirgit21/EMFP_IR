@@ -121,6 +121,12 @@
     EntityAttrName="IssueTo"
     EntityUsage="TblGrantDisburseMaster"
     AliasName="ISSUE_TO"/>
+  <ViewAttribute
+    Name="RoNumber1"
+    PrecisionRule="true"
+    EntityAttrName="RoNumber"
+    EntityUsage="TblGrantDisburseMaster"
+    AliasName="RO_NUMBER1"/>
   <ViewLinkAccessor
     Name="TblGrantDisburseDetailView"
     ViewLink="model.VO.FkTblGrantDisburseDetailFkLink"
@@ -131,6 +137,11 @@
     ViewLink="model.VO.FkGrantApprovalDetailDDDisburseFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="GrantDisburseMasterId"
+      Ascending="false"/>
+  </SortCriteria>
   <SortCriteria>
     <Sort
       Attribute="GrantDisburseMasterId"
