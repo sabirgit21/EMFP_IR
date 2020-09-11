@@ -6,13 +6,40 @@
   Name="TblGrantApprovalDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID, 
+       TblGrantApprovalDetail.GRANT_APPROVAL_MASTER_ID, 
+       TblGrantApprovalDetail.FARMER_REG_ID, 
+       TblGrantApprovalDetail.GRANT_APP_MASTER_ID, 
+       TblGrantApprovalDetail.AMOUNT, 
+       TblGrantApprovalDetail.AST, 
+       TblFarmerReg.FARMER_NO, 
+       TblFarmerReg.NAME, 
+       TblFarmerReg.FARMER_REG_ID AS FARMER_REG_ID1, 
+       TblFarmerReg.FATHER_NAME, 
+       TblFarmerReg.CNIC, 
+       TblFarmerReg.NTN, 
+       TblFarmerReg.PASS_NO, 
+       TblFarmerReg.MOBILE, 
+       TblGrantApprovalDetail.GRANT_AMOUNT, 
+       TblGrantApprovalDetail.F_ACRE, 
+       TblFarmerRegLand.FARMER_REG_LAND_ID, 
+       TblGrantApprovalDetail.GRANT_RATE_ID, 
+       TblGrantApprovalDetail.F_AMOUNT, 
+       TblGrantApprovalDetail.GRANT_STATUS, 
+       TblGrantApprovalDetail.RO_NUMBER, 
+       TblGrantApprovalDetail.RO_STATUS, 
+       TblGrantApprovalDetail.DISBURSE_STATUS, 
+       TblGrantApprovalDetail.REMARKS, 
+       TblGrantApprovalDetail.LAND_UNDER_ORCH, 
+       TblGrantApprovalDetail.OLD_RO_NUMBER, 
+       TblGrantApprovalDetail.GRANT_BASE, 
+       TblGrantApprovalDetail.SUBSIDY_AMOUNT"
+  FromList="TBL_GRANT_APPROVAL_DETAIL TblGrantApprovalDetail, TBL_FARMER_REG TblFarmerReg, TBL_FARMER_REG_LAND TblFarmerRegLand"
+  Where="(TblGrantApprovalDetail.FARMER_REG_ID = TblFarmerReg.FARMER_REG_ID(+)) AND (TblFarmerReg.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID)"
+  OrderBy="TblGrantApprovalDetail.GRANT_APPROVAL_DETAIL_ID">
   <ViewAccessor
     Name="Active_Status1"
     ViewObjectName="model.LOV.Active_Status"
@@ -457,59 +484,4 @@
     ViewLink="model.VO.FkTblGrantApprovalDetailDDFKLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
-  <SortCriteria>
-    <Sort
-      Attribute="GrantApprovalDetailId"
-      Ascending="false"/>
-  </SortCriteria>
 </ViewObject>
