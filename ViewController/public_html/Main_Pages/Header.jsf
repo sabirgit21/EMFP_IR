@@ -24,8 +24,6 @@
                                     <af:gridCell marginStart="5px" width="50%" id="pt_gc5"></af:gridCell>
                                     <af:gridCell marginStart="5px" width="50%" halign="end" valign="bottom"
                                                  marginEnd="5px" id="pt_gc6">
-                                        <af:image source="#{resource['images:punjab_agri_e_logo.png']}" id="pt_i2"
-                                      inlineStyle="width:105px; height:75px; margin-top:2%;"/>
                                     </af:gridCell>
                                 </af:gridRow>
                                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr5">
@@ -43,6 +41,8 @@
                                             <af:button text="Logout" id="pt_b1" icon="#{resource['images:logout.png']}"
                                                        action="#{backing_Main_Pages_Login.logout_action}"/>
                                             <af:spacer width="20" height="10" id="pt_s1"/>
+                                            <af:image source="#{resource['images:agri_logo.png']}" id="pt_i2"
+                                      inlineStyle="width:130px; height:130px; "/>
                                         </af:panelGroupLayout>
                                     </af:gridCell>
                                 </af:gridRow>
