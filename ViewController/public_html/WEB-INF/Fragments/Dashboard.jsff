@@ -25,7 +25,7 @@
                 <af:spacer width="10" height="10" id="s1"/>
                 <af:panelGroupLayout id="pgl2" layout="vertical" inlineStyle="margin-top: -15%; width:75%;">
                     <af:link text="#{item.bindings.ModuleMenuName.inputValue}" id="l17"
-                             destination="/faces/#{item.bindings.ModuleMenuLink.inputValue}"
+                             destination="/faces/#{item.bindings.ModuleMenLink.inputValue}"
                              inlineStyle="font-size:x-large; color: #008442;font-weight: bold;"/>
                     <af:spacer width="10" height="1" id="s3"/>
                     <af:outputLabel value="#{item.bindings.ModuleMenuDesc.inputValue}" id="ol12"/>
