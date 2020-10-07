@@ -14,9 +14,11 @@
        TblTrainingSchDetail.DATED_D, 
        TblCluster.CLUSTER_NO, 
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
-       TblTrainingSchDetail.DATED_A"
-  FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_CLUSTER TblCluster"
-  Where="TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+)"
+       TblTrainingSchDetail.DATED_A, 
+       TblModule.NAME, 
+       TblModule.MODULE_ID"
+  FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_CLUSTER TblCluster, TBL_TRAINING_SCH_MASTER TblTrainingSchMaster, TBL_MODULE TblModule"
+  Where="((TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+)) AND (TblTrainingSchDetail.TRAINING_SCH_MASTER_ID = TblTrainingSchMaster.TRAINING_SCH_MASTER_ID(+))) AND (TblTrainingSchMaster.MODULE_ID = TblModule.MODULE_ID(+))"
   OrderBy="TblCluster.CLUSTER_NO">
   <Properties>
     <SchemaBasedProperties>
@@ -47,6 +49,44 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchMaster"
+    Entity="model.EO.TblTrainingSchMaster"
+    Association="model.EO.FkTblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.FkTblTrainingSchDetailFkAssoc.TblTrainingSchMaster"
+    SourceUsage="model.LOV.Training_Schd_Detail_Dated_Cluster.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.TrainingSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.TrainingSchMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblModule"
+    Entity="model.EO.TblModule"
+    Association="model.EO.Fk3TblTrainingSchMasterFkAssoc"
+    AssociationEnd="model.EO.Fk3TblTrainingSchMasterFkAssoc.TblModule"
+    SourceUsage="model.LOV.Training_Schd_Detail_Dated_Cluster.TblTrainingSchMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblModule.ModuleId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.ModuleId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -89,6 +129,20 @@
     EntityAttrName="DatedA"
     EntityUsage="TblTrainingSchDetail"
     AliasName="DATED_A"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblModule"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="ModuleId"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblModule"
+    AliasName="MODULE_ID"/>
   <ViewCriteria
     Name="Training_Schd_Detail_Dated_ClusterCriteria"
     ViewObjectName="model.LOV.Training_Schd_Detail_Dated_Cluster"
