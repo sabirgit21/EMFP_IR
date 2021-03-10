@@ -173,6 +173,12 @@ public class cluster_att_report {
 
                          System.out.println("att detail crop wise");
                          break;
+                case "farmerAttModule":
+
+                         reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Attendance_Module&");
+
+                         System.out.println("farmer att module");
+                         break;
 
             default:
                 showMessage("Please Select Report Type");

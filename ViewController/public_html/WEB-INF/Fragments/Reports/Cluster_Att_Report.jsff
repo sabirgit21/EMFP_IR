@@ -127,6 +127,8 @@
                                                id="si16"/> 
                                <af:selectItem label="Cluster Attendance Detail Crop Wise" value="attDetailCroptWise"
                                               id="si17"/>
+                               <af:selectItem label="Farmer Attendance Module" value="farmerAttModule"
+                                              id="si18"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s1"/>
                             <af:button text="Generate Report" id="b2"
