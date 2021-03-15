@@ -21,10 +21,12 @@ import oracle.jbo.domain.Number;
 
 public class cluster_att_report {
 
+    
+
     public cluster_att_report() {
         System.out.println("cluster att report constructor called");
     }
-    
+    private RichSelectOneChoice selected_phase;
     private RichSelectOneChoice selected_module;
     private RichSelectOneChoice selected_cluster;
     private RichSelectOneChoice selected_trainer;
@@ -40,6 +42,7 @@ public class cluster_att_report {
 
 
     private static Number gotCluster;
+    private static Number gotPhase;
     private static Number gotTrainer;
     private static Number gotFarmer;
     private static Number gotCity;
@@ -61,6 +64,7 @@ public class cluster_att_report {
         gotFarmer = (Number)this.getSelected_farmer().getValue();
         gotTrainer = (Number)this.getSelected_trainer().getValue();
         gotCluster = (Number)this.getSelected_cluster().getValue();
+        gotPhase = (Number)this.getSelected_phase().getValue();
         
         selectedReportType = (String)this.getReport_type().getValue();
         gotFormat = (String)this.getFormat_type().getValue();
@@ -90,7 +94,10 @@ public class cluster_att_report {
         }        
         if(gotCluster != null){
             reportBean.setReportParameter("P_Cluster_id", gotCluster.toString());
-        }     
+        }  
+        if(gotPhase != null){
+            reportBean.setReportParameter("P_phase_ID", gotPhase.toString());
+        } 
         
         if(getFromDate() != ""){
             reportBean.setReportParameter("P_Fdated", getFromDate());
@@ -334,5 +341,13 @@ public class cluster_att_report {
 
     public RichInputDate getToDateParam() {
         return toDateParam;
+    }
+
+    public void setSelected_phase(RichSelectOneChoice selected_phase) {
+        this.selected_phase = selected_phase;
+    }
+
+    public RichSelectOneChoice getSelected_phase() {
+        return selected_phase;
     }
 }

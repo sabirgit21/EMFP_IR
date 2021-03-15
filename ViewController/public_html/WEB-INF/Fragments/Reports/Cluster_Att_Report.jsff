@@ -24,6 +24,16 @@
                                 <f:validator binding="#{bindings.ModuleId.validator}"/>
                             </af:selectOneChoice>
                              <af:spacer width="20" height="10" id="s5"/>
+                                <af:selectOneChoice 
+                                                    label="Phase"
+                                                   unselectedLabel="Not Selected"
+                                                    shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc10"
+                                                     contentStyle="width:200px"
+                                                    binding="#{backingBeanScope.cluster_att_report_bean.selected_phase}">
+                                    <f:selectItems value="#{bindings.PhaseId.items}" id="si19"/>
+                                    <f:validator binding="#{bindings.PhaseId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:spacer width="20" height="10" id="s17"/>
                             <af:selectOneChoice label="Cluster" autoSubmit="true" unselectedLabel="Not Selected"
                                                 shortDesc="#{bindings.ClusterId.hints.tooltip}" id="soc1"
                                                 contentStyle="width:200px"

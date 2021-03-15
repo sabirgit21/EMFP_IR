@@ -27,5 +27,7 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_DistrictLibrDetail"
           id="DistrictLibrDetail" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
