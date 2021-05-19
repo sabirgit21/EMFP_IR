@@ -43,7 +43,7 @@ public class roprinting_report {
                 break;
             default:
                 System.out.println("default");
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Voucher&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Voucher&");
 
                 System.out.println("default ro printing report");
                 break;

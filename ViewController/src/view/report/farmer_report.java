@@ -65,7 +65,7 @@ public class farmer_report {
             case "clusterWise":
                 System.out.println("clusterWise");
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise&");
 
                 break;
 
@@ -73,33 +73,33 @@ public class farmer_report {
                 System.out.println("landWise");
 
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Land_Wise_Detail&");
 
                 break;
 
             case "cropWise":
                 System.out.println("cropWise");
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Crop_Wise&");
 
                 break;
 
             case "cityWise":
                 System.out.println("cityWise");
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_City_Wise&");
 
                 break;
                 case "clusterWiseSummary":
                     System.out.println("clusterWiseSummary");
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise_Summary&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Cluster_Wise_Summary&");
 
                     break;
             case "notSelected":
                 System.out.println("notSelected then generic report");
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Reg_Detail&");
 
                 break;
             default:

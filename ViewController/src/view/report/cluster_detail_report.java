@@ -56,17 +56,17 @@ public class cluster_detail_report {
             switch (selectedReportType) {
             case "phaseWise":
                 System.out.println("phaseWise");
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Phase_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Phase_Wise&");
 
                 break;
             case "cropWise":
                 System.out.println("cropWise");
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Crop_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_Crop_Wise&");
 
                 break;
             case "cityWise":
                 System.out.println("cityWise");
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_City_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Detail_City_Wise&");
 
                 break;
             case "notSelected":

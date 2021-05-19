@@ -53,19 +53,19 @@ public class Exhibition_Report {
             
             case "exhibitionBudgetDetail":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_Budget_Detail_Report&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_Budget_Detail_Report&");
                 System.out.println("Exhibition Budget Detail Report");
                 break;
             
                 case "exhibitorStallAllocationDetail":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibitor_Stall_Allocation_Detail&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibitor_Stall_Allocation_Detail&");
                     System.out.println("Exhibitor Stall Allocation Detail");
                     break;
             
                 case "exhibitionB2bMeetings":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_B2B_Meetings&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Exhibition_B2B_Meetings&");
                     System.out.println("Exhibition B2B Meetings");
                     break;
 

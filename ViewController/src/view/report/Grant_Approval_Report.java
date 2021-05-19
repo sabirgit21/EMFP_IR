@@ -109,61 +109,61 @@ public class Grant_Approval_Report {
             switch (selectedReportType) {
             case "detailWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail&");
 
                 System.out.println("detail wise");
                 break;
             case "machineryWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_wise_Detail&");
 
                 System.out.println("machinery wise");
                 break;
             case "machineryPhaseWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Machinery_Phase_Wise_Detail&");
 
                 System.out.println("machinery phase wise");
                 break;
 
             case "consolidatedDetail":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Consolidated_Detail&");
 
                 System.out.println("consolidated detail");
                 break;
             
                 case "grantApprovalDisbursementDetail":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Disbursement_Detail&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Disbursement_Detail&");
 
                     System.out.println("Grant Approval Disbursement Detail");
                     break;
 
             case "grantFarmerEligibilty":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Farmers_Eligibility_Detail&");
 
                 System.out.println("Grant Farmer Eligibility Detail");
                 break;
 
             case "grantsummary":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Grant_Summary&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/RO_Grant_Summary&");
 
                 System.out.println("RO Grant Summary");
                 break;
             
                 case "grantVoucherDetail":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Voucher_Detail&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Voucher_Detail&");
 
                     System.out.println("Grant Voucher Detail");
                     break;
             
                 case "grantMachineryInspection":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail_Machinery_Inspection&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Grant_Approval_Detail_Machinery_Inspection&");
 
                     System.out.println("Grant Machinery Inspection");
                     break;

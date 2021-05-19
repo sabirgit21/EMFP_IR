@@ -67,63 +67,63 @@ public class training_sch_report {
 
             case "trainingSchDetail":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail&");
 
                 System.out.println("training Sch Detail");
                 break;
 
             case "trainingSchDetailCompWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Component_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Component_wise&");
 
                 System.out.println("training Sch Detail Comp Wise");
                 break;
 
             case "trainingSchDetailClusterWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Cluster_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Cluster_wise&");
 
                 System.out.println("training Sch Detail Cluster Wise");
                 break;
 
             case "trainingSchDetailDateWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Date_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Date_wise&");
 
                 System.out.println("training Sch Detail Date Wise");
                 break;
 
             case "trainingSchDetailModuleWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Module_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Module_wise&");
 
                 System.out.println("training Sch Detail Module Wise");
                 break;
 
             case "trainingSchDetailTeamFormaWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_Formation_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_Formation_wise&");
 
                 System.out.println("training Sch Detail Team Forma Wise");
                 break;
 
             case "trainingSchDetailTeamWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Team_wise&");
 
                 System.out.println("training Sch Detail Team Wise");
                 break;
 
             case "trainingSchDetailTrainerWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Trainer_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Trainer_wise&");
 
                 System.out.println("training Sch Detail Trainer Wise");
                 break;
 
             case "trainingSchDetailTrainingWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Training_wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Training_Sch_Detail_Training_wise&");
 
                 System.out.println("training Sch Detail Training Wise");
                 break;

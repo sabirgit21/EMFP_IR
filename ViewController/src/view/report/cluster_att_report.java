@@ -130,59 +130,59 @@ public class cluster_att_report {
             switch (selectedReportType) {
             case "attDetailWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail&");
 
                 System.out.println("att detail wise");
                 break;
             case "attDetailCityWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_City_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_City_Wise&");
 
                 System.out.println("att detail city wise");
                 break;
             case "attDetailDistrictWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_District_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_District_Wise&");
 
                 System.out.println("att detail district wise");
                 break;
             case "attDetaiClusterlWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Cluster_Wise&");
 
                 System.out.println("att detail cluster wise");
                 break;
 
             case "attDetailFarmerWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Farmer_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Farmer_Wise&");
 
                 System.out.println("att detail farmer wise");
                 break;
 
             case "attDetailTrainerWise":
 
-                reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Wise&");
+                reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Wise&");
 
                 System.out.println("att detail trainer wise");
                 break;
             
            case "attDetailTrainerModuleWise":
 
-                    reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Module_Wise&");
+                    reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Trainer_Module_Wise&");
 
                     System.out.println("att detail trainer module wise");
                     break;
             
                 case "attDetailCropWise":
 
-                         reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Crop_Wise&");
+                         reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Cluster_Attandence_Detail_Crop_Wise&");
 
                          System.out.println("att detail crop wise");
                          break;
                 case "farmerAttModule":
 
-                         reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Attendance_Module&");
+                         reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/EMFP_Reports/Farmer_Attendance_Module&");
 
                          System.out.println("farmer att module");
                          break;
