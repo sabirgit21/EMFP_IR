@@ -24,14 +24,14 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("emfp");
         setUpasss("emfpir");
-        setUipp("207.180.246.67");
+        setUipp("192.168.2.4");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */
         
         /*  Report servlet connection >> port , hostname */
         setUportReport("9002");
-        setUipReport("207.180.246.67");
+        setUipReport("192.168.2.4");
         /*  END */
         
         String thinConn = "jdbc:oracle:thin:@" + getUipp() + ":" + getUportADF() + ":" + getUSID() ;
