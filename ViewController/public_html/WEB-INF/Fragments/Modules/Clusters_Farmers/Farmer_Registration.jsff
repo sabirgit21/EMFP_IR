@@ -28,7 +28,7 @@
                             <af:gridRow marginTop="5px" height="auto" id="gr1">
                                 <af:gridCell marginStart="5px" width="auto" id="gc1">
                                     <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                                        <af:showDetailItem id="tab1" text="Farmer Registration">
+                                        <af:showDetailItem id="tab1" text="Farmer Registration" styleClass="tabel_pannel_tab">
                                             <af:table value="#{bindings.TblFarmerRegView1.collectionModel}" var="row"
                                                       rows="#{bindings.TblFarmerRegView1.rangeSize}"
                                                       emptyText="#{bindings.TblFarmerRegView1.viewable ? 'No data to display.' : 'Access Denied.'}"

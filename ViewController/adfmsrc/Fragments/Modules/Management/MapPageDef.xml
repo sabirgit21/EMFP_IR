@@ -4,28 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    
-    <iterator Binds="Map_Sch_Detail_Att_Master1" RangeSize="-1" DataControl="AppModuleDataControl"
-              id="Map_Sch_Detail_Att_Master1Iterator" CacheResults="false"/>
     <iterator Binds="Map_Cluster_DetailView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="Map_Cluster_DetailView1Iterator"/>
     <iterator Binds="Map_Farmer_Detail_Att2" RangeSize="25" DataControl="AppModuleDataControl"
               id="Map_Farmer_Detail_Att2Iterator"/>
     <searchRegion Binds="Map_Farmer_Detail_Att2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Map_Farmer_Detail_Att2Query"/>
+    <iterator Binds="Map_Sch_Detail_Att_Master1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="Map_Sch_Detail_Att_Master1Iterator"/>
   </executables>
   <bindings>
-    
-    <mapTheme IterBinding="Map_Sch_Detail_Att_Master1Iterator" id="Map_Sch_Detail_Att_Master12"
-              xmlns="http://xmlns.oracle.com/adfm/dvt">
-      <mapThemeDataMap convert="false" mapThemeType="point">
-        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="ClusterNo"/>
-        <item type="category" value="ColFlag"/>
-        <data>
-          <item value="TotSum" label="Detail :"/>
-        </data>
-      </mapThemeDataMap>
-    </mapTheme>
     <list IterBinding="Map_Cluster_DetailView1Iterator" ListOperMode="navigation"
           ListIter="Map_Cluster_DetailView1Iterator" id="Map_Cluster_DetailView1" DTSupportsMRU="true"
           SelectItemValueMode="ListObject">
@@ -46,5 +34,11 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <mapTheme IterBinding="Map_Sch_Detail_Att_Master1Iterator" id="Map_Sch_Detail_Att_Master1"
+              xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <mapThemeDataMap convert="false" mapThemeType="point">
+        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="ClusterNo"/>
+      </mapThemeDataMap>
+    </mapTheme>
   </bindings>
 </pageDefinition>
