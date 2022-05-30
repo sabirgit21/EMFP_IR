@@ -120,6 +120,8 @@
                                 <af:selectItem label="Grant Voucher Detail" value="grantVoucherDetail" id="si10"/>
                                 <af:selectItem label="Grant Machinery Inspection" value="grantMachineryInspection"
                                                id="si14"/>
+                                <af:selectItem label="Grant Machinery Inspection All" value="grantMachineryInspectionAll"
+                                               id="si15"/>
                             </af:selectOneChoice>
                             <af:spacer width="30" height="30" id="s9"/>
                             <af:button text="Generate Report" id="b2"
